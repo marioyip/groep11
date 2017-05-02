@@ -3,8 +3,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom ">
         <div class="container-fluid">
     <ul class="nav navbar-nav">
-        <li class="affix">&copy; <?=date("Y")?> - EenmaalAndermaal</li>
-        <div class="btn-link">
+        <li class="navbar-text">&copy; <?=date("Y")?> - EenmaalAndermaal</li>
             <li>
                 <a href="infopagina.html">Help &amp; info</a>
             </li>
@@ -24,7 +23,6 @@
                 <a href="solliciteren.html">Werken bij</a>
             </li>
     </ul>
-        </div>
         </div>
     </nav>
 </footer>
