@@ -1,4 +1,4 @@
 </main>
-<footer>&copy; <?=date("Y")?> - Eenmaal Andermaal</footer>
+<footer>&copy; <?=date("Y")?> - EenmaalAndermaal</footer>
 </body>
 </html>
