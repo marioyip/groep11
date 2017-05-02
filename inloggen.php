@@ -1,6 +1,5 @@
 <?php
 include('header.html');
-//include('test2.php');
 //pdo_connect();
 //login();
 ?>
