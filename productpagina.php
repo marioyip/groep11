@@ -23,7 +23,7 @@ $details = "";
 
 $voorwerp = $data->fetch();
 $VeilingGesloten = $data->fetch();
-$film = $data->fetch();
+
 
 $veiling = "";
 $veilinggesloten = "\"VeilingGesloten?\"";
