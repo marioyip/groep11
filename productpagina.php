@@ -26,6 +26,7 @@ $VeilingGesloten = $data->fetch();
 $film = $data->fetch();
 
 $veiling = "";
+$veilinggesloten = "\"VeilingGesloten?\"";
 
 if ($VeilingGesloten['VeilingGesloten'] == 1) {
     $veiling .= "gesloten";
