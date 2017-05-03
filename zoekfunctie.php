@@ -23,7 +23,7 @@ $data->execute(["%".$_POST['zoeken']."%"]);
 $table = "<table>";
 
 while ($row = $data->fetch()){
-    $table .= "<tr><td><a href='product.php?id=$row[$id]'>$row[$title]</a></td><td>$row[$id] </td></tr>";
+    $table .= "<tr><td><a href='productpagina.php?id=$row[$id]'>$row[$title]</a></td><td>$row[$id] </td></tr>";
 }
 $table .="</table>";
 

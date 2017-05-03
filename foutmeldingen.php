@@ -14,6 +14,14 @@ $password = isset($_POST['password']) ? $_POST['password'] : "";
 $herhaalWachtwoord = isset($_POST['herhaalWachtwoord']) ? $_POST['herhaalWachtwoord'] : "";
 $rekeningnummer = isset($_POST['rekeningnummer']) ? $_POST['rekeningnummer'] : "";
 $creditcard = isset($_POST['creditcard']) ? $_POST['creditcard'] : "";
+$veilinggesloten = isset($_GET['"Veilinggesloten?"']) ? $_GET['"Veilinggesloten?"'] : "";
+
+if($veilinggesloten == 1) {
+    $errors .= "gesloten";
+}
+if($veilinggesloten == 0) {
+    $errors .= "geopend";
+}
 
 
 if (empty($rekeningnummer) OR empty($creditcard)) {
