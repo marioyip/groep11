@@ -29,3 +29,5 @@
 </footer>
 </body>
 </html>
+
+extension=php_pdo_sqlsrv_7_ts_x86.dll

@@ -15,7 +15,7 @@ $from = "";
 $where = "voorwerpnummer";
 
 //query opstellen
-$query1 = "SELECT * FROM Voorwerp $dbName WHERE $id = ?";
+$query1 = "SELECT * FROM Voorwerp $dbName WHERE $id = 100";
 $data = $pdo->prepare($query1);
 $data->execute([$_GET['id']]);
 
