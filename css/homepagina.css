@@ -2,20 +2,31 @@
     padding-top: 100px;
     padding-bottom: 100px;
     background-color: #88B04B;
+
+
+}
+.wit{
+    color: #FFFFFF;
 }
 .container-fluid{
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #1A191C;
+    background-color: #88B04B;
+
 }
 .carousel,
-.item,
-.active {
+.item{
     height: 500px;
 }
+.col-md-12{
+    background-color: #e3e3e3;
+}
 
+.col-md-6 {
+    background-color: #f5f3f3;
+}
 .carousel-inner {
-    height: 1920px;
+    height: 500px;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
@@ -29,3 +40,10 @@
     background-size: cover;
     -o-background-size: cover;
 }
+
+footer {
+    margin: 50px 0;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
