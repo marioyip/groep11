@@ -24,6 +24,7 @@ $details = "";
 $voorwerp = $data->fetch();
 
 $veiling = "";
+$veilinggesloten = "\"VeilingGesloten?\"";
 
 if ($veilinggesloten == 1) {
     $veiling .= "gesloten";
