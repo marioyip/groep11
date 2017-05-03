@@ -28,10 +28,10 @@ $VeilingGesloten = $data->fetch();
 $veiling = "";
 $veilinggesloten = "\"VeilingGesloten?\"";
 
-if ($VeilingGesloten['VeilingGesloten'] == 1) {
+if ($veilinggesloten == 1) {
     $veiling .= "gesloten";
 }
-if ($VeilingGesloten['VeilingGesloten'] == 0) {
+if ($veilinggesloten == 0) {
     $veiling .= "geopend";
 }
 
