@@ -77,12 +77,13 @@ p {
     height: 120px;
 }
 
-imgStyle{
+.imgStyle{
     width: 120px;
     height: 120px;
 }
 
 .textWhite{
+    font-family: "Baskerville Old Face", sans-serif;
     color: white;
 }
 

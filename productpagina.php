@@ -22,8 +22,11 @@ $data->execute([$_GET['id']]);
 $details = "";
 
 $voorwerp = $data->fetch();
+$VeilingGesloten = $data->fetch();
+
 
 $veiling = "";
+$veilinggesloten = "\"VeilingGesloten?\"";
 
 if ($veilinggesloten == 1) {
     $veiling .= "gesloten";
@@ -40,7 +43,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1 class="page-header"><?= $voorwerp['titel']; ?></h1>
+            <h1 class="page-header"><?= $voorwerp['Titel']; ?></h1>
             <img src="img/<?= $film['VoorwerpCover']; ?>" height='200' width='250'/>
         </div>
         <div class="col-md-6">
@@ -54,7 +57,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
                     <!--                    40%-->
                     <!--                </div>-->
                     <!--            </div>-->
-                    De looptijd voor de veiling van <?= $voorwerp['titel']; ?> is <?= $voorwerp['Looptijd']; ?> dagen.
+                    De looptijd voor de veiling van <?= $voorwerp['Titel']; ?> is <?= $voorwerp['Looptijd']; ?> dagen.
             </p>
         </div>
         <div class="col-md-12">

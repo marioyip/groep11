@@ -50,19 +50,19 @@
     </div>
     <div class="container marginTop20">
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Laptop</a></h4>
+            <h4><a href="productpagina.php">Laptop</a></h4>
             <img class="imgStyle" src="media/laptop.JPG">
             <div class="description"><strong>Productbeschrijving: </strong>Dit is een mooie laptop.</div>
-            <a href="productpagina.php"><button type="button" class="btn">Bieden</button></a>
+            <a href="productpagina.php"<button type="button" class="btn">Bieden</button></a>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Grasmaaier</a></h4>
+            <h4><a href="productpagina.php">Grasmaaier</a></h4>
             <img src="media/grasmaaier.JPG">
             <div class="description"><strong>Productbeschrijving: </strong>Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna 100% efficiënt.</div>
             <button type="button" class="btn">Bieden</button>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Fauteuil</a></h4>
+            <h4><a href="productpagina.php">Fauteuil</a></h4>
             <img src="media/fauteuil.jpg">
             <div class="description"><strong>Productbeschrijving: </strong>Mooie fauteuil van Eleonora met draaibare zitting.
                 Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële look.
@@ -72,24 +72,24 @@
     </div>
     <div class="container">
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
     </div>
     <div class="container itemHeight500">
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
         <div class="col-md-4 itemBox" align="center">
-            <h4><a href="product.php">Product A</a></h4>
+            <h4><a href="productpagina.php">Product A</a></h4>
         </div>
     </div>
     <!-- jQuery -->
