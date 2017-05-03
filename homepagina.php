@@ -13,23 +13,23 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('media/grasmaaier.JPG');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+                    <h2>Grasmaaier</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                    <h2>Fauteuil</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('media/laptop.JPG');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                    <h2>Laptop</h2>
                 </div>
             </div>
         </div>
@@ -45,10 +45,29 @@
     </div>
     <div class="container">
         <div class="col-md-12" align="center">
-            <h1>dsffsuufssf</h1>
+            <h1>Aanbevolen items</h1>
         </div>
-        <div class="col-md-6">
-            <h1>dsffsuufssf</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
+        </div>
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
+        </div>
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
+        </div>
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
+        </div>
+        <div class="col-md-4" align="center">
+            <h1>Aanbevolen items</h1>
         </div>
     </div>
     <!-- jQuery -->
