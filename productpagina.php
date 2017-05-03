@@ -23,6 +23,15 @@ $details = "";
 
 $voorwerp = $data->fetch();
 
+$veiling = "";
+
+if ($veilinggesloten == 1) {
+    $veiling .= "gesloten";
+}
+if ($veilinggesloten == 0) {
+    $veiling .= "geopend";
+}
+
 include 'header.html';
 
 echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
@@ -35,12 +44,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
             <img src="img/<?= $film['VoorwerpCover']; ?>" height='200' width='250'/>
         </div>
         <div class="col-md-6">
-            <h2>De veiling is <?php if ($veilinggesloten == 1) {
-                    $veiling .= "gesloten";
-                }
-                if ($veilinggesloten == 0) {
-                    $veiling .= "geopend";
-                } =$veiling ?></h2>
+            <h2>De veiling is <?=$veiling ?></h2>
             <p>
                 De veiling is op <?= $voorwerp['LooptijdbeginDag']; ?> om
                 <?= $voorwerp['LooptijdbeginTijdstip']; ?> geopend.
