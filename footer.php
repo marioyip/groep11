@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/footer.css">
 <footer>
     <nav class="navbar navbar-default navbar-bottom ">
-        <div class="container-fluid ">
+        <div class="container-fluid footer navbar-bottom">
             <ul class="nav navbar-nav ">
                 <li class="navbar-text ">&copy; <?= date("Y") ?> - EenmaalAndermaal</li>
                 <li>
