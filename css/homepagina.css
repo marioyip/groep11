@@ -6,11 +6,24 @@
 
 }
 
+html{
+    background-color: #fafafa;
+    font-family: "Baskerville Old Face", serif;
+}
+
+p {
+    font-family: "Baskerville Old Face", serif;
+}
+
 .container-fluid{
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #88B04B;
 
+}
+
+.radius{
+    border-radius: 3%;
 }
 .carousel,
 .item{
@@ -37,6 +50,48 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.itemHeight500{
+    height: 500px;
+}
+
+.itemBox{
+    width: 32%;
+    height: 300px;
+    border-radius: 3%;
+    text-align: center;
+    border-color: #e3e3e3;
+    border-width: 1px;
+    border-style: solid;
+    margin: 0.5%;
+    padding: 10px;
+}
+
+.itemBox p{
+    color: red;
+}
+
+.itemBox img {
+    width: 120px;
+    height: 120px;
+}
+
+imgStyle{
+    width: 120px;
+    height: 120px;
+}
+
+.textWhite{
+    color: white;
+}
+
+.marginTop20{
+    margin-top: 20px;
+}
+
+.description{
+    height: 90px;
 }
 
 footer {
