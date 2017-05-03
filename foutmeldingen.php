@@ -1,17 +1,26 @@
 <?php
 session_start();
-require_once ("functies.php");
+require_once("functies.php");
 connectToDatabase();
-//print_r($_POST);
+
 $html = "";
 $errors = "";
-$voornaam = isset($_POST['voornaam'])?$_POST['voornaam']:"";
-$achternaam = isset($_POST['achternaam'])?$_POST['achternaam']:"";
-$geboortedatum = isset($_POST['geboortedatum'])?$_POST['geboortedatum']:"";
-$username = isset($_POST['username'])?$_POST['username']:"";
-$email = isset($_POST['email'])?$_POST['email']:"";
-$password = isset($_POST['password'])?$_POST['password']:"";
-$herhaalWachtwoord = isset($_POST['herhaalWachtwoord'])?$_POST['herhaalWachtwoord']:"";
+$voornaam = isset($_POST['voornaam']) ? $_POST['voornaam'] : "";
+$achternaam = isset($_POST['achternaam']) ? $_POST['achternaam'] : "";
+$geboortedatum = isset($_POST['geboortedatum']) ? $_POST['geboortedatum'] : "";
+$username = isset($_POST['username']) ? $_POST['username'] : "";
+$email = isset($_POST['email']) ? $_POST['email'] : "";
+$password = isset($_POST['password']) ? $_POST['password'] : "";
+$herhaalWachtwoord = isset($_POST['herhaalWachtwoord']) ? $_POST['herhaalWachtwoord'] : "";
+$rekeningnummer = isset($_POST['rekeningnummer']) ? $_POST['rekeningnummer'] : "";
+$creditcard = isset($_POST['creditcard']) ? $_POST['creditcard'] : "";
+
+
+if (empty($rekeningnummer) OR empty($creditcard)) {
+    $errors .= "Het rekeningnummer of de creditcard gegevens moeten ingevuld zijn.<br>";
+}
+
+//wachtwoord langer dan 6, 1 getal, minstens 1 letter
 
 if (empty($voornaam)) {
     $errors .= "Voornaam moet ingevuld zijn.<br>";
@@ -26,14 +35,17 @@ if (empty($geboortedatum)) {
 if (empty($email)) {
     $errors .= "Het emailaddress ontbreekt.<br>";
 }
-if (empty($username)){
-    $errors .="Je moet een gebruikersnaam invullen.<br>";
+if (empty($username)) {
+    $errors .= "Je moet een gebruikersnaam invullen.<br>";
 }
 if (empty($password)) {
     $errors .= "Je moet een wachtwoord invullen.<br>";
 }
 if (empty($herhaalWachtwoord)) {
     $errors .= "Het wachtwoord moet nog een keer worden ingevuld ter bevestiging.<br>";
+}
+if ($herhaalWachtwoord != $password) {
+    $errors .= "De wachtwoorden komen niet overeen.<br>";
 }
 
 if ($errors) {
@@ -43,14 +55,14 @@ if ($errors) {
 }
 
 $html = "";
-$html .= "<p>Beste $voornaam $achternaam je hebt je aangemeld voor FletNix.</p>";
+$html .= "<p>Beste $voornaam $achternaam je bent aangemeld voor Eenmaal Andermaal.</p>";
 
-include ('headera.html');
+include('headera.html');
 if ($errors) {
     echo $errors;
-} else  {
+} else {
     echo $html;
-    insertUserInDatabase($username,$password, $voornaam, $achternaam, $email, $geboortedatum);
+    insertUserInDatabase($username, $password, $voornaam, $achternaam, $email, $geboortedatum);
     header("location: index.php");
 }
 include('footera.php');

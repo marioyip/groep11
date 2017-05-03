@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 
 $dbPassword = "";
 $dbUserName = "sa";
@@ -29,7 +30,7 @@ include 'header.html';
     <div class="row">
         <div class="col-md-6">
             <h1 class="page-header"><?=$voorwerp['titel'];?></h1>
-            <img src="img/<?=$film['cover_image'];?>" height='200' width='250'/>
+            <img src="img/<?=$film['VoorwerpCover'];?>" height='200' width='250'/>
         </div>
         <div class="col-md-6">
             <p>
@@ -44,8 +45,6 @@ include 'header.html';
                 De looptijd voor de veiling van <?=$voorwerp['titel'];?> is <?=$voorwerp['Looptijd'];?> dagen.
             </p>
         </div>
-    </div>
-    <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="">Product informatie</a></li>
