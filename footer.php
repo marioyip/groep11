@@ -1,27 +1,27 @@
 </main>
-<link rel="stylesheet" href="css/footer.css">
+
 <footer>
     <nav class="navbar navbar-default navbar-bottom ">
-        <div class="container-fluid footer navbar-bottom">
+        <div class="container-fluid footer navbar-bottom footer">
             <ul class="nav navbar-nav ">
-                <li class="navbar-text ">&copy; <?= date("Y") ?> - EenmaalAndermaal</li>
+                <li class="navbar-text textWhite">&copy; <?= date("Y") ?> - EenmaalAndermaal</li>
                 <li>
-                    <a href="infopagina.html">Help &amp; info</a>
+                    <a class="textWhite" href="infopagina.html">Help &amp; info</a>
                 </li>
                 <li>
-                    <a href="algemenevoorwaarden.html">Algemene voorwaarden</a>
+                    <a class="textWhite" href="algemenevoorwaarden.html">Algemene voorwaarden</a>
                 </li>
                 <li>
-                    <a href="privacyverklaring.html">Privacy</a>
+                    <a class="textWhite" href="privacyverklaring.html">Privacy</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a class="textWhite" href="contact.html">Contact</a>
                 </li>
                 <li>
-                    <a href="overons.php">Over ons</a>
+                    <a class="textWhite" href="overons.php">Over ons</a>
                 </li>
                 <li>
-                    <a href="solliciteren.html">Werken bij</a>
+                    <a class="textWhite" href="solliciteren.html">Werken bij</a>
                 </li>
             </ul>
         </div>

@@ -27,7 +27,7 @@
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('media/laptop.JPG');"></div>
+                <div class="fill" style="background-image:url('media/laptop.png');"></div>
                 <div class="carousel-caption">
                     <h2>Laptop</h2>
                 </div>
@@ -51,7 +51,7 @@
     <div class="container marginTop20">
         <div class="col-md-4 itemBox" align="center">
             <h4><a href="productpagina.php">Laptop</a></h4>
-            <img class="imgStyle" src="media/laptop.JPG">
+            <img class="imgStyle" src="media/laptop.png">
             <div class="description"><strong>Productbeschrijving: </strong>Dit is een mooie laptop.</div>
             <a href="productpagina.php"<button type="button" class="btn">Bieden</button></a>
         </div>
