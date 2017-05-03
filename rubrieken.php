@@ -152,13 +152,12 @@ include 'header.html';
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=1999&n=Voetbal">Voetbal</a>&nbsp;(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=1933&n=Watersport">Watersport</a>&nbsp;(0)</li>
                 </ul>
-
             </div>
             <div class="col-md-2 marginTop20" align="center">
                 <ul>
                     <li style="padding: 0px; margin: 10px 0px 6px 0px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5364&n=Horeca"><b>Horeca</b></a>&nbsp;(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5914&n=Horeca-meubels">Horeca meubels</a>&nbsp;(0)</li>
-                    <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5916&n=Horeca-verlichting">Horeca verlichting</a>&nbsnbsp;(0)</li>
+                    <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5916&n=Horeca-verlichting">Horeca verlichting</a>(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5919&n=Keuken-apparaten-groot">Keuken apparaten groot</a>&nbsp;(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5920&n=Keuken-apparaten-klein">Keuken apparaten klein</a>&nbsp;(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5918&n=Keuken-inrichting">Keuken inrichting</a>&nbsp;(0)</li>
