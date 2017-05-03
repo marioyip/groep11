@@ -53,7 +53,7 @@
             <h4><a href="product.php">Laptop</a></h4>
             <img class="imgStyle" src="media/laptop.JPG">
             <div class="description"><strong>Productbeschrijving: </strong>Dit is een mooie laptop.</div>
-            <a href="product.php"<button type="button" class="btn">Bieden</button></a>
+            <a href="productpagina.php"><button type="button" class="btn">Bieden</button></a>
         </div>
         <div class="col-md-4 itemBox" align="center">
             <h4><a href="product.php">Grasmaaier</a></h4>
