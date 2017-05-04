@@ -11,13 +11,13 @@
                     <a class="textWhite" href="infopagina.html">Help &amp; info</a>
                 </li>
                 <li>
-                    <a class="textWhite" href="algemenevoorwaarden.html">Algemene voorwaarden</a>
+                    <a class="textWhite" href="media/TERMS_OF_SERVICE.pdf">Algemene voorwaarden</a>
                 </li>
                 <li>
                     <a class="textWhite" href="privacyverklaring.php">Privacy</a>
                 </li>
                 <li>
-                    <a class="textWhite" href="contact.html">Contact</a>
+                    <a class="textWhite" href="contact.php">Contact</a>
                 </li>
                 <li>
                     <a class="textWhite" href="overons.php">Over ons</a>
