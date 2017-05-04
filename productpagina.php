@@ -10,12 +10,11 @@ $pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //zoektermen
-$id = "voorwerpnummer";
-$from = "";
-$where = "voorwerpnummer";
+$id = "Voorwerpnummer";
+$from = "Voorwerp";
 
 //query opstellen
-$query1 = "SELECT * FROM Voorwerp $dbName WHERE $id = ?";
+$query1 = "SELECT * FROM $from $dbName WHERE $id = ?";
 $data = $pdo->prepare($query1);
 //$data->execute([$_GET['']]);
 

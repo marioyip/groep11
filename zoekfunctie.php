@@ -11,7 +11,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //zoektermen
 $title = "Titel";
-$id = "voorwerpnummer";
+$id = "Voorwerpnummer";
 $from = "Voorwerp";
 $where = "Titel";
 
