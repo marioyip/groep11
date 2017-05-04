@@ -27,7 +27,7 @@ p {
 }
 
 ol {
-    list-style-type: circle;
+    list-style-type: lower-roman;
 }
 .container-fluid{
     padding-top: 10px;

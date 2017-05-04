@@ -16,7 +16,7 @@
         <h1>Privacybeleid EenmaalAndermaal</h1>
 
         versie 0.1<br><br>
-        Deze pagina is voor het laatst aangepast op 04-05-2017.<br><br>
+        Deze pagina is voor het laatst aangepast op 04-05-2017..<br><br>
 
         <p>Wij zijn er van bewust dat u vertrouwen stelt in ons. Wij zien het dan ook als onze verantwoordelijkheid om
             uw privacy te beschermen. Op deze pagina laten we u weten welke gegevens we verzamelen als u onze website
