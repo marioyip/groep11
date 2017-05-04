@@ -6,29 +6,19 @@
 
 }
 
-
-
-.marginright10 {
-    margin-right: 10px;
-}
-
 .marginLeft200{
     margin-left: 200px;
 }
 
 html{
     font-family: "Baskerville Old Face", serif;
-    height: 100%;
 }
 
 p {
     font-family: "Baskerville Old Face", serif;
     font-size: 20px;
 }
-.logo {
-    margin-top: 10px;
-    margin-right: 5px;
-}
+
 .privacyverklaring {
     font-family: "Baskerville Old Face", serif;
     font-size: 20px;
@@ -122,6 +112,11 @@ body{
 }
 .marginTop20{
     margin-top: 20px;
+}
+
+
+.marginRight10{
+    margin-right: 10px;
 }
 
 .description{
