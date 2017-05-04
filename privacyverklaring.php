@@ -12,7 +12,7 @@
 <html>
 <div class="container marginTop20 radius">
     <div class="col-md-12 " align="left">
-        <!-- dit is opgesteld door middel van het template te vinden op https://www.karelgeenen.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/ -->
+        <!-- dit is opgesteld door middel van het  template te vinden op https://www.karelgeenen.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/ -->
         <h1>Privacybeleid EenmaalAndermaal</h1>
 
         versie 0.1<br><br>
