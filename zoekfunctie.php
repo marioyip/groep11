@@ -13,10 +13,9 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $title = "Titel";
 $id = "Voorwerpnummer";
 $from = "Voorwerp";
-$where = "Titel";
 
 
-$query1 = ("Select $title, $id FROM $from WHERE $where LIKE ?");
+$query1 = ("Select $title, $id FROM $from WHERE $title LIKE ?");
 $data = $pdo->prepare($query1);
 $data->execute(["%".$_POST['']."%"]);
 
