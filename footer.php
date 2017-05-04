@@ -12,7 +12,7 @@
                     <a class="textWhite" href="algemenevoorwaarden.html">Algemene voorwaarden</a>
                 </li>
                 <li>
-                    <a class="textWhite" href="privacyverklaring.html">Privacy</a>
+                    <a class="textWhite" href="privacyverklaring.php">Privacy</a>
                 </li>
                 <li>
                     <a class="textWhite" href="contact.html">Contact</a>
