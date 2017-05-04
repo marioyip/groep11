@@ -1,15 +1,51 @@
 <?php
-include('header.html');
+include 'header.html';
 //pdo_connect();
 //login();
 ?>
-    <form id="inloggen" method="post" action="foutmeldingen.php">
-        <label for="gebruikersnaam">Gebruikersnaam</label><input type="text" name="gebruikersnaam"
-                                                     placeholder="Gebruikersnaam">
-        <label for="achternaam">Achternaam</label><input type="text" name="achternaam" id="achternaam"
-                                                         placeholder="Achternaam">
-        <input id="regaanmelden" type="submit" name="aanmelden" value="Aanmelden"/>
-    </form>
+
+    <div class="container marginTop20 marginBottom40">
+        <div class="col-md-12" align="center">
+            <h1>Inloggen</h1>
+        </div>
+
+        <div class="col-md-12 marginTop20" align="center">
+            <div class="col-md-2 marginTop20" align="center">
+
+            </div>
+            <div class="col-md-8 marginTop20 text-left">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2 text-left" for="email">Gebruikersnaam</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" placeholder="Voer hier je gebruikersnaam in">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Wachtwoord:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pwd" placeholder="**********">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="regaanmelden" type="submit" name="aanmelden" class="btn btn-default">Aanmelden</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2 marginTop20" align="center">
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
 <?php
-include('footer.php');
+include 'footer.php';
 ?>

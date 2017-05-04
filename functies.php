@@ -14,33 +14,22 @@ function insertUserInDatabase($username, $password, $voornaam, $achternaam, $ema
     global $pdo;
     $hashedWachtwoord = password_hash($password,1);
     try {
-        $stmt = $pdo->prepare("INSERT INTO ) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO Gebruiker) VALUES (Gebruikersnaam, Wachtwoord, Voornaam, Achternaam, Emailadres, Geboortedatum)");
         $stmt->execute(array($username,$hashedWachtwoord, $voornaam, $achternaam, $email, $geboortedatum));
     } catch (PDOException $e) {
         echo "Could not insert user, ".$e->getMessage();
     }
 }
 
-function displayUsersInDatabase() {
+function displayUsersInDatabase()
+{
     global $pdo;
     try {
         $data = $pdo->query("SELECT * FROM ");
-        while ($row = $data->fetch()){
-            echo "$row[username] $row[password]</br>";
+        while ($row = $data->fetch()) {
+            echo "$row[Gebruikersnaam] $row[Wachtwoord]</br>";
         }
     } catch (PDOException $e) {
-        echo "Could not read users, ".$e->getMessage();
-    }
-}
-
-function displayMoviesInDatabase() {
-    global $pdo;
-    try {
-        $data = $pdo->query("SELECT	* FROM ");
-        while ($row = $data->fetch()){
-            echo "$row[username] $row[password]</br>";
-        }
-    } catch (PDOException $e) {
-        echo "Could not read users, ".$e->getMessage();
+        echo "Could not read users, " . $e->getMessage();
     }
 }
