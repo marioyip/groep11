@@ -59,10 +59,38 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
         </div>
         <div class="col-md-12">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="">Product informatie</a></li>
-                <li><a href="">details</a></li>
-                <li><a href="">contact informatie</a></li>
+                <li class="active navbar-text">Product informatie</li>
+                <ul class="nav-tabs">
+                    <li class="dropdown-menu">
+                        <p>
+                            Beschrijving: <?= $voorwerp['Beschrijving']; ?>
+                        </p>
+                    </li>
+                </ul>
+                <li class="navbar-text">details</li>
+                <ul class="nav-tabs">
+                    <li class="dropdown-menu">
+                        <p>
+                            Verzendkosten: <?= $voorwerp['Verzendkosten']; ?><br>
+                            Verkoopprijs: <?= $voorwerp['Verkoopprijs']; ?><br>
+                            Verzendkosten: <?= $voorwerp['Verzendkosten']; ?><br>
+                            Betalingsinstructie: <?= $voorwerp['Betalingsinstructie']; ?><br>
+                            Verzendinstructies: <?= $voorwerp['Verzendinstructies']; ?><br>
+                        </p>
+                    </li>
+                </ul>
+                <li class="navbar-text">contact informatie</li>
+                <ul class="nav-tabs">
+                    <li class="dropdown-menu">
+                        <p>
+                            Verkoper: <?= $voorwerp['Verkoper']; ?>
+                        </p>
+                    </li>
+                </ul>
             </ul>
+        </div>
+        <div class="col-md-12">
+
         </div>
     </div>
 </div>

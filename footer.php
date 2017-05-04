@@ -1,7 +1,7 @@
 </main>
 
 <footer>
-    <nav class="navbar navbar-default navbar-bottom ">
+    <nav class="navbar navbar-default navbar-bottom fontSize16 ">
         <div class="container-fluid footer navbar-bottom footer">
             <ul class="nav navbar-nav text-center">
                 <li class="navbar-text textWhite">

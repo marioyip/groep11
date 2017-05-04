@@ -51,21 +51,21 @@ include 'header.html';
                             <input type="password" class="form-control" id="pwd" placeholder="Herhaal uw het wachtwoord" >
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Geboortedatum:</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="email" value=">
+                            <input type="date" class="form-control" id="email" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Telefoonnnummer:</label>
+                        <label class="control-label col-sm-2" for="pwd">Telefoon<br>nnummer:</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="pwd" placeholder="1234567890">
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Beveiligingsvraag:</label>
+                        <label class="control-label col-sm-2" for="pwd">Beveiligings<br>vraag:</label>
                         <div class="col-sm-10">
                             <select name="Kies een vraag: ">
                                 <option value="huisdier">Wat is mijn favoriete huisdier?</option>
