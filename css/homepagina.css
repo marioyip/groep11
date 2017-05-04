@@ -82,7 +82,10 @@ p {
     height: 120px;
 }
 
-
+.textWhite{
+    font-family: "Baskerville Old Face", sans-serif;
+    color: black;
+}
 
 .marginTop20{
     margin-top: 20px;
@@ -92,8 +95,8 @@ p {
     height: 90px;
 }
 
-.textWhite{
-    color: white;
+footer {
+    margin: 50px 0;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */

@@ -17,32 +17,32 @@ include 'header.html';
                         <h3>Accountgegevens</h3>
                         <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="email" placeholder="Kees">
+                            <input type="text" class="form-control" id="email" placeholder="Kees" value="<?=isset($postdata['Voornaam'])?$postdata['Voornaam']:""?>>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Achternaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pwd" placeholder="van Dalen">
+                            <input type="text" class="form-control" id="pwd" placeholder="van Dalen" value="<?=isset($postdata['Achternaam'])?$postdata['Achternaam']:""?>>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="k.vandalen@email.com">
+                            <input type="email" class="form-control" id="email" placeholder="k.vandalen@email.com" value="<?=isset($postdata['emailadres'])?$postdata['emailadres']:""?>>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Gebruiekrsnaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pwd" placeholder="keesvdalen">
+                            <input type="text" class="form-control" id="pwd" placeholder="keesvdalen" value="<?=isset($postdata['Gebruikersnaam'])?$postdata['Gebruikersnaam']:""?>>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Wachtwoord:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="email" placeholder="Voer een wachtwoord in">
+                            <input type="password" class="form-control" id="email" placeholder="Voer een wachtwoord in" value="<?=isset($postdata['Wachtwoord'])?$postdata['Wachtwoord']:""?>>
                         </div>
                     </div>
                     <div class="form-group">

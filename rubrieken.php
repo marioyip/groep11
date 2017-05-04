@@ -78,7 +78,7 @@ include 'header.html';
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5850&n=Vrijetijd">Vrijetijd</a>&nbsp;(0)</li>
                 </ul>
             </div>
-            <div class="col-md-4 marginTop20 text-left">
+            <div class="col-md-4 marginTop20">
                 <ul>
                     <li style="padding: 0px; margin: 10px 0px 6px 0px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5499&n=Consumentenelektronica"><b>Consumentenelektronica</b></a>&nbsp;(0)</li>
                     <li style="padding: 0px; margin: 0px 0px 2px 15px;"><a href="http://www.veilinghuiseenmaalandermaal.com/catalog.asp?catid=5501&n=Beveiligingscameras">Beveiligingscamera's</a>&nbsp;(0)</li>
