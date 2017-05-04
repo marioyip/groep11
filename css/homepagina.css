@@ -6,6 +6,8 @@
 
 }
 
+
+
 .marginright10 {
     margin-right: 10px;
 }
@@ -16,6 +18,7 @@
 
 html{
     font-family: "Baskerville Old Face", serif;
+    height: 100%;
 }
 
 p {
