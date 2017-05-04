@@ -6,8 +6,11 @@
 
 }
 
+.marginLeft200{
+    margin-left: 200px;
+}
+
 html{
-    background-color: black;
     font-family: "Baskerville Old Face", serif;
 }
 
@@ -22,10 +25,12 @@ p {
 }
 
 .privacyverklaring h2, h1 {
-    text-decoration: underline;
     font-size:35px;
 }
 
+.textCenter{
+    text-align: center;
+}
 ol {
     list-style-type: lower-roman;
 }
@@ -44,7 +49,7 @@ ol {
     height: 500px;
 }
 .col-md-12{
-    background-color: #e3e3e3;
+    background-color: #88B04B;
 }
 
 .col-md-6 {
@@ -80,6 +85,7 @@ ol {
     border-style: solid;
     margin: 0.5%;
     padding: 10px;
+    background-color: white;
 }
 
 .itemBox p{
@@ -101,6 +107,9 @@ ol {
     color: black;
 }
 
+body{
+    background-color: #FAFAFA;
+}
 .marginTop20{
     margin-top: 20px;
 }
@@ -109,9 +118,23 @@ ol {
     height: 90px;
 }
 
-footer {
-    margin: 50px 0;
+.backgroundGreen{
+    background-color: #88B04B;
 }
 
-/* Background images are set within the HTML using inline CSS, not here */
+.navbar{
+    margin-bottom: 0px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.navbar-text{
+    color: white;
+}
+
+body::after {
+    position: absolute;
+}
 

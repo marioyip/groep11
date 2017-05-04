@@ -43,7 +43,7 @@
         </a>
 
     </div>
-    <div class="container marginTop20 radius">
+    <div class="container marginTop20 radius backgroundGreen">
         <div class="col-md-12 " align="center">
             <h1 class="textWhite">Aanbevolen voor jou</h1>
         </div>
@@ -53,7 +53,7 @@
             <h4><a href="productpagina.php">Laptop</a></h4>
             <img class="imgStyle" src="media/laptop.png">
             <div class="description"><strong>Productbeschrijving: </strong>Dit is een mooie laptop.</div>
-            <a href="productpagina.php"<button type="button" class="btn">Bieden</button>
+            <button type="button" class="btn">Bieden</button>
         </div>
         <div class="col-md-4 itemBox" align="center">
             <h4><a href="productpagina.php">Grasmaaier</a></h4>

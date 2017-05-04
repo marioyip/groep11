@@ -1,7 +1,3 @@
-.marginBottom40{
-
-}
-
 .textWhite{
     font-family: "Baskerville Old Face", sans-serif;
     color: white;
@@ -9,4 +5,8 @@
 
 .marginLeft5{
     margin-left: 5px;
+}
+
+.brilliantWhite{
+    color: #EDF1FE;
 }
