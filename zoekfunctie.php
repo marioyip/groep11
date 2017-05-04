@@ -1,4 +1,5 @@
 <?php
+include ('header.html');
 ini_set('display_errors', 1);
 $dbPassword = "";
 $dbUserName = "sa";
@@ -9,15 +10,15 @@ $pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //zoektermen
-$title = "titel";
+$title = "Titel";
 $id = "voorwerpnummer";
-$from = "";
-$where = "";
+$from = "Voorwerp";
+$where = "Titel";
 
 
-$query1 = ("Select $title, $id FROM  WHERE LIKE ?");
+$query1 = ("Select $title, $id FROM $from WHERE $where LIKE ?");
 $data = $pdo->prepare($query1);
-$data->execute(["%".$_POST['zoeken']."%"]);
+$data->execute(["%".$_POST['']."%"]);
 
 
 $table = "<table>";
@@ -28,5 +29,5 @@ while ($row = $data->fetch()){
 $table .="</table>";
 
 echo $table;
-
+include ('footer.php');
 ?>

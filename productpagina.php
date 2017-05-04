@@ -17,13 +17,11 @@ $where = "voorwerpnummer";
 //query opstellen
 $query1 = "SELECT * FROM Voorwerp $dbName WHERE $id = ?";
 $data = $pdo->prepare($query1);
-$data->execute([$_GET['id']]);
+//$data->execute([$_GET['']]);
 
 $details = "";
 
 $voorwerp = $data->fetch();
-$VeilingGesloten = $data->fetch();
-
 
 $veiling = "";
 $veilinggesloten = "\"VeilingGesloten?\"";
@@ -44,7 +42,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
     <div class="row">
         <div class="col-md-6">
             <h1 class="page-header"><?= $voorwerp['Titel']; ?></h1>
-            <img src="img/<?= $film['VoorwerpCover']; ?>" height='200' width='250'/>
+            <img src="img/<?= $voorwerp['VoorwerpCover']; ?>" height='200' width='250'/>
         </div>
         <div class="col-md-6">
             <h2>De veiling is <?=$veiling ?></h2>
