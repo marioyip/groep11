@@ -11,7 +11,7 @@
 
 <html>
 <div class="container marginTop20 radius">
-    <div class="col-md-12 " align="left">
+    <div class="col-md-12 privacyverklaring " align="left">
         <!-- dit is opgesteld door middel van het  template te vinden op https://www.karelgeenen.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/ -->
         <h1>Privacybeleid EenmaalAndermaal</h1>
 
@@ -28,7 +28,6 @@
         <p>EenmaalAndermaal respecteert de privacy van alle gebruikers van haar site en draagt er zorg voor dat de
             persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld.</p>
 
-        <h2>Ons gebruik van verzamelde gegevens</h2>
         <h2>Gebruik van onze diensten</h2>
         <p>Wanneer u zich aanmeldt voor een van onze diensten vragen we u om persoonsgegevens te verstrekken. Deze
             gegevens worden gebruikt om de dienst uit te kunnen voeren. De gegevens worden opgeslagen op eigen
@@ -54,9 +53,9 @@
         <p>We controleren regelmatig of we aan dit privacybeleid voldoen. Als u vragen heeft over dit privacybeleid,
             kunt u contact met ons opnemen:</p>
         <p>
-        <ul>EenmaalAndermaal</ul>
-        <ul>Ruiterberglaan 26</ul>
-        <ul>026-1234567</ul>
+        <ol>EenmaalAndermaal</ol>
+        <ol>Ruitenberglaan 26</ol>
+        <ol>EenmaalAndermaal@veiling.nl</ol>
         </p>
     </div>
 </div>

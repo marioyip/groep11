@@ -13,9 +13,22 @@ html{
 
 p {
     font-family: "Baskerville Old Face", serif;
-    font-size: 25px;
+    font-size: 20px;
 }
 
+.privacyverklaring {
+    font-family: "Baskerville Old Face", serif;
+    font-size: 20px;
+}
+
+.privacyverklaring h2, h1 {
+    text-decoration: underline;
+    font-size:35px;
+}
+
+ol {
+    list-style-type: circle;
+}
 .container-fluid{
     padding-top: 10px;
     padding-bottom: 10px;
