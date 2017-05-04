@@ -65,7 +65,7 @@ if ($errors) {
 $html = "";
 $html .= "<p>Beste $voornaam $achternaam je bent aangemeld voor Eenmaal Andermaal.</p>";
 
-include('headera.html');
+include('header.html');
 if ($errors) {
     echo $errors;
 } else {
@@ -73,4 +73,4 @@ if ($errors) {
     insertUserInDatabase($username, $password, $voornaam, $achternaam, $email, $geboortedatum);
     header("location: index.php");
 }
-include('footera.php');
+include('footer.php');
