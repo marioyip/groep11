@@ -1,5 +1,3 @@
-</main>
-
 <footer>
     <nav class="navbar navbar-default navbar-bottom fontSize16 ">
         <div class="container-fluid footer navbar-bottom footer">
