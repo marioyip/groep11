@@ -18,7 +18,7 @@
     <div>
         <h1>Contact</h1>
         <hr>
-        <h2>Schrijf hier wat je dwars zit</h2>
+        <h2>Lucht je hart</h2>
     </div>
     <div>
         <br>
@@ -54,7 +54,15 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.0254106741404!2d5.94810026525595!3d51.98819048325708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a46f929cd183%3A0xcdf70958de3cc196!2sFaculteit+Techniek+HAN+University!5e0!3m2!1sen!2snl!4v1493913562058" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
+    <hr>
+    <div class="col-md-12">
+        <h1>FAQ</h1>
+            <div>
+                <h3>Is registreren gratis?</h3>
+                <h4>&#8594; JA! Natuurlijk is registreren gratis!</h4>
+            </div>
+    </div>
 
 </div>
 
-<?php include 'footer.php'?>
+<?php //include 'footer.php'?>
