@@ -2,24 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eenmaal Andermaal - </title>
-    <!-- Latest compiled and minified CSS -->
+    <title>Home - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/homepagina.css">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/homepagina.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <?php include 'header.html';
 ?>
+<main>
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -112,6 +106,7 @@
             <h4><a href="productpagina.php">Product A</a></h4>
         </div>
     </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -125,6 +120,7 @@
         })
     </script>
 
-
+</body>
+</html>
 <?php include 'footer.php';
 ?>

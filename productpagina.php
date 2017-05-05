@@ -2,19 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eenmaal Andermaal - </title>
-    <!-- Latest compiled and minified CSS -->
+    <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/homepagina.css">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/homepagina.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -56,6 +49,7 @@ include 'header.html';
 
 echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
 ?>
+<main>
 
 <div class="container">
     <div class="row">
@@ -91,52 +85,58 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
         </div>
     </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 marginTop20">
-            <div class="container">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">Product informatie</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Details</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
-                </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 marginTop20">
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">Product informatie</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Details</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
+                    </ul>
 
-                <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-                        <h3>Product informatie</h3>
-                        <p>De zeildag naar Volendam
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <h3>Product informatie</h3>
+                            <p>De zeildag naar Volendam
 
-                            Ook hier is de aanvang 9.30 uur en staat de koffie al voor je klaar. Om 10.00 uur vaar je
-                            Bataviahaven in Lelystad uit.
-                            Er wordt koers gezet naar de Gouwzee, waar je na ongeveer 2 uur arriveert.
-                            De Stedemaeght ligt te diep in het water om Volendam binnen te varen, waardoor je een extra
-                            tochtje op een tender maakt om naar de vaste wal te komen. Je wordt afgezet op de Dijk van
-                            Volendam, waar je ruim een uur de gelegenheid krijgt voor een kijkje in de winkeltjes en een
-                            drankje op de terrasjes. Na een uitgebreid lunchbuffet en in de loop van de middag een
-                            borrelgarnituur gaat het anker weer op voor de terugreis naar de
-                            Bataviahaven waar je tussen 17.00 uur en 17.30 uur terugkeert. Met een heus “tabee” aan de
-                            bemanning neem je afscheid.</p>
-                    </div>
-                    <div id="menu1" class="tab-pane fade">
-                        <h3>Details</h3>
-                        <p>Niet één, niet twee, maar drie masten - gelukkig houdt het daar op, want een schip vol met
-                            masten
-                            belemmert juist weer een voorspoedige zeiltocht én het uitzicht.
-                            Ervaar zelf dat dit precies het goede aantal is tijdens een zeiltocht op driemaster de
-                            Stedemaeght voor 1 of 2 personen.</p>
-                    </div>
-                    <div id="menu2" class="tab-pane fade">
-                        <h3>Contact informatie</h3>
-                        <p>Stedemaeght Charters</p>
+                                Ook hier is de aanvang 9.30 uur en staat de koffie al voor je klaar. Om 10.00 uur vaar
+                                je
+                                Bataviahaven in Lelystad uit.
+                                Er wordt koers gezet naar de Gouwzee, waar je na ongeveer 2 uur arriveert.
+                                De Stedemaeght ligt te diep in het water om Volendam binnen te varen, waardoor je een
+                                extra
+                                tochtje op een tender maakt om naar de vaste wal te komen. Je wordt afgezet op de Dijk
+                                van
+                                Volendam, waar je ruim een uur de gelegenheid krijgt voor een kijkje in de winkeltjes en
+                                een
+                                drankje op de terrasjes. Na een uitgebreid lunchbuffet en in de loop van de middag een
+                                borrelgarnituur gaat het anker weer op voor de terugreis naar de
+                                Bataviahaven waar je tussen 17.00 uur en 17.30 uur terugkeert. Met een heus “tabee” aan
+                                de
+                                bemanning neem je afscheid.</p>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Details</h3>
+                            <p>Niet één, niet twee, maar drie masten - gelukkig houdt het daar op, want een schip vol
+                                met
+                                masten
+                                belemmert juist weer een voorspoedige zeiltocht én het uitzicht.
+                                Ervaar zelf dat dit precies het goede aantal is tijdens een zeiltocht op driemaster de
+                                Stedemaeght voor 1 of 2 personen.</p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>Contact informatie</h3>
+                            <p>Stedemaeght Charters</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            </class>
-
-
         </div>
     </div>
-</div>
+</body>
+
+</html>
 <?php echo $details;
 
 include 'footer.php';
