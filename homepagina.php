@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
 </head>
 <body>
 
@@ -63,25 +64,44 @@
         </div>
     </div>
     <div class="container marginTop20">
-        <div class="col-md-4 itemBox" align="center">
-            <h4><a href="productpagina.php">Laptop</a></h4>
+        <div class="col-md-3 itemBox" align="center">
             <img class="imgStyle" src="media/laptop.png">
-            <div class="description"><strong>Productbeschrijving: </strong>Dit is een mooie laptop.</div>
-            <button type="button" class="btn">Bieden</button>
+            <h4><a href="productpagina.php">Laptop</a></h4>
+            <div class="description marginTop5">Dit is een mooie laptop.</div>
+            <a href="productpagina.php" class="btn btn-info" role="button">Bieden</a>
         </div>
-        <div class="col-md-4 itemBox" align="center">
+
+        <div class="col-md-3 itemBox" align="center">
+            <img class="imgStyle" src="media/grasmaaier.JPG">
             <h4><a href="productpagina.php">Grasmaaier</a></h4>
-            <img src="media/grasmaaier.JPG">
-            <div class="description"><strong>Productbeschrijving: </strong>Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna 100% efficiënt.</div>
-            <button type="button" class="btn">Bieden</button>
+            <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
+                100% efficiënt.
+            </div>
+            <a href="productpagina.php" class="btn btn-info" role="button">Bieden</a>
         </div>
-        <div class="col-md-4 itemBox" align="center">
+
+        <div class="col-md-3 itemBox" align="center">
+            <img class="imgStyle" src="media/fauteuil.jpg">
             <h4><a href="productpagina.php">Fauteuil</a></h4>
-            <img src="media/fauteuil.jpg">
-            <div class="description"><strong>Productbeschrijving: </strong>Mooie fauteuil van Eleonora met draaibare zitting.
-                Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële look.
-                </div>
-            <button type="button" class="btn">Bieden</button>
+            <div class="description marginTop5">Mooie fauteuil van Eleonora met draaibare zitting.
+                Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
+                look.
+            </div>
+            <a href="productpagina.php" class="btn btn-info" role="button">Bieden</a>
+        </div>
+
+        <div class="col-md-3 itemBox" align="center">
+            <img class="imgStyle" src="media/iphone.jpg">
+            <h4><a href="productpagina.php">iPhone SE</a></h4>
+            <div class="description marginTop5">
+                Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
+            </div>
+            <a href="productpagina.php" class="btn btn-info" role="button">Bieden</a>
+        </div>
+    </div>
+    <div class="container marginTop20 radius backgroundGreen">
+        <div class="col-md-12 " align="center">
+            <h1 class="textWhite">Nieuwe veilingen</h1>
         </div>
     </div>
     <div class="container">

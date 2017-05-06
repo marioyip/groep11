@@ -1,22 +1,21 @@
-.marginTop100{
+.marginTop100 {
     margin-top: 100px;
 }
 
-.jumbotron{
+.jumbotron {
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
-.marginLeft200{
+.marginLeft200 {
     margin-left: 200px;
 }
 
-html{
+html {
     font-family: "Baskerville Old Face", serif;
 }
 
 p {
-    font-family: "Baskerville Old Face", serif;
     font-size: 20px;
 }
 
@@ -26,25 +25,24 @@ p {
 }
 
 .privacyverklaring h2, h1 {
-    font-size:35px;
+    font-size: 35px;
 }
 
-.textCenter{
+.textCenter {
     text-align: center;
 }
+
 ol {
     list-style-type: lower-roman;
 }
-.container-fluid{
+
+.container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.radius{
-    border-radius: 3%;
-}
 .carousel,
-.item{
+.item {
     height: 500px;
 }
 
@@ -64,67 +62,183 @@ ol {
     -o-background-size: cover;
 }
 
-.itemHeight500{
+.itemHeight500 {
     height: 500px;
 }
 
-.itemBox{
-    width: 32%;
-    height: 300px;
-    border-radius: 3%;
+.itemBox {
+    height: 400px;
+    width: 265px;
     text-align: center;
     border-color: #e3e3e3;
     border-width: 1px;
     border-style: solid;
-    margin: 0.5%;
-    padding: 10px;
+    margin: 10px;
 }
 
-.itemBox p{
+.itemBox p {
     color: red;
 }
 
-.itemBox img {
-    width: 120px;
-    height: 120px;
+.imgStyle {
+    width: 100%;
+    height: 60%;
+
 }
 
-.imgStyle{
-    width: 120px;
-    height: 120px;
-}
-
-.textWhite{
-    font-family: "Baskerville Old Face", sans-serif;
-    color: black;
-}
-
-body{
+body {
     background-color: #FAFAFA;
 }
-.marginTop20{
+
+.marginTop20 {
     margin-top: 20px;
 }
 
+.marginTop10 {
+    margin-top: 10px;
+}
 
-.marginRight10{
+.marginTop5 {
+    margin-top: 5px;
+}
+
+.marginTop30 {
+    margin-top: 30px;
+}
+
+.marginTop35{
+    margin-top: 35px;
+}
+
+.marginTop40 {
+    margin-top: 40px;
+}
+
+.marginTop50 {
+    margin-top: 50px;
+}
+
+.marginRight10 {
     margin-right: 10px;
 }
 
-.description{
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+.marginBottom20 {
+    margin-bottom: 10px;
+}
+
+.marginBottom30 {
+    margin-bottom: 10px;
+}
+
+.marginBottom40 {
+    margin-bottom: 10px;
+}
+
+.marginBottom50 {
+    margin-bottom: 10px;
+}
+
+.marginBottom60 {
+    margin-bottom: 10px;
+}
+
+.marginBottom70 {
+    margin-bottom: 10px;
+}
+
+.marginLeft15 {
+    margin-left: 15px;
+}
+
+.marginLeft10 {
+    margin-left: 10px;
+}
+
+.marginLeft20 {
+    margin-left: 20px;
+}
+
+.marginLeft30 {
+    margin-left: 30px;
+}
+
+.marginLeft40 {
+    margin-left: 40px;
+}
+
+.paddingBottom10 {
+    padding-bottom: 10px;
+}
+
+.paddingBottom20 {
+    padding-bottom: 20px;
+}
+
+.paddingBottom30 {
+    padding-bottom: 30px;
+}
+
+.paddingBottom40 {
+    padding-bottom: 40px;
+}
+
+.paddingBottom50 {
+    padding-bottom: 50px;
+}
+
+.paddingBottom5 {
+    padding-bottom: 5px;
+}
+
+.loginBox {
+    background-color: white;
+    height: 300px;
+    margin: 10px;
+    margin-bottom: 200px;
+}
+
+.textSize11 {
+    font-size: 11px;
+}
+
+.textSize12 {
+    font-size: 12px;
+}
+
+.textSize13 {
+    font-size: 13px;
+}
+
+.textSize14 {
+    font-size: 14px;
+}
+
+.textSize15 {
+    font-size: 16px;
+}
+
+.textSize20 {
+    font-size: 20px;
+}
+
+.description {
     height: 90px;
 }
 
-.backgroundGreen{
+.backgroundGreen {
     background-color: #88B04B;
 }
 
-.logo{
+.logo {
     width: 50px;
     height: 50px;
 }
 
-.logoTekst{
+.logoTekst {
     height: 50px;
     width: 250px;
 }
@@ -133,7 +247,7 @@ footer {
     margin-top: 50px;
 }
 
-.navbar-text{
+.navbar-text {
     color: white;
 }
 
@@ -141,43 +255,38 @@ body::after {
     position: absolute;
 }
 
-
-
-.textWhite{
+.textWhite {
     color: white;
 }
 
-.fontSize16{
+
+.fontSize16 {
     font-size: 16px;
 }
 
-.textWhite{
-    font-family: "Baskerville Old Face", sans-serif;
-    color: white;
-}
-
-.marginLeft5{
+.marginLeft5 {
     margin-left: 5px;
 }
 
-.brilliantWhite{
+.brilliantWhite {
     color: #EDF1FE;
 }
 
+.textGreen {
+    color: #88B04B;
+}
 
-
-.footer{
-    height:65px;
+.footer {
+    height: 65px;
     margin-bottom: 0;
     color: white;
     /*position: fixed;*/
-    clear:both;
+    clear: both;
     bottom: 0;
     width: 100%;
 }
 
-
-.navbar-default .navbar-nav > li > a{
+.navbar-default .navbar-nav > li > a {
     color: white;
 }
 
