@@ -9,6 +9,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -62,10 +64,8 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
 
         <div class="col-md-6 marginBottom20">
             <div class="imageBox">
-                <img src="img/<?= $voorwerp['VoorwerpCover']; ?>" height='200' width='250'/>
+                <img src="img/<?= $voorwerp['VoorwerpCover']; ?>"/>
             </div>
-
-
         </div>
         <div class="col-md-6">
             <div class="veilingBox">
@@ -135,11 +135,14 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
             </div>
         </div>
     </div>
+</div>
+
 </body>
 
 </html>
-<?php echo $details;
 
+<?php echo $details;
 include 'footer.php';
 ?>
+
 

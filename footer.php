@@ -51,10 +51,11 @@
                     <ul>
                         <li>
                             <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center" placeholder="Email ">
-                                <button class="btn  bg-gray" type="button">Inschrijven<i class="fa fa-long-arrow-right"> </i> </button>
+                                <input type="text" class="full text-center">
+                                <button class="btn textDarkGray newsButtonGray bg-gray" type="button">Inschrijven<i class="fa fa-long-arrow-right"> </i> </button>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -66,15 +67,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <p class="pull-left"> Eenmaal Andermaal © 2017  </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                    <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul>
-            </div>
+            <p class="text-center fontSize11"> Eenmaal Andermaal © 2017  </p>
         </div>
     </div>
     <!--/.footer-bottom-->
