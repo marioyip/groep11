@@ -162,6 +162,9 @@ include 'header.html';
 
         </div>
     </div>
+    <?php
+    include 'footer.php';
+    ?>
 </body>
 
 </html>
@@ -170,6 +173,3 @@ include 'header.html';
     <script src="js/bootstrap.min.js"></script>
 
 
-<?php
-include 'footer.php';
-?>
