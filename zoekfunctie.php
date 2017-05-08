@@ -19,7 +19,10 @@
 include('header.html');
 ini_set('display_errors', 1);
 
-connectToDatabase();
+$pw = "dbrules";
+$username = "sa";
+$hostname = "localhost";
+$dbname = "iconcepts";
 
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
