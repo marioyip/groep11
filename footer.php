@@ -12,7 +12,7 @@
                             <a class="textWhite" href="registreren.php">Registreren</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="profielpagina.html">Mijn biedprofiel</a>
+                            <a class="textWhite" href="inloggen.php">Mijn biedprofiel</a>
                         </li>
                     </ul>
                 </div>
@@ -23,7 +23,7 @@
                             <a class="textWhite" href="infopagina.html">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="media/algemene_voorwaarden.pdf">Voorwaarden</a>
+                            <a class="textWhite" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
                             <a class="textWhite" href="privacyverklaring.php">Privacy</a>
@@ -51,8 +51,8 @@
                     <ul>
                         <li>
                             <div class="input-append newsletter-box text-center">
-                                <input title="inschrijven" type="text" class="full text-center textDarkGray ">
-                                <button class="btn textDarkGray newsButtonGray bg-gray" type="button">Inschrijven<i class="fa fa-long-arrow-right"> </i> </button>
+                                <input title="inschrijven" type="text" class="full text-center textDarkGray form-control fontSize16"><br>
+                                <button class="textDarkGray newsButtonGray bg-gray btn btn-default " type="button">Inschrijven </button>
                             </div>
                         </li>
 
