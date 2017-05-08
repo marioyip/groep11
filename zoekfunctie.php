@@ -32,10 +32,11 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $title = "Titel";
 $id = "Voorwerpnummer";
 $from = "Voorwerp";
+$zoekterm = $_POST['zoeken'];
 
-$query1 = ("Select $title, $id FROM $from WHERE $id LIKE ?");
-$data = $pdo->prepare($query1);
-$data->execute(["%".$_POST['zoeken']."%"]);
+$query = ("Select $title, $id FROM $from WHERE $id LIKE ?");
+$data = $pdo->prepare($query);
+$data->execute(array("%".$zoekterm."%"));
 
 
 $table = "<table>";
