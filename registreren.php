@@ -81,7 +81,7 @@ include 'header.html';
 
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <label class="control-label col-sm-2" for="pwd">Beveiligings<br>vraag:>
+                            <label class="control-label col-sm-2" for="pwd">Beveiligings<br>vraag:
                                 <select name="Kies een vraag: ">
                                     <option value="huisdier">Wat is mijn favoriete huisdier?</option>
                                     <option value="geboorteplaats">Wat is mijn geboorteplaats?</option>
