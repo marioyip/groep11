@@ -34,7 +34,7 @@ $id = "Voorwerpnummer";
 $from = "Voorwerp";
 $zoekterm = $_POST['zoeken'];
 
-$query = ("Select $title, $id FROM $from WHERE $id LIKE ?");
+$query = ("Select $title, $id FROM $from (WHERE $id LIKE ?) || (WHERE $title LIKE ?)");
 $data = $pdo->prepare($query);
 $data->execute(array("%".$zoekterm."%"));
 
