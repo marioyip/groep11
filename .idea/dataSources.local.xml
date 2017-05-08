@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="SQL Server (Microsoft) - iconcepts@localhost" uuid="4ca6044a-eef5-497f-8a9b-9e0e25f560e1">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>iconcepts:INFORMATION_SCHEMA,db_accessadmin,db_backupoperator,db_datareader,db_datawriter,db_ddladmin,db_denydatareader,db_denydatawriter,db_owner,db_securityadmin,dbo,guest,sys</introspection-schemas>
+    </data-source>
+  </component>
+</project>
