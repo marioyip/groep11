@@ -40,7 +40,7 @@ include 'header.html';
                     <div class="form-group">
                         <label class="control-label col-sm-3"  for="pwd">Wachtwoord</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pwd">
+                            <input type="password" class="form-control" id="pwd">
                         </div>
                     </div>
                     <div class="form-group marginTop35">
