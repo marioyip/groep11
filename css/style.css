@@ -38,6 +38,10 @@ ol {
     list-style-type: lower-roman;
 }
 
+.containerMain{
+    min-height: 1000px;
+}
+
 .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;

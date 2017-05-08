@@ -14,7 +14,6 @@
     <script src="js/functies.js"></script>
 </head>
 <body>
-
 <?php
 ini_set('display_errors', 1);
 
