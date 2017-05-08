@@ -33,7 +33,7 @@ if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
     $stmt->execute();           //Statement uitvoeren
 
     echo '<table>';
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere loop wordt er een tabelrij uitgelezen
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
     {
         echo '<tr>';
         for ($i = 0; $i < count($row); $i++) {
