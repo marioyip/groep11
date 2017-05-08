@@ -19,14 +19,19 @@
 include('header.html');
 ini_set('display_errors', 1);
 
-connectToDatabase();
 
-$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+$pw = "dbrules";
+$userName = "sa";
+$dbServer = "localhost";
+$dbName = "iconcepts";
+
+$pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0;");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
     $searchResult = "'%" . $_GET["zoeken"] . "%'";
     $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
-    $stmt = $db->prepare($sql); //Statement object aanmaken
+    $stmt = $dbName->prepare($sql); //Statement object aanmaken
     $stmt->execute();           //Statement uitvoeren
 
     echo '<table>';
