@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa6354a-8463-43b0-8852-4dc2c7840098" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca6044a-eef5-497f-8a9b-9e0e25f560e1/_metadata_/metadata_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -166,7 +162,6 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -363,7 +358,7 @@
       <workItem from="1493718185673" duration="638000" />
       <workItem from="1493801998507" duration="2984000" />
       <workItem from="1493817470923" duration="36427000" />
-      <workItem from="1494251055021" duration="1536000" />
+      <workItem from="1494251055021" duration="1731000" />
     </task>
     <task id="LOCAL-00001" summary="de footer is niet meer fixed">
       <created>1493818927698</created>
@@ -467,7 +462,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42120000" />
+    <option name="totallyTimeSpent" value="42315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
