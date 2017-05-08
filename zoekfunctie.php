@@ -24,32 +24,37 @@ $username = "sa";
 $hostname = "localhost";
 $dbname = "iconcepts";
 
-$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0","$username","$pw");//verbinding maken met de database
+$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
-$searchResult = "'%".$_GET["zoeken"]."%'";
-$sql = "SELECT Titel, Voorwerpnummer FROM Voorwerp where Voorwerp.Titel like $searchResult";
-$stmt = $db->prepare($sql); //Statement object aanmaken
-$stmt->execute();           //Statement uitvoeren
+if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
+    $searchResult = "'%" . $_GET["zoeken"] . "%'";
+    $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
+    $stmt = $db->prepare($sql); //Statement object aanmaken
+    $stmt->execute();           //Statement uitvoeren
 
-
-echo '<table>';
-while($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere loop wordt er een tabelrij uitgelezen
-{
-    echo '<tr>';
-    for($i=0;$i<count($row);$i++)
+    echo '<table>';
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
     {
-        echo '<td>
-                
-                    <a href="productpagina.php">'.$row[$i].'</a>
-                
-             </td>'; //Loop de rij af
+        echo '<tr>';
+        for ($i = 0; $i < count($row); $i++) {
+
+            echo '
+                <td>
+                    <a href="productpagina.php">' . $row[$i] . '&nbsp;</a>
+                </td>'; //Loop de rij af
+        }
+
+        echo '</tr>';
     }
-    echo '</tr>';
+    echo '</table>';
+
+
+} else {
+    echo '
+        <div class="alert alert-danger textCenter">
+            <strong>Fout</strong> Voer een zoekterm in!
+        </div>';
 }
-echo '</table>';
-
-
 
 include('footer.php');
-
 ?>
