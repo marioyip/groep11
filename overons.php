@@ -16,6 +16,8 @@
 <?php include 'header.html';
 ?>
 <main>
+    <div class="containerMain">
+    </div>
 
 </body>
 </html>
