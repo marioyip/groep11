@@ -18,10 +18,7 @@
 <?php
 ini_set('display_errors', 1);
 
-$dbPassword = "Sl4gz!n97";
-$dbUserName = "sa";
-$dbServer = "localhost";
-$dbName = "iconcepts";
+connectToDatabase();
 
 $pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

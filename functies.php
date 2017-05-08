@@ -1,6 +1,6 @@
 <?php
 function connectToDatabase() {
-    $pw = "Sl4gz!n97";
+    $pw = "dbrules";
     $userName = "sa";
     $dbServer = "localhost";
     $dbName = "iconcepts";
