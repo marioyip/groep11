@@ -51,7 +51,7 @@
                     <ul>
                         <li>
                             <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center">
+                                <input type="text" class="full text-center ">
                                 <button class="btn textDarkGray newsButtonGray bg-gray" type="button">Inschrijven<i class="fa fa-long-arrow-right"> </i> </button>
                             </div>
                         </li>

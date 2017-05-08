@@ -19,32 +19,33 @@
 include('header.html');
 ini_set('display_errors', 1);
 
-$dbPassword = "Sl4gz!n97";
-$dbUserName = "sa";
-$dbServer = "localhost";
-$dbName = "iconcepts";
+$pw = "dbrules";
+$username = "sa";
+$hostname = "localhost";
+$dbname = "iconcepts";
+
+$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0","$username","$pw");
+
+$searchResult = "'%".$_GET["zoeken"]."%'";
+$sql = "SELECT * FROM Voorwerp where Voorwerpnummer like $searchResult";
+$stmt = $db->prepare($sql); //Statement object aanmaken
+$stmt->execute();           //Statement uitvoeren
 
 
-$pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//zoektermen
-$title = "Titel";
-$id = "Voorwerpnummer";
-$from = "Voorwerp";
-$zoekterm = $_POST['zoeken'];
-
-$query = ("Select $title, $id FROM $from WHERE $id LIKE ?");
-$data = $pdo->prepare($query);
-$data->execute(array("%".$zoekterm."%"));
-
-
-$table = "<table>";
-
-while ($row = $data->fetch()) {
-    $table .= "<tr><td><a href='productpagina.php?id=$row[$id]'>$row[$title]</a></td><td>$row[$id]</td></tr>";
+echo '<table>';
+while($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere loop wordt er een tabelrij uitgelezen
+{
+    echo '<tr>';
+    for($i=0;$i<count($row);$i++)
+    {
+        echo '<td>'.$row[$i].'</td>'; //Loop de rij af
+    }
+    echo '</tr>';
 }
-$table .= "</table>";
+echo '</table>';
 
-echo $table;
+
+
 include('footer.php');
+
+?>
