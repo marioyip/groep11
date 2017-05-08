@@ -24,10 +24,10 @@ $username = "sa";
 $hostname = "localhost";
 $dbname = "iconcepts";
 
-$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0","$username","$pw");
+$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0","$username","$pw");//verbinding maken met de database
 
 $searchResult = "'%".$_GET["zoeken"]."%'";
-$sql = "SELECT * FROM Voorwerp where Voorwerpnummer like $searchResult";
+$sql = "SELECT Titel, Voorwerpnummer FROM Voorwerp where Voorwerp.Titel like $searchResult";
 $stmt = $db->prepare($sql); //Statement object aanmaken
 $stmt->execute();           //Statement uitvoeren
 
@@ -38,7 +38,11 @@ while($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere loop wordt er een tabelr
     echo '<tr>';
     for($i=0;$i<count($row);$i++)
     {
-        echo '<td>'.$row[$i].'</td>'; //Loop de rij af
+        echo '<td>
+                
+                    <a href="productpagina.php">'.$row[$i].'</a>
+                
+             </td>'; //Loop de rij af
     }
     echo '</tr>';
 }
