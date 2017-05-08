@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/functies.js"></script>
 </head>
 <body>
 
