@@ -20,7 +20,7 @@
                     <h3>Info</h3>
                     <ul>
                         <li>
-                            <a class="textWhite" href="infopagina.html">Help &amp; info</a>
+                            <a class="textWhite" href="infopagina.php">Help &amp; info</a>
                         </li>
                         <li>
                             <a class="textWhite" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
