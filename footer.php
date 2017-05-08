@@ -23,7 +23,7 @@
                             <a class="textWhite" href="infopagina.html">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="media/TERMS_OF_SERVICE.pdf">Voorwaarden</a>
+                            <a class="textWhite" href="media/algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
                             <a class="textWhite" href="privacyverklaring.php">Privacy</a>
