@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="92aead0b-39c1-4619-aebf-f0ae50822667" name="Default" comment="infopagina beter">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solliciteren.php" afterPath="$PROJECT_DIR$/solliciteren.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="solliciteren.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solliciteren.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="2" />
+            <state relative-caret-position="493">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -74,12 +73,10 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="272">
+              <caret line="16" column="115" lean-forward="true" selection-start-line="16" selection-start-column="115" selection-end-line="16" selection-end-column="115" />
               <folding>
-                <marker date="1494337373295" expanded="true" signature="3109:3129" ph="..." />
-                <marker date="1494337373295" expanded="true" signature="3109:3258" ph="..." />
-                <marker date="1494337373295" expanded="true" signature="3109:3276" ph="..." />
+                <marker date="1494338044316" expanded="true" signature="2254:2304" ph="SELECT Rubri... Rubriek" />
               </folding>
             </state>
           </provider>
@@ -88,8 +85,8 @@
       <file leaf-file-name="homepagina.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homepagina.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="173" selection-end-column="2" />
+            <state relative-caret-position="318">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -184,8 +181,8 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/overons.php" />
         <option value="$PROJECT_DIR$/infopagina.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/solliciteren.php" />
+        <option value="$PROJECT_DIR$/header.php" />
       </list>
     </option>
   </component>
@@ -351,6 +348,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SQL/iproject INSERT.sql</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/header.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -558,7 +556,7 @@
       <workItem from="1494253389246" duration="3554000" />
       <workItem from="1494317531250" duration="4595000" />
       <workItem from="1494328514090" duration="1263000" />
-      <workItem from="1494330263584" duration="5726000" />
+      <workItem from="1494330263584" duration="6396000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage">
       <created>1493809836346</created>
@@ -742,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494333058476</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="infopagina beter">
+      <created>1494337392517</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1494337392518</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73826000" />
+    <option name="totallyTimeSpent" value="74496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1256,14 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homepagina.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="173" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infopagina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
@@ -1272,22 +1269,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/homepagina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="272">
+          <caret line="16" column="115" lean-forward="true" selection-start-line="16" selection-start-column="115" selection-end-line="16" selection-end-column="115" />
           <folding>
-            <marker date="1494337373295" expanded="true" signature="3109:3129" ph="..." />
-            <marker date="1494337373295" expanded="true" signature="3109:3258" ph="..." />
-            <marker date="1494337373295" expanded="true" signature="3109:3276" ph="..." />
+            <marker date="1494338044316" expanded="true" signature="2254:2304" ph="SELECT Rubri... Rubriek" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/solliciteren.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="2" />
+        <state relative-caret-position="493">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
