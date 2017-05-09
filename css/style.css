@@ -39,7 +39,7 @@ ol {
 }
 
 .containerMain{
-    min-height: 1000px;
+    min-height: 100vh;
 }
 
 .container-fluid {
@@ -50,6 +50,10 @@ ol {
 .carousel,
 .item {
     height: 500px;
+}
+
+.marginLeft400 {
+    margin-left: 400px;
 }
 
 .carousel-inner {
@@ -424,5 +428,4 @@ body::after {
 }
 
 li{
-    font-size: 20px;
 }

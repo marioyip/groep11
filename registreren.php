@@ -80,10 +80,10 @@ include 'header.php';
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-10">
+                        <div class="col-sm-2">
                             <label class="control-label col-sm-2" for="pwd">Beveiligingsvraag:
-                                <select name="Kies een vraag: " class="marginLeft200">
-                                    <option value="huisdier">Wat is mijn favoriete huisdier?</option>
+                                <select name="Kies een vraag: " class="marginLeft400">
+                                    <option  value="huisdier">Wat is mijn favoriete huisdier?</option>
                                     <option value="geboorteplaats">Wat is mijn geboorteplaats?</option>
                                     <option value="jeugdvriend">Wie is mijn jeugdvriend?</option>
                                     <option value="moeder">Wat is de meisjesnaam van mijn moeder?</option>
