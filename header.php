@@ -50,17 +50,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <?php
-                    /*
+
                     //in localhost is een aparte tabel categorieen aangemaakt - zie google drive voor de statements
 
-                    $pw = "dbrules";
-                    $username = "sa";
-                    $hostname = "localhost";
-                    $dbname = "iconcepts";
+                    $pw = "rPgxSAaf";
+                    $username = "iproject11";
+                    $hostname = "mssql.iproject.icasites.nl";
+                    $dbname = "iproject11";
 
                     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
-                    $sql = "SELECT Name FROM Categorieen where Parent = -1";
+                    $sql = "SELECT Rubrieknaam FROM Rubriek where Rubriek = -1";
                     $stmt = $db->prepare($sql); //Statement object aanmaken
                     $stmt->execute();           //Statement uitvoeren
 
@@ -71,7 +71,7 @@
                             echo '<li><a href="#">' . $row[$i] . '</a></li>';
                         }
                     }
-                    */
+
                     ?>
 
 
