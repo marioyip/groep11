@@ -48,7 +48,7 @@ if ($veilinggesloten == 0) {
     $veiling .= "geopend";
 }
 
-include 'header.html';
+include 'header.php';
 
 echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
 ?>

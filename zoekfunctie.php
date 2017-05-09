@@ -17,7 +17,7 @@
 
 <div class="containerMain">
     <?php
-    include('header.html');
+    include('header.php');
     ini_set('display_errors', 1);
 
     $pw = "dbrules";
