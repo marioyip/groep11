@@ -422,8 +422,7 @@ body::after {
 .catBar{
 
 }
-.vcenter {
-     display: inline-block;
-     vertical-align: middle;
-     float: none;
- }
+
+li{
+    font-size: 20px;
+}
