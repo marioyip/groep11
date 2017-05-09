@@ -19,7 +19,7 @@
 <main>
 
 
-    <div class="containerMain privacyverklaring">
+    <div class="containerMain">
         <div class="container marginTop20">
             <div class="col-md-12 " align="center">
                 <h1 class="textDarkGray">Over ons</h1>
