@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zoekfunctie.php" afterPath="$PROJECT_DIR$/zoekfunctie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registreren.php" afterPath="$PROJECT_DIR$/registreren.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="344" column="24" lean-forward="false" selection-start-line="344" selection-start-column="24" selection-end-line="344" selection-end-column="24" />
+            <state relative-caret-position="521">
+              <caret line="374" column="3" lean-forward="true" selection-start-line="374" selection-start-column="3" selection-end-line="374" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -30,8 +30,8 @@
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="578">
+              <caret line="67" column="36" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -79,9 +79,11 @@
       <file leaf-file-name="productpagina.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/productpagina.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
+            <state relative-caret-position="425">
               <caret line="71" column="54" lean-forward="false" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
-              <folding />
+              <folding>
+                <marker date="1494253357591" expanded="true" signature="1317:1358" ph="SELECT * FRO... ${$from}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +91,8 @@
       <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="17">
+              <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -107,6 +109,16 @@
                 <marker date="1494312896840" expanded="false" signature="1671:1677" ph=" " />
                 <marker date="1494312896840" expanded="true" signature="1855:1937" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registreren.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/registreren.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,7 +199,6 @@
         <option value="$PROJECT_DIR$/profielpagina.html" />
         <option value="$PROJECT_DIR$/rubrieken.php" />
         <option value="$PROJECT_DIR$/privacyverklaring.php" />
-        <option value="$PROJECT_DIR$/registreren.php" />
         <option value="$PROJECT_DIR$/inloggen.php" />
         <option value="$PROJECT_DIR$/productpagina.php" />
         <option value="$PROJECT_DIR$/homepagina.php" />
@@ -196,6 +207,7 @@
         <option value="$PROJECT_DIR$/zoekfunctie.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/registreren.php" />
       </list>
     </option>
   </component>
@@ -390,7 +402,7 @@
       <workItem from="1493900036705" duration="8782000" />
       <workItem from="1493936748561" duration="13231000" />
       <workItem from="1494057481972" duration="20541000" />
-      <workItem from="1494253389246" duration="1854000" />
+      <workItem from="1494253389246" duration="2578000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage">
       <created>1493809836346</created>
@@ -518,11 +530,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494312548623</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Footer gefixed zodat die niet raar midden op het scherm zweeft, ook zoekfunctie wat aangepast kwa foutmelding, footer aangepast in css en php">
+      <created>1494313430500</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1494313430500</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60542000" />
+    <option name="totallyTimeSpent" value="61266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -591,7 +610,8 @@
     <MESSAGE value="Footer v2.0" />
     <MESSAGE value="Animaties toegevoegd." />
     <MESSAGE value="header.html aangepast zodat dat lege kut vakje naast de zoekbalk weg is" />
-    <option name="LAST_COMMIT_MESSAGE" value="header.html aangepast zodat dat lege kut vakje naast de zoekbalk weg is" />
+    <MESSAGE value="Footer gefixed zodat die niet raar midden op het scherm zweeft, ook zoekfunctie wat aangepast kwa foutmelding, footer aangepast in css en php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Footer gefixed zodat die niet raar midden op het scherm zweeft, ook zoekfunctie wat aangepast kwa foutmelding, footer aangepast in css en php" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -820,22 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registreren.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="166" column="6" lean-forward="false" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productpagina.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="54" lean-forward="false" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -869,11 +873,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inloggen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="83" lean-forward="false" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="17">
+          <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="67" column="36" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="374" column="3" lean-forward="true" selection-start-line="374" selection-start-column="3" selection-end-line="374" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productpagina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="71" column="54" lean-forward="false" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+          <folding>
+            <marker date="1494253357591" expanded="true" signature="1317:1358" ph="SELECT * FRO... ${$from}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -890,26 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inloggen.php">
+    <entry file="file://$PROJECT_DIR$/registreren.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="83" lean-forward="false" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="344" column="24" lean-forward="false" selection-start-line="344" selection-start-column="24" selection-end-line="344" selection-end-column="24" />
+        <state relative-caret-position="317">
+          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding />
         </state>
       </provider>
