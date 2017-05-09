@@ -8,7 +8,6 @@ $dbname = "iproject11";
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
 ?>
-//
 
 <header>
     <div class="container-fluid backgroundGreen">
