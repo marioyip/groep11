@@ -99,8 +99,8 @@ if not exists (select * from sysobjects where name='Rubriek')
     Volgnr															INT IDENTITY(1,1)									NOT NULL,		-- int(2)
     Rubriek															INT												NULL,
     CONSTRAINT pk_rubrieknummer										PRIMARY KEY										(rubrieknummer),
-    CONSTRAINT fk_rubriek_ref_rubrieknummer							FOREIGN KEY										(Rubriek)
-    REFERENCES Rubriek												(rubrieknummer)
+    --CONSTRAINT fk_rubriek_ref_rubrieknummer							FOREIGN KEY										(Rubriek)
+    --REFERENCES Rubriek												(rubrieknummer)
   )
 
 if not exists (select * from sysobjects where name='Gebruikerstelefoon')
@@ -215,7 +215,7 @@ ALTER TABLE [dbo].[Bod] DROP CONSTRAINT [fk_BodGebruiker_ref_GebruikerGebruikers
 ALTER TABLE [dbo].[Gebruiker] DROP CONSTRAINT [fk_GebruikerVraag_ref_VraagVraagnummer];
 ALTER TABLE [dbo].[Gebruiker] DROP CONSTRAINT [fk_GebruikerLand_ref_landnaam];
 ALTER TABLE [dbo].[Verkoper] DROP CONSTRAINT [fk_VerkoperGebruiker_ref_GebruikerGebruikersnaam];
-ALTER TABLE [dbo].[Rubriek] DROP CONSTRAINT [fk_rubriek_ref_rubrieknummer];
+
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_verkoper_ref_gebruiker];
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_Koper_ref_Gebruikersnaam];
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_VoorwerpLand_ref_landnaam];
@@ -242,3 +242,5 @@ BEGIN
 END
 GO
 */
+
+-- ALTER TABLE [dbo].[Rubriek] DROP CONSTRAINT [fk_rubriek_ref_rubrieknummer];
