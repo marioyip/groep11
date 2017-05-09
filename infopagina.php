@@ -18,7 +18,7 @@
 <?php include 'header.php';
 ?>
 
-
+<div class="containerMain">
 <div class="container marginTop20 radius">
     <div class="col-md-12 " align="left">
         <h1>Help en Info</h1>
@@ -39,8 +39,8 @@
         </div>
         <div class="container marginTop10">
             <div class="col-md-8 marginTop10">
-                <h3 class="">Zijn er kosten verbonden aan het maken van een profiel?</h3>
-                <h4 class="">&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
+                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>
+                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
                 <h3>Is er een commissie op de verkochte spullen</h3>
                 <h4>&#8594; EenmaalAndermaal rekent een commissie van 10% op elk verkocht product.</h4>
                 <h3>Is er een minimumleeftijd voor het maken van een profiel?</h3>
