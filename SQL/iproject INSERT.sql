@@ -871,109 +871,6 @@ INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdst
 INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/20/2017','Positief','Koper','00:00:00',100);
 SET IDENTITY_INSERT iproject11.dbo.Feedback OFF
 
-SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,1);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(2,2);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(3,3);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(4,4);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(5,5);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(6,6);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(7,7);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(8,8);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(9,9);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(10,10);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(11,11);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(12,12);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(13,13);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(14,14);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(15,15);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(16,16);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(17,17);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(18,18);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(19,19);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(20,20);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(21,21);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(22,22);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(23,23);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(24,24);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(25,25);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(26,26);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(27,27);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(28,28);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(29,29);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(30,30);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(31,31);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(32,32);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(33,33);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(34,34);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(35,35);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(36,36);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(37,37);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(38,38);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(39,39);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(40,40);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(41,41);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(42,42);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(43,43);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(44,44);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(45,45);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(46,46);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(47,47);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(48,48);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(49,49);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(50,50);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(51,51);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(52,52);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(53,53);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(54,54);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(55,55);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(56,56);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(57,57);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(58,58);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(59,59);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(60,60);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(61,61);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(62,62);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(63,63);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(64,64);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(65,65);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(66,66);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(67,67);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(68,68);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(69,69);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(70,70);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(71,71);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(72,72);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(73,73);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(74,74);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(75,75);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(76,76);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(77,77);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(78,78);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(79,79);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(80,80);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(81,81);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(82,82);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(83,83);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(84,84);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(85,85);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(86,86);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(87,87);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(88,88);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(89,89);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(90,90);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(91,91);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(92,92);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(93,93);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(94,94);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(95,95);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(96,96);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(97,97);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(98,98);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(99,99);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(100,100);
-SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek OFF
-
 SET IDENTITY_INSERT iproject11.dbo.Bestand ON
 INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default1  ',1);
 INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default2  ',2);
@@ -4478,6 +4375,108 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179171,'Miners',17919
 INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179172,'Mining-contracten',179197)
 INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld',11116)
 
+SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,1);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,2);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,3);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,4);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,5);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,6);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,7);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,8);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,9);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,10);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,11);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,12);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,13);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,14);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,15);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,16);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,17);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,18);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,19);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,20);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,21);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,22);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,23);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,24);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,25);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,26);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,27);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,28);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,29);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,30);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,31);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,32);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,33);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,34);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,35);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,36);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,37);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,38);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,39);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,40);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,41);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,42);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,43);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,44);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,45);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,46);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,47);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,48);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,49);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,50);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,51);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,52);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,53);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,54);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,55);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,56);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,57);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,58);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,59);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,60);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,61);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,62);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,63);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,64);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,65);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,66);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,67);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,68);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,69);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,70);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,71);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,72);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,73);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,74);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,75);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,76);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,77);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,78);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,79);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,80);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,81);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,82);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,83);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,84);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,85);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,86);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,87);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,88);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,89);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,90);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,91);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,92);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,93);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,94);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,95);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,96);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,97);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,98);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,99);
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,100);
+SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek OFF
 --GO
 --ALTER TABLE Rubriek CHECK CONSTRAINT FK_RubriekCategorie
 
@@ -4584,6 +4583,7 @@ INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUE
 INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',100,'2017/07/09','00:00:00',100);
 SET IDENTITY_INSERT iproject11.dbo.Bod OFF
 
+/*
 SELECT *
 FROM Bod
 
@@ -4616,7 +4616,7 @@ ORDER BY Vraagnummer
 SELECT *
 FROM Gebruiker
 ORDER BY vraag asc
-
+*/
 
 INSERT Test (tst_Column1, tst_Column2, tst_Column3)
 VALUES
