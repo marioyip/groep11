@@ -20,7 +20,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
         <div id="navbar">
             <ul class="nav navbar-nav navbar-center">
                 <li>
-                    <!--<a class="textWhite marginLeft200 fontSize16" href="rubrieken.php">Rubrieken</a>-->
+                    <!--                    <a class="textWhite marginLeft200 fontSize16" href="rubrieken.php">Rubrieken</a>-->
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -38,7 +38,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
 <div class="catBar">
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1">
@@ -49,26 +49,39 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                 </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-
-            <form class="navbar-header" method="GET" action="zoekfunctie.php">
-                    <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
-                        <select>
-                            <?php
-                            $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
-                            $stmt = $db->prepare($sql); //Statement object aanmaken
-                            $stmt->execute();           //Statement uitvoeren
-                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                            {
-                                for ($i = 0; $i < count($row); $i++) {
-                                    echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+            <div class="navbar-right">
+                <form method="GET" action="zoekfunctie.php">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <select>
+                                <?php
+                                $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
+                                $stmt = $db->prepare($sql); //Statement object aanmaken
+                                $stmt->execute();           //Statement uitvoeren
+                                while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                                {
+                                    for ($i = 0; $i < count($row); $i++) {
+                                        echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+                                    }
                                 }
-                            }
-                            ?>
-                        </select>
-                        <button class="btn btn-default" type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-            </form>
+                                ?>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
             <!--<input type="text" name="sample_search" id="sample_search" onkeyup="search_func(this.value);">-->
         </div>
     </nav>
