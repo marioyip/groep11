@@ -1,6 +1,9 @@
-Groep 11 - Eenmaal Andermaal 
+## Veilingsite - Eenmaal Andermaal
+Code voor het PR-IProject. 
 
-Veilingsite 2017
+## Groep
+Groep 11.
 
+## License
 
-wat was was eer was was was? --> is
+(MIT, Apache, etc.)
