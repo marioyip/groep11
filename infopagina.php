@@ -24,34 +24,37 @@
         <!-- dit is opgesteld door middel van het  template te vinden op https://www.karelgeenen.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/ -->
         <h1>Help en Info</h1>
         <div class="container marginTop10">
-            <div class="col-md-10 text-left">
+            <div class="col-md-8 marginTop10">
                 <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>
                 <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
-            </div>
-            <div class="col-md-2 marginTop20">
-                <img class="imgStyle" src="media/apple-icon-152x152.png">
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-10 text-left">
                 <h3>Is er een commissie op de verkochte spullen</h3>
                 <h4>&#8594; EenmaalAndermaal rekent een commissie van 10% op elk verkocht product.</h4>
-            </div>
-            <div class="col-md-2">
-                <img class="imgStyle" src="media/apple-icon-152x152.png">
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-10 text-left">
+                <h3>Is er een minimumleeftijd voor het maken van een profiel?</h3>
+                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
                 <h3>Is er een minimumleeftijd voor het maken van een profiel?</h3>
                 <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4 marginTop10">
+                <img class="imgStyle" src="media/apple-icon-152x152.png">
+            </div>
+        </div>
+        <div class="container marginTop10">
+            <div class="col-md-8 marginTop10">
+                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>
+                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
+                <h3>Is er een commissie op de verkochte spullen</h3>
+                <h4>&#8594; EenmaalAndermaal rekent een commissie van 10% op elk verkocht product.</h4>
+                <h3>Is er een minimumleeftijd voor het maken van een profiel?</h3>
+                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
+                <h3>Is er een minimumleeftijd voor het maken van een profiel?</h3>
+                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
+            </div>
+            <div class="col-md-4 marginTop10">
                 <img class="imgStyle" src="media/apple-icon-152x152.png">
             </div>
         </div>
         <div class="container">
-            <div class="col-md-10 text-left">
+            <div class="col-md-8 text-left marginTop10">
                 <h3>Hoe verwijder ik een advertentie?</h3>
                 <h4>
                     <ol>
@@ -68,59 +71,12 @@
                         </li>
                 </h4>
             </div>
-            <div class="col-md-2">
-                <img class="imgStyle" src="media/apple-icon-152x152.png">
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-10 text-left">
-                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>
-                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-4 ">
                 <img class="imgStyle" src="media/apple-icon-152x152.png">
             </div>
         </div>
 
-        <div class="col-md-12">
-            <h2 class="fontSize16 fontSize11">FAQ</h2>
-            <div>
 
-            </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
-            <!--            <div>-->
-            <!--                <h3>Zijn er kosten verbonden aan het maken van een profiel?</h3>-->
-            <!--                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>-->
-            <!--            </div>-->
         </div>
 
     </div>
