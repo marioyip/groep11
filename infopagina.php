@@ -29,12 +29,12 @@
                 <h3> Profiel</h3>
                 <h4>Zijn er kosten verbonden aan het maken van een profiel?</h4>
                 <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
-                <h4>Is er een commissie op de verkochte spullen</h4>
-                <h4>&#8594; EenmaalAndermaal rekent een commissie van 10% op elk verkocht product.</h4>
+                <h4>Kan ik mijn profiel aanpassen?</h4>
+                <h4>&#8594;Ja, op de pagina <u>mijn profiel</u> kunt u uw gegevens aanpassen</h4>
                 <h4>Is er een minimumleeftijd voor het maken van een profiel?</h4>
                 <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
-                <h4>Is er een minimumleeftijd voor het maken van een profiel?</h4>
-                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
+                <h4>Kan ik mijn profiel verwijderen?</h4>
+                <h4>Je kan je profiel helaas niet verwijderen.</h4>
             </div>
             <div class="col-md-4 marginTop10">
                 <img class="imgStyle" src="media/faq.jpg">
@@ -45,21 +45,21 @@
                 <img class="imgStyle" src="media//faq.jpg">
             </div>
             <div class="col-md-8 marginTop10">
-                <h3> Voorwaarden</h3>
-                <h4>Zijn er kosten verbonden aan het maken van een profiel?</h4>
-                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
-                <h4>Is er een commissie op de verkochte spullen</h4>
-                <h4>&#8594; EenmaalAndermaal rekent een commissie van 10% op elk verkocht product.</h4>
-                <h4>Is er een minimumleeftijd voor het maken van een profiel?</h4>
-                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
-                <h4>Is er een minimumleeftijd voor het maken van een profiel?</h4>
-                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
+                <h3> Advertenties beheren</h3>
+                <h4> Kan ik mijn advertentie verwijderen </h4>
+                <h4>&#8594; Ja, op mijn profiel kan je je advertentie verwijderen</h4>
+                <h4>Kan ik mijn minimale prijs aanpassen?</h4>
+                <h4>&#8594; Ja, op mijn profiel kan je jouw advertenties en beschrijvingen veranderen. </h4>
+                <h4>Kan ik de betaling meeteen ontvangen?.</h4>
+                <h4>&#8594; Nee, de betalingen word in twee weken betaald, dit verschilt per bank.</h4>
+                <h4>Kan ik meerdere advertenties plaatsen?</h4>
+                <h4>&#8594; Ja, je kan versschillende advertenties plaatsen.</h4>
             </div>
 
         </div>
         <div class="container">
             <div class="col-md-8 text-left marginTop30">
-                <h3> Verkopen</h3>
+                <h3> Verwijderen</h3>
                 <h4>Hoe verwijder ik een advertentie?</h4>
                 <h4>
                     <ol>
@@ -86,19 +86,16 @@
             </div>
             <div class="col-md-8 text-left marginTop30">
                 <h3> Bieden</h3>
-                <h4>Hoe verwijder ik een advertentie?</h4>
+                <h4>Hoe biedt ik op een advertentie?</h4>
                 <h4>
                     <ol>
                         <li>Log in op EenmaalAndermaal.</li>
-                        <li>Ga via Mijn profiel naar je advertenties.</li>
-                        <li> Gebruik je de app, open dan de betreffende advertentie en klik op Verwijder advertentie.
+                        <li>Klik op een veiling</li>
+                        <li>Biedt op een product.
                         </li>
-                        <li>Wil je via de website je advertentie verwijderen, dan selecteer je de advertentie(s) die je
-                            wilt verwijderen. Klik het vierkantje aan dat voor de foto staat en klik daarna op
-                            Verwijder.
+                        <li>Wacht tot de veilingtijd is verlopen.
                         </li>
-                        <li>Voordat we de advertentie verwijderen, vragen we je om aan te geven of je het product via
-                            Marktplaats hebt verkocht.
+                        <li>Als je de veiling gewonnen hebt, betaal je het bedrag.
                         </li>
                 </h4>
             </div>
