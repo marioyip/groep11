@@ -40,7 +40,7 @@
                             <a class="textWhite" href="overons.php">Over ons</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="solliciteren.html">Werken bij</a>
+                            <a class="textWhite" href="solliciteren.php">Werken bij</a>
                         </li>
                     </ul>
                 </div>
