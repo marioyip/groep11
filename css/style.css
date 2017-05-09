@@ -38,6 +38,10 @@ ol {
     list-style-type: lower-roman;
 }
 
+.containerMain{
+    min-height: 100vh;
+}
+
 .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -46,6 +50,10 @@ ol {
 .carousel,
 .item {
     height: 500px;
+}
+
+.marginLeft400 {
+    margin-left: 400px;
 }
 
 .carousel-inner {
@@ -335,12 +343,10 @@ body::after {
 }
 
 .footer {
-    margin-top: 300px;
     color: white;
     clear: both;
     text-align: center;
-    background: #9d9d9d;
-    padding-bottom: 30px;
+    /*background: #9d9d9d;*/
     border-bottom: 1px solid #CCCCCC;
     width: 100%;
     border-top: 1px solid #DDDDDD;
@@ -419,4 +425,7 @@ body::after {
 
 .catBar{
 
+}
+
+li{
 }

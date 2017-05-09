@@ -15,46 +15,49 @@
 </main>
 <body>
 
-<?php
-include('header.html');
-ini_set('display_errors', 1);
+<div class="containerMain">
+    <?php
+    include('header.php');
+    ini_set('display_errors', 1);
 
-$pw = "dbrules";
-$username = "sa";
-$hostname = "localhost";
-$dbname = "iconcepts";
+    $pw = "rPgxSAaf";
+    $username = "iproject11";
+    $hostname = "mssql.iproject.icasites.nl";
+    $dbname = "iproject11";
 
-$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+    $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
-if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
-    $searchResult = "'%" . $_GET["zoeken"] . "%'";
-    $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
-    $stmt = $db->prepare($sql); //Statement object aanmaken
-    $stmt->execute();           //Statement uitvoeren
+    if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
+        $searchResult = "'%" . $_GET["zoeken"] . "%'";
+        $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
+        $stmt = $db->prepare($sql); //Statement object aanmaken
+        $stmt->execute();           //Statement uitvoeren
 
-    echo '<table>';
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-    {
-        echo '<tr>';
-        for ($i = 0; $i < count($row); $i++) {
+        echo '<table>';
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+        {
+            echo '<tr>';
+            for ($i = 0; $i < count($row); $i++) {
 
-            echo '
+                echo '
                 <td>
                     <a href="productpagina.php">' . $row[$i] . '&nbsp;</a>
                 </td>'; //Loop de rij af
+            }
+
+            echo '</tr>';
         }
-
-        echo '</tr>';
-    }
-    echo '</table>';
+        echo '</table>';
 
 
-} else {
-    echo '
+    } else {
+        echo '
         <div class="alert alert-danger textCenter">
-            <strong>Fout</strong> Voer een zoekterm in!
+            <strong>Fout</strong> Voer alstublieft een zoekterm in
         </div>';
-}
-
-include('footer.php');
+    }
+    ?>
+</div>
+<?php
+include('footerZoek.php');
 ?>
