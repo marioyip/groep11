@@ -65,7 +65,7 @@ if ($errors) {
 $html = "";
 $html .= "<p>Beste $voornaam $achternaam je bent aangemeld voor Eenmaal Andermaal.</p>";
 
-include('header.html');
+include('header.php');
 if ($errors) {
     echo $errors;
 } else {
