@@ -28,8 +28,6 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                     <a class="glyphicon glyphicon-user textWhite fontSize16" aria-hidden="true" href="inloggen.php">
                         Inloggen</a>
                 </li>
-
-
             </ul>
         </div>
     </div>
@@ -51,28 +49,25 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                 </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <form class="navbar-form navbar-left" method="GET" action="zoekfunctie.php">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="zoeken">
-                    <select>
-                        <?php
-                        $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
-                        $stmt->execute();           //Statement uitvoeren
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                        {
-                            for ($i = 0; $i < count($row); $i++) {
-                                echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+
+            <form class="navbar-header" method="GET" action="zoekfunctie.php">
+                    <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
+                        <select>
+                            <?php
+                            $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
+                            $stmt = $db->prepare($sql); //Statement object aanmaken
+                            $stmt->execute();           //Statement uitvoeren
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                            {
+                                for ($i = 0; $i < count($row); $i++) {
+                                    echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+                                }
                             }
-                        }
-                        ?>
-                    </select>
-                    <div class="input-group-btn">
+                            ?>
+                        </select>
                         <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
-                    </div>
-                </div>
             </form>
             <!--<input type="text" name="sample_search" id="sample_search" onkeyup="search_func(this.value);">-->
         </div>
