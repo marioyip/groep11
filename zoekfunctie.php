@@ -52,7 +52,7 @@ if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
 } else {
     echo '
         <div class="alert alert-danger textCenter">
-            <strong>Fout</strong> Voer een zoekterm in!
+            <strong>Fout</strong> Voer alstublieft een zoekterm in
         </div>';
 }
 

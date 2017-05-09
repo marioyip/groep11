@@ -339,12 +339,10 @@ body::after {
 }
 
 .footer {
-    margin-top: 300px;
     color: white;
     clear: both;
     text-align: center;
     background: #9d9d9d;
-    padding-bottom: 30px;
     border-bottom: 1px solid #CCCCCC;
     width: 100%;
     border-top: 1px solid #DDDDDD;

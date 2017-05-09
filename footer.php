@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer" id="footer">
+    <div class="footer"  id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -65,7 +65,7 @@
     </div>
     <!--/.footer-->
 
-    <div class="footer-bottom">
+    <div class="footer-bottom footer">
         <div class="container">
             <p class="text-center fontSize11"> Eenmaal Andermaal © 2017  </p>
         </div>
