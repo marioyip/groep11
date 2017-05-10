@@ -150,6 +150,12 @@ include 'header.php';
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" class="form-control marginLeft200" name="verkoper" id="email">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

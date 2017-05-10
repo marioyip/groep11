@@ -58,7 +58,8 @@ function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoo
     try {
         $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, 
 Antwoordtekst, GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, 
-Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (achternaam, straat, huisnr, antwoord, geboortedag, email, )");
+Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (achternaam, straat, huisnr, antwoord, 
+geboortedag, email, gebruikersnaam, land, plaats, postcode, voornaam, vraag, wachtwoord, verkoper)");
         $stmt->execute(array($naam, $email));
     } catch (PDOException $e) {
         echo "Could not insert user, " . $e->getMessage();
