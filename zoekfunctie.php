@@ -29,6 +29,7 @@
 
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
+        $gekozenRubriek = $_GET["rubriek"];
         $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();           //Statement uitvoeren
@@ -39,7 +40,7 @@
             echo '<tr>';
             for ($i = 0; $i < count($row); $i++) {
 
-                echo '
+                echo $gekozenRubriek, '
                 <td>
                     <a href="productpagina.php">' . $row[$i] . '&nbsp;</a>
                 </td>'; //Loop de rij af
@@ -58,6 +59,7 @@
     }
     ?>
 </div>
+</body>
 <?php
 include('footer.php');
 ?>
