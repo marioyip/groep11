@@ -56,8 +56,7 @@ function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoo
     try {
         $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, 
 Antwoordtekst, GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, 
-Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (achternaam, straat, huisnr, antwoord, 
-geboortedag, emailadress, gebruikersnaam, land, plaats, postcode, voornaam, vraag, wachtwoord, verkoper)");
+Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute(array($achternaam, $straat, $huisnr, $antwoord, $geboortedatum,
             $email, $gebruikersnaam, $land, $plaats, $postcode, $voornaam,
             $vraag, $hashedWachtwoord, $verkoper));
