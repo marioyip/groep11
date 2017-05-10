@@ -13,13 +13,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/functies.js"></script>
 </head>
+
 <body>
+
 <?php
+
+include 'header.php';
+
 ini_set('display_errors', 1);
 include ('functies.php');
 
 connectToDatabase();
-
 
 //query opstellen
 $query1 = ("SELECT * FROM Voorwerp WHERE Voorwerpnummer = 2");
@@ -46,8 +50,6 @@ if(isset($voorwerp['Titel'])){
     $details = "nee";
     echo $details;
 }
-
-include 'header.php';
 ?>
 <main>
     <div class="container">
@@ -118,7 +120,7 @@ include 'header.php';
 
 </html>
 
-<?php echo $details;
+<?php
 include 'footer.php';
 ?>
 
