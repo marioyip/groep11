@@ -13,7 +13,7 @@
 }
 
 html {
-    font-family: "Baskerville Old Face", serif;
+    font-family: fantasy, serif;
     height: 100vh;
 }
 
@@ -22,7 +22,7 @@ p {
 }
 
 .privacyverklaring {
-    font-family: "Baskerville Old Face", serif;
+    font-family: Helvetica, serif;
     font-size: 20px;
 }
 

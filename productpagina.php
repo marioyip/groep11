@@ -16,16 +16,11 @@
 <body>
 <?php
 ini_set('display_errors', 1);
+include ('functies.php');
 
-$pw = "rPgxSAaf";
-$username = "iproject11";
-$hostname = "mssql.iproject.icasites.nl";
-$dbname = "iproject11";
+connectToDatabase();
 
-$db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//zoektermen
+//zoektermen 
 $id = "Voorwerpnummer";
 $from = "Voorwerp";
 
@@ -33,9 +28,8 @@ $from = "Voorwerp";
 //query opstellen
 $query1 = "SELECT * FROM $from WHERE $id = ?";
 $data = $db->prepare($query1);
-//$data->execute([$_GET['']]);
 
-$details = "";
+$details = "hoi";
 
 $voorwerp = $data->fetch();
 
@@ -60,11 +54,10 @@ include 'header.php';
 echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
 ?>
 <main>
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-header"><?= $voorwerp['Titel']; ?></h1>
+                <h1 class="page-header"><?= $details.$voorwerp['Titel']; ?></h1>
             </div>
         </div>
         <div class="row">
@@ -80,13 +73,16 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
                     <p>
                         De veiling is op <?= $voorwerp['LooptijdbeginDag']; ?> om
                         <?= $voorwerp['LooptijdbeginTijdstip']; ?> geopend.
-                        <!--            <div class="progress">-->
-                        <!--                <div class="progress-bar progress-bar-striped active" role="progressbar"-->
-                        <!--                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">-->
-                        <!--                    40%-->
-                        <!--                </div>-->
-                        <!--            </div>-->
-                        De looptijd voor de veiling van <?= $voorwerp['Titel']; ?> is <?= $voorwerp['Looptijd']; ?> dagen.
+                        <!--                                    <div class="progress">-->
+                        <!--                                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
+                        <!--                                             aria-valuenow="getdate()" aria-valuemin="-->
+                        <? //= $voorwerp['LooptijdbeginDag']; ?><!--" aria-valuemax="-->
+                        <? //= $voorwerp['LooptijdeindeDag']; ?><!--" style="width:40%">-->
+                        <!--                                            40%-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        De looptijd voor de veiling van <?= $voorwerp['Titel']; ?> is <?= $voorwerp['Looptijd']; ?>
+                        dagen.
                     </p>
                 </div>
 
@@ -114,7 +110,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
                             </div>
                             <div id="menu2" class="tab-pane fade">
                                 <h3>Contact informatie</h3>
-                                <p>Stedemaeght Charters</p>
+                                <p><?= $voorwerp['Verkoper']; ?></p>
                             </div>
                         </div>
                     </div>
@@ -122,7 +118,6 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
