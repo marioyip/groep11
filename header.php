@@ -8,7 +8,7 @@ $dbname = "iproject11";
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
 ?>
-
+<body>
 <header>
     <div class="container-fluid backgroundGreen">
         <div class="navbar-header">
@@ -49,13 +49,14 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navbar-right ">
+                <div class="form-group">
                 <form method="GET" action="zoekfunctie.php">
                     <ul class="nav navbar-nav">
                         <li>
                             <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
                         </li>
                         <li>
-                            <select class="form-control">
+                            <select class="form-control" name="rubriek">
                                 <?php
                                 $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
                                 $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -76,8 +77,10 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                         </li>
                     </ul>
                 </form>
+                </div>
             </div>
             <!--<input type="text" name="sample_search" id="sample_search" onkeyup="search_func(this.value);">-->
         </div>
     </nav>
 </div>
+</body>
