@@ -11,13 +11,11 @@ ini_set('display_errors', 1);
 global $pdo;
 
 if(isset($_POST['submit_form'])) {
-    $gelukt = "gelukt";
     $name = $_POST['name'];
     $email = $_POST['email'];
 
     insertUserInDatabase("$name", "$email");
-    echo $name;
-    echo $email;
+
 }
 
 ?>

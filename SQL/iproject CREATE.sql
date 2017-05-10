@@ -14,6 +14,7 @@ use iproject11
 
 
 --IF object_id('CheckPassword') IS NOT NULL
+
 GO
 CREATE FUNCTION CheckPassword(@pass varchar(30))
   RETURNS int
@@ -30,14 +31,25 @@ AS
   END;
 GO
 
-SELECT * FROM Nieuwsbrief
+GO
+CREATE FUNCTION fnIsValidEmail(@email varchar(255))
+  --Returns true if the string is a valid email address.
+  RETURNS bit
+As
+  BEGIN
+    RETURN CASE WHEN ISNULL(@email, '') <> '' AND @email LIKE '%_@%_.__%' THEN 1 ELSE 0 END
+  END
+GO
+
+-- SELECT * FROM Nieuwsbrief
 
 if not exists (select * from sysobjects where name='Nieuwsbrief')
   CREATE TABLE Nieuwsbrief (
-    id int IDENTITY(1,1) NOT NULL,
+    id int IDENTITY NOT NULL,
     name VARCHAR(70) NOT NULL,
     email VARCHAR(70) NOT NULL,
-    CONSTRAINT pk_id PRIMARY KEY (id)
+    CONSTRAINT pk_id PRIMARY KEY (email),
+    CONSTRAINT ck_email CHECK (dbo.fnIsValidEmail(email) >= 1)
   )
 
 if not exists (select * from sysobjects where name='Vraag')
@@ -250,6 +262,7 @@ DROP TABLE [Test];
 
 BEGIN
   DROP FUNCTION [dbo].[CheckPassword]
+  DROP FUNCTION [dbo].[fnIsValidEmail]
 END
 GO
 */

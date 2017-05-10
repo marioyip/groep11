@@ -13,7 +13,6 @@ function connectToDatabase()
 
 function insertUserInDatabase($naam, $email)
 {
-    echo "Hij komt hier!!!!!! <br>";
     global $db;
     try {
         $stmt = $db->prepare("INSERT INTO Nieuwsbrief (name, email) VALUES (?,?)");
