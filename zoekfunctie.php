@@ -30,7 +30,8 @@
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
-        $sql = "SELECT Titel FROM Voorwerp where Voorwerp.Titel like $searchResult";
+        $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult AND rubriek.rubrieknaam = '$gekozenRubriek'";
+
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();           //Statement uitvoeren
 
@@ -40,9 +41,9 @@
             echo '<tr>';
             for ($i = 0; $i < count($row); $i++) {
 
-                echo $gekozenRubriek, '
+                echo '
                 <td>
-                    <a href="productpagina.php">' . $row[$i] . '&nbsp;</a>
+                    <a href="productpagina.php">' . $row[$i] . '</a>
                 </td>'; //Loop de rij af
             }
 
