@@ -10,14 +10,14 @@ function connectToDatabase() {
 
 }
 
-function insertUserInDatabase($username, $password, $voornaam, $achternaam, $email, $geboortedatum) {
+function insertUserInDatabase($name, $email)
+{
     global $pdo;
-    $hashedWachtwoord = password_hash($password,1);
     try {
-        $stmt = $pdo->prepare("INSERT INTO Gebruiker) VALUES (Gebruikersnaam, Wachtwoord, Voornaam, Achternaam, Emailadres, Geboortedatum)");
-        $stmt->execute(array($username,$hashedWachtwoord, $voornaam, $achternaam, $email, $geboortedatum));
+        $stmt = $pdo->prepare("INSERT INTO Nieuwsbrief (name, email) VALUES (?,?)");
+        $stmt->execute(array($name, $email));
     } catch (PDOException $e) {
-        echo "Could not insert user, ".$e->getMessage();
+        echo "Could not insert user, " . $e->getMessage();
     }
 }
 

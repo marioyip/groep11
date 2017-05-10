@@ -20,38 +20,27 @@
 error_reporting(E_ALL);
 ini_set('display_errors','On');
 
+include('functies.php');
 
-/* Connect naar een sqldatabase mbv PDO */
-try {
-    $hostname = "mssql.iproject.icasites.nl";
-    $dbname = "iproject11";    /*Naam van de DB*/
-    $username = "iproject11";      /*Inlognaam*/
-    $pw = "rPgxSAaf";      /*Password*/
+connectToDatabase();
 
-    /* Maak een nieuw PDO-object aan met de juiste credentials. Deze zorgt voor de verbinding met de DB */
-    $db = new PDO ("sqlsrv:server=$hostname;Database=$dbname","$username","$pw");
-}
-    /*Mocht er iets fout gaan, krijg je een nette melding*/
-catch (PDOException $e) {
-    echo "Failed to get DB handle: " . $e->getTraceAsString() . "\n";
-    exit;
-}
-/* Zet het attribuut voor foutmelding op exceptions*/
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
-
-    function insertUserInDatabase($name, $email)
-    {
-        global $pdo;
-        try {
-            $stmt = $pdo->prepare("INSERT INTO Nieuwsbrief (name, email) VALUES (?,?)");
-            $stmt->execute(array($name, $email));
-        } catch (PDOException $e) {
-            echo "Could not insert user, " . $e->getMessage();
-        }
-    }
+///* Connect naar een sqldatabase mbv PDO */
+//try {
+//    $hostname = "mssql.iproject.icasites.nl";
+//    $dbname = "iproject11";    /*Naam van de DB*/
+//    $username = "iproject11";      /*Inlognaam*/
+//    $pw = "rPgxSAaf";      /*Password*/
+//
+//    /* Maak een nieuw PDO-object aan met de juiste credentials. Deze zorgt voor de verbinding met de DB */
+//    $db = new PDO ("sqlsrv:server=$hostname;Database=$dbname","$username","$pw");
+//}
+//    /*Mocht er iets fout gaan, krijg je een nette melding*/
+//catch (PDOException $e) {
+//    echo "Failed to get DB handle: " . $e->getTraceAsString() . "\n";
+//    exit;
+//}
+///* Zet het attribuut voor foutmelding op exceptions*/
+//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 ini_set('display_errors', 1);
@@ -62,6 +51,6 @@ if(isset($_POST['submit_form'])) {
     $name = $_POST["user_name"];
     $email = $_POST["email"];
 
-    insertUserInDatabase("$name", "$email");
+    insertUsersInDatabase("$name", "$email");
 }
 ?>
