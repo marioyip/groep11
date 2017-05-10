@@ -45,7 +45,7 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control marginLeft200" name="email" id="email"
+                            <input type="email" class="form-control marginLeft200" name="emailadress" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
@@ -85,7 +85,7 @@ include 'header.php';
                     <div class="form-group">
                         <div class="col-sm-2">
                             <label class="control-label col-sm-2" for="pwd">Beveiligingsvraag:
-                                <select name="Kies een vraag: " class="marginLeft400">
+                                <select name="vraag" class="marginLeft400">
                                     <option value="huisdier">Wat is mijn favoriete huisdier?</option>
                                     <option value="geboorteplaats">Wat is mijn geboorteplaats?</option>
                                     <option value="jeugdvriend">Wie is mijn jeugdvriend?</option>
