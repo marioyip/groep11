@@ -30,6 +30,16 @@ AS
   END;
 GO
 
+SELECT * FROM Nieuwsbrief
+
+if not exists (select * from sysobjects where name='Nieuwsbrief')
+  CREATE TABLE Nieuwsbrief (
+    id int IDENTITY(1,1) NOT NULL,
+    name VARCHAR(70) NOT NULL,
+    email VARCHAR(70) NOT NULL,
+    CONSTRAINT pk_id PRIMARY KEY (id)
+  )
+
 if not exists (select * from sysobjects where name='Vraag')
   CREATE TABLE Vraag (
     TekstVraag														VARCHAR(150)									NOT NULL,
@@ -215,7 +225,7 @@ ALTER TABLE [dbo].[Bod] DROP CONSTRAINT [fk_BodGebruiker_ref_GebruikerGebruikers
 ALTER TABLE [dbo].[Gebruiker] DROP CONSTRAINT [fk_GebruikerVraag_ref_VraagVraagnummer];
 ALTER TABLE [dbo].[Gebruiker] DROP CONSTRAINT [fk_GebruikerLand_ref_landnaam];
 ALTER TABLE [dbo].[Verkoper] DROP CONSTRAINT [fk_VerkoperGebruiker_ref_GebruikerGebruikersnaam];
-
+ALTER TABLE [dbo].[Nieuwsbrief] DROP CONSTRAINT [pk_id];
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_verkoper_ref_gebruiker];
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_Koper_ref_Gebruikersnaam];
 ALTER TABLE [dbo].[Voorwerp] DROP CONSTRAINT [fk_VoorwerpLand_ref_landnaam];
@@ -224,6 +234,7 @@ ALTER TABLE [dbo].[Feedback] DROP CONSTRAINT [fk_FeedbackVoorwerp_ref_VoorwerpVo
 ALTER TABLE [dbo].[VoorwerpInRubriek] DROP CONSTRAINT [fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer];
 ALTER TABLE [dbo].[VoorwerpInRubriek] DROP CONSTRAINT [fk_RubriekRubOpLaagsteNiv_ref_RubriekRubrieknummer];
 ALTER TABLE [dbo].[Test] DROP CONSTRAINT [pk_testje];
+DROP TABLE [Nieuwsbrief];
 DROP TABLE [Vraag];
 DROP TABLE [Landen];
 DROP TABLE [Gebruiker];

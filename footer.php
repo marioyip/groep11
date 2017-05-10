@@ -47,16 +47,21 @@
                 <div class="col-lg-2  col-md-1 col-sm-4 col-xs-6">
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <form action="nieuwsbrief_inschrijven.php" method="post">
                     <h3>Nieuwsbrief</h3>
                     <ul>
                         <li>
                             <div class="input-append newsletter-box text-center">
-                                <input title="inschrijven" type="text" class="full text-center textDarkGray form-control fontSize16"><br>
-                                <button class="textDarkGray newsButtonGray bg-gray btn btn-default " type="button">Inschrijven </button>
+<!--                                <input title="inschrijven" type="text" class="full text-center textDarkGray form-control fontSize16"><br>-->
+                                <input class="full text-center textDarkGray form-control fontSize16" type="text" name="user_name" id="user_name" placeholder="Naam">
+                                <input class="full text-center textDarkGray form-control fontSize16" type="text" name="email" id="email" placeholder="E-mail"/>
+<!--                                <button class="textDarkGray newsButtonGray bg-gray btn btn-default " type="submit">Inschrijven </button>-->
+                                <input class="textDarkGray newsButtonGray bg-gray btn btn-default" type="submit" value="Inschrijven" name="submit_form"/>
                             </div>
                         </li>
 
                     </ul>
+                    </form>
                 </div>
             </div>
             <!--/.row-->
