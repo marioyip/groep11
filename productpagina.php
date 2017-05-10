@@ -59,7 +59,7 @@ if ($veilinggesloten == 0) {
 
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
-                    <img src="media/<?php
+                    <img class=imgStyle src="media/<?php
                     $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -67,7 +67,7 @@ if ($veilinggesloten == 0) {
                     while($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         echo $row[0];
                     }
-                    ?>" width="200" height="200"/>
+                    ?>"/>
                 </div>
             </div>
             <div class="col-md-6">

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa6354a-8463-43b0-8852-4dc2c7840098" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homepagina.php" afterPath="$PROJECT_DIR$/homepagina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productpagina.php" afterPath="$PROJECT_DIR$/productpagina.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,14 +28,16 @@
       <file leaf-file-name="homepagina.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homepagina.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="80" column="71" lean-forward="false" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
+            <state relative-caret-position="166">
+              <caret line="160" column="50" lean-forward="false" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
               <folding>
-                <marker date="1494425609111" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494425609111" expanded="true" signature="3938:3991" ph="SELECT Titel... Voorwerp" />
-                <marker date="1494425609111" expanded="true" signature="4380:4440" ph="SELECT Besch... Voorwerp" />
-                <marker date="1494425609111" expanded="true" signature="7126:7179" ph="SELECT Titel... Voorwerp" />
-                <marker date="1494425609111" expanded="true" signature="7568:7628" ph="SELECT Besch... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="3865:3926" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="4286:4339" ph="SELECT Titel... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="4728:4788" ph="SELECT Besch... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="7401:7462" ph="SELECT voorw... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="7822:7875" ph="SELECT Titel... Voorwerp" />
+                <marker date="1494426142060" expanded="true" signature="8264:8324" ph="SELECT Besch... Voorwerp" />
               </folding>
             </state>
           </provider>
@@ -45,33 +47,33 @@
         <entry file="file://$PROJECT_DIR$/productpagina.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
-              <caret line="69" column="50" lean-forward="true" selection-start-line="61" selection-start-column="20" selection-end-line="69" selection-end-column="50" />
+              <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
               <folding>
-                <marker date="1494424018302" expanded="true" signature="1468:1521" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="1839:1931" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="1890:1931" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="1929:1931" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="2001:2062" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="2403:2554" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="2444:2554" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="2527:2554" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="2657:2721" ph="SELECT Loopt... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="3103:3172" ph="SELECT Loopt... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="4389:4442" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="4811:4867" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="5274:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5304:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5356:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5400:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5450:5768" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5819:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="5895:6052" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="6100:6160" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="6631:6789" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="6837:6904" ph="SELECT Besch... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="7375:8479" ph="..." />
-                <marker date="1494424018302" expanded="true" signature="7602:7660" ph="SELECT Voorw... Voorwerp" />
-                <marker date="1494424018302" expanded="true" signature="8094:8146" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="1468:1521" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="1839:1931" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="1890:1931" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="1929:1931" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="2016:2077" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="2393:2544" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="2434:2544" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="2517:2544" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="2647:2711" ph="SELECT Loopt... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="3093:3162" ph="SELECT Loopt... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="4379:4432" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="4801:4857" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="5264:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5294:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5346:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5390:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5440:5758" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5809:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="5885:6042" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="6090:6150" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="6621:6779" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="6827:6894" ph="SELECT Besch... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="7365:8469" ph="..." />
+                <marker date="1494426084975" expanded="true" signature="7592:7650" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1494426084975" expanded="true" signature="8084:8136" ph="SELECT Voorw... Voorwerp" />
               </folding>
             </state>
           </provider>
@@ -94,8 +96,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,7 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aanbevolen</find>
       <find>20</find>
       <find>http://www.veilinghuiseenmaalandermaal.com/catalog</find>
       <find>aanbe</find>
@@ -173,6 +174,7 @@
       <find>//</find>
       <find>footer</find>
       <find>&lt;h1</find>
+      <find>boos</find>
       <find>&lt;img</find>
     </findStrings>
     <replaceStrings>
@@ -213,6 +215,7 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/zoekfunctie.php" />
         <option value="$PROJECT_DIR$/footer.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql" />
         <option value="$PROJECT_DIR$/productpagina.php" />
         <option value="$PROJECT_DIR$/homepagina.php" />
       </list>
@@ -777,11 +780,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494423788470</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="hoofdpagina verbeterd">
+      <created>1494425626707</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1494425626707</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77542000" />
+    <option name="totallyTimeSpent" value="78107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -868,7 +878,8 @@
     <MESSAGE value="Registratiepagina veranderd" />
     <MESSAGE value="infopagina beter" />
     <MESSAGE value="productpagina is af wat betreft sprint 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="productpagina is af wat betreft sprint 1" />
+    <MESSAGE value="hoofdpagina verbeterd" />
+    <option name="LAST_COMMIT_MESSAGE" value="hoofdpagina verbeterd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -883,14 +894,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/footer.css" />
     <entry file="file://$PROJECT_DIR$/css/homepagina.css" />
     <entry file="file://$PROJECT_DIR$/css/header.css" />
@@ -913,11 +916,13 @@
         <state relative-caret-position="493">
           <caret line="29" column="79" lean-forward="false" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
           <folding>
-            <marker date="1494425609111" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="3938:3991" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="4380:4440" ph="SELECT Besch... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7126:7179" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7568:7628" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="3865:3926" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4286:4339" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4728:4788" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7401:7462" ph="SELECT voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7822:7875" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="8264:8324" ph="SELECT Besch... Voorwerp" />
           </folding>
         </state>
       </provider>
@@ -951,11 +956,13 @@
         <state relative-caret-position="697">
           <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding>
-            <marker date="1494425609111" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="3938:3991" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="4380:4440" ph="SELECT Besch... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7126:7179" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7568:7628" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="3865:3926" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4286:4339" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4728:4788" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7401:7462" ph="SELECT voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7822:7875" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="8264:8324" ph="SELECT Besch... Voorwerp" />
           </folding>
         </state>
       </provider>
@@ -1139,56 +1146,70 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/school/projectPHPjan2017/FilmInformatie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+          <folding>
+            <marker date="1484728986000" expanded="true" signature="1085:1137" ph="SELECT title... Movie" />
+            <marker date="1484728986000" expanded="true" signature="1641:1699" ph="SELECT descr... Movie" />
+            <marker date="1484728986000" expanded="true" signature="2075:2130" ph="SELECT movie... Movie" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/productpagina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="69" column="50" lean-forward="true" selection-start-line="61" selection-start-column="20" selection-end-line="69" selection-end-column="50" />
+          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
           <folding>
-            <marker date="1494424018302" expanded="true" signature="1468:1521" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="1839:1931" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="1890:1931" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="1929:1931" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="2001:2062" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="2403:2554" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="2444:2554" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="2527:2554" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="2657:2721" ph="SELECT Loopt... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="3103:3172" ph="SELECT Loopt... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="4389:4442" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="4811:4867" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="5274:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5304:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5356:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5400:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5450:5768" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5819:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="5895:6052" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="6100:6160" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="6631:6789" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="6837:6904" ph="SELECT Besch... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="7375:8479" ph="..." />
-            <marker date="1494424018302" expanded="true" signature="7602:7660" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494424018302" expanded="true" signature="8094:8146" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="1468:1521" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="1839:1931" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="1890:1931" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="1929:1931" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="2016:2077" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="2393:2544" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="2434:2544" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="2517:2544" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="2647:2711" ph="SELECT Loopt... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="3093:3162" ph="SELECT Loopt... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="4379:4432" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="4801:4857" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="5264:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5294:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5346:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5390:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5440:5758" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5809:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="5885:6042" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="6090:6150" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="6621:6779" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="6827:6894" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="7365:8469" ph="..." />
+            <marker date="1494426084975" expanded="true" signature="7592:7650" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426084975" expanded="true" signature="8084:8136" ph="SELECT Voorw... Voorwerp" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homepagina.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="80" column="71" lean-forward="false" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
+        <state relative-caret-position="166">
+          <caret line="160" column="50" lean-forward="false" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
           <folding>
-            <marker date="1494425609111" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="3938:3991" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="4380:4440" ph="SELECT Besch... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7126:7179" ph="SELECT Titel... Voorwerp" />
-            <marker date="1494425609111" expanded="true" signature="7568:7628" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="2594:2647" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="3865:3926" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4286:4339" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="4728:4788" ph="SELECT Besch... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7401:7462" ph="SELECT voorw... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="7822:7875" ph="SELECT Titel... Voorwerp" />
+            <marker date="1494426142060" expanded="true" signature="8264:8324" ph="SELECT Besch... Voorwerp" />
           </folding>
         </state>
       </provider>

@@ -79,7 +79,15 @@
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow" align="center">
                     <!-- img moet ook uit de database te halen zijn -->
-                    <img class="imgStyle" src="media/laptop.png">
+                    <img class="imgStyle" src="media/<?php
+                    $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
                     <h4><a href="productpagina.php"><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
@@ -142,7 +150,15 @@
         <div class="container marginTop10">
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/laptop.png">
+                    <img class="imgStyle" src="media/<?php
+                    $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
                     <h4><a href="productpagina.php"><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
