@@ -158,7 +158,7 @@
                     while($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         echo $row[0];
                     }
-                    ?>" width="200" height="200"/>
+                    ?>"/>
                     <h4><a href="productpagina.php"><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
