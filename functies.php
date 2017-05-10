@@ -1,5 +1,6 @@
 <?php
-function connectToDatabase() {
+function connectToDatabase()
+{
     $pw = "rPgxSAaf";
     $username = "iproject11";
     $hostname = "mssql.iproject.icasites.nl";
@@ -10,12 +11,13 @@ function connectToDatabase() {
 
 }
 
-function insertUserInDatabase($name, $email)
+function insertUserInDatabase($naam, $email)
 {
-    global $pdo;
+    echo "Hij komt hier!!!!!! <br>";
+    global $db;
     try {
-        $stmt = $pdo->prepare("INSERT INTO Nieuwsbrief (name, email) VALUES (?,?)");
-        $stmt->execute(array($name, $email));
+        $stmt = $db->prepare("INSERT INTO Nieuwsbrief (name, email) VALUES (?,?)");
+        $stmt->execute(array($naam, $email));
     } catch (PDOException $e) {
         echo "Could not insert user, " . $e->getMessage();
     }
@@ -34,12 +36,13 @@ function displayUsersInDatabase()
     }
 }
 
-function insertUserInNieuwsbrief($id, $name, $email) {
+function insertUserInNieuwsbrief($id, $name, $email)
+{
     global $pdo;
     try {
         $stmt = $pdo->prepare("INSERT INTO Nieuwsbrief VALUES (id, name, email)");
         $stmt->execute(array($id, $name, $email));
     } catch (PDOException $e) {
-        echo "Could not insert user, ".$e->getMessage();
+        echo "Could not insert user, " . $e->getMessage();
     }
 }

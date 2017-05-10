@@ -20,16 +20,12 @@ include ('functies.php');
 
 connectToDatabase();
 
-//zoektermen 
-$id = "Voorwerpnummer";
-$from = "Voorwerp";
-
 
 //query opstellen
-$query1 = "SELECT * FROM $from WHERE $id = ?";
+$query1 = ("SELECT * FROM Voorwerp WHERE Voorwerpnummer = 2");
 $data = $db->prepare($query1);
 
-$details = "hoi";
+$details = "";
 
 $voorwerp = $data->fetch();
 
@@ -43,15 +39,15 @@ if ($veilinggesloten == 0) {
     $veiling .= "geopend";
 }
 
-if(isset($voorwerp['VoorwerpCover'])){
-    echo 'ja';
+if(isset($voorwerp['Titel'])){
+    $details = "ja";
+    echo $details;
 } else {
-    echo 'nee';
+    $details = "nee";
+    echo $details;
 }
 
 include 'header.php';
-
-echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
 ?>
 <main>
     <div class="container">
