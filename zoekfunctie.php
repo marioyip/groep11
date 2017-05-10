@@ -59,5 +59,5 @@
     ?>
 </div>
 <?php
-include('footerZoek.php');
+include('footer.php');
 ?>
