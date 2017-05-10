@@ -48,7 +48,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                 </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-right ">
+            <div class="navbar-right marginRight10 ">
                 <div class="form-group">
                 <form method="GET" action="zoekfunctie.php">
                     <ul class="nav navbar-nav">
