@@ -48,7 +48,15 @@
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/laptop.png');"></div>
                     <div class="carousel-caption">
-                        <h2>Laptop</h2>
+                        <h2><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></h2>
                     </div>
                 </div>
             </div>
@@ -70,9 +78,26 @@
         <div class="container marginTop10">
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow" align="center">
+                    <!-- img moet ook uit de database te halen zijn -->
                     <img class="imgStyle" src="media/laptop.png">
-                    <h4><a href="productpagina.php">Laptop</a></h4>
-                    <div class="description marginTop5">Dit is een mooie laptop.</div>
+                    <h4><a href="productpagina.php"><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></a></h4>
+                    <div class="description marginTop5"><?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></div>
                     <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
                 </div>
             </a>
@@ -118,8 +143,24 @@
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow" align="center">
                     <img class="imgStyle" src="media/laptop.png">
-                    <h4><a href="productpagina.php">Laptop</a></h4>
-                    <div class="description marginTop5">Dit is een mooie laptop.</div>
+                    <h4><a href="productpagina.php"><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></a></h4>
+                    <div class="description marginTop5"><?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></div>
                     <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
                 </div>
             </a>
