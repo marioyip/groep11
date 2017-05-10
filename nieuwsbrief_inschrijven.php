@@ -10,12 +10,14 @@ connectToDatabase();
 ini_set('display_errors', 1);
 global $pdo;
 
-if (isset($_GET['submit_form'])) {
+if(isset($_POST['submit_form'])) {
     $gelukt = "gelukt";
-    $name = $_GET['name'];
-    $email = $_GET['email'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
 
     insertUserInDatabase("$name", "$email");
-    echo $gelukt;
+    echo $name;
+    echo $email;
 }
+
 ?>

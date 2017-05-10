@@ -46,3 +46,8 @@ function insertUserInNieuwsbrief($id, $name, $email)
         echo "Could not insert user, " . $e->getMessage();
     }
 }
+
+function registerUser()
+{
+
+}
