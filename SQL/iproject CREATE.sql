@@ -14,6 +14,7 @@ use iproject11
 
 
 --IF object_id('CheckPassword') IS NOT NULL
+
 GO
 CREATE FUNCTION CheckPassword(@pass varchar(30))
   RETURNS int
@@ -30,14 +31,25 @@ AS
   END;
 GO
 
-SELECT * FROM Nieuwsbrief
+GO
+CREATE FUNCTION fnIsValidEmail(@email varchar(255))
+  --Returns true if the string is a valid email address.
+  RETURNS bit
+As
+  BEGIN
+    RETURN CASE WHEN ISNULL(@email, '') <> '' AND @email LIKE '%_@%_.__%' THEN 1 ELSE 0 END
+  END
+GO
+
+-- SELECT * FROM Nieuwsbrief
 
 if not exists (select * from sysobjects where name='Nieuwsbrief')
   CREATE TABLE Nieuwsbrief (
-    id int IDENTITY(1,1) NOT NULL,
+    id int IDENTITY NOT NULL,
     name VARCHAR(70) NOT NULL,
     email VARCHAR(70) NOT NULL,
-    CONSTRAINT pk_id PRIMARY KEY (id)
+    CONSTRAINT pk_id PRIMARY KEY (email),
+    CONSTRAINT ck_email CHECK (dbo.fnIsValidEmail(email) >= 1)
   )
 
 if not exists (select * from sysobjects where name='Vraag')
@@ -60,28 +72,28 @@ if not exists (select * from sysobjects where name='Landen')
 if not exists (select * from sysobjects where name='Gebruiker')
   CREATE TABLE Gebruiker (
     Achternaam														VARCHAR(35)										NOT NULL,		--Lange achternaam
-    Straatnaam1														VARCHAR(255)										NOT NULL,		--Van adresregel1 naar straatnaam1
+    Straatnaam1														VARCHAR(255)									NOT NULL,		--Van adresregel1 naar straatnaam1
     Huisnummer1														TINYINT                                         NOT NULL,		--Huisnummer toegevoegd voor straat1
-    Straatnaam2														VARCHAR(255)										NULL,			--Van adresregel2 naar straatnaam2
-    Huisnummer2														TINYINT											NULL,			--huisnummer toegevoegd voor straat2
+    Straatnaam2														VARCHAR(255)									NULL,			--Van adresregel2 naar straatnaam2
+    Huisnummer2														TINYINT											  NULL,			--huisnummer toegevoegd voor straat2
     Antwoordtekst													VARCHAR(20)										NOT NULL,
-    GeboorteDag														DATE											NOT NULL,
-    Mailbox															VARCHAR(75)										NOT NULL,
-    Gebruikersnaam													VARCHAR(35)										NOT NULL,
-    Land															VARCHAR(36)										NOT NULL,		--
+    GeboorteDag														DATE											    NOT NULL,
+    Mailbox															  VARCHAR(75)										NOT NULL,
+    Gebruikersnaam												VARCHAR(35)										NOT NULL,
+    Land															    VARCHAR(36)										NOT NULL,		--
     Plaatsnaam														VARCHAR(85)										NOT NULL,		-- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
-    Postcode														VARCHAR(9)										NOT NULL,		-- https://en.wikipedia.org/wiki/Postal_codes
-    Voornaam														VARCHAR(20)										NOT NULL,
-    Vraag															INT									NOT NULL,
+    Postcode														  VARCHAR(9)										NOT NULL,		-- https://en.wikipedia.org/wiki/Postal_codes
+    Voornaam														  VARCHAR(20)										NOT NULL,
+    Vraag															    INT									           NOT NULL,
     Wachtwoord														VARCHAR(30)										NOT NULL,
-    Verkoper														VARCHAR(4)			DEFAULT 'niet'				NOT NULL,		-- BOOLEAN??
-    CONSTRAINT pk_gebuikersnaam										PRIMARY KEY										(gebruikersnaam),
+    Verkoper														  VARCHAR(4)			DEFAULT 'niet'				NOT NULL,		-- BOOLEAN??
+    CONSTRAINT pk_gebuikersnaam						PRIMARY KEY										(gebruikersnaam),
     CONSTRAINT fk_GebruikerVraag_ref_VraagVraagnummer				FOREIGN KEY										(Vraag)
     REFERENCES														Vraag (vraagnummer),
     CONSTRAINT fk_GebruikerLand_ref_landnaam						FOREIGN KEY (Land)
     REFERENCES														Landen(Landnaam),
     CONSTRAINT ck_verkoper											CHECK											(Verkoper IN ('wel', 'niet')), -- Kijkt of er Wel / Niet is ingevoerd bij de vraag of de gebruiker een verkoper is
-    CONSTRAINT CheckPasswordRules									CHECK											(dbo.CheckPassword(Wachtwoord) >= 1 )
+    CONSTRAINT CheckPasswordRules								CHECK											(dbo.CheckPassword(Wachtwoord) >= 1 )
   )
 --INSERT INTO Landen VALUES (21,'BE', 'Belgium');
 --INSERT INTO Gebruiker VALUES('Mccoy','kraanvoglstraat',93,'Appartment',19,'Lorem','1999/05/05','Nuncegestasnet','Gebruikersnaam','Belgium','Bhavnagar','30700','Preston','67','1234567j','wel');
@@ -250,6 +262,7 @@ DROP TABLE [Test];
 
 BEGIN
   DROP FUNCTION [dbo].[CheckPassword]
+  DROP FUNCTION [dbo].[fnIsValidEmail]
 END
 GO
 */
