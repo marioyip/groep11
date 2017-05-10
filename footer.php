@@ -53,7 +53,7 @@
                         <li>
                             <div class="input-append newsletter-box text-center">
 <!--                                <input title="inschrijven" type="text" class="full text-center textDarkGray form-control fontSize16"><br>-->
-                                <input class="full text-center textDarkGray form-control fontSize16" type="text" name="naam" id="user_name" placeholder="Naam" value="<?=isset($postdata['Voornaam'])?$postdata['Voornaam']:""?>"/>
+                                <input class="full text-center textDarkGray form-control fontSize16" type="text" name="name" id="user_name" placeholder="Naam" value="<?=isset($postdata['Voornaam'])?$postdata['Voornaam']:""?>"/>
                                 <input class="full text-center textDarkGray form-control fontSize16" type="text" name="email" id="email" placeholder="E-mail" value="<?=isset($postdata['Mailbox'])?$postdata['Mailbox']:""?>"/>
 <!--                                <button class="textDarkGray newsButtonGray bg-gray btn btn-default " type="submit">Inschrijven </button>-->
                                 <input class="textDarkGray newsButtonGray bg-gray btn btn-default" type="submit" value="Inschrijven" name="submit_form"/>
