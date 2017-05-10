@@ -26,12 +26,6 @@ include ('functies.php');
 connectToDatabase();
 
 //query opstellen
-$query1 = ("SELECT * FROM Voorwerp WHERE Voorwerpnummer = 2");
-$data = $db->prepare($query1);
-
-$details = "";
-
-$voorwerp = $data->fetch();
 
 $veiling = "";
 $veilinggesloten = "\"VeilingGesloten?\"";
@@ -42,35 +36,65 @@ if ($veilinggesloten == 1) {
 if ($veilinggesloten == 0) {
     $veiling .= "geopend";
 }
-
-if(isset($voorwerp['Titel'])){
-    $details = "ja";
-    echo $details;
-} else {
-    $details = "nee";
-    echo $details;
-}
 ?>
+
 <main>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-header"><?= $details.$voorwerp['Titel']; ?></h1>
+                <h1 class="page-header"><!-- titel -->
+                    <?php
+                    $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>
+                </h1>
             </div>
         </div>
         <div class="row">
 
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
-                    <img src="media/<?= $voorwerp['VoorwerpCover']; ?>"/>
+                    <img src="media/<?php
+                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="veilingBox">
                     <h2>De veiling is <?= $veiling ?></h2>
-                    <p>
-                        De veiling is op <?= $voorwerp['LooptijdbeginDag']; ?> om
-                        <?= $voorwerp['LooptijdbeginTijdstip']; ?> geopend.
+                    <p><!-- looptijdbegindag -->
+                        De veiling is op
+                        <?php
+                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        om <!-- LooptijdbeginTijdstip -->
+                        <?php
+                        $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        geopend.
                         <!--                                    <div class="progress">-->
                         <!--                                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
                         <!--                                             aria-valuenow="getdate()" aria-valuemin="-->
@@ -79,7 +103,28 @@ if(isset($voorwerp['Titel'])){
                         <!--                                            40%-->
                         <!--                                        </div>-->
                         <!--                                    </div>-->
-                        De looptijd voor de veiling van <?= $voorwerp['Titel']; ?> is <?= $voorwerp['Looptijd']; ?>
+
+                        <!-- titel -->
+                        De looptijd voor de veiling van
+                        <?php
+                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        is <!-- looptijd -->
+                        <?php
+                        $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
                         dagen.
                     </p>
                 </div>
@@ -100,15 +145,54 @@ if(isset($voorwerp['Titel'])){
                         <div class="tab-content">
                             <div id="home" class="tab-pane fade in active">
                                 <h3>Product informatie</h3>
-                                <p><?= $voorwerp['Beschrijving']; ?></p>
+                                <p><!-- beschrijving -->
+                                    <?php
+                                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->execute();
+
+                                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                        echo $row[0];
+                                    }
+                                    ?>
+                                </p>
                             </div>
                             <div id="menu1" class="tab-pane fade">
-                                <h3>Details</h3>
-                                <p><?= $voorwerp['Beschrijving']; ?></p>
+                                <h3>Betalingsinstructie</h3>
+                                <p><!-- beschrijving -->
+                                    <?php
+                                    $sql = "SELECT Betalingsinstructie FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->execute();
+
+                                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                        echo $row[0];
+                                    }
+                                    ?>
+                                </p>
                             </div>
                             <div id="menu2" class="tab-pane fade">
-                                <h3>Contact informatie</h3>
-                                <p><?= $voorwerp['Verkoper']; ?></p>
+                                <h3>Locatie</h3>
+                                <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
+                                    <?php
+                                    $sql = "SELECT Plaatsnaam FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->execute();
+
+                                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                        echo $row[0];
+                                    }
+                                    ?>,<!-- land -->
+                                    <?php
+                                    $sql = "SELECT Land FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->execute();
+
+                                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                        echo $row[0];
+                                    }
+                                    ?>
+                                </p>
                             </div>
                         </div>
                     </div>
