@@ -6,7 +6,7 @@
                     <h3>Mijn profiel</h3>
                     <ul>
                         <li>
-                            <a class="textWhite" href="inloggen.php">Aanmelden</a>
+                            <a class="textWhite" href="inloggen.php">Inloggen</a>
                         </li>
                         <li>
                             <a class="textWhite" href="registreren.php">Registreren</a>

@@ -74,3 +74,6 @@ if ($errors) {
     header("location: index.php");
 }
 include('footer.php');
+
+//<label for="username">Gebruikersnaam</label><input type="text" name="username" id="username"
+//                                                           placeholder="Username" value="<?=isset($postdata['username'])?$postdata['username']:""?>"/>
