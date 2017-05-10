@@ -1,13 +1,13 @@
 <?php
 function connectToDatabase() {
-    $pw = "dbrules";
-    $userName = "sa";
-    $dbServer = "localhost";
-    $dbName = "iconcepts";
-    global $pdo;
+    $pw = "rPgxSAaf";
+    $username = "iproject11";
+    $hostname = "mssql.iproject.icasites.nl";
+    $dbname = "iproject11";
+    global $db;
 
-    $pdo = new PDO ("sqlsrv:Server=$dbServer;Database=$dbName;ConnectionPooling=0;");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+
 }
 
 function insertUserInDatabase($username, $password, $voornaam, $achternaam, $email, $geboortedatum) {
