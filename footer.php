@@ -47,7 +47,7 @@
                 <div class="col-lg-2  col-md-1 col-sm-4 col-xs-6">
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <form action="nieuwsbrief_inschrijven.php" method="post">
+                    <form action="nieuwsbrief_inschrijven.php" method="get">
                     <h3>Nieuwsbrief</h3>
                     <ul>
                         <li>

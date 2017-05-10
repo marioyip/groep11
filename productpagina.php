@@ -49,6 +49,12 @@ if ($veilinggesloten == 0) {
     $veiling .= "geopend";
 }
 
+if(isset($voorwerp['VoorwerpCover'])){
+    echo 'ja';
+} else {
+    echo 'nee';
+}
+
 include 'header.php';
 
 echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
@@ -65,7 +71,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
 
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
-                    <img src="img/<?= $voorwerp['VoorwerpCover']; ?>"/>
+                    <img src="media/<?= $voorwerp['VoorwerpCover']; ?>"/>
                 </div>
             </div>
             <div class="col-md-6">

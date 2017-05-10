@@ -4629,6 +4629,8 @@ VALUES
   (1,'test 1', 1),
   (2,'test 2', 1),
   (3,'test 3', 0)
-
-
+SET IDENTITY_INSERT dbo.iproject11.Voorwerp OFF
+INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/11/2018','00:00:00','03/13/2017','00:00:00','4.70',100,100,'6.95','14.50','Dit prachtige voorwerp is echt een must have!','Creditcard','Gelieve het af te geven','Belgium','Velp','Laptop','Er is geen verzendinstructie',0,'laptop.png');
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau]) VALUES(160);
+INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (160,'Computers',-1)
 

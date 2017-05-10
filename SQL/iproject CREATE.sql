@@ -179,7 +179,7 @@ if not exists (select * from sysobjects where name='Feedback')
 
 if not exists (select * from sysobjects where name='Voorwerp in Rubriek')
   CREATE TABLE VoorwerpInRubriek (
-    RubriekOpLaagsteNiveau											INTEGER											NOT NULL,
+    RubriekOpLaagsteNiveau							INTEGER											  NOT NULL,
     Voorwerp														INT IDENTITY									NOT NULL,
     CONSTRAINT pk_voorwerpnummer_rubrieknummer						PRIMARY KEY										(voorwerp, RubriekOpLaagsteNiveau),
     CONSTRAINT fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer		FOREIGN KEY										(Voorwerp)
