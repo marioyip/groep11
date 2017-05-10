@@ -48,16 +48,14 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                 </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-right">
+            <div class="navbar-right ">
                 <form method="GET" action="zoekfunctie.php">
                     <ul class="nav navbar-nav">
                         <li>
                             <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
                         <li>
-                            <select>
+                            <select class="form-control">
                                 <?php
                                 $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
                                 $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -71,8 +69,6 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                                 ?>
                             </select>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
                         <li>
                             <button class="btn btn-default" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
