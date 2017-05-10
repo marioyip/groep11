@@ -50,7 +50,7 @@ include 'header.php';
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Gebruiekrsnaam:</label>
+                        <label class="control-label col-sm-2" for="pwd">Gebruikersnaam:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="gebruikersnaam" id="pwd" placeholder="keesvdalen">
                         </div>
@@ -72,13 +72,7 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Geboortedatum:</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control marginLeft200" name="geboortedatum" id="email" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Telefoon<br>nummer:</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control marginLeft200" name="telefoon" id="pwd" placeholder="1234567890">
+                            <input type="date" class="form-control marginLeft200" name="geboortedatum" id="email" placeholder="YYYY-MM-DD">
                         </div>
                     </div>
 
@@ -130,13 +124,25 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Land:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" name="land" id="email" placeholder="België">
+                            <select name="vraag" class="marginLeft400">
+                            <?php
+                            $sql = "SELECT Landnaam FROM Landen";
+                            $stmt = $db->prepare($sql); //Statement object aanmaken
+                            $stmt->execute();           //Statement uitvoeren
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                            {
+                                for ($i = 0; $i < count($row); $i++) {
+                                    echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+                                }
+                            }
+                            ?>
+                            </select>
                         </div>
                     </div>
 
                     <h3>Betalingsgegevens</h3>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Rekeningnummer (IBAN):</label>
+                        <label class="control-label col-sm-2" for="pwd">Rekeningnummer(IBAN):</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="rekeningnr" id="pwd"
                                    placeholder="NL 53 BANK 1234567890">
@@ -153,13 +159,16 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" name="verkoper" id="pwd" placeholder="ja/nee">
+                            <select name="vraag" class="marginLeft400">
+                                <option value="ja">Ja</option>
+                                <option value="nee">Nee</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" name="submit">Submit</button>
+                            <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
                         </div>
                     </div>
                 </form>
