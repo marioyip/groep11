@@ -46,7 +46,21 @@ function insertUserInNieuwsbrief($id, $name, $email)
     }
 }
 
-function registerUser()
+function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord, $wachtwoord2,
+                      $geboortedatum, $telefoonnr, $vraag, $antwoord, $straat, $huisnr, $postcode,
+                      $plaats, $land, $rekeningnr, $rekeninghouder)
 {
-
+    echo "Hij komt hier!!!!!! <br>";
+    global $db;
+    $hashedWachtwoord = password_hash($wachtwoord, 1);
+    $hashedWachtwoord2 = password_hash($wachtwoord2, 1);
+    try {
+        $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, 
+Antwoordtekst, GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, 
+Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (achternaam, straat, huisnr, antwoord, 
+geboortedag, email, gebruikersnaam, land, plaats, postcode, voornaam, vraag, wachtwoord, verkoper)");
+        $stmt->execute(array($naam, $email));
+    } catch (PDOException $e) {
+        echo "Could not insert user, " . $e->getMessage();
+    }
 }

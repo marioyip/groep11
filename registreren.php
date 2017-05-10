@@ -27,58 +27,58 @@ include 'header.php';
 
             </div>
             <div class="col-md-9 marginTop20 text-left">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action="registratiegelukt.php">
                     <div class="form-group">
                         <h3>Accountgegevens</h3>
                         <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="email" placeholder="Kees">
+                            <input type="text" class="form-control marginLeft200" name="voornaam" id="email" placeholder="Kees">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Achternaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="van Dalen">
+                            <input type="text" class="form-control marginLeft200" name="achternaam" id="pwd" placeholder="van Dalen">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control marginLeft200" id="email"
+                            <input type="email" class="form-control marginLeft200" name="email" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Gebruiekrsnaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="keesvdalen">
+                            <input type="text" class="form-control marginLeft200" name="gebruikersnaam" id="pwd" placeholder="keesvdalen">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Wachtwoord:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control marginLeft200" id="email"
+                            <input type="password" class="form-control marginLeft200" name="wachtwoord" id="email"
                                    placeholder="Voer een wachtwoord in">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Herhaal wachtwoord:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control marginLeft200" id="pwd"
+                            <input type="password" class="form-control marginLeft200" name="wachtwoord2" id="pwd"
                                    placeholder="Herhaal uw het wachtwoord">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Geboortedatum:</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control marginLeft200" id="email" value="">
+                            <input type="date" class="form-control marginLeft200" name="geboortedatum" id="email" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">Telefoon<br>nnummer:</label>
+                        <label class="control-label col-sm-2" for="pwd">Telefoon<br>nummer:</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control marginLeft200" id="pwd" placeholder="1234567890">
+                            <input type="number" class="form-control marginLeft200" name="telefoon" id="pwd" placeholder="1234567890">
                         </div>
                     </div>
 
@@ -97,7 +97,7 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2 " for="pwd">Antwoord:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="Je antwoord">
+                            <input type="text" class="form-control marginLeft200" name="antwoord" id="pwd" placeholder="Je antwoord">
                         </div>
                     </div>
 
@@ -105,32 +105,32 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Straat:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="Janstraat">
+                            <input type="text" class="form-control marginLeft200" name="straat" id="pwd" placeholder="Janstraat">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Huisnummer:</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control marginLeft200" id="pwd" placeholder="4">
+                            <input type="number" class="form-control marginLeft200" name="huisnr" id="pwd" placeholder="4">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Postcode:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="1234 AB">
+                            <input type="text" class="form-control marginLeft200" name="postcode" id="pwd" placeholder="1234 AB">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Plaatsnaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd" placeholder="Ede">
+                            <input type="text" class="form-control marginLeft200" name="plaats" id="pwd" placeholder="Ede">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Land:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="email" placeholder="België">
+                            <input type="text" class="form-control marginLeft200" name="land" id="email" placeholder="België">
                         </div>
                     </div>
 
@@ -138,7 +138,7 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Rekeningnummer (IBAN):</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="pwd"
+                            <input type="text" class="form-control marginLeft200" name="rekeningnr" id="pwd"
                                    placeholder="NL 53 BANK 1234567890">
                         </div>
                     </div>
@@ -146,14 +146,20 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Rekeninghouder:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" id="email" placeholder="John Doe">
+                            <input type="text" class="form-control marginLeft200" name="rekeninghouder" id="email" placeholder="John Doe">
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" class="form-control marginLeft200" name="verkoper" id="email">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default" name="submit">Submit</button>
                         </div>
                     </div>
 
@@ -166,28 +172,6 @@ include 'header.php';
 
         </div>
     </div>
-    <?php
-    include 'footer.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 'On');
-
-    require_once('functies.php');
-
-    connectToDatabase();
-
-
-    ini_set('display_errors', 1);
-    global $pdo;
-
-    if (isset($_GET['submit_form'])) {
-        $gelukt = "gelukt";
-        $name = $_GET['name'];
-        $email = $_GET['email'];
-
-        registerUser("$name", "$email");
-        echo $gelukt;
-    }
-    ?>
 </body>
 
 </html>
