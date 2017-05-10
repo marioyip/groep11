@@ -153,7 +153,7 @@ include 'header.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
                         <div class="col-sm-10">
-                            <input type="checkbox" class="form-control marginLeft200" name="verkoper" id="email">
+                            <input type="text" class="form-control marginLeft200" name="verkoper" id="pwd" placeholder="ja/nee">
                         </div>
                     </div>
 
@@ -162,8 +162,6 @@ include 'header.php';
                             <button type="submit" class="btn btn-default" name="submit">Submit</button>
                         </div>
                     </div>
-
-
                 </form>
             </div>
             <div class="col-md-2 marginTop20" align="center">
