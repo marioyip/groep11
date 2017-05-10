@@ -47,7 +47,7 @@
                 <div class="col-lg-2  col-md-1 col-sm-4 col-xs-6">
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <form action="nieuwsbrief_inschrijven.php" method="post">
+                    <form action="" method="post">
                     <h3>Nieuwsbrief</h3>
                     <ul>
                         <li>
@@ -76,5 +76,26 @@
         </div>
     </div>
     <!--/.footer-bottom-->
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'On');
+
+    require_once('functies.php');
+
+    connectToDatabase();
+
+
+    ini_set('display_errors', 1);
+    global $pdo;
+
+    if(isset($_POST['submit_form']) && $_POST['submit_form'] !='') {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+
+        insertUserInDatabase("$name", "$email");
+
+    }
+
+    ?>
 </footer>
 
