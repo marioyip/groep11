@@ -80,7 +80,7 @@
         </div>
         <div class="container">
             <a  href="productpagina.php">
-                <div class="col-md-3 itemBox grow bglg roundborder" align="center">
+                <div class="col-md-3 itemBox grow  roundborder" align="center">
                     <!-- img moet ook uit de database te halen zijn -->
                     <img class="imgStyle roundborder" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
@@ -114,7 +114,7 @@
             </a>
 
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
@@ -124,7 +124,7 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/fauteuil.jpg">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">Fauteuil</a></h4>
                     <div class="description marginTop5">
@@ -135,7 +135,7 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/iphone.jpg">
                     <h4><a  class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
                     <div class="description marginTop5 ">
@@ -152,7 +152,7 @@
         </div>
         <div class="container marginTop10">
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
@@ -185,7 +185,7 @@
             </a>
 
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg marginBottom50" align="center">
+                <div class="col-md-3 itemBox grow roundborder  marginBottom50" align="center">
                     <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
@@ -195,7 +195,7 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/fauteuil.jpg">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">Fauteuil</a></h4>
                     <div class="description marginTop5">
@@ -206,7 +206,7 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder x" align="center">
                     <img class="imgStyle roundborder " src="media/iphone.jpg">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
                     <div class="description marginTop5 ">
