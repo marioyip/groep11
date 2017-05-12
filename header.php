@@ -51,7 +51,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
 <!--                </button>-->
 <!--            </div>-->
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete" aria-hidden="true" href="rubrieken.php">
+            <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray" href="rubrieken.php">
                 Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">
