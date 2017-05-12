@@ -24,11 +24,10 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                     <!--                    <a class="textWhite marginLeft200 fontSize16" href="rubrieken.php">Rubrieken</a>-->
                 </li>
             </ul>
-            <ul class="nav navbar-right">
+            <ul class="nav ">
                 <li>
-                    <a <a class=" textWhite fontSize16 crete" aria-hidden="true" href="rubrieken.php">
-                        Rubrieken</a>
-                    <a class="glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true" href="inloggen.php">
+
+                    <a class="navbar-right glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true" href="inloggen.php">
                         Inloggen</a>
                 </li>
             </ul>
@@ -52,6 +51,8 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
 <!--                </button>-->
 <!--            </div>-->
             <!-- Collect the nav links, forms, and other content for toggling -->
+            <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete" aria-hidden="true" href="rubrieken.php">
+                Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">
                 <form method="GET" action="zoekfunctie.php">
