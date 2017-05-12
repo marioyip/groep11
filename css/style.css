@@ -85,6 +85,9 @@ ol {
     margin: 10px;
 }
 
+.roundborder {
+    border-radius: 25px;
+}
 .itemBox p {
     color: red;
 }
@@ -104,6 +107,14 @@ ol {
 
 body {
     background-color: #FAFAFA;
+}
+
+.achtergrond {
+    background-color: brown;
+}
+
+.bglg {
+    background-color: #88b925;
 }
 
 .marginTop20 {
@@ -221,6 +232,9 @@ body {
     margin-bottom: 200px;
 }
 
+.lettertype {
+    font-family: 'sanchez', 'sans-serif';
+}
 .textSize11 {
     font-size: 11px;
 }
@@ -327,11 +341,13 @@ body::after {
 
 .imageBox{
     width: 100%;
-    height: 300px;
-    padding-left: 30px;
-    padding-right: 30px;
+    height: 350px;
+    /*padding-left: 30px;*/
+    /*padding-right: 30px;*/
     background-color: #1b6d85;
 }
+
+
 
 .textGreen {
     color: #88B04B;

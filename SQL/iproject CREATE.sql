@@ -41,7 +41,7 @@ As
   END
 GO
 
--- SELECT * FROM Gebruiker
+-- SELECT * FROM Nieuwsbrief
 
 if not exists (select * from sysobjects where name='Nieuwsbrief')
   CREATE TABLE Nieuwsbrief (

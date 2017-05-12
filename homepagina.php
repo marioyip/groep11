@@ -68,18 +68,19 @@
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
                 <span class="icon-next"></span>
             </a>
+            <div>
 
         </div>
         <div class="container marginTop20 radius">
             <div class="col-md-12 " align="center">
-                <h1 class="textDarkGray">Aanbevolen voor jou</h1>
+                <h1 class="textDarkGray lettertype">Aanbevolen voor jou</h1>
             </div>
         </div>
-        <div class="container marginTop10">
-            <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
+        <div class="container">
+            <a  href="productpagina.php">
+                <div class="col-md-3 itemBox grow bglg roundborder" align="center">
                     <!-- img moet ook uit de database te halen zijn -->
-                    <img class="imgStyle" src="media/<?php
+                    <img class="imgStyle roundborder" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -88,7 +89,7 @@
                         echo $row[0];
                     }
                     ?>" width="200" height="200"/>
-                    <h4><a href="productpagina.php"><?php
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php"><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
@@ -111,9 +112,9 @@
             </a>
 
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/grasmaaier.JPG">
-                    <h4><a href="productpagina.php">Grasmaaier</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                         100% efficiënt.
                     </div>
@@ -121,9 +122,9 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/fauteuil.jpg">
-                    <h4><a href="productpagina.php">Fauteuil</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/fauteuil.jpg">
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php">Fauteuil</a></h4>
                     <div class="description marginTop5">
                         Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
                         look.
@@ -132,9 +133,9 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/iphone.jpg">
-                    <h4><a href="productpagina.php">iPhone SE</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/iphone.jpg">
+                    <h4><a  class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
                     <div class="description marginTop5">
                         Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
                     </div>
@@ -144,13 +145,13 @@
         </div>
         <div class="container marginTop60 radius">
             <div class="col-md-12 " align="center">
-                <h1 class="textDarkGray">Nieuwe veilingen</h1>
+                <h1 class="textDarkGray lettertype"">Nieuwe veilingen</h1>
             </div>
         </div>
         <div class="container marginTop10">
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/<?php
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -159,7 +160,7 @@
                         echo $row[0];
                     }
                     ?>"/>
-                    <h4><a href="productpagina.php"><?php
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php"><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
@@ -182,9 +183,9 @@
             </a>
 
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/grasmaaier.JPG">
-                    <h4><a href="productpagina.php">Grasmaaier</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                         100% efficiënt.
                     </div>
@@ -192,9 +193,9 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/fauteuil.jpg">
-                    <h4><a href="productpagina.php">Fauteuil</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder" src="media/fauteuil.jpg">
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php">Fauteuil</a></h4>
                     <div class="description marginTop5">
                         Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
                         look.
@@ -203,9 +204,9 @@
                 </div>
             </a>
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow" align="center">
-                    <img class="imgStyle" src="media/iphone.jpg">
-                    <h4><a href="productpagina.php">iPhone SE</a></h4>
+                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                    <img class="imgStyle roundborder " src="media/iphone.jpg">
+                    <h4><a class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
                     <div class="description marginTop5">
                         Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
                     </div>

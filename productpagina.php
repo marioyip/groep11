@@ -59,7 +59,7 @@ if ($veilinggesloten == 0) {
 
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
-                    <img class=imgStyle src="media/<?php
+                    <img class=imageBox src="media/<?php
                     $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -143,7 +143,7 @@ if ($veilinggesloten == 0) {
                         </ul>
 
                         <div class="tab-content">
-                            <div id="home" class="tab-pane fade in active">
+                            <div id="home" class="tab-pane in active">
                                 <h3>Product informatie</h3>
                                 <p><!-- beschrijving -->
                                     <?php
@@ -157,7 +157,7 @@ if ($veilinggesloten == 0) {
                                     ?>
                                 </p>
                             </div>
-                            <div id="menu1" class="tab-pane fade">
+                            <div id="menu1" class="tab-pane">
                                 <h3>Betalingsinstructie</h3>
                                 <p><!-- beschrijving -->
                                     <?php
@@ -171,7 +171,7 @@ if ($veilinggesloten == 0) {
                                     ?>
                                 </p>
                             </div>
-                            <div id="menu2" class="tab-pane fade">
+                            <div id="menu2" class="tab-pane">
                                 <h3>Locatie</h3>
                                 <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
                                     <?php
