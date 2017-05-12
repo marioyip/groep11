@@ -63,7 +63,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                         <li>
                             <select class="form-control" name="rubriek">
                                 <?php
-                                $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1";
+                                $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam";
                                 $stmt = $db->prepare($sql); //Statement object aanmaken
                                 $stmt->execute();           //Statement uitvoeren
                                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
