@@ -24,8 +24,10 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
                     <!--                    <a class="textWhite marginLeft200 fontSize16" href="rubrieken.php">Rubrieken</a>-->
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-right">
                 <li>
+                    <a <a class=" textWhite fontSize16 crete" aria-hidden="true" href="rubrieken.php">
+                        Rubrieken</a>
                     <a class="glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true" href="inloggen.php">
                         Inloggen</a>
                 </li>
