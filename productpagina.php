@@ -25,8 +25,6 @@ include ('functies.php');
 
 connectToDatabase();
 
-//query opstellen
-
 $veiling = "";
 $veilinggesloten = "\"VeilingGesloten?\"";
 
@@ -44,12 +42,14 @@ if ($veilinggesloten == 0) {
             <div class="col-md-12">
                 <h1 class="page-header"><!-- titel -->
                     <?php
-                    $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+
+                    $sql = "SELECT voorwerp.Titel FROM Voorwerp WHERE voorwerp.voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
                     while($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         echo $row[0];
+
                     }
                     ?>
                 </h1>

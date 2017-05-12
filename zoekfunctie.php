@@ -26,11 +26,10 @@
     $dbname = "iproject11";
 
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
-
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
-        $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult AND rubriek.rubrieknaam = '$gekozenRubriek' OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
+        $sql = "Select voorwerp.nummer, voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult AND rubriek.rubrieknaam = '$gekozenRubriek' OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
 
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();           //Statement uitvoeren
@@ -41,16 +40,14 @@
             echo '<tr>';
             for ($i = 0; $i < count($row); $i++) {
 
-                echo '
-                <td>
-                    <a href="productpagina.php">' . $row[$i] . '</a>
-                </td>'; //Loop de rij af
+                echo '<td>';
+                echo '<a href="productpagina.php">' . $row[$i] . '</a>';
+                echo '</td>'; //Loop de rij af
             }
 
             echo '</tr>';
         }
         echo '</table>';
-
 
     } else {
         echo '
@@ -58,6 +55,7 @@
             <strong>Fout</strong> Voer alstublieft een zoekterm in
         </div>';
     }
+
     ?>
 </div>
 </body>
