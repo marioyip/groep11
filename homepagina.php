@@ -145,7 +145,7 @@
         </div>
         <div class="container marginTop60 radius">
             <div class="col-md-12 " align="center">
-                <h1 class="textDarkGray lettertype"">Nieuwe veilingen</h1>
+                <h1 class="textDarkGray lettertype">Nieuwe veilingen</h1>
             </div>
         </div>
         <div class="container marginTop10">
