@@ -23,7 +23,7 @@ include 'header.php';
         <li>Schoonmaaker (m/v)</li>
     </ul>
     <p>Heb jij interesse bij ons te werken? Stuur een mail met je volledige voor- en achternaam, telefoonnummer, e-mailadres,
-        cv (.pdf formaat) en motivatie (max. 500 woorden) naar contact@eenmaalandermaal.nl met onderwerp 'Sollicitatie [funtienaam]'. Je ontvangt spoedig antwoord.</p>
+        cv (.pdf formaat) en motivatie (max. 500 woorden) naar contact@eenmaalandermaal.nl met onderwerp 'Sollicitatie [funtienaam]'. Je ontvangt spoedig antwoord. </p>
 </div>
 </div>
 </div>
