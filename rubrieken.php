@@ -22,7 +22,7 @@ include 'header.php';
 
     connectToDatabase();
 
-    $sql = "SELECT rubrieknaam FROM rubriek";
+    $sql = "SELECT rubrieknaam FROM rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
@@ -31,19 +31,14 @@ include 'header.php';
     {
         echo '<tr>';
         for ($i = 0; $i < count($row); $i++) {
-
             echo '<td>';
             echo '<a href="zoekfunctie.php?zoeken=&rubriek='.$row[$i].'">' . $row[$i] . '</a>';
-            echo '</td>'; //Loop de rij af
+            echo '</td>';
         }
-
         echo '</tr>';
     }
     echo '</table>';
     ?>
-
-
-
 </main>
 </body>
 </html>
