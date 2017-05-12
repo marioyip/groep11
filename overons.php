@@ -29,12 +29,12 @@
             <div class="container marginTop10">
                 <div class="col-md-6 marginTop20 text-left">
                     <h3 class="">Wie zijn wij?</h3>
-                    Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen. Veel
+                    <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen. Veel
                     ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment, datamanagement en
                     analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden heeft geen geheimen voor ons.
                     Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij voor u
                     klaar
-                    om uw volgende stap op internet tot een succes te maken.
+                        om uw volgende stap op internet tot een succes te maken.</p>
                 </div>
                 <div class="col-md-6 marginTop20">
                     <img class="imgStyle" src="media/ons-team.jpg">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-6 marginTop20 text-left">
                     <h3 class="">Wat doen wij?</h3>
-                    Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                    <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
                     Veel
                     ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
                     datamanagement en
@@ -54,7 +54,7 @@
                     voor ons.
                     Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
                     voor u
-                    klaar om uw volgende stap op internet tot een succes te maken.
+                        klaar om uw volgende stap op internet tot een succes te maken.</p>
                 </div>
 
             </div>
@@ -62,7 +62,7 @@
         <div class="container marginTop10">
             <div class="col-md-6 marginTop20 text-left">
                 <h3 class="">Hoe doen wij dat?</h3>
-                Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
                 Veel
                 ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
                 datamanagement en
@@ -70,7 +70,7 @@
                 voor ons.
                 Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
                 voor u
-                klaar om uw volgende stap op internet tot een succes te maken.
+                    klaar om uw volgende stap op internet tot een succes te maken.</p>
             </div>
 
             <div class="col-md-6 marginTop20">

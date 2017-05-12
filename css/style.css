@@ -19,6 +19,7 @@ html {
 
 p {
     font-size: 20px;
+    font-family: 'Sanchez', 'sans-serif';
 }
 
 .privacyverklaring {
@@ -39,7 +40,7 @@ ol {
 }
 
 .containerMain{
-    min-height: 100vh;
+
 }
 
 .container-fluid {
@@ -233,8 +234,14 @@ body {
 }
 
 .lettertype {
-    font-family: 'sanchez', 'sans-serif';
+    font-family: 'Crete Round', serif;
 }
+.tekstType {
+    font-family: sanchez, sans-serif;
+}
+
+
+
 .textSize11 {
     font-size: 11px;
 }
@@ -261,6 +268,16 @@ body {
 
 .description {
     height: 90px;
+    font-family: 'Sanchez', sans-serif;
+}
+
+.sanchez {
+    font-family: 'Sanchez', sans-serif;
+}
+
+.crete {
+    font-family: 'Crete Round','Glyphicons Halflings', serif;
+
 }
 
 .backgroundGreen {
@@ -443,5 +460,11 @@ body::after {
 
 }
 
-li{
+li, ol, h4, select{
+    font-family: 'Sanchez', 'sans-serif';
 }
+
+h1, h2, h3, h5, h6, input, textarea {
+    font-family: 'Crete Round', 'serif';
+}
+

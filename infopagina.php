@@ -26,15 +26,15 @@
         </div>
         <div class="container marginTop10">
             <div class="col-md-8 marginTop10">
-                <h3> Profiel</h3>
-                <h4>Zijn er kosten verbonden aan het maken van een profiel?</h4>
-                <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!</h4>
-                <h4>Kan ik mijn profiel aanpassen?</h4>
-                <h4>&#8594;Ja, op de pagina <u>mijn profiel</u> kunt u uw gegevens aanpassen</h4>
-                <h4>Is er een minimumleeftijd voor het maken van een profiel?</h4>
-                <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.</h4>
-                <h4>Kan ik mijn profiel verwijderen?</h4>
-                <h4>Je kan je profiel helaas niet verwijderen.</h4>
+                <h2> Profiel</h2>
+                <h3>Zijn er kosten verbonden aan het maken van een profiel?<br></h3>
+                    <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!<br></h4>
+                    <h3>Kan ik mijn profiel aanpassen?<br></h3>
+                    <h4>&#8594;Ja, op de pagina <u>mijn profiel</u> kunt u uw gegevens aanpassen<br></h4>
+                    <h3>Is er een minimumleeftijd voor het maken van een profiel?<br></h3>
+                    <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.<br></h4>
+                    <h3>Kan ik mijn profiel verwijderen?<br></h3>
+                    <h4>&#8594;Je kan je profiel helaas niet verwijderen.</h4>
             </div>
             <div class="col-md-4 marginTop10">
                 <img class="imgStyle" src="media/faq.jpg">
@@ -42,17 +42,17 @@
         </div>
         <div class="container marginTop10">
             <div class="col-md-4 marginTop10">
-                <img class="imgStyle" src="media//faq.jpg">
+                <img class="imgStyle" src="media/faq.jpg">
             </div>
             <div class="col-md-8 marginTop10">
-                <h3> Advertenties beheren</h3>
-                <h4> Kan ik mijn advertentie verwijderen </h4>
+                <h2> Advertenties beheren</h2>
+                <h3> Kan ik mijn advertentie verwijderen </h3>
                 <h4>&#8594; Ja, op mijn profiel kan je je advertentie verwijderen</h4>
-                <h4>Kan ik mijn minimale prijs aanpassen?</h4>
+                <h3>Kan ik mijn minimale prijs aanpassen?</h3>
                 <h4>&#8594; Ja, op mijn profiel kan je jouw advertenties en beschrijvingen veranderen. </h4>
-                <h4>Kan ik de betaling meeteen ontvangen?.</h4>
+                <h3>Kan ik de betaling meeteen ontvangen?.</h3>
                 <h4>&#8594; Nee, de betalingen word in twee weken betaald, dit verschilt per bank.</h4>
-                <h4>Kan ik meerdere advertenties plaatsen?</h4>
+                <h3>Kan ik meerdere advertenties plaatsen?</h3>
                 <h4>&#8594; Ja, je kan versschillende advertenties plaatsen.</h4>
             </div>
 

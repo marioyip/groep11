@@ -1,18 +1,21 @@
+<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+
 <footer>
-    <div class="footer backgroundGreen"  id="footer">
+    <div class="footer backgroundGreen tekstType marginTop100"  id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3>Mijn profiel</h3>
                     <ul>
                         <li>
-                            <a class="textWhite" href="inloggen.php">Inloggen</a>
+                            <a class="textWhite sanchez" href="inloggen.php">Inloggen</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="registreren.php">Registreren</a>
+                            <a class="textWhite sanchez" href="registreren.php">Registreren</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="inloggen.php">Mijn biedprofiel</a>
+                            <a class="textWhite sanchez" href="inloggen.php">Mijn biedprofiel</a>
                         </li>
                     </ul>
                 </div>
@@ -20,13 +23,13 @@
                     <h3>Info</h3>
                     <ul>
                         <li>
-                            <a class="textWhite" href="infopagina.php">Help &amp; info</a>
+                            <a class="textWhite sanchez" href="infopagina.php">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
+                            <a class="textWhite sanchez" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="privacyverklaring.php">Privacy</a>
+                            <a class="textWhite sanchez" href="privacyverklaring.php">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -34,13 +37,13 @@
                     <h3>Contact</h3>
                     <ul>
                         <li>
-                            <a class="textWhite" href="contact.php">Contact</a>
+                            <a class="textWhite sanchez" href="contact.php">Contact</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="overons.php">Over ons</a>
+                            <a class="textWhite sanchez" href="overons.php">Over ons</a>
                         </li>
                         <li>
-                            <a class="textWhite" href="solliciteren.php">Werken bij</a>
+                            <a class="textWhite sanchez" href="solliciteren.php">Werken bij</a>
                         </li>
                     </ul>
                 </div>
@@ -53,10 +56,10 @@
                         <li>
                             <div class="input-append newsletter-box text-center">
 <!--                                <input title="inschrijven" type="text" class="full text-center textDarkGray form-control fontSize16"><br>-->
-                                <input class="full text-center textDarkGray form-control fontSize16" type="text" name="name" id="user_name" placeholder="Naam"/>
-                                <input class="full text-center textDarkGray form-control fontSize16" type="email" name="email" id="email" placeholder="E-mail"/>
+                                <input class="full text-center textDarkGray form-control fontSize16 sanchez" type="text" name="name" id="user_name" placeholder="Naam"/>
+                                <input class="full text-center textDarkGray form-control fontSize16 sanchez" type="email" name="email" id="email" placeholder="E-mail"/>
 <!--                                <button class="textDarkGray newsButtonGray bg-gray btn btn-default " type="submit">Inschrijven </button>-->
-                                <input class="textDarkGray newsButtonGray bg-gray btn btn-default" type="submit" value="Inschrijven" name="submit_form"/>
+                                <input class="textDarkGray newsButtonGray bg-gray btn btn-default sanchez" type="submit" value="Inschrijven" name="submit_form"/>
                             </div>
                         </li>
 
@@ -72,7 +75,7 @@
 
     <div class="footer-bottom footer">
         <div class="container">
-            <p class="text-center fontSize11"> Eenmaal Andermaal © 2017  </p>
+            <p class="text-center fontSize11 sanchez" > Eenmaal Andermaal © 2017  </p>
         </div>
     </div>
     <!--/.footer-bottom-->

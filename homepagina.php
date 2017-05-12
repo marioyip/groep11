@@ -9,6 +9,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/functies.js"></script>
@@ -33,21 +35,21 @@
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/grasmaaier.JPG');"></div>
-                    <div class="carousel-caption">
+                    <div class="carousel-caption crete">
                         <h2>Grasmaaier</h2>
                     </div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
-                    <div class="carousel-caption">
+                    <div class="carousel-caption crete">
                         <h2>Fauteuil</h2>
                     </div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/laptop.png');"></div>
-                    <div class="carousel-caption">
+                    <div class="carousel-caption crete">
                         <h2><?php
                             $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
@@ -107,7 +109,7 @@
                             echo $row[0];
                         }
                         ?></div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
 
@@ -118,7 +120,7 @@
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                         100% efficiënt.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
             <a href="productpagina.php">
@@ -129,17 +131,17 @@
                         Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
                         look.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow roundborder bglg" align="center">
                     <img class="imgStyle roundborder" src="media/iphone.jpg">
                     <h4><a  class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
-                    <div class="description marginTop5">
+                    <div class="description marginTop5 ">
                         Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
         </div>
@@ -178,18 +180,18 @@
                             echo $row[0];
                         }
                         ?></div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
 
             <a href="productpagina.php">
-                <div class="col-md-3 itemBox grow roundborder bglg" align="center">
+                <div class="col-md-3 itemBox grow roundborder bglg marginBottom50" align="center">
                     <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
                     <div class="description marginTop5">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                         100% efficiënt.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
             <a href="productpagina.php">
@@ -200,17 +202,17 @@
                         Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
                         look.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox grow roundborder bglg" align="center">
                     <img class="imgStyle roundborder " src="media/iphone.jpg">
                     <h4><a class="textDarkGray lettertype" href="productpagina.php">iPhone SE</a></h4>
-                    <div class="description marginTop5">
+                    <div class="description marginTop5 ">
                         Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
                     </div>
-                    <a href="productpagina.php" class="btn btn-default" role="button">Bieden</a>
+                    <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
         </div>

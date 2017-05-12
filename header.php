@@ -8,9 +8,11 @@ $dbname = "iproject11";
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
 ?>
+<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 <body>
 <header>
-    <div class="container-fluid backgroundGreen">
+    <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
             <a class="navbar-header" href="homepagina.php">
                 <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
@@ -24,7 +26,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="glyphicon glyphicon-user textWhite fontSize16" aria-hidden="true" href="inloggen.php">
+                    <a class="glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true" href="inloggen.php">
                         Inloggen</a>
                 </li>
             </ul>
