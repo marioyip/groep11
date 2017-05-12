@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cfa6354a-8463-43b0-8852-4dc2c7840098" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zoekfunctie.php" afterPath="$PROJECT_DIR$/zoekfunctie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rubrieken.php" afterPath="$PROJECT_DIR$/rubrieken.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
@@ -104,16 +104,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rubrieken.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rubrieken.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rubrieken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="35" column="67" lean-forward="true" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+            <state relative-caret-position="66">
+              <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
               <folding>
-                <marker date="1494580262403" expanded="true" signature="835:866" ph="SELECT rubri... rubriek" />
-                <marker date="1494580262403" expanded="true" signature="877:899" ph="${$stmt} = $... " />
-                <marker date="1494580262403" expanded="true" signature="918:921" ph="${$stmt-&gt;exe... " />
-                <marker date="1494580262403" expanded="true" signature="928:942" ph="echo '&lt;table... " />
+                <marker date="1494589422660" expanded="true" signature="835:866" ph="SELECT rubri... rubriek" />
+                <marker date="1494589422660" expanded="true" signature="877:899" ph="${$stmt} = $... " />
+                <marker date="1494589422660" expanded="true" signature="918:921" ph="${$stmt-&gt;exe... " />
+                <marker date="1494589422660" expanded="true" signature="928:942" ph="echo '&lt;table... " />
               </folding>
             </state>
           </provider>
@@ -230,10 +230,10 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/homepagina.php" />
-        <option value="$PROJECT_DIR$/rubrieken.php" />
         <option value="$PROJECT_DIR$/productpagina.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql" />
         <option value="$PROJECT_DIR$/zoekfunctie.php" />
+        <option value="$PROJECT_DIR$/rubrieken.php" />
       </list>
     </option>
   </component>
@@ -605,7 +605,7 @@
       <workItem from="1494328514090" duration="1263000" />
       <workItem from="1494330263584" duration="6396000" />
       <workItem from="1494417317086" duration="659000" />
-      <workItem from="1494580227142" duration="2778000" />
+      <workItem from="1494580227142" duration="3486000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage">
       <created>1493809836346</created>
@@ -824,11 +824,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494581702416</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="zoeken is weer in ere hersteld">
+      <created>1494583206948</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1494583206948</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82868000" />
+    <option name="totallyTimeSpent" value="83576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -903,7 +910,8 @@
     <MESSAGE value="infopagina beter" />
     <MESSAGE value="productpagina is af wat betreft sprint 1" />
     <MESSAGE value="hoofdpagina verbeterd" />
-    <option name="LAST_COMMIT_MESSAGE" value="hoofdpagina verbeterd" />
+    <MESSAGE value="zoeken is weer in ere hersteld" />
+    <option name="LAST_COMMIT_MESSAGE" value="zoeken is weer in ere hersteld" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,19 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rubrieken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" column="67" lean-forward="true" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-          <folding>
-            <marker date="1494580262403" expanded="true" signature="835:866" ph="SELECT rubri... rubriek" />
-            <marker date="1494580262403" expanded="true" signature="877:899" ph="${$stmt} = $... " />
-            <marker date="1494580262403" expanded="true" signature="918:921" ph="${$stmt-&gt;exe... " />
-            <marker date="1494580262403" expanded="true" signature="928:942" ph="echo '&lt;table... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productpagina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1185,14 +1180,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zoekfunctie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1215,6 +1202,27 @@
           <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding>
             <marker date="1494580258384" expanded="true" signature="2806:2856" ph="SELECT Rubri... Rubriek" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e87d306c-b94e-43a7-8737-e7345f4db18e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rubrieken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+          <folding>
+            <marker date="1494589422660" expanded="true" signature="835:866" ph="SELECT rubri... rubriek" />
+            <marker date="1494589422660" expanded="true" signature="877:899" ph="${$stmt} = $... " />
+            <marker date="1494589422660" expanded="true" signature="918:921" ph="${$stmt-&gt;exe... " />
+            <marker date="1494589422660" expanded="true" signature="928:942" ph="echo '&lt;table... " />
           </folding>
         </state>
       </provider>

@@ -27,7 +27,7 @@ include 'header.php';
     $stmt->execute();
 
     echo '<table>';
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelri j uitgelezen
     {
         echo '<tr>';
         for ($i = 0; $i < count($row); $i++) {
