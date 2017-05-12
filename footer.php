@@ -75,7 +75,7 @@
 
     <div class="footer-bottom footer">
         <div class="container">
-            <p class="text-center fontSize11 sanchez" > Eenmaal Andermaal © 2017  </p>
+            <p class="text-center fontSize11 sanchez" > Eenmaal Andermaal © <?=date("Y") ?>  </p>
         </div>
     </div>
     <!--/.footer-bottom-->
