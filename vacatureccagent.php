@@ -11,7 +11,6 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
-
 </head>
 <body>
 
