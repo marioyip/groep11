@@ -18,11 +18,11 @@ include 'header.php';
 <main>
     <?php
 
-    include('functies.php');
+    require_once('functies.php');
     include 'catbar.php';
 
     connectToDatabase();
-
+    global $db;
     $sql = "SELECT rubrieknaam FROM rubriek WHERE rubriek = -1 ORDER BY rubrieknaam";
     $stmt = $db->prepare($sql);
     $stmt->execute();
