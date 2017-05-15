@@ -18,27 +18,36 @@ include 'header.php';
 <main>
     <?php
 
-    include ('functies.php');
+    include('functies.php');
     include 'catbar.php';
 
     connectToDatabase();
 
-    $sql = "SELECT rubrieknaam FROM rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam";
+    $sql = "SELECT rubrieknaam FROM rubriek WHERE rubriek = -1 ORDER BY rubrieknaam";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
-    echo '<table>';
+    $total = 0;
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
     {
-        echo '<tr>';
+        echo '<ul>';
         for ($i = 0; $i < count($row); $i++) {
-            echo '<td>';
-            echo '<a href="zoekfunctie.php?zoeken=&rubriek='.$row[$i].'">' . $row[$i] . '</a>';
-            echo '</td>';
+            echo '<li><a href = "" >' . $row[$i] . '</a ></li >';
+            $sql2 = "SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = '$row[$i]') ORDER BY rubrieknaam";
+            $stmt2 = $db->prepare($sql2);
+            $stmt2->execute();
+            while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {
+                for ($j = 0; $j < count($row2); $j++) {
+                    echo '<li role="presentation"><a href = "">' . $row2[$j] . '</a>';
+                    $total++;
+                }
+            }
+            echo '</br>';
+            $total++;
         }
-        echo '</tr>';
+        echo '</ul >';
     }
-    echo '</table>';
+    echo $total;
     ?>
 </main>
 </body>
@@ -46,3 +55,4 @@ include 'header.php';
 <?php
 include 'footer.php';
 ?>
+
