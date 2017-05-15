@@ -5,6 +5,7 @@
 .jumbotron {
     padding-top: 100px;
     padding-bottom: 100px;
+
 }
 
 .marginLeft200 {
@@ -37,18 +38,20 @@ ol {
     list-style-type: lower-roman;
 }
 
-.containerMain {
+.containerMain{
     /*min-height: 800px;*/
 }
+
 
 .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-noListStyleType li {
+noListStyleType li{
     list-style-type: none;
 }
+
 
 .carousel,
 .item {
@@ -91,16 +94,14 @@ noListStyleType li {
 .roundborder {
     border-radius: 25px;
 }
-
 .itemBox p {
     color: red;
 }
-
-.btn-default {
+.btn-default{
     box-shadow: none;
 }
 
-.btn-default:hover {
+.btn-default:hover{
 
 }
 
@@ -138,7 +139,7 @@ body {
     margin-top: 30px;
 }
 
-.marginTop35 {
+.marginTop35{
     margin-top: 35px;
 }
 
@@ -150,7 +151,7 @@ body {
     margin-top: 50px;
 }
 
-.marginTop60 {
+.marginTop60{
     margin-top: 60px;
 }
 
@@ -264,10 +265,11 @@ body {
 .lettertype {
     font-family: 'Crete Round', serif;
 }
-
 .tekstType {
     font-family: sanchez, sans-serif;
 }
+
+
 
 .textSize11 {
     font-size: 11px;
@@ -303,7 +305,7 @@ body {
 }
 
 .crete {
-    font-family: 'Crete Round', 'Glyphicons Halflings', serif;
+    font-family: 'Crete Round','Glyphicons Halflings', serif;
 
 }
 
@@ -311,32 +313,32 @@ body {
     background-color: #88B04B;
 }
 
-.backgroundLightGreen {
+.backgroundLightGreen{
     background-color: #93b749;
 }
 
-.backgroundWhite {
+.backgroundWhite{
     background-color: #FAFAFA;
 }
 
-.backgroundDarkGrey {
+.backgroundDarkGrey{
     background-color: #A9A9A9;
 }
 
-.backgroundLightGrey {
+.backgroundLightGrey{
 
     background-color: #cccccc;
 }
 
-.backgroundImageTeam {
+.backgroundImageTeam{
     background-image: url("media/achtergrondteam.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size:     cover;
+    background-repeat:   no-repeat;
     background-position: center center;
     height: 400px;
 }
 
-.overlay {
+.overlay{
     background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
@@ -352,12 +354,11 @@ body {
 }
 
 .logoTekst {
-    margin-left: 20px;
     height: 50px;
     width: 250px;
 }
 
-.logoTekst hover {
+.logoTekst hover{
 
 }
 
@@ -365,7 +366,7 @@ footer {
     margin-top: 50px;
 }
 
-.navbar {
+.navbar{
     margin-bottom: 0px;
 }
 
@@ -381,7 +382,7 @@ body::after {
     color: white;
 }
 
-.fontSize20 {
+.fontSize20{
     font-size: 20px;
 }
 
@@ -389,25 +390,25 @@ body::after {
     font-size: 16px;
 }
 
-.fontSize11 {
-    font-size: 11px;
+.fontSize11{
+    font-size:11px;
 }
 
-.fontSize12 {
-    font-size: 12px;
+.fontSize12{
+    font-size:12px;
+}
+.fontSize13{
+    font-size:13px;
+}
+.fontSize14{
+    font-size:14px;
+}
+.fontSize15{
+    font-size:15px;
 }
 
-.fontSize13 {
-    font-size: 13px;
-}
 
-.fontSize14 {
-    font-size: 14px;
-}
 
-.fontSize15 {
-    font-size: 15px;
-}
 
 .marginLeft5 {
     margin-left: 5px;
@@ -417,7 +418,7 @@ body::after {
     color: #EDF1FE;
 }
 
-.imageBox {
+.imageBox{
     width: 100%;
     height: 350px;
     /*padding-left: 30px;*/
@@ -425,19 +426,21 @@ body::after {
     background-color: #1b6d85;
 }
 
+
+
 .textGreen {
     color: #88B04B;
 }
 
-.textLightGreen {
+.textLightGreen{
     color: #bbe85b;
 }
 
-.textGreen a {
+.textGreen a{
     color: #88B04B;
 }
 
-.col-md-3 {
+.col-md-3{
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -452,7 +455,7 @@ body::after {
     border-top: 1px solid #DDDDDD;
 }
 
-.footer a {
+.footer a{
     text-decoration: none;
 }
 
@@ -460,11 +463,11 @@ body::after {
     color: #DDDDDD;
 }
 
-.textLightGray {
+.textLightGray{
     color: #DDDDDD;
 }
 
-.footer ul {
+.footer ul{
     font-size: 13px;
     list-style-type: none;
     margin-left: 0;
@@ -472,18 +475,18 @@ body::after {
     margin-top: 15px;
 }
 
-.footer-bottom {
+.footer-bottom{
     border-top: 1px solid #DDDDDD;
     padding-top: 10px;
     padding-bottom: 10px;
     background: #A9A9A9;
 }
 
-.textDarkGray {
+.textDarkGray{
     color: #333;
 }
 
-.newsButtonGray:hover {
+.newsButtonGray:hover{
     color: #9d9d9d;
 }
 
@@ -495,34 +498,37 @@ body::after {
 .navbar-default .navbar-nav > li > a:focus {
     background-color: transparent;
 }
-
-.fade {
-    opacity: 1;
+.fade
+{
+    opacity:1;
+}
+.fade:hover
+{
+    opacity:0.5;
 }
 
-.fade:hover {
-    opacity: 0.5;
-}
-
-.grow:hover {
+.grow:hover
+{
 
 }
 
-.shrink:hover {
+.shrink:hover
+{
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);
 }
 
-.border:hover {
+.border:hover
+{
     box-shadow: inset 0 0 0 25px #53a7ea;
 }
 
-.catBar {
+.catBar{
 
 }
 
-li, ol, h4, select {
+li, ol, h4, select{
     font-family: 'Sanchez', 'sans-serif';
 }
 
