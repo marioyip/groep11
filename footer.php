@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 
 <footer>
-    <div class="footer backgroundGreen tekstType marginTop100" id="footer">
+    <div class="footer backgroundGreen sanchez marginTop100" id="footer">
         <div class="container"> <!--div container die om de gehele footer zit-->
             <div class="row">
                 <div class="col-lg-2">
