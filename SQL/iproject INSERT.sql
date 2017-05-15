@@ -4633,3 +4633,48 @@ VALUES
 INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/11/2018','00:00:00','03/13/2017','00:00:00','4.70',100,100,'6.95','14.50','Dit prachtige voorwerp is echt een must have!','Creditcard','Gelieve het af te geven','Belgium','Velp','Laptop','Er is geen verzendinstructie',0,'laptop.png');
 INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau]) VALUES(160);
 INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (160,'Computers',-1)
+
+INSERT INTO Voorwerp(
+  [Looptijd],
+  [LooptijdbeginDag],
+  [LooptijdbeginTijdstip],
+  [LooptijdeindeDag],
+  [LooptijdeindeTijdstip],
+  [Startprijs],
+  [Verkoper],
+  [Koper],
+  [Verzendkosten],
+  [Verkoopprijs],
+  [Beschrijving],
+  [Betalingswijze],
+  [Betalingsinstructie],
+  [Land],
+  [Plaatsnaam],
+  [Titel],
+  [Verzendinstructies],
+  [VeilingGesloten],
+  [VoorwerpCover])
+VALUES('7',
+  '06/20/2017',
+  '23:59:59',
+  '06/27/2017',
+  '15:15:15',
+  '100.00',
+  100,
+  100,
+  '15.00',
+  '800.00',
+  'Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.',
+       'creditcard',
+       'kom langs om te betalen',
+       'Eritrea',
+       'Asmara',
+       'iPhone SE',
+       'Er is geen verzendinstructie',
+       1,
+       'iphone.jpg'
+);
+
+
+SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(28727,115);
