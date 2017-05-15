@@ -23,7 +23,7 @@ include 'catbar.php';?> <!-- Geeft de catbar.php mee aan de index pagina -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="productpagina.php" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
