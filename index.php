@@ -82,7 +82,7 @@ include 'catbar.php';?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 <!-- laptop -->
                 <div class="col-md-3 itemBox roundborder" align="center">
                     <!-- img moet ook uit de database te halen zijn -->
-                    <img class="imgStyle roundborder" src="media/<?php
+                    <img class="imgStyle roundborder" alt="Voorwerpcover" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();

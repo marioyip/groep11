@@ -11,9 +11,9 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
-                <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a> <!--logo-->
+                <img class="logo" src="img/eenmaalandermaallogo.png" alt="EenmaalAndermaal Logo"/></a> <!--logo-->
             <a class="navbar-header " href="index.php"><img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG"
-                                                            alt="logo"/></a><!--tekstlogo-->
+                                                            alt="EenmaalAndermaal Tekst Logo"/></a><!--tekstlogo-->
         </div>
         <div id="navbar">
             <ul class="nav ">
