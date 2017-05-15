@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
 </head>
 <body>
-
+<div class="container marginTop20">
 <?php
 include 'header.php';
 ?>
@@ -32,13 +32,13 @@ include 'header.php';
     {
         echo '<ul>';
         for ($i = 0; $i < count($row); $i++) {
-            echo '<li><a href = "" >' . $row[$i] . '</a ></li >';
+            echo '<li class="list-group-item list-group-item-action backgroundLightGrey "><a href = "" >' . $row[$i] . '</a ></li >';
             $sql2 = "SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = '$row[$i]') ORDER BY rubrieknaam";
             $stmt2 = $db->prepare($sql2);
             $stmt2->execute();
             while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {
                 for ($j = 0; $j < count($row2); $j++) {
-                    echo '<li role="presentation"><a href = "zoekfunctie.php">' . $row2[$j] . '</a>';
+                    echo '<li class="list-group-item list-group-item-action hidden" role="presentation"><a href = "zoekfunctie.php">' . $row2[$j] . '</a>';
                     $total++;
                 }
             }
@@ -50,6 +50,7 @@ include 'header.php';
     echo $total;
     ?>
 </main>
+</div>
 </body>
 </html>
 <?php

@@ -350,7 +350,9 @@ footer {
     height: 90px;
     font-family: 'Sanchez', sans-serif;
 }
-
+.hidden {
+    display:none;
+}
 /*Tekst*/
 .sanchez {
     font-family: 'Sanchez', sans-serif;
