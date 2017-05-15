@@ -21,19 +21,28 @@ include 'header.php';
 include 'catbar.php';
 
 ini_set('display_errors', 1);
-include ('functies.php');
+require_once ('functies.php');
 
 connectToDatabase();
 
 $veiling = "";
-$veilinggesloten = "\"VeilingGesloten?\"";
+$veilinggesloten = "";
 
-if ($veilinggesloten == 1) {
-    $veiling .= "gesloten";
+$sql = "SELECT VeilingGesloten FROM Voorwerp WHERE voorwerp.voorwerpnummer = 101";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+
+while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+    $veilinggesloten = $row[0];
+
+    if ($veilinggesloten == 1) {
+        $veiling .= "gesloten";
+    }
+    if ($veilinggesloten == 0) {
+        $veiling .= "geopend";
+    }
 }
-if ($veilinggesloten == 0) {
-    $veiling .= "geopend";
-}
+
 ?>
 
 <main>
