@@ -31,7 +31,7 @@ function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoo
     try {
         $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, 
 Antwoordtekst, GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, 
-Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //query wordt aangemaakt om de user in de databse te kunnnen zetten
+Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //query wordt aangemaakt om de user in de databse te kunnnen zetten
         $stmt->execute(array($achternaam, $straat, $huisnr, $antwoord, $geboortedatum,
             $email, $gebruikersnaam, $land, $plaats, $postcode, $voornaam,
             $vraag, $hashedWachtwoord, $verkoper)); //query word uitgevoerd om alle gegevens van de gebruiker in de database te zetten
