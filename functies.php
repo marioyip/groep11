@@ -22,19 +22,17 @@ function insertUserInDatabase($naam, $email)
     }
 }
 
-function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord,
-                      $geboortedatum, $vraag, $antwoord, $straat, $huisnr, $postcode,
-                      $plaats, $land, $verkoper)
+function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord, $geboortedatum, $vraag,
+                      $antwoord, $straat, $huisnr, $postcode, $plaats, $land, $verkoper)
 {
     global $db;
     $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed
     try {
-        $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, 
-Antwoordtekst, GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, 
-Voornaam, Vraag, Wachtwoord, Verkoper) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //query wordt aangemaakt om de user in de databse te kunnnen zetten
-        $stmt->execute(array($achternaam, $straat, $huisnr, $antwoord, $geboortedatum,
-            $email, $gebruikersnaam, $land, $plaats, $postcode, $voornaam,
-            $vraag, $hashedWachtwoord, $verkoper)); //query word uitgevoerd om alle gegevens van de gebruiker in de database te zetten
+        $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
+GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //query wordt aangemaakt om de user in de databse te kunnnen zetten
+        $stmt->execute(array($achternaam, $straat, $huisnr, $antwoord, $geboortedatum, $email, $gebruikersnaam,
+            $land, $plaats, $postcode, $voornaam, $vraag, $hashedWachtwoord, $verkoper)); //query word uitgevoerd om alle gegevens van de gebruiker in de database te zetten
     } catch (PDOException $e) {
         echo "Gebruiker kan niet in de database worden gezet, " . $e->getMessage();
     }
