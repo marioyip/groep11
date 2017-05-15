@@ -30,14 +30,14 @@ include 'catbar.php'; ?><!-- Geeft de categorieën bar mee-->
                 <div class="form-group">
                     <label for="emailadresVanGebruiker">Email</label>
                     <input type="email" class="form-control" id="emailadresVanGebruiker"
-                           placeholder="Voer je email-adres in"
+                           placeholder="Voer je email-adres in"/> <!--invoerveld voor het emailadress-->
                 </div>
             </form>
             <br>
             <form>
                 <div class="form-group">
                     <label for="tekstvakFeedback">Wat kunnen we voor je doen?</label>
-                    <textarea class="form-control" rows="3" placeholder="Ga ervoor."></textarea>
+                    <textarea class="form-control" rows="3" placeholder="Ga ervoor."></textarea> <!--invoerveld om een vraag te kunnen stellen-->
                 </div>
             </form>
             <div>
