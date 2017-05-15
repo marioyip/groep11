@@ -39,12 +39,12 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <h4>&#8594;Je kan je profiel helaas niet verwijderen.</h4>
                 </div>
                 <div class="col-md-4 marginTop10">
-                    <img class="imgStyle" src="media/faq.jpg">
+                    <img class="imgStyle" src="media/faq.jpg" alt="vragen?">
                 </div>
             </div>
             <div class="container marginTop10">
                 <div class="col-md-4 marginTop10">
-                    <img class="imgStyle" src="media/faq.jpg">
+                    <img class="imgStyle" src="media/faq.jpg" alt="vragen?">
                 </div>
                 <div class="col-md-8 marginTop10">
                     <!--vragen en antwoorden die behoren bij de categorie "advertenties plaatsen"-->
@@ -81,15 +81,16 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                                 via
                                 Marktplaats hebt verkocht.
                             </li>
+                        </ol>
                     </h4>
                 </div>
                 <div class="col-md-4 ">
-                    <img class="imgStyle" src="media/faq.jpg">
+                    <img class="imgStyle" src="media/faq.jpg" alt="vragen?">
                 </div>
             </div>
             <div class="container">
                 <div class="col-md-4 ">
-                    <img class="imgStyle" src="media/faq.jpg">
+                    <img class="imgStyle" src="media/faq.jpg" alt="vragen?">
                 </div>
                 <div class="col-md-8 text-left marginTop30">
                     <!--geordende lijst met informatie over het bieden-->
@@ -105,6 +106,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                             </li>
                             <li>Als je de veiling gewonnen hebt, betaal je het bedrag.
                             </li>
+                        </ol>
                     </h4>
                 </div>
             </div>
