@@ -11,16 +11,16 @@
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
 </head>
 <body>
-<div class="container marginTop20">
+
 <?php
 include 'header.php';
 ?>
 <main>
     <?php
 
-    include('functies.php');
-    include 'catbar.php';
-
+    require_once('functies.php');
+    require_once 'catbar.php';
+    echo'<div class="container marginTop20">';
     connectToDatabase();
 
     $sql = "SELECT rubrieknaam FROM rubriek WHERE rubriek = -1 ORDER BY rubrieknaam";
