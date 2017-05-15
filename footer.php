@@ -90,7 +90,7 @@
 
     require_once('functies.php'); //functies.php wordt gebruikt om aan de database te kunnen verbinden
 
-    connectToDatabase();
+    connectToDatabase(); //deze functie verbindt de webpagina aan de database
 
     //inschrijven voor de nieuwsbrief
     ini_set('display_errors', 1);
