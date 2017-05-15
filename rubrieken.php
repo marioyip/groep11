@@ -18,7 +18,7 @@ include 'header.php';
 <main>
     <?php
 
-    include ('functies.php');
+    include('functies.php');
     include 'catbar.php';
 
     connectToDatabase();
@@ -34,7 +34,7 @@ include 'header.php';
         for ($i = 0; $i < count($row); $i++) {
 
             echo '<td>';
-            echo '<a href="zoekfunctie.php?zoeken=&rubriek='.$row[$i].'">' . $row[$i] . '</a>';
+            echo '<a href="zoekfunctie.php?zoeken=&rubriek=' . $row[$i] . '">' . $row[$i] . '</a>';
             echo '</td>'; //Loop de rij af
         }
 
@@ -42,7 +42,6 @@ include 'header.php';
     }
     echo '</table>';
     ?>
-
 
 
 </main>
