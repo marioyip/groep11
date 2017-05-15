@@ -48,7 +48,7 @@
 
     } else {
         echo ' <!-- Foutmelding bij geen zoekterm -->
-        <div class="alert alert-danger textCenter">
+        <div class="alert alert-danger text-center">
             <strong>Fout</strong> Voer alstublieft een zoekterm in
         </div>';
     }
