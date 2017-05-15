@@ -81,7 +81,7 @@
             <a  href="productpagina.php">
                 <!-- laptop -->
                 <div class="col-md-3 itemBox roundborder" align="center">
-                    <!-- img moet ook uit de database te halen zijn -->
+                    <!-- img moet  ook uit de database te halen zijn -->
                     <img class="imgStyle roundborder" src="media/<?php
                     $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
