@@ -1,16 +1,53 @@
-/*Bootstrap's full width container. Van de linker rand naar de rechterrand.*/
+.marginTop100 {
+    margin-top: 100px;
+}
+
+.jumbotron {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.marginLeft200 {
+    margin-left: 200px;
+}
+
+html {
+    font-family: fantasy, serif;
+    height: 100vh;
+}
+
+p {
+    font-family: 'Sanchez', 'sans-serif';
+}
+
+.privacyverklaring {
+    font-family: Helvetica, serif;
+    font-size: 20px;
+}
+
+.privacyverklaring h2, h1 {
+    font-size: 35px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+ol {
+    list-style-type: lower-roman;
+}
+
+.containerMain {
+    /*min-height: 800px;*/
+}
+
 .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-/*De Carousel is de imageslider die in de index.php terug te vinden is.*/
-.carousel-indicators li {
-    visibility: hidden;
-}
-
-.form-control {
-    height: 20px;
+noListStyleType li {
+    list-style-type: none;
 }
 
 .carousel,
@@ -18,12 +55,15 @@
     height: 500px;
 }
 
+.marginLeft400 {
+    margin-left: 400px;
+}
+
 .carousel-inner {
     height: 500px;
 }
 
-/* Fill zorgt ervoor dat de afbeelding zich aanpast aan de slider. Zo krijg je bij alle afbeeldingen
- een uniform design.*/
+/* Background images are set within the HTML using inline CSS, not here */
 
 .fill {
     height: 500px;
@@ -56,19 +96,32 @@
     color: red;
 }
 
+.btn-default {
+    box-shadow: none;
+}
+
+.btn-default:hover {
+
+}
+
 .imgStyle {
     width: 100%;
     height: 60%;
+
 }
 
-.loginBox {
-    background-color: white;
-    height: 300px;
-    margin: 10px;
-    margin-bottom: 200px;
+body {
+    background-color: #FAFAFA;
 }
 
-/*Margin*/
+.achtergrond {
+    background-color: brown;
+}
+
+.bglg {
+    background-color: #88b925;
+}
+
 .marginTop20 {
     margin-top: 20px;
 }
@@ -99,10 +152,6 @@
 
 .marginTop60 {
     margin-top: 60px;
-}
-
-.marginTop100 {
-    margin-top: 100px;
 }
 
 .marginRight10 {
@@ -137,10 +186,6 @@
     margin-bottom: 10px;
 }
 
-.marginLeft5 {
-    margin-left: 5px;
-}
-
 .marginLeft15 {
     margin-left: 15px;
 }
@@ -161,15 +206,6 @@
     margin-left: 40px;
 }
 
-.marginLeft200 {
-    margin-left: 200px;
-}
-
-.marginLeft400 {
-    margin-left: 400px;
-}
-
-/*Padding*/
 .paddingBottom10 {
     padding-bottom: 10px;
 }
@@ -218,21 +254,43 @@
     padding-top: 5px;
 }
 
-/*Tekst*/
-p {
-    font-family: 'Sanchez', 'sans-serif';
+.loginBox {
+    background-color: white;
+    height: 300px;
+    margin: 10px;
+    margin-bottom: 200px;
 }
 
-li, ol, h4, select {
-    font-family: 'Sanchez', 'sans-serif';
-}
-
-h1, h2, h3, h5, h6, input, textarea {
-    font-family: 'Crete Round', 'serif';
+.lettertype {
+    font-family: 'Crete Round', serif;
 }
 
 .tekstType {
     font-family: sanchez, sans-serif;
+}
+
+.textSize11 {
+    font-size: 11px;
+}
+
+.textSize12 {
+    font-size: 12px;
+}
+
+.textSize13 {
+    font-size: 13px;
+}
+
+.textSize14 {
+    font-size: 14px;
+}
+
+.textSize15 {
+    font-size: 16px;
+}
+
+.textSize20 {
+    font-size: 20px;
 }
 
 .description {
@@ -245,7 +303,82 @@ h1, h2, h3, h5, h6, input, textarea {
 }
 
 .crete {
-    font-family: 'Crete Round', serif;
+    font-family: 'Crete Round', 'Glyphicons Halflings', serif;
+
+}
+
+.backgroundGreen {
+    background-color: #88B04B;
+}
+
+.backgroundLightGreen {
+    background-color: #93b749;
+}
+
+.backgroundWhite {
+    background-color: #FAFAFA;
+}
+
+.backgroundDarkGrey {
+    background-color: #A9A9A9;
+}
+
+.backgroundLightGrey {
+
+    background-color: #cccccc;
+}
+
+.backgroundImageTeam {
+    background-image: url("media/achtergrondteam.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 400px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.logoTekst {
+    margin-left: 20px;
+    height: 50px;
+    width: 250px;
+}
+
+.logoTekst hover {
+
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-text {
+    color: white;
+}
+
+body::after {
+    position: absolute;
+}
+
+.textWhite {
+    color: white;
 }
 
 .fontSize20 {
@@ -276,71 +409,12 @@ h1, h2, h3, h5, h6, input, textarea {
     font-size: 15px;
 }
 
-.fontSize35 {
-    font-size: 35px;
+.marginLeft5 {
+    margin-left: 5px;
 }
 
-/*Kleur*/
-body {
-    background-color: #FAFAFA;
-}
-
-.textRed {
-    color: #F45520;
-}
-
-.textWhite {
-    color: white;
-}
-
-.backgroundGreen {
-    background-color: #88B04B;
-}
-
-.backgroundLightGreen {
-    background-color: #93b749;
-}
-
-.backgroundWhite {
-    background-color: #FAFAFA;
-}
-
-.backgroundDarkGrey {
-    background-color: #A9A9A9;
-}
-
-.backgroundLightGrey {
-
-    background-color: #cccccc;
-}
-
-.textLightGreen {
-    color: #bbe85b;
-}
-
-.textGreen {
-    color: #88B04B;
-}
-
-.textGreen a {
-    color: #88B04B;
-}
-
-.textLightGray {
-    color: #DDDDDD;
-}
-
-.textDarkGray {
-    color: #333;
-}
-
-/*Afbeeldingen*/
-.backgroundImageTeam {
-    background-image: url("../media/achtergrondteam.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 400px;
+.brilliantWhite {
+    color: #EDF1FE;
 }
 
 .imageBox {
@@ -351,39 +425,21 @@ body {
     background-color: #1b6d85;
 }
 
-/*Header*/
-.logo {
-    width: 50px;
-    height: 50px;
-}
-
-.logoTekst {
-    margin-left: 20px;
-    height: 50px;
-    width: 250px;
-}
-
-/*Navbar*/
-.navbar-default .navbar-nav > li > a {
+.textGreen {
     color: #88B04B;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    background-color: transparent;
+.textLightGreen {
+    color: #bbe85b;
 }
 
-.navbar {
-    margin-bottom: 0px;
+.textGreen a {
+    color: #88B04B;
 }
 
-.navbar-text {
-    color: white;
-}
-
-/*Footer*/
-footer {
-    margin-top: 50px;
+.col-md-3 {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .footer {
@@ -404,6 +460,10 @@ footer {
     color: #DDDDDD;
 }
 
+.textLightGray {
+    color: #DDDDDD;
+}
+
 .footer ul {
     font-size: 13px;
     list-style-type: none;
@@ -419,9 +479,21 @@ footer {
     background: #A9A9A9;
 }
 
-/*Transforms en Transitions*/
-.border:hover {
-    box-shadow: 2px 2px grey;
+.textDarkGray {
+    color: #333;
+}
+
+.newsButtonGray:hover {
+    color: #9d9d9d;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #88B04B;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: transparent;
 }
 
 .fade {
@@ -432,14 +504,28 @@ footer {
     opacity: 0.5;
 }
 
+.grow:hover {
+
+}
+
 .shrink:hover {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);
 }
 
-/*Kolommen*/
-.col-md-3 {
-    padding-left: 0px;
-    padding-right: 0px;
+.border:hover {
+    box-shadow: inset 0 0 0 25px #53a7ea;
+}
+
+.catBar {
+
+}
+
+li, ol, h4, select {
+    font-family: 'Sanchez', 'sans-serif';
+}
+
+h1, h2, h3, h5, h6, input, textarea {
+    font-family: 'Crete Round', 'serif';
 }
