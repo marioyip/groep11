@@ -18,8 +18,8 @@
 <body>
 
 <?php include 'header.php';
-?>
-<?php include 'catbar.php';?>
+
+ include 'catbar.php';?>
 <div class="containerMain">
     <main>
         <!-- Full Page Image Background Carousel Header -->
