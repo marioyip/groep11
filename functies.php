@@ -1,5 +1,5 @@
 <?php
-function connectToDatabase()
+function connectToDatabase() //functie om aan de database te kunnen verbinden
 {
     $pw = "rPgxSAaf";
     $username = "iproject11";
@@ -11,7 +11,7 @@ function connectToDatabase()
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 }
 
-function insertUserInDatabase($naam, $email)
+function insertUserInDatabase($naam, $email) //functie om een gebruiker in de database te plaatsen voor de nieuwsbrief
 {
     global $db;
     try {
@@ -23,7 +23,7 @@ function insertUserInDatabase($naam, $email)
 }
 
 function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord, $geboortedatum, $vraag,
-                      $antwoord, $straat, $huisnr, $postcode, $plaats, $land, $verkoper)
+                      $antwoord, $straat, $huisnr, $postcode, $plaats, $land, $verkoper) //functie om een gebruiker in de database te plaatsen om zich aan te kunnen melden
 {
     global $db;
     $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed

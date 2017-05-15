@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>Over ons - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> <!--bootstrap css-->
+    <link rel="stylesheet" href="css/style.css"> <!--eigen css-->
+    <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!--tabblad icoontje-->
 
 </head>
 <body>
 
 
-<?php include 'header.php';
-include 'catbar.php';
+<?php include 'header.php'; //geeft de header mee aan deze pagina
+include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 ?>
 <main>
 
@@ -83,5 +83,5 @@ include 'catbar.php';
 
 </body>
 </html>
-<?php include 'footer.php';
+<?php include 'footer.php'; //geeft de footer mee aan deze pagina
 ?>

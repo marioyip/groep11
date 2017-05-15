@@ -5,19 +5,19 @@
         <title>Privacyverklaring - Eenmaal Andermaal</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-              crossorigin="anonymous">
+              crossorigin="anonymous"> <!--bootstrap css-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
               integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-              crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+              crossorigin="anonymous"> <!--bootstrap css-->
+        <link rel="stylesheet" href="css/style.css"> <!--eigen css-->
+        <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!--tabblad icoontje-->
     </head>
 </main>
 <body>
 
 
-<?php include 'header.php';
-include 'catbar.php';
+<?php include 'header.php'; //geeft de header mee aan deze pagina
+include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 ?>
 
 
@@ -26,8 +26,8 @@ include 'catbar.php';
         <!-- dit is opgesteld door middel van het  template te vinden op https://www.karelgeenen.nl/29/privacybeleid-voorbeeld-die-je-kan-aanpassen-voor-je-eigen-site/ -->
         <h1>Privacybeleid EenmaalAndermaal</h1>
 
-       <p> versie 0.1<br><br>
-        Deze pagina is voor het laatst aangepast op 04-05-2017<br><br></p>
+        <p> versie 0.1<br><br>
+            Deze pagina is voor het laatst aangepast op 04-05-2017<br><br></p>
 
         <p>Wij zijn er van bewust dat u vertrouwen stelt in ons. Wij zien het dan ook als onze
             verantwoordelijkheid om
@@ -86,7 +86,7 @@ include 'catbar.php';
 </div>
 </body>
 </html>
-<?php include 'footer.php';
+<?php include 'footer.php'; //geeft de footer mee aan deze pagina
 ?>
 
 
