@@ -18,7 +18,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
                 <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="index.php"><img class=" grow logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="logo"/></a>
+            <a class="navbar-header " href="index.php"><img class=" grow logoTekst" src="img/logo.png" alt="logo"/></a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav navbar-center">
