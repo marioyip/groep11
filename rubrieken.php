@@ -30,6 +30,9 @@ include 'header.php';
     $total = 0;
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
     {
+
+
+        //werkt niet
         echo '<ul>';
         for ($i = 0; $i < count($row); $i++) {
             echo '<li><a href = "" >' . $row[$i] . '</a ></li >';
