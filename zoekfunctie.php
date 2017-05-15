@@ -18,14 +18,11 @@
 <div class="containerMain">
     <?php
     include('header.php');
+    require_once('functies.php');
     ini_set('display_errors', 1);
 
-    $pw = "rPgxSAaf";
-    $username = "iproject11";
-    $hostname = "mssql.iproject.icasites.nl";
-    $dbname = "iproject11";
+    connectToDatabase();
 
-    $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
