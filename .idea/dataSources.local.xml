@@ -9,6 +9,7 @@
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <user-name>iproject11</user-name>
       <resolve-scope>iproject11:*</resolve-scope>
+      <unqualified-resolve-schemas>iproject11:*</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
