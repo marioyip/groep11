@@ -6,10 +6,6 @@ function connectToDatabase()
    $hostname = "mssql.iproject.icasites.nl";
    $dbname = "iproject11";
 
-//    $pw = "dbrules";
-//    $username = "sa";
-//    $hostname = "localhost";
-//    $dbname = "iconcepts";
     global $db;
 
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
@@ -37,17 +33,6 @@ function insertUserInDatabase($naam, $email)
 //        }
 //    } catch (PDOException $e) {
 //        echo "Could not read users, " . $e->getMessage();
-//    }
-//}
-
-//function insertUserInNieuwsbrief($id, $name, $email)
-//{
-//    global $pdo;
-//    try {
-//        $stmt = $pdo->prepare("INSERT INTO Nieuwsbrief VALUES (id, name, email)");
-//        $stmt->execute(array($id, $name, $email));
-//    } catch (PDOException $e) {
-//        echo "Could not insert user, " . $e->getMessage();
 //    }
 //}
 
