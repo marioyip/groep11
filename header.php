@@ -1,14 +1,11 @@
 <?php
 
-//$pw = "rPgxSAaf";
-//$username = "iproject11";
-//$hostname = "mssql.iproject.icasites.nl";
-//$dbname = "iproject11";
+$pw = "rPgxSAaf";
+$username = "iproject11";
+$hostname = "mssql.iproject.icasites.nl";
+$dbname = "iproject11";
 
-$pw = "dbrules";
-$username = "sa";
-$hostname = "localhost";
-$dbname = "iconcepts";
+
 
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
@@ -21,7 +18,7 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
                 <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="index.php"><img class=" grow logoTekst" src="img/logo.png" alt="logo"/></a>
+            <a class="navbar-header " href="index.php"><img class=" grow logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="logo"/></a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav navbar-center">

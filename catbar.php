@@ -1,19 +1,7 @@
-<!---              Nav bar categories
---->
+<!---              Nav bar categorieën -->
 <div class="catBar">
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="container-fluid brilliantWhite">
-            <!--            <div class="navbar-header">-->
-            <!--                <button type="button" class="navbar-toggle" data-toggle="collapse"-->
-            <!--                        data-target="#bs-example-navbar-collapse-1">-->
-            <!--                    <span class="sr-only">Toggle navigation</span>-->
-            <!--                    <span class="icon-bar"></span>-->
-            <!--                    <span class="icon-bar"></span>-->
-            <!--                    <span class="icon-bar"></span>-->
-            <!--                </button>-->
-            <!--            </div>-->
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray"
                   href="rubrieken.php">
                       Rubrieken</a>
@@ -26,8 +14,9 @@
                             </li>
                             <li>
                                 <select class="form-control" name="rubriek">
+<!--                                        Selecteert alle hoofdrubrieken, dus rubrieken waar rubriek gelijk is aan -1-->
                                     <?php
-                                    $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam";
+                                    $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam"; //SQL query om het uit de database te lezen
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
                                     $stmt->execute();           //Statement uitvoeren
                                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
@@ -48,7 +37,6 @@
 </form>
 </div>
 </div>
-<!--<input type="text" name="sample_search" id="sample_search" onkeyup="search_func(this.value);">-->
 </div>
 </nav>
 </div>
