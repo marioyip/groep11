@@ -17,14 +17,12 @@
 
 <div class="containerMain">
     <?php
-    include('header.php');
-    include ('catbar.php');
+    include('header.php'); //Geef de header mee
+    include ('catbar.php'); //Geef de categorieën bar mee
     ini_set('display_errors', 1);
-
-    connectToDatabase();
-    require_once('functies.php');
-
-    $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+    require_once('functies.php'); //één keer de functies nodig voor verbinden met Database
+    connectToDatabase(); //Verbind met de database (tabblad functies.php)
+        //Zoekfunctie voor de database
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
@@ -49,7 +47,7 @@
         echo '</table>';
 
     } else {
-        echo '
+        echo ' <!-- Foutmelding bij geen zoekterm -->
         <div class="alert alert-danger textCenter">
             <strong>Fout</strong> Voer alstublieft een zoekterm in
         </div>';
@@ -59,5 +57,5 @@
 </div>
 </body>
 <?php
-include('footer.php');
+include('footer.php'); //geeft de footer mee
 ?>
