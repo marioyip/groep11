@@ -79,6 +79,7 @@ include 'catbar.php';?> <!-- Geeft de catbar.php mee aan de index pagina -->
         </div>
         <div class="container">
             <a  href="productpagina.php">
+                <!-- laptop -->
                 <div class="col-md-3 itemBox roundborder" align="center">
                     <!-- img moet ook uit de database te halen zijn -->
                     <img class="imgStyle roundborder" src="media/<?php
@@ -114,35 +115,111 @@ include 'catbar.php';?> <!-- Geeft de catbar.php mee aan de index pagina -->
                     <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
+            <!-- grasmaaier -->
+            <a href="productpagina.php">
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/<?php
+                    $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 115";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
 
-            <a href="productpagina.php">
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
-                    <h4><a class="textDarkGray lettertype" href="productpagina.php">Grasmaaier</a></h4>
-                    <div class="description">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
-                        100% efficiënt.
-                    </div>
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
+                    <!-- Haalt de titel uit de database van een bepaald voorwerp -->
+                    <h4><a class="textDarkGray" href="productpagina.php"><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 115";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></a></h4>
+                    <div class="description">
+                        <!-- Haalt de beschrijving uit de database van een bepaald voorwerp -->
+                        <?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 115";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></div>
                     <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
+            <!-- fauleuil -->
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/fauteuil.jpg">
-                    <h4><a class="textDarkGray" href="productpagina.php">Fauteuil</a></h4>
+                    <img class="imgStyle roundborder" src="media/<?php
+                    $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 117";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
+                    <!-- Haalt de titel uit de database van een bepaald voorwerp -->
+                    <h4><a class="textDarkGray" href="productpagina.php"><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 117";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></a></h4>
                     <div class="description">
-                        Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
-                        look.
-                    </div>
+                        <!-- Haalt de beschrijving uit de database van een bepaald voorwerp -->
+                        <?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 117";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></div>
                     <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
+            <!-- iphone -->
             <a href="productpagina.php">
                 <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/iphone.jpg">
-                    <h4><a  class="textDarkGray" href="productpagina.php">iPhone SE</a></h4>
+                    <img class="imgStyle roundborder" src="media/<?php
+                    $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 118";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>" width="200" height="200"/>
+                    <!-- Haalt de titel uit de database van een bepaald voorwerp -->
+                    <h4><a class="textDarkGray" href="productpagina.php"><?php
+                            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 118";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+
+                            while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0];
+                            }
+                            ?></a></h4>
                     <div class="description">
-                        Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
-                    </div>
+                        <!-- Haalt de beschrijving uit de database van een bepaald voorwerp -->
+                        <?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 118";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></div>
                     <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </a>
