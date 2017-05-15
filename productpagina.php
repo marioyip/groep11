@@ -59,7 +59,7 @@ if ($veilinggesloten == 0) {
 
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
-                    <img class=imageBox src="media/<?php
+                    <img class=imageBox alt="Voorwerpcover" src="media/<?php
                     $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
