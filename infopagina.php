@@ -29,13 +29,13 @@ include 'catbar.php';
             <div class="col-md-8 marginTop10">
                 <h2> Profiel</h2>
                 <h3>Zijn er kosten verbonden aan het maken van een profiel?<br></h3>
-                    <h4>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!<br></h4>
+                    <p>&#8594; Nee, het maken van een profiel op EenmaalAndermaal is helemaal gratis!<br></p>
                     <h3>Kan ik mijn profiel aanpassen?<br></h3>
-                    <h4>&#8594;Ja, op de pagina <u>mijn profiel</u> kunt u uw gegevens aanpassen<br></h4>
+                    <p>&#8594;Ja, op de pagina <u>mijn profiel</u> kunt u uw gegevens aanpassen<br></p>
                     <h3>Is er een minimumleeftijd voor het maken van een profiel?<br></h3>
-                    <h4>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.<br></h4>
+                    <p>&#8594; Ja, de minimumleeftijd om een profiel te maken en te bieden is 18 jaar.<br></p>
                     <h3>Kan ik mijn profiel verwijderen?<br></h3>
-                    <h4>&#8594;Je kan je profiel helaas niet verwijderen.</h4>
+                    <p>&#8594;Je kan je profiel helaas niet verwijderen.</p>
             </div>
             <div class="col-md-4 marginTop10">
                 <img class="imgStyle" src="media/faq.jpg">
