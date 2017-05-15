@@ -19,6 +19,7 @@ include 'header.php';
     <?php
 
     include ('functies.php');
+    include 'catbar.php';
 
     connectToDatabase();
 

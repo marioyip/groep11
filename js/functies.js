@@ -16,7 +16,6 @@ $(".headerRubriek").click(function () {
             return $content.is(":visible") ? "Collapse" : "Expand";
         });
     });
-
 });
 
 

@@ -32,7 +32,7 @@ include 'header.php';
                     <h3 class="">Inloggen</h3>
 
                     <div class="form-group marginBottom20">
-                        <label class="control-label col-sm-3" for="email">Gebruikersnaam</label>
+                        <label class="control-label col-sm-3" for="email">Email</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="email">
                         </div>
@@ -53,10 +53,10 @@ include 'header.php';
 
             <div class="col-md-4 marginTop20 loginBox text-left" align="center">
                 <form class="form-horizontal">
-                    <h3 class="">Maak een account aan</h3>
+                    <h3 class="">Maak jouw account aan!</h3>
                     <div class="form-group ">
                         <p class="textSize14 marginLeft15">
-                            Om in te loggen heb je een account nodig voor Mijn Biedprofiel. Je kunt dan voortaan:
+                            Om in te loggen heb je een account nodig voor Mijn Account. Je kunt dan voortaan:
                         </p>
                         <ul>
                             <li>Veilingen bewaren</li>
@@ -75,6 +75,7 @@ include 'header.php';
             </div>
         </div>
     </div>
+
 </body>
 </html>
 

@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<?php include 'header.php' ?>
+<?php include 'header.php';
+include 'catbar.php';?>
 <main>
 
 <div class="container marginTop20">

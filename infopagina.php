@@ -16,6 +16,7 @@
 <body>
 
 <?php include 'header.php';
+include 'catbar.php';
 ?>
 
 <div class="containerMain">

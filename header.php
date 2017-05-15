@@ -1,9 +1,14 @@
 <?php
 
-$pw = "rPgxSAaf";
-$username = "iproject11";
-$hostname = "mssql.iproject.icasites.nl";
-$dbname = "iproject11";
+//$pw = "rPgxSAaf";
+//$username = "iproject11";
+//$hostname = "mssql.iproject.icasites.nl";
+//$dbname = "iproject11";
+
+$pw = "dbrules";
+$username = "sa";
+$hostname = "localhost";
+$dbname = "iconcepts";
 
 $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 
@@ -14,9 +19,9 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
 <header>
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
-            <a class="navbar-header" href="homepagina.php">
+            <a class="navbar-header" href="index.php">
                 <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="homepagina.php"><img class=" grow logoTekst" src="img/logo.png" alt="logo"/></a>
+            <a class="navbar-header " href="index.php"><img class=" grow logoTekst" src="img/logo.png" alt="logo"/></a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav navbar-center">
@@ -27,7 +32,8 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
             <ul class="nav ">
                 <li>
 
-                    <a class="navbar-right glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true" href="inloggen.php">
+                    <a class="navbar-right glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true"
+                       href="inloggen.php">
                         Inloggen</a>
                 </li>
             </ul>
@@ -35,57 +41,5 @@ $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "
     </div>
 </header>
 
-<!---              Nav bar categories
- --->
-<div class="catBar">
-    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container-fluid brilliantWhite">
-<!--            <div class="navbar-header">-->
-<!--                <button type="button" class="navbar-toggle" data-toggle="collapse"-->
-<!--                        data-target="#bs-example-navbar-collapse-1">-->
-<!--                    <span class="sr-only">Toggle navigation</span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                    <span class="icon-bar"></span>-->
-<!--                </button>-->
-<!--            </div>-->
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray" href="rubrieken.php">
-                Rubrieken</a>
-            <div class="navbar-right marginRight10 ">
-                <div class="form-group">
-                <form method="GET" action="zoekfunctie.php">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
-                        </li>
-                        <li>
-                            <select class="form-control" name="rubriek">
-                                <?php
-                                $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam";
-                                $stmt = $db->prepare($sql); //Statement object aanmaken
-                                $stmt->execute();           //Statement uitvoeren
-                                while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                                {
-                                    for ($i = 0; $i < count($row); $i++) {
-                                        echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
-                                    }
-                                }
-                                ?>
-                            </select>
-                        </li>
-                        <li>
-                            <button class="btn btn-default" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </li>
-                    </ul>
-                </form>
-                </div>
-            </div>
-            <!--<input type="text" name="sample_search" id="sample_search" onkeyup="search_func(this.value);">-->
-        </div>
-    </nav>
-</div>
+
 </body>
