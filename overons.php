@@ -15,6 +15,7 @@
 
 
 <?php include 'header.php';
+include 'catbar.php';
 ?>
 <main>
 

@@ -1,15 +1,15 @@
 <?php
 function connectToDatabase()
 {
-//    $pw = "rPgxSAaf";
-//    $username = "iproject11";
-//    $hostname = "mssql.iproject.icasites.nl";
-//    $dbname = "iproject11";
+  $pw = "rPgxSAaf";
+  $username = "iproject11";
+   $hostname = "mssql.iproject.icasites.nl";
+   $dbname = "iproject11";
 
-    $pw = "dbrules";
-    $username = "sa";
-    $hostname = "localhost";
-    $dbname = "iconcepts";
+//    $pw = "dbrules";
+//    $username = "sa";
+//    $hostname = "localhost";
+//    $dbname = "iconcepts";
     global $db;
 
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
