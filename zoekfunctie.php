@@ -18,11 +18,13 @@
 <div class="containerMain">
     <?php
     include('header.php');
-    require_once('functies.php');
+    include ('catbar.php');
     ini_set('display_errors', 1);
 
     connectToDatabase();
+    require_once('functies.php');
 
+    $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
