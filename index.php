@@ -37,8 +37,24 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 <!-- Set the first background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('media/grasmaaier.JPG');"></div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Titel</h3>
-                    <p>beschrijving</p>
+                    <h3><?php
+                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 115";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                        }
+                        ?></h3>
+                    <p><?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 115";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></p>
                     <button class="btn btn-hero btn-lg textDarkGray" role="button">Bied nu</button>
                 </div>
             </div>
@@ -46,9 +62,25 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 <!-- Set the second background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>...</h3>
-                    <p>...</p>
-                    <button class="backgroundIbisRed btn btn-lg textDarkGray" role="button">See all features</button>
+                    <h3><?php
+                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 117";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></h3>
+                    <p><?php
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 115";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?></p>
+                    <button class="backgroundIbisRed btn btn-lg textDarkGray" role="button">Bied nu!</button>
                 </div>
             </div>
             <div class="item">
