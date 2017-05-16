@@ -45,7 +45,7 @@ include 'catbar.php';
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
             {
                 $k++;
-                echo '<ul class=" ">';
+                echo '<ul class=" marginright35 ">';
 
                 for ($i = 0; $i < count($row); $i++) {
                     echo '  <div class="panel-group">
