@@ -33,8 +33,8 @@ global $pdo;
 
 
 
-//    registerUser("$voornaam", "$achternaam", "$emailadress", "$gebruikersnaam", "$wachtwoord",
-//        "$geboortedatum", "$vraag", "$antwoord", "$straat", "$huisnr", "$postcode",
-//        "$plaats", "$land", "$verkoper");
+    registerUser("$voornaam", "$achternaam", "$emailadress", "$gebruikersnaam", "$wachtwoord",
+        "$geboortedatum", "$vraag", "$antwoord", "$straat", "$huisnr", "$postcode",
+        "$plaats", "$land", "$verkoper");
 
 ?>

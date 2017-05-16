@@ -22,18 +22,23 @@ function insertUserInDatabase($naam, $email) //functie om een gebruiker in de da
     }
 }
 
-function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord, $geboortedatum, $vraag,
-                      $antwoord, $straat, $huisnr, $postcode, $plaats, $land, $verkoper) //functie om een gebruiker in de database te plaatsen om zich aan te kunnen melden
-{
-    global $db;
-    $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed
-    try {
-        $stmt = $db->prepare("INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
-GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); //query wordt aangemaakt om de user in de databse te kunnnen zetten
-        $stmt->execute(array($achternaam, $straat, $huisnr, $antwoord, $geboortedatum, $email, $gebruikersnaam,
-            $land, $plaats, $postcode, $voornaam, $vraag, $hashedWachtwoord, $verkoper)); //query word uitgevoerd om alle gegevens van de gebruiker in de database te zetten
-    } catch (PDOException $e) {
-        echo "Gebruiker kan niet in de database worden gezet, " . $e->getMessage();
-    }
-}
+//function registerUser($voornaam, $achternaam, $email, $gebruikersnaam, $wachtwoord, $geboortedatum, $vraag,
+//                      $antwoord, $straat, $huisnr, $postcode, $plaats, $land, $verkoper) //functie om een gebruiker in de database te plaatsen om zich aan te kunnen melden
+//{
+//    $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed
+//
+//    $sql = "
+//        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst,
+//        GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
+//        VALUES ($achternaam, $straat, $huisnr, $antwoord, $geboortedatum, $email, $gebruikersnaam,
+//                $land, $plaats, $postcode, $voornaam, $vraag, $hashedWachtwoord, $verkoper)
+//                ";
+//    $stmt = $db->prepare($sql);
+//    $stmt->execute();
+//}
+//}
+?>
+
+
+
+

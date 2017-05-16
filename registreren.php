@@ -26,6 +26,7 @@ if(isset($_POST['submit'])) {
     $achternaam = $_POST['achternaam'];
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
+    $wachtwoord2 = $_POST['wachtwoord2'];
     $geboortedatum = $_POST['geboortedatum'];
     $vraag = $_POST['vraag'];
     $antwoord = $_POST['antwoord'];
@@ -38,36 +39,72 @@ if(isset($_POST['submit'])) {
 
     if (empty($voornaam)) {
         $foutmelding = 'wel je voornaam invullen!';
-    } if (empty($emailadress)) {
+    }
+    if (empty($emailadress)) {
         $foutmelding = 'wel je emailadres invullen!';
-    } if (empty($achternaam)) {
+    }
+    if (empty($achternaam)) {
         $foutmelding = 'wel je achternaam invullen!';
-    } if (empty($gebruikersnaam)) {
+    }
+    if (empty($gebruikersnaam)) {
         $foutmelding = 'wel je gebruikeresnaam invullen!';
-    } if (empty($wachtwoord)) {
+    }
+    if (empty($wachtwoord)) {
         $foutmelding = 'wel je wachtwoord invullen!';
-    } if (empty($geboortedatum)) {
+    }
+    if (empty($geboortedatum)) {
         $foutmelding = 'wel je geboortedatum invullen!';
-    } if (empty($vraag)) {
+    }
+    if (empty($vraag)) {
         $foutmelding = 'wel je geheime vraag kiezen invullen!';
-    } if (empty($antwoord)) {
+    }
+    if (empty($antwoord)) {
         $foutmelding = 'wel je supergeheime antwoord invullen invullen!';
-    } if (empty($straat)) {
+    }
+    if (empty($straat)) {
         $foutmelding = 'wel je straat invullen!';
-    } if (empty($huisnr)) {
+    }
+    if (empty($huisnr)) {
         $foutmelding = 'wel je huisnummer invullen!';
-    } if (empty($postcode)) {
+    }
+    if (empty($postcode)) {
         $foutmelding = 'wel je postcode invullen!';
-    } if (empty($plaats)) {
+    }
+    if (empty($plaats)) {
         $foutmelding = 'wel je plaatsnaam invullen!';
-    } if (empty($land)) {
+    }
+    if (empty($land)) {
         $foutmelding = 'wel je land invullen!';
-    } if (empty($verkoper)) {
+    }
+    if (empty($verkoper)) {
         $foutmelding = 'wel aangeven of je een verkoper bent invullen!';
     }
+    if ($wachtwoord != $wachtwoord2) {
+        $foutmelding = 'de wachtwoorden zijn niet hetzelfde';
+    }
+
 
     if($foutmelding==''){
-        echo 'joepie';
+
+        ini_set('display_errors', 'On');
+
+        require_once('functies.php');
+
+        connectToDatabase();
+
+        $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed
+
+        $sql = "
+        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
+        GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+        VALUES ($achternaam, $straat, $huisnr, $antwoord, $geboortedatum, $emailadress, $gebruikersnaam,
+                $land, $plaats, $postcode, $voornaam, $vraag, $hashedWachtwoord, $verkoper)
+                ";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+
+        echo '<H1>HET IS GELUKT</H1>';
+
     }
     else{ echo '<div class="alert alert-danger"><strong>Fout!</strong> '.$foutmelding.'</div>';
     }
