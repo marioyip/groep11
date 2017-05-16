@@ -57,113 +57,142 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
     </div>
 
 </div>
-</div>
-<div class="col-md-6 marginBottom20">
-    <div class="imageBox">
-        <img class=imageBox alt="Voorwerpcover" src="media/<?php
-        $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            echo $row[0];
-        }
-        ?>"/>
-    </div>
-</div>
-<div class="col-md-6">
-    <div class="veilingBox">
-        <h2>De veiling is <?= $veiling ?></h2>
-        <p><!-- looptijdbegindag -->
-            De veiling is op
-            <?php
-            $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            om <!-- LooptijdbeginTijdstip -->
-            <?php
-            $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            geopend.
-            <!--                    <div class="progress">-->
-            <!--                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
-            <!--                             aria-valuenow="-->
-            <? //= date("d" / "m" / "y"); ?><!--" aria-valuemin="--><?php
-            //                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-            //                        $stmt = $db->prepare($sql);
-            //                        $stmt->execute();
-            //
-            //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            //                            echo $row[0];
-            //                        }
-            //                        ?><!--" aria-valuemax="--><?php
-            //                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-            //                        $stmt = $db->prepare($sql);
-            //                        $stmt->execute();
-            //
-            //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            //                            echo $row[0];
-            //                        }
-            //                        ?><!--" style="width:40%">-->
-            <!--                            40%-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            De veiling is op
-            <?php
-            $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            om
-            <?php
-            $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            gesloten.
-            De looptijd voor de veiling van
-            <?php
-            $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            is <!-- looptijd -->
-            <?php
-            $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
-            ?>
-            dagen.
-        </p>
+<div class="container marginTop20">
+    <div class="col-md-6">
+        <div id="myCarousel" class="carousel slide ">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner ">
+                <div class="item active">
+                    <!-- Set the first background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
+                    <!--                    <img class=imageBox alt="Voorwerpcover" src="media/--><?php
+                    //                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    //                    $stmt = $db->prepare($sql);
+                    //                    $stmt->execute();
+                    //
+                    //                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    //                        echo $row[0];
+                    //                    }
+                    //                    ?><!--"/>-->
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
+                </div>
+                <div class="item">
+                    <!-- Set the third background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
+                </div>
+                <div class="item">
+                    <!-- Set the third background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
+
+    <div class="col-md-6">
+        <div class="veilingBox">
+            <h2>De veiling is <?= $veiling ?></h2>
+            <p><!-- looptijdbegindag -->
+                De veiling is op
+                <?php
+                $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                om <!-- LooptijdbeginTijdstip -->
+                <?php
+                $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                geopend.
+                <!--                    <div class="progress">-->
+                <!--                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
+                <!--                             aria-valuenow="-->
+                <? //= date("d" / "m" / "y"); ?><!--" aria-valuemin="--><?php
+                //                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                //                        $stmt = $db->prepare($sql);
+                //                        $stmt->execute();
+                //
+                //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                //                            echo $row[0];
+                //                        }
+                //                        ?><!--" aria-valuemax="--><?php
+                //                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                //                        $stmt = $db->prepare($sql);
+                //                        $stmt->execute();
+                //
+                //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                //                            echo $row[0];
+                //                        }
+                //                        ?><!--" style="width:40%">-->
+                <!--                            40%-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                De veiling is op
+                <?php
+                $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                om
+                <?php
+                $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                gesloten.
+                De looptijd voor de veiling van
+                <?php
+                $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                is <!-- looptijd -->
+                <?php
+                $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>
+                dagen.
+            </p>
+        </div>
+
+    </div>
 </div>
 </div>
 
@@ -233,6 +262,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </body>
