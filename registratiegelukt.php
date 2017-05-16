@@ -10,26 +10,31 @@ connectToDatabase();
 ini_set('display_errors', 1);
 global $pdo;
 
-if (isset($_POST['submit'])) {
-    $gelukt = "gelukt";
-    $voornaam = $_POST['voornaam'];
-    $emailadress = $_POST['emailadress'];
-    $achternaam = $_POST['achternaam'];
-    $gebruikersnaam = $_POST['gebruikersnaam'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $geboortedatum = $_POST['geboortedatum'];
-    $vraag = $_POST['vraag'];
-    $antwoord = $_POST['antwoord'];
-    $straat = $_POST['straat'];
-    $huisnr = $_POST['huisnr'];
-    $postcode = $_POST['postcode'];
-    $plaats = $_POST['plaats'];
-    $land = $_POST['land'];
-    $verkoper = $_POST['verkoper'];
+//controle of alles is ingevuld
 
-    registerUser("$voornaam", "$achternaam", "$emailadress", "$gebruikersnaam", "$wachtwoord",
-        "$geboortedatum", "$vraag", "$antwoord", "$straat", "$huisnr", "$postcode",
-        "$plaats", "$land", "$verkoper");
-    echo $gelukt;
-}
+
+//
+//if (isset($_POST['submit'])&&$_POST['wachtwoord']==$_POST['wachtwoord2']&&$_POST['wachtwoord']!='') {
+//    $gelukt = "gelukt";
+//    $voornaam = $_POST['voornaam'];
+//    $emailadress = $_POST['emailadress'];
+//    $achternaam = $_POST['achternaam'];
+//    $gebruikersnaam = $_POST['gebruikersnaam'];
+//    $wachtwoord = $_POST['wachtwoord'];
+//    $geboortedatum = $_POST['geboortedatum'];
+//    $vraag = $_POST['vraag'];
+//    $antwoord = $_POST['antwoord'];
+//    $straat = $_POST['straat'];
+//    $huisnr = $_POST['huisnr'];
+//    $postcode = $_POST['postcode'];
+//    $plaats = $_POST['plaats'];
+//    $land = $_POST['land'];
+//    $verkoper = $_POST['verkoper'];
+
+
+
+//    registerUser("$voornaam", "$achternaam", "$emailadress", "$gebruikersnaam", "$wachtwoord",
+//        "$geboortedatum", "$vraag", "$antwoord", "$straat", "$huisnr", "$postcode",
+//        "$plaats", "$land", "$verkoper");
+
 ?>
