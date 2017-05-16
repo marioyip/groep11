@@ -424,3 +424,7 @@ noListStyleType li {
     width: 100%;
     height: 60%;
 }
+.imagesize{
+    width: 600px;
+    height: 400px;
+}

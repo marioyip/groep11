@@ -111,7 +111,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         ?>
                     </p>
                     <button class="btn btn-lg backgroundIbisRed textDarkGray" role="button">Bied nu</button>
-
+                </div>
             </div>
         </div>
     </div>
