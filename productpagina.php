@@ -148,7 +148,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 ?>
                 geopend.
                 De veiling is op
-                <?php
+                <strong><?php
                 $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -156,9 +156,9 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     echo $row[0];
                 }
-                ?>
+                ?></strong>
                 om
-                <?php
+                <strong><?php
                 $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -166,7 +166,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     echo $row[0];
                 }
-                ?>
+                ?></strong>
                 gesloten.
                 De looptijd voor de veiling van
                 <?php
