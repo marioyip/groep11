@@ -51,12 +51,20 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         <div class="col-md-12">
             <h1 class="page-header"><!-- titel -->
                 <?php
+                $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
                 ?>
             </h1>
         </div>
     </div>
 
 </div>
+
 <div class="container marginTop20">
     <div class="col-md-6">
         <div id="myCarousel" class="carousel slide ">
@@ -71,28 +79,43 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             <div class="carousel-inner ">
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
-                    <!--                    <img class=imageBox alt="Voorwerpcover" src="media/--><?php
-                    //                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    //                    $stmt = $db->prepare($sql);
-                    //                    $stmt->execute();
-                    //
-                    //                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    //                        echo $row[0];
-                    //                    }
-                    //                    ?><!--"/>-->
+                    <div class="fill" style="background-image:url('media/<?php
+                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
+                    <div class="fill" style="background-image:url('media/<?php
+                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 115";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
+                    <div class="fill" style="background-image:url('media/<?php
+                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        echo $row[0];
+                    }
+                    ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/laptop.png');"></div>
+                    <div class="fill" style="background-image:url('media/default.png');"></div>
                 </div>
             </div>
         </div>
@@ -124,29 +147,6 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 }
                 ?>
                 geopend.
-                <!--                    <div class="progress">-->
-                <!--                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
-                <!--                             aria-valuenow="-->
-                <? //= date("d" / "m" / "y"); ?><!--" aria-valuemin="--><?php
-                //                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-                //                        $stmt = $db->prepare($sql);
-                //                        $stmt->execute();
-                //
-                //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                //                            echo $row[0];
-                //                        }
-                //                        ?><!--" aria-valuemax="--><?php
-                //                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-                //                        $stmt = $db->prepare($sql);
-                //                        $stmt->execute();
-                //
-                //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                //                            echo $row[0];
-                //                        }
-                //                        ?><!--" style="width:40%">-->
-                <!--                            40%-->
-                <!--                        </div>-->
-                <!--                    </div>-->
                 De veiling is op
                 <strong><?php
                 $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
@@ -189,7 +189,59 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 }
                 ?>
                 dagen.
+
             </p>
+            <p>
+                <!-- Display the countdown timer in an element -->
+            <p class="fontSize20">U heeft nog maar</p>
+            <p id="demo" class="fontSize20"></p>
+
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("May 27, 2017 13:25:00").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                    // Get todays date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now an the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24) + hours + 23);
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="demo"
+                    document.getElementById("demo").innerHTML = days + " Dagen "
+                        + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
+
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
+            </p>
+            <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
+            <h2>Huidige prijs: €<?php
+            $sql = "SELECT Startprijs FROM Voorwerp WHERE Voorwerpnummer = 101";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                echo $row[0];
+            }
+            ?>
+            </h2>
+            <h3>
+                Door: GEBRUIKER - NIET DYNAMIC
+            </h3>
         </div>
 
     </div>
@@ -202,14 +254,13 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             <div class="container">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#home">Product informatie</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Details</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Betalingsinstructie</a></li>
                     <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
                 </ul>
 
                 <div class="tab-content">
                     <div id="home" class="tab-pane in active">
-                        <h3>Product informatie</h3>
-                        <p><!-- beschrijving -->
+                        <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
                             $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
@@ -222,8 +273,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
-                        <h3>Betalingsinstructie</h3>
-                        <p><!-- beschrijving -->
+                        <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
                             $sql = "SELECT Betalingsinstructie FROM Voorwerp WHERE Voorwerpnummer = 101";
                             $stmt = $db->prepare($sql);
