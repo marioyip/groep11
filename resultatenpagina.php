@@ -32,10 +32,35 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
             <div class="resultPanel col-md-3">
                 <h3 class="textDarkGray">Overzicht</h3>
                 <hr>
-                <div id="collapse" class="panel-collapse collapse">
-                    <li class="list-group-item panel-body list-group-item-action" role="presentation">
-                        <p>fdfdfdfgd</p>
-                    </li></div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                    <li class="list-group-item">Subrubriek</li>
+                </ul>
+                <div class="form-group">
+                    <label for="Order by">Example select</label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>Ascending</option>
+                        <option>Descending</option>
+                        <option>Price</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 1</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 2</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" value="" disabled>Option 3</label>
+                </div>
 
             </div>
             <div class="col-md-3 itemBox roundborder " align="center">
