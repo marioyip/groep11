@@ -16,6 +16,37 @@
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet"><!-- Sanchez Font van Google Fonts -->
 </head>
 <body>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("May 27, 2017 13:25:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24) + hours + 23);
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = days + " Dagen "
+            + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
 
 <?php include 'header.php'; // Geeft de header mee aan de index.php pagina
 
@@ -55,7 +86,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-                    <button class="btn btn-hero btn-lg textDarkGray" role="button">Bied nu</button>
+                    <button class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>
                 </div>
             </div>
             <div class="item">
@@ -80,7 +111,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-                    <button class="backgroundIbisRed btn btn-lg textDarkGray" role="button">Bied nu!</button>
+                    <button class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>
                 </div>
             </div>
             <div class="item">
@@ -110,7 +141,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         }
                         ?>
                     </p>
-                    <button class="btn btn-lg backgroundIbisRed textDarkGray" role="button">Bied nu</button>
+                    <button class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>
                 </div>
             </div>
         </div>

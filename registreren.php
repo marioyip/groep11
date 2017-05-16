@@ -36,6 +36,8 @@ if(isset($_POST['submit'])) {
     $plaats = $_POST['plaats'];
     $land = $_POST['land'];
     $verkoper = $_POST['verkoper'];
+    $rekeningnummer = $_POST['rekeningnummer'];
+    $rekeninghouder =$_POST['rekeninghouder'];
 
     if (empty($voornaam)) {
         $foutmelding = 'wel je voornaam invullen!';
@@ -81,6 +83,12 @@ if(isset($_POST['submit'])) {
     }
     if ($wachtwoord != $wachtwoord2) {
         $foutmelding = 'de wachtwoorden zijn niet hetzelfde';
+    }
+    if (empty($rekeningnummer)) {
+        $foutmelding = 'Je hebt geen rekeningnummer ingevuld!';
+    }
+    if (empty($rekeninghouder)) {
+        $foutmelding = 'Op welke naam staat uw rekening?';
     }
 
 
@@ -248,7 +256,7 @@ if(isset($_POST['submit'])) {
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Rekeningnummer(IBAN):</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" name="rekeningnr" id="pwd"
+                            <input type="text" class="form-control marginLeft200" name="rekeningnummer" id="pwd"
                                    placeholder="NL 53 BANK 1234567890">
                         </div>
                     </div>
