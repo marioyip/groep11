@@ -28,20 +28,45 @@ connectToDatabase();
 $veiling = "";
 $veilinggesloten = "";
 
-$sql = "SELECT VeilingGesloten FROM Voorwerp WHERE voorwerp.voorwerpnummer = 101";
-$stmt = $db->prepare($sql);
-$stmt->execute();
+if(isset($_GET['product'])){
+    $product = $_GET['product'];
+    $sql = "SELECT * FROM voorwerp WHERE voorwerp.voorwerpnummer = '$product'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+}
 
 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-    $veilinggesloten = $row[0];
-
-    if ($veilinggesloten == 1) {
-        $veiling .= "gesloten";
-    }
-    if ($veilinggesloten == 0) {
-        $veiling .= "geopend";
-    }
+    $Looptijd				= $row[0];
+    $LooptijdbeginDag		= $row[1];
+    $LooptijdbeginTijdstip	= $row[2];
+    $LooptijdeindeDag		= $row[3];
+    $LooptijdeindeTijdstip	= $row[4];
+    $Startprijs				= $row[5];
+    $Verkoper				= $row[6];
+    $Koper					= $row[7];
+    $Verzendkosten			= $row[8];
+    $Verkoopprijs			= $row[9];
+    $Beschrijving			= $row[10];
+    $Betalingswijze			= $row[11];
+    $Betalingsinstructie	= $row[12];
+    $Land					= $row[13];
+    $Plaatsnaam				= $row[14];
+    $Titel					= $row[15];
+    $Verzendinstructies		= $row[16];
+    $Voorwerpnummer			= $row[17];
+    $VeilingGesloten		= $row[18];
+    $VoorwerpCover          = $row[19];
 }
+//while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+//    $veilinggesloten = $row[0];
+//
+//    if ($veilinggesloten == 1) {
+//        $veiling .= "gesloten";
+//    }
+//    if ($veilinggesloten == 0) {
+//        $veiling .= "geopend";
+//    }
+//}
 
 ?>
 
@@ -51,13 +76,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         <div class="col-md-12">
             <h1 class="page-header"><!-- titel -->
                 <?php
-                $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $Titel;
                 ?>
             </h1>
         </div>
@@ -80,37 +99,19 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/<?php
-                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
+                    echo $VoorwerpCover;
                     ?>');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/<?php
-                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 115";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
+                    echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/<?php
-                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
+                    echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
                 <div class="item">
@@ -128,55 +129,25 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             <p><!-- looptijdbegindag -->
                 De veiling is op
                 <?php
-                $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $LooptijdbeginDag;
                 ?>
                 om <!-- LooptijdbeginTijdstip -->
                 <?php
-                $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $LooptijdbeginTijdstip;
                 ?>
                 geopend.
                 De veiling is op
                 <strong><?php
-                $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $LooptijdeindeDag;
                 ?></strong>
                 om
                 <strong><?php
-                $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $LooptijdeindeTijdstip;
                 ?></strong>
                 gesloten.
                 De looptijd voor de veiling van
                 <?php
-                $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $Titel;
                 ?>
                 is <!-- looptijd -->
                 <?php
@@ -230,13 +201,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             </p>
             <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
             <h2>Huidige prijs: €<?php
-            $sql = "SELECT Startprijs FROM Voorwerp WHERE Voorwerpnummer = 101";
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0];
-            }
+            echo $Startprijs;
             ?>
             </h2>
             <h3>
@@ -262,26 +227,14 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     <div id="home" class="tab-pane in active">
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
-                            $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute();
-
-                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                                echo $row[0];
-                            }
+                            echo $Beschrijving;
                             ?>
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
-                            $sql = "SELECT Betalingsinstructie FROM Voorwerp WHERE Voorwerpnummer = 101";
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute();
-
-                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                                echo $row[0];
-                            }
+                            echo $Betalingsinstructie;
                             ?>
                         </p>
                     </div>
@@ -289,22 +242,10 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         <h3>Locatie</h3>
                         <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
                             <?php
-                            $sql = "SELECT Plaatsnaam FROM Voorwerp WHERE Voorwerpnummer = 101";
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute();
-
-                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                                echo $row[0];
-                            }
+                            echo $Plaatsnaam;
                             ?>,<!-- land -->
                             <?php
-                            $sql = "SELECT Land FROM Voorwerp WHERE Voorwerpnummer = 101";
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute();
-
-                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                                echo $row[0];
-                            }
+                            echo $Land;
                             ?>
                         </p>
                     </div>
