@@ -18,6 +18,12 @@
     -o-background-size: cover;
 }
 
+.resultPanel{
+    height: auto;
+    padding: 10px;
+
+}
+
 /*Margin*/
 .marginTop20 {
     margin-top: 20px;
