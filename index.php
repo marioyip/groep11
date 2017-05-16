@@ -131,7 +131,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
         </div>
     </div>
     <div class="container">
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=101">
             <!-- laptop -->
             <div class="col-md-3 itemBox roundborder" align="center">
                 <!-- img moet ook uit de database te halen zijn -->
@@ -145,7 +145,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 }
                 ?>" width="200" height="200"/>
                 <!-- Haalt de titel uit de database van een bepaald voorwerp -->
-                <h4><a class="textDarkGray" href="productpagina.php"><?php
+                <h4><a class="textDarkGray" href="productpagina.php?product=101"><?php
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
@@ -165,11 +165,11 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         echo $row[0];
                     }
                     ?></div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=101" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
         <!-- grasmaaier -->
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=115">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 115";
@@ -181,7 +181,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 }
                 ?>" width="200" height="200"/>
                 <!-- Haalt de titel uit de database van een bepaald voorwerp -->
-                <h4><a class="textDarkGray" href="productpagina.php"><?php
+                <h4><a class="textDarkGray" href="productpagina.php?product=115"><?php
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 115";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
@@ -201,11 +201,11 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         echo $row[0];
                     }
                     ?></div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=115" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
         <!-- fauleuil -->
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=117">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 117";
@@ -217,7 +217,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 }
                 ?>" width="200" height="200"/>
                 <!-- Haalt de titel uit de database van een bepaald voorwerp -->
-                <h4><a class="textDarkGray" href="productpagina.php"><?php
+                <h4><a class="textDarkGray" href="productpagina.php?product=117"><?php
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 117";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
@@ -237,11 +237,11 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         echo $row[0];
                     }
                     ?></div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=117" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
         <!-- iphone -->
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=118">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 118";
@@ -253,7 +253,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 }
                 ?>" width="200" height="200"/>
                 <!-- Haalt de titel uit de database van een bepaald voorwerp -->
-                <h4><a class="textDarkGray" href="productpagina.php"><?php
+                <h4><a class="textDarkGray" href="productpagina.php?product=118"><?php
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 118";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
@@ -273,7 +273,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         echo $row[0];
                     }
                     ?></div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=118" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
     </div>
@@ -283,7 +283,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
         </div>
     </div>
     <div class="container">
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=101">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
@@ -295,7 +295,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                     echo $row[0];
                 }
                 ?>"/>
-                <h4><a class="textDarkGray" href="productpagina.php"><?php
+                <h4><a class="textDarkGray" href="productpagina.php?product=101"><?php
                         //Haalt de titel uit de database
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                         $stmt = $db->prepare($sql);
@@ -315,39 +315,39 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         echo $row[0];
                     }
                     ?></div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=101" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
 
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=115">
             <div class="col-md-3 itemBox roundborder" align="center">
                 <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
-                <h4><a class="textDarkGray" href="productpagina.php">Grasmaaier</a></h4>
+                <h4><a class="textDarkGray" href="productpagina.php?product=115">Grasmaaier</a></h4>
                 <div class="description">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                     100% efficiënt.
                 </div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=115" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=117">
             <div class="col-md-3 itemBox roundborder" align="center">
                 <img class="imgStyle roundborder" src="media/fauteuil.jpg">
-                <h4><a class="textDarkGray" href="productpagina.php">Fauteuil</a></h4>
+                <h4><a class="textDarkGray" href="productpagina.php?product=117">Fauteuil</a></h4>
                 <div class="description">
                     Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
                     look.
                 </div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=117" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
-        <a href="productpagina.php">
+        <a href="productpagina.php?product=118">
             <div class="col-md-3 itemBox  roundborder x" align="center">
                 <img class="imgStyle roundborder " src="media/iphone.jpg">
-                <h4><a class="textDarkGray " href="productpagina.php">iPhone SE</a></h4>
+                <h4><a class="textDarkGray " href="productpagina.php?product=118">iPhone SE</a></h4>
                 <div class="description ">
                     Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
                 </div>
-                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
+                <a href="productpagina.php?product=118" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </a>
     </div>
