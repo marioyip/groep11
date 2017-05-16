@@ -27,7 +27,7 @@ include 'catbar.php';
     <div class="container">
 
 
-        <div class="col-md-12 marginTop20" align="center">
+        <div class="" align="center">
             <?php
 
             require_once('functies.php');
@@ -45,7 +45,7 @@ include 'catbar.php';
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
             {
                 $k++;
-                echo '<ul class="marginBottom40">';
+                echo '<ul class=" ">';
 
                 for ($i = 0; $i < count($row); $i++) {
                     echo '  <div class="panel-group">
