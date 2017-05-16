@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -169,7 +170,9 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 
             <script>
                 // Set the date we're counting down to
-                var countDownDate = new Date("May 27, 2017 13:25:00").getTime();
+                var countDownDate = new Date("<?php
+                    echo $LooptijdeindeDag
+                    ?>").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
@@ -178,25 +181,25 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     var now = new Date().getTime();
 
                     // Find the distance between now an the count down date
-                    var distance = countDownDate - now;
+                    var verschil = countDownDate - now;
 
                     // Time calculations for days, hours, minutes and seconds
 
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var days = Math.floor(distance / (1000 * 60 * 60 * 24) + hours + 23);
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
+                    var Hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((verschil % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((verschil % (1000 * 60)) / 1000);
 
                     // Display the result in the element with id="demo"
-                    document.getElementById("demo").innerHTML = days + " Uur "
+                    document.getElementById("demo").innerHTML = days + " Dagen " + Hours + " Uur " +
                         + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
 
                     // If the count down is finished, write some text
-                    if (distance < 0) {
+                    if (verschil < 0) {
                         clearInterval(x);
-                        document.getElementById("demo").innerHTML = "EXPIRED";
+                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
                     }
-                }, 1000);
+                }, 1);
             </script>
             </p>
             <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
