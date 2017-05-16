@@ -25,6 +25,8 @@ require_once('functies.php');
 
 connectToDatabase();
 
+$productId = $_GET['productId'];
+
 $veiling = "";
 $veilinggesloten = "";
 
@@ -52,7 +54,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 <h1 class="page-header"><!-- titel -->
                     <?php
 
-                    $sql = "SELECT voorwerp.Titel FROM Voorwerp WHERE voorwerp.voorwerpnummer = 101";
+                    $sql = "SELECT voorwerp.Titel FROM Voorwerp WHERE voorwerp.voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -65,11 +67,10 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             </div>
         </div>
         <div class="row">
-
             <div class="col-md-6 marginBottom20">
                 <div class="imageBox">
                     <img class=imageBox alt="Voorwerpcover" src="media/<?php
-                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -85,7 +86,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     <p><!-- looptijdbegindag -->
                         De veiling is op
                         <?php
-                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = $productId";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
 
@@ -95,7 +96,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         ?>
                         om <!-- LooptijdbeginTijdstip -->
                         <?php
-                        $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $sql = "SELECT LooptijdbeginTijdstip FROM Voorwerp WHERE Voorwerpnummer = $productId";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
 
@@ -128,7 +129,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 <!--                    </div>-->
                     De veiling is op
                     <?php
-                    $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -138,7 +139,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     ?>
                     om
                     <?php
-                    $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -149,7 +150,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     gesloten.
                     De looptijd voor de veiling van
                     <?php
-                    $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -159,7 +160,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     ?>
                     is <!-- looptijd -->
                     <?php
-                    $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
+                    $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = $productId";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -189,7 +190,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 <h3>Product informatie</h3>
                                 <p><!-- beschrijving -->
                                     <?php
-                                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = $productId";
                                     $stmt = $db->prepare($sql);
                                     $stmt->execute();
 
@@ -203,7 +204,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 <h3>Betalingsinstructie</h3>
                                 <p><!-- beschrijving -->
                                     <?php
-                                    $sql = "SELECT Betalingsinstructie FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $sql = "SELECT Betalingsinstructie FROM Voorwerp WHERE Voorwerpnummer = $productId";
                                     $stmt = $db->prepare($sql);
                                     $stmt->execute();
 
@@ -217,7 +218,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 <h3>Locatie</h3>
                                 <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
                                     <?php
-                                    $sql = "SELECT Plaatsnaam FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $sql = "SELECT Plaatsnaam FROM Voorwerp WHERE Voorwerpnummer = $productId";
                                     $stmt = $db->prepare($sql);
                                     $stmt->execute();
 
@@ -226,7 +227,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                     }
                                     ?>,<!-- land -->
                                     <?php
-                                    $sql = "SELECT Land FROM Voorwerp WHERE Voorwerpnummer = 101";
+                                    $sql = "SELECT Land FROM Voorwerp WHERE Voorwerpnummer = $productId";
                                     $stmt = $db->prepare($sql);
                                     $stmt->execute();
 
