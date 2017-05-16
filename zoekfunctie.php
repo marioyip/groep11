@@ -18,15 +18,17 @@
 <div class="containerMain">
     <?php
     include('header.php'); //Geef de header mee
-    include ('catbar.php'); //Geef de categorieën bar mee
+    include('catbar.php'); //Geef de categorieën bar mee
     ini_set('display_errors', 1);
     require_once('functies.php'); //één keer de functies nodig voor verbinden met Database
     connectToDatabase(); //Verbind met de database (tabblad functies.php)
-        //Zoekfunctie voor de database
+    //Zoekfunctie voor de database
     if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
         $searchResult = "'%" . $_GET["zoeken"] . "%'";
         $gekozenRubriek = $_GET["rubriek"];
-        $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult AND rubriek.rubrieknaam = '$gekozenRubriek' OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
+        $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult 
+                AND rubriek.rubrieknaam = '$gekozenRubriek' OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
 
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();           //Statement uitvoeren

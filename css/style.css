@@ -251,6 +251,10 @@ body {
     color: white;
 }
 
+.textWhite a{
+    color: white;
+}
+
 .fontSize20 {
     font-size: 20px;
 }

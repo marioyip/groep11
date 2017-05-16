@@ -32,7 +32,7 @@ include 'catbar.php';
             global $db;
             require_once('functies.php');
             require_once 'catbar.php';
-  /*          echo '<div class="container marginTop20">';*/
+            /*          echo '<div class="container marginTop20">';*/
             connectToDatabase();
 
             $sql = "SELECT rubrieknaam FROM rubriek WHERE rubriek = -1 ORDER BY rubrieknaam";
@@ -54,8 +54,7 @@ include 'catbar.php';
                             <h4 class="panel-title">
                               <a class="textWhite" data-toggle="collapse" href="#collapse' . $k . '">' . $row[$i] . '</a>
                             </h4>
-                          </div>
-                          
+                          </div>                          
                         </div>
                     </div>';
                     $sql2 = "SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = '$row[$i]') ORDER BY rubrieknaam";
