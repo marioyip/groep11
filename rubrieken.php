@@ -38,7 +38,7 @@ include 'header.php';
             $stmt2->execute();
             while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {
                 for ($j = 0; $j < count($row2); $j++) {
-                    echo '<li class="list-group-item list-group-item-action hidden" role="presentation"><a href = "zoekfunctie.php">' . $row2[$j] . '</a>';
+                    echo '<li class="list-group-item list-group-item-action" role="presentation"><a href = "zoekfunctie.php">' . $row2[$j] . '</a>';
                     $total++;
                 }
             }
