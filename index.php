@@ -316,7 +316,6 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
             <h1 class="textDarkGray">Nieuwe veilingen</h1>
         </div>
     </div>
-    //container
     <div class="container">
         <a href="productpagina.php?product=101">
             <div class="col-md-3 itemBox roundborder " align="center">
