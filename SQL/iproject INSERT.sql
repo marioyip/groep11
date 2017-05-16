@@ -4679,4 +4679,4 @@ VALUES('7',
 SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
 INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(28727,115);
 
-SELECT * FROM VoorwerpInRubriek
+SELECT * FROM Nieuwsbrief
