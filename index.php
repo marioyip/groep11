@@ -86,7 +86,8 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-                    <button class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>
+<!--                    <button href="productpagina.php?product=115" class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>-->
+                    <a href="productpagina.php?product=115" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
             <div class="item">
@@ -103,7 +104,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         }
                         ?></h3>
                     <p><?php
-                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 115";
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 117";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
 
@@ -111,7 +112,8 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-                    <button class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>
+<!--                    <button href="productpagina.php?product=115" class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>-->
+                    <a href="productpagina.php?product=117" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
             <div class="item">
@@ -141,7 +143,8 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         }
                         ?>
                     </p>
-                    <button class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>
+<!--                    <button href="productpagina.php?product=101" class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>-->
+                    <a href="productpagina.php?product=101" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
         </div>
