@@ -104,73 +104,79 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         }
                         ?>
                         geopend.
-<!--                    <div class="progress">-->
-<!--                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
-<!--                             aria-valuenow="--><?//= date("d" / "m" / "y"); ?><!--" aria-valuemin="--><?php
-//                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-//                        $stmt = $db->prepare($sql);
-//                        $stmt->execute();
-//
-//                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                            echo $row[0];
-//                        }
-//                        ?><!--" aria-valuemax="--><?php
-//                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-//                        $stmt = $db->prepare($sql);
-//                        $stmt->execute();
-//
-//                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                            echo $row[0];
-//                        }
-//                        ?><!--" style="width:40%">-->
-<!--                            40%-->
-<!--                        </div>-->
-<!--                    </div>-->
-                    De veiling is op
-                    <?php
-                    $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+                        <!--                    <div class="progress">-->
+                        <!--                        <div class="progress-bar progress-bar-striped active" role="progressbar"-->
+                        <!--                             aria-valuenow="-->
+                        <? //= date("d" / "m" / "y"); ?><!--" aria-valuemin="--><?php
+                        //                        $sql = "SELECT LooptijdbeginDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        //                        $stmt = $db->prepare($sql);
+                        //                        $stmt->execute();
+                        //
+                        //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        //                            echo $row[0];
+                        //                        }
+                        //                        ?><!--" aria-valuemax="--><?php
+                        //                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        //                        $stmt = $db->prepare($sql);
+                        //                        $stmt->execute();
+                        //
+                        //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        //                            echo $row[0];
+                        //                        }
+                        //                        ?><!--" style="width:40%">-->
+                        <!--                            40%-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        De veiling is op
+                        <?php
+                        $sql = "SELECT LooptijdeindeDag FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
 
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    ?>
-                    om
-                    <?php
-                    $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        om
+                        <?php
+                        $sql = "SELECT LooptijdeindeTijdstip FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
 
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    ?>
-                    gesloten.
-                    De looptijd voor de veiling van
-                    <?php
-                    $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        gesloten.
+                        De looptijd voor de veiling van
+                        <?php
+                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
 
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    ?>
-                    is <!-- looptijd -->
-                    <?php
-                    $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        is <!-- looptijd -->
+                        <?php
+                        $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
 
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    ?>
-                    dagen.
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0];
+                        }
+                        ?>
+                        dagen.
                     </p>
                 </div>
-
+                <div>
+                    <h2>laatst geplaatste bod:</h2>
+                </div>
+                <div>
+                    <button>Bied mee!</button>
+                </div>
             </div>
         </div>
 
