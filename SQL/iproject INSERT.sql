@@ -4680,3 +4680,5 @@ SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
 INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(28727,115);
 
 SELECT * FROM Nieuwsbrief
+
+SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = (Hobby's en handwerken) ORDER BY rubrieknaam

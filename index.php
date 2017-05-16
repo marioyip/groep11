@@ -43,7 +43,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         $stmt->execute();
 
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
+                            echo $row[0];
                         }
                         ?></h3>
                     <p><?php
@@ -89,7 +89,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 <div class="fill" style="background-image:url('media/laptop.png');"></div>
 
                 <div class="carousel-caption d-none d-md-block">
-                   <!-- Query voor het zien van de Titel van een bepaald voorwerp -->
+                    <!-- Query voor het zien van de Titel van een bepaald voorwerp -->
                     <h2><?php
                         $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
                         $stmt = $db->prepare($sql);
@@ -114,16 +114,15 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                 </div>
             </div>
         </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
     </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
-    <div>
 
     </div>
     <div class="container marginTop20">
@@ -361,9 +360,9 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
             interval: 5000 //changes the speed
         })
     </script>
-
+</main>
+<?php include 'footer.php';
+?>
 
 </body>
 </html>
-<?php include 'footer.php';
-?>
