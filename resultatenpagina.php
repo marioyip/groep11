@@ -163,7 +163,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     ?></div>
                 <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3 itemBox roundborder " align="center"></div>
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
