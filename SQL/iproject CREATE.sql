@@ -1,3 +1,9 @@
+/**************************************************************
+** Bestandsnaam:		Constraints - Overige beperkingsregels.sql
+** Projectgroep:		11
+** Datum:				16 mei 2017
+**************************************************************/
+
 USE master
 
 USE iproject11

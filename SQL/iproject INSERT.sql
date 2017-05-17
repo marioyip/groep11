@@ -1,3 +1,9 @@
+/**************************************************************
+** Bestandsnaam:		Constraints - Overige beperkingsregels.sql
+** Projectgroep:		11
+** Datum:				16 mei 2017
+**************************************************************/
+
 
 use iproject11
 SET IDENTITY_INSERT iproject11.dbo.Feedback OFF

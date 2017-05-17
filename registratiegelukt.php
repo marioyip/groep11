@@ -17,7 +17,7 @@ global $pdo;
 //if (isset($_POST['submit'])&&$_POST['wachtwoord']==$_POST['wachtwoord2']&&$_POST['wachtwoord']!='') {
 //    $gelukt = "gelukt";
 //    $voornaam = $_POST['voornaam'];
-//    $emailadress = $_POST['emailadress'];
+//    $emailadres = $_POST['emailadres'];
 //    $achternaam = $_POST['achternaam'];
 //    $gebruikersnaam = $_POST['gebruikersnaam'];
 //    $wachtwoord = $_POST['wachtwoord'];
@@ -33,7 +33,7 @@ global $pdo;
 
 
 
-    registerUser("$voornaam", "$achternaam", "$emailadress", "$gebruikersnaam", "$wachtwoord",
+    registerUser("$voornaam", "$achternaam", "$emailadres", "$gebruikersnaam", "$wachtwoord",
         "$geboortedatum", "$vraag", "$antwoord", "$straat", "$huisnr", "$postcode",
         "$plaats", "$land", "$verkoper");
 
