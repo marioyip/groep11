@@ -50,11 +50,11 @@ if(isset($_POST['submit'])) {
     if (empty($gebruikersnaam)) {
         $foutmelding = 'wel je gebruikeresnaam invullen!';
     }
-    if (empty($wachtwoord)/*
+    if (empty($wachtwoord)
         ||strlen($wachtwoord)<6
         || strpbrk($wachtwoord, '1234567890') == FALSE
         || strpbrk($wachtwoord, 'abcdefghijklmnopqrstuvwxyz') == FALSE
-        || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE */){
+        || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE ){
 
         $foutmelding = 'weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?';
     }
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])) {
 
         $sql = "
         INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
-        GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+        GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
         VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadress', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
