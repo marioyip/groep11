@@ -22,6 +22,7 @@ if(isset($_POST['submit'])) {
 
     $voornaam = $_POST['voornaam'];
     $emailadress = $_POST['emailadress'];
+    $emailadress2 = $_POST['emailadress2'];
     $achternaam = $_POST['achternaam'];
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
@@ -31,6 +32,8 @@ if(isset($_POST['submit'])) {
     $antwoord = $_POST['antwoord'];
     $straat = $_POST['straat'];
     $huisnr = $_POST['huisnr'];
+    $straat2 = $_POST['straat2'];
+    $huisnr2 = $_POST['huisnr2'];
     $postcode = $_POST['postcode'];
     $plaats = $_POST['plaats'];
     $land = $_POST['land'];
@@ -41,8 +44,8 @@ if(isset($_POST['submit'])) {
     if (empty($voornaam)) {
         $foutmelding = 'wel je voornaam invullen!';
     }
-    if (empty($emailadress)) {
-        $foutmelding = 'wel je emailadres invullen!';
+    if ($emailadress2 != $emailadress) {
+        $foutmelding = 'wel je emailadres (juist) invullen!';
     }
     if (empty($achternaam)) {
         $foutmelding = 'wel je achternaam invullen!';
@@ -88,6 +91,14 @@ if(isset($_POST['submit'])) {
     if (empty($rekeninghouder)) {
         $foutmelding = 'Op welke naam staat uw rekening?';
     }
+    if (empty($huisnr2) && empty($straat2)){
+        $huisnr2 = NULL;
+        $straat2 = NULL;
+    }
+
+    if (empty($huisnr2)&&empty($straat2)==FALSE || empty($straat2)&& empty($huisnr2)==FALSE){
+        $foutmelding = "Check je optionele tweede adresgegevens!";
+    }
 
 
     if($foutmelding==''){
@@ -101,21 +112,19 @@ if(isset($_POST['submit'])) {
         $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 
         $sql = "
-        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
+        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst, 
         GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadress', '$gebruikersnaam',
+        VALUES ('$achternaam', '$straat', $huisnr,$straat2,$huisnr2, '$antwoord', '$geboortedatum', '$emailadress', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
-        echo '<H1>HET IS GELUKT,</H1>';
-
+        echo 'welkom '.$voornaam;
     }
     else{ echo '<div class="alert alert-danger"><strong>Fout!</strong> '.$foutmelding.'</div>';
     }
 }
-
 ?>
 <main>
     <div class="container marginTop20">
@@ -144,11 +153,17 @@ if(isset($_POST['submit'])) {
                                    placeholder="van Dalen">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadress" id="email"
+                                   placeholder="k.vandalen@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Herhaal E-mailadres:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control marginLeft200" name="emailadress2" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
@@ -214,6 +229,20 @@ if(isset($_POST['submit'])) {
                         <div class="col-sm-10">
                             <input type="number" class="form-control marginLeft200" name="huisnr" id="pwd"
                                    placeholder="4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Tweede straat (optioneel):</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control marginLeft200" name="straat2" id="pwd"
+                                   placeholder="Janstraat">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Tweede huisnummer (optioneel):</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control marginLeft200" name="huisnr2" id="pwd"
+                                   placeholder="5">
                         </div>
                     </div>
                     <div class="form-group">
@@ -291,79 +320,6 @@ if(isset($_POST['submit'])) {
     </div>
 </main>
 
-<?php
-
-?>
-
-
-
-
-
-<!--        <div class="containerMain">-->
-<!--            <div class="container-fluid">-->
-<!--                <section class="container">-->
-<!--                    <div class="container-page">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <h3 class="dark-grey">Registration</h3>-->
-<!---->
-<!--                            <div class="form-group col-lg-12">-->
-<!--                                <label>Username</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Password</label>-->
-<!--                                <input type="password" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Repeat Password</label>-->
-<!--                                <input type="password" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Email Address</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Repeat Email Address</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="col-sm-6">-->
-<!--                                <input type="checkbox" class="checkbox" />Sigh up for our newsletter-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="col-sm-6">-->
-<!--                                <input type="checkbox" class="checkbox" />Send notifications to this email-->
-<!--                            </div>-->
-<!---->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-md-6">-->
-<!--                            <h3 class="dark-grey">Terms and Conditions</h3>-->
-<!--                            <p>-->
-<!--                                By clicking on "Register" you agree to The Company's' Terms and Conditions-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                While rare, prices are subject to change based on exchange rate fluctuations --->
-<!--                                should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)-->
-<!--                            </p>-->
-<!---->
-<!--                            <button type="submit" class="btn btn-default">Registereren</button>-->
-<!--<!--                        </div>-->
-<!--</div>-->
-<!--</section>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 </body>
 
 </html>
