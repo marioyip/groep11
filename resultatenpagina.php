@@ -64,12 +64,12 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 <?php
                 $gekozenRubriek='Computers';
                 $lap=1;
-                for($i = 1; $i < 6; $i++) {
+                for($i = 0; $i < count($row); $i++) {
                     echo '<div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/';
                     //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
                     $sql = "Select VoorwerpCover from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -79,7 +79,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     echo '<h4><a class="textDarkGray" href="productpagina.php">';
                     //Haalt de titel uit de database
                     $sql = "Select Titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE '$gekozenRubriek";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
