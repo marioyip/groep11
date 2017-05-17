@@ -45,7 +45,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <li class="list-group-item">Subrubriek</li>
                 </ul>
                 <div class="form-group">
-                    <label for="Order by">Example select</label>
+                    <label for="Order by">Order by</label>
                     <select class="form-control" id="exampleSelect1">
                         <option>Ascending</option>
                         <option>Descending</option>
@@ -63,6 +63,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 </div>
 
             </div>
+            <div class="col-md-8 container-fluid">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
@@ -162,11 +163,6 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     ?></div>
                 <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
             </div>
-
-        </div>
-
-
-        <div class="container marginTop10">
             <div class="col-md-3"></div>
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
@@ -267,10 +263,6 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     ?></div>
                 <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
             </div>
-        </div>
-
-        <div class="container marginTop10">
-            <div class="col-md-3"></div>
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
@@ -372,7 +364,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
             </div>
         </div>
     </div>
-
+    </div>
 </main>
 </body>
 </html>
