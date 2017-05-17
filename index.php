@@ -316,6 +316,17 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
             <h1 class="textDarkGray">Nieuwe veilingen</h1>
         </div>
     </div>
+<!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
+    <?php
+    $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY LooptijdbeginDag DESC, LooptijdbeginTijdstip DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo $row['Looptijd'];
+    }
+    ?>
+
+
     <div class="container">
         <a href="productpagina.php?product=3">
             <div class="col-md-3 itemBox roundborder " align="center">
