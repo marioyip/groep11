@@ -23,7 +23,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
                        href="inloggen.php">Inloggen</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
                 <li>
-                    <a class="navbar-right glyphicon glyphicon-registration-mark textWhite marginTop5 fontSize16 crete" aria-hidden="true"
+                    <a class="navbar-right glyphicon  	glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
                        href="registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
             </ul>
