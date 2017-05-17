@@ -20,7 +20,6 @@ include 'catbar.php';
 if(isset($_POST['submit'])) {
     $foutmelding = '';
 
-    $gelukt = "gelukt";
     $voornaam = $_POST['voornaam'];
     $emailadress = $_POST['emailadress'];
     $achternaam = $_POST['achternaam'];
@@ -51,14 +50,16 @@ if(isset($_POST['submit'])) {
     if (empty($gebruikersnaam)) {
         $foutmelding = 'wel je gebruikeresnaam invullen!';
     }
-    if (empty($wachtwoord)) {
-        $foutmelding = 'wel je wachtwoord invullen!';
+    if (empty($wachtwoord)/*
+        ||strlen($wachtwoord)<6
+        || strpbrk($wachtwoord, '1234567890') == FALSE
+        || strpbrk($wachtwoord, 'abcdefghijklmnopqrstuvwxyz') == FALSE
+        || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE */){
+
+        $foutmelding = 'weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?';
     }
     if (empty($geboortedatum)) {
         $foutmelding = 'wel je geboortedatum invullen!';
-    }
-    if (empty($vraag)) {
-        $foutmelding = 'wel je geheime vraag kiezen invullen!';
     }
     if (empty($antwoord)) {
         $foutmelding = 'wel je supergeheime antwoord invullen invullen!';
@@ -77,9 +78,6 @@ if(isset($_POST['submit'])) {
     }
     if (empty($land)) {
         $foutmelding = 'wel je land invullen!';
-    }
-    if (empty($verkoper)) {
-        $foutmelding = 'wel aangeven of je een verkoper bent invullen!';
     }
     if ($wachtwoord != $wachtwoord2) {
         $foutmelding = 'de wachtwoorden zijn niet hetzelfde';
@@ -100,18 +98,18 @@ if(isset($_POST['submit'])) {
 
         connectToDatabase();
 
-        $hashedWachtwoord = password_hash($wachtwoord, 1); //het meegegeven wachtwoord wordt gehashed
+        $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 
         $sql = "
         INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
         GeboorteDag, Mailbox, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ($achternaam, $straat, $huisnr, $antwoord, $geboortedatum, $emailadress, $gebruikersnaam,
-                $land, $plaats, $postcode, $voornaam, $vraag, $hashedWachtwoord, $verkoper)
+        VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadress', '$gebruikersnaam',
+                '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
-        echo '<H1>HET IS GELUKT</H1>';
+        echo '<H1>HET IS GELUKT,</H1>';
 
     }
     else{ echo '<div class="alert alert-danger"><strong>Fout!</strong> '.$foutmelding.'</div>';
@@ -187,10 +185,10 @@ if(isset($_POST['submit'])) {
                         <div class="col-sm-2">
                             <label class="control-label col-sm-2" for="pwd">Beveiligingsvraag:
                                 <select name="vraag" class="marginLeft400">
-                                    <option value="huisdier">Wat is mijn favoriete huisdier?</option>
-                                    <option value="geboorteplaats">Wat is mijn geboorteplaats?</option>
-                                    <option value="jeugdvriend">Wie is mijn jeugdvriend?</option>
-                                    <option value="moeder">Wat is de meisjesnaam van mijn moeder?</option>
+                                    <option value="1">Wat is mijn favoriete huisdier?</option>
+                                    <option value="2">Wat is mijn geboorteplaats?</option>
+                                    <option value="3">Wie is mijn jeugdvriend?</option>
+                                    <option value="4">Wat is de meisjesnaam van mijn moeder?</option>
                                 </select>
                             </label>
                         </div>
@@ -273,8 +271,8 @@ if(isset($_POST['submit'])) {
                         <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
                         <div class="col-sm-10">
                             <select name="verkoper" class="marginLeft400">
-                                <option value="ja">Ja</option>
-                                <option value="nee">Nee</option>
+                                <option value="wel">Ja</option>
+                                <option value="niet">Nee</option>
                             </select>
                         </div>
                     </div>
