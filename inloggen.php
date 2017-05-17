@@ -25,10 +25,8 @@ $gebruikersnaam = $wachtwoord = $leegveld = "";
 $gebruikersnaamErr = $wachtwoordErr = " ";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "hoi1";
     if (empty($_POST["gebruikersnaam"]) || empty($_POST["wachtwoord"])) {
-        $leegveld = "De gebruikersnaam en het wachtwoord moeten beide ingevuld zijn!";
-        echo "hoi2";
+        $leegveld = "De gebruikersnaam en het wachtwoord moeten beide ingevuld zijn!";o
     } else {
         $gebruikersnaam = test_input($_POST["gebruikersnaam"]);
         $wachtwoord = test_input($_POST['wachtwoord']);
