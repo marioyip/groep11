@@ -20,12 +20,14 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             <ul class="nav ">
                 <li>
                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                       href="inloggen.php">Inloggen</a> <!--inloggen knop met een glyphicon van een gebruiker-->
+                       href="inloggen.php"><?php if(isset($_SESSION['username'])){ echo 'Uitloggen'; }else{ echo 'Inloggen';} ?></a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
+                <?php if(isset($_SESSION['username'])){ echo'';}else{ echo '
                 <li>
                     <a class="navbar-right glyphicon  	glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
                        href="registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
+                '; }?>
             </ul>
         </div>
     </div>
