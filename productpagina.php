@@ -171,7 +171,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             <script>
                 // Set the date we're counting down to
                 var countDownDate = new Date("<?php
-                    echo $LooptijdeindeDag
+                    echo $LooptijdeindeDag . ' ' . $LooptijdeindeTijdstip
                     ?>").getTime();
 
                 // Update the count down every 1 second
@@ -186,12 +186,12 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     // Time calculations for days, hours, minutes and seconds
 
                     var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
-                    var Hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     var minutes = Math.floor((verschil % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((verschil % (1000 * 60)) / 1000);
 
                     // Display the result in the element with id="demo"
-                    document.getElementById("demo").innerHTML = days + " Dagen " + Hours + " Uur " +
+                    document.getElementById("demo").innerHTML = days + " Dagen " + hours + " Uur " +
                         + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
 
                     // If the count down is finished, write some text
