@@ -15,7 +15,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include 'includes/header.php';
 require_once('functies.php');
 
 ini_set('display_errors', 'On');
@@ -110,5 +110,5 @@ if(isset($_POST['submit'])){
 
 <?php
 ;
-include 'footer.php';
+include 'includes/footer.php';
 

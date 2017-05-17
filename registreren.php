@@ -14,8 +14,8 @@
 
 <?php
 
-include 'header.php';
-include 'catbar.php';
+include 'includes/header.php';
+include 'includes/catbar.php';
 
 if(isset($_POST['submit'])) {
     $foutmelding = '';
@@ -418,5 +418,5 @@ if(isset($_POST['submit'])) {
 
 
 <?php
-include 'footer.php'
+include 'includes/footer.php'
 ?>

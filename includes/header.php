@@ -10,10 +10,10 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <header>
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
-            <a class="navbar-header" href="index.php">
-                <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="index.php">
-                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="tekstlogo"/>
+            <a class="navbar-header" href="../index.php">
+                <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
+            <a class="navbar-header " href="../index.php">
+                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.png" alt="tekstlogo"/>
             </a>
         </div>
         <div id="navbar">
@@ -23,16 +23,16 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <!--                     href="inloggen.php">-->
                         <?php if(isset($_SESSION['username'])){ echo
                         '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="uitloggen.php">Uitloggen</a>';
+                         href="../uitloggen.php">Uitloggen</a>';
                         }else{
                             echo '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="inloggen.php">Inloggen</a>';
+                         href="../inloggen.php">Inloggen</a>';
                         } ?></button> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
                 <?php if(isset($_SESSION['username'])){ echo'';}else{ echo '
                 <li>
                     <a class="navbar-right glyphicon  	glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                       href="registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
+                       href="../registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
                 '; }?>
             </ul>

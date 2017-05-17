@@ -13,8 +13,8 @@
 </head>
 <body>
 
-<?php include 'header.php'; //Geeft de header mee
-include 'catbar.php'; ?><!-- Geeft de categorieën bar mee-->
+<?php include 'includes/header.php'; //Geeft de header mee
+include 'includes/catbar.php'; ?><!-- Geeft de categorieën bar mee-->
 <main>
 
     <div class="container marginTop20">
@@ -65,4 +65,4 @@ include 'catbar.php'; ?><!-- Geeft de categorieën bar mee-->
         </div>
     </div>
 
-    <?php include 'footer.php' ?> //geeft de footer mee aan deze pagina
+    <?php include 'includes/footer.php' ?> //geeft de footer mee aan deze pagina

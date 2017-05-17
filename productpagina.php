@@ -18,8 +18,8 @@
 
 <?php
 
-include 'header.php';
-include 'catbar.php';
+include 'includes/header.php';
+include 'includes/catbar.php';
 
 ini_set('display_errors', 1);
 require_once('functies.php');
@@ -309,7 +309,7 @@ if (isset($_GET['product'])) {
 </html>
 
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>
 
 

@@ -13,8 +13,8 @@
 <body>
 
 <?php
-include 'header.php';
-include 'catbar.php';
+include 'includes/header.php';
+include 'includes/catbar.php';
 ?>
 <main>
 
@@ -80,7 +80,7 @@ include 'catbar.php';
         </div>
     </div>
     <?php
-    include 'footer.php'
+    include 'includes/footer.php'
     ?>
 </body>
 

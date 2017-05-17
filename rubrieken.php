@@ -13,13 +13,13 @@
 <body>
 <div class="container marginTop20">
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
 <main>
     <?php
 
     require_once('functies.php');
-    include 'catbar.php';
+    include 'includes/catbar.php';
 
     connectToDatabase();
     global $db;
@@ -54,6 +54,6 @@ include 'header.php';
 </body>
 </html>
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>
 

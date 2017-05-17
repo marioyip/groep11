@@ -1,11 +1,15 @@
 <?php
 function connectToDatabase() //functie om aan de database te kunnen verbinden
 {
-    $pw = "rPgxSAaf";
-    $username = "iproject11";
-    $hostname = "mssql.iproject.icasites.nl";
-    $dbname = "iproject11";
+    //$pw = "rPgxSAaf";
+    //$username = "iproject11";
+    //$hostname = "mssql.iproject.icasites.nl";
+    //$dbname = "iproject11";
 
+    $pw = "dbrules";
+    $username = "sa";
+    $hostname = "localhost";
+    $dbname = "iproject11";
 
 
     global $db;
@@ -51,7 +55,7 @@ function show_form($errors = array())
         $errorHtml = '';
     }
     echo <<<_FORM_
-<form id="login" method="post" action="inloggen.php">
+<form id="login" method="post" action="../inloggen.php">
     <label for="username">Username:</label><input type="text" name="username" id="username"><br>
     <label for="password">Password:</label><input type="password" name="password" id="password"><br>
     <input id="inlog" type="submit" name="submit" value="Log In">

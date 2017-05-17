@@ -52,8 +52,8 @@
 <?php
 session_start();
 
-include 'header.php'; // Geeft de header mee aan de index.php pagina
-include 'catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
+include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
+include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
 
 <main>
     <!-- Full Page Image Background Carousel Header -->
@@ -289,7 +289,7 @@ include 'catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
             })
         </script>
 </main>
-<?php include 'footer.php';
+<?php include 'includes/footer.php';
 ?>
 
 </body>

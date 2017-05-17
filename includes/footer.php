@@ -10,13 +10,13 @@
                     <h3>Mijn profiel</h3>
                     <ul> <!--ongeordende lijst van links die behoren bij de categorie "mijn profiel"-->
                         <li>
-                            <a class="textWhite sanchez" href="inloggen.php">Inloggen</a>
+                            <a class="textWhite sanchez" href="../inloggen.php">Inloggen</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="registreren.php">Registreren</a>
+                            <a class="textWhite sanchez" href="../registreren.php">Registreren</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="inloggen.php">Mijn biedprofiel</a>
+                            <a class="textWhite sanchez" href="../inloggen.php">Mijn biedprofiel</a>
                         </li>
                     </ul>
                 </div>
@@ -24,13 +24,13 @@
                     <h3>Info</h3>
                     <ul> <!--ongeordende lijst van links die behoren bij de categorie "info"-->
                         <li>
-                            <a class="textWhite sanchez" href="infopagina.php">Help &amp; info</a>
+                            <a class="textWhite sanchez" href="../infopagina.php">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
+                            <a class="textWhite sanchez" href="../media/Algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="privacyverklaring.php">Privacy</a>
+                            <a class="textWhite sanchez" href="../privacyverklaring.php">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -38,13 +38,13 @@
                     <h3>Contact</h3>
                     <ul> <!-- ongeordende lijst van links die behoren bij de categorie "contact"-->
                         <li>
-                            <a class="textWhite sanchez" href="contact.php">Contact</a>
+                            <a class="textWhite sanchez" href="../contact.php">Contact</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="overons.php">Over ons</a>
+                            <a class="textWhite sanchez" href="../overons.php">Over ons</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="solliciteren.php">Werken bij</a>
+                            <a class="textWhite sanchez" href="../solliciteren.php">Werken bij</a>
                         </li>
                     </ul>
                 </div>

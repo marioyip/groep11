@@ -231,7 +231,7 @@ body {
 }
 
 .backgroundImageTeam {
-    background-image: url("media/achtergrondteam.jpg");
+    background-image: url("../media/achtergrondteam.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
