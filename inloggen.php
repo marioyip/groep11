@@ -21,7 +21,7 @@ global $db;
 
 //alle variabelen worden gedefinieerd en op lege waardes gezet
 $gebruikersnaam = $wachtwoord = $leegveld = "";
-$gebruikersnaamErr = $wachtwoordErr = "";
+$gebruikersnaamErr = $wachtwoordErr = " ";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "hoi1";
