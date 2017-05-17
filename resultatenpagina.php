@@ -22,8 +22,8 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 <main>
 
 
-    <div class="containerMain">
-        <div class="container marginTop20">
+<!--    <div class="containerMain">-->
+<!--        <div class="container marginTop20">-->
             <div class="col-md-12 " align="center">
                 <h1 class="textGreen">Titel categorie</h1>
             </div>
@@ -57,9 +57,6 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox" value="">Option 2</label>
-                </div>
-                <div class="checkbox disabled">
-                    <label><input type="checkbox" value="" disabled>Option 3</label>
                 </div>
 
             </div>
@@ -393,8 +390,8 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>
             </div>
         </div>
-    </div>
-    </div>
+<!--    </div>-->
+<!--    </div>-->
 </main>
 </body>
 </html>

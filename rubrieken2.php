@@ -64,7 +64,7 @@ include 'catbar.php';
                     while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {
                         for ($j = 0; $j < count($row2); $j++) {
                             echo ' | ';
-                            echo '<a href = "zoekfunctie.php">' . $row2[$j] . '</a>';
+                            echo '<a href = "resultatenpagina.php">' . $row2[$j] . '</a>';
 
 
                             $total++;
