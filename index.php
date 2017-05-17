@@ -48,6 +48,8 @@
     }, 1000);
 </script>
 
+
+
 <?php include 'header.php'; // Geeft de header mee aan de index.php pagina
 
 include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
@@ -66,10 +68,18 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('media/grasmaaier.JPG');"></div>
+                <div class="fill" style="background-image:url('media/<?php
+                $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 6";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0];
+                }
+                ?>');"></div>
                 <div class="carousel-caption d-none d-md-block">
                     <h3><?php
-                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 1";
+                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 6";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
 
@@ -78,7 +88,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         }
                         ?></h3>
                     <p><?php
-                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 1";
+                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 6";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
 
@@ -366,7 +376,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
 
         <a href="productpagina.php?product=1">
             <div class="col-md-3 itemBox roundborder" align="center">
-                <img class="imgStyle roundborder" src="media/grasmaaier.JPG">
+                <img class="imgStyle roundborder" src="media/grasmaaier.jpg">
                 <h4><a class="textDarkGray" href="productpagina.php?product=1">Grasmaaier</a></h4>
                 <div class="description">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
                     100% efficiënt.
