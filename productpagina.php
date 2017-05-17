@@ -29,35 +29,36 @@ connectToDatabase();
 $veiling = "";
 $veilinggesloten = "";
 
-if(isset($_GET['product'])){
+if (isset($_GET['product'])) {
     $product = $_GET['product'];
     $sql = "SELECT * FROM voorwerp WHERE voorwerp.voorwerpnummer = '$product'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $Looptijd = $row[0];
+        $LooptijdbeginDag = $row[1];
+        $LooptijdbeginTijdstip = $row[2];
+        $LooptijdeindeDag = $row[3];
+        $LooptijdeindeTijdstip = $row[4];
+        $Startprijs = $row[5];
+        $Verkoper = $row[6];
+        $Koper = $row[7];
+        $Verzendkosten = $row[8];
+        $Verkoopprijs = $row[9];
+        $Beschrijving = $row[10];
+        $Betalingswijze = $row[11];
+        $Betalingsinstructie = $row[12];
+        $Land = $row[13];
+        $Plaatsnaam = $row[14];
+        $Titel = $row[15];
+        $Verzendinstructies = $row[16];
+        $Voorwerpnummer = $row[17];
+        $VeilingGesloten = $row[18];
+        $VoorwerpCover = $row[19];
+    }
 }
 
-while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-    $Looptijd				= $row[0];
-    $LooptijdbeginDag		= $row[1];
-    $LooptijdbeginTijdstip	= $row[2];
-    $LooptijdeindeDag		= $row[3];
-    $LooptijdeindeTijdstip	= $row[4];
-    $Startprijs				= $row[5];
-    $Verkoper				= $row[6];
-    $Koper					= $row[7];
-    $Verzendkosten			= $row[8];
-    $Verkoopprijs			= $row[9];
-    $Beschrijving			= $row[10];
-    $Betalingswijze			= $row[11];
-    $Betalingsinstructie	= $row[12];
-    $Land					= $row[13];
-    $Plaatsnaam				= $row[14];
-    $Titel					= $row[15];
-    $Verzendinstructies		= $row[16];
-    $Voorwerpnummer			= $row[17];
-    $VeilingGesloten		= $row[18];
-    $VoorwerpCover          = $row[19];
-}
+
 //while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 //    $veilinggesloten = $row[0];
 //
@@ -139,12 +140,12 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 geopend.
                 De veiling is op
                 <strong><?php
-                echo $LooptijdeindeDag;
-                ?></strong>
+                    echo $LooptijdeindeDag;
+                    ?></strong>
                 om
                 <strong><?php
-                echo $LooptijdeindeTijdstip;
-                ?></strong>
+                    echo $LooptijdeindeTijdstip;
+                    ?></strong>
                 gesloten.
                 De looptijd voor de veiling van
                 <?php
@@ -152,13 +153,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 ?>
                 is <!-- looptijd -->
                 <?php
-                $sql = "SELECT looptijd FROM Voorwerp WHERE Voorwerpnummer = 101";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
+                echo $Looptijd
                 ?>
                 dagen.
 
@@ -175,7 +170,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     ?>").getTime();
 
                 // Update the count down every 1 second
-                var x = setInterval(function() {
+                var x = setInterval(function () {
 
                     // Get todays date and time
                     var now = new Date().getTime();
@@ -191,8 +186,8 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     var seconds = Math.floor((verschil % (1000 * 60)) / 1000);
 
                     // Display the result in the element with id="demo"
-                    document.getElementById("demo").innerHTML = days + " Dagen " + hours + " Uur " +
-                        + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
+                    document.getElementById("demo").innerHTML = days + " dagen " + hours + " uur " +
+                        +minutes + " minuten en " + seconds + " seconden om te bieden!";
 
                     // If the count down is finished, write some text
                     if (verschil < 0) {
@@ -203,12 +198,43 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
             </script>
             </p>
             <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
-            <h2>Huidige prijs: €<?php
-            echo $Startprijs;
+            <?php
+
+            //TODO: SQL statement voor het plaatsen van een bod, nog niet af! date en tijd moeten worden vervangen door de huidige tijd.
+//            $sql = "INSERT INTO Bod (Bodbedrag, Gebruiker, BodDag, BodTijdstip, Voorwerp
+//                    VALUES (" . $bedrag . ", ". $_SESSION['user'] . ", " . $date . ", " . $tijd . ", " . $Voorwerpnummer . ")"
             ?>
+            <h2>
+                <?php
+                $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
+                        INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
+                        INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
+                        WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $Bod = $row[0];
+                    $Voornaam = $row[1];
+                    $Achternaam = $row[2];
+                }
+                if (isset($Bod) && $Bod >= $Startprijs) {
+                    echo 'Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')';
+                } else {
+                    echo 'Startprijs: €' . $Startprijs;
+                }
+                ?>
             </h2>
             <h3>
-                Door: GEBRUIKER - NIET DYNAMIC
+                <?php
+                $sql = "SELECT g.voornaam, g.achternaam FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                echo 'Aangeboden door: ';
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo $row[0] . ' ';
+                    echo $row[1];
+                }
+                ?>
             </h3>
         </div>
 
@@ -221,8 +247,8 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         <div class="col-md-12 marginTop20">
             <div class="container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">Product informatie</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Betalingsinstructie</a></li>
+                    <li class="active"><a data-toggle="tab" href="#home">Productbeschrijving</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Instructies</a></li>
                     <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
                 </ul>
 
@@ -235,19 +261,38 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
+                        <h3>Betaling</h3>
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
                             echo $Betalingsinstructie;
                             ?>
                         </p>
+                        <h3>Levering</h3>
+                        <p class="sanchez marginTop20 fontSize20">
+                            <?php
+                            echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten;
+                            ?>
+                        </p>
                     </div>
                     <div id="menu2" class="tab-pane">
-                        <h3>Locatie</h3>
-                        <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
+                        <p class="sanchez marginTop20 fontSize20">Verkoper:
+                        <?php
+                        $sql = "SELECT g.voornaam, g.achternaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0] . ' ';
+                            echo $row[1];
+                            $email = $row[3];
+                        }
+                        ?>
+                        </p>
+                        <p class="sanchez marginTop20 fontSize20">Email:
+                        <?php echo $email?>
+                        </p>
+                        <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
                             <?php
-                            echo $Plaatsnaam;
-                            ?>,<!-- land -->
-                            <?php
+                            echo $Plaatsnaam . ', ';
                             echo $Land;
                             ?>
                         </p>
