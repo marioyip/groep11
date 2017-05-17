@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="control-label col-sm-3" for="pwd">Wachtwoord</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="pwd" name="wachtwoord">
-                            <span class="error"><?php echo $wachtwoordErr; ?></span>
+                            <span class="error"><?php echo  $wachtwoordErr; ?></span>
                         </div>
                     </div>
                     <div class="form-group marginTop35">
