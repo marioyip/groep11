@@ -198,6 +198,12 @@ if (isset($_GET['product'])) {
             </script>
             </p>
             <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
+            <?php
+
+            //TODO: SQL statement voor het plaatsen van een bod, nog niet af! date en tijd moeten worden vervangen door de huidige tijd.
+//            $sql = "INSERT INTO Bod (Bodbedrag, Gebruiker, BodDag, BodTijdstip, Voorwerp
+//                    VALUES (" . $bedrag . ", ". $_SESSION['user'] . ", " . $date . ", " . $tijd . ", " . $Voorwerpnummer . ")"
+            ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -228,7 +234,6 @@ if (isset($_GET['product'])) {
                     echo $row[0] . ' ';
                     echo $row[1];
                 }
-
                 ?>
             </h3>
         </div>
@@ -242,8 +247,8 @@ if (isset($_GET['product'])) {
         <div class="col-md-12 marginTop20">
             <div class="container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">Product informatie</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Betalingsinstructie</a></li>
+                    <li class="active"><a data-toggle="tab" href="#home">Productbeschrijving</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Instructies</a></li>
                     <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
                 </ul>
 
@@ -256,19 +261,38 @@ if (isset($_GET['product'])) {
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
+                        <h3>Betaling</h3>
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
                             <?php
                             echo $Betalingsinstructie;
                             ?>
                         </p>
+                        <h3>Levering</h3>
+                        <p class="sanchez marginTop20 fontSize20">
+                            <?php
+                            echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten;
+                            ?>
+                        </p>
                     </div>
                     <div id="menu2" class="tab-pane">
-                        <h3>Locatie</h3>
-                        <p>Het product wordt verkocht vanuit: <!-- plaatsnaam -->
+                        <p class="sanchez marginTop20 fontSize20">Verkoper:
+                        <?php
+                        $sql = "SELECT g.voornaam, g.achternaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            echo $row[0] . ' ';
+                            echo $row[1];
+                            $email = $row[2];
+                        }
+                        ?>
+                        </p>
+                        <p class="sanchez marginTop20 fontSize20">Email:
+                        <?php echo $email?>
+                        </p>
+                        <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
                             <?php
-                            echo $Plaatsnaam;
-                            ?>,<!-- land -->
-                            <?php
+                            echo $Plaatsnaam . ', ';
                             echo $Land;
                             ?>
                         </p>

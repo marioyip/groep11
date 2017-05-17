@@ -8,971 +8,354 @@ SET IDENTITY_INSERT iproject11.dbo.Bod OFF
 
 INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',1);
 INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',2);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',3);
-INSERT INTO Vraag VALUES('Lorem ipsum',4);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',5);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',6);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',7);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',8);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',9);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',10);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',11);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',12);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',13);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',14);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',15);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',16);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',17);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',18);
-INSERT INTO Vraag VALUES('Lorem',19);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',20);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',21);
-INSERT INTO Vraag VALUES('Lorem',22);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',23);
-INSERT INTO Vraag VALUES('Lorem ipsum',24);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',25);
-INSERT INTO Vraag VALUES('Lorem',26);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',27);
-INSERT INTO Vraag VALUES('Lorem',28);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',29);
-INSERT INTO Vraag VALUES('Lorem',30);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',31);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',32);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',33);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',34);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',35);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',36);
-INSERT INTO Vraag VALUES('Lorem',37);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',38);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',39);
-INSERT INTO Vraag VALUES('Lorem ipsum',40);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',41);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',42);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',43);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',44);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',45);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',46);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',47);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',48);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',49);
-INSERT INTO Vraag VALUES('Lorem ipsum',50);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',51);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',52);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',53);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',54);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',55);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',56);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',57);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',58);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',59);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',60);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',61);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',62);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',63);
-INSERT INTO Vraag VALUES('Lorem',64);
-INSERT INTO Vraag VALUES('Lorem',65);
-INSERT INTO Vraag VALUES('Lorem ipsum',66);
-INSERT INTO Vraag VALUES('Lorem ipsum',67);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',68);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',69);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',70);
-INSERT INTO Vraag VALUES('Lorem ipsum',71);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',72);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',73);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',74);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',75);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',76);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',77);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',78);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',79);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed',80);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',81);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',82);
-INSERT INTO Vraag VALUES('Lorem',83);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',84);
-INSERT INTO Vraag VALUES('Lorem',85);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit',86);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',87);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',88);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',89);
-INSERT INTO Vraag VALUES('Lorem',90);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',91);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',92);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',93);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing',94);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',95);
-INSERT INTO Vraag VALUES('Lorem',96);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',97);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor',98);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',99);
-INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer',100);
 
-INSERT INTO Landen VALUES (1,'AF', 'Afghanistan');
-INSERT INTO Landen VALUES (2,'AL', 'Albania');
-INSERT INTO Landen VALUES (3,'DZ', 'Algeria');
-INSERT INTO Landen VALUES (4,'DS', 'American Samoa');
-INSERT INTO Landen VALUES (5,'AD', 'Andorra');
-INSERT INTO Landen VALUES (6,'AO', 'Angola');
-INSERT INTO Landen VALUES (7,'AI', 'Anguilla');
-INSERT INTO Landen VALUES (8,'AQ', 'Antarctica');
-INSERT INTO Landen VALUES (9,'AG', 'Antigua and Barbuda');
-INSERT INTO Landen VALUES (10,'AR', 'Argentina');
-INSERT INTO Landen VALUES (11,'AM', 'Armenia');
-INSERT INTO Landen VALUES (12,'AW', 'Aruba');
-INSERT INTO Landen VALUES (13,'AU', 'Australia');
-INSERT INTO Landen VALUES (14,'AT', 'Austria');
-INSERT INTO Landen VALUES (15,'AZ', 'Azerbaijan');
-INSERT INTO Landen VALUES (16,'BS', 'Bahamas');
-INSERT INTO Landen VALUES (17,'BH', 'Bahrain');
-INSERT INTO Landen VALUES (18,'BD', 'Bangladesh');
-INSERT INTO Landen VALUES (19,'BB', 'Barbados');
-INSERT INTO Landen VALUES (20,'BY', 'Belarus');
-INSERT INTO Landen VALUES (22,'BZ', 'Belize');
-INSERT INTO Landen VALUES (23,'BJ', 'Benin');
-INSERT INTO Landen VALUES (24,'BM', 'Bermuda');
-INSERT INTO Landen VALUES (25,'BT', 'Bhutan');
-INSERT INTO Landen VALUES (26,'BO', 'Bolivia');
-INSERT INTO Landen VALUES (27,'BA', 'Bosnia and Herzegovina');
-INSERT INTO Landen VALUES (28,'BW', 'Botswana');
-INSERT INTO Landen VALUES (29,'BV', 'Bouvet Island');
-INSERT INTO Landen VALUES (30,'BR', 'Brazil');
-INSERT INTO Landen VALUES (31,'IO', 'British Indian Ocean Territory');
-INSERT INTO Landen VALUES (32,'BN', 'Brunei Darussalam');
-INSERT INTO Landen VALUES (33,'BG', 'Bulgaria');
-INSERT INTO Landen VALUES (34,'BF', 'Burkina Faso');
-INSERT INTO Landen VALUES (35,'BI', 'Burundi');
-INSERT INTO Landen VALUES (36,'KH', 'Cambodia');
-INSERT INTO Landen VALUES (37,'CM', 'Cameroon');
-INSERT INTO Landen VALUES (38,'CA', 'Canada');
-INSERT INTO Landen VALUES (39,'CV', 'Cape Verde');
-INSERT INTO Landen VALUES (40,'KY', 'Cayman Islands');
-INSERT INTO Landen VALUES (41,'CF', 'Central African Republic');
-INSERT INTO Landen VALUES (42,'TD', 'Chad');
-INSERT INTO Landen VALUES (43,'CL', 'Chile');
-INSERT INTO Landen VALUES (44,'CN', 'China');
-INSERT INTO Landen VALUES (45,'CX', 'Christmas Island');
-INSERT INTO Landen VALUES (46,'CC', 'Cocos (Keeling) Islands');
-INSERT INTO Landen VALUES (47,'CO', 'Colombia');
-INSERT INTO Landen VALUES (48,'KM', 'Comoros');
-INSERT INTO Landen VALUES (49,'CG', 'Congo');
-INSERT INTO Landen VALUES (50,'CK', 'Cook Islands');
-INSERT INTO Landen VALUES (51,'CR', 'Costa Rica');
-INSERT INTO Landen VALUES (52,'HR', 'Croatia (Hrvatska)');
-INSERT INTO Landen VALUES (53,'CU', 'Cuba');
-INSERT INTO Landen VALUES (54,'CY', 'Cyprus');
-INSERT INTO Landen VALUES (55,'CZ', 'Czech Republic');
-INSERT INTO Landen VALUES (56,'DK', 'Denmark');
-INSERT INTO Landen VALUES (57,'DJ', 'Djibouti');
-INSERT INTO Landen VALUES (58,'DM', 'Dominica');
-INSERT INTO Landen VALUES (59,'DO', 'Dominican Republic');
-INSERT INTO Landen VALUES (60,'TP', 'East Timor');
-INSERT INTO Landen VALUES (61,'EC', 'Ecuador');
-INSERT INTO Landen VALUES (62,'EG', 'Egypt');
-INSERT INTO Landen VALUES (63,'SV', 'El Salvador');
-INSERT INTO Landen VALUES (64,'GQ', 'Equatorial Guinea');
-INSERT INTO Landen VALUES (65,'ER', 'Eritrea');
-INSERT INTO Landen VALUES (66,'EE', 'Estonia');
-INSERT INTO Landen VALUES (67,'ET', 'Ethiopia');
-INSERT INTO Landen VALUES (68,'FK', 'Falkland Islands (Malvinas)');
-INSERT INTO Landen VALUES (69,'FO', 'Faroe Islands');
-INSERT INTO Landen VALUES (70,'FJ', 'Fiji');
-INSERT INTO Landen VALUES (71,'FI', 'Finland');
-INSERT INTO Landen VALUES (72,'FR', 'France');
-INSERT INTO Landen VALUES (73,'FX', 'France, Metropolitan');
-INSERT INTO Landen VALUES (74,'GF', 'French Guiana');
-INSERT INTO Landen VALUES (75,'PF', 'French Polynesia');
-INSERT INTO Landen VALUES (76,'TF', 'French Southern Territories');
-INSERT INTO Landen VALUES (77,'GA', 'Gabon');
-INSERT INTO Landen VALUES (78,'GM', 'Gambia');
-INSERT INTO Landen VALUES (79,'GE', 'Georgia');
-INSERT INTO Landen VALUES (80,'DE', 'Germany');
-INSERT INTO Landen VALUES (81,'GH', 'Ghana');
-INSERT INTO Landen VALUES (82,'GI', 'Gibraltar');
-INSERT INTO Landen VALUES (83,'GK', 'Guernsey');
-INSERT INTO Landen VALUES (84,'GR', 'Greece');
-INSERT INTO Landen VALUES (85,'GL', 'Greenland');
-INSERT INTO Landen VALUES (86,'GD', 'Grenada');
-INSERT INTO Landen VALUES (87,'GP', 'Guadeloupe');
-INSERT INTO Landen VALUES (88,'GU', 'Guam');
-INSERT INTO Landen VALUES (89,'GT', 'Guatemala');
-INSERT INTO Landen VALUES (90,'GN', 'Guinea');
-INSERT INTO Landen VALUES (91,'GW', 'Guinea-Bissau');
-INSERT INTO Landen VALUES (92,'GY', 'Guyana');
-INSERT INTO Landen VALUES (93,'HT', 'Haiti');
-INSERT INTO Landen VALUES (94,'HM', 'Heard and Mc Donald Islands');
-INSERT INTO Landen VALUES (95,'HN', 'Honduras');
-INSERT INTO Landen VALUES (96,'HK', 'Hong Kong');
-INSERT INTO Landen VALUES (97,'HU', 'Hungary');
-INSERT INTO Landen VALUES (98,'IS', 'Iceland');
-INSERT INTO Landen VALUES (99,'IN', 'India');
-INSERT INTO Landen VALUES (100, 'IM', 'Isle of Man');
-INSERT INTO Landen VALUES (101, 'ID', 'Indonesia');
-INSERT INTO Landen VALUES (102, 'IR', 'Iran (Islamic Republic of)');
-INSERT INTO Landen VALUES (103, 'IQ', 'Iraq');
-INSERT INTO Landen VALUES (104, 'IE', 'Ireland');
-INSERT INTO Landen VALUES (105, 'IL', 'Israel');
-INSERT INTO Landen VALUES (106, 'IT', 'Italy');
-INSERT INTO Landen VALUES (107, 'CI', 'Ivory Coast');
-INSERT INTO Landen VALUES (108, 'JE', 'Jersey');
-INSERT INTO Landen VALUES (109, 'JM', 'Jamaica');
-INSERT INTO Landen VALUES (110, 'JP', 'Japan');
-INSERT INTO Landen VALUES (111, 'JO', 'Jordan');
-INSERT INTO Landen VALUES (112, 'KZ', 'Kazakhstan');
-INSERT INTO Landen VALUES (113, 'KE', 'Kenya');
-INSERT INTO Landen VALUES (114, 'KI', 'Kiribati');
-INSERT INTO Landen VALUES (116, 'KR', 'Korea, Republic of');
-INSERT INTO Landen VALUES (117, 'XK', 'Kosovo');
-INSERT INTO Landen VALUES (118, 'KW', 'Kuwait');
-INSERT INTO Landen VALUES (119, 'KG', 'Kyrgyzstan');
-INSERT INTO Landen VALUES (120, 'LA', 'Lao People''s Democratic Republic');
-INSERT INTO Landen VALUES (121, 'LV', 'Latvia');
-INSERT INTO Landen VALUES (122, 'LB', 'Lebanon');
-INSERT INTO Landen VALUES (123, 'LS', 'Lesotho');
-INSERT INTO Landen VALUES (124, 'LR', 'Liberia');
-INSERT INTO Landen VALUES (125, 'LY', 'Libyan Arab Jamahiriya');
-INSERT INTO Landen VALUES (126, 'LI', 'Liechtenstein');
-INSERT INTO Landen VALUES (127, 'LT', 'Lithuania');
-INSERT INTO Landen VALUES (128, 'LU', 'Luxembourg');
-INSERT INTO Landen VALUES (129, 'MO', 'Macau');
-INSERT INTO Landen VALUES (130, 'MK', 'Macedonia');
-INSERT INTO Landen VALUES (131, 'MG', 'Madagascar');
-INSERT INTO Landen VALUES (132, 'MW', 'Malawi');
-INSERT INTO Landen VALUES (133, 'MY', 'Malaysia');
-INSERT INTO Landen VALUES (134, 'MV', 'Maldives');
-INSERT INTO Landen VALUES (135, 'ML', 'Mali');
-INSERT INTO Landen VALUES (136, 'MT', 'Malta');
-INSERT INTO Landen VALUES (137, 'MH', 'Marshall Islands');
-INSERT INTO Landen VALUES (138, 'MQ', 'Martinique');
-INSERT INTO Landen VALUES (139, 'MR', 'Mauritania');
-INSERT INTO Landen VALUES (140, 'MU', 'Mauritius');
-INSERT INTO Landen VALUES (141, 'TY', 'Mayotte');
-INSERT INTO Landen VALUES (142, 'MX', 'Mexico');
-INSERT INTO Landen VALUES (143, 'FM', 'Micronesia');
-INSERT INTO Landen VALUES (144, 'MD', 'Moldova, Republic of');
-INSERT INTO Landen VALUES (145, 'MC', 'Monaco');
-INSERT INTO Landen VALUES (146, 'MN', 'Mongolia');
-INSERT INTO Landen VALUES (147, 'ME', 'Montenegro');
-INSERT INTO Landen VALUES (148, 'MS', 'Montserrat');
-INSERT INTO Landen VALUES (149, 'MA', 'Morocco');
-INSERT INTO Landen VALUES (150, 'MZ', 'Mozambique');
-INSERT INTO Landen VALUES (151, 'MM', 'Myanmar');
-INSERT INTO Landen VALUES (152, 'NA', 'Namibia');
-INSERT INTO Landen VALUES (153, 'NR', 'Nauru');
-INSERT INTO Landen VALUES (154, 'NP', 'Nepal');
-INSERT INTO Landen VALUES (155, 'NL', 'Netherlands');
-INSERT INTO Landen VALUES (156, 'AN', 'Netherlands Antilles');
-INSERT INTO Landen VALUES (157, 'NC', 'New Caledonia');
-INSERT INTO Landen VALUES (158, 'NZ', 'New Zealand');
-INSERT INTO Landen VALUES (159, 'NI', 'Nicaragua');
-INSERT INTO Landen VALUES (160, 'NE', 'Niger');
-INSERT INTO Landen VALUES (161, 'NG', 'Nigeria');
-INSERT INTO Landen VALUES (162, 'NU', 'Niue');
-INSERT INTO Landen VALUES (163, 'NF', 'Norfolk Island');
-INSERT INTO Landen VALUES (164, 'MP', 'Northern Mariana Islands');
-INSERT INTO Landen VALUES (165, 'NO', 'Norway');
-INSERT INTO Landen VALUES (166, 'OM', 'Oman');
-INSERT INTO Landen VALUES (167, 'PK', 'Pakistan');
-INSERT INTO Landen VALUES (168, 'PW', 'Palau');
-INSERT INTO Landen VALUES (169, 'PS', 'Palestine');
-INSERT INTO Landen VALUES (170, 'PA', 'Panama');
-INSERT INTO Landen VALUES (171, 'PG', 'Papua New Guinea');
-INSERT INTO Landen VALUES (172, 'PY', 'Paraguay');
-INSERT INTO Landen VALUES (173, 'PE', 'Peru');
-INSERT INTO Landen VALUES (174, 'PH', 'Philippines');
-INSERT INTO Landen VALUES (175, 'PN', 'Pitcairn');
-INSERT INTO Landen VALUES (176, 'PL', 'Poland');
-INSERT INTO Landen VALUES (177, 'PT', 'Portugal');
-INSERT INTO Landen VALUES (178, 'PR', 'Puerto Rico');
-INSERT INTO Landen VALUES (179, 'QA', 'Qatar');
-INSERT INTO Landen VALUES (180, 'RE', 'Reunion');
-INSERT INTO Landen VALUES (181, 'RO', 'Romania');
-INSERT INTO Landen VALUES (182, 'RU', 'Russian Federation');
-INSERT INTO Landen VALUES (183, 'RW', 'Rwanda');
-INSERT INTO Landen VALUES (184, 'KN', 'Saint Kitts and Nevis');
-INSERT INTO Landen VALUES (185, 'LC', 'Saint Lucia');
-INSERT INTO Landen VALUES (186, 'VC', 'Saint Vincent and the Grenadines');
-INSERT INTO Landen VALUES (187, 'WS', 'Samoa');
-INSERT INTO Landen VALUES (188, 'SM', 'San Marino');
-INSERT INTO Landen VALUES (189, 'ST', 'Sao Tome and Principe');
-INSERT INTO Landen VALUES (190, 'SA', 'Saudi Arabia');
-INSERT INTO Landen VALUES (191, 'SN', 'Senegal');
-INSERT INTO Landen VALUES (192, 'RS', 'Serbia');
-INSERT INTO Landen VALUES (193, 'SC', 'Seychelles');
-INSERT INTO Landen VALUES (194, 'SL', 'Sierra Leone');
-INSERT INTO Landen VALUES (195, 'SG', 'Singapore');
-INSERT INTO Landen VALUES (196, 'SK', 'Slovakia');
-INSERT INTO Landen VALUES (197, 'SI', 'Slovenia');
-INSERT INTO Landen VALUES (198, 'SB', 'Solomon Islands');
-INSERT INTO Landen VALUES (199, 'SO', 'Somalia');
-INSERT INTO Landen VALUES (200, 'ZA', 'South Africa');
-INSERT INTO Landen VALUES (201, 'GS', 'South Georgia South Sandwich Islands');
-INSERT INTO Landen VALUES (202, 'ES', 'Spain');
-INSERT INTO Landen VALUES (203, 'LK', 'Sri Lanka');
-INSERT INTO Landen VALUES (204, 'SH', 'St. Helena');
-INSERT INTO Landen VALUES (205, 'PM', 'St. Pierre and Miquelon');
-INSERT INTO Landen VALUES (206, 'SD', 'Sudan');
-INSERT INTO Landen VALUES (207, 'SR', 'Suriname');
-INSERT INTO Landen VALUES (208, 'SJ', 'Svalbard and Jan Mayen Islands');
-INSERT INTO Landen VALUES (209, 'SZ', 'Swaziland');
-INSERT INTO Landen VALUES (210, 'SE', 'Sweden');
-INSERT INTO Landen VALUES (211, 'CH', 'Switzerland');
-INSERT INTO Landen VALUES (212, 'SY', 'Syrian Arab Republic');
-INSERT INTO Landen VALUES (213, 'TW', 'Taiwan');
-INSERT INTO Landen VALUES (214, 'TJ', 'Tajikistan');
-INSERT INTO Landen VALUES (215, 'TZ', 'Tanzania, United Republic of');
-INSERT INTO Landen VALUES (216, 'TH', 'Thailand');
-INSERT INTO Landen VALUES (217, 'TG', 'Togo');
-INSERT INTO Landen VALUES (218, 'TK', 'Tokelau');
-INSERT INTO Landen VALUES (219, 'TO', 'Tonga');
-INSERT INTO Landen VALUES (220, 'TT', 'Trinidad and Tobago');
-INSERT INTO Landen VALUES (221, 'TN', 'Tunisia');
-INSERT INTO Landen VALUES (222, 'TR', 'Turkey');
-INSERT INTO Landen VALUES (223, 'TM', 'Turkmenistan');
-INSERT INTO Landen VALUES (224, 'TC', 'Turks and Caicos Islands');
-INSERT INTO Landen VALUES (225, 'TV', 'Tuvalu');
-INSERT INTO Landen VALUES (226, 'UG', 'Uganda');
-INSERT INTO Landen VALUES (227, 'UA', 'Ukraine');
-INSERT INTO Landen VALUES (228, 'AE', 'United Arab Emirates');
-INSERT INTO Landen VALUES (229, 'GB', 'United Kingdom');
-INSERT INTO Landen VALUES (230, 'US', 'United States');
-INSERT INTO Landen VALUES (231, 'UM', 'United States minor outlying islands');
-INSERT INTO Landen VALUES (232, 'UY', 'Uruguay');
-INSERT INTO Landen VALUES (233, 'UZ', 'Uzbekistan');
-INSERT INTO Landen VALUES (234, 'VU', 'Vanuatu');
-INSERT INTO Landen VALUES (235, 'VA', 'Vatican City State');
-INSERT INTO Landen VALUES (236, 'VE', 'Venezuela');
-INSERT INTO Landen VALUES (237, 'VN', 'Vietnam');
-INSERT INTO Landen VALUES (238, 'VG', 'Virgin Islands (British)');
-INSERT INTO Landen VALUES (239, 'VI', 'Virgin Islands (U.S.)');
-INSERT INTO Landen VALUES (240, 'WF', 'Wallis and Futuna Islands');
-INSERT INTO Landen VALUES (241, 'EH', 'Western Sahara');
-INSERT INTO Landen VALUES (242, 'YE', 'Yemen');
-INSERT INTO Landen VALUES (243, 'ZR', 'Zaire');
-INSERT INTO Landen VALUES (244, 'ZM', 'Zambia');
-INSERT INTO Landen VALUES (245, 'ZW', 'Zimbabwe');
-INSERT INTO Landen VALUES (246, 'CR',  'Curacao');
-INSERT INTO Landen VALUES (247, 'BE',  'Belgium');
-INSERT INTO Landen VALUES (248, 'SY',  'Syria');
-INSERT INTO Landen VALUES (249, 'MD',  'Moldova');
+INSERT INTO Landen VALUES ('DZ', 'Algeria');
+INSERT INTO Landen VALUES ('DS', 'American Samoa');
+INSERT INTO Landen VALUES ('AD', 'Andorra');
+INSERT INTO Landen VALUES ('AO', 'Angola');
+INSERT INTO Landen VALUES ('AI', 'Anguilla');
+INSERT INTO Landen VALUES ('AQ', 'Antarctica');
+INSERT INTO Landen VALUES ('AG', 'Antigua and Barbuda');
+INSERT INTO Landen VALUES ('AR', 'Argentina');
+INSERT INTO Landen VALUES ('AM', 'Armenia');
+INSERT INTO Landen VALUES ('AW', 'Aruba');
+INSERT INTO Landen VALUES ('AU', 'Australia');
+INSERT INTO Landen VALUES ('AT', 'Austria');
+INSERT INTO Landen VALUES ('AZ', 'Azerbaijan');
+INSERT INTO Landen VALUES ('BS', 'Bahamas');
+INSERT INTO Landen VALUES ('BH', 'Bahrain');
+INSERT INTO Landen VALUES ('BD', 'Bangladesh');
+INSERT INTO Landen VALUES ('BB', 'Barbados');
+INSERT INTO Landen VALUES ('BY', 'Belarus');
+INSERT INTO Landen VALUES ('BZ', 'Belize');
+INSERT INTO Landen VALUES ('BJ', 'Benin');
+INSERT INTO Landen VALUES ('BM', 'Bermuda');
+INSERT INTO Landen VALUES ('BT', 'Bhutan');
+INSERT INTO Landen VALUES ('BO', 'Bolivia');
+INSERT INTO Landen VALUES ('BA', 'Bosnia and Herzegovina');
+INSERT INTO Landen VALUES ('BW', 'Botswana');
+INSERT INTO Landen VALUES ('BV', 'Bouvet Island');
+INSERT INTO Landen VALUES ('BR', 'Brazil');
+INSERT INTO Landen VALUES ('IO', 'British Indian Ocean Territory');
+INSERT INTO Landen VALUES ('BN', 'Brunei Darussalam');
+INSERT INTO Landen VALUES ('BG', 'Bulgaria');
+INSERT INTO Landen VALUES ('BF', 'Burkina Faso');
+INSERT INTO Landen VALUES ('BI', 'Burundi');
+INSERT INTO Landen VALUES ('KH', 'Cambodia');
+INSERT INTO Landen VALUES ('CM', 'Cameroon');
+INSERT INTO Landen VALUES ('CA', 'Canada');
+INSERT INTO Landen VALUES ('CV', 'Cape Verde');
+INSERT INTO Landen VALUES ('KY', 'Cayman Islands');
+INSERT INTO Landen VALUES ('CF', 'Central African Republic');
+INSERT INTO Landen VALUES ('TD', 'Chad');
+INSERT INTO Landen VALUES ('CL', 'Chile');
+INSERT INTO Landen VALUES ('CN', 'China');
+INSERT INTO Landen VALUES ('CX', 'Christmas Island');
+INSERT INTO Landen VALUES ('CC', 'Cocos (Keeling) Islands');
+INSERT INTO Landen VALUES ('CO', 'Colombia');
+INSERT INTO Landen VALUES ('KM', 'Comoros');
+INSERT INTO Landen VALUES ('CG', 'Congo');
+INSERT INTO Landen VALUES ('CK', 'Cook Islands');
+INSERT INTO Landen VALUES ('CR', 'Costa Rica');
+INSERT INTO Landen VALUES ('HR', 'Croatia (Hrvatska)');
+INSERT INTO Landen VALUES ('CU', 'Cuba');
+INSERT INTO Landen VALUES ('CY', 'Cyprus');
+INSERT INTO Landen VALUES ('CZ', 'Czech Republic');
+INSERT INTO Landen VALUES ('DK', 'Denmark');
+INSERT INTO Landen VALUES ('DJ', 'Djibouti');
+INSERT INTO Landen VALUES ('DM', 'Dominica');
+INSERT INTO Landen VALUES ('DO', 'Dominican Republic');
+INSERT INTO Landen VALUES ('TP', 'East Timor');
+INSERT INTO Landen VALUES ('EC', 'Ecuador');
+INSERT INTO Landen VALUES ('EG', 'Egypt');
+INSERT INTO Landen VALUES ('SV', 'El Salvador');
+INSERT INTO Landen VALUES ('GQ', 'Equatorial Guinea');
+INSERT INTO Landen VALUES ('ER', 'Eritrea');
+INSERT INTO Landen VALUES ('EE', 'Estonia');
+INSERT INTO Landen VALUES ('ET', 'Ethiopia');
+INSERT INTO Landen VALUES ('FK', 'Falkland Islands (Malvinas)');
+INSERT INTO Landen VALUES ('FO', 'Faroe Islands');
+INSERT INTO Landen VALUES ('FJ', 'Fiji');
+INSERT INTO Landen VALUES ('FI', 'Finland');
+INSERT INTO Landen VALUES ('FR', 'France');
+INSERT INTO Landen VALUES ('FX', 'France, Metropolitan');
+INSERT INTO Landen VALUES ('GF', 'French Guiana');
+INSERT INTO Landen VALUES ('PF', 'French Polynesia');
+INSERT INTO Landen VALUES ('TF', 'French Southern Territories');
+INSERT INTO Landen VALUES ('GA', 'Gabon');
+INSERT INTO Landen VALUES ('GM', 'Gambia');
+INSERT INTO Landen VALUES ('GE', 'Georgia');
+INSERT INTO Landen VALUES ('DE', 'Germany');
+INSERT INTO Landen VALUES ('GH', 'Ghana');
+INSERT INTO Landen VALUES ('GI', 'Gibraltar');
+INSERT INTO Landen VALUES ('GK', 'Guernsey');
+INSERT INTO Landen VALUES ('GR', 'Greece');
+INSERT INTO Landen VALUES ('GL', 'Greenland');
+INSERT INTO Landen VALUES ('GD', 'Grenada');
+INSERT INTO Landen VALUES ('GP', 'Guadeloupe');
+INSERT INTO Landen VALUES ('GU', 'Guam');
+INSERT INTO Landen VALUES ('GT', 'Guatemala');
+INSERT INTO Landen VALUES ('GN', 'Guinea');
+INSERT INTO Landen VALUES ('GW', 'Guinea-Bissau');
+INSERT INTO Landen VALUES ('GY', 'Guyana');
+INSERT INTO Landen VALUES ('HT', 'Haiti');
+INSERT INTO Landen VALUES ('HM', 'Heard and Mc Donald Islands');
+INSERT INTO Landen VALUES ('HN', 'Honduras');
+INSERT INTO Landen VALUES ('HK', 'Hong Kong');
+INSERT INTO Landen VALUES ('HU', 'Hungary');
+INSERT INTO Landen VALUES ('IS', 'Iceland');
+INSERT INTO Landen VALUES ('IN', 'India');
+INSERT INTO Landen VALUES ( 'IM', 'Isle of Man');
+INSERT INTO Landen VALUES ( 'ID', 'Indonesia');
+INSERT INTO Landen VALUES ( 'IR', 'Iran (Islamic Republic of)');
+INSERT INTO Landen VALUES ( 'IQ', 'Iraq');
+INSERT INTO Landen VALUES ( 'IE', 'Ireland');
+INSERT INTO Landen VALUES ( 'IL', 'Israel');
+INSERT INTO Landen VALUES ( 'IT', 'Italy');
+INSERT INTO Landen VALUES ( 'CI', 'Ivory Coast');
+INSERT INTO Landen VALUES ( 'JE', 'Jersey');
+INSERT INTO Landen VALUES ( 'JM', 'Jamaica');
+INSERT INTO Landen VALUES ( 'JP', 'Japan');
+INSERT INTO Landen VALUES ( 'JO', 'Jordan');
+INSERT INTO Landen VALUES ( 'KZ', 'Kazakhstan');
+INSERT INTO Landen VALUES ( 'KE', 'Kenya');
+INSERT INTO Landen VALUES ( 'KI', 'Kiribati');
+INSERT INTO Landen VALUES ( 'KR', 'Korea, Republic of');
+INSERT INTO Landen VALUES ( 'XK', 'Kosovo');
+INSERT INTO Landen VALUES ( 'KW', 'Kuwait');
+INSERT INTO Landen VALUES ( 'KG', 'Kyrgyzstan');
+INSERT INTO Landen VALUES ( 'LA', 'Lao People''s Democratic Republic');
+INSERT INTO Landen VALUES ( 'LV', 'Latvia');
+INSERT INTO Landen VALUES ( 'LB', 'Lebanon');
+INSERT INTO Landen VALUES ( 'LS', 'Lesotho');
+INSERT INTO Landen VALUES ( 'LR', 'Liberia');
+INSERT INTO Landen VALUES ( 'LY', 'Libyan Arab Jamahiriya');
+INSERT INTO Landen VALUES ( 'LI', 'Liechtenstein');
+INSERT INTO Landen VALUES ( 'LT', 'Lithuania');
+INSERT INTO Landen VALUES ( 'LU', 'Luxembourg');
+INSERT INTO Landen VALUES ( 'MO', 'Macau');
+INSERT INTO Landen VALUES ( 'MK', 'Macedonia');
+INSERT INTO Landen VALUES ( 'MG', 'Madagascar');
+INSERT INTO Landen VALUES ( 'MW', 'Malawi');
+INSERT INTO Landen VALUES ( 'MY', 'Malaysia');
+INSERT INTO Landen VALUES ( 'MV', 'Maldives');
+INSERT INTO Landen VALUES ( 'ML', 'Mali');
+INSERT INTO Landen VALUES ( 'MT', 'Malta');
+INSERT INTO Landen VALUES ( 'MH', 'Marshall Islands');
+INSERT INTO Landen VALUES ( 'MQ', 'Martinique');
+INSERT INTO Landen VALUES ( 'MR', 'Mauritania');
+INSERT INTO Landen VALUES ( 'MU', 'Mauritius');
+INSERT INTO Landen VALUES ( 'TY', 'Mayotte');
+INSERT INTO Landen VALUES ( 'MX', 'Mexico');
+INSERT INTO Landen VALUES ( 'FM', 'Micronesia');
+INSERT INTO Landen VALUES ( 'MD', 'Moldova, Republic of');
+INSERT INTO Landen VALUES ( 'MC', 'Monaco');
+INSERT INTO Landen VALUES ( 'MN', 'Mongolia');
+INSERT INTO Landen VALUES ( 'ME', 'Montenegro');
+INSERT INTO Landen VALUES ( 'MS', 'Montserrat');
+INSERT INTO Landen VALUES ( 'MA', 'Morocco');
+INSERT INTO Landen VALUES ( 'MZ', 'Mozambique');
+INSERT INTO Landen VALUES ( 'MM', 'Myanmar');
+INSERT INTO Landen VALUES ( 'NA', 'Namibia');
+INSERT INTO Landen VALUES ( 'NR', 'Nauru');
+INSERT INTO Landen VALUES ( 'NP', 'Nepal');
+INSERT INTO Landen VALUES ( 'NL', 'Netherlands');
+INSERT INTO Landen VALUES ( 'AN', 'Netherlands Antilles');
+INSERT INTO Landen VALUES ( 'NC', 'New Caledonia');
+INSERT INTO Landen VALUES ( 'NZ', 'New Zealand');
+INSERT INTO Landen VALUES ( 'NI', 'Nicaragua');
+INSERT INTO Landen VALUES ( 'NE', 'Niger');
+INSERT INTO Landen VALUES ( 'NG', 'Nigeria');
+INSERT INTO Landen VALUES ( 'NU', 'Niue');
+INSERT INTO Landen VALUES ( 'NF', 'Norfolk Island');
+INSERT INTO Landen VALUES ( 'MP', 'Northern Mariana Islands');
+INSERT INTO Landen VALUES ( 'NO', 'Norway');
+INSERT INTO Landen VALUES ( 'OM', 'Oman');
+INSERT INTO Landen VALUES ( 'PK', 'Pakistan');
+INSERT INTO Landen VALUES ( 'PW', 'Palau');
+INSERT INTO Landen VALUES ( 'PS', 'Palestine');
+INSERT INTO Landen VALUES ( 'PA', 'Panama');
+INSERT INTO Landen VALUES ( 'PG', 'Papua New Guinea');
+INSERT INTO Landen VALUES ( 'PY', 'Paraguay');
+INSERT INTO Landen VALUES ( 'PE', 'Peru');
+INSERT INTO Landen VALUES ( 'PH', 'Philippines');
+INSERT INTO Landen VALUES ( 'PN', 'Pitcairn');
+INSERT INTO Landen VALUES ( 'PL', 'Poland');
+INSERT INTO Landen VALUES ( 'PT', 'Portugal');
+INSERT INTO Landen VALUES ( 'PR', 'Puerto Rico');
+INSERT INTO Landen VALUES ( 'QA', 'Qatar');
+INSERT INTO Landen VALUES ( 'RE', 'Reunion');
+INSERT INTO Landen VALUES ( 'RO', 'Romania');
+INSERT INTO Landen VALUES ( 'RU', 'Russian Federation');
+INSERT INTO Landen VALUES ( 'RW', 'Rwanda');
+INSERT INTO Landen VALUES ( 'KN', 'Saint Kitts and Nevis');
+INSERT INTO Landen VALUES ( 'LC', 'Saint Lucia');
+INSERT INTO Landen VALUES ( 'VC', 'Saint Vincent and the Grenadines');
+INSERT INTO Landen VALUES ( 'WS', 'Samoa');
+INSERT INTO Landen VALUES ( 'SM', 'San Marino');
+INSERT INTO Landen VALUES ( 'ST', 'Sao Tome and Principe');
+INSERT INTO Landen VALUES ( 'SA', 'Saudi Arabia');
+INSERT INTO Landen VALUES ( 'SN', 'Senegal');
+INSERT INTO Landen VALUES ( 'RS', 'Serbia');
+INSERT INTO Landen VALUES ( 'SC', 'Seychelles');
+INSERT INTO Landen VALUES ( 'SL', 'Sierra Leone');
+INSERT INTO Landen VALUES ( 'SG', 'Singapore');
+INSERT INTO Landen VALUES ( 'SK', 'Slovakia');
+INSERT INTO Landen VALUES ( 'SI', 'Slovenia');
+INSERT INTO Landen VALUES ( 'SB', 'Solomon Islands');
+INSERT INTO Landen VALUES ( 'SO', 'Somalia');
+INSERT INTO Landen VALUES ( 'ZA', 'South Africa');
+INSERT INTO Landen VALUES ( 'GS', 'South Georgia South Sandwich Islands');
+INSERT INTO Landen VALUES ( 'ES', 'Spain');
+INSERT INTO Landen VALUES ( 'LK', 'Sri Lanka');
+INSERT INTO Landen VALUES ( 'SH', 'St. Helena');
+INSERT INTO Landen VALUES ( 'PM', 'St. Pierre and Miquelon');
+INSERT INTO Landen VALUES ( 'SD', 'Sudan');
+INSERT INTO Landen VALUES ( 'SR', 'Suriname');
+INSERT INTO Landen VALUES ( 'SJ', 'Svalbard and Jan Mayen Islands');
+INSERT INTO Landen VALUES ( 'SZ', 'Swaziland');
+INSERT INTO Landen VALUES ( 'SE', 'Sweden');
+INSERT INTO Landen VALUES ( 'CH', 'Switzerland');
+INSERT INTO Landen VALUES ( 'SY', 'Syrian Arab Republic');
+INSERT INTO Landen VALUES ( 'TW', 'Taiwan');
+INSERT INTO Landen VALUES ( 'TJ', 'Tajikistan');
+INSERT INTO Landen VALUES ( 'TZ', 'Tanzania, United Republic of');
+INSERT INTO Landen VALUES ( 'TH', 'Thailand');
+INSERT INTO Landen VALUES ( 'TG', 'Togo');
+INSERT INTO Landen VALUES ( 'TK', 'Tokelau');
+INSERT INTO Landen VALUES ( 'TO', 'Tonga');
+INSERT INTO Landen VALUES ( 'TT', 'Trinidad and Tobago');
+INSERT INTO Landen VALUES ( 'TN', 'Tunisia');
+INSERT INTO Landen VALUES ( 'TR', 'Turkey');
+INSERT INTO Landen VALUES ( 'TM', 'Turkmenistan');
+INSERT INTO Landen VALUES ( 'TC', 'Turks and Caicos Islands');
+INSERT INTO Landen VALUES ( 'TV', 'Tuvalu');
+INSERT INTO Landen VALUES ( 'UG', 'Uganda');
+INSERT INTO Landen VALUES ( 'UA', 'Ukraine');
+INSERT INTO Landen VALUES ( 'AE', 'United Arab Emirates');
+INSERT INTO Landen VALUES ( 'GB', 'United Kingdom');
+INSERT INTO Landen VALUES ( 'US', 'United States');
+INSERT INTO Landen VALUES ( 'UM', 'United States minor outlying islands');
+INSERT INTO Landen VALUES ( 'UY', 'Uruguay');
+INSERT INTO Landen VALUES ( 'UZ', 'Uzbekistan');
+INSERT INTO Landen VALUES ( 'VU', 'Vanuatu');
+INSERT INTO Landen VALUES ( 'VA', 'Vatican City State');
+INSERT INTO Landen VALUES ( 'VE', 'Venezuela');
+INSERT INTO Landen VALUES ( 'VN', 'Vietnam');
+INSERT INTO Landen VALUES ( 'VG', 'Virgin Islands (British)');
+INSERT INTO Landen VALUES ( 'VI', 'Virgin Islands (U.S.)');
+INSERT INTO Landen VALUES ( 'WF', 'Wallis and Futuna Islands');
+INSERT INTO Landen VALUES ( 'EH', 'Western Sahara');
+INSERT INTO Landen VALUES ( 'YE', 'Yemen');
+INSERT INTO Landen VALUES ( 'ZR', 'Zaire');
+INSERT INTO Landen VALUES ( 'ZM', 'Zambia');
+INSERT INTO Landen VALUES ( 'ZW', 'Zimbabwe');
+INSERT INTO Landen VALUES ( 'CR',  'Curacao');
+INSERT INTO Landen VALUES ( 'BE',  'Belgium');
+INSERT INTO Landen VALUES ( 'SY',  'Syria');
+INSERT INTO Landen VALUES ( 'MD',  'Moldova');
 
 INSERT INTO Gebruiker VALUES('Roth','7630 Aenean Rd.',14,'825-6031 Nunc Street',80,'enim nisl','1953/06/16','a.tortor.Nunc@Praesent.edu',1,'South Africa','Baiso',9442,'Adam',1,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hudson','P.O. Box 418, 9695 Nibh. St.',60,'Ap #445-6112 Purus Street',79,'orci. Phasellus','1965/01/26','dolor.Donec@egetodioAliquam.edu',2,'Peru','Ramsey',9087,'Kasper',2,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hinton','153-1554 Eleifend, Av.',22,'Ap #347-6267 Aliquam Rd.',10,'ut dolor','1919/07/10','sodales.at.velit@scelerisquesed.ca',3,'Bouvet Island','Orvieto',3222,'Reese',3,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Knox','986-6818 Dolor, Avenue',53,'375-3467 Quis Road',10,'aliquet','1933/01/13','Dara@posuereatvelit.com',4,'Paraguay','Oordegem',3657,'Luke',4,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Herman','P.O. Box 666, 3248 Consequat St.',41,'954-6047 Donec St.',97,'aliquet','1967/03/06','conubia.nostra@mollis.net',5,'Spain','Jaboatão dos Guararapes',5135,'Zeus',5,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Gilbert','Ap #685-7458 Dui Road',35,'430-9071 Scelerisque, Av.',68,'et, lacinia','1976/07/18','lacus@sit.edu',6,'Chad','Antwerpen',7364,'Bernard',6,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Greer','P.O. Box 389, 3106 Eros. Rd.',46,'674-241 Amet Avenue',74,'id,','1967/02/21','arcu.eu.odio@Mauris.co.uk',7,'Bahrain','Huntly',4207,'Camden',7,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Smith','2451 Purus, Av.',86,'P.O. Box 207, 4010 Aliquam Rd.',83,'in','1945/06/14','magna@ornarefacilisiseget.co.uk',8,'Brazil','Braunau am Inn',6881,'Dolan',8,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Dominguez','P.O. Box 197, 5925 Scelerisque, Rd.',95,'7793 Magnis Rd.',86,'felis ullamcorper','1927/12/17','tempor.augue@necquamCurabitur.net',9,'Pakistan','Oristano',9529,'Raja',9,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Pennington','4741 Non St.',21,'Ap #207-9528 Elit, Ave',98,'enim. Suspendisse','1930/02/13','eu.odio.tristique@lobortisquam.ca',10,'Bahamas','Kohima',5507,'Todd',10,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Roy','Ap #764-3959 Tempor Av.',43,'P.O. Box 826, 1958 Justo St.',11,'quam. Curabitur','1990/01/16','at@welluctusut.co.uk',11,'Christmas Island','Vinci',1225,'Fuller',11,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Stone','8398 Aliquam Rd.',30,'667-6609 Odio Ave',52,'Cras','1992/04/01','Suspendisse.ac@risus.edu',12,'Western Sahara','Latisana',8780,'Cole',12,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Herring','5281 Nisl. Avenue',49,'3782 Quis, Ave',72,'congue. In','2004/09/29','luctus.lobortis@atortor.edu',13,'Canada','Casina',1114,'Flynn',13,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Campos','922-2760 Semper Ave',59,'P.O. Box 523, 459 Tristique St.',54,'ante.','1949/11/10','dictum@euaugueporttitor.net',14,'Gibraltar','Victoria',2027,'Phelan',14,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Parks','6440 Molestie Road',26,'P.O. Box 695, 7485 At, Rd.',54,'auctor non,','1970/08/29','Aliquam.nisl.Nulla@nulla.edu',15,'Curacao','Calice al Cornoviglio',5832,'Justin',15,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Moses','873-2610 Nullam St.',65,'Ap #150-7711 Parturient Road',20,'auctor','1923/07/09','tincidunt.nunc@acfeugiatnon.com',16,'Belgium','Polesella',8896,'Hop',16,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Drake','104-475 Fusce Rd.',1,'Ap #634-2284 Vel Rd.',72,'arcu.','2008/02/05','rutrum.non.hendrerit@etultrices.org',17,'Curacao','Guildford',7208,'Barrett',17,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Frederick','4242 Molestie Ave',97,'Ap #481-2376 Sit St.',68,'leo. Vivamus','1967/01/12','Fusce.diam.nunc@elit.edu',18,'Cambodia','Orvault',3672,'Kibo',18,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Bishop','Ap #749-5561 Iaculis Ave',17,'7941 Egestas Ave',15,'arcu','2003/07/27','Donec@acfeugiatnon.com',19,'Montserrat','Langenburg',4111,'Kaseem',19,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Boyd','1732 Montes, St.',85,'Ap #102-1583 Quis Street',21,'sed','1924/02/08','Donec@aliquamenimnec.net',20,'Pakistan','Pepingen',6901,'Jeremy',20,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Cardenas','538-5207 Est, Street',89,'Ap #208-7603 Integer St.',91,'pellentesque.','2001/05/07','eros.nec.tellus@eget.co.uk',21,'Pakistan','Balen',3797,'Bradley',21,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Graves','2482 Sit Ave',21,'P.O. Box 159, 2242 Tincidunt, Avenue',46,'sociosqu ad','1996/06/24','ornare.facilisis@arcuiaculisenim.com',22,'Angola','North Shore',7129,'Solomon',22,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Gillespie','Ap #931-1765 Massa. Av.',41,'P.O. Box 860, 2985 Eu, Road',74,'a feugiat','1964/02/04','tincidunt@vestibulumwel.net',23,'Anguilla','Lingen',9636,'Norman',23,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Dunn','2214 Sit Rd.',65,'585-8341 Vel St.',17,'mauris','1923/03/23','Donec.felis.orci@mieleifendegestas.edu',24,'Angola','Monte Giberto',6495,'Neville',24,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Simpson','Ap #729-1794 Magna. Avenue',62,'P.O. Box 239, 2147 Metus Rd.',19,'Phasellus','1983/11/24','Ut@semmollisdui.com',25,'Macedonia','Dreieich',4759,'Kato',25,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Bird','Ap #900-8936 Nec, Rd.',36,'Ap #423-1368 Suspendisse Street',58,'Etiam','2003/10/26','Nam.interdum.enim@Class.co.uk',26,'Fiji','Laval',7555,'Allen',26,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Merrill','Ap #297-4191 Nulla Rd.',84,'P.O. Box 964, 9968 Duis Rd.',28,'eget','1947/07/22','Quisque@odioAliquamvulputate.net',27,'Netherlands','Mobile',9976,'Ryder',27,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Donovan','P.O. Box 575, 5772 Curae; Av.',90,'935-1322 Auctor Road',12,'Duis a','1980/04/06','eros.Proin.ultrices@sagittis.org',28,'Brazil','Otricoli',4628,'Devin',28,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Kerr','P.O. Box 923, 1807 Velit. Road',91,'9199 Donec Avenue',66,'sapien, gravida','1947/08/24','magna@disparturient.edu',29,'Bangladesh','Regina',9718,'Derek',29,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Sellers','P.O. Box 588, 1951 Accumsan Street',29,'P.O. Box 478, 1182 Nam Rd.',75,'Cras','1965/10/11','Nullam.lobortis.quam@augueac.org',30,'Germany','Vijayawada',8130,'Louis',30,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Beard','Ap #602-5374 Mauris Rd.',10,'P.O. Box 264, 3782 Felis. Rd.',46,'luctus ut,','2001/09/18','sed.tortor@euligulaAenean.edu',31,'China','Lillois-WitterzŽe',9583,'Jonah',31,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Tran','P.O. Box 380, 2559 Id, Avenue',65,'7225 Fusce St.',69,'dapibus ligula.','1933/01/02','fringilla.mi@acmi.com',32,'France','Rechnitz',3017,'Jerry',32,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Yang','800-9345 Nisi St.',36,'Ap #129-5679 Risus. Rd.',58,'tincidunt','1995/08/01','netus.et.malesuada@dui.ca',33,'Samoa','Springdale',4568,'Addison',33,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Bishop','Ap #790-968 Blandit Rd.',93,'Ap #234-5637 Semper Road',94,'Nulla tempor','1981/10/03','sollicitudin.commodo.ipsum@Phasellusdolorelit.edu',34,'Austria','Rocky View',8867,'Brennan',34,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Green','P.O. Box 890, 6429 Egestas Av.',34,'Ap #593-1622 Et Ave',65,'Integer vitae','1974/05/26','Mauris.magna@auctorvelit.net',35,'Georgia','Miraj',3856,'Marshall',35,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Warren','Ap #373-6131 Curabitur St.',25,'360-8024 Tristique Av.',36,'Ut tincidunt','2014/04/19','interdum@Etiamligulatortor.com',36,'Myanmar','Eisenhüttenstadt',1981,'Oren',36,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Allison','422-1120 A, Avenue',26,'P.O. Box 941, 6206 Tristique Street',90,'nec','1958/12/07','eget.odio@sedsem.co.uk',37,'Thailand','Kilmalcolm',7059,'Marsden',37,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Mendez','214-1923 Dapibus St.',30,'Ap #187-554 Amet Rd.',99,'facilisi.','2006/08/05','accumsan@sapienNuncpulvinar.net',38,'Czech Republic','Rapone',2031,'Lionel',38,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Cardenas','211-7215 wel Rd.',97,'P.O. Box 254, 3953 Et, Rd.',66,'a','1928/02/28','pellentesque@Cumsociisnatoque.com',39,'Belgium','Ripalta Guerina',9294,'Amery',39,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Scott','P.O. Box 223, 132 Aliquam St.',41,'P.O. Box 219, 958 Lacinia. Rd.',78,'erat nonummy','1924/03/05','mollis.Duis@metussit.net',40,'Austria','Iowa City',7855,'Harding',40,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Webb','P.O. Box 645, 7886 Adipiscing Rd.',17,'P.O. Box 487, 7021 Aliquam St.',58,'eleifend, nunc','1985/09/06','magna@Classaptent.com',41,'Kazakhstan','Bazel',1177,'Dean',41,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Dejesus','P.O. Box 809, 4897 In, Road',70,'P.O. Box 514, 7478 Arcu. St.',41,'In mi','1982/07/26','convallis@commodohendrerit.co.uk',42,'Taiwan','Terme',8784,'Luke',42,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Cobb','273-1384 Libero. Street',51,'P.O. Box 821, 4053 Aliquam Ave',12,'dui. Fusce','1956/12/13','a.malesuada@vulputate.edu',43,'Somalia','Salzgitter',5639,'Nissim',43,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Snow','Ap #636-6482 Vel, Ave',23,'2844 Dara, Rd.',35,'non,','2011/11/16','Integer.id@lobortisClass.co.uk',44,'Belgium','Aubange',7265,'Ezra',44,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Barron','7113 Integer Avenue',30,'Ap #906-3801 Eu, Rd.',47,'turpis.','1938/05/25','nibh.Quisque@iaculisnec.org',45,'Czech Republic','Lo Prado',4866,'Hedley',45,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Daniels','Ap #376-5810 Mollis. Avenue',54,'P.O. Box 618, 680 Scelerisque Avenue',3,'at fringilla','1962/03/23','mollis.dui.in@natoquepenatibuset.co.uk',46,'Uruguay','Erchie',2827,'Kenneth',46,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Ellis','P.O. Box 906, 3610 Vel, Rd.',4,'1413 Est, Street',86,'mattis','1990/06/29','faucibus.Morbi@nec.ca',47,'Nauru','Osnabrück',9152,'Jarrod',47,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Ramsey','6347 Amet St.',84,'Ap #264-5673 Sit Road',36,'a, enim.','1919/10/03','ornare.lectus@Nunclaoreet.com',48,'Papua New Guinea','Bossut-Gottechain',3653,'Harlan',48,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Logan','6942 Vitae, St.',32,'P.O. Box 547, 9904 Varius Ave',41,'lacus, varius','1942/09/15','sed@lacusQuisque.ca',49,'Senegal','Wanzele',9378,'Barclay',49,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Harper','362-3499 Rutrum Rd.',48,'P.O. Box 609, 572 Ligula Road',9,'dapibus rutrum,','1933/01/01','tincidunt@Integereulacus.net',50,'Kyrgyzstan','Jette',6238,'Lionel',50,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Bush','8754 Ante. Avenue',32,'9344 Tempus Street',15,'nibh dolor,','1926/10/13','vitae.posuere.at@arcuiaculis.edu',51,'Turkey','Guntakal',5595,'Bradley',51,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Wade','Ap #963-3018 Aliquam Street',73,'9321 Interdum St.',46,'eros nec','1936/06/19','consequat.purus@penatibus.ca',52,'Mozambique','Reyhanlı',8485,'Brendan',52,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Caldwell','Ap #807-3716 Scelerisque St.',61,'4473 Tellus Rd.',92,'nisi.','2007/01/02','magna@a.com',53,'Yemen','Houtvenne',1883,'Rashad',53,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Jimenez','P.O. Box 605, 1698 Enim Road',70,'2222 Fermentum St.',60,'nascetur','1949/04/27','Morbi@odioEtiam.co.uk',54,'Peru','Tiruvottiyur',5346,'Cruz',54,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Dejesus','5565 Nunc Street',30,'P.O. Box 203, 987 Tempor Ave',42,'Integer vulputate,','1919/01/08','libero.est.congue@liberoettristique.com',55,'Nauru','Mussy-la-Ville',5717,'Barrett',55,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Wilkins','970-2418 Euismod St.',54,'3132 Sem Rd.',72,'arcu. Vestibulum','1965/11/27','fermentum.vel.mauris@leoin.org',56,'Martinique','Alcorcón',1754,'Kieran',56,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Velez','408-3963 Dui. Rd.',2,'Ap #822-9620 Interdum. Rd.',83,'ante ipsum','1949/07/24','egestas@litoratorquentper.edu',57,'Kyrgyzstan','Limache',1039,'Thaddeus',57,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Austin','Ap #303-102 Cursus. Rd.',47,'9281 Erat St.',67,'malesuada vel,','2013/03/30','accumsan@molestieintempus.org',58,'Mexico','Bungay',1783,'Branden',58,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Mckee','3863 Feugiat Ave',37,'883-4452 Sed St.',54,'enim. Etiam','1943/07/13','Phasellus.nulla@justoProin.org',59,'Saudi Arabia','Colina',1912,'Raymond',59,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Guerrero','P.O. Box 694, 9892 Non Rd.',12,'289-1098 Et Road',29,'odio a','2015/06/12','at.nisi.Cum@sed.co.uk',60,'Jordan','General Lagos',7173,'Isaiah',60,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Holman','1164 Sed Street',66,'815-1272 Arcu. Ave',30,'Donec','1979/07/10','eget.ipsum@Nulla.com',61,'Cameroon','Bouffioulx',9168,'Reuben',61,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Pace','P.O. Box 777, 4781 Ridiculus St.',64,'Ap #784-1571 Nunc Av.',93,'felis,','1949/12/29','egestas.urna@nisisem.org',62,'Lesotho','Rawalpindi',8572,'Brock',62,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Marks','8278 Semper Road',96,'667-6180 Arcu St.',15,'natoque penatibus','1958/12/12','adipiscing.lacus.Ut@idante.net',63,'Belgium','Neyveli',4977,'Samson',63,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Diaz','738-8195 Phasellus Road',46,'Ap #422-4139 Aptent Road',44,'purus.','1983/07/18','Vestibulum@Proin.org',64,'Curacao','Wichita',9676,'Gray',64,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Francis','6657 Arcu Rd.',51,'6480 Enim. Road',92,'diam.','1948/02/02','in.hendrerit.consectetuer@maurissapien.org',65,'Niger','Beerse',7379,'Rahim',65,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Giles','992-2530 In Av.',15,'571-7637 Orci Ave',64,'risus. Quisque','1979/06/05','tristique@blandit.com',66,'Dominica','İskenderun',6742,'Cody',66,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Larson','Ap #632-2482 Molestie Avenue',98,'2001 Facilisis St.',68,'diam','1968/10/28','mus.Proin.vel@mama.co.uk',67,'Kenya','South Portland',9938,'Nathaniel',67,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Neal','Ap #521-8754 Et Street',75,'Ap #394-9449 Tincidunt, St.',42,'magna.','1930/12/20','Curabitur@velitdui.org',68,'Ethiopia','Pali',7235,'Quamar',68,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Houston','783-1980 Ligula. Avenue',84,'9151 Pellentesque, Road',5,'egestas, urna','1919/01/21','lectus.pede@ipsum.net',69,'South Africa','Constitución',4762,'Timothy',69,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('York','Ap #223-1970 Phasellus Street',89,'203-3073 Enim Rd.',82,'cursus non,','1992/12/20','eget.venenatis.a@elementum.edu',70,'Slovakia','Montebelluna',6997,'Abbot',70,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('White','Ap #423-3375 Nascetur Street',84,'266-148 Nunc Ave',75,'libero. Donec','1924/04/02','ipsum@felisadipiscingfringilla.co.uk',71,'Denmark','Richmond',9807,'Abdul',71,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Mack','Ap #798-4889 At, Av.',44,'P.O. Box 961, 8715 Dui, Road',17,'amet, consectetuer','2015/02/09','luctus.Curabitur.egestas@eratVivamus.org',72,'Belgium','Bendigo',2777,'Simon',72,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Fuentes','735-7064 wel Rd.',25,'P.O. Box 233, 9860 Condimentum. Av.',74,'litora','2009/05/14','amet.risus.Donec@morbitristique.ca',73,'Bolivia','Gravilias',1912,'Aquila',73,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Best','Ap #285-7623 Amet St.',45,'P.O. Box 567, 4199 Amet, Road',11,'erat vitae','2008/03/24','augue@arcu.net',74,'Chad','Saint Louis',5761,'Ferris',74,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Riddle','P.O. Box 370, 684 Fames St.',70,'P.O. Box 327, 3320 Purus Ave',23,'dapibus ligula.','1972/05/12','sagittis.felis.Donec@lacus.org',75,'Ghana','Qualicum Beach',7534,'Colt',75,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Harmon','3125 Facilisis, St.',71,'434-6678 Duis St.',46,'montes, nascetur','1971/11/24','nisi.nibh@orciconsectetuer.edu',76,'Belgium','Veraval',1609,'Preston',76,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Blackwell','Ap #141-2479 Tempus Av.',44,'6154 Metus. Avenue',74,'convallis dolor.','1996/09/02','a.tortor.Nunc@dolorelit.net',77,'Belgium','Ketchikan',7190,'Caesar',77,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Gilliam','P.O. Box 553, 2408 Odio St.',65,'P.O. Box 834, 3571 Lectus Av.',77,'vitae, posuere','1927/04/03','aliquam@at.com',78,'Estonia','Hoeilaart',6116,'Zachery',78,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Riley','Ap #163-1819 Quis Rd.',74,'Ap #969-4173 Semper Avenue',25,'porttitor vulputate,','1989/01/03','ipsum@sapien.edu',79,'Belgium','Noisy-le-Grand',9673,'Keith',79,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Clarke','Ap #925-1151 Enim. Street',77,'2646 Hendrerit St.',76,'ligula. Aenean','1991/08/14','mauris.blandit.mattis@placerataugue.ca',80,'Belize','Göteborg',3575,'Rafael',80,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Huffman','543-2044 Cursus Rd.',5,'P.O. Box 198, 5325 Curabitur Rd.',56,'dignissim','1957/06/13','egestas@justo.org',81,'Aruba','Ham-sur-Heure-Nalinnes',8780,'Garrison',81,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Clark','270-4038 Feugiat. Rd.',31,'757-1753 Aliquam Ave',89,'arcu','1991/08/14','nisi.nibh.lacinia@Integer.net',82,'Micronesia','Teltow',2971,'Aristotle',82,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Mckee','Ap #166-3025 Faucibus Rd.',26,'150-2695 Urna. Rd.',79,'sodales. Mauris','1921/01/14','nec.malesuada.ut@luctusipsumleo.ca',83,'Jamaica','Socchieve',5091,'Curran',83,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Kerr','551-9400 Ac Street',98,'P.O. Box 535, 5144 In St.',90,'sed, est.','1978/05/07','nonummy@nibhsit.org',84,'Bermuda','Offenbach am Main',2927,'Lars',84,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hodge','4467 Dolor Road',34,'886-5054 Magna, Avenue',68,'ac mattis','1983/06/21','sagittis.felis.Donec@erateget.org',85,'Seychelles','Oudenaken',6277,'Trevor',85,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Cotton','Ap #582-9445 Sociis Av.',61,'370-4230 Nulla Av.',73,'varius. Nam','1949/05/27','eleifend.egestas.Sed@Duis.org',86,'British Indian Ocean Territory','Zweibrücken',4346,'Byron',86,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hooper','944-3357 Quam Road',70,'426-5495 Consectetuer, Avenue',68,'conubia','1991/02/11','ridiculus.mus.Proin@nisl.edu',87,'Belgium','Aartrijke',7691,'Matthew',87,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Garcia','886-8719 Congue St.',53,'Ap #216-5832 Tortor St.',26,'eu,','1976/03/15','eu.erat@nonenim.com',88,'Tuvalu','Senneville',3168,'Buckminster',88,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hinton','P.O. Box 468, 745 Lobortis Road',69,'Ap #396-8622 Libero Road',12,'ullamcorper','1963/03/16','amet.orci.Ut@mauris.org',89,'Serbia','Rossignol',8910,'Hedley',89,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Mcfadden','1694 A, Road',11,'807-7937 Vestibulum Rd.',25,'rutrum','1983/06/29','aliquet@pharetra.co.uk',90,'Bolivia','Almelo',4030,'Abel',90,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Marks','3018 Etiam Av.',55,'P.O. Box 863, 5104 Fringilla Street',77,'mi,','1985/11/07','luctus@Etiam.ca',91,'Comoros','Grand-Leez',7714,'Howard',91,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Hines','Ap #133-1081 Dignissim Av.',86,'P.O. Box 249, 1691 Porttitor Av.',42,'lobortis, nisi','2011/05/23','montes.nascetur@antedictum.co.uk',92,'Ireland','Bouffioulx',8725,'Steven',92,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Dyer','P.O. Box 966, 6161 Consectetuer Ave',88,'P.O. Box 255, 7130 Et Street',38,'felis eget','1929/11/14','lacinia.Sed.congue@a.ca',93,'Mauritius','Anghiari',7477,'Austin',93,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Pope','P.O. Box 891, 1028 Arcu. Rd.',70,'P.O. Box 268, 5171 Eros Road',66,'vel nisl.','1940/11/23','Mauris.vestibulum.neque@diam.net',94,'Argentina','Bellante',9438,'Talon',94,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Rosario','474-4403 Ac Rd.',33,'Ap #738-5758 Erat Road',77,'dui. Cras','1968/01/15','Sed.auctor@anteipsumprimis.co.uk',95,'Liberia','Sagar',1289,'Hedley',95,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Oneil','Ap #640-342 Dis Rd.',54,'771-7583 Commodo Ave',70,'sem','1974/04/07','dis.parturient.montes@velarcu.edu',96,'Swaziland','Idar-Oberstei',3041,'Orson',96,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Joseph','P.O. Box 571, 4067 Proin Rd.',18,'278 Vel, Road',98,'gravida','1916/10/10','Quisque.purus.sapien@Maecenasmifelis.com',97,'Guernsey','Port Pirie',3724,'Elliott',97,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Barton','427-2685 Cras St.',68,'P.O. Box 868, 6009 Nibh Avenue',67,'ligula.','1940/05/23','aliquet@mama.co.uk',98,'Belgium','Stralsund',5571,'Ashton',98,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Ruiz','815-6852 Magna. Av.',94,'539-9673 Lectus Avenue',9,'conubia','2010/09/22','tristique.pharetra@tincidunt.edu',99,'Egypt','Olympia',3378,'Upton',99,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Watkins','Ap #596-4590 Proin Avenue',78,'P.O. Box 800, 8860 Mauris Avenue',53,'in aliquet','1959/06/21','turpis.vitae.purus@natoquepenatibus.ca',100,'Russian Federation','Wondelgem',2877,'Dane',100,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'','','Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231','wel');
+INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'','','Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23verkoper','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231','wel');
 
-INSERT INTO Verkoper  VALUES('Nisl Incorporated','Creditcard',88734841406,1,4068856036458825216);
-INSERT INTO Verkoper VALUES('Luctus Corp.','Creditcard',505836549778,2,7517629080512225280);
-INSERT INTO Verkoper VALUES('Duis Risus Odio Associates','Creditcard',293687940014,3,7243266435136244736);
-INSERT INTO Verkoper VALUES('Lectus Foundation','Creditcard',272264538706,4,6240216248844397568);
-INSERT INTO Verkoper VALUES('Lacus Incorporated','Creditcard',794702048821,5,5548949397297730560);
-INSERT INTO Verkoper VALUES('Ut Pharetra Incorporated','Creditcard',355977123617,6,2930609259863817216);
-INSERT INTO Verkoper VALUES('Nullam Institute','Creditcard',464899325800,7,5453276478096771072);
-INSERT INTO Verkoper VALUES('Purus Maecenas Corporation','Creditcard',912329126276,8,673346526779336960);
-INSERT INTO Verkoper VALUES('Mollis Non Cursus Incorporated','Creditcard',739772259181,9,2171178747257174528);
-INSERT INTO Verkoper VALUES('Tincidunt Vehicula Risus Corp.','Creditcard',79562944185,10,7124615430474441728);
-INSERT INTO Verkoper VALUES('Rhoncus Nullam Velit Associates','Creditcard',175138223627,11,5405541735429785600);
-INSERT INTO Verkoper VALUES('Natoque PC','Creditcard',428789116753,12,7628100404041140224);
-INSERT INTO Verkoper VALUES('Pede Limited','Creditcard',799858624023,13,5914093254895281152);
-INSERT INTO Verkoper VALUES('Sollicitudin Foundation','Creditcard',812400430845,14,360204011647910976);
-INSERT INTO Verkoper VALUES('Eu Erat Semper Corp.','Creditcard',812121953101,15,2142170574294685440);
-INSERT INTO Verkoper VALUES('Lobortis Associates','Creditcard',55398826262,16,7146333978471854080);
-INSERT INTO Verkoper VALUES('Nec PC','Creditcard',491445171700,17,5278511644447960064);
-INSERT INTO Verkoper VALUES('Vel Limited','Creditcard',572510012905,18,4257242053678476288);
-INSERT INTO Verkoper VALUES('Turpis Industries','Creditcard',712310559493,19,3495974944040845824);
-INSERT INTO Verkoper VALUES('Velit Egestas Corporation','Creditcard',656089206479,20,4901269784206836736);
-INSERT INTO Verkoper VALUES('Cum Sociis Natoque Limited','Creditcard',693889858372,21,2449269064283390464);
-INSERT INTO Verkoper VALUES('Libero Limited','Creditcard',780643443142,22,6887731673340991488);
-INSERT INTO Verkoper VALUES('Metus Facilisis Lorem Foundation','Creditcard',156750321326,23,4512347833569828352);
-INSERT INTO Verkoper VALUES('Dui LLP','Creditcard',342873734966,24,674397690360805120);
-INSERT INTO Verkoper VALUES('Non Arcu LLP','Creditcard',125920817755,25,5228426742095244288);
-INSERT INTO Verkoper VALUES('Dictum Institute','Creditcard',650125687174,26,5606447511783683072);
-INSERT INTO Verkoper VALUES('Gravida Aliquam Company','Creditcard',646602154205,27,2752725211797043712);
-INSERT INTO Verkoper VALUES('Non Dapibus Inc.','Creditcard',924925489455,28,318700309492846400);
-INSERT INTO Verkoper VALUES('Lectus Consulting','Creditcard',785264120038,29,1074107284779403008);
-INSERT INTO Verkoper VALUES('At Auctor LLP','Creditcard',51670876575,30,952043322861990272);
-INSERT INTO Verkoper VALUES('Quis Pede Praesent Foundation','Creditcard',739592359970,31,4516484607894929920);
-INSERT INTO Verkoper VALUES('Nunc Id Institute','Creditcard',892911366640,32,3339612798104572928);
-INSERT INTO Verkoper VALUES('Dui Lectus Rutrum Incorporated','Creditcard',985593862803,33,7759556922026903552);
-INSERT INTO Verkoper VALUES('Lobortis Class Corporation','Creditcard',852995968745,34,476357314361251648);
-INSERT INTO Verkoper VALUES('Tempor Lorem LLC','Creditcard',358413882459,35,3798048371960739840);
-INSERT INTO Verkoper VALUES('Sed PC','Creditcard',865310703518,36,322902848219334464);
-INSERT INTO Verkoper VALUES('Vestibulum Institute','Creditcard',8734600492,37,1571784858474049280);
-INSERT INTO Verkoper VALUES('Integer PC','Creditcard',278094007765,38,1471154091785756160);
-INSERT INTO Verkoper VALUES('Justo Eu Incorporated','Creditcard',405208978013,39,7644163520914098176);
-INSERT INTO Verkoper VALUES('Nonummy Company','Creditcard',244570779276,40,280058752923841824);
-INSERT INTO Verkoper VALUES('Et Libero Inc.','Creditcard',922225360303,41,2905297892499001344);
-INSERT INTO Verkoper VALUES('Non Sapien Corp.','Creditcard',53313117472,42,1652576948148461312);
-INSERT INTO Verkoper VALUES('Tempus Eu Ligula Company','Creditcard',716215335496,43,4652380579190587392);
-INSERT INTO Verkoper VALUES('Nunc Sed Corporation','Creditcard',560979911028,44,5972121907460782080);
-INSERT INTO Verkoper VALUES('Ut Cursus Luctus Ltd','Creditcard',555023643459,45,7588672227840396288);
-INSERT INTO Verkoper VALUES('Vestibulum Nec Institute','Creditcard',128571188720,46,5076511318451365888);
-INSERT INTO Verkoper VALUES('Non Leo Vivamus Ltd','Creditcard',151091481102,47,1280406501492924416);
-INSERT INTO Verkoper VALUES('Ut Molestie Consulting','Creditcard',492474055339,48,3032965256261641216);
-INSERT INTO Verkoper VALUES('Urna Justo Consulting','Creditcard',548410912408,49,4799963776057489408);
-INSERT INTO Verkoper VALUES('Integer Tincidunt Institute','Creditcard',755123083885,50,6598960562959546368);
-INSERT INTO Verkoper VALUES('Cras Lorem Lorem Institute','Creditcard',591391891465,51,5895732083560413184);
-INSERT INTO Verkoper VALUES('Cum Incorporated','Creditcard',523805199015,52,5954946028708373504);
-INSERT INTO Verkoper VALUES('Vel Pede Blandit Limited','Creditcard',363814809452,53,2483354726398930432);
-INSERT INTO Verkoper VALUES('Felis Adipiscing Fringilla LLC','Creditcard',551804476182,54,7599972758008207360);
-INSERT INTO Verkoper VALUES('Ornare Inc.','Creditcard',515269400995,55,4490884162860341248);
-INSERT INTO Verkoper VALUES('Laoreet Corporation','Creditcard',683866137589,56,7489473743634012160);
-INSERT INTO Verkoper VALUES('A Aliquet Vel Company','Creditcard',33891773179,57,2298204523862818304);
-INSERT INTO Verkoper VALUES('Tincidunt Congue Inc.','Creditcard',109932056352,58,3498864972141873664);
-INSERT INTO Verkoper VALUES('Et Euismod Corp.','Creditcard',100407154701,59,2231872501736812032);
-INSERT INTO Verkoper VALUES('Sed PC','Creditcard',343244653369,60,1742388760184270848);
-INSERT INTO Verkoper VALUES('Ullamcorper Magna Sed Associates','Creditcard',130378065864,61,6473966239129245696);
-INSERT INTO Verkoper VALUES('Eget Ipsum Ltd','Creditcard',846795511434,62,1405283534323490048);
-INSERT INTO Verkoper VALUES('Diam Duis Mi Corporation','Creditcard',40345105270,63,3987565413926325248);
-INSERT INTO Verkoper VALUES('Cubilia Inc.','Creditcard',443288981229,64,1115287965647899520);
-INSERT INTO Verkoper VALUES('Iaculis Quis Incorporated','Creditcard',704257982831,65,7237753501383681024);
-INSERT INTO Verkoper VALUES('Consectetuer PC','Creditcard',333745762599,66,6283789021663352832);
-INSERT INTO Verkoper VALUES('Lobortis Foundation','Creditcard',416028740383,67,6509822426479605760);
-INSERT INTO Verkoper VALUES('Enim LLC','Creditcard',455194123538,68,5163746905445653504);
-INSERT INTO Verkoper VALUES('Felis Orci Adipiscing LLC','Creditcard',684873774522,69,7228366156560994304);
-INSERT INTO Verkoper VALUES('Integer Sem Elit Associates','Creditcard',53662233169,70,2160849241042856960);
-INSERT INTO Verkoper VALUES('Nullam Nisl Maecenas Associates','Creditcard',34012461288,71,517318790202217728);
-INSERT INTO Verkoper VALUES('At Arcu Inc.','Creditcard',891734699951,72,1834228585790270720);
-INSERT INTO Verkoper VALUES('Non Institute','Creditcard',321614475838,73,6881109962991920128);
-INSERT INTO Verkoper VALUES('Ligula Aenean PC','Creditcard',597195066054,74,2135077844728755456);
-INSERT INTO Verkoper VALUES('Fermentum Arcu Consulting','Creditcard',668589768791,75,2210088945167537152);
-INSERT INTO Verkoper VALUES('Pellentesque Consulting','Creditcard',353418110183,76,6045904611335794688);
-INSERT INTO Verkoper VALUES('Velit Eu Associates','Creditcard',418111007008,77,230420773653454176);
-INSERT INTO Verkoper VALUES('Pellentesque Ultricies Foundation','Creditcard',855666437165,78,4414651410460956672);
-INSERT INTO Verkoper VALUES('Donec Luctus Industries','Creditcard',32320604695,79,3259726933563525632);
-INSERT INTO Verkoper VALUES('Dignissim Ltd','Creditcard',872738821568,80,4070218359504670208);
-INSERT INTO Verkoper VALUES('Cursus Industries','Creditcard',811030731448,81,6061316004256755712);
-INSERT INTO Verkoper VALUES('Mi Corporation','Creditcard',583993767094,82,626441854900684544);
-INSERT INTO Verkoper VALUES('Elementum At Egestas LLC','Creditcard',807047757023,83,1854338847902602240);
-INSERT INTO Verkoper VALUES('Eu Foundation','Creditcard',178588369381,84,6170185200645466112);
-INSERT INTO Verkoper VALUES('Purus Sapien Gravida Company','Creditcard',97098889279,85,6340027645699193856);
-INSERT INTO Verkoper VALUES('Gravida Incorporated','Creditcard',543307611598,86,674358398074796672);
-INSERT INTO Verkoper VALUES('Nunc Lectus Consulting','Creditcard',214962266785,87,4810047294117706752);
-INSERT INTO Verkoper VALUES('Varius Ultrices Associates','Creditcard',776440839325,88,6224662698494011392);
-INSERT INTO Verkoper VALUES('Fermentum Metus PC','Creditcard',269747792373,89,1188876573224489216);
-INSERT INTO Verkoper VALUES('Lectus Rutrum Urna Institute','Creditcard',665738376240,90,4815115807343111168);
-INSERT INTO Verkoper VALUES('Porttitor PC','Creditcard',618832500909,91,2990703059289222144);
-INSERT INTO Verkoper VALUES('Varius Orci In LLC','Creditcard',150152815056,92,5441367685982784512);
-INSERT INTO Verkoper VALUES('Sed Libero PC','Creditcard',934521199491,93,4518870461539510784);
-INSERT INTO Verkoper VALUES('Penatibus LLP','Creditcard',162565653388,94,6569793998506712064);
-INSERT INTO Verkoper VALUES('Enim Diam Institute','Creditcard',389966932608,95,3088464773049874432);
-INSERT INTO Verkoper VALUES('Laoreet LLC','Creditcard',388847291210,96,4972631837347901440);
-INSERT INTO Verkoper VALUES('Lectus Pede Et Consulting','Creditcard',904168543312,97,5530598756946465792);
-INSERT INTO Verkoper VALUES('Lacus Ut Inc.','Creditcard',300349417836,98,4770143534791687168);
-INSERT INTO Verkoper VALUES('Dictum Corp.','Creditcard',302787718947,99,3161901433577321472);
-INSERT INTO Verkoper VALUES('Per Inceptos Industries','Creditcard',256828254997,100,6391201832202804224);
+INSERT INTO Verkoper  VALUES('ABN Amro','Post',88734841406,'hugoiscool23verkoper',4068856036458825216);
 
-INSERT INTO Gebruikerstelefoon VALUES('1','31-996-705-9682',5573);
-INSERT INTO Gebruikerstelefoon VALUES('2','31-251-154-6563',29223);
-INSERT INTO Gebruikerstelefoon VALUES('3','31-389-215-9811',3426);
-INSERT INTO Gebruikerstelefoon VALUES('4','31-256-930-6188',44455);
-INSERT INTO Gebruikerstelefoon VALUES('5','31-791-525-9877',16995);
-INSERT INTO Gebruikerstelefoon VALUES('6','31-540-146-9198',23031);
-INSERT INTO Gebruikerstelefoon VALUES('7','31-953-756-8183',35337);
-INSERT INTO Gebruikerstelefoon VALUES('8','31-142-258-0052',11486);
-INSERT INTO Gebruikerstelefoon VALUES('9','31-638-512-4649',9637);
-INSERT INTO Gebruikerstelefoon VALUES('10','31-472-995-8354',43270);
-INSERT INTO Gebruikerstelefoon VALUES('11','31-931-990-7217',42733);
-INSERT INTO Gebruikerstelefoon VALUES('12','31-704-682-2513',2123);
-INSERT INTO Gebruikerstelefoon VALUES('13','31-504-658-6352',34460);
-INSERT INTO Gebruikerstelefoon VALUES('14','31-290-392-2393',12153);
-INSERT INTO Gebruikerstelefoon VALUES('15','31-291-234-8198',25156);
-INSERT INTO Gebruikerstelefoon VALUES('16','31-290-327-2120',36275);
-INSERT INTO Gebruikerstelefoon VALUES('17','31-839-796-0303',14895);
-INSERT INTO Gebruikerstelefoon VALUES('18','31-817-657-6819',32658);
-INSERT INTO Gebruikerstelefoon VALUES('19','31-914-833-7288',25703);
-INSERT INTO Gebruikerstelefoon VALUES('20','31-726-897-1437',27976);
-INSERT INTO Gebruikerstelefoon VALUES('21','31-654-937-3530',44808);
-INSERT INTO Gebruikerstelefoon VALUES('22','31-656-756-0250',40153);
-INSERT INTO Gebruikerstelefoon VALUES('23','31-410-629-6269',1355);
-INSERT INTO Gebruikerstelefoon VALUES('24','31-642-641-8756',871);
-INSERT INTO Gebruikerstelefoon VALUES('25','31-344-849-4462',31627);
-INSERT INTO Gebruikerstelefoon VALUES('26','31-325-291-5824',39389);
-INSERT INTO Gebruikerstelefoon VALUES('27','31-189-198-5669',10704);
-INSERT INTO Gebruikerstelefoon VALUES('28','31-121-117-2905',1598);
-INSERT INTO Gebruikerstelefoon VALUES('29','31-826-946-4666',22643);
-INSERT INTO Gebruikerstelefoon VALUES('30','31-131-968-7600',10393);
-INSERT INTO Gebruikerstelefoon VALUES('31','31-311-894-1646',30544);
-INSERT INTO Gebruikerstelefoon VALUES('32','31-474-481-0419',34258);
-INSERT INTO Gebruikerstelefoon VALUES('33','31-537-217-8240',14624);
-INSERT INTO Gebruikerstelefoon VALUES('34','31-614-516-0671',19042);
-INSERT INTO Gebruikerstelefoon VALUES('35','31-271-529-9614',30286);
-INSERT INTO Gebruikerstelefoon VALUES('36','31-562-505-4355',26838);
-INSERT INTO Gebruikerstelefoon VALUES('37','31-536-522-4960',30883);
-INSERT INTO Gebruikerstelefoon VALUES('38','31-938-793-9098',10248);
-INSERT INTO Gebruikerstelefoon VALUES('39','31-198-849-8388',28750);
-INSERT INTO Gebruikerstelefoon VALUES('40','31-526-679-9657',6360);
-INSERT INTO Gebruikerstelefoon VALUES('41','31-574-398-8207',35730);
-INSERT INTO Gebruikerstelefoon VALUES('42','31-621-917-9454',17525);
-INSERT INTO Gebruikerstelefoon VALUES('43','31-290-512-9470',35874);
-INSERT INTO Gebruikerstelefoon VALUES('44','31-239-771-1510',44073);
-INSERT INTO Gebruikerstelefoon VALUES('45','31-231-737-9869',47277);
-INSERT INTO Gebruikerstelefoon VALUES('46','31-505-574-3592',49740);
-INSERT INTO Gebruikerstelefoon VALUES('47','31-655-299-0245',47388);
-INSERT INTO Gebruikerstelefoon VALUES('48','31-682-253-7000',26951);
-INSERT INTO Gebruikerstelefoon VALUES('49','31-346-984-8231',14278);
-INSERT INTO Gebruikerstelefoon VALUES('50','31-556-218-6326',2520);
-INSERT INTO Gebruikerstelefoon VALUES('51','31-869-302-7307',1044);
-INSERT INTO Gebruikerstelefoon VALUES('52','31-560-233-0116',11477);
-INSERT INTO Gebruikerstelefoon VALUES('53','31-113-644-6196',32568);
-INSERT INTO Gebruikerstelefoon VALUES('54','31-516-940-1462',17261);
-INSERT INTO Gebruikerstelefoon VALUES('55','31-881-983-1201',5993);
-INSERT INTO Gebruikerstelefoon VALUES('56','31-806-400-1974',4280);
-INSERT INTO Gebruikerstelefoon VALUES('57','31-484-522-7493',21508);
-INSERT INTO Gebruikerstelefoon VALUES('58','31-799-676-2296',48106);
-INSERT INTO Gebruikerstelefoon VALUES('59','31-456-706-9592',27361);
-INSERT INTO Gebruikerstelefoon VALUES('60','31-571-560-6657',27822);
-INSERT INTO Gebruikerstelefoon VALUES('61','31-480-431-9105',17501);
-INSERT INTO Gebruikerstelefoon VALUES('62','31-796-546-0222',4929);
-INSERT INTO Gebruikerstelefoon VALUES('63','31-777-996-5626',20339);
-INSERT INTO Gebruikerstelefoon VALUES('64','31-155-664-5860',36285);
-INSERT INTO Gebruikerstelefoon VALUES('65','31-182-664-1791',49310);
-INSERT INTO Gebruikerstelefoon VALUES('66','31-781-854-5458',32943);
-INSERT INTO Gebruikerstelefoon VALUES('67','31-218-858-7760',41849);
-INSERT INTO Gebruikerstelefoon VALUES('68','31-456-886-7302',45221);
-INSERT INTO Gebruikerstelefoon VALUES('69','31-470-674-9811',41579);
-INSERT INTO Gebruikerstelefoon VALUES('70','31-523-771-8246',22986);
-INSERT INTO Gebruikerstelefoon VALUES('71','31-470-159-5200',29680);
-INSERT INTO Gebruikerstelefoon VALUES('72','31-956-585-8410',14730);
-INSERT INTO Gebruikerstelefoon VALUES('73','31-929-563-8734',27344);
-INSERT INTO Gebruikerstelefoon VALUES('74','31-752-533-9812',29997);
-INSERT INTO Gebruikerstelefoon VALUES('75','31-996-559-8167',45689);
-INSERT INTO Gebruikerstelefoon VALUES('76','31-278-813-0281',49382);
-INSERT INTO Gebruikerstelefoon VALUES('77','31-409-845-6798',40502);
-INSERT INTO Gebruikerstelefoon VALUES('78','31-338-150-1693',43523);
-INSERT INTO Gebruikerstelefoon VALUES('79','31-198-904-1581',16124);
-INSERT INTO Gebruikerstelefoon VALUES('80','31-318-743-8308',19506);
-INSERT INTO Gebruikerstelefoon VALUES('81','31-796-323-6367',34323);
-INSERT INTO Gebruikerstelefoon VALUES('82','31-867-572-8459',12616);
-INSERT INTO Gebruikerstelefoon VALUES('83','31-318-491-4629',31266);
-INSERT INTO Gebruikerstelefoon VALUES('84','31-590-541-3907',16271);
-INSERT INTO Gebruikerstelefoon VALUES('85','31-229-264-9680',45599);
-INSERT INTO Gebruikerstelefoon VALUES('86','31-615-448-7321',3549);
-INSERT INTO Gebruikerstelefoon VALUES('87','31-392-977-5449',18310);
-INSERT INTO Gebruikerstelefoon VALUES('88','31-246-580-7882',22226);
-INSERT INTO Gebruikerstelefoon VALUES('89','31-750-892-7177',1831);
-INSERT INTO Gebruikerstelefoon VALUES('90','31-507-181-1424',41736);
-INSERT INTO Gebruikerstelefoon VALUES('91','31-732-631-7101',29142);
-INSERT INTO Gebruikerstelefoon VALUES('92','31-808-609-3614',34640);
-INSERT INTO Gebruikerstelefoon VALUES('93','31-747-479-0670',37354);
-INSERT INTO Gebruikerstelefoon VALUES('94','31-414-664-1976',4940);
-INSERT INTO Gebruikerstelefoon VALUES('95','31-613-576-8792',1304);
-INSERT INTO Gebruikerstelefoon VALUES('96','31-667-929-9929',36603);
-INSERT INTO Gebruikerstelefoon VALUES('97','31-992-103-1732',36700);
-INSERT INTO Gebruikerstelefoon VALUES('98','31-196-702-8431',7541);
-INSERT INTO Gebruikerstelefoon VALUES('99','31-357-581-4976',20076);
-INSERT INTO Gebruikerstelefoon VALUES('10','31-503-151-4262',381);
+INSERT INTO Gebruikerstelefoon VALUES('hugoiscool23', '31-996-705-9682');
 
 
-SELECT *
-FROM Gebruikerstelefoon
-SET IDENTITY_INSERT iproject11.dbo.Voorwerp ON
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/15/2016','00:00:00','12/11/2016','00:00:00','4.70',1,1,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Eritrea','Plaatsnaam','Titel Voorwerp','Verzendinstructie',1,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/13/2016','00:00:00','07/09/2017','00:00:00','4.70',2,2,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Cocos (Keeling) Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',2,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/19/2017','00:00:00','05/06/2016','00:00:00','4.70',3,3,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Puerto Rico','Plaatsnaam','Titel Voorwerp','Verzendinstructie',3,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/28/2016','00:00:00','12/24/2017','00:00:00','4.70',4,4,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belgium','Plaatsnaam','Titel Voorwerp','Verzendinstructie',4,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/20/2016','00:00:00','12/26/2017','00:00:00','4.70',5,5,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belize','Plaatsnaam','Titel Voorwerp','Verzendinstructie',5,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/29/2016','00:00:00','06/09/2017','00:00:00','4.70',6,6,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Nicaragua','Plaatsnaam','Titel Voorwerp','Verzendinstructie',6,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/25/2017','00:00:00','04/08/2018','00:00:00','4.70',7,7,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Cape Verde','Plaatsnaam','Titel Voorwerp','Verzendinstructie',7,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/05/2016','00:00:00','10/05/2016','00:00:00','4.70',8,8,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','San Marino','Plaatsnaam','Titel Voorwerp','Verzendinstructie',8,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/24/2016','00:00:00','08/10/2016','00:00:00','4.70',9,9,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Monaco','Plaatsnaam','Titel Voorwerp','Verzendinstructie',9,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/26/2018','00:00:00','03/26/2017','00:00:00','4.70',10,10,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Austria','Plaatsnaam','Titel Voorwerp','Verzendinstructie',10,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/13/2017','00:00:00','08/14/2016','00:00:00','4.70',11,11,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Seychelles','Plaatsnaam','Titel Voorwerp','Verzendinstructie',11,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/31/2016','00:00:00','02/02/2017','00:00:00','4.70',12,12,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Puerto Rico','Plaatsnaam','Titel Voorwerp','Verzendinstructie',12,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/10/2018','00:00:00','10/14/2017','00:00:00','4.70',13,13,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Serbia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',13,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','09/11/2017','00:00:00','07/26/2016','00:00:00','4.70',14,14,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Mongolia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',14,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/26/2017','00:00:00','09/06/2017','00:00:00','4.70',15,15,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belgium','Plaatsnaam','Titel Voorwerp','Verzendinstructie',15,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/22/2016','00:00:00','09/18/2016','00:00:00','4.70',16,16,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belarus','Plaatsnaam','Titel Voorwerp','Verzendinstructie',16,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/22/2016','00:00:00','08/18/2016','00:00:00','4.70',17,17,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Uganda','Plaatsnaam','Titel Voorwerp','Verzendinstructie',17,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/11/2017','00:00:00','01/13/2017','00:00:00','4.70',18,18,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Netherlands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',18,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','02/28/2017','00:00:00','02/02/2018','00:00:00','4.70',19,19,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Gibraltar','Plaatsnaam','Titel Voorwerp','Verzendinstructie',19,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/13/2018','00:00:00','03/01/2017','00:00:00','4.70',20,20,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Lebanon','Plaatsnaam','Titel Voorwerp','Verzendinstructie',20,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/01/2016','00:00:00','04/20/2018','00:00:00','4.70',21,21,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Bouvet Island','Plaatsnaam','Titel Voorwerp','Verzendinstructie',21,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/17/2017','00:00:00','12/04/2017','00:00:00','4.70',22,22,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','China','Plaatsnaam','Titel Voorwerp','Verzendinstructie',22,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/22/2016','00:00:00','06/12/2016','00:00:00','4.70',23,23,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Cambodia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',23,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/07/2017','00:00:00','09/14/2016','00:00:00','4.70',24,24,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Guinea','Plaatsnaam','Titel Voorwerp','Verzendinstructie',24,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','02/23/2018','00:00:00','12/19/2016','00:00:00','4.70',25,25,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Saudi Arabia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',25,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/04/2016','00:00:00','09/19/2016','00:00:00','4.70',26,26,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Jamaica','Plaatsnaam','Titel Voorwerp','Verzendinstructie',26,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/20/2016','00:00:00','03/28/2018','00:00:00','4.70',27,27,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Saint Lucia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',27,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/06/2017','00:00:00','04/03/2018','00:00:00','4.70',28,28,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Madagascar','Plaatsnaam','Titel Voorwerp','Verzendinstructie',28,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/18/2018','00:00:00','03/26/2018','00:00:00','4.70',29,29,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Indonesia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',29,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/26/2016','00:00:00','12/16/2016','00:00:00','4.70',30,30,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Australia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',30,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/20/2017','00:00:00','12/19/2016','00:00:00','4.70',31,31,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Armenia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',31,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/15/2017','00:00:00','12/28/2017','00:00:00','4.70',32,32,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Ghana','Plaatsnaam','Titel Voorwerp','Verzendinstructie',32,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/26/2016','00:00:00','08/19/2016','00:00:00','4.70',33,33,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Norway','Plaatsnaam','Titel Voorwerp','Verzendinstructie',33,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/05/2016','00:00:00','06/02/2016','00:00:00','4.70',34,34,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belgium','Plaatsnaam','Titel Voorwerp','Verzendinstructie',34,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/12/2017','00:00:00','07/03/2016','00:00:00','4.70',35,35,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Syria','Plaatsnaam','Titel Voorwerp','Verzendinstructie',35,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/15/2017','00:00:00','10/04/2017','00:00:00','4.70',36,36,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Mali','Plaatsnaam','Titel Voorwerp','Verzendinstructie',36,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/18/2017','00:00:00','01/12/2017','00:00:00','4.70',37,37,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Mexico','Plaatsnaam','Titel Voorwerp','Verzendinstructie',37,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','02/15/2017','00:00:00','12/11/2017','00:00:00','4.70',38,38,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Philippines','Plaatsnaam','Titel Voorwerp','Verzendinstructie',38,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/10/2017','00:00:00','04/24/2017','00:00:00','4.70',39,39,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Austria','Plaatsnaam','Titel Voorwerp','Verzendinstructie',39,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/05/2016','00:00:00','07/25/2017','00:00:00','4.70',40,40,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Afghanistan','Plaatsnaam','Titel Voorwerp','Verzendinstructie',40,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/19/2016','00:00:00','01/28/2018','00:00:00','4.70',41,41,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Hong Kong','Plaatsnaam','Titel Voorwerp','Verzendinstructie',41,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/11/2017','00:00:00','02/01/2017','00:00:00','4.70',42,42,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Poland','Plaatsnaam','Titel Voorwerp','Verzendinstructie',42,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/19/2017','00:00:00','05/24/2016','00:00:00','4.70',43,43,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','United States Minor Outlying Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',43,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/28/2016','00:00:00','03/13/2017','00:00:00','4.70',44,44,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Liechtenstein','Plaatsnaam','Titel Voorwerp','Verzendinstructie',44,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/07/2018','00:00:00','05/04/2016','00:00:00','4.70',45,45,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Morocco','Plaatsnaam','Titel Voorwerp','Verzendinstructie',45,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/18/2016','00:00:00','02/18/2018','00:00:00','4.70',46,46,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Morocco','Plaatsnaam','Titel Voorwerp','Verzendinstructie',46,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/26/2017','00:00:00','07/03/2017','00:00:00','4.70',47,47,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Martinique','Plaatsnaam','Titel Voorwerp','Verzendinstructie',47,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/24/2017','00:00:00','07/25/2017','00:00:00','4.70',48,48,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Nicaragua','Plaatsnaam','Titel Voorwerp','Verzendinstructie',48,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/19/2017','00:00:00','08/17/2016','00:00:00','4.70',49,49,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Maldives','Plaatsnaam','Titel Voorwerp','Verzendinstructie',49,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/09/2016','00:00:00','12/13/2016','00:00:00','4.70',50,50,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Maldives','Plaatsnaam','Titel Voorwerp','Verzendinstructie',50,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/15/2016','00:00:00','03/02/2017','00:00:00','4.70',51,51,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Burkina Faso','Plaatsnaam','Titel Voorwerp','Verzendinstructie',51,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/23/2017','00:00:00','08/30/2017','00:00:00','4.70',52,52,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','New Zealand','Plaatsnaam','Titel Voorwerp','Verzendinstructie',52,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/06/2017','00:00:00','05/04/2017','00:00:00','4.70',53,53,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Moldova','Plaatsnaam','Titel Voorwerp','Verzendinstructie',53,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/19/2017','00:00:00','12/28/2016','00:00:00','4.70',54,54,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Liberia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',54,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','02/22/2017','00:00:00','02/15/2018','00:00:00','4.70',55,55,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','New Caledonia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',55,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/15/2017','00:00:00','05/30/2016','00:00:00','4.70',56,56,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Liberia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',56,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','09/26/2016','00:00:00','05/21/2017','00:00:00','4.70',57,57,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Swaziland','Plaatsnaam','Titel Voorwerp','Verzendinstructie',57,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/16/2018','00:00:00','07/17/2017','00:00:00','4.70',58,58,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Niger','Plaatsnaam','Titel Voorwerp','Verzendinstructie',58,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/09/2016','00:00:00','04/17/2017','00:00:00','4.70',59,59,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Niger','Plaatsnaam','Titel Voorwerp','Verzendinstructie',59,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/11/2017','00:00:00','04/27/2017','00:00:00','4.70',60,60,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belize','Plaatsnaam','Titel Voorwerp','Verzendinstructie',60,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/07/2017','00:00:00','11/17/2017','00:00:00','4.70',61,61,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Venezuela','Plaatsnaam','Titel Voorwerp','Verzendinstructie',61,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/29/2017','00:00:00','07/19/2017','00:00:00','4.70',62,62,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Belize','Plaatsnaam','Titel Voorwerp','Verzendinstructie',62,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/05/2018','00:00:00','11/22/2016','00:00:00','4.70',63,63,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Algeria','Plaatsnaam','Titel Voorwerp','Verzendinstructie',63,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/14/2018','00:00:00','05/25/2016','00:00:00','4.70',64,64,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Cook Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',64,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/17/2017','00:00:00','04/24/2018','00:00:00','4.70',65,65,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Netherlands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',65,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/30/2016','00:00:00','01/24/2017','00:00:00','4.70',66,66,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Netherlands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',66,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/11/2018','00:00:00','10/05/2017','00:00:00','4.70',67,67,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Kiribati','Plaatsnaam','Titel Voorwerp','Verzendinstructie',67,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','09/07/2016','00:00:00','07/14/2017','00:00:00','4.70',68,68,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Solomon Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',68,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/24/2016','00:00:00','09/28/2017','00:00:00','4.70',69,69,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Solomon Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',69,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/23/2018','00:00:00','04/02/2017','00:00:00','4.70',70,70,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Trinidad and Tobago','Plaatsnaam','Titel Voorwerp','Verzendinstructie',70,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/16/2017','00:00:00','08/30/2016','00:00:00','4.70',71,71,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Burundi','Plaatsnaam','Titel Voorwerp','Verzendinstructie',71,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/13/2017','00:00:00','02/10/2017','00:00:00','4.70',72,72,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Canada','Plaatsnaam','Titel Voorwerp','Verzendinstructie',72,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/17/2016','00:00:00','07/15/2016','00:00:00','4.70',73,73,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Canada','Plaatsnaam','Titel Voorwerp','Verzendinstructie',73,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/22/2016','00:00:00','10/08/2016','00:00:00','4.70',74,74,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Jersey','Plaatsnaam','Titel Voorwerp','Verzendinstructie',74,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/30/2017','00:00:00','04/30/2017','00:00:00','4.70',75,75,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Haiti','Plaatsnaam','Titel Voorwerp','Verzendinstructie',75,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/05/2017','00:00:00','02/03/2017','00:00:00','4.70',76,76,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Burkina Faso','Plaatsnaam','Titel Voorwerp','Verzendinstructie',76,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/10/2016','00:00:00','08/07/2016','00:00:00','4.70',77,77,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Cyprus','Plaatsnaam','Titel Voorwerp','Verzendinstructie',77,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/09/2017','00:00:00','05/30/2016','00:00:00','4.70',78,78,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Antigua and Barbuda','Plaatsnaam','Titel Voorwerp','Verzendinstructie',78,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/12/2017','00:00:00','08/19/2017','00:00:00','4.70',79,79,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Turks and Caicos Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',79,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/31/2016','00:00:00','01/12/2017','00:00:00','4.70',80,80,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Portugal','Plaatsnaam','Titel Voorwerp','Verzendinstructie',80,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/02/2017','00:00:00','11/05/2017','00:00:00','4.70',81,81,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Syria','Plaatsnaam','Titel Voorwerp','Verzendinstructie',81,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/15/2016','00:00:00','11/17/2016','00:00:00','4.70',82,82,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Ghana','Plaatsnaam','Titel Voorwerp','Verzendinstructie',82,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/12/2017','00:00:00','04/19/2017','00:00:00','4.70',83,83,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Hong Kong','Plaatsnaam','Titel Voorwerp','Verzendinstructie',83,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','12/24/2016','00:00:00','08/01/2017','00:00:00','4.70',84,84,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Hong Kong','Plaatsnaam','Titel Voorwerp','Verzendinstructie',84,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','02/11/2018','00:00:00','12/20/2017','00:00:00','4.70',85,85,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Argentina','Plaatsnaam','Titel Voorwerp','Verzendinstructie',85,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/03/2016','00:00:00','11/30/2017','00:00:00','4.70',86,86,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Ethiopia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',86,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','07/19/2016','00:00:00','05/24/2016','00:00:00','4.70',87,87,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Kiribati','Plaatsnaam','Titel Voorwerp','Verzendinstructie',87,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/16/2017','00:00:00','04/11/2017','00:00:00','4.70',88,88,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Palau','Plaatsnaam','Titel Voorwerp','Verzendinstructie',88,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/01/2018','00:00:00','12/27/2016','00:00:00','4.70',89,89,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Palau','Plaatsnaam','Titel Voorwerp','Verzendinstructie',89,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','05/03/2017','00:00:00','09/01/2016','00:00:00','4.70',90,90,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Malaysia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',90,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/04/2017','00:00:00','06/14/2017','00:00:00','4.70',91,91,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Luxembourg','Plaatsnaam','Titel Voorwerp','Verzendinstructie',91,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','09/27/2017','00:00:00','04/11/2018','00:00:00','4.70',92,92,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Bahamas','Plaatsnaam','Titel Voorwerp','Verzendinstructie',92,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','06/05/2016','00:00:00','01/22/2017','00:00:00','4.70',93,93,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Paraguay','Plaatsnaam','Titel Voorwerp','Verzendinstructie',93,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/16/2017','00:00:00','01/11/2018','00:00:00','4.70',94,94,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Svalbard and Jan Mayen Islands','Plaatsnaam','Titel Voorwerp','Verzendinstructie',94,-1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','11/09/2017','00:00:00','12/29/2016','00:00:00','4.70',95,95,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Serbia','Plaatsnaam','Titel Voorwerp','Verzendinstructie',95,0,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','03/08/2017','00:00:00','07/10/2017','00:00:00','4.70',96,96,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Paraguay','Plaatsnaam','Titel Voorwerp','Verzendinstructie',96,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/21/2016','00:00:00','09/05/2016','00:00:00','4.70',97,97,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','United Kingdom','Plaatsnaam','Titel Voorwerp','Verzendinstructie',97,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','08/11/2016','00:00:00','10/11/2017','00:00:00','4.70',98,98,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Bosnia and Herzegovina','Plaatsnaam','Titel Voorwerp','Verzendinstructie',98,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','01/11/2017','00:00:00','08/28/2017','00:00:00','4.70',99,99,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Djibouti','Plaatsnaam','Titel Voorwerp','Verzendinstructie',99,1,'default.jpg');
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[Voorwerpnummer],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/11/2018','00:00:00','03/13/2017','00:00:00','4.70',100,100,'6.95','14.50','Dit is een mooi voorwerp! bieden maar','Creditcard','Gooi het door de bus','Czech Republic','Plaatsnaam','Titel Voorwerp','Verzendinstructie',100,0,'default.jpg');
-SET IDENTITY_INSERT iproject11.dbo.Voorwerp OFF
---SELECT *
---FROM Voorwerp
 
-SELECT *
-FROM Feedback
-SET IDENTITY_INSERT iproject11.dbo.Feedback ON
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/18/2016','Positief','Koper','00:00:00',2);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','09/07/2017','Positief','Koper','00:00:00',3);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','06/22/2016','Positief','Koper','00:00:00',4);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/20/2018','Positief','Koper','00:00:00',5);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/12/2016','Positief','Koper','00:00:00',6);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/01/2017','Positief','Koper','00:00:00',7);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/17/2016','Positief','Koper','00:00:00',8);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/08/2017','Positief','Koper','00:00:00',9);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/15/2018','Positief','Koper','00:00:00',10);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/29/2016','Positief','Koper','00:00:00',11);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/18/2016','Positief','Koper','00:00:00',12);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/30/2016','Positief','Koper','00:00:00',13);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/18/2016','Positief','Koper','00:00:00',14);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/22/2017','Positief','Koper','00:00:00',15);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/23/2017','Positief','Koper','00:00:00',16);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/18/2017','Positief','Koper','00:00:00',17);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/27/2017','Positief','Koper','00:00:00',18);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/13/2017','Positief','Koper','00:00:00',19);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/18/2018','Positief','Koper','00:00:00',20);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/25/2017','Positief','Koper','00:00:00',21);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/05/2017','Positief','Koper','00:00:00',22);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/30/2016','Positief','Koper','00:00:00',23);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/10/2017','Positief','Koper','00:00:00',24);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/30/2016','Positief','Koper','00:00:00',25);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/31/2017','Positief','Koper','00:00:00',26);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/04/2018','Positief','Koper','00:00:00',27);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/01/2017','Positief','Koper','00:00:00',28);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/07/2016','Positief','Koper','00:00:00',29);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/26/2018','Positief','Koper','00:00:00',30);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/27/2017','Positief','Koper','00:00:00',31);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/30/2017','Positief','Koper','00:00:00',32);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/08/2017','Positief','Koper','00:00:00',33);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/01/2017','Positief','Koper','00:00:00',34);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/12/2017','Positief','Koper','00:00:00',35);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/16/2017','Positief','Koper','00:00:00',36);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/10/2016','Positief','Koper','00:00:00',37);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/15/2016','Positief','Koper','00:00:00',38);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/29/2016','Positief','Koper','00:00:00',39);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/26/2017','Positief','Koper','00:00:00',40);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/27/2016','Positief','Koper','00:00:00',41);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/10/2016','Positief','Koper','00:00:00',42);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/15/2016','Positief','Koper','00:00:00',43);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/16/2017','Positief','Koper','00:00:00',44);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/22/2016','Positief','Koper','00:00:00',45);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','06/08/2017','Positief','Koper','00:00:00',46);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/20/2017','Positief','Koper','00:00:00',47);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/19/2017','Positief','Koper','00:00:00',48);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/01/2016','Positief','Koper','00:00:00',49);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/23/2017','Positief','Koper','00:00:00',50);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/20/2017','Positief','Koper','00:00:00',51);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/19/2017','Positief','Koper','00:00:00',52);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/24/2016','Positief','Koper','00:00:00',53);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/07/2017','Positief','Koper','00:00:00',54);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','09/07/2017','Positief','Koper','00:00:00',55);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/14/2018','Positief','Koper','00:00:00',56);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/17/2017','Positief','Koper','00:00:00',57);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/24/2016','Positief','Koper','00:00:00',58);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/20/2017','Positief','Koper','00:00:00',59);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/27/2017','Positief','Koper','00:00:00',60);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/21/2016','Positief','Koper','00:00:00',61);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/29/2017','Positief','Koper','00:00:00',62);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/19/2017','Positief','Koper','00:00:00',63);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/05/2016','Positief','Koper','00:00:00',64);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/17/2018','Positief','Koper','00:00:00',65);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','06/04/2016','Positief','Koper','00:00:00',66);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/02/2018','Positief','Koper','00:00:00',67);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/14/2016','Positief','Koper','00:00:00',68);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/14/2017','Positief','Koper','00:00:00',69);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/16/2016','Positief','Koper','00:00:00',70);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/28/2016','Positief','Koper','00:00:00',71);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/12/2018','Positief','Koper','00:00:00',72);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/21/2017','Positief','Koper','00:00:00',73);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','10/25/2016','Positief','Koper','00:00:00',74);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/05/2018','Positief','Koper','00:00:00',75);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/21/2017','Positief','Koper','00:00:00',76);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','05/26/2017','Positief','Koper','00:00:00',77);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/14/2016','Positief','Koper','00:00:00',78);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','09/14/2017','Positief','Koper','00:00:00',79);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','12/11/2017','Positief','Koper','00:00:00',80);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/04/2017','Positief','Koper','00:00:00',81);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','06/23/2017','Positief','Koper','00:00:00',82);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/28/2017','Positief','Koper','00:00:00',83);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/16/2017','Positief','Koper','00:00:00',84);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/04/2017','Positief','Koper','00:00:00',85);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/07/2018','Positief','Koper','00:00:00',86);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','09/24/2017','Positief','Koper','00:00:00',87);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','06/25/2017','Positief','Koper','00:00:00',88);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','09/23/2017','Positief','Koper','00:00:00',89);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/02/2017','Positief','Koper','00:00:00',90);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','07/12/2016','Positief','Koper','00:00:00',91);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/02/2016','Positief','Koper','00:00:00',92);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/30/2018','Positief','Koper','00:00:00',93);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/16/2017','Positief','Koper','00:00:00',94);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','03/28/2017','Positief','Koper','00:00:00',95);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/05/2017','Positief','Koper','00:00:00',96);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','01/08/2018','Positief','Koper','00:00:00',97);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','04/21/2018','Positief','Koper','00:00:00',98);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','02/09/2017','Positief','Koper','00:00:00',99);
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','08/20/2017','Positief','Koper','00:00:00',100);
-SET IDENTITY_INSERT iproject11.dbo.Feedback OFF
+INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/15/2016','00:00:00','12/11/2016','00:00:00','4.70','hugoiscool23verkoper','hugoiscool23','6.95','14.50','Ík verkoop het omdat ik het niet meer nodig heb','Creditcard','Gooi het door de bus','Eritrea','Velp','Laptop','Gelieve het goed te verpakken',1,'Laptop.png');
+INSERT INTO Voorwerp(
+  [Looptijd],
+  [LooptijdbeginDag],
+  [LooptijdbeginTijdstip],
+  [LooptijdeindeDag],
+  [LooptijdeindeTijdstip],
+  [Startprijs],
+  [Verkoper],
+  [Koper],
+  [Verzendkosten],
+  [Verkoopprijs],
+  [Beschrijving],
+  [Betalingswijze],
+  [Betalingsinstructie],
+  [Land],
+  [Plaatsnaam],
+  [Titel],
+  [Verzendinstructies],
+  [VeilingGesloten],
+  [VoorwerpCover])
+VALUES('7',
+  '06/20/2017',
+  '23:59:59',
+  '06/27/2017',
+  '15:15:15',
+  '100.00',
+  'hugoiscool23verkoper',
+  'hugoiscool23',
+  '15.00',
+  '800.00',
+  'Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.',
+       'creditcard',
+       'kom langs om te betalen',
+       'Eritrea',
+       'Asmara',
+       'iPhone SE',
+       'Er is geen verzendinstructie',
+       1,
+       'iphone.jpg'
+);
 
-SET IDENTITY_INSERT iproject11.dbo.Bestand ON
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default1  ',1);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default2  ',2);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default3  ',3);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default4  ',4);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default5  ',5);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default6  ',6);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default7  ',7);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default8  ',8);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default9  ',9);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default10 ',10);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default11 ',11);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default12 ',12);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default13 ',13);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default14 ',14);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default15 ',15);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default16 ',16);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default17 ',17);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default18 ',18);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default19 ',19);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default20 ',20);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default21 ',21);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default22 ',22);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default23 ',23);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default24 ',24);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default25 ',25);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default26 ',26);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default27 ',27);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default28 ',28);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default29 ',29);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default30 ',30);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default31 ',31);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default32 ',32);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default33 ',33);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default34 ',34);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default35 ',35);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default36 ',36);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default37 ',37);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default38 ',38);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default39 ',39);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default40 ',40);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default41 ',41);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default42 ',42);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default43 ',43);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default44 ',44);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default45 ',45);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default46 ',46);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default47 ',47);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default48 ',48);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default49 ',49);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default50 ',50);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default51 ',51);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default52 ',52);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default53 ',53);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default54 ',54);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default55 ',55);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default56 ',56);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default57 ',57);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default58 ',58);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default59 ',59);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default60 ',60);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default61 ',61);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default62 ',62);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default63 ',63);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default64 ',64);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default65 ',65);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default66 ',66);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default67 ',67);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default68 ',68);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default69 ',69);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default70 ',70);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default71 ',71);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default72 ',72);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default73 ',73);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default74 ',74);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default75 ',75);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default76 ',76);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default77 ',77);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default78 ',78);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default79 ',79);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default80 ',80);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default81 ',81);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default82 ',82);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default83 ',83);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default84 ',84);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default85 ',85);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default86 ',86);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default87 ',87);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default88 ',88);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default89 ',89);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default90 ',90);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default91 ',91);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default92 ',92);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default93 ',93);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default94 ',94);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default95 ',95);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default96 ',96);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default97 ',97);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default98 ',98);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default99 ',99);
-INSERT INTO Bestand([filenaam],[Voorwerp]) VALUES('default100',100);
-SET IDENTITY_INSERT iproject11.dbo.Bestand OFF
+INSERT INTO Voorwerp(
+  [Looptijd],
+  [LooptijdbeginDag],
+  [LooptijdbeginTijdstip],
+  [LooptijdeindeDag],
+  [LooptijdeindeTijdstip],
+  [Startprijs],
+  [Verkoper],
+  [Koper],
+  [Verzendkosten],
+  [Verkoopprijs],
+  [Beschrijving],
+  [Betalingswijze],
+  [Betalingsinstructie],
+  [Land],
+  [Plaatsnaam],
+  [Titel],
+  [Verzendinstructies],
+  [VeilingGesloten],
+  [VoorwerpCover])
+VALUES('7',
+  '06/20/2017',
+  '23:59:59',
+  '06/27/2017',
+  '15:15:15',
+  '250.00',
+  'hugoiscool23verkoper',
+  'hugoiscool23',
+  '15.00',
+  '450.00',
+  'Deze fauteuil is zwart',
+       'Post',
+       'Geleive contant want ik hedde geen geeld',
+       'Netherlands',
+       'Velp',
+       'Mooie Fauteuil',
+       'Deze bank past niet door de raam',
+       0,
+       'fauteuil.jpg'
+);
+
+
+
+
+INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00');
+
+
+
+INSERT INTO Bestand([filenaam]) VALUES('default.png');
 
 --ALTER TABLE id NOCHECK CONSTRAINT FK_idCategorie
 --GO
@@ -4381,213 +3764,17 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld
 --GO
 --ALTER TABLE id CHECK CONSTRAINT FK_idCategorie
 
-SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,1);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,2);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,3);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,4);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,5);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,6);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,7);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,8);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,9);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,10);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,11);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,12);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,13);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,14);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,15);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,16);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,17);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,18);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,19);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,20);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,21);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,22);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,23);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,24);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,25);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,26);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,27);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,28);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,29);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,30);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,31);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,32);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,33);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,34);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,35);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,36);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,37);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,38);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,39);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,40);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,41);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,42);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,43);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,44);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,45);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,46);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,47);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,48);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,49);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,50);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,51);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,52);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,53);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,54);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,55);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,56);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,57);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,58);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,59);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,60);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,61);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,62);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,63);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,64);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,65);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,66);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,67);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,68);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,69);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,70);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,71);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,72);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,73);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,74);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,75);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,76);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,77);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,78);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,79);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,80);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,81);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,82);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,83);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,84);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,85);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,86);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,87);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,88);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,89);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,90);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,91);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,92);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,93);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,94);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,95);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,96);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,97);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,98);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,99);
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(1,100);
-SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek OFF
+
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau]) VALUES(32);
+
+
 --GO
 --ALTER TABLE Rubriek CHECK CONSTRAINT FK_RubriekCategorie
 
-SET IDENTITY_INSERT iproject11.dbo.Bod ON
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',1,'2017/03/08','00:00:00',1);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',2,'2017/03/31','00:00:00',2);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',3,'2017/07/04','00:00:00',3);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',4,'2016/05/23','00:00:00',4);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',5,'2017/02/20','00:00:00',5);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',6,'2017/10/08','00:00:00',6);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',7,'2017/07/10','00:00:00',7);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',8,'2017/02/27','00:00:00',8);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',9,'2016/07/30','00:00:00',9);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',10,'2016/06/07','00:00:00',10);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',11,'2016/10/12','00:00:00',11);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',12,'2017/01/10','00:00:00',12);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',13,'2018/04/20','00:00:00',13);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',14,'2017/07/19','00:00:00',14);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',15,'2016/12/08','00:00:00',15);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',16,'2016/07/10','00:00:00',16);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',17,'2017/08/08','00:00:00',17);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',18,'2017/11/15','00:00:00',18);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',19,'2017/09/05','00:00:00',19);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',20,'2016/05/08','00:00:00',20);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',21,'2017/12/13','00:00:00',21);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',22,'2017/11/23','00:00:00',22);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',23,'2018/04/12','00:00:00',23);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',24,'2017/10/31','00:00:00',24);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',25,'2017/10/24','00:00:00',25);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',26,'2016/09/14','00:00:00',26);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',27,'2017/12/11','00:00:00',27);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',28,'2017/08/09','00:00:00',28);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',29,'2018/01/08','00:00:00',29);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',30,'2017/03/03','00:00:00',30);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',31,'2016/09/07','00:00:00',31);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',32,'2017/06/21','00:00:00',32);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',33,'2016/06/21','00:00:00',33);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',34,'2016/12/17','00:00:00',34);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',35,'2017/07/18','00:00:00',35);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',36,'2017/09/14','00:00:00',36);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',37,'2018/02/22','00:00:00',37);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',38,'2018/01/16','00:00:00',38);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',39,'2017/01/20','00:00:00',39);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',40,'2017/11/24','00:00:00',40);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',41,'2016/07/14','00:00:00',41);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',42,'2016/06/29','00:00:00',42);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',43,'2017/02/10','00:00:00',43);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',44,'2017/06/20','00:00:00',44);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',45,'2017/07/21','00:00:00',45);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',46,'2017/07/15','00:00:00',46);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',47,'2017/12/18','00:00:00',47);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',48,'2017/11/13','00:00:00',48);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',49,'2016/06/24','00:00:00',49);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',50,'2017/03/22','00:00:00',50);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',51,'2018/04/30','00:00:00',51);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',52,'2017/07/27','00:00:00',52);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',53,'2017/01/06','00:00:00',53);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',54,'2016/11/29','00:00:00',54);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',55,'2016/07/20','00:00:00',55);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',56,'2017/12/13','00:00:00',56);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',57,'2016/11/27','00:00:00',57);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',58,'2017/01/04','00:00:00',58);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',59,'2016/08/28','00:00:00',59);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',60,'2016/07/06','00:00:00',60);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',61,'2016/07/21','00:00:00',61);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',62,'2016/05/06','00:00:00',62);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',63,'2017/03/11','00:00:00',63);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',64,'2016/06/14','00:00:00',64);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',65,'2017/09/24','00:00:00',65);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',66,'2016/08/18','00:00:00',66);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',67,'2017/08/12','00:00:00',67);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',68,'2017/02/03','00:00:00',68);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',69,'2016/05/08','00:00:00',69);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',70,'2017/10/02','00:00:00',70);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',71,'2017/01/24','00:00:00',71);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',72,'2017/04/27','00:00:00',72);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',73,'2016/10/31','00:00:00',73);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',74,'2017/07/01','00:00:00',74);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',75,'2018/02/22','00:00:00',75);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',76,'2017/10/02','00:00:00',76);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',77,'2016/07/22','00:00:00',77);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',78,'2018/02/24','00:00:00',78);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',79,'2017/05/24','00:00:00',79);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',80,'2017/08/31','00:00:00',80);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',81,'2018/03/19','00:00:00',81);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',82,'2016/05/07','00:00:00',82);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',83,'2017/01/21','00:00:00',83);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',84,'2017/07/22','00:00:00',84);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',85,'2016/12/21','00:00:00',85);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',86,'2017/11/26','00:00:00',86);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',87,'2017/09/05','00:00:00',87);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',88,'2018/04/08','00:00:00',88);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',89,'2016/09/09','00:00:00',89);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',90,'2018/04/13','00:00:00',90);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',91,'2017/06/23','00:00:00',91);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',92,'2017/08/19','00:00:00',92);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',93,'2017/12/07','00:00:00',93);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',94,'2016/11/29','00:00:00',94);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',95,'2017/08/09','00:00:00',95);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',96,'2016/11/07','00:00:00',96);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',97,'2017/09/13','00:00:00',97);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',98,'2017/10/09','00:00:00',98);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',99,'2017/02/12','00:00:00',99);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50',100,'2017/07/09','00:00:00',100);
-SET IDENTITY_INSERT iproject11.dbo.Bod OFF
+
+
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00');
+
 
 /*
 SELECT *
@@ -4622,63 +3809,113 @@ ORDER BY Vraagnummer
 SELECT *
 FROM Gebruiker
 ORDER BY vraag asc
+
+SELECT *
+FROM Voorwerp
+
 */
 
-INSERT Test (tst_Column1, tst_Column2, tst_Column3)
-VALUES
-  (1,'test 1', 1),
-  (2,'test 2', 1),
-  (3,'test 3', 0)
+/*INSERT INTO Gebruiker VALUES('Hudson','P.O. Box 418, 9695 Nibh. St.',60,'Ap #445-6112 Purus Street',79,'orci. Phasellus','1965/01/26','dolor.Donec@egetodioAliquam.edu',2,'Peru','Ramsey',9087,'Kasper',2,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Hinton','153-1554 Eleifend, Av.',22,'Ap #347-6267 Aliquam Rd.',10,'ut dolor','1919/07/10','sodales.at.velit@scelerisquesed.ca',3,'Bouvet Island','Orvieto',3222,'Reese',3,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Knox','986-6818 Dolor, Avenue',53,'375-3467 Quis Road',10,'aliquet','1933/01/13','Dara@posuereatvelit.com',4,'Paraguay','Oordegem',3657,'Luke',4,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Herman','P.O. Box 666, 3248 Consequat St.',41,'954-6047 Donec St.',97,'aliquet','1967/03/06','conubia.nostra@mollis.net',5,'Spain','Jaboatão dos Guararapes',5135,'Zeus',5,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Gilbert','Ap #685-7458 Dui Road',35,'430-9071 Scelerisque, Av.',68,'et, lacinia','1976/07/18','lacus@sit.edu',6,'Chad','Antwerpen',7364,'Bernard',6,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Greer','P.O. Box 389, 3106 Eros. Rd.',46,'674-241 Amet Avenue',74,'id,','1967/02/21','arcu.eu.odio@Mauris.co.uk',7,'Bahrain','Huntly',4207,'Camden',7,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Smith','2451 Purus, Av.',86,'P.O. Box 207, 4010 Aliquam Rd.',83,'in','1945/06/14','magna@ornarefacilisiseget.co.uk',8,'Brazil','Braunau am Inn',6881,'Dolan',8,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Dominguez','P.O. Box 197, 5925 Scelerisque, Rd.',95,'7793 Magnis Rd.',86,'felis ullamcorper','1927/12/17','tempor.augue@necquamCurabitur.net',9,'Pakistan','Oristano',9529,'Raja',9,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Pennington','4741 Non St.',21,'Ap #207-9528 Elit, Ave',98,'enim. Suspendisse','1930/02/13','eu.odio.tristique@lobortisquam.ca',10,'Bahamas','Kohima',5507,'Todd',10,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Roy','Ap #764-3959 Tempor Av.',43,'P.O. Box 826, 1958 Justo St.',11,'quam. Curabitur','1990/01/16','at@welluctusut.co.uk',11,'Christmas Island','Vinci',1225,'Fuller',11,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Stone','8398 Aliquam Rd.',30,'667-6609 Odio Ave',52,'Cras','1992/04/01','Suspendisse.ac@risus.edu',12,'Western Sahara','Latisana',8780,'Cole',12,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Herring','5281 Nisl. Avenue',49,'3782 Quis, Ave',72,'congue. In','2004/09/29','luctus.lobortis@atortor.edu',13,'Canada','Casina',1114,'Flynn',13,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Campos','922-2760 Semper Ave',59,'P.O. Box 523, 459 Tristique St.',54,'ante.','1949/11/10','dictum@euaugueporttitor.net',14,'Gibraltar','Victoria',2027,'Phelan',14,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Parks','6440 Molestie Road',26,'P.O. Box 695, 7485 At, Rd.',54,'auctor non,','1970/08/29','Aliquam.nisl.Nulla@nulla.edu',15,'Curacao','Calice al Cornoviglio',5832,'Justin',15,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Moses','873-2610 Nullam St.',65,'Ap #150-7711 Parturient Road',20,'auctor','1923/07/09','tincidunt.nunc@acfeugiatnon.com',16,'Belgium','Polesella',8896,'Hop',16,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Drake','104-475 Fusce Rd.',1,'Ap #634-2284 Vel Rd.',72,'arcu.','2008/02/05','rutrum.non.hendrerit@etultrices.org',17,'Curacao','Guildford',7208,'Barrett',17,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Frederick','4242 Molestie Ave',97,'Ap #481-2376 Sit St.',68,'leo. Vivamus','1967/01/12','Fusce.diam.nunc@elit.edu',18,'Cambodia','Orvault',3672,'Kibo',18,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Bishop','Ap #749-5561 Iaculis Ave',17,'7941 Egestas Ave',15,'arcu','2003/07/27','Donec@acfeugiatnon.com',19,'Montserrat','Langenburg',4111,'Kaseem',19,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Boyd','1732 Montes, St.',85,'Ap #102-1583 Quis Street',21,'sed','1924/02/08','Donec@aliquamenimnec.net',20,'Pakistan','Pepingen',6901,'Jeremy',20,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Cardenas','538-5207 Est, Street',89,'Ap #208-7603 Integer St.',91,'pellentesque.','2001/05/07','eros.nec.tellus@eget.co.uk',21,'Pakistan','Balen',3797,'Bradley',21,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Graves','2482 Sit Ave',21,'P.O. Box 159, 2242 Tincidunt, Avenue',46,'sociosqu ad','1996/06/24','ornare.facilisis@arcuiaculisenim.com',22,'Angola','North Shore',7129,'Solomon',22,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Gillespie','Ap #931-1765 Massa. Av.',41,'P.O. Box 860, 2985 Eu, Road',74,'a feugiat','1964/02/04','tincidunt@vestibulumwel.net',23,'Anguilla','Lingen',9636,'Norman',23,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Dunn','2214 Sit Rd.',65,'585-8341 Vel St.',17,'mauris','1923/03/23','Donec.felis.orci@mieleifendegestas.edu',24,'Angola','Monte Giberto',6495,'Neville',24,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Simpson','Ap #729-1794 Magna. Avenue',62,'P.O. Box 239, 2147 Metus Rd.',19,'Phasellus','1983/11/24','Ut@semmollisdui.com',25,'Macedonia','Dreieich',4759,'Kato',25,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Bird','Ap #900-8936 Nec, Rd.',36,'Ap #423-1368 Suspendisse Street',58,'Etiam','2003/10/26','Nam.interdum.enim@Class.co.uk',26,'Fiji','Laval',7555,'Allen',26,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Merrill','Ap #297-4191 Nulla Rd.',84,'P.O. Box 964, 9968 Duis Rd.',28,'eget','1947/07/22','Quisque@odioAliquamvulputate.net',27,'Netherlands','Mobile',9976,'Ryder',27,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Donovan','P.O. Box 575, 5772 Curae; Av.',90,'935-1322 Auctor Road',12,'Duis a','1980/04/06','eros.Proin.ultrices@sagittis.org',28,'Brazil','Otricoli',4628,'Devin',28,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Kerr','P.O. Box 923, 1807 Velit. Road',91,'9199 Donec Avenue',66,'sapien, gravida','1947/08/24','magna@disparturient.edu',29,'Bangladesh','Regina',9718,'Derek',29,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Sellers','P.O. Box 588, 1951 Accumsan Street',29,'P.O. Box 478, 1182 Nam Rd.',75,'Cras','1965/10/11','Nullam.lobortis.quam@augueac.org',30,'Germany','Vijayawada',8130,'Louis',30,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Beard','Ap #602-5374 Mauris Rd.',10,'P.O. Box 264, 3782 Felis. Rd.',46,'luctus ut,','2001/09/18','sed.tortor@euligulaAenean.edu',31,'China','Lillois-WitterzŽe',9583,'Jonah',31,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Tran','P.O. Box 380, 2559 Id, Avenue',65,'7225 Fusce St.',69,'dapibus ligula.','1933/01/02','fringilla.mi@acmi.com',32,'France','Rechnitz',3017,'Jerry',32,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Yang','800-9345 Nisi St.',36,'Ap #129-5679 Risus. Rd.',58,'tincidunt','1995/08/01','netus.et.malesuada@dui.ca',33,'Samoa','Springdale',4568,'Addison',33,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Bishop','Ap #790-968 Blandit Rd.',93,'Ap #234-5637 Semper Road',94,'Nulla tempor','1981/10/03','sollicitudin.commodo.ipsum@Phasellusdolorelit.edu',34,'Austria','Rocky View',8867,'Brennan',34,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Green','P.O. Box 890, 6429 Egestas Av.',34,'Ap #593-1622 Et Ave',65,'Integer vitae','1974/05/26','Mauris.magna@auctorvelit.net',35,'Georgia','Miraj',3856,'Marshall',35,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Warren','Ap #373-6131 Curabitur St.',25,'360-8024 Tristique Av.',36,'Ut tincidunt','2014/04/19','interdum@Etiamligulatortor.com',36,'Myanmar','Eisenhüttenstadt',1981,'Oren',36,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Allison','422-1120 A, Avenue',26,'P.O. Box 941, 6206 Tristique Street',90,'nec','1958/12/07','eget.odio@sedsem.co.uk',37,'Thailand','Kilmalcolm',7059,'Marsden',37,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Mendez','214-1923 Dapibus St.',30,'Ap #187-554 Amet Rd.',99,'facilisi.','2006/08/05','accumsan@sapienNuncpulvinar.net',38,'Czech Republic','Rapone',2031,'Lionel',38,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Cardenas','211-7215 wel Rd.',97,'P.O. Box 254, 3953 Et, Rd.',66,'a','1928/02/28','pellentesque@Cumsociisnatoque.com',39,'Belgium','Ripalta Guerina',9294,'Amery',39,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Scott','P.O. Box 223, 132 Aliquam St.',41,'P.O. Box 219, 958 Lacinia. Rd.',78,'erat nonummy','1924/03/05','mollis.Duis@metussit.net',40,'Austria','Iowa City',7855,'Harding',40,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Webb','P.O. Box 645, 7886 Adipiscing Rd.',17,'P.O. Box 487, 7021 Aliquam St.',58,'eleifend, nunc','1985/09/06','magna@Classaptent.com',41,'Kazakhstan','Bazel',1177,'Dean',41,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Dejesus','P.O. Box 809, 4897 In, Road',70,'P.O. Box 514, 7478 Arcu. St.',41,'In mi','1982/07/26','convallis@commodohendrerit.co.uk',42,'Taiwan','Terme',8784,'Luke',42,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Cobb','273-1384 Libero. Street',51,'P.O. Box 821, 4053 Aliquam Ave',12,'dui. Fusce','1956/12/13','a.malesuada@vulputate.edu',43,'Somalia','Salzgitter',5639,'Nissim',43,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Snow','Ap #636-6482 Vel, Ave',23,'2844 Dara, Rd.',35,'non,','2011/11/16','Integer.id@lobortisClass.co.uk',44,'Belgium','Aubange',7265,'Ezra',44,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Barron','7113 Integer Avenue',30,'Ap #906-3801 Eu, Rd.',47,'turpis.','1938/05/25','nibh.Quisque@iaculisnec.org',45,'Czech Republic','Lo Prado',4866,'Hedley',45,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Daniels','Ap #376-5810 Mollis. Avenue',54,'P.O. Box 618, 680 Scelerisque Avenue',3,'at fringilla','1962/03/23','mollis.dui.in@natoquepenatibuset.co.uk',46,'Uruguay','Erchie',2827,'Kenneth',46,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Ellis','P.O. Box 906, 3610 Vel, Rd.',4,'1413 Est, Street',86,'mattis','1990/06/29','faucibus.Morbi@nec.ca',47,'Nauru','Osnabrück',9152,'Jarrod',47,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Ramsey','6347 Amet St.',84,'Ap #264-5673 Sit Road',36,'a, enim.','1919/10/03','ornare.lectus@Nunclaoreet.com',48,'Papua New Guinea','Bossut-Gottechain',3653,'Harlan',48,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Logan','6942 Vitae, St.',32,'P.O. Box 547, 9904 Varius Ave',41,'lacus, varius','1942/09/15','sed@lacusQuisque.ca',49,'Senegal','Wanzele',9378,'Barclay',49,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Harper','362-3499 Rutrum Rd.',48,'P.O. Box 609, 572 Ligula Road',9,'dapibus rutrum,','1933/01/01','tincidunt@Integereulacus.net',50,'Kyrgyzstan','Jette',6238,'Lionel',50,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Bush','8754 Ante. Avenue',32,'9344 Tempus Street',15,'nibh dolor,','1926/10/13','vitae.posuere.at@arcuiaculis.edu',51,'Turkey','Guntakal',5595,'Bradley',51,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Wade','Ap #963-3018 Aliquam Street',73,'9321 Interdum St.',46,'eros nec','1936/06/19','consequat.purus@penatibus.ca',52,'Mozambique','Reyhanlı',8485,'Brendan',52,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Caldwell','Ap #807-3716 Scelerisque St.',61,'4473 Tellus Rd.',92,'nisi.','2007/01/02','magna@a.com',53,'Yemen','Houtvenne',1883,'Rashad',53,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Jimenez','P.O. Box 605, 1698 Enim Road',70,'2222 Fermentum St.',60,'nascetur','1949/04/27','Morbi@odioEtiam.co.uk',54,'Peru','Tiruvottiyur',5346,'Cruz',54,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Dejesus','5565 Nunc Street',30,'P.O. Box 203, 987 Tempor Ave',42,'Integer vulputate,','1919/01/08','libero.est.congue@liberoettristique.com',55,'Nauru','Mussy-la-Ville',5717,'Barrett',55,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Wilkins','970-2418 Euismod St.',54,'3132 Sem Rd.',72,'arcu. Vestibulum','1965/11/27','fermentum.vel.mauris@leoin.org',56,'Martinique','Alcorcón',1754,'Kieran',56,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Velez','408-3963 Dui. Rd.',2,'Ap #822-9620 Interdum. Rd.',83,'ante ipsum','1949/07/24','egestas@litoratorquentper.edu',57,'Kyrgyzstan','Limache',1039,'Thaddeus',57,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Austin','Ap #303-102 Cursus. Rd.',47,'9281 Erat St.',67,'malesuada vel,','2013/03/30','accumsan@molestieintempus.org',58,'Mexico','Bungay',1783,'Branden',58,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Mckee','3863 Feugiat Ave',37,'883-4452 Sed St.',54,'enim. Etiam','1943/07/13','Phasellus.nulla@justoProin.org',59,'Saudi Arabia','Colina',1912,'Raymond',59,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Guerrero','P.O. Box 694, 9892 Non Rd.',12,'289-1098 Et Road',29,'odio a','2015/06/12','at.nisi.Cum@sed.co.uk',60,'Jordan','General Lagos',7173,'Isaiah',60,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Holman','1164 Sed Street',66,'815-1272 Arcu. Ave',30,'Donec','1979/07/10','eget.ipsum@Nulla.com',61,'Cameroon','Bouffioulx',9168,'Reuben',61,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Pace','P.O. Box 777, 4781 Ridiculus St.',64,'Ap #784-1571 Nunc Av.',93,'felis,','1949/12/29','egestas.urna@nisisem.org',62,'Lesotho','Rawalpindi',8572,'Brock',62,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Marks','8278 Semper Road',96,'667-6180 Arcu St.',15,'natoque penatibus','1958/12/12','adipiscing.lacus.Ut@idante.net',63,'Belgium','Neyveli',4977,'Samson',63,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Diaz','738-8195 Phasellus Road',46,'Ap #422-4139 Aptent Road',44,'purus.','1983/07/18','Vestibulum@Proin.org',64,'Curacao','Wichita',9676,'Gray',64,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Francis','6657 Arcu Rd.',51,'6480 Enim. Road',92,'diam.','1948/02/02','in.hendrerit.consectetuer@maurissapien.org',65,'Niger','Beerse',7379,'Rahim',65,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Giles','992-2530 In Av.',15,'571-7637 Orci Ave',64,'risus. Quisque','1979/06/05','tristique@blandit.com',66,'Dominica','İskenderun',6742,'Cody',66,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Larson','Ap #632-2482 Molestie Avenue',98,'2001 Facilisis St.',68,'diam','1968/10/28','mus.Proin.vel@mama.co.uk',67,'Kenya','South Portland',9938,'Nathaniel',67,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Neal','Ap #521-8754 Et Street',75,'Ap #394-9449 Tincidunt, St.',42,'magna.','1930/12/20','Curabitur@velitdui.org',68,'Ethiopia','Pali',7235,'Quamar',68,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Houston','783-1980 Ligula. Avenue',84,'9151 Pellentesque, Road',5,'egestas, urna','1919/01/21','lectus.pede@ipsum.net',69,'South Africa','Constitución',4762,'Timothy',69,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('York','Ap #223-1970 Phasellus Street',89,'203-3073 Enim Rd.',82,'cursus non,','1992/12/20','eget.venenatis.a@elementum.edu',70,'Slovakia','Montebelluna',6997,'Abbot',70,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('White','Ap #423-3375 Nascetur Street',84,'266-148 Nunc Ave',75,'libero. Donec','1924/04/02','ipsum@felisadipiscingfringilla.co.uk',71,'Denmark','Richmond',9807,'Abdul',71,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Mack','Ap #798-4889 At, Av.',44,'P.O. Box 961, 8715 Dui, Road',17,'amet, consectetuer','2015/02/09','luctus.Curabitur.egestas@eratVivamus.org',72,'Belgium','Bendigo',2777,'Simon',72,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Fuentes','735-7064 wel Rd.',25,'P.O. Box 233, 9860 Condimentum. Av.',74,'litora','2009/05/14','amet.risus.Donec@morbitristique.ca',73,'Bolivia','Gravilias',1912,'Aquila',73,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Best','Ap #285-7623 Amet St.',45,'P.O. Box 567, 4199 Amet, Road',11,'erat vitae','2008/03/24','augue@arcu.net',74,'Chad','Saint Louis',5761,'Ferris',74,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Riddle','P.O. Box 370, 684 Fames St.',70,'P.O. Box 327, 3320 Purus Ave',23,'dapibus ligula.','1972/05/12','sagittis.felis.Donec@lacus.org',75,'Ghana','Qualicum Beach',7534,'Colt',75,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Harmon','3125 Facilisis, St.',71,'434-6678 Duis St.',46,'montes, nascetur','1971/11/24','nisi.nibh@orciconsectetuer.edu',76,'Belgium','Veraval',1609,'Preston',76,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Blackwell','Ap #141-2479 Tempus Av.',44,'6154 Metus. Avenue',74,'convallis dolor.','1996/09/02','a.tortor.Nunc@dolorelit.net',77,'Belgium','Ketchikan',7190,'Caesar',77,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Gilliam','P.O. Box 553, 2408 Odio St.',65,'P.O. Box 834, 3571 Lectus Av.',77,'vitae, posuere','1927/04/03','aliquam@at.com',78,'Estonia','Hoeilaart',6116,'Zachery',78,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Riley','Ap #163-1819 Quis Rd.',74,'Ap #969-4173 Semper Avenue',25,'porttitor vulputate,','1989/01/03','ipsum@sapien.edu',79,'Belgium','Noisy-le-Grand',9673,'Keith',79,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Clarke','Ap #925-1151 Enim. Street',77,'2646 Hendrerit St.',76,'ligula. Aenean','1991/08/14','mauris.blandit.mattis@placerataugue.ca',80,'Belize','Göteborg',3575,'Rafael',80,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Huffman','543-2044 Cursus Rd.',5,'P.O. Box 198, 5325 Curabitur Rd.',56,'dignissim','1957/06/13','egestas@justo.org',81,'Aruba','Ham-sur-Heure-Nalinnes',8780,'Garrison',81,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Clark','270-4038 Feugiat. Rd.',31,'757-1753 Aliquam Ave',89,'arcu','1991/08/14','nisi.nibh.lacinia@Integer.net',82,'Micronesia','Teltow',2971,'Aristotle',82,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Mckee','Ap #166-3025 Faucibus Rd.',26,'150-2695 Urna. Rd.',79,'sodales. Mauris','1921/01/14','nec.malesuada.ut@luctusipsumleo.ca',83,'Jamaica','Socchieve',5091,'Curran',83,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Kerr','551-9400 Ac Street',98,'P.O. Box 535, 5144 In St.',90,'sed, est.','1978/05/07','nonummy@nibhsit.org',84,'Bermuda','Offenbach am Main',2927,'Lars',84,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Hodge','4467 Dolor Road',34,'886-5054 Magna, Avenue',68,'ac mattis','1983/06/21','sagittis.felis.Donec@erateget.org',85,'Seychelles','Oudenaken',6277,'Trevor',85,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Cotton','Ap #582-9445 Sociis Av.',61,'370-4230 Nulla Av.',73,'varius. Nam','1949/05/27','eleifend.egestas.Sed@Duis.org',86,'British Indian Ocean Territory','Zweibrücken',4346,'Byron',86,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Hooper','944-3357 Quam Road',70,'426-5495 Consectetuer, Avenue',68,'conubia','1991/02/11','ridiculus.mus.Proin@nisl.edu',87,'Belgium','Aartrijke',7691,'Matthew',87,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Garcia','886-8719 Congue St.',53,'Ap #216-5832 Tortor St.',26,'eu,','1976/03/15','eu.erat@nonenim.com',88,'Tuvalu','Senneville',3168,'Buckminster',88,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Hinton','P.O. Box 468, 745 Lobortis Road',69,'Ap #396-8622 Libero Road',12,'ullamcorper','1963/03/16','amet.orci.Ut@mauris.org',89,'Serbia','Rossignol',8910,'Hedley',89,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Mcfadden','1694 A, Road',11,'807-7937 Vestibulum Rd.',25,'rutrum','1983/06/29','aliquet@pharetra.co.uk',90,'Bolivia','Almelo',4030,'Abel',90,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Marks','3018 Etiam Av.',55,'P.O. Box 863, 5104 Fringilla Street',77,'mi,','1985/11/07','luctus@Etiam.ca',91,'Comoros','Grand-Leez',7714,'Howard',91,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Hines','Ap #133-1081 Dignissim Av.',86,'P.O. Box 249, 1691 Porttitor Av.',42,'lobortis, nisi','2011/05/23','montes.nascetur@antedictum.co.uk',92,'Ireland','Bouffioulx',8725,'Steven',92,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Dyer','P.O. Box 966, 6161 Consectetuer Ave',88,'P.O. Box 255, 7130 Et Street',38,'felis eget','1929/11/14','lacinia.Sed.congue@a.ca',93,'Mauritius','Anghiari',7477,'Austin',93,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Pope','P.O. Box 891, 1028 Arcu. Rd.',70,'P.O. Box 268, 5171 Eros Road',66,'vel nisl.','1940/11/23','Mauris.vestibulum.neque@diam.net',94,'Argentina','Bellante',9438,'Talon',94,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Rosario','474-4403 Ac Rd.',33,'Ap #738-5758 Erat Road',77,'dui. Cras','1968/01/15','Sed.auctor@anteipsumprimis.co.uk',95,'Liberia','Sagar',1289,'Hedley',95,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Oneil','Ap #640-342 Dis Rd.',54,'771-7583 Commodo Ave',70,'sem','1974/04/07','dis.parturient.montes@velarcu.edu',96,'Swaziland','Idar-Oberstei',3041,'Orson',96,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Joseph','P.O. Box 571, 4067 Proin Rd.',18,'278 Vel, Road',98,'gravida','1916/10/10','Quisque.purus.sapien@Maecenasmifelis.com',97,'Guernsey','Port Pirie',3724,'Elliott',97,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Barton','427-2685 Cras St.',68,'P.O. Box 868, 6009 Nibh Avenue',67,'ligula.','1940/05/23','aliquet@mama.co.uk',98,'Belgium','Stralsund',5571,'Ashton',98,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Ruiz','815-6852 Magna. Av.',94,'539-9673 Lectus Avenue',9,'conubia','2010/09/22','tristique.pharetra@tincidunt.edu',99,'Egypt','Olympia',3378,'Upton',99,'P@ssw0rd','wel');
+INSERT INTO Gebruiker VALUES('Watkins','Ap #596-4590 Proin Avenue',78,'P.O. Box 800, 8860 Mauris Avenue',53,'in aliquet','1959/06/21','turpis.vitae.purus@natoquepenatibus.ca',100,'Russian Federation','Wondelgem',2877,'Dane',100,'P@ssw0rd','wel');
+*/
 
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','04/11/2018','00:00:00','03/13/2017','00:00:00','4.70',100,100,'6.95','14.50','Dit prachtige voorwerp is echt een must have!','Creditcard','Gelieve het af te geven','Belgium','Velp','Laptop','Er is geen verzendinstructie',0,'laptop.png');
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau]) VALUES(160);
-INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (160,'Computers',-1)
-
-INSERT INTO Voorwerp(
-  [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
-  [Startprijs],
-  [Verkoper],
-  [Koper],
-  [Verzendkosten],
-  [Verkoopprijs],
-  [Beschrijving],
-  [Betalingswijze],
-  [Betalingsinstructie],
-  [Land],
-  [Plaatsnaam],
-  [Titel],
-  [Verzendinstructies],
-  [VeilingGesloten],
-  [VoorwerpCover])
-VALUES('7',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
-  '100.00',
-  100,
-  100,
-  '15.00',
-  '800.00',
-  'Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.',
-       'creditcard',
-       'kom langs om te betalen',
-       'Eritrea',
-       'Asmara',
-       'iPhone SE',
-       'Er is geen verzendinstructie',
-       1,
-       'iphone.jpg'
-);
 
 
-SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek ON
-INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau],[Voorwerp]) VALUES(28727,115);
 
-SELECT * FROM Nieuwsbrief
-
-SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = (Hobby's en handwerken) ORDER BY rubrieknaam
