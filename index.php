@@ -53,8 +53,7 @@
 session_start();
 
 include 'header.php'; // Geeft de header mee aan de index.php pagina
-
-include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
+include 'catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
 
 <main>
     <!-- Full Page Image Background Carousel Header -->
