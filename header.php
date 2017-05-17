@@ -11,14 +11,15 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
-                <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a> <!--logo-->
-            <a class="navbar-header " href="index.php"><img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG"
-                                                            alt="tekstlogo"/></a><!--tekstlogo-->
+                <img class="logo" src="img/eenmaalandermaallogo.png" alt="logo"/></a>
+            <a class="navbar-header " href="index.php">
+                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="tekstlogo"/>
+            </a>
         </div>
         <div id="navbar">
             <ul class="nav ">
                 <li>
-                    <a class="navbar-right glyphicon glyphicon-user textWhite fontSize16 crete" aria-hidden="true"
+                    <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
                        href="inloggen.php">Inloggen</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
             </ul>

@@ -401,6 +401,10 @@ ol {
     padding-bottom: 10px;
 }
 
+.containerMinHeight{
+    min-height: 1200px;
+}
+
 noListStyleType li {
     list-style-type: none;
 }

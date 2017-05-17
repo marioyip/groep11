@@ -6,6 +6,8 @@ function connectToDatabase() //functie om aan de database te kunnen verbinden
     $hostname = "mssql.iproject.icasites.nl";
     $dbname = "iproject11";
 
+
+
     global $db;
 
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
