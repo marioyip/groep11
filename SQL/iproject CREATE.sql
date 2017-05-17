@@ -1,19 +1,6 @@
 USE master
 
 USE iproject11
---DECLARE @sql NVARCHAR(MAX) = N'';
-
---SELECT @sql += N'
---ALTER TABLE ' + QUOTENAME(OBJECT_SCHEMA_NAME(parent_object_id))
---    + '.' + QUOTENAME(OBJECT_NAME(parent_object_id)) +
---    ' DROP CONSTRAINT ' + QUOTENAME(name) + ';'
---FROM sys.foreign_keys;
-
---PRINT @sql;
--- EXEC sp_executesql @sql;
-
-
---IF object_id('CheckPassword') IS NOT NULL
 
 GO
 CREATE FUNCTION CheckPassword(@pass VARCHAR(30))
@@ -50,8 +37,8 @@ IF NOT exists(SELECT *
               WHERE name = 'Nieuwsbrief')
   CREATE TABLE Nieuwsbrief (
     id    INT IDENTITY NOT NULL,
-    name  VARCHAR(70)  NOT NULL,
-    email VARCHAR(70)  NOT NULL,
+    name  VARCHAR(255)  NOT NULL,
+    email VARCHAR(255)  NOT NULL,
     CONSTRAINT pk_id PRIMARY KEY (email),
     CONSTRAINT ck_email CHECK (dbo.fnIsValidEmail(email) >= 1)
   )
@@ -60,19 +47,19 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Vraag')
   CREATE TABLE Vraag (
-    TekstVraag  VARCHAR(150) NOT NULL,
+    TekstVraag  VARCHAR(8000) NOT NULL,
     Vraagnummer INTEGER      NOT NULL,
     CONSTRAINT pk_vraagnummer PRIMARY KEY (vraagnummer)
   )
 
---INSERT INTO Vraag VALUES ('hallo' , 67);
+
 IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Landen')
   CREATE TABLE Landen (
-    Id            INT         NOT NULL,
+    Id            INT IDENTITY(1,1)        NOT NULL,
     landafkorting CHAR(2)     NOT NULL,
-    landnaam      VARCHAR(36) NOT NULL, -- http://www.funtrivia.com/askft/Question33835.html
+    landnaam      VARCHAR(350) NOT NULL, -- http://www.funtrivia.com/askft/Question33835.html
     CONSTRAINT pk_naam PRIMARY KEY (landnaam),
   )
 
@@ -81,22 +68,22 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Gebruiker')
   CREATE TABLE Gebruiker (
-    Achternaam     VARCHAR(35)                      NOT NULL, --Lange achternaam
+    Achternaam     VARCHAR(255)                      NOT NULL, --Lange achternaam
     Straatnaam1    VARCHAR(255)                     NOT NULL, --Van adresregel1 naar straatnaam1
-    Huisnummer1    TINYINT                          NOT NULL, --Huisnummer toegevoegd voor straat1
+    Huisnummer1    SMALLINT                          NOT NULL, --Huisnummer toegevoegd voor straat1
     Straatnaam2    VARCHAR(255)                     NULL, --Van adresregel2 naar straatnaam2
-    Huisnummer2    TINYINT                          NULL, --huisnummer toegevoegd voor straat2
-    Antwoordtekst  VARCHAR(20)                      NOT NULL,
+    Huisnummer2    SMALLINT                          NULL, --huisnummer toegevoegd voor straat2
+    Antwoordtekst  VARCHAR(500)                      NOT NULL,
     GeboorteDag    DATE                             NOT NULL,
-    Mailbox        VARCHAR(75)                      NOT NULL,
-    Gebruikersnaam VARCHAR(35)                      NOT NULL,
-    Land           VARCHAR(36)                      NOT NULL, --
-    Plaatsnaam     VARCHAR(85)                      NOT NULL, -- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
+    email          VARCHAR(255)                      NOT NULL,
+    Gebruikersnaam VARCHAR(255)                      NOT NULL,
+    Land           VARCHAR(350)                      NOT NULL, --
+    Plaatsnaam     VARCHAR(150)                      NOT NULL, -- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
     Postcode       VARCHAR(9)                       NOT NULL, -- https://en.wikipedia.org/wiki/Postal_codes
-    Voornaam       VARCHAR(20)                      NOT NULL,
+    Voornaam       VARCHAR(75)                      NOT NULL,
     Vraag          INT                              NOT NULL,
-    Wachtwoord     VARCHAR(30)                      NOT NULL,
-    Verkoper       VARCHAR(4) DEFAULT 'niet'        NOT NULL, -- BOOLEAN??
+    Wachtwoord     VARCHAR(255)                      NOT NULL,
+    Verkoper       VARCHAR(4) DEFAULT 'niet'        NOT NULL,
     CONSTRAINT pk_gebuikersnaam PRIMARY KEY (gebruikersnaam),
     CONSTRAINT fk_GebruikerVraag_ref_VraagVraagnummer FOREIGN KEY (Vraag)
     REFERENCES Vraag (vraagnummer),
@@ -114,10 +101,10 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Verkoper')
   CREATE TABLE Verkoper (
-    Bank             VARCHAR(100) NOT NULL, --Banknamen verschillen erg van lengte daarom 20 characters maximaal voor een zo goed mogelijk resultaat
-    ControleOptie    VARCHAR(15)  NOT NULL,
-    Creditcardnummer VARCHAR(19)  NULL,
-    Gebruiker        VARCHAR(35)  NOT NULL,
+    Bank             VARCHAR(255) NOT NULL,
+    ControleOptie    VARCHAR(255)  NOT NULL,
+    Creditcardnummer VARCHAR(25)  NULL,
+    Gebruiker        VARCHAR(255)  NOT NULL,
     Bankrekening     VARCHAR(31)  NULL, -- rekeningnummer is 19 karakters -- int(7) volgens appendix E
     CONSTRAINT pk_gebruikersnaam PRIMARY KEY (gebruiker),
     CONSTRAINT fk_VerkoperGebruiker_ref_GebruikerGebruikersnaam FOREIGN KEY (Gebruiker)
@@ -143,9 +130,9 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Gebruikerstelefoon')
   CREATE TABLE Gebruikerstelefoon (
-    Gebruiker VARCHAR(35) NOT NULL,
-    Telefoon  VARCHAR(15) NOT NULL, -- https://en.wikipedia.org/wiki/E.164
-    Volgnr    INTEGER     NOT NULL, --int(2)
+    Gebruiker VARCHAR(255) NOT NULL,
+    Telefoon  VARCHAR(25) NOT NULL, -- https://en.wikipedia.org/wiki/E.164
+    Volgnr    INTEGER IDENTITY (1,1)     NOT NULL, --int(2)
     CONSTRAINT pk_volgnr_gebruikersnaam PRIMARY KEY (Volgnr, Gebruiker),
     CONSTRAINT fk_GebrTelefoon_ref_GebrGebruikersnaam FOREIGN KEY (Gebruiker)
     REFERENCES Gebruiker (Gebruikersnaam)
@@ -161,17 +148,17 @@ IF NOT exists(SELECT *
     LooptijdeindeDag      DATE                                  NOT NULL,
     LooptijdeindeTijdstip TIME(0)                               NOT NULL,
     Startprijs            NUMERIC(8, 2) DEFAULT 0.00            NOT NULL,
-    Verkoper              VARCHAR(35)                           NOT NULL,
-    Koper                 VARCHAR(35)                           NULL,
+    Verkoper              VARCHAR(255)                           NOT NULL,
+    Koper                 VARCHAR(255)                           NULL,
     Verzendkosten         NUMERIC(8, 2) DEFAULT 6.95            NULL, -- https://www.postnl.nl/tarieven/tarieven-pakketten/?country=nl
     Verkoopprijs          NUMERIC(8, 2)                         NOT NULL,
     Beschrijving          VARCHAR(500)                          NOT NULL, -- 500 is de limiet, varchar ipv char omdat het niet precies 500 hoeft te zijn
-    Betalingswijze        VARCHAR(23)                           NOT NULL, -- kan ook verschillend zijn, bank/giro / creditcard / etc
-    Betalingsinstructie   VARCHAR(50)                           NULL, -- Geen precies aantal karakters dus een varchar
-    Land                  VARCHAR(36)                           NOT NULL, -- http://www.funtrivia.com/askft/Question33835.html
-    Plaatsnaam            VARCHAR(85)                           NOT NULL, -- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
-    Titel                 VARCHAR(20)                           NOT NULL,
-    Verzendinstructies    VARCHAR(75)                           NULL,
+    Betalingswijze        VARCHAR(255)                           NOT NULL, -- kan ook verschillend zijn, bank/giro / creditcard / etc
+    Betalingsinstructie   VARCHAR(500)                           NULL, -- Geen precies aantal karakters dus een varchar
+    Land                  VARCHAR(350)                           NOT NULL, -- http://www.funtrivia.com/askft/Question33835.html
+    Plaatsnaam            VARCHAR(150)                           NOT NULL, -- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
+    Titel                 VARCHAR(50)                           NOT NULL,
+    Verzendinstructies    VARCHAR(500)                           NULL,
     Voorwerpnummer        INT IDENTITY                          NOT NULL, -- maximaal 10 getallen -- houdt lang vol ongeveer 7-8 jaar
     VeilingGesloten       BIT                                   NOT NULL, -- Keuze uit 1 of 0 dus ja of nee
     VoorwerpCover         VARCHAR(255) DEFAULT 'default.png'    NOT NULL,
@@ -189,12 +176,12 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Feedback')
   CREATE TABLE Feedback (
-    Commentaar     VARCHAR(140) NULL,
+    Commentaar     VARCHAR(500) NULL,
     Dag            DATE         NOT NULL,
     Feedbacksoort  CHAR(8)      NOT NULL,
-    SoortGebruiker VARCHAR(8)   NOT NULL, --Vragen
+    SoortGebruiker VARCHAR(8)   NOT NULL, --Verkoper Koper
     Tijdstip       TIME(0)      NOT NULL,
-    Voorwerp       INT IDENTITY NOT NULL,
+    Voorwerp       INT IDENTITY (1,1) NOT NULL,
     CONSTRAINT pk_voorwerpnummer_koper_verkoper PRIMARY KEY (Voorwerp, SoortGebruiker),
     CONSTRAINT fk_FeedbackVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
@@ -202,19 +189,13 @@ IF NOT exists(SELECT *
     CONSTRAINT ck_KoperVerkoper CHECK (SoortGebruiker IN ('koper', 'verkoper'))
   )
 
---INSERT INTO Feedback
---VALUES ('t','01/01/2017' ,'positief', 'koper', '00:00:00', 1),
---('t','01/01/2017' ,'negatief', 'verkoper', '00:00:00', 1)
-
---SELECT *
---FROM Feedback
 
 IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Voorwerp in Rubriek')
   CREATE TABLE VoorwerpInRubriek (
-    RubriekOpLaagsteNiveau INTEGER      NOT NULL,
-    Voorwerp               INT IDENTITY NOT NULL,
+    RubriekOpLaagsteNiveau INTEGER				NOT NULL,
+    Voorwerp               INT IDENTITY (1,1)	NOT NULL,
     CONSTRAINT pk_voorwerpnummer_rubrieknummer PRIMARY KEY (voorwerp, RubriekOpLaagsteNiveau),
     CONSTRAINT fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
@@ -226,8 +207,8 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Bestand')
   CREATE TABLE Bestand (
-    filenaam VARCHAR(20) DEFAULT 'default'      NOT NULL, --van char(13) naar VARCHAR(20)
-    voorwerp INT IDENTITY                       NOT NULL, -- misschien meer dan 10 dus INT
+    filenaam VARCHAR(255) DEFAULT 'default'      NOT NULL, --van char(13) naar VARCHAR(20)
+    voorwerp INT IDENTITY (1,1)                       NOT NULL, -- misschien meer dan 10 dus INT
     CONSTRAINT pk_filenaam PRIMARY KEY (filenaam),
     CONSTRAINT fk_BestandVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (voorwerp)
     REFERENCES Voorwerp (voorwerpnummer)
@@ -238,10 +219,10 @@ IF NOT exists(SELECT *
               WHERE name = 'Bod')
   CREATE TABLE Bod (
     Bodbedrag   NUMERIC(8, 2) DEFAULT '0.00'        NOT NULL,
-    Gebruiker   VARCHAR(35)                         NOT NULL, --Maximaal 35
+    Gebruiker   VARCHAR(255)                         NOT NULL, --Maximaal 35
     BodDag      DATE DEFAULT '01/01/2017'           NOT NULL, -- hier ook daytime ipv char(8)?
     BodTijdstip TIME(0)                             NOT NULL, --Huidige tijd
-    Voorwerp    INT IDENTITY                        NOT NULL, --INT of NUMERIC
+    Voorwerp    INT IDENTITY (1,1)                      NOT NULL, --INT of NUMERIC
     CONSTRAINT pk_voorwerp_bodbedrag PRIMARY KEY (Voorwerp, Bodbedrag),
     CONSTRAINT fk_BodVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (voorwerpnummer),
@@ -249,13 +230,6 @@ IF NOT exists(SELECT *
     REFERENCES Gebruiker (gebruikersnaam)
   )
 
-CREATE TABLE Test
-(
-  tst_column1 INT,
-  tst_column2 VARCHAR(100),
-  tst_column3 BIT,
-  CONSTRAINT pk_testje PRIMARY KEY (tst_column2)
-)
 /* DIT IS VOOR DROPPEN VAN DE DATABASE
 ALTER TABLE [dbo].[Bestand] DROP CONSTRAINT [fk_BestandVoorwerp_ref_VoorwerpVoorwerpnummer];
 ALTER TABLE [dbo].[Bod] DROP CONSTRAINT [fk_BodVoorwerp_ref_VoorwerpVoorwerpnummer];
@@ -271,7 +245,6 @@ ALTER TABLE [dbo].[Gebruikerstelefoon] DROP CONSTRAINT [fk_GebrTelefoon_ref_Gebr
 ALTER TABLE [dbo].[Feedback] DROP CONSTRAINT [fk_FeedbackVoorwerp_ref_VoorwerpVoorwerpnummer];
 ALTER TABLE [dbo].[VoorwerpInRubriek] DROP CONSTRAINT [fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer];
 ALTER TABLE [dbo].[VoorwerpInRubriek] DROP CONSTRAINT [fk_RubriekRubOpLaagsteNiv_ref_RubriekRubrieknummer];
-ALTER TABLE [dbo].[Test] DROP CONSTRAINT [pk_testje];
 DROP TABLE [Nieuwsbrief];
 DROP TABLE [Vraag];
 DROP TABLE [Landen];
@@ -284,7 +257,6 @@ DROP TABLE [Feedback];
 DROP TABLE [VoorwerpInRubriek];
 DROP TABLE [Bestand];
 DROP TABLE [Bod];
-DROP TABLE [Test];
 
 BEGIN
   DROP FUNCTION [dbo].[CheckPassword]
@@ -293,4 +265,3 @@ END
 GO
 */
 
--- ALTER TABLE [dbo].[Rubriek] DROP CONSTRAINT [fk_rubriek_ref_rubrieknummer];
