@@ -283,7 +283,7 @@ if (isset($_GET['product'])) {
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                             echo $row[0] . ' ';
                             echo $row[1];
-                            $email = $row[3];
+                            $email = $row[2];
                         }
                         ?>
                         </p>

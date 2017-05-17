@@ -57,7 +57,6 @@ IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Landen')
   CREATE TABLE Landen (
-    Id            INT IDENTITY(1,1)        NOT NULL,
     landafkorting CHAR(2)     NOT NULL,
     landnaam      VARCHAR(350) NOT NULL, -- http://www.funtrivia.com/askft/Question33835.html
     CONSTRAINT pk_naam PRIMARY KEY (landnaam),
