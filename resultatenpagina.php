@@ -32,7 +32,9 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
             <div class="resultPanel col-md-2 fixed">
                 <h3 class="textDarkGray">Overzicht</h3>
                 <hr>
-
+                <?php
+                $gekozenRubriek='Computers';
+                ?>
                 <ul class="list-group">
                     <li class="list-group-item">Subrubriek</li>
                     <li class="list-group-item">Subrubriek</li>
@@ -63,13 +65,12 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
             <div class="col-md-10 container-fluid fixed">
                 <?php
                 $gekozenRubriek='Computers';
-                $lap=1;
                 for($i = 0; $i < count($row); $i++) {
                     echo '<div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/';
                     //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
                     $sql = "Select VoorwerpCover from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek'";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -79,7 +80,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     echo '<h4><a class="textDarkGray" href="productpagina.php">';
                     //Haalt de titel uit de database
                     $sql = "Select Titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek'";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
@@ -90,7 +91,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     echo '<div class="description">';
                     //Haalt de beschrijving uit de database
                     $sql = "Select Beschrijving from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek'";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
