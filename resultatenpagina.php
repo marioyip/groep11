@@ -25,11 +25,11 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
     <div class="containerMain">
         <div class="container marginTop20">
             <div class="col-md-12 " align="center">
-                <h1 class="textGreen"><?php echo $titel ?></h1>
+                <h1 class="textGreen">Titel categorie</h1>
             </div>
         </div>
         <div class="container">
-            <div class="resultPanel col-md-3">
+            <div class="resultPanel col-md-2 fixed">
                 <h3 class="textDarkGray">Overzicht</h3>
                 <hr>
 
@@ -63,7 +63,7 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 </div>
 
             </div>
-            <div class="col-md-8 container-fluid">
+            <div class="col-md-9 container-fluid fixed">
             <div class="col-md-3 itemBox roundborder " align="center">
                 <img class="imgStyle roundborder" src="media/<?php
                 //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
