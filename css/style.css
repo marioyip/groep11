@@ -425,7 +425,12 @@ noListStyleType li {
     border-style: solid;
     margin: 10px;
 }
-
+.resultBox {
+    text-align: center;
+    border-color: #e3e3e3;
+    border-width: 1px;
+    border-style: solid;
+}
 .roundborder {
     border-radius: 10px;
 }
