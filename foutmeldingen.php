@@ -8,9 +8,9 @@ $errors = "";
 $voornaam = isset($_POST['voornaam']) ? $_POST['voornaam'] : "";
 $achternaam = isset($_POST['achternaam']) ? $_POST['achternaam'] : "";
 $geboortedatum = isset($_POST['geboortedatum']) ? $_POST['geboortedatum'] : "";
-$username = isset($_POST['username']) ? $_POST['username'] : "";
+$gebruikersnaam = isset($_POST['gebruikersnaam']) ? $_POST['gebruikersnaam'] : "";
 $email = isset($_POST['email']) ? $_POST['email'] : "";
-$password = isset($_POST['password']) ? $_POST['password'] : "";
+$wachtwoord = isset($_POST['wachtwoord']) ? $_POST['wachtwoord'] : "";
 $herhaalWachtwoord = isset($_POST['herhaalWachtwoord']) ? $_POST['herhaalWachtwoord'] : "";
 $rekeningnummer = isset($_POST['rekeningnummer']) ? $_POST['rekeningnummer'] : "";
 $creditcard = isset($_POST['creditcard']) ? $_POST['creditcard'] : "";
@@ -43,16 +43,16 @@ if (empty($geboortedatum)) {
 if (empty($email)) {
     $errors .= "Het emailaddress ontbreekt.<br>";
 }
-if (empty($username)) {
+if (empty($gebruikersnaam)) {
     $errors .= "Je moet een gebruikersnaam invullen.<br>";
 }
-if (empty($password)) {
+if (empty($wachtwoord)) {
     $errors .= "Je moet een wachtwoord invullen.<br>";
 }
 if (empty($herhaalWachtwoord)) {
     $errors .= "Het wachtwoord moet nog een keer worden ingevuld ter bevestiging.<br>";
 }
-if ($herhaalWachtwoord != $password) {
+if ($herhaalWachtwoord != $wachtwoord) {
     $errors .= "De wachtwoorden komen niet overeen.<br>";
 }
 
@@ -70,7 +70,7 @@ if ($errors) {
     echo $errors;
 } else {
     echo $html;
-    insertUserInDatabase($username, $password, $voornaam, $achternaam, $email, $geboortedatum);
+    insertUserInDatabase($gebruikersnaam, $wachtwoord, $voornaam, $achternaam, $email, $geboortedatum);
     header("location: index.php");
 }
 include('footer.php');
