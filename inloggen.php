@@ -26,7 +26,7 @@ $gebruikersnaamErr = $wachtwoordErr = " ";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["gebruikersnaam"]) || empty($_POST["wachtwoord"])) {
-        $leegveld = "De gebruikersnaam en het wachtwoord moeten beide ingevuld zijn!";o
+        $leegveld = "De gebruikersnaam en het wachtwoord moeten beide ingevuld zijn!";
     } else {
         $gebruikersnaam = test_input($_POST["gebruikersnaam"]);
         $wachtwoord = test_input($_POST['wachtwoord']);
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="control-label col-sm-3" for="pwd">Wachtwoord</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="pwd" name="wachtwoord">
-                            <?php if ($leegveld =! "") {
+                            <?php if ($leegveld = !"") {
                                 echo '<div class="alert alert-danger">' . $leegveld . '</div>';
                             } ?>
                         </div>
