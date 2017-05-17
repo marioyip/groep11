@@ -21,7 +21,7 @@
     var countDownDate = new Date("May 27, 2017 13:25:00").getTime();
 
     // Update the count down every 1 second
-    var x = setInterval(function() {
+    var x = setInterval(function () {
 
         // Get todays date and time
         var now = new Date().getTime();
@@ -38,7 +38,7 @@
 
         // Display the result in the element with id="demo"
         document.getElementById("demo").innerHTML = days + " Dagen "
-            + minutes + " Minuten en " + seconds + " Seconden om te bieden!" ;
+            + minutes + " Minuten en " + seconds + " Seconden om te bieden!";
 
         // If the count down is finished, write some text
         if (distance < 0) {
@@ -47,7 +47,6 @@
         }
     }, 1000);
 </script>
-
 
 
 <?php include 'header.php'; // Geeft de header mee aan de index.php pagina
@@ -96,7 +95,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-<!--                    <button href="productpagina.php?product=115" class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>-->
+                    <!--                    <button href="productpagina.php?product=115" class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>-->
                     <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
@@ -122,7 +121,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                             echo $row[0];
                         }
                         ?></p>
-<!--                    <button href="productpagina.php?product=115" class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>-->
+                    <!--                    <button href="productpagina.php?product=115" class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>-->
                     <a href="productpagina.php?product=2" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
@@ -153,7 +152,7 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
                         }
                         ?>
                     </p>
-<!--                    <button href="productpagina.php?product=101" class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>-->
+                    <!--                    <button href="productpagina.php?product=101" class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>-->
                     <a href="productpagina.php?product=3" class="btn btn-default crete" role="button">Bieden</a>
                 </div>
             </div>
@@ -326,74 +325,121 @@ include 'catbar.php'; ?> <!-- Geeft de catbar.php mee aan de index pagina -->
             <h1 class="textDarkGray">Nieuwe veilingen</h1>
         </div>
     </div>
+
+    <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
+    <?php
+    $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY LooptijdbeginDag DESC, LooptijdbeginTijdstip DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $Looptijd[] = $row[0];
+        $LooptijdbeginDag[] = $row[1];
+        $LooptijdbeginTijdstip[] = $row[2];
+        $LooptijdeindeDag[] = $row[3];
+        $LooptijdeindeTijdstip[] = $row[4];
+        $Startprijs[] = $row[5];
+        $Verkoper[] = $row[6];
+        $Koper[] = $row[7];
+        $Verzendkosten[] = $row[8];
+        $Verkoopprijs[] = $row[9];
+        $Beschrijving[] = $row[10];
+        $Betalingswijze[] = $row[11];
+        $Betalingsinstructie[] = $row[12];
+        $Land[] = $row[13];
+        $Plaatsnaam[] = $row[14];
+        $Titel[] = $row[15];
+        $Verzendinstructies[] = $row[16];
+        $Voorwerpnummer[] = $row[17];
+        $VeilingGesloten[] = $row[18];
+        $VoorwerpCover[] = $row[19];
+    }
+    ?>
+
     <div class="container">
-        <a href="productpagina.php?product=3">
-            <div class="col-md-3 itemBox roundborder " align="center">
-                <img class="imgStyle roundborder" src="media/<?php
-                //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
-                $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 1";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
+        <?php
+        for ($i = 0; $i < 4; $i++) {
+            echo '
+                <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
+                    <div class="col-md-3 itemBox roundborder " align="center">
+                        <img class="imgStyle roundborder" src="media/' . $VoorwerpCover[$i] . '"/>
+                        <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
+                        ' . $Titel[$i] . '</a></h4>
+                        <div class="description">
+                        ' . $Beschrijving[$i] . '
+                        </div>
+                        <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
+                    </div>
+                </a>
+            ';
+        }
 
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
-                }
-                ?>"/>
-                <h4><a class="textDarkGray" href="productpagina.php?product=3"><?php
-                        //Haalt de titel uit de database
-                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 1";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></a></h4>
-                <div class="description"><?php
-                    //Haalt de beschrijving uit de database
-                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 1";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    ?></div>
-                <a href="productpagina.php?product=3" class="btn btn-default crete" role="button">Bieden</a>
-            </div>
-        </a>
-
-        <a href="productpagina.php?product=1">
-            <div class="col-md-3 itemBox roundborder" align="center">
-                <img class="imgStyle roundborder" src="media/grasmaaier.jpg">
-                <h4><a class="textDarkGray" href="productpagina.php?product=1">Grasmaaier</a></h4>
-                <div class="description">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna
-                    100% efficiënt.
-                </div>
-                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>
-            </div>
-        </a>
-        <a href="productpagina.php?product=1">
-            <div class="col-md-3 itemBox roundborder" align="center">
-                <img class="imgStyle roundborder" src="media/fauteuil.jpg">
-                <h4><a class="textDarkGray" href="productpagina.php?product=1">Fauteuil</a></h4>
-                <div class="description">
-                    Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële
-                    look.
-                </div>
-                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>
-            </div>
-        </a>
-        <a href="productpagina.php?product=1">
-            <div class="col-md-3 itemBox  roundborder x" align="center">
-                <img class="imgStyle roundborder " src="media/iphone.jpg">
-                <h4><a class="textDarkGray " href="productpagina.php?product=1">iPhone SE</a></h4>
-                <div class="description ">
-                    Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.
-                </div>
-                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>
-            </div>
-        </a>
+        ?>
+        <!--        <a href="productpagina.php?product=3">-->
+        <!--            <div class="col-md-3 itemBox roundborder " align="center">-->
+        <!--                <img class="imgStyle roundborder" src="media/--><?php
+        //                //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
+        //                $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 1";
+        //                $stmt = $db->prepare($sql);
+        //                $stmt->execute();
+        //
+        //                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        //                    echo $row[0];
+        //                }
+        //                ?><!--"/>-->
+        <!--                <h4><a class="textDarkGray" href="productpagina.php?product=3">--><?php
+        //                        //Haalt de titel uit de database
+        //                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 1";
+        //                        $stmt = $db->prepare($sql);
+        //                        $stmt->execute();
+        //
+        //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        //                            echo $row[0];
+        //                        }
+        //                        ?><!--</a></h4>-->
+        <!--                <div class="description">--><?php
+        //                    //Haalt de beschrijving uit de database
+        //                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 1";
+        //                    $stmt = $db->prepare($sql);
+        //                    $stmt->execute();
+        //
+        //                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        //                        echo $row[0];
+        //                    }
+        //                    ?><!--</div>-->
+        <!--                <a href="productpagina.php?product=3" class="btn btn-default crete" role="button">Bieden</a>-->
+        <!--            </div>-->
+        <!--        </a>-->
+        <!--        <a href="productpagina.php?product=1">-->
+        <!--            <div class="col-md-3 itemBox roundborder" align="center">-->
+        <!--                <img class="imgStyle roundborder" src="media/grasmaaier.jpg">-->
+        <!--                <h4><a class="textDarkGray" href="productpagina.php?product=1">Grasmaaier</a></h4>-->
+        <!--                <div class="description">Deze prachtige machine is milieuvriendelijk, energiezuinig en bijna-->
+        <!--                    100% efficiënt.-->
+        <!--                </div>-->
+        <!--                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>-->
+        <!--            </div>-->
+        <!--        </a>-->
+        <!--        <a href="productpagina.php?product=1">-->
+        <!--            <div class="col-md-3 itemBox roundborder" align="center">-->
+        <!--                <img class="imgStyle roundborder" src="media/fauteuil.jpg">-->
+        <!--                <h4><a class="textDarkGray" href="productpagina.php?product=1">Fauteuil</a></h4>-->
+        <!--                <div class="description">-->
+        <!--                    Deze leuke stoel het met zijn bekleding in antraciet en het metalen onderstel een hippe industriële-->
+        <!--                    look.-->
+        <!--                </div>-->
+        <!--                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>-->
+        <!--            </div>-->
+        <!--        </a>-->
+        <!--        <a href="productpagina.php?product=1">-->
+        <!--            <div class="col-md-3 itemBox  roundborder x" align="center">-->
+        <!--                <img class="imgStyle roundborder " src="media/iphone.jpg">-->
+        <!--                <h4><a class="textDarkGray " href="productpagina.php?product=1">iPhone SE</a></h4>-->
+        <!--                <div class="description ">-->
+        <!--                    Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.-->
+        <!--                </div>-->
+        <!--                <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>-->
+        <!--            </div>-->
+        <!--        </a>-->
     </div>
 
 
