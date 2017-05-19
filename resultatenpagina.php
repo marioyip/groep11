@@ -85,7 +85,7 @@ if ($titel == 'Root') {
         <div class="col-md-10 container-fluid fixed">
             <?php
             $sql = ";WITH childs AS (
-                        SELECT * FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'
+                        SELECT * FROM Rubriek WHERE Rubrieknaam = '$gekozenRubriek'
                         UNION ALL
                         SELECT r.* FROM Rubriek r INNER JOIN childs c ON r.Rubriek = c.Rubrieknummer
                     )

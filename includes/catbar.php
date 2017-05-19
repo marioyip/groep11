@@ -16,14 +16,16 @@
                                 <select class="form-control" name="rubriek">
 <!--                                        Selecteert alle hoofdrubrieken, dus rubrieken waar rubriek gelijk is aan -1-->
                                     <?php
-                                    $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam"; //SQL query om het uit de database te lezen
+                                    $sql = "SELECT Rubrieknaam, Rubrieknummer FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam"; //SQL query om het uit de database te lezen
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
                                     $stmt->execute();           //Statement uitvoeren
                                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
                                     {
-                                        for ($i = 0; $i < count($row); $i++) {
-                                            echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
-                                        }
+                                        $namen[] = $row[0];
+                                        $nummers[] = $row[1];
+                                    }
+                                    for ($i = 0; $i < count($namen); $i++) {
+                                        echo '<option value="' . $nummers[$i] . '"> ' . $namen[$i] . ' </option)>';
                                     }
                                     ?>
 </select>
