@@ -13,7 +13,9 @@
 </head>
 <body>
 
-<?php include 'includes/header.php'; //Geeft de header mee
+<?php
+session_start();
+include 'includes/header.php'; //Geeft de header mee
 include 'includes/catbar.php'; ?><!-- Geeft de categorieën bar mee-->
 <main>
 

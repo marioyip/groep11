@@ -13,9 +13,13 @@
 <body>
 
 <?php
-
+session_start();
 include 'includes/header.php';
 include 'includes/catbar.php';
+if($_SESSION['username']!=''){
+    header('location: index.php');
+}
+
 
 if(isset($_POST['submit'])) {
     $foutmelding = '';

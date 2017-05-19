@@ -17,7 +17,7 @@ include 'includes/header.php';
 ?>
 <main>
     <?php
-
+    session_start();
     require_once('includes/functies.php');
     include 'includes/catbar.php';
 
