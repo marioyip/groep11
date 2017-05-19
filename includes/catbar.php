@@ -7,7 +7,7 @@
                       Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">
-                    <form method="GET" action="../zoekfunctie.php">
+                    <form method="GET" action="zoekfunctie.php">
                         <ul class="nav navbar-nav">
                             <li>
                                 <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
