@@ -23,10 +23,10 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <!--                     href="inloggen.php">-->
                         <?php if(isset($_SESSION['username'])){ echo
                         '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="../uitloggen.php">Uitloggen</a>';
+                         href="../groep11/uitloggen.php">Uitloggen</a>';
                         }else{
                             echo '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="../inloggen.php">Inloggen</a>';
+                         href="../groep11/inloggen.php">Inloggen</a>';
                         } ?></button> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
                 <?php if(isset($_SESSION['username'])){ echo'';}else{ echo '
