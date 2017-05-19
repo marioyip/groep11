@@ -15,8 +15,8 @@
 <body>
 
 
-<?php include 'header.php';
-include 'catbar.php';
+<?php include 'includes/header.php';
+include 'includes/catbar.php';
 ?>
 <main>
 
@@ -94,7 +94,7 @@ include 'catbar.php';
                 </div>
             </div>
         </div>
-        <?php include 'footer.php';
+        <?php include 'includes/footer.php';
         ?>
 </body>
 </html>

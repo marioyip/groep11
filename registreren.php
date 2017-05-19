@@ -14,15 +14,16 @@
 
 <?php
 
-include 'header.php';
-include 'catbar.php';
+include 'includes/header.php';
+include 'includes/catbar.php';
 
 if(isset($_POST['submit'])) {
     $foutmelding = '';
 
     $voornaam = $_POST['voornaam'];
-    $emailadress = $_POST['emailadress'];
-    $emailadress2 = $_POST['emailadress2'];
+    $emailadres = $_POST['emailadres'];
+    $emailadres = $_POST['emailadres'];
+    $emailadres2 = $_POST['emailadres'];
     $achternaam = $_POST['achternaam'];
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
@@ -44,7 +45,7 @@ if(isset($_POST['submit'])) {
     if (empty($voornaam)) {
         $foutmelding = 'wel je voornaam invullen!';
     }
-    if ($emailadress2 != $emailadress) {
+    if ($emailadres2 != $emailadres) {
         $foutmelding = 'wel je emailadres (juist) invullen!';
     }
     if (empty($achternaam)) {
@@ -105,26 +106,40 @@ if(isset($_POST['submit'])) {
 
         ini_set('display_errors', 'On');
 
-        require_once('functies.php');
+        require_once('includes/functies.php');
 
         connectToDatabase();
 
         $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 
+        $bevestigingscode = rand();
+
         $sql = "
-        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst, 
+        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
         GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ('$achternaam', '$straat', $huisnr,$straat2,$huisnr2, '$antwoord', '$geboortedatum', '$emailadress', '$gebruikersnaam',
+        VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
         $stmt = $db->prepare($sql);
         $stmt->execute();
+
+        $to = $emailadres;
+        $headers =  'MIME-Version: 1.0' . "\r\n";
+        $headers = 'From: Your name <donotreply@eenmaalandermaal.nl>' . "\r\n";
+        $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $subject = "EenmaalAndermaal - Uw e-mailadres bevestigen.";
+        $message = "Beste $voornaam, \n Klik op onderstaande link om uw account te bevestigen. \n
+        http://iproject11.icasites.nl/mail.php?email=$emailadres&bevestigingscode";
+        $mail = mail($to, $headers, $subject, $message);
+
+        echo '<H1>HET IS GELUKT,</H1>';
 
         echo 'welkom '.$voornaam;
     }
     else{ echo '<div class="alert alert-danger"><strong>Fout!</strong> '.$foutmelding.'</div>';
     }
 }
+
 ?>
 <main>
     <div class="container marginTop20">
@@ -153,31 +168,32 @@ if(isset($_POST['submit'])) {
                                    placeholder="van Dalen">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control marginLeft200" name="emailadress" id="email"
+                            <input type="email" class="form-control marginLeft200" name="emailadres" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Herhaal E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control marginLeft200" name="emailadress2" id="email"
+                            <input type="email" class="form-control marginLeft200" name="emailadres2" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Gebruikersnaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" name="gebruikersnaam" id="pwd"
+                            <input type="text" class="form-control marginLeft200" name="gebruikersnaam" id="gebruikersnaam"
                                    placeholder="keesvdalen">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Wachtwoord:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control marginLeft200" name="wachtwoord" id="email"
+                            <input type="password" class="form-control marginLeft200" name="wachtwoord" id="wachtwoord"
                                    placeholder="Voer een wachtwoord in">
                         </div>
                     </div>
@@ -320,6 +336,79 @@ if(isset($_POST['submit'])) {
     </div>
 </main>
 
+<?php
+
+?>
+
+
+
+
+
+<!--        <div class="containerMain">-->
+<!--            <div class="container-fluid">-->
+<!--                <section class="container">-->
+<!--                    <div class="container-page">-->
+<!--                        <div class="col-md-6">-->
+<!--                            <h3 class="dark-grey">Registration</h3>-->
+<!---->
+<!--                            <div class="form-group col-lg-12">-->
+<!--                                <label>Username</label>-->
+<!--                                <input type="" name="" class="form-control" id="" value="">-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group col-lg-6">-->
+<!--                                <label>Password</label>-->
+<!--                                <input type="password" name="" class="form-control" id="" value="">-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group col-lg-6">-->
+<!--                                <label>Repeat Password</label>-->
+<!--                                <input type="password" name="" class="form-control" id="" value="">-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group col-lg-6">-->
+<!--                                <label>Email Address</label>-->
+<!--                                <input type="" name="" class="form-control" id="" value="">-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group col-lg-6">-->
+<!--                                <label>Repeat Email Address</label>-->
+<!--                                <input type="" name="" class="form-control" id="" value="">-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="col-sm-6">-->
+<!--                                <input type="checkbox" class="checkbox" />Sigh up for our newsletter-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="col-sm-6">-->
+<!--                                <input type="checkbox" class="checkbox" />Send notifications to this email-->
+<!--                            </div>-->
+<!---->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="col-md-6">-->
+<!--                            <h3 class="dark-grey">Terms and Conditions</h3>-->
+<!--                            <p>-->
+<!--                                By clicking on "Register" you agree to The Company's' Terms and Conditions-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                While rare, prices are subject to change based on exchange rate fluctuations --->
+<!--                                should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)-->
+<!--                            </p>-->
+<!---->
+<!--                            <button type="submit" class="btn btn-default">Registereren</button>-->
+<!--<!--                        </div>-->
+<!--</div>-->
+<!--</section>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 
 </html>
@@ -329,5 +418,5 @@ if(isset($_POST['submit'])) {
 
 
 <?php
-include 'footer.php'
+include 'includes/footer.php'
 ?>

@@ -13,8 +13,8 @@
 <body>
 
 <?php
-include 'header.php';
-include 'catbar.php';
+include 'includes/header.php';
+include 'includes/catbar.php';
 ?>
 <main>
 
@@ -30,7 +30,7 @@ include 'catbar.php';
         <div class="" align="center">
             <?php
             global $db;
-            require_once('functies.php');
+            require_once('includes/functies.php');
             require_once 'catbar.php';
             /*          echo '<div class="container marginTop20">';*/
             connectToDatabase();
@@ -80,7 +80,7 @@ include 'catbar.php';
         </div>
     </div>
     <?php
-    include 'footer.php'
+    include 'includes/footer.php'
     ?>
 </body>
 

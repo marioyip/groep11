@@ -16,8 +16,10 @@
 <body>
 
 
-<?php include 'header.php'; //geeft de header mee aan deze pagina
-include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
+<?php
+session_start();
+include 'includes/header.php'; //geeft de header mee aan deze pagina
+include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 ?>
 <main>
 
@@ -143,5 +145,5 @@ include 'catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 </main>
 </body>
 </html>
-<?php include 'footer.php'; //geeft de footer mee aan deze pagina
+<?php include 'includes/footer.php'; //geeft de footer mee aan deze pagina
 ?>

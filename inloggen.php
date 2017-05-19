@@ -13,8 +13,10 @@
 <body>
 
 <?php
-include 'header.php';
-require_once('functies.php');
+session_start();
+
+include 'includes/header.php';
+require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
 connectToDatabase();
@@ -107,6 +109,6 @@ if(isset($_POST['submit'])){
 
 
 <?php
-
-include 'footer.php';
+;
+include 'includes/footer.php';
 

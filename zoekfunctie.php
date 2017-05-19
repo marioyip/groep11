@@ -30,7 +30,7 @@ include('catbar.php'); //Geef de categorieën bar mee
         </div>
         <div class="container marginTop20">
             <?php ini_set('display_errors', 1);
-            require_once('functies.php'); //één keer de functies nodig voor verbinden met Database
+            require_once('includes/functies.php'); //één keer de functies nodig voor verbinden met Database
             connectToDatabase(); //Verbind met de database (tabblad functies.php)
             //Zoekfunctie voor de database
             if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
