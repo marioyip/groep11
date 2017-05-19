@@ -53,15 +53,26 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
                 {
                     $voorwerptitels[] = $row[0];
                     $voorwerpnummers[] = $row[1];
+                    $voorwerpcovers[] = $row[2];
+                    $voorwerpbeschrijvingen[] = $row[3];
                 }
                 echo '<tr>';
                 if (isset($voorwerpnummers) && isset($voorwerptitels)) {
 
                     for ($i = 0; $i < count($voorwerpnummers); $i++) {
+                        echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $voorwerpcovers[$i] . '">';
+                        echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a></h4>';
+                        echo '<div class="description">' . $voorwerpbeschrijvingen[$i] . '</div>';
+                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
+                        echo '</div>';
 
-                        echo '<td>';
-                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
-                        echo '</td>'; //Loop de rij af
+
+
+
+//
+//                        echo '<td>';
+//                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
+//                        echo '</td>'; //Loop de rij af
                     }
                 } else {
                     echo 'Geen resultaten gevonden.';
