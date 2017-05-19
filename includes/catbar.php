@@ -3,11 +3,11 @@
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
         <div class="container-fluid brilliantWhite">
             <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray"
-                  href="../rubrieken2.php">
+                  href="groep11/rubrieken2.php">
                       Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">
-                    <form method="GET" action="groep11/zoekfunctie.php">
+                    <form method="GET" action="zoekfunctie.php">
                         <ul class="nav navbar-nav">
                             <li>
                                 <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
