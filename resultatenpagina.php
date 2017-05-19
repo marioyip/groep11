@@ -19,129 +19,99 @@
 <?php
 session_start();
 include 'includes/header.php'; //geeft de header mee aan deze pagina
-include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
+include 'includes/catbar.php'; //geeft de categorieën balk mee aan deze pagina
+
+if (isset($_GET['rubriek'])) {
+    $gekozenRubriek = $_GET['rubriek'];
+}
+$sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+    $titel = $row[0];
+}
+if ($titel == 'Root') {
+    $titel = 'Rubrieken';
+}
 ?>
 <main>
 
 
-<!--    <div class="containerMain">-->
-<!--        <div class="container marginTop20">-->
-            <div class="col-md-12 " align="center">
-                <h1 class="textGreen">Titel categorie</h1>
-            </div>
-        </div>
-        <div class="container">
-            <div class="resultPanel col-md-2 fixed">
-                <h3 class="textDarkGray">Overzicht</h3>
-                <hr>
+    <!--    <div class="containerMain">-->
+    <!--        <div class="container marginTop20">-->
+    <div class="col-md-12 " align="center">
+        <h1 class="textGreen"><?php echo $titel; ?></h1>
+    </div>
+    </div>
+    <div class="container">
+        <div class="resultPanel col-md-2 fixed">
+            <h3 class="textDarkGray">Overzicht</h3>
+            <hr>
+            <?php
+
+            $sql = "SELECT Rubrieknaam, Rubrieknummer FROM rubriek WHERE rubriek = '$gekozenRubriek' ORDER BY rubrieknaam";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                $rubrieknamen[] = $row[0];
+                $rubrieknummers[] = $row[1];
+            }
+            ?>
+            <ul class="list-group">
                 <?php
-                $gekozenRubriek='Computers';
+                if (isset($rubrieknamen) > 0 && count($rubrieknamen > 0)) {
+                    for ($i = 0; $i < count($rubrieknamen); $i++) {
+                        echo '<li class="list-group-item"><a href="?rubriek=' . $rubrieknummers[$i] . '">' . $rubrieknamen[$i] . '</a></li>';
+                    }
+                }
                 ?>
-                <ul class="list-group">
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                    <li class="list-group-item">Subrubriek</li>
-                </ul>
-                <div class="form-group">
-                    <label for="Order by">Order by</label>
-                    <select class="form-control" id="exampleSelect1">
-                        <option>Ascending</option>
-                        <option>Descending</option>
-                        <option>Price</option>
-                    </select>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" value="">Option 1</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" value="">Option 2</label>
-                </div>
-
+            </ul>
+            <div class="form-group">
+                <label for="Order by">Order by</label>
+                <select class="form-control" id="exampleSelect1">
+                    <option>Ascending</option>
+                    <option>Descending</option>
+                    <option>Price</option>
+                </select>
             </div>
-            <div class="col-md-10 container-fluid fixed">
-                <?php
-                $gekozenRubriek='Computers';
-                for($i = 0; $i < count($row); $i++) {
-                    echo '<div class="col-md-3 itemBox roundborder " align="center">
-                <img class="imgStyle roundborder" src="media/';
-                    //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
-                    $sql = "Select VoorwerpCover from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Option 1</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Option 2</label>
+            </div>
 
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    echo '<h4><a class="textDarkGray" href="productpagina.php">';
-                    //Haalt de titel uit de database
-                    $sql = "Select Titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    echo '</a></h4>';
-                    echo '<div class="description">';
-                    //Haalt de beschrijving uit de database
-                    $sql = "Select Beschrijving from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE Rubrieknaam = '$gekozenRubriek' AND Voorwerpnummer= '$row[i]'";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        echo $row[0];
-                    }
-                    echo '</div>';
-                    echo '<a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>';
+        </div>
+        <div class="col-md-10 container-fluid fixed">
+            <?php
+            $sql = ";WITH childs AS (
+                        SELECT * FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'
+                        UNION ALL
+                        SELECT r.* FROM Rubriek r INNER JOIN childs c ON r.Rubriek = c.Rubrieknummer
+                    )
+                    SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
+                    WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs)";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                $titels[] = $row[0];
+                $nummers[] = $row[1];
+                $covers[] = $row[2];
+                $beschrijvingen[] = $row[3];
+            }
+            if (isset($titels) && count($titels) > 0) {
+                for ($i = 0; $i < count($titels); $i++) {
+                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $covers[$i] . '">';
+                    echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $nummers[$i] . '">' . $titels[$i] . '</a></h4>';
+                    echo '<div class="description">' . $beschrijvingen[$i] . '</div>';
+                    echo '<a href="productpagina.php?product=' . $nummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                     echo '</div>';
                 }
+            } else {
+                echo 'Geen resultaten gevonden.';
+            }
             ?>
-
-<!--            <div class="col-md-3 itemBox roundborder " align="center">-->
-<!--                <img class="imgStyle roundborder" src="media/--><?php
-//                //                    Haalt de voorwerpcover, dus het plaatje uit de database en toont deze
-//                $sql = "SELECT voorwerpcover FROM Voorwerp WHERE Voorwerpnummer = 101";
-//                $stmt = $db->prepare($sql);
-//                $stmt->execute();
-//
-//                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                    echo $row[0];
-//                }
-//                ?><!--"/>-->
-<!--                <h4><a class="textDarkGray" href="productpagina.php">--><?php
-//                        //Haalt de titel uit de database
-//                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 101";
-//                        $stmt = $db->prepare($sql);
-//                        $stmt->execute();
-//
-//                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                            echo $row[0];
-//                        }
-//                        ?><!--</a></h4>-->
-<!--                <div class="description">--><?php
-//                    //Haalt de beschrijving uit de database
-//                    $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 101";
-//                    $stmt = $db->prepare($sql);
-//                    $stmt->execute();
-//
-//                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                        echo $row[0];
-//                    }
-//                    ?><!--</div>-->
-<!--                <a href="productpagina.php" class="btn btn-default crete" role="button">Bieden</a>-->
-<!--            </div>-->
         </div>
-<!--    </div>-->
-<!--    </div>-->
 </main>
 </body>
 </html>
