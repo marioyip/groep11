@@ -1,15 +1,6 @@
-/**************************************************************
-** Bestandsnaam:		Constraints - Overige beperkingsregels.sql
-** Projectgroep:		11
-** Datum:				16 mei 2017
-**************************************************************/
-
 
 use iproject11
-SET IDENTITY_INSERT iproject11.dbo.Feedback OFF
-SET IDENTITY_INSERT iproject11.dbo.Voorwerp OFF
-SET IDENTITY_INSERT iproject11.dbo.Bestand OFF
-SET IDENTITY_INSERT iproject11.dbo.Bod OFF
+
 
 INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',1);
 INSERT INTO Vraag VALUES('Lorem ipsum dolor sit amet,',2);
@@ -562,11 +553,11 @@ VALUES('3',
 
 
 
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00');
+INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
 
 
 
-INSERT INTO Bestand([filenaam]) VALUES('default.png');
+INSERT INTO Bestand([filenaam],[voorwerp]) VALUES('default.png',1);
 
 --ALTER TABLE id NOCHECK CONSTRAINT FK_idCategorie
 --GO
@@ -3975,15 +3966,30 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld
 --GO
 --ALTER TABLE id CHECK CONSTRAINT FK_idCategorie
 
-Insert into voorwerpinrubriek VALUES (28837,1 );
 
--- SELECT * FROM VoorwerpInRubriek
+--INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(1, 28837);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(2, 9355);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(3, 54235);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(4, 28727);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(5, 9843);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(6, 234);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(7, 26672);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(8, 8673);
+
+
+
+
+
+
+
+
+
 --GO
 --ALTER TABLE Rubriek CHECK CONSTRAINT FK_RubriekCategorie
 
 
 
--- INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00');
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00',1);
 
 
 /*
@@ -4126,6 +4132,8 @@ INSERT INTO Gebruiker VALUES('Ruiz','815-6852 Magna. Av.',94,'539-9673 Lectus Av
 INSERT INTO Gebruiker VALUES('Watkins','Ap #596-4590 Proin Avenue',78,'P.O. Box 800, 8860 Mauris Avenue',53,'in aliquet','1959/06/21','turpis.vitae.purus@natoquepenatibus.ca',100,'Russian Federation','Wondelgem',2877,'Dane',100,'P@ssw0rd','wel');
 */
 
-
-
-
+/*
+INSERT INTO Bod ([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES (1, 'hugoiscool23','2017-5-19','20:35:23',1 );
+INSERT INTO Bod ([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES (1.20, 'hugoiscool23','2017-5-19','20:35:23', 1);
+INSERT INTO Bod ([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES (1.50, 'hugoiscool23','2017-5-19','20:35:23', 1);
+*/
