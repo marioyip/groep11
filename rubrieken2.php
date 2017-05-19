@@ -31,7 +31,7 @@ include 'includes/catbar.php';
             <?php
             global $db;
             require_once('includes/functies.php');
-            require_once 'catbar.php';
+            require_once 'includes/catbar.php';
             /*          echo '<div class="container marginTop20">';*/
             connectToDatabase();
 
