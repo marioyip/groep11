@@ -18,7 +18,7 @@ include 'includes/header.php';
 <main>
     <?php
 
-    require_once('functies.php');
+    require_once('includes/functies.php');
     include 'includes/catbar.php';
 
     connectToDatabase();

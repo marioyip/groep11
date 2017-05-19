@@ -1,6 +1,6 @@
 <?php
 
-require_once('functies.php'); //functies.php wordt gebruikt om aan de database te kunnen verbinden
+require_once('includes/functies.php'); //functies.php wordt gebruikt om aan de database te kunnen verbinden
 connectToDatabase(); //deze functie verbindt de webpagina aan de database
 
 ?>

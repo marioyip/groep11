@@ -106,7 +106,7 @@ if(isset($_POST['submit'])) {
 
         ini_set('display_errors', 'On');
 
-        require_once('functies.php');
+        require_once('includes/functies.php');
 
         connectToDatabase();
 

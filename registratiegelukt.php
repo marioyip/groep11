@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-require_once('functies.php');
+require_once('includes/functies.php');
 
 connectToDatabase();
 

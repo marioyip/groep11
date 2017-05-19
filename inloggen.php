@@ -16,7 +16,7 @@
 session_start();
 
 include 'includes/header.php';
-require_once('functies.php');
+require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
 connectToDatabase();

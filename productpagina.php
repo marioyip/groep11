@@ -22,7 +22,7 @@ include 'includes/header.php';
 include 'includes/catbar.php';
 
 ini_set('display_errors', 1);
-require_once('functies.php');
+require_once('includes/functies.php');
 
 connectToDatabase();
 
