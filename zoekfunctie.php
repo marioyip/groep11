@@ -35,11 +35,15 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
             connectToDatabase(); //Verbind met de database (tabblad functies.php)
             //Zoekfunctie voor de database
             if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
-                $searchResult = "'%" . $_GET["zoeken"] . "%'";
+                $searchResult = $_GET["zoeken"];
                 $gekozenRubriek = $_GET["rubriek"];
-                $sql = "Select voorwerp.titel, voorwerp.Voorwerpnummer from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult
-                OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
+                $sql = ";WITH childs AS (
+                        SELECT * FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'
+                        UNION ALL
+                        SELECT r.* FROM Rubriek r INNER JOIN childs c ON r.Rubriek = c.Rubrieknummer
+                    )
+                    SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
+                    WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs) AND v.Titel LIKE '%$searchResult%'";
 
                 $stmt = $db->prepare($sql); //Statement object aanmaken
                 $stmt->execute();           //Statement uitvoeren
@@ -49,13 +53,29 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
                 {
                     $voorwerptitels[] = $row[0];
                     $voorwerpnummers[] = $row[1];
+                    $voorwerpcovers[] = $row[2];
+                    $voorwerpbeschrijvingen[] = $row[3];
                 }
                 echo '<tr>';
-                for ($i = 0; $i < count($row); $i++) {
+                if (isset($voorwerpnummers) && isset($voorwerptitels)) {
 
-                    echo '<td>';
-                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
-                    echo '</td>'; //Loop de rij af
+                    for ($i = 0; $i < count($voorwerpnummers); $i++) {
+                        echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $voorwerpcovers[$i] . '">';
+                        echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a></h4>';
+                        echo '<div class="description">' . $voorwerpbeschrijvingen[$i] . '</div>';
+                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
+                        echo '</div>';
+
+
+
+
+//
+//                        echo '<td>';
+//                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
+//                        echo '</td>'; //Loop de rij af
+                    }
+                } else {
+                    echo 'Geen resultaten gevonden.';
                 }
 
                 echo '</tr>';
