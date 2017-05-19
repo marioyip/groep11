@@ -1,4 +1,4 @@
-<?php
+j<?php
 session_start();
 require_once("functies.php");
 connectToDatabase();

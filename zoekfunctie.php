@@ -15,8 +15,8 @@
 
 <body>
 <?php
-include('header.php'); //Geef de header mee
-include('catbar.php'); //Geef de categorieën bar mee
+include('includes/header.php'); //Geef de header mee
+include('includes/catbar.php'); //Geef de categorieën bar mee
 ?>
 
 
@@ -36,7 +36,7 @@ include('catbar.php'); //Geef de categorieën bar mee
             if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
                 $searchResult = "'%" . $_GET["zoeken"] . "%'";
                 $gekozenRubriek = $_GET["rubriek"];
-                $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
+                $sql = "Select voorwerp.titel, voorwerp.Voorwerpnummer from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
                 INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult
                 OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
 
@@ -46,16 +46,18 @@ include('catbar.php'); //Geef de categorieën bar mee
                 echo '<table>';
                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
                 {
-                    echo '<tr>';
-                    for ($i = 0; $i < count($row); $i++) {
-
-                        echo '<td>';
-                        echo '<a href="productpagina.php">' . $row[$i] . '</a>';
-                        echo '</td>'; //Loop de rij af
-                    }
-
-                    echo '</tr>';
+                    $voorwerptitels[] = $row[0];
+                    $voorwerpnummers[] = $row[1];
                 }
+                echo '<tr>';
+                for ($i = 0; $i < count($row); $i++) {
+
+                    echo '<td>';
+                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
+                    echo '</td>'; //Loop de rij af
+                }
+
+                echo '</tr>';
                 echo '</table>';
 
             } else {
@@ -71,7 +73,7 @@ include('catbar.php'); //Geef de categorieën bar mee
 
 </main>
 <?php
-include('footer.php'); //geeft de footer mee
+include('includes/footer.php'); //geeft de footer mee
 ?>
 </body>
 

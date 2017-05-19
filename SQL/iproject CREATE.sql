@@ -9,6 +9,75 @@ USE master
 USE iproject11
 
 GO
+CREATE TRIGGER test ON Bod
+FOR INSERT, UPDATE
+AS
+  BEGIN
+    DECLARE @ID NUMERIC(12)
+    SET @ID = (SELECT TOP 1 Voorwerp FROM inserted)
+    DECLARE @BodBedrag NUMERIC(8,2)
+    SET @BodBedrag = (SELECT BodBedrag FROM inserted)
+    DECLARE @vorig_bod NUMERIC(8,2);
+    SET @vorig_bod = (SELECT TOP 1 Bodbedrag FROM Bod WHERE Bodbedrag NOT IN (SELECT TOP 1 Bodbedrag FROM Bod WHERE Bod.Voorwerp = @ID ORDER BY Bodbedrag DESC) AND Bod.Voorwerp = @ID ORDER BY Bodbedrag DESC);
+    IF @vorig_bod>0.0
+      BEGIN
+        IF @BodBedrag>0.99 AND @BodBedrag > @vorig_bod -- Groter dan 1 en groter dan vorig bod
+          BEGIN
+            IF @BodBedrag >0.99 AND @BodBedrag <50
+              BEGIN
+                IF @BodBedrag-@vorig_bod<0.50
+                  BEGIN
+                    RAISERROR ('Een bod tussen 1 en 50 Euro moet met minimaal 50 eurocent worden verhoogd',16,1);
+                    ROLLBACK
+                  END
+              END
+            IF @BodBedrag>49.99 AND @BodBedrag<500
+              BEGIN
+                IF @BodBedrag-@vorig_bod<1.00
+                  BEGIN
+                    RAISERROR ('Een bod tussen 50 en 500 Euro moet met minimaal 1 euro worden verhoogd',16,1);
+                    ROLLBACK
+                  END
+              END
+            IF @BodBedrag>499.99 AND @BodBedrag<1000
+              BEGIN
+                IF @BodBedrag-@vorig_bod<5.00
+                  BEGIN
+                    RAISERROR ('Een bod tussen 500 en 1000 Euro moet met minimaal 5 euro worden verhoogd',16,1);
+                    ROLLBACK
+                  END
+              END
+            IF @BodBedrag>999.99 AND @BodBedrag<5000
+              BEGIN
+                IF @BodBedrag-@vorig_bod<10.00
+                  BEGIN
+                    RAISERROR ('Een bod tussen 1000 en 5000 Euro moet met minimaal 10 euro worden verhoogd',16,1);
+                    ROLLBACK
+                  END
+              END
+            IF @BodBedrag>5000
+              BEGIN
+                IF @BodBedrag-@vorig_bod<50.00
+                  BEGIN
+                    RAISERROR ('Een bod vanaf 5000 Euro moet met minimaal 50 euro worden verhoogd',16,1);
+                    ROLLBACK
+                  END
+              END
+          END
+        ELSE
+          BEGIN
+            RAISERROR ('Bod is kleiner dan of gelijk aan huidige hoogste bod',16,1);
+            ROLLBACK
+          END
+      END
+  END
+INSERT INTO Bod VALUES (1, 'hugoiscool23','2017-5-19','20:35:23');
+INSERT INTO Bod VALUES (1.20, 'hugoiscool23','2017-5-19','20:35:23');
+INSERT INTO Bod VALUES (1.21, 'hugoiscool23','2017-5-19','20:35:23');
+
+SELECT * FROM BOD
+
+GO
 CREATE FUNCTION CheckPassword(@pass VARCHAR(30))
   RETURNS INT
 AS

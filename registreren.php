@@ -117,7 +117,7 @@ if(isset($_POST['submit'])) {
         $sql = "
         INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
         GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
+        VALUES ('$achternaam', '$straat', $huisnr,mssql.iproject.icasites.nl '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
         $stmt = $db->prepare($sql);
