@@ -37,8 +37,8 @@ include('catbar.php'); //Geef de categorieën bar mee
                 $searchResult = "'%" . $_GET["zoeken"] . "%'";
                 $gekozenRubriek = $_GET["rubriek"];
                 $sql = "Select voorwerp.titel from voorwerp INNER JOIN voorwerpinrubriek ON voorwerp.voorwerpnummer = voorwerpinrubriek.voorwerp 
-                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult
-                OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
+                INNER JOIN rubriek on voorwerpinrubriek.RubriekOpLaagsteNiveau = rubriek.rubrieknummer WHERE voorwerp.titel like $searchResult 
+                AND rubriek.rubrieknaam = '$gekozenRubriek' OR Rubriek.rubriek IN( SELECT Rubrieknummer From RUbriek WHERE Rubrieknaam = '$gekozenRubriek')";
 
                 $stmt = $db->prepare($sql); //Statement object aanmaken
                 $stmt->execute();           //Statement uitvoeren

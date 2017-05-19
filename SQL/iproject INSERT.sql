@@ -8,6 +8,7 @@
 use iproject11
 SET IDENTITY_INSERT iproject11.dbo.Feedback OFF
 SET IDENTITY_INSERT iproject11.dbo.Voorwerp OFF
+SET IDENTITY_INSERT iproject11.dbo.VoorwerpInRubriek OFF
 SET IDENTITY_INSERT iproject11.dbo.Bestand OFF
 SET IDENTITY_INSERT iproject11.dbo.Bod OFF
 
@@ -562,7 +563,7 @@ VALUES('3',
 
 
 
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00');
+INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00');
 
 
 
@@ -3975,15 +3976,16 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld
 --GO
 --ALTER TABLE id CHECK CONSTRAINT FK_idCategorie
 
-Insert into voorwerpinrubriek VALUES (28837,1 );
 
--- SELECT * FROM VoorwerpInRubriek
+INSERT INTO VoorwerpInRubriek([RubriekOpLaagsteNiveau]) VALUES(32);
+
+
 --GO
 --ALTER TABLE Rubriek CHECK CONSTRAINT FK_RubriekCategorie
 
 
 
--- INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00');
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00');
 
 
 /*
