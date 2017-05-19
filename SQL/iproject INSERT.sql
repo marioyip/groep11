@@ -550,8 +550,46 @@ VALUES('3',
        'pokemonkaarten.jpg'
 );
 
-
-
+INSERT INTO Voorwerp(
+  [Looptijd],
+  [LooptijdbeginDag],
+  [LooptijdbeginTijdstip],
+  [LooptijdeindeDag],
+  [LooptijdeindeTijdstip],
+  [Startprijs],
+  [Verkoper],
+  [Koper],
+  [Verzendkosten],
+  [Verkoopprijs],
+  [Beschrijving],
+  [Betalingswijze],
+  [Betalingsinstructie],
+  [Land],
+  [Plaatsnaam],
+  [Titel],
+  [Verzendinstructies],
+  [VeilingGesloten],
+  [VoorwerpCover])
+VALUES('1',
+  '05/20/2017',
+  '14:51:00',
+  '05/21/2017',
+  '14:51:00',
+  '2.00',
+  'hugoiscool23verkoper',
+  'hugoiscool23',
+  '1.95',
+  '4.00',
+  'Voor als oe oewe telefoon te vaak laat kledere',
+       'Paypal',
+       'Doet maar overmaken',
+       'Netherlands',
+       'Den Bosch',
+       'Samsung S7 Edge hoesje',
+       'Via post',
+       '',
+       'hoesje.jpg'
+);
 
 
 INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
@@ -3969,7 +4007,7 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld
 --ALTER TABLE id CHECK CONSTRAINT FK_idCategorie
 
 
---INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(1, 28837);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(1, 28837);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(2, 9355);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(3, 54235);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(4, 28727);
@@ -3977,6 +4015,9 @@ INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(5, 98
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(6, 234);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(7, 26672);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(8, 8673);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(9, 68037);
+
+
 
 
 
