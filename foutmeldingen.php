@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("functies.php");
+require_once("includes/functies.php");
 connectToDatabase();
 
 $html = "";
