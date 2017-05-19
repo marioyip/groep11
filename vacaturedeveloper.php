@@ -16,7 +16,9 @@
 <body>
 
 
-<?php include 'includes/header.php';
+<?php
+session_start();
+include 'includes/header.php';
 include 'includes/catbar.php';
 ?>
 <main>
