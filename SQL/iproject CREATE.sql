@@ -1,7 +1,7 @@
 /**************************************************************
-** Bestandsnaam:		Constraints - Overige beperkingsregels.sql
+** Bestandsnaam:		Hugo fixed This Shit
 ** Projectgroep:		11
-** Datum:				16 mei 2017
+** Datum:				19 mei 2017
 **************************************************************/
 
 USE master
@@ -11,7 +11,7 @@ USE iproject11
 
 
 GO
-CREATE FUNCTION CheckPassword(@pass VARCHAR(30))
+CREATE FUNCTION CheckPassword(@pass VARCHAR(255))
   RETURNS INT
 AS
   BEGIN
@@ -35,6 +35,25 @@ AS
     RETURN CASE WHEN ISNULL(@email, '') <> '' AND @email LIKE '%_@%_.__%'
       THEN 1
            ELSE 0 END
+  END
+GO
+
+GO
+CREATE FUNCTION CheckIfOfferFromSeller(@voorwerpnummer INT ,@gebruikersnaam VARCHAR(255))
+  RETURNS BIT
+AS
+  BEGIN
+    DECLARE @OfferNotFromverkoper BIT = 1
+    DECLARE @verkoper VARCHAR(30)
+
+    SELECT @verkoper = Verkoper
+    FROM Voorwerp
+    WHERE Voorwerpnummer = @voorwerpnummer
+
+    IF (@verkoper = @gebruikersnaam)
+      SET @OfferNotFromverkoper = 0;
+
+    RETURN @OfferNotFromverkoper
   END
 GO
 
@@ -90,18 +109,20 @@ IF NOT exists(SELECT *
     Voornaam       VARCHAR(75)                      NOT NULL,
     Vraag          INT                              NOT NULL,
     Wachtwoord     VARCHAR(255)                      NOT NULL,
-    Verkoper       VARCHAR(4) DEFAULT 'niet'        NOT NULL,
+    Verkoper       INT									DEFAULT 0        NOT NULL,
     CONSTRAINT pk_gebuikersnaam PRIMARY KEY (gebruikersnaam),
     CONSTRAINT fk_GebruikerVraag_ref_VraagVraagnummer FOREIGN KEY (Vraag)
     REFERENCES Vraag (vraagnummer),
     CONSTRAINT fk_GebruikerLand_ref_landnaam FOREIGN KEY (Land)
     REFERENCES Landen (Landnaam),
     CONSTRAINT ck_verkoper CHECK (Verkoper IN
-                                  ('wel', 'niet')), -- Kijkt of er Wel / Niet is ingevoerd bij de vraag of de gebruiker een verkoper is
-    CONSTRAINT CheckPasswordRules CHECK (dbo.CheckPassword(Wachtwoord) >= 1 )
+                                  (1, 0)), -- Kijkt of er Wel / Niet is ingevoerd bij de vraag of de gebruiker een verkoper is
+    CONSTRAINT ck_PasswordRules CHECK (dbo.CheckPassword(Wachtwoord) >= 1 ),
+    CONSTRAINT ck_Huisnummer1NietMin CHECK (Huisnummer1 > 0),
+    CONSTRAINT ck_HuisNummer2NietMin CHECK (Huisnummer2 > 0 OR Huisnummer2 IS NULL),
+    CONSTRAINT ck_Jaartal CHECK (Year(GeboorteDag) >= '1900'),
+    CONSTRAINT ck_18 CHECK (Year(GeboorteDag) <= '1999')
   )
---INSERT INTO Landen VALUES (21,'BE', 'Belgium');
---INSERT INTO Gebruiker VALUES('Mccoy','kraanvoglstraat',93,'Appartment',19,'Lorem','1999/05/05','Nuncegestasnet','Gebruikersnaam','Belgium','Bhavnagar','30700','Preston','67','1234567j','wel');
 
 
 IF NOT exists(SELECT *
@@ -109,15 +130,16 @@ IF NOT exists(SELECT *
               WHERE name = 'Verkoper')
   CREATE TABLE Verkoper (
     Bank             VARCHAR(255) NOT NULL,
-    ControleOptie    VARCHAR(255)  NOT NULL,
-    Creditcardnummer VARCHAR(25)  NULL,
+    ControleOptie    VARCHAR(35)  NOT NULL,
+    Creditcard VARCHAR(25)  NULL,
     Gebruiker        VARCHAR(255)  NOT NULL,
     Bankrekening     VARCHAR(31)  NULL, -- rekeningnummer is 19 karakters -- int(7) volgens appendix E
     CONSTRAINT pk_gebruikersnaam PRIMARY KEY (gebruiker),
     CONSTRAINT fk_VerkoperGebruiker_ref_GebruikerGebruikersnaam FOREIGN KEY (Gebruiker)
     REFERENCES Gebruiker (Gebruikersnaam),
     CONSTRAINT ck_controleoptienaam CHECK (ControleOptie IN ('Creditcard', 'Post')),
-    --CONSTRAINT ck_bankOfcredit									CHECK											Als Creditcardnummer en Bankrekening allebei NULL zijn moet ייn van de twee NOT NULL worden
+    CONSTRAINT Ck_BankOrCreditcard CHECK(Bankrekening IS NOT NULL OR Creditcard IS NOT NULL), --B3
+    CONSTRAINT Ck_CreditcardFilled CHECK(ControleOptie = 'Creditcard' AND Creditcard IS NOT NULL OR ControleOptie != 'Creditcard' AND Creditcard IS NULL) --B2
   )
 
 IF NOT exists(SELECT *
@@ -176,7 +198,8 @@ IF NOT exists(SELECT *
     REFERENCES Gebruiker (Gebruikersnaam),
     CONSTRAINT ck_looptijd CHECK (looptijd IN (1, 3, 5, 7, 10)),
     CONSTRAINT fk_VoorwerpLand_ref_landnaam FOREIGN KEY (Land)
-    REFERENCES Landen (Landnaam)
+    REFERENCES Landen (Landnaam),
+    CONSTRAINT ck_betalingswijze CHECK (betalingswijze='Contant' OR betalingswijze='Bank/Giro' OR betalingswijze='Paypal')
   )
 
 IF NOT exists(SELECT *
@@ -234,11 +257,13 @@ IF NOT exists(SELECT *
     CONSTRAINT fk_BodVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (voorwerpnummer),
     CONSTRAINT fk_BodGebruiker_ref_GebruikerGebruikersnaam FOREIGN KEY (Gebruiker)
-    REFERENCES Gebruiker (gebruikersnaam)
+    REFERENCES Gebruiker (gebruikersnaam),
+    CONSTRAINT CHK_CheckIfOfferIsNotHisOwn CHECK (dbo.CheckIfOfferFromSeller(voorwerp, Gebruiker) = 1)
   )
 
+--B5
 GO
-CREATE TRIGGER test ON Bod
+CREATE TRIGGER BodbedragHoger ON Bod
 FOR INSERT, UPDATE
 AS
   BEGIN
@@ -301,8 +326,51 @@ AS
       END
   END
 
+-- B1
+Go
+CREATE TRIGGER Verkoper_Gebruiker_Moet_verkoper ON Verkoper
+FOR INSERT,UPDATE
+AS
+  BEGIN
+    IF EXISTS(SELECT 1 FROM Gebruiker,Verkoper WHERE Verkoper.Gebruiker = Gebruiker.gebruikersnaam AND Gebruiker.Verkoper = 0)
+      BEGIN
+        RAISERROR ('Verkoper staat niet als verkopende gebruiker geregistreerd!',16,1)
+        ROLLBACK
+      END
+  END
 
-SELECT * FROM BOD
+
+GO
+CREATE TRIGGER Gebruiker_Niet_Bieden_Eigen_Bod ON Bod
+FOR INSERT,UPDATE
+AS
+  BEGIN
+    IF EXISTS(SELECT 1 FROM Gebruiker,Verkoper WHERE Verkoper.Gebruiker = Gebruiker.gebruikersnaam AND Gebruiker.Verkoper = 0)
+      BEGIN
+        RAISERROR ('Verkoper staat niet als verkopende gebruiker geregistreerd!',16,1)
+        ROLLBACK
+      END
+  END
+
+
+
+
+--B4
+Go
+CREATE TRIGGER Max_vier_bestanden_per_voorwerp ON Bestand
+FOR INSERT
+AS
+  BEGIN
+    DECLARE @ID NUMERIC(12)
+    SET @ID = (SELECT TOP 1 Voorwerp FROM inserted)
+    IF (SELECT COUNT(*) FROM Bestand WHERE Bestand.Voorwerp=@ID)>4
+      BEGIN
+        RAISERROR ('Één voorwerp mag maximaal vier bestanden hebben',16,1)
+        ROLLBACK
+      END
+  END
+
+
 
 /* DIT IS VOOR DROPPEN VAN DE DATABASE
 ALTER TABLE [dbo].[Bestand] DROP CONSTRAINT [fk_BestandVoorwerp_ref_VoorwerpVoorwerpnummer];
@@ -335,6 +403,7 @@ DROP TABLE [Bod];
 BEGIN
   DROP FUNCTION [dbo].[CheckPassword]
   DROP FUNCTION [dbo].[fnIsValidEmail]
+  DROP FUNCTION [dbo].[CheckIfOfferFromSeller]
 END
 GO
 */

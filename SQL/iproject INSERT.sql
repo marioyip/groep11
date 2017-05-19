@@ -251,17 +251,18 @@ INSERT INTO Landen VALUES ( 'BE',  'Belgium');
 INSERT INTO Landen VALUES ( 'SY',  'Syria');
 INSERT INTO Landen VALUES ( 'MD',  'Moldova');
 
-INSERT INTO Gebruiker VALUES('Roth','7630 Aenean Rd.',14,'825-6031 Nunc Street',80,'enim nisl','1953/06/16','a.tortor.Nunc@Praesent.edu',1,'South Africa','Baiso',9442,'Adam',1,'P@ssw0rd','wel');
-INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'','','Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231','wel');
-INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'','','Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23verkoper','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231','wel');
+INSERT INTO Gebruiker VALUES('Roth','7630 Aenean Rd.',14,'825-6031 Nunc Street',80,'enim nisl','1953/06/16','a.tortor.Nunc@Praesent.edu',1,'South Africa','Baiso',9442,'Adam',1,'P@ssw0rd',0);
+INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'',NULL,'Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231',1);
+INSERT INTO Gebruiker VALUES('Kosterman','Kraanvogelstraat',34,'',NULL,'Dit is mijn antwoordtekst','1999/05/02','hugo4ever@live.nl','HugoisCool23verkoper','Netherlands','Velp','6883CL','Hugo',2,'slechtWachtwoord1231',1);
 
-INSERT INTO Verkoper  VALUES('ABN Amro','Post',88734841406,'hugoiscool23verkoper',4068856036458825216);
+INSERT INTO Verkoper  VALUES('ABN Amro','Post',NULL,'hugoiscool23verkoper',4068856036458825216);
+-- INSERT INTO Verkoper  VALUES('ABN Amro','Post',88734841406,1,4068856036458825216); Geeft een foutmelding, dit is juist
 
 INSERT INTO Gebruikerstelefoon VALUES('hugoiscool23', '31-996-705-9682');
 
 
 
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/15/2016','00:00:00','12/11/2016','00:00:00','4.70','hugoiscool23verkoper','hugoiscool23','6.95','14.50','Ík verkoop het omdat ik het niet meer nodig heb','Creditcard','Gooi het door de bus','Eritrea','Velp','Laptop','Gelieve het goed te verpakken',1,'Laptop.png');
+INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/15/2016','00:00:00','12/11/2016','00:00:00','4.70','hugoiscool23verkoper','hugoiscool23','6.95','14.50','Ík verkoop het omdat ik het niet meer nodig heb','Paypal','Gooi het door de bus','Eritrea','Velp','Laptop','Gelieve het goed te verpakken',1,'Laptop.png');
 INSERT INTO Voorwerp(
   [Looptijd],
   [LooptijdbeginDag],
@@ -293,7 +294,7 @@ VALUES('7',
   '15.00',
   '800.00',
   'Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.',
-       'creditcard',
+       'Bank/Giro',
        'kom langs om te betalen',
        'Eritrea',
        'Asmara',
@@ -334,7 +335,7 @@ VALUES('7',
   '15.00',
   '450.00',
   'Deze fauteuil is zwart',
-       'Post',
+       'Paypal',
        'Geleive contant want ik hedde geen geeld',
        'Netherlands',
        'Velp',
@@ -375,7 +376,7 @@ VALUES('7',
   '15.00',
   '32.50',
   'Deze grasmaaier is poah energie zuunig',
-       'Creditcard',
+       'Paypal',
        'Ik heb geen contant geld dus contant',
        'Netherlands',
        'Velp',
@@ -416,7 +417,7 @@ VALUES('3',
   '3400.00',
   '5000.00',
   'Deze auto is echt heel erg  energie zuinig! echt een topper',
-       'Creditcard',
+       'Contant',
        'Ik heb geen contant geld dus contant',
        'Netherlands',
        'Velp',
@@ -457,7 +458,7 @@ VALUES('3',
   '12.00',
   '5.00',
   'Ben je zwaar autistisch en weet je zeker dat je een achterstand hebt? dan is deze fidget spinner ideaal voor jou!',
-       'Creditcard',
+       'Bank/Giro',
        'Ik heb geen contant geld dus contant',
        'Netherlands',
        'Velp',
@@ -498,7 +499,7 @@ VALUES('3',
   '12.00',
   '5.00',
   'Kom lekker tot rust in dit badje',
-       'Creditcard',
+       'Contant',
        'Ik heb geen contant geld dus contant',
        'Netherlands',
        'Velp',
@@ -539,7 +540,7 @@ VALUES('3',
   '12.00',
   '5.00',
   'Its time to ddddd-dddd uel!!!!',
-       'Creditcard',
+       'Contant',
        'Ik heb geen contant geld dus contant',
        'Netherlands',
        'Velp',
@@ -557,7 +558,8 @@ INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdst
 
 
 
-INSERT INTO Bestand([filenaam],[voorwerp]) VALUES('default.png',1);
+INSERT INTO Bestand([filenaam],[voorwerp]) VALUES('sdfsdfsdf.png',1);
+SELECT * FROM Bestand
 
 --ALTER TABLE id NOCHECK CONSTRAINT FK_idCategorie
 --GO
@@ -3990,6 +3992,7 @@ INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(8, 86
 
 
 INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00',1);
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('8.00','hugoiscool23','2017/03/08','00:00:00',1);
 
 
 /*

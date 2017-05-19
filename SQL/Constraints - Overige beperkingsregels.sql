@@ -127,7 +127,7 @@ GO
 
 ------------------------
 --B6 Tabellen Bod en Voorwerp:
---Een gebruiker mag geen bod op ��n van zijn/haar eigen voorwerpen uitbrengen.
+--Een gebruiker mag geen bod op één van zijn/haar eigen voorwerpen uitbrengen.
 ALTER TABLE Bod 
 ADD CONSTRAINT CHK_CheckIfOfferIsNotHisOwn 
 CHECK (dbo.CheckIfOfferFromSeller(product_id, gebruikersnaam) = 1)
