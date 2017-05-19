@@ -10,9 +10,9 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <header>
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
-            <a class="navbar-header" href="../index.php">
+            <a class="navbar-header" href="../groep11/index.php">
                 <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="../index.php">
+            <a class="navbar-header " href="../groep11/index.php">
                 <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.png" alt="tekstlogo"/>
             </a>
         </div>
@@ -32,7 +32,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
                 <?php if(isset($_SESSION['username'])){ echo'';}else{ echo '
                 <li>
                     <a class="navbar-right glyphicon  	glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                       href="../registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
+                       href="../groep11/registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
                 </li>
                 '; }?>
             </ul>
