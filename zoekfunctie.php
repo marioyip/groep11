@@ -15,6 +15,7 @@
 
 <body>
 <?php
+session_start();
 include('includes/header.php'); //Geef de header mee
 include('includes/catbar.php'); //Geef de categorieën bar mee
 ?>
