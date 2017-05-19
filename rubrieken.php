@@ -33,7 +33,7 @@ include 'includes/header.php';
         echo '<ul>';
         for ($i = 0; $i < count($row); $i++) {
             echo '<li class="list-group-item list-group-item-action backgroundLightGrey "><a href = "" >' . $row[$i] . '</a ></li >';
-            $sql2 = "SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubriek WHERE rubrieknaam = '$row[$i]') ORDER BY rubrieknaam";
+            $sql2 = "SELECT rubrieknaam FROM rubriek WHERE rubriek IN (SELECT rubrieknummer FROM rubrie  xk WHERE rubrieknaam = '$row[$i]') ORDER BY rubrieknaam";
             $stmt2 = $db->prepare($sql2);
             $stmt2->execute();
             while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {
