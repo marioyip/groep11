@@ -191,10 +191,10 @@ IF NOT exists(SELECT *
 
 IF NOT exists(SELECT *
               FROM sysobjects
-              WHERE name = 'Voorwerp in Rubriek')
+              WHERE name = 'VoorwerpInRubriek')
   CREATE TABLE VoorwerpInRubriek (
     RubriekOpLaagsteNiveau INTEGER				NOT NULL,
-    Voorwerp               INT IDENTITY (1,1)	NOT NULL,
+    Voorwerp               INT	          NOT NULL,
     CONSTRAINT pk_voorwerpnummer_rubrieknummer PRIMARY KEY (voorwerp, RubriekOpLaagsteNiveau),
     CONSTRAINT fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
