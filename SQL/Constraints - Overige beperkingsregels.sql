@@ -6,7 +6,7 @@
 
 --B1 Tabellen Verkoper en Gebruiker:
 --Tabellen Verkoper en Gebruiker:
---Kolom Verkoper(Gebruiker) moet uitsluitend alle gebruikers bevatten, die in kolom Gebruiker(Verkoper?) de waarde ‘wel’ hebben.
+--Kolom Verkoper(Gebruiker) moet uitsluitend alle gebruikers bevatten, die in kolom Gebruiker(Verkoper?) de waarde ï¿½welï¿½ hebben.
 ALTER TABLE Verkoper ADD CONSTRAINT CHK_IsVerkoper CHECK (dbo.[CheckIsSeller](Verkoper) = 1)
 GO
 
@@ -26,7 +26,7 @@ GO
 
 ------------------------
 --B2 Tabel Verkoper:
---Als kolom Controle-optie de waarde ‘Creditcard’ heeft, dan moet kolom Creditcard een waarde bevatten, en anders moet kolom Creditcard een NULL-waarde bevatten.
+--Als kolom Controle-optie de waarde ï¿½Creditcardï¿½ heeft, dan moet kolom Creditcard een waarde bevatten, en anders moet kolom Creditcard een NULL-waarde bevatten.
 ALTER TABLE Verkoper 
 ADD CONSTRAINT CHK_CreditcardAvailable 
 CHECK (([ControleOptie] = 'Creditcard') AND [Creditcardnummer] IS NOT NULL);
@@ -34,7 +34,7 @@ GO
 
 ------------------------
 --B3 Tabel Verkoper:
---In één tupel mogen kolommen Bankrekening en Creditcard niet allebei een NULL-waarde bevatten 
+--In ï¿½ï¿½n tupel mogen kolommen Bankrekening en Creditcard niet allebei een NULL-waarde bevatten 
 --(voor elke verkoper moet ofwel een bankrekening ofwel een creditcard bekend zijn (allebei mag ook)).
 ALTER TABLE Verkoper ADD CONSTRAINT CHK_CreditcardOrAccountNumberNull 
 CHECK (	Bankrekening = NULL	AND Creditcardnummer = NULL	);
@@ -60,10 +60,7 @@ GO
 ------------------------
 --B4 Tabel Bestand:
 --Per voorwerp kunnen maximaal 4 afbeeldingen opgeslagen worden.
-ALTER TABLE Bestand 
-ADD CONSTRAINT CHK_CheckMaxFour
-CHECK (dbo.Contol_NOT_more_then_4_images(product_id) = 1);
-GO
+
 
 CREATE FUNCTION [dbo].[Contol_not_more_then_4_images] (@product_number INT)
 RETURNS INT
@@ -83,6 +80,10 @@ BEGIN
 END;
 GO
 
+ALTER TABLE Bestand
+	ADD CONSTRAINT CHK_CheckMaxFour
+CHECK (dbo.Contol_NOT_more_then_4_images(@product_id) = 1);
+GO
 ------------------------
 --B5 - Tabel Bod
 --Een nieuw bod moet hoger zijn dan al 
@@ -126,7 +127,7 @@ GO
 
 ------------------------
 --B6 Tabellen Bod en Voorwerp:
---Een gebruiker mag geen bod op één van zijn/haar eigen voorwerpen uitbrengen.
+--Een gebruiker mag geen bod op ï¿½ï¿½n van zijn/haar eigen voorwerpen uitbrengen.
 ALTER TABLE Bod 
 ADD CONSTRAINT CHK_CheckIfOfferIsNotHisOwn 
 CHECK (dbo.CheckIfOfferFromSeller(product_id, gebruikersnaam) = 1)
@@ -154,3 +155,68 @@ END;
 GO
 
 ------------------------
+
+------------------------ B5 Alternatief
+GO
+CREATE TRIGGER Minimaal_verhoging_bod ON Bod
+FOR INSERT, UPDATE
+AS
+	BEGIN
+		DECLARE @ID NUMERIC(12)
+		SET @ID = (SELECT TOP 1 Voorwerp FROM inserted)
+		DECLARE @BodBedrag NUMERIC(8,2)
+		SET @BodBedrag = (SELECT BodBedrag FROM inserted)
+		DECLARE @vorig_bod NUMERIC(8,2);
+		SET @vorig_bod = (SELECT TOP 1 Bodbedrag FROM Bod WHERE Bodbedrag NOT IN (SELECT TOP 1 Bodbedrag FROM Bod WHERE Bod.Voorwerp = @ID ORDER BY Bodbedrag DESC) AND Bod.Voorwerp = @ID ORDER BY Bodbedrag DESC);
+		IF @vorig_bod>0.0
+			BEGIN
+				IF @BodBedrag>0.99 AND @BodBedrag > @vorig_bod --bigger than one and not first bid
+					BEGIN
+						IF @BodBedrag >0.99 AND @BodBedrag <50
+							BEGIN
+								IF @BodBedrag-@vorig_bod<0.50
+									BEGIN
+										RAISERROR ('Een bod tussen 1 en 50 Euro moet met minimaal 50 eurocent worden verhoogd',16,1);
+										ROLLBACK
+									END
+							END
+						IF @BodBedrag>49.99 AND @BodBedrag<500
+							BEGIN
+								IF @BodBedrag-@vorig_bod<1.00
+									BEGIN
+										RAISERROR ('Een bod tussen 50 en 500 Euro moet met minimaal 1 euro worden verhoogd',16,1);
+										ROLLBACK
+									END
+							END
+						IF @BodBedrag>499.99 AND @BodBedrag<1000
+							BEGIN
+								IF @BodBedrag-@vorig_bod<5.00
+									BEGIN
+										RAISERROR ('Een bod tussen 500 en 1000 Euro moet met minimaal 5 euro worden verhoogd',16,1);
+										ROLLBACK
+									END
+							END
+						IF @BodBedrag>999.99 AND @BodBedrag<5000
+							BEGIN
+								IF @BodBedrag-@vorig_bod<10.00
+									BEGIN
+										RAISERROR ('Een bod tussen 1000 en 5000 Euro moet met minimaal 10 euro worden verhoogd',16,1);
+										ROLLBACK
+									END
+							END
+						IF @BodBedrag>5000
+							BEGIN
+								IF @BodBedrag-@vorig_bod<50.00
+									BEGIN
+										RAISERROR ('Een bod vanaf 5000 Euro moet met minimaal 50 euro worden verhoogd',16,1);
+										ROLLBACK
+									END
+							END
+					END
+				ELSE
+					BEGIN
+						RAISERROR ('Bod is kleiner dan of gelijk aan huidige hoogste bod',16,1);
+						ROLLBACK
+					END
+			END
+	END

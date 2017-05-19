@@ -15,14 +15,18 @@
 <?php
 session_start();
 
-include 'includes/header.php';
+if(isset($_SESSION['username'])){
+    header('location: index.php');
+}
+
+$showheader = true;
 require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
 connectToDatabase();
 global $db;
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $invgevoerdwachtwoord = $_POST['wachtwoord'];
 
@@ -33,14 +37,19 @@ if(isset($_POST['submit'])){
         $iswachtwoordgoed = password_verify($invgevoerdwachtwoord, $row[0]);
         if ($iswachtwoordgoed == true) {
             $_SESSION['username'] = $gebruikersnaam;
-            echo 'Welkom '.$_SESSION['username'];
-        }
-        else{
-            echo 'jammer vriend';
+        } else {
+            $showheader = false;
+            include 'includes/header.php';
+            echo '
+            <div class="alert alert-danger ">
+                <strong>Fout!</strong> Wachtwoord onjuist
+            </div> ';
         }
     }
 }
-
+if($showheader == true){
+    include 'includes/header.php';
+}
 
 ?>
 <main>
@@ -54,7 +63,7 @@ if(isset($_POST['submit'])){
             <div class="col-md-2 marginTop20 text-left">
             </div>
             <div class="col-md-4 marginTop20 text-left loginBox">
-                <form class="form-horizontal" method="post" action="#">
+                <form class="form-horizontal" method="post" action="index.php">
                     <h3 class="">Inloggen</h3>
                     <div class="form-group marginBottom20">
                         <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>

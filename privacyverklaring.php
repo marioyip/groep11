@@ -16,7 +16,9 @@
 <body>
 
 
-<?php include 'includes/header.php'; //geeft de header mee aan deze pagina
+<?php
+session_start();
+include 'includes/header.php'; //geeft de header mee aan deze pagina
 include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 ?>
 
