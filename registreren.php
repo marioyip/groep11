@@ -13,9 +13,15 @@
 <body>
 
 <?php
-
+session_start();
 include 'includes/header.php';
 include 'includes/catbar.php';
+
+if(isset($_SESSION['username'])){
+    header('location: index.php');
+}
+
+$geentweedehuis=false;
 
 if(isset($_POST['submit'])) {
     $foutmelding = '';
@@ -93,8 +99,7 @@ if(isset($_POST['submit'])) {
         $foutmelding = 'Op welke naam staat uw rekening?';
     }
     if (empty($huisnr2) && empty($straat2)){
-        $huisnr2 = NULL;
-        $straat2 = NULL;
+        $geentweedehuis = true;
     }
 
     if (empty($huisnr2)&&empty($straat2)==FALSE || empty($straat2)&& empty($huisnr2)==FALSE){
@@ -114,12 +119,23 @@ if(isset($_POST['submit'])) {
 
         $bevestigingscode = rand();
 
-        $sql = "
+        if($geentweedehuis==true) {
+            $sql = "
         INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
         GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
         VALUES ('$achternaam', '$straat', $huisnr,mssql.iproject.icasites.nl '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
                 ";
+        }
+        else{
+            $sql = "
+            INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
+                GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+        VALUES ('$achternaam', '$straat', $huisnr, '$straat2', $huisnr2 , '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
+            '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
+                ";
+        }
+
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
@@ -336,79 +352,6 @@ if(isset($_POST['submit'])) {
     </div>
 </main>
 
-<?php
-
-?>
-
-
-
-
-
-<!--        <div class="containerMain">-->
-<!--            <div class="container-fluid">-->
-<!--                <section class="container">-->
-<!--                    <div class="container-page">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <h3 class="dark-grey">Registration</h3>-->
-<!---->
-<!--                            <div class="form-group col-lg-12">-->
-<!--                                <label>Username</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Password</label>-->
-<!--                                <input type="password" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Repeat Password</label>-->
-<!--                                <input type="password" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Email Address</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="form-group col-lg-6">-->
-<!--                                <label>Repeat Email Address</label>-->
-<!--                                <input type="" name="" class="form-control" id="" value="">-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="col-sm-6">-->
-<!--                                <input type="checkbox" class="checkbox" />Sigh up for our newsletter-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="col-sm-6">-->
-<!--                                <input type="checkbox" class="checkbox" />Send notifications to this email-->
-<!--                            </div>-->
-<!---->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-md-6">-->
-<!--                            <h3 class="dark-grey">Terms and Conditions</h3>-->
-<!--                            <p>-->
-<!--                                By clicking on "Register" you agree to The Company's' Terms and Conditions-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                While rare, prices are subject to change based on exchange rate fluctuations --->
-<!--                                should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)-->
-<!--                            </p>-->
-<!--                            <p>-->
-<!--                                Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)-->
-<!--                            </p>-->
-<!---->
-<!--                            <button type="submit" class="btn btn-default">Registereren</button>-->
-<!--<!--                        </div>-->
-<!--</div>-->
-<!--</section>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 </body>
 
 </html>
