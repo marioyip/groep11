@@ -73,6 +73,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
             <p>Postcode: <?php echo $GeboorteDag; ?></p>
             <p>Email: <?php echo $Email ?></p>
             <hr> <!--Help-->
+            <div class="col-md-10 container-fluid fixed">
             <div class="col-md-10">
                 <h1> Help </h1>
                 <h2>Wachtwoord wijzigen</h2>
@@ -101,7 +102,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
 
                 <hr>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <h1>Veilingen</h1>
                 <h2>Mijn actieve veilingen</h2>
                 <div class="col-md-3 itemBox roundborder " align="center">
@@ -126,7 +127,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 </div>
                 <hr>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <h2>Mijn gesloten veilingen</h2>
                 <div class="col-md-3 itemBox roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
@@ -140,8 +141,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 </div>
                 <hr>
             </div>
-            <div class="col-md-10 container-fluid fixed">
-            <div class="col-md-8">
+
+            <div class="col-md-10">
                 <h1>Biedingen</h1>
                 <h2>Mijn actieve biedingen</h2>
                 <div class="col-md-3 itemBox roundborder " align="center">
@@ -154,9 +155,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                     <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
                        role="button">Bieden</a>
                 </div>
+                <hr>
             </div>
-            <hr>
-            <div class="col-md-8">
+
+            <div class="col-md-10">
                 <h2>Mijn gesloten biedingen</h2>
                 <div class="col-md-3 itemBox roundborder " align="center">
                     <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
@@ -168,8 +170,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                     <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
                        role="button">Bieden</a>
                 </div>
+                <hr>
             </div>
-            <hr>
+
         </div>
         </div>
     </div>
