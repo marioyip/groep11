@@ -69,11 +69,11 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
         $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover FROM Voorwerp ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $Beschrijving[] = $row[0];
-            $Titel[] = $row[1];
-            $Voorwerpnummer[] = $row[2];
-            $cover[] = $row[3];
+        while ($carouselRow = $stmt->fetch(PDO::FETCH_NUM)) {
+            $carouselBeschrijving[] = $carouselRow[0];
+            $carouselTitel[] = $carouselRow[1];
+            $carouselNummer[] = $carouselRow[2];
+            $carouselCover[] = $carouselRow[3];
         }
         ?>
 
@@ -81,16 +81,16 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
         <div class="carousel-inner">
             <!-- Set the first background image using inline CSS below. -->
             <?php
-            for ($i = 0; $i < count($Titel); $i++) {
+            for ($i = 0; $i < count($carouselTitel); $i++) {
                 if ($i == 0) {
                     echo '<div class="item active">';
                 } else {
                     echo '<div class="item">';
                 }
-                echo "<div class=\"fill\" style=\"background-image:url('media/" . $cover[$i] . "')\"></div>";
+                echo "<div class=\"fill\" style=\"background-image:url('media/" . $carouselCover[$i] . "')\"></div>";
                 echo '<div class="carousel-caption d-none d-md-block"><h3>';
-                echo $Titel[$i] . '</h3><p>' . $Beschrijving[$i] . '</p>';
-                echo '<a href = "productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
+                echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
+                echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
                 echo '</div></div>';
             }
             ?>
