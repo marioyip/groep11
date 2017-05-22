@@ -14,49 +14,24 @@
 
 <?php
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
-include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
-
-$sql = 'SELECT * FROM Gebruiker';
-$stmt = $db->prepare($sql);
-$stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-    $Achternaam = $row[0];
-    $Straatnaam1 = $row[1];
-    $Huisnummer1 = $row[2];
-    $Straatnaam2 = $row[3];
-    $Huisnummer2 = $row[4];
-    $Antwoordtekst = $row[5];
-    $GeboorteDag = $row[6];
-    $Email = $row[7];
-    $Gebruikersnaam = $row[8];
-    $Land = $row[9];
-    $Plaatsnaam = $row[10];
-    $Postcode = $row[11];
-    $Voornaam = $row[12];
-    $Vraag = $row[13];
-    $Wachtwoord = $row[14];
-    $Verkoper = $row[15];
-}
-
-?>
+include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
 
 <main>
     <div class="container">
-        <div class="container-fluid">
+        <div class="container-fluid" >
             <div class="page-header" align="center">
                 <h1>Mijn bied profiel</h1>
             </div>
             <div class="col-md-4">
-                <img src="http://placehold.it/300x300" alt="" class="img-circle img-responsive"/>
+                <img src="http://placehold.it/300x300" alt="" class="img-circle img-responsive" />
             </div>
             <div class="col-md-8">
-                <h4><?php echo $Voornaam . ' ' . $Achternaam; ?></h4>
-                <p class="glyphicon glyphicon-user"></p><?php echo $Gebruikersnaam;?></p>
-                <p class="glyphicon glyphicon-gift"></p><?php echo $GeboorteDag; ?></p>
+                <h4>Voornaam Achternaam</h4>
+                <p class="glyphicon glyphicon-user"></p>Gebruikersnaam</p>
+                <p class="glyphicon glyphicon-gift"></p>YYYY-DD-MM</p>
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary">
-                        Uitloggen
-                    </button>
+                        Uitloggen</button>
 
                 </div>
             </div>
@@ -110,3 +85,4 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 </main>
 <?php include 'includes/footer.php';
 ?>
+
