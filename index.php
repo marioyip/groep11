@@ -65,99 +65,35 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
+        <?php
+        $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover FROM Voorwerp ORDER BY NEWID()";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        while ($carouselRow = $stmt->fetch(PDO::FETCH_NUM)) {
+            $carouselBeschrijving[] = $carouselRow[0];
+            $carouselTitel[] = $carouselRow[1];
+            $carouselNummer[] = $carouselRow[2];
+            $carouselCover[] = $carouselRow[3];
+        }
+        ?>
+
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('media/<?php
-                $sql = "SELECT VoorwerpCover FROM Voorwerp WHERE Voorwerpnummer = 6";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0];
+            <!-- Set the first background image using inline CSS below. -->
+            <?php
+            for ($i = 0; $i < count($carouselTitel); $i++) {
+                if ($i == 0) {
+                    echo '<div class="item active">';
+                } else {
+                    echo '<div class="item">';
                 }
-                ?>');"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3><?php
-                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 6";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></h3>
-                    <p><?php
-                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 6";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></p>
-                    <!--                    <button href="productpagina.php?product=115" class="btn marginBottom20 ttbtn-hero btn-lg textDarkGray" role="button">Bied nu</button>-->
-                    <a href="productpagina.php?product=1" class="btn btn-default crete" role="button">Bieden</a>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('media/fauteuil.jpg');"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3><?php
-                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 2";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></h3>
-                    <p><?php
-                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 2";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></p>
-                    <!--                    <button href="productpagina.php?product=115" class="backgroundIbisRed marginBottom20 btn btn-lg textDarkGray" role="button">Bied nu!</button>-->
-                    <a href="productpagina.php?product=2" class="btn btn-default crete" role="button">Bieden</a>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-
-                <div class="fill" style="background-image:url('media/laptop.png');"></div>
-
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- Query voor het zien van de Titel van een bepaald voorwerp -->
-                    <h2><?php
-                        $sql = "SELECT Titel FROM Voorwerp WHERE Voorwerpnummer = 3";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?></h2>
-                    <p>
-                        <?php
-                        $sql = "SELECT Beschrijving FROM Voorwerp WHERE Voorwerpnummer = 3";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0];
-                        }
-                        ?>
-                    </p>
-                    <!--                    <button href="productpagina.php?product=101" class="btn btn-lg marginBottom20 backgroundIbisRed textDarkGray" role="button">Bied nu</button>-->
-                    <a href="productpagina.php?product=3" class="btn btn-default crete" role="button">Bieden</a>
-                </div>
-            </div>
+                echo "<div class=\"fill\" style=\"background-image:url('media/" . $carouselCover[$i] . "')\"></div>";
+                echo '<div class="carousel-caption d-none d-md-block"><h3>';
+                echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
+                echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
+                echo '</div></div>';
+            }
+            ?>
         </div>
         <!-- Controls -->
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -166,6 +102,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
         <a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
+    </div>
+
     </div>
 
 
@@ -178,7 +116,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
     <div class="container">
         <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
-        $sql = "SELECT TOP 4 * FROM Voorwerp";
+        $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
