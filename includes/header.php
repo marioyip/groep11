@@ -18,7 +18,6 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
         </div>
         <?php
         if (isset($_SESSION['username'])) {
-            echo 'ingelogd';
             echo
             '
             <div id="navbar">
@@ -35,7 +34,6 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             </div>
             ';
         } else {
-            echo 'niet ingelogd';
             echo
             '
             <div id="navbar">

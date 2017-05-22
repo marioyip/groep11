@@ -451,3 +451,7 @@ noListStyleType li {
     width: 600px;
     height: 400px;
 }
+.carousel-caption
+{
+    background-color: rgba(43,39,43, .2);
+}
