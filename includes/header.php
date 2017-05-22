@@ -10,33 +10,47 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <header>
     <div class="container-fluid backgroundGreen crete">
         <div class="navbar-header">
-            <a class="navbar-header" href="../groep11/index.php">
+            <a class="navbar-header" href="index.php">
                 <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="../groep11/index.php">
-                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.png" alt="tekstlogo"/>
+            <a class="navbar-header " href="index.php">
+                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="tekstlogo"/>
             </a>
         </div>
-        <div id="navbar">
-            <ul class="nav ">
-                <li>
-<!--                    <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"-->
-<!--                     href="inloggen.php">-->
-                        <?php if(isset($_SESSION['username'])){ echo
-                        '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="../groep11/uitloggen.php">Uitloggen</a>';
-                        }else{
-                            echo '<a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                         href="../groep11/inloggen.php">Inloggen</a>';
-                        } ?></button> <!--inloggen knop met een glyphicon van een gebruiker-->
-                </li>
-                <?php if(isset($_SESSION['username'])){ echo'';}else{ echo '
-                <li>
-                    <a class="navbar-right glyphicon  	glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                       href="../groep11/registreren.php">Registreren</a> <!--inloggen knop met een glyphicon van een gebruiker-->
-                </li>
-                '; }?>
-            </ul>
-        </div>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo 'ingelogd';
+            echo
+            '
+            <div id="navbar">
+                <ul class="nav ">
+                    <li>
+                        <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
+                             href="mijnprofiel.php">Mijn profiel</a>
+                    </li>
+                </ul>
+            </div>
+            ';
+        } else {
+            echo 'niet ingelogd';
+            echo
+            '
+            <div id="navbar">
+                <ul class="nav ">
+                    <li>
+                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
+                             href="inloggen.php">Inloggen</a>
+                    </li>                
+                    <li>
+                        <a class="navbar-right glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
+                           href="registreren.php">Registreren</a>
+                    </li>
+                </ul>
+            </div>
+            ';
+        }
+
+        ?>
+
     </div>
 </header>
 

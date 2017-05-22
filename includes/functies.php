@@ -1,20 +1,44 @@
 <?php
 function connectToDatabase() //functie om aan de database te kunnen verbinden
 {
-    $pw = "rPgxSAaf";
-    $username = "iproject11";
-    $hostname = "mssql.iproject.icasites.nl";
-    $dbname = "iproject11";
-
-//    $pw = "dbrules";
-//    $username = "sa";
-//    $hostname = "localhost";
+//    $pw = "rPgxSAaf";
+//    $username = "iproject11";
+//    $hostname = "mssql.iproject.icasites.nl";
 //    $dbname = "iproject11";
 
-
+    $pw = "dbrules";
+    $username = "sa";
+    $hostname = "localhost";
+    $dbname = "iproject11";
     global $db;
 
+
+
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+}
+
+function connectToDatabatch() //functie om aan de database te kunnen verbinden
+{
+    $pw = "dbrules";
+    $username = "sa";
+    $hostname = "localhost";
+    $dbname = "testdatabatch";
+    global $local;
+
+    $local = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
+}
+
+function getUser($gebruikersnaam){
+    try {
+        global $db;
+
+        $stmt = $db->prepare("SELECT * FROM Gebruiker WHERE Gebruikersnaam = :naam");
+        $stmt->execute(array(':naam' => $gebruikersnaam));
+        return  $stmt ->fetch();
+
+    }catch(PDOException $e){
+        echo "Verbinding mislukt: " . $e->getMessage();
+    }
 }
 
 function insertUserInDatabase($naam, $email) //functie om een gebruiker in de database te plaatsen voor de nieuwsbrief
@@ -55,7 +79,7 @@ function show_form($errors = array())
         $errorHtml = '';
     }
     echo <<<_FORM_
-<form id="login" method="post" action="../inloggen.php">
+<form id="login" method="post" action="inloggen.php">
     <label for="username">Username:</label><input type="text" name="username" id="username"><br>
     <label for="password">Password:</label><input type="password" name="password" id="password"><br>
     <input id="inlog" type="submit" name="submit" value="Log In">
