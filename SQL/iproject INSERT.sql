@@ -592,7 +592,7 @@ VALUES('1',
 );
 
 
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
+INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
 
 
 
