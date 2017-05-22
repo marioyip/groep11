@@ -18,12 +18,12 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
 
 <main>
     <div class="container">
-        <div class="container-fluid" >
+        <div class="container-fluid">
             <div class="page-header" align="center">
                 <h1>Mijn bied profiel</h1>
             </div>
             <div class="col-md-4">
-                <img src="http://placehold.it/300x300" alt="" class="img-circle img-responsive" />
+                <img src="http://placehold.it/300x300" alt="" class="img-circle img-responsive"/>
             </div>
             <div class="col-md-8">
                 <h4>Voornaam Achternaam</h4>
@@ -31,7 +31,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 <p class="glyphicon glyphicon-gift"></p>YYYY-DD-MM</p>
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary">
-                        Uitloggen</button>
+                        Uitloggen
+                    </button>
 
                 </div>
             </div>
@@ -60,19 +61,116 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
         <div class="col-md-2 container-fluid fixed">
         </div>
         <!-- Main Content -->
-        <div class="col-md-8 container-fluid fixed">
-            <h1> <?php echo $Titel ?></h1>
+        <div class="col-md-10 container-fluid fixed">
+            <h1> Account </h1>
             <!--Account-->
-            <p>Naam: <?php echo $Voornaam.' '.$Achternaam; ?></p>
-            <p>Gebruikersnaam: <?php echo $Voornaam.' '.$Achternaam; ?></p>
+            <h2>Gegevens</h2>
+            <p>Naam: <?php echo $Voornaam . ' ' . $Achternaam; ?></p>
+            <p>Gebruikersnaam: <?php echo $Voornaam . ' ' . $Achternaam; ?></p>
             <p>Geboortedatum: <?php echo $GeboorteDag; ?></p>
-            <p>Adres: <?php echo $Sraatnaam1.' '.$Huisnummer1?></p>
-            <p>Adres: <?php echo $Sraatnaam2.' '.$Huisnummer2?></p>
+            <p>Adres: <?php echo $Sraatnaam1 . ' ' . $Huisnummer1 ?></p>
+            <p>Adres: <?php echo $Sraatnaam2 . ' ' . $Huisnummer2 ?></p>
             <p>Postcode: <?php echo $GeboorteDag; ?></p>
-            <p>Email: <?php echo $Email?></p>
+            <p>Email: <?php echo $Email ?></p>
             <hr> <!--Help-->
-            <h2>Wachtwoord wijzigen</h2>
+            <div class="col-md-10">
+                <h1> Help </h1>
+                <h2>Wachtwoord wijzigen</h2>
 
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                        <input class="form-control" type="password" placeholder="Current Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></div>
+                        <input class="form-control" type="password" placeholder="New Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></div>
+                        <input class="form-control" type="password" placeholder="Repeat New Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default form-control">Submit</button>
+                </div>
+
+                <hr>
+            </div>
+            <div class="col-md-8">
+                <h1>Veilingen</h1>
+                <h2>Mijn actieve veilingen</h2>
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
+                            ' . $Titel2[$i] . '</a></h4>
+                    <div class="description">
+                        ' . $Beschrijving2[$i] . '
+                    </div>
+                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
+                       role="button">Bieden</a>
+                </div>
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
+                            ' . $Titel2[$i] . '</a></h4>
+                    <div class="description">
+                        ' . $Beschrijving2[$i] . '
+                    </div>
+                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
+                       role="button">Bieden</a>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-8">
+                <h2>Mijn gesloten veilingen</h2>
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
+                            ' . $Titel2[$i] . '</a></h4>
+                    <div class="description">
+                        ' . $Beschrijving2[$i] . '
+                    </div>
+                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
+                       role="button">Bieden</a>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-10 container-fluid fixed">
+            <div class="col-md-8">
+                <h1>Biedingen</h1>
+                <h2>Mijn actieve biedingen</h2>
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
+                            ' . $Titel2[$i] . '</a></h4>
+                    <div class="description">
+                        ' . $Beschrijving2[$i] . '
+                    </div>
+                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
+                       role="button">Bieden</a>
+                </div>
+            </div>
+            <hr>
+            <div class="col-md-8">
+                <h2>Mijn gesloten biedingen</h2>
+                <div class="col-md-3 itemBox roundborder " align="center">
+                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
+                            ' . $Titel2[$i] . '</a></h4>
+                    <div class="description">
+                        ' . $Beschrijving2[$i] . '
+                    </div>
+                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
+                       role="button">Bieden</a>
+                </div>
+            </div>
+            <hr>
+        </div>
         </div>
     </div>
 
