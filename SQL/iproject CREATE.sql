@@ -189,7 +189,7 @@ IF NOT exists(SELECT *
     Plaatsnaam            VARCHAR(150)                           NOT NULL, -- http://www.alletop10lijstjes.nl/10-langste-plaatsnamen-in-de-wereld/
     Titel                 VARCHAR(50)                           NOT NULL,
     Verzendinstructies    VARCHAR(500)                           NULL,
-    Voorwerpnummer        INT IDENTITY                          NOT NULL, -- maximaal 10 getallen -- houdt lang vol ongeveer 7-8 jaar
+    Voorwerpnummer        BIGINT IDENTITY                          NOT NULL, -- maximaal 10 getallen -- houdt lang vol ongeveer 7-8 jaar
     VeilingGesloten       BIT                                   NOT NULL, -- Keuze uit 1 of 0 dus ja of nee
     VoorwerpCover         VARCHAR(255) DEFAULT 'default.png'    NOT NULL,
     CONSTRAINT pk_voorwerpnummer PRIMARY KEY (voorwerpnummer),
@@ -216,7 +216,7 @@ IF NOT exists(SELECT *
     Feedbacksoort  CHAR(8)      NOT NULL,
     SoortGebruiker VARCHAR(8)   NOT NULL, --Verkoper Koper
     Tijdstip       TIME(0)      NOT NULL,
-    Voorwerp       INT NOT NULL,
+    Voorwerp       BIGINT NOT NULL,
     CONSTRAINT pk_voorwerpnummer_koper_verkoper PRIMARY KEY (Voorwerp, SoortGebruiker),
     CONSTRAINT fk_FeedbackVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
@@ -230,7 +230,7 @@ IF NOT exists(SELECT *
               WHERE name = 'VoorwerpInRubriek')
   CREATE TABLE VoorwerpInRubriek (
     RubriekOpLaagsteNiveau INTEGER				NOT NULL,
-    Voorwerp               INT	          NOT NULL,
+    Voorwerp               BIGINT	          NOT NULL,
     CONSTRAINT pk_voorwerpnummer_rubrieknummer PRIMARY KEY (voorwerp, RubriekOpLaagsteNiveau),
     CONSTRAINT fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
@@ -243,7 +243,7 @@ IF NOT exists(SELECT *
               WHERE name = 'Bestand')
   CREATE TABLE Bestand (
     filenaam VARCHAR(255) DEFAULT 'default'      NOT NULL, --van char(13) naar VARCHAR(20)
-    voorwerp INT                      NOT NULL, -- misschien meer dan 10 dus INT
+    voorwerp BIGINT                      NOT NULL, -- misschien meer dan 10 dus INT
     CONSTRAINT pk_filenaam PRIMARY KEY (filenaam),
     CONSTRAINT fk_BestandVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (voorwerp)
     REFERENCES Voorwerp (voorwerpnummer)
@@ -257,7 +257,7 @@ IF NOT exists(SELECT *
     Gebruiker   VARCHAR(255)                         NOT NULL, --Maximaal 35
     BodDag      DATE DEFAULT GETDATE()				NOT NULL,
     BodTijdstip TIME(0) DEFAULT convert(time,getdate())                           NOT NULL, --Huidige tijd
-    Voorwerp    INT                    NOT NULL, --INT of NUMERIC
+    Voorwerp    BIGINT                    NOT NULL, --INT of NUMERIC
     CONSTRAINT pk_voorwerp_bodbedrag PRIMARY KEY (Voorwerp, Bodbedrag),
     CONSTRAINT fk_BodVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (voorwerpnummer),
