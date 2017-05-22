@@ -10,7 +10,7 @@ function connectToDatabase() //functie om aan de database te kunnen verbinden
 //  $username = "sa";
 //  $hostname = "localhost";
 //  $dbname = "iproject11";
-//  global $db;
+    global $db;
 
     $db = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 }
@@ -26,15 +26,16 @@ function connectToDatabatch() //functie om aan de database te kunnen verbinden
     $local = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 }
 
-function getUser($gebruikersnaam){
+function getUser($gebruikersnaam)
+{
     try {
         global $db;
 
         $stmt = $db->prepare("SELECT * FROM Gebruiker WHERE Gebruikersnaam = :naam");
         $stmt->execute(array(':naam' => $gebruikersnaam));
-        return  $stmt ->fetch();
+        return $stmt->fetch();
 
-    }catch(PDOException $e){
+    } catch (PDOException $e) {
         echo "Verbinding mislukt: " . $e->getMessage();
     }
 }

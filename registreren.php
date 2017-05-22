@@ -48,6 +48,7 @@ if(isset($_POST['submit'])) {
     $rekeningnummer = $_POST['rekeningnummer'];
     $rekeninghouder =$_POST['rekeninghouder'];
 
+
     if (empty($voornaam)) {
         $foutmelding = 'wel je voornaam invullen!';
     }
@@ -113,40 +114,44 @@ if(isset($_POST['submit'])) {
 
         require_once('includes/functies.php');
 
+        if($verkoper == 'wel'){
+            $verkoper = 1;
+        } else {
+            $verkoper = 0;
+        }
+
+        $geboortedatum = date("Y-m-d", strtotime($geboortedatum));
+
         connectToDatabase();
 
         $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 
-        $bevestigingscode = rand();
+//        $bevestigingscode = rand();
 
         if($geentweedehuis==true) {
-            $sql = "
-        INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
-        GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ('$achternaam', '$straat', $huisnr, '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
-                '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
-                ";
+            $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
+        GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+        VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
+                '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '$verkoper')";
         }
         else{
-            $sql = "
-            INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
-                GeboorteDag, Email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
-        VALUES ('$achternaam', '$straat', $huisnr, '$straat2', $huisnr2 , '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
-            '$land', '$plaats', '$postcode', '$voornaam', $vraag, '$hashedWachtwoord', '$verkoper');
-                ";
+            $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
+                GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
+        VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
+            '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '$verkoper')";
         }
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
-        $to = $emailadres;
-        $headers =  'MIME-Version: 1.0' . "\r\n";
-        $headers = 'From: Your name <donotreply@eenmaalandermaal.nl>' . "\r\n";
-        $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $subject = "EenmaalAndermaal - Uw e-mailadres bevestigen.";
-        $message = "Beste $voornaam, \n Klik op onderstaande link om uw account te bevestigen. \n
-        http://iproject11.icasites.nl/mail.php?email=$emailadres&bevestigingscode";
-        $mail = mail($to, $headers, $subject, $message);
+//        $to = $emailadres;
+//        $headers =  'MIME-Version: 1.0' . "\r\n";
+//        $headers = 'From: Your name <donotreply@eenmaalandermaal.nl>' . "\r\n";
+//        $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//        $subject = "EenmaalAndermaal - Uw e-mailadres bevestigen.";
+//        $message = "Beste $voornaam, \n Klik op onderstaande link om uw account te bevestigen. \n
+//        http://iproject11.icasites.nl/mail.php?email=$emailadres&bevestigingscode";
+//        $mail = mail($to, $headers, $subject, $message);
 
         echo '<H1>HET IS GELUKT,</H1>';
 
@@ -234,8 +239,8 @@ if(isset($_POST['submit'])) {
                                 <select name="vraag" class="marginLeft400">
                                     <option value="1">Wat is mijn favoriete huisdier?</option>
                                     <option value="2">Wat is mijn geboorteplaats?</option>
-                                    <option value="3">Wie is mijn jeugdvriend?</option>
-                                    <option value="4">Wat is de meisjesnaam van mijn moeder?</option>
+<!--                                    <option value="3">Wie is mijn jeugdvriend?</option>-->
+<!--                                    <option value="4">Wat is de meisjesnaam van mijn moeder?</option>-->
                                 </select>
                             </label>
                         </div>
