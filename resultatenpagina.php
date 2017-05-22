@@ -25,35 +25,37 @@ if (isset($_GET['rubriek'])) {
     $gekozenRubriek = $_GET['rubriek'];
 }
 
-$sortType = 0;
-$NAAM = 1;
-$PRIJS_ASC = 2;
-$PRIJS_DESC = 3;
-$AFLOOPTIJD_ASC = 4;
-$AFLOOPTIJD_DESC = 5;
-
-if (isset($_REQUEST['sorttype'])) {
-    switch ($_REQUEST['sorttype']) {
-        case 'Naam':
-            $sortType = $NAAM;
-            break;
-        case 'Prijs oplopend':
-            $sortType = $PRIJS_ASC;
-            break;
-        case 'Prijs aflopend':
-            $sortType = $PRIJS_DESC;
-            break;
-        case 'Aflooptijd oplopend':
-            $sortType = $AFLOOPTIJD_ASC;
-            break;
-        case 'Aflooptijd aflopend':
-            $sortType = $AFLOOPTIJD_DESC;
-            break;
-        default :
-            $sortType = 0;
-            break;
-    }
-}
+//$sortType = 0;
+//$NAAM = 1;
+//$PRIJS_ASC = 2;
+//$PRIJS_DESC = 3;
+//$AFLOOPTIJD_ASC = 4;
+//$AFLOOPTIJD_DESC = 5;
+//echo $_REQUEST['sorttype'];
+//
+//if (isset($_REQUEST['sorttype'])) {
+//    echo $_REQUEST['sorttype'];
+//    switch ($_REQUEST['sorttype']) {
+//        case 'Naam':
+//            $sortType = $NAAM;
+//            break;
+//        case 'Prijs oplopend':
+//            $sortType = $PRIJS_ASC;
+//            break;
+//        case 'Prijs aflopend':
+//            $sortType = $PRIJS_DESC;
+//            break;
+//        case 'Aflooptijd oplopend':
+//            $sortType = $AFLOOPTIJD_ASC;
+//            break;
+//        case 'Aflooptijd aflopend':
+//            $sortType = $AFLOOPTIJD_DESC;
+//            break;
+//        default :
+//            $sortType = 0;
+//            break;
+//    }
+//}
 $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -78,6 +80,15 @@ if ($titel == 'Root') {
             <h3 class="textDarkGray">Overzicht</h3>
             <hr>
             <?php
+            echo '<ul class="list-group">';
+            if ($gekozenRubriek > -1) {
+                $sql = "SELECT Rubriek FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    echo '<li class="list-group-item"><a href="?rubriek=' . $row[0] . '">...Vorige</a></li>';
+                }
+            }
 
             $sql = "SELECT Rubrieknaam, Rubrieknummer FROM rubriek WHERE rubriek = '$gekozenRubriek' ORDER BY rubrieknaam";
             $stmt = $db->prepare($sql);
@@ -86,30 +97,26 @@ if ($titel == 'Root') {
                 $rubrieknamen[] = $row[0];
                 $rubrieknummers[] = $row[1];
             }
-            ?>
-            <ul class="list-group">
-                <?php
-                if (isset($rubrieknamen) > 0 && count($rubrieknamen > 0)) {
-                    for ($i = 0; $i < count($rubrieknamen); $i++) {
-                        echo '<li class="list-group-item"><a href="?rubriek=' . $rubrieknummers[$i] . '">' . $rubrieknamen[$i] . '</a></li>';
-                    }
+            if (isset($rubrieknamen) > 0 && count($rubrieknamen > 0)) {
+                for ($i = 0; $i < count($rubrieknamen); $i++) {
+                    echo '<li class="list-group-item"><a href="?rubriek=' . $rubrieknummers[$i] . '">' . $rubrieknamen[$i] . '</a></li>';
                 }
-                ?>
+            }
+            ?>
             </ul>
-            <div class="form-group">
-                <form method="POST" action="resultatenpagina.php?rubriek=<?php echo $gekozenRubriek; ?>">
-                    <label for="Order by">Sorteren</label>
-                    <select class="form-control" id="sorttype">
-                        <option>Naam</option>
-                        <option>Prijs oplopend</option>
-                        <option>Prijs aflopend</option>
-                        <option>Aflooptijd oplopend</option>
-                        <option>Aflooptijd aflopend</option>
-                    </select>
-                    <button type="submit" class="btn btn-default">Sorteer</button>
-                </form>
-            </div>
-
+            <!--            <div class="form-group">-->
+            <!--                <form method="POST" >-->
+            <!--                    <label for="Order by">Sorteren</label>-->
+            <!--                    <select class="form-control" id="sorttype">-->
+            <!--                        <option>Naam</option>-->
+            <!--                        <option>Prijs oplopend</option>-->
+            <!--                        <option>Prijs aflopend</option>-->
+            <!--                        <option>Aflooptijd oplopend</option>-->
+            <!--                        <option>Aflooptijd aflopend</option>-->
+            <!--                    </select>-->
+            <!--                    <button type="submit" class="btn btn-default">Sorteer</button>-->
+            <!--                </form>-->
+            <!--            </div>-->
         </div>
         <div class="col-md-10 container-fluid fixed">
             <?php
@@ -120,25 +127,25 @@ if ($titel == 'Root') {
                     )
                     SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving, v.Startprijs FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
                     WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs)";
-            switch ($sortType) {
-                case $NAAM:
-                    $sql .= "ORDER BY v.Titel ASC";
-                    break;
-                case $PRIJS_ASC:
-                    $sql .= "ORDER BY v.Startprijs ASC";
-                    break;
-                case $PRIJS_DESC:
-                    $sql .= "ORDER BY v.Startprijs DESC";
-                    break;
-                case $AFLOOPTIJD_ASC:
-                    $sql .= "ORDER BY v.LooptijdeindeDag ASC";
-                    break;
-                case $AFLOOPTIJD_DESC:
-                    $sql .= "ORDER BY v.Startprijs DESC";
-                    break;
-                default:
-                    break;
-            }
+            //            switch ($sortType) {
+            //                case $NAAM:
+            //                    $sql .= "ORDER BY v.Titel ASC";
+            //                    break;
+            //                case $PRIJS_ASC:
+            //                    $sql .= "ORDER BY v.Startprijs ASC";
+            //                    break;
+            //                case $PRIJS_DESC:
+            //                    $sql .= "ORDER BY v.Startprijs DESC";
+            //                    break;
+            //                case $AFLOOPTIJD_ASC:
+            //                    $sql .= "ORDER BY v.LooptijdeindeDag ASC";
+            //                    break;
+            //                case $AFLOOPTIJD_DESC:
+            //                    $sql .= "ORDER BY v.Startprijs DESC";
+            //                    break;
+            //                default:
+            //                    break;
+            //            }
             $stmt = $db->prepare($sql);
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
