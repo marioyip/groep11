@@ -116,7 +116,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
     <div class="container">
         <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
-        $sql = "SELECT TOP 4 * FROM Voorwerp";
+        $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
