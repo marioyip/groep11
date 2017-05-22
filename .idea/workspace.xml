@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfa6354a-8463-43b0-8852-4dc2c7840098" name="Default" comment="product">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plaatsbieding.php" />
+    <list default="true" id="cfa6354a-8463-43b0-8852-4dc2c7840098" name="Default" comment="plaatsbieding is nu deels af, werkt nog niet ivm ontbrekende functionaliteiten in de database">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plaatsbieding.php" afterPath="$PROJECT_DIR$/plaatsbieding.php" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,24 +31,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="inloggen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inloggen.php">
+      <file leaf-file-name="plaatsbieding.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plaatsbieding.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <marker date="1495436074667" expanded="true" signature="1081:1154" ph="SELECT Wacht... Gebruiker" />
-                <marker date="1495436074667" expanded="true" signature="1633:1710" ph="..." />
+                <marker date="1495442033059" expanded="true" signature="3678:3739" ph="SELECT Land,... Gebruiker" />
+                <marker date="1495442033059" expanded="true" signature="3678:3740" ph="SELECT Land,... Gebruiker" />
+                <marker date="1495442033059" expanded="true" signature="4244:4621" ph="INSERT INTO Voorwerp... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plaatsbieding.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plaatsbieding.php">
+      <file leaf-file-name="iproject CREATE.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQL/iproject CREATE.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <state relative-caret-position="68">
+              <caret line="175" column="30" lean-forward="true" selection-start-line="175" selection-start-column="30" selection-end-line="175" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="246" column="1" lean-forward="true" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -57,9 +68,35 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="227">
+              <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+              <folding>
+                <marker date="1495200275032" expanded="true" signature="3126:3185" ph="SELECT Voorw... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="3538:3589" ph="SELECT Titel... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="3918:3976" ph="SELECT Besch... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="4911:4962" ph="SELECT Titel... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="5291:5349" ph="SELECT Besch... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="6378:6429" ph="SELECT Titel... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="6783:6841" ph="SELECT Besch... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="8124:8152" ph="SELECT TOP 4... Voorwerp" />
+                <marker date="1495200275032" expanded="true" signature="10324:10411" ph="SELECT TOP 4... Voorwerp" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productpagina.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productpagina.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1495184438884" expanded="true" signature="1291:1356" ph="SELECT * FRO... voorwerp" />
+                <marker date="1495184438884" expanded="true" signature="7770:8090" ph="SELECT TOP 1... Bod" />
+                <marker date="1495184438884" expanded="true" signature="8723:8852" ph="SELECT g.voo... Voorwerp" />
+                <marker date="1495184438884" expanded="true" signature="10915:11053" ph="SELECT g.voo... Voorwerp" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +104,8 @@
       <file leaf-file-name="registreren.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/registreren.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="158" column="2" lean-forward="true" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -77,8 +114,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4adc803-2852-42a2-849d-f7e163fb5ca5/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+            <state relative-caret-position="68">
+              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -96,9 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>titel</find>
-      <find>gooi</find>
-      <find>insert into voorwerp</find>
       <find>zoeken</find>
       <find>inloggen</find>
       <find>nav</find>
@@ -126,6 +160,9 @@
       <find>identity</find>
       <find>veilinggesloten</find>
       <find>de veiling is</find>
+      <find>lg</find>
+      <find>voorwerp</find>
+      <find>beschrijving</find>
     </findStrings>
     <replaceStrings>
       <replace>itemBox grow</replace>
@@ -285,7 +322,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SQL/iproject INSERT.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resultatenpagina.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/rubrieken2.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -502,7 +540,7 @@
       <workItem from="1494839865764" duration="1582000" />
       <workItem from="1494849547136" duration="3582000" />
       <workItem from="1494921763570" duration="19577000" />
-      <workItem from="1495200286049" duration="4174000" />
+      <workItem from="1495200286049" duration="7818000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage">
       <created>1493809836346</created>
@@ -805,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495014416895</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="begin bieding">
+      <created>1495438535231</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1495438535231</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122915000" />
+    <option name="totallyTimeSpent" value="126559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -833,7 +878,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34210527" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25549048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24158126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23426062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -901,7 +946,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Aanpassing Header, footer margin." />
     <MESSAGE value="Productpagina aangepast." />
     <MESSAGE value="Bij alle pagina's de css files apart erin gezet. Dit omdat de header anders alle CSS files meeneemt, ook al wil je dat op een bepaalde pagina misschien NIET." />
     <MESSAGE value="Oude CSS bestanden verwijderd. Style.css wordt nu gebruikt. Als je een kleur wilt wijzigen, voeg dan de tag toe in de class." />
@@ -926,7 +970,8 @@
     <MESSAGE value="tijd springt iets meer uit" />
     <MESSAGE value="login" />
     <MESSAGE value="inloggen" />
-    <option name="LAST_COMMIT_MESSAGE" value="inloggen" />
+    <MESSAGE value="begin bieding" />
+    <option name="LAST_COMMIT_MESSAGE" value="begin bieding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1068,30 +1113,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fd437c46-9a00-474a-b3f0-1cb6c86db93d/console_2.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/00300a9e-7ece-4264-875a-b8ebc7d81f6a/console_1.sql" />
-    <entry file="file://$PROJECT_DIR$/SQL/iproject INSERT.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="4649" column="24" lean-forward="false" selection-start-line="4649" selection-start-column="24" selection-end-line="4649" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/footer.php" />
-    <entry file="file://$PROJECT_DIR$/SQL/iproject CREATE.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="156" column="52" lean-forward="false" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/infopagina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1108,19 +1132,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productpagina.php">
+    <entry file="file://$PROJECT_DIR$/functies.php" />
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="115" column="36" lean-forward="false" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
+        <state relative-caret-position="312">
+          <caret line="246" column="1" lean-forward="true" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functies.php" />
+    <entry file="file://$PROJECT_DIR$/registreren.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="158" column="2" lean-forward="true" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+          <folding>
+            <marker date="1495200275032" expanded="true" signature="3126:3185" ph="SELECT Voorw... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="3538:3589" ph="SELECT Titel... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="3918:3976" ph="SELECT Besch... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="4911:4962" ph="SELECT Titel... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="5291:5349" ph="SELECT Besch... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="6378:6429" ph="SELECT Titel... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="6783:6841" ph="SELECT Besch... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="8124:8152" ph="SELECT TOP 4... Voorwerp" />
+            <marker date="1495200275032" expanded="true" signature="10324:10411" ph="SELECT TOP 4... Voorwerp" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productpagina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1495184438884" expanded="true" signature="1291:1356" ph="SELECT * FRO... voorwerp" />
+            <marker date="1495184438884" expanded="true" signature="7770:8090" ph="SELECT TOP 1... Bod" />
+            <marker date="1495184438884" expanded="true" signature="8723:8852" ph="SELECT g.voo... Voorwerp" />
+            <marker date="1495184438884" expanded="true" signature="10915:11053" ph="SELECT g.voo... Voorwerp" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inloggen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
           <folding>
             <marker date="1495436074667" expanded="true" signature="1081:1154" ph="SELECT Wacht... Gebruiker" />
             <marker date="1495436074667" expanded="true" signature="1633:1710" ph="..." />
@@ -1128,35 +1192,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registreren.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4adc803-2852-42a2-849d-f7e163fb5ca5/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        <state relative-caret-position="68">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/iproject INSERT.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="589" column="10" lean-forward="true" selection-start-line="589" selection-start-column="10" selection-end-line="589" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/iproject CREATE.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="175" column="30" lean-forward="true" selection-start-line="175" selection-start-column="30" selection-end-line="175" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plaatsbieding.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1495442033059" expanded="true" signature="3678:3739" ph="SELECT Land,... Gebruiker" />
+            <marker date="1495442033059" expanded="true" signature="3678:3740" ph="SELECT Land,... Gebruiker" />
+            <marker date="1495442033059" expanded="true" signature="4244:4621" ph="INSERT INTO Voorwerp... " />
+          </folding>
         </state>
       </provider>
     </entry>
