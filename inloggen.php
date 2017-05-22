@@ -20,9 +20,6 @@ require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
 connectToDatabase();
-global $db;
-
-
 ?>
 <main>
 
@@ -37,10 +34,9 @@ global $db;
             <div class="col-md-4 marginTop20 text-left loginBox">
                 <form class="form-horizontal" method="post" action="#">
                     <?php
-
                     if (isset($_POST['submit'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
-                        $wachtwoord = $_POST["wachtwoord"];
+                        $pwd = $_POST["pwd"];
                         //
                         //
                         //                        $gebruiker = getUser($gebruikersnaam);
@@ -60,10 +56,9 @@ global $db;
                         $stmt->execute();
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                             //$iswachtwoordgoed = password_verify($ingevoerdwachtwoord, $row[0]);
-                            $iswachtwoordgoed = $sql;
+                            $controleWachtwoord = $row[0];
                             // if ($iswachtwoordgoed == true) {
-                            if ($iswachtwoordgoed == $ingevoerdwachtwoord) {
-
+                            if (password_verify($pwd, $controleWachtwoord)) {
                                 $_SESSION['username'] = $gebruikersnaam;
                                 echo 'Welkom ' . $_SESSION['username'];
                                 header("Location: index.php");
@@ -85,7 +80,7 @@ global $db;
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="pwd">Wachtwoord</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="pwd" name="wachtwoord">
+                            <input type="password" class="form-control" id="pwd" name="pwd">
                         </div>
                     </div>
                     <div class="form-group marginTop35">

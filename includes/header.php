@@ -27,6 +27,10 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
                         <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
                              href="mijnprofiel.php">Mijn profiel</a>
                     </li>
+                    <li>
+                        <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
+                             href="uitloggen.php">Uitloggen</a>
+                    </li>
                 </ul>
             </div>
             ';

@@ -17,13 +17,13 @@ session_start();
 include 'includes/header.php';
 include 'includes/catbar.php';
 
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
     header('location: index.php');
 }
 
-$geentweedehuis=false;
+$geentweedehuis = false;
 
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $foutmelding = '';
 
     $voornaam = $_POST['voornaam'];
@@ -46,7 +46,7 @@ if(isset($_POST['submit'])) {
     $land = $_POST['land'];
     $verkoper = $_POST['verkoper'];
     $rekeningnummer = $_POST['rekeningnummer'];
-    $rekeninghouder =$_POST['rekeninghouder'];
+    $rekeninghouder = $_POST['rekeninghouder'];
 
 
     if (empty($voornaam)) {
@@ -62,10 +62,11 @@ if(isset($_POST['submit'])) {
         $foutmelding = 'wel je gebruikeresnaam invullen!';
     }
     if (empty($wachtwoord)
-        ||strlen($wachtwoord)<6
+        || strlen($wachtwoord) < 6
         || strpbrk($wachtwoord, '1234567890') == FALSE
         || strpbrk($wachtwoord, 'abcdefghijklmnopqrstuvwxyz') == FALSE
-        || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE ){
+        || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE
+    ) {
 
         $foutmelding = 'weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?';
     }
@@ -99,22 +100,22 @@ if(isset($_POST['submit'])) {
     if (empty($rekeninghouder)) {
         $foutmelding = 'Op welke naam staat uw rekening?';
     }
-    if (empty($huisnr2) && empty($straat2)){
+    if (empty($huisnr2) && empty($straat2)) {
         $geentweedehuis = true;
     }
 
-    if (empty($huisnr2)&&empty($straat2)==FALSE || empty($straat2)&& empty($huisnr2)==FALSE){
+    if (empty($huisnr2) && empty($straat2) == FALSE || empty($straat2) && empty($huisnr2) == FALSE) {
         $foutmelding = "Check je optionele tweede adresgegevens!";
     }
 
 
-    if($foutmelding==''){
+    if ($foutmelding == '') {
 
         ini_set('display_errors', 'On');
 
         require_once('includes/functies.php');
 
-        if($verkoper == 'wel'){
+        if ($verkoper == 'wel') {
             $verkoper = 1;
         } else {
             $verkoper = 0;
@@ -128,13 +129,12 @@ if(isset($_POST['submit'])) {
 
 //        $bevestigingscode = rand();
 
-        if($geentweedehuis==true) {
+        if ($geentweedehuis == true) {
             $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst, 
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
         VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '$verkoper')";
-        }
-        else{
+        } else {
             $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
                 GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper) 
         VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$emailadres', '$gebruikersnaam',
@@ -153,11 +153,10 @@ if(isset($_POST['submit'])) {
 //        http://iproject11.icasites.nl/mail.php?email=$emailadres&bevestigingscode";
 //        $mail = mail($to, $headers, $subject, $message);
 
-        echo '<H1>HET IS GELUKT,</H1>';
 
-        echo 'welkom '.$voornaam;
-    }
-    else{ echo '<div class="alert alert-danger"><strong>Fout!</strong> '.$foutmelding.'</div>';
+        header("Location: inloggen.php");
+    } else {
+        echo '<div class="alert alert-danger"><strong>Fout!</strong> ' . $foutmelding . '</div>';
     }
 }
 
@@ -207,7 +206,8 @@ if(isset($_POST['submit'])) {
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Gebruikersnaam:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control marginLeft200" name="gebruikersnaam" id="gebruikersnaam"
+                            <input type="text" class="form-control marginLeft200" name="gebruikersnaam"
+                                   id="gebruikersnaam"
                                    placeholder="keesvdalen">
                         </div>
                     </div>
@@ -239,8 +239,8 @@ if(isset($_POST['submit'])) {
                                 <select name="vraag" class="marginLeft400">
                                     <option value="1">Wat is mijn favoriete huisdier?</option>
                                     <option value="2">Wat is mijn geboorteplaats?</option>
-<!--                                    <option value="3">Wie is mijn jeugdvriend?</option>-->
-<!--                                    <option value="4">Wat is de meisjesnaam van mijn moeder?</option>-->
+                                    <!--                                    <option value="3">Wie is mijn jeugdvriend?</option>-->
+                                    <!--                                    <option value="4">Wat is de meisjesnaam van mijn moeder?</option>-->
                                 </select>
                             </label>
                         </div>
@@ -329,7 +329,7 @@ if(isset($_POST['submit'])) {
                         <label class="control-label col-sm-2" for="email">Rekeninghouder:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="rekeninghouder" id="email"
-                                   placeholder="John Doe">
+                                   placeholder="Anja Houtwipper">
                         </div>
                     </div>
 
