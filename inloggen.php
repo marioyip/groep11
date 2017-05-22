@@ -15,41 +15,13 @@
 <?php
 session_start();
 
-if(isset($_SESSION['username'])){
-    header('location: index.php');
-}
-
-$showheader = true;
+include 'includes/header.php';
 require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
 connectToDatabase();
 global $db;
 
-if (isset($_POST['submit'])) {
-    $gebruikersnaam = $_POST['gebruikersnaam'];
-    $invgevoerdwachtwoord = $_POST['wachtwoord'];
-
-    $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
-    $stmt = $db->prepare($sql); //Statement object aanmaken
-    $stmt->execute();
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-        $iswachtwoordgoed = password_verify($invgevoerdwachtwoord, $row[0]);
-        if ($iswachtwoordgoed == true) {
-            $_SESSION['username'] = $gebruikersnaam;
-        } else {
-            $showheader = false;
-            include 'includes/header.php';
-            echo '
-            <div class="alert alert-danger ">
-                <strong>Fout!</strong> Wachtwoord onjuist
-            </div> ';
-        }
-    }
-}
-if($showheader == true){
-    include 'includes/header.php';
-}
 
 ?>
 <main>
@@ -63,7 +35,46 @@ if($showheader == true){
             <div class="col-md-2 marginTop20 text-left">
             </div>
             <div class="col-md-4 marginTop20 text-left loginBox">
-                <form class="form-horizontal" method="post" action="index.php">
+                <form class="form-horizontal" method="post" action="#">
+                    <?php
+
+                    if (isset($_POST['submit'])) {
+                        $gebruikersnaam = $_POST["gebruikersnaam"];
+                        $wachtwoord = $_POST["wachtwoord"];
+                        //
+                        //
+                        //                        $gebruiker = getUser($gebruikersnaam);
+                        //
+                        //                        if ($gebruiker["Wachtwoord"] == $wachtwoord) {
+                        //                            session_start();
+                        //                            $_SESSION['gebruiker'] = $gebruikersnaam;
+                        //                            header("Location: index.php"); /* Redirect browser */
+                        //                            exit();
+                        //                            echo '<p class = "success">Welkom ' . $gebruiker . '!</p>';
+                        //                        } else {
+                        //                            echo '<p class = "error" >Kan gebruikersnaam of wachtwoord niet vinden.</p>';
+                        //                        }
+
+                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
+                        $stmt = $db->prepare($sql); //Statement object aanmaken
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            //$iswachtwoordgoed = password_verify($ingevoerdwachtwoord, $row[0]);
+                            $iswachtwoordgoed = $sql;
+                            // if ($iswachtwoordgoed == true) {
+                            if ($iswachtwoordgoed == $ingevoerdwachtwoord) {
+
+                                $_SESSION['username'] = $gebruikersnaam;
+                                echo 'Welkom ' . $_SESSION['username'];
+                                header("Location: index.php");
+                            } else {
+                                echo 'Het gebruikersnaam of wachtwoord klopt niet.';
+                                printf(mysqli_connect_error());
+                            }
+
+                        }
+                    }
+                    ?>
                     <h3 class="">Inloggen</h3>
                     <div class="form-group marginBottom20">
                         <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
@@ -79,7 +90,7 @@ if($showheader == true){
                     </div>
                     <div class="form-group marginTop35">
                         <div class="col-sm-12">
-                            <input type="submit" name="submit" class="btn btn-default col-sm-4" value="SUBMIT">
+                            <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen">
                         </div>
                     </div>
                 </form>
