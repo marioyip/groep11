@@ -24,6 +24,36 @@ include 'includes/catbar.php'; //geeft de categorieën balk mee aan deze pagina
 if (isset($_GET['rubriek'])) {
     $gekozenRubriek = $_GET['rubriek'];
 }
+
+$sortType = 0;
+$NAAM = 1;
+$PRIJS_ASC = 2;
+$PRIJS_DESC = 3;
+$AFLOOPTIJD_ASC = 4;
+$AFLOOPTIJD_DESC = 5;
+
+if (isset($_REQUEST['sorttype'])) {
+    switch ($_REQUEST['sorttype']) {
+        case 'Naam':
+            $sortType = $NAAM;
+            break;
+        case 'Prijs oplopend':
+            $sortType = $PRIJS_ASC;
+            break;
+        case 'Prijs aflopend':
+            $sortType = $PRIJS_DESC;
+            break;
+        case 'Aflooptijd oplopend':
+            $sortType = $AFLOOPTIJD_ASC;
+            break;
+        case 'Aflooptijd aflopend':
+            $sortType = $AFLOOPTIJD_DESC;
+            break;
+        default :
+            $sortType = 0;
+            break;
+    }
+}
 $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -67,18 +97,17 @@ if ($titel == 'Root') {
                 ?>
             </ul>
             <div class="form-group">
-                <label for="Order by">Order by</label>
-                <select class="form-control" id="exampleSelect1">
-                    <option>Ascending</option>
-                    <option>Descending</option>
-                    <option>Price</option>
-                </select>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="">Option 1</label>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="">Option 2</label>
+                <form method="POST" action="resultatenpagina.php?rubriek=<?php echo $gekozenRubriek; ?>">
+                    <label for="Order by">Sorteren</label>
+                    <select class="form-control" id="sorttype">
+                        <option>Naam</option>
+                        <option>Prijs oplopend</option>
+                        <option>Prijs aflopend</option>
+                        <option>Aflooptijd oplopend</option>
+                        <option>Aflooptijd aflopend</option>
+                    </select>
+                    <button type="submit" class="btn btn-default">Sorteer</button>
+                </form>
             </div>
 
         </div>
@@ -89,8 +118,27 @@ if ($titel == 'Root') {
                         UNION ALL
                         SELECT r.* FROM Rubriek r INNER JOIN childs c ON r.Rubriek = c.Rubrieknummer
                     )
-                    SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
+                    SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving, v.Startprijs FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
                     WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs)";
+            switch ($sortType) {
+                case $NAAM:
+                    $sql .= "ORDER BY v.Titel ASC";
+                    break;
+                case $PRIJS_ASC:
+                    $sql .= "ORDER BY v.Startprijs ASC";
+                    break;
+                case $PRIJS_DESC:
+                    $sql .= "ORDER BY v.Startprijs DESC";
+                    break;
+                case $AFLOOPTIJD_ASC:
+                    $sql .= "ORDER BY v.LooptijdeindeDag ASC";
+                    break;
+                case $AFLOOPTIJD_DESC:
+                    $sql .= "ORDER BY v.Startprijs DESC";
+                    break;
+                default:
+                    break;
+            }
             $stmt = $db->prepare($sql);
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -98,6 +146,7 @@ if ($titel == 'Root') {
                 $voorwerpnummers[] = $row[1];
                 $covers[] = $row[2];
                 $beschrijvingen[] = $row[3];
+                $prijzen[] = $row[4];
             }
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
