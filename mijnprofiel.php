@@ -42,7 +42,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
             <hr>
             <ul class="list-group">
                 <li class="list-group-item">Account</li>
-                <li class="list-group-item">Notificaties</li>
+                <li class="list-group-item">Help</li>
             </ul>
             <h3 class="textDarkGray">Mijn veilingen</h3>
             <hr>
@@ -57,28 +57,22 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 <li class="list-group-item">Gewonnen</li>
             </ul>
         </div>
-
+        <div class="col-md-2 container-fluid fixed">
+        </div>
         <!-- Main Content -->
-        <div class="col-md-9 container-fluid fixed">
-            <h1> Titel </h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <div class="col-md-8 container-fluid fixed">
+            <h1> <?php echo $Titel ?></h1>
+            <!--Account-->
+            <p>Naam: <?php echo $Voornaam.' '.$Achternaam; ?></p>
+            <p>Gebruikersnaam: <?php echo $Voornaam.' '.$Achternaam; ?></p>
+            <p>Geboortedatum: <?php echo $GeboorteDag; ?></p>
+            <p>Adres: <?php echo $Sraatnaam1.' '.$Huisnummer1?></p>
+            <p>Adres: <?php echo $Sraatnaam2.' '.$Huisnummer2?></p>
+            <p>Postcode: <?php echo $GeboorteDag; ?></p>
+            <p>Email: <?php echo $Email?></p>
+            <hr> <!--Help-->
+            <h2>Wachtwoord wijzigen</h2>
+
         </div>
     </div>
 
