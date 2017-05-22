@@ -194,7 +194,7 @@ if (isset($_GET['product'])) {
                     <div class="col-xs-5">
                         <input type="number" name="bod" min="0" max="999999.99" class="form-control" Placeholder="200">
                     </div>
-                    <input type="hidden" value="hugoiscool23" name="gebruiker">
+                    <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
                     <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                     <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                 </div>
