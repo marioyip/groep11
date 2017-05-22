@@ -188,22 +188,19 @@ if (isset($_GET['product'])) {
             <?php
 
             //if(isset($_SESSION['username'])){
-            //}?>
+            ?>
             <form action="bodwordtgeplaatst.php" method="post">
                 <div class="form-group">
-                    <input type="number" name="bod">
+                    <div class="col-xs-5">
+                        <input type="number" name="bod" min="0" max="999999.99" class="form-control" Placeholder="200">
+                    </div>
                     <input type="hidden" value="hugoiscool23" name="gebruiker">
-                    <input type="hidden" value="<?php echo $product; ?>" name="productnummer" >
-                    <input type="submit" name="bodgeplaatst" value="plaats bod!">
+                    <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
+                    <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                 </div>
             </form>
+            <?php //} ?>
 
-
-            <?php
-            //TODO: SQL statement voor het plaatsen van een bod, nog niet af! date en tijd moeten worden vervangen door de huidige tijd.
-//            $sql = "INSERT INTO Bod (Bodbedrag, Gebruiker, BodDag, BodTijdstip, Voorwerp
-//                    VALUES (" . $bedrag . ", ". $_SESSION['user'] . ", " . $date . ", " . $tijd . ", " . $Voorwerpnummer . ")"
-            ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -237,11 +234,8 @@ if (isset($_GET['product'])) {
                 ?>
             </h3>
         </div>
-
     </div>
 </div>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12 marginTop20">
@@ -276,19 +270,19 @@ if (isset($_GET['product'])) {
                     </div>
                     <div id="menu2" class="tab-pane">
                         <p class="sanchez marginTop20 fontSize20">Verkoper:
-                        <?php
-                        $sql = "SELECT g.voornaam, g.achternaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            echo $row[0] . ' ';
-                            echo $row[1];
-                            $email = $row[2];
-                        }
-                        ?>
+                            <?php
+                            $sql = "SELECT g.voornaam, g.achternaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                echo $row[0] . ' ';
+                                echo $row[1];
+                                $email = $row[2];
+                            }
+                            ?>
                         </p>
                         <p class="sanchez marginTop20 fontSize20">Email:
-                        <?php echo $email?>
+                            <?php echo $email ?>
                         </p>
                         <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
                             <?php
@@ -301,8 +295,6 @@ if (isset($_GET['product'])) {
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 </body>
 

@@ -1,20 +1,15 @@
 <?php
 
-require_once('includes/functies.php');
-
-connectToDatabase();
 
 if(isset($_POST['bodgeplaatst'])){
+
+    require_once('includes/functies.php');
+
+    connectToDatabase();
 
     $productnummer =  $_POST['productnummer'];
     $nieuwbod =  $_POST['bod'];
     $gebruiker = $_POST['gebruiker'];
-
-    echo $productnummer;
-    echo '<br>';
-    echo $nieuwbod.'<br>';
-    echo $gebruiker;
-
 
     $sql = "INSERT INTO Bod (Bodbedrag, Gebruiker, Voorwerp) 
             VALUES ($nieuwbod,'$gebruiker',$productnummer);
@@ -23,5 +18,8 @@ if(isset($_POST['bodgeplaatst'])){
     $stmt->execute();
 
     header("Location: productpagina.php?product=".$productnummer."");
+}
+else{
+    header("Location: index.php");
 }
 ?>
