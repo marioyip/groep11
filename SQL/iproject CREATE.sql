@@ -1,7 +1,7 @@
 /**************************************************************
-** Bestandsnaam:		Hugo fixed This Shit
+** Bestandsnaam:		Constraints - Overige beperkingsregels.sql
 ** Projectgroep:		11
-** Datum:				19 mei 2017
+** Datum:				16 mei 2017
 **************************************************************/
 
 USE master
@@ -37,6 +37,7 @@ AS
            ELSE 0 END
   END
 GO
+
 
 GO
 CREATE FUNCTION CheckIfOfferFromSeller(@voorwerpnummer INT ,@gebruikersnaam VARCHAR(255))
@@ -172,10 +173,10 @@ IF NOT exists(SELECT *
               WHERE name = 'Voorwerp')
   CREATE TABLE Voorwerp (
     Looptijd              TINYINT DEFAULT 7                     NOT NULL,
-    LooptijdbeginDag      DATE                                  NOT NULL,
-    LooptijdbeginTijdstip TIME(0)                               NOT NULL,
-    LooptijdeindeDag      DATE                                  NOT NULL,
-    LooptijdeindeTijdstip TIME(0)                               NOT NULL,
+    LooptijdbeginDag      DATE DEFAULT GETDATE()                NOT NULL,
+    LooptijdbeginTijdstip TIME(0) DEFAULT convert(time,getdate())                           NOT NULL,
+    LooptijdeindeDag      AS DATEADD(DAY,Looptijd,looptijdbeginDag),
+    LooptijdeindeTijdstip TIME(0)  DEFAULT convert(time,getdate())                             NOT NULL,
     Startprijs            NUMERIC(8, 2) DEFAULT 0.00            NOT NULL,
     Verkoper              VARCHAR(255)                           NOT NULL,
     Koper                 VARCHAR(255)                           NULL,
@@ -199,8 +200,10 @@ IF NOT exists(SELECT *
     CONSTRAINT ck_looptijd CHECK (looptijd IN (1, 3, 5, 7, 10)),
     CONSTRAINT fk_VoorwerpLand_ref_landnaam FOREIGN KEY (Land)
     REFERENCES Landen (Landnaam),
-    CONSTRAINT ck_betalingswijze CHECK (betalingswijze='Contant' OR betalingswijze='Bank/Giro' OR betalingswijze='Paypal')
+    CONSTRAINT ck_betalingswijze CHECK (betalingswijze='Contant' OR betalingswijze='Bank/Giro' OR betalingswijze='Paypal'),
   )
+
+
 
 IF NOT exists(SELECT *
               FROM sysobjects
@@ -222,10 +225,10 @@ IF NOT exists(SELECT *
 
 IF NOT exists(SELECT *
               FROM sysobjects
-              WHERE name = 'Voorwerp in Rubriek')
+              WHERE name = 'VoorwerpInRubriek')
   CREATE TABLE VoorwerpInRubriek (
     RubriekOpLaagsteNiveau INTEGER				NOT NULL,
-    Voorwerp               INT IDENTITY (1,1)	NOT NULL,
+    Voorwerp               INT	          NOT NULL,
     CONSTRAINT pk_voorwerpnummer_rubrieknummer PRIMARY KEY (voorwerp, RubriekOpLaagsteNiveau),
     CONSTRAINT fk_RubriekVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
     REFERENCES Voorwerp (Voorwerpnummer),
@@ -250,8 +253,8 @@ IF NOT exists(SELECT *
   CREATE TABLE Bod (
     Bodbedrag   NUMERIC(8, 2) DEFAULT '0.00'        NOT NULL,
     Gebruiker   VARCHAR(255)                         NOT NULL, --Maximaal 35
-    BodDag      DATE DEFAULT '01/01/2017'           NOT NULL, -- hier ook daytime ipv char(8)?
-    BodTijdstip TIME(0)                             NOT NULL, --Huidige tijd
+    BodDag      DATE DEFAULT GETDATE()				NOT NULL,
+    BodTijdstip TIME(0) DEFAULT convert(time,getdate())                           NOT NULL, --Huidige tijd
     Voorwerp    INT                    NOT NULL, --INT of NUMERIC
     CONSTRAINT pk_voorwerp_bodbedrag PRIMARY KEY (Voorwerp, Bodbedrag),
     CONSTRAINT fk_BodVoorwerp_ref_VoorwerpVoorwerpnummer FOREIGN KEY (Voorwerp)
