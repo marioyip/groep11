@@ -23,7 +23,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 <h1>Mijn bied profiel</h1>
             </div>
             <div class="col-md-4">
-                <img src="http://placehold.it/300x300" alt="" class="img-circle img-responsive"/>
+                <img src="media/usericoon.png" alt="" class="img-circle img-responsive"/>
             </div>
             <div class="col-md-8">
                 <h4>Voornaam Achternaam</h4>
