@@ -95,16 +95,16 @@ if ($titel == 'Root') {
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 $titels[] = $row[0];
-                $nummers[] = $row[1];
+                $voorwerpnummers[] = $row[1];
                 $covers[] = $row[2];
                 $beschrijvingen[] = $row[3];
             }
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
                     echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $covers[$i] . '">';
-                    echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $nummers[$i] . '">' . $titels[$i] . '</a></h4>';
+                    echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $titels[$i] . '</a></h4>';
                     echo '<div class="description">' . $beschrijvingen[$i] . '</div>';
-                    echo '<a href="productpagina.php?product=' . $nummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
+                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                     echo '</div>';
                 }
             } else {

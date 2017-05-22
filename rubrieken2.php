@@ -75,7 +75,7 @@ include 'includes/catbar.php';
                     if ($j > 0) {
                         echo ' | ';
                     }
-                    echo '<a href = "resultatenpagina.php?rubriek= ' . $nummers[$j] . '">' . $namen[$j] . '</a>';
+                    echo '<a href = "resultatenpagina.php?rubriek=' . $nummers[$j] . '">' . $namen[$j] . '</a>';
                 }
                 echo '</li></div>';
             }
