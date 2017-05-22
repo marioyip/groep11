@@ -388,7 +388,7 @@ VALUES('3',
   'Ik heb geen contant geld dus contant',
   'Netherlands',
   'Velp',
-       'Klassieke auto',
+       'Fiat Cabrio',
        'Gelieve in de achtertuin te zetten',
        1,
        'auto.jpg'
@@ -497,7 +497,7 @@ VALUES('3',
 
 
 
-INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
+INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
 
 
 

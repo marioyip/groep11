@@ -201,6 +201,8 @@ IF NOT exists(SELECT *
     CONSTRAINT fk_VoorwerpLand_ref_landnaam FOREIGN KEY (Land)
     REFERENCES Landen (Landnaam),
     CONSTRAINT ck_betalingswijze CHECK (betalingswijze='Contant' OR betalingswijze='Bank/Giro' OR betalingswijze='Paypal'),
+    --CONSTRAINT ck_vroeger CHECK (Looptijdeindedag != DAY(GETDATE()))
+    --CONSTRAINT ck_toekomst CHECK (Looptijdeindedag != DAY(GETDATE())
   )
 
 
