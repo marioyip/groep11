@@ -261,14 +261,9 @@ INSERT INTO Verkoper  VALUES('ABN Amro','Post',NULL,'hugoiscool23verkoper',40688
 INSERT INTO Gebruikerstelefoon VALUES('hugoiscool23', '31-996-705-9682');
 
 
-
-INSERT INTO Voorwerp([Looptijd],[LooptijdbeginDag],[LooptijdbeginTijdstip],[LooptijdeindeDag],[LooptijdeindeTijdstip],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','10/15/2016','00:00:00','12/11/2016','00:00:00','4.70','hugoiscool23verkoper','hugoiscool23','6.95','14.50','Ík verkoop het omdat ik het niet meer nodig heb','Paypal','Gooi het door de bus','Eritrea','Velp','Laptop','Gelieve het goed te verpakken',1,'Laptop.png');
+INSERT INTO Voorwerp([Looptijd],[Startprijs],[Verkoper],[Koper],[Verzendkosten],[Verkoopprijs],[Beschrijving],[Betalingswijze],[Betalingsinstructie],[Land],[Plaatsnaam],[Titel],[Verzendinstructies],[VeilingGesloten],[VoorwerpCover]) VALUES('5','4.70','hugoiscool23verkoper','hugoiscool23','6.95','14.50','Ík verkoop het omdat ik het niet meer nodig heb','Paypal','Gooi het door de bus','Eritrea','Velp','Laptop','Gelieve het goed te verpakken',1,'Laptop.png');
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -284,32 +279,25 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('7',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '15.00',
   '800.00',
   'Maak kennis met iPhone SE, de krachtigste 4‑inch telefoon ooit.',
-       'Bank/Giro',
-       'kom langs om te betalen',
-       'Eritrea',
-       'Asmara',
+  'Bank/Giro',
+  'kom langs om te betalen',
+  'Eritrea',
+  'Asmara',
        'iPhone SE',
        'Er is geen verzendinstructie',
        1,
        'iphone.jpg'
 );
 
+
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -325,20 +313,16 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('7',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '250.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '15.00',
   '450.00',
   'Deze fauteuil is zwart',
-       'Paypal',
-       'Geleive contant want ik hedde geen geeld',
-       'Netherlands',
-       'Velp',
+  'Paypal',
+  'Geleive contant want ik hedde geen geeld',
+  'Netherlands',
+  'Velp',
        'Fauteuil met zwart leer',
        'Deze bank past niet door de raam',
        0,
@@ -347,10 +331,6 @@ VALUES('7',
 
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -366,32 +346,23 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('7',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '15.00',
   '32.50',
   'Deze grasmaaier is poah energie zuunig',
-       'Paypal',
-       'Ik heb geen contant geld dus contant',
-       'Netherlands',
-       'Velp',
+  'Paypal',
+  'Ik heb geen contant geld dus contant',
+  'Netherlands',
+  'Velp',
        'Grasmaaier',
        'Gelieve in de achtertuin te zetten',
        0,
        'grasmaaier.jpg'
 );
-
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -407,32 +378,24 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('3',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '3400.00',
   '5000.00',
   'Deze auto is echt heel erg  energie zuinig! echt een topper',
-       'Contant',
-       'Ik heb geen contant geld dus contant',
-       'Netherlands',
-       'Velp',
-       'Klassieke auto',
+  'Contant',
+  'Ik heb geen contant geld dus contant',
+  'Netherlands',
+  'Velp',
+       'Fiat Cabrio',
        'Gelieve in de achtertuin te zetten',
-       '',
+       1,
        'auto.jpg'
 );
 
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -448,32 +411,24 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('3',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '12.00',
   '5.00',
   'Ben je zwaar autistisch en weet je zeker dat je een achterstand hebt? dan is deze fidget spinner ideaal voor jou!',
-       'Bank/Giro',
-       'Ik heb geen contant geld dus contant',
-       'Netherlands',
-       'Velp',
+  'Bank/Giro',
+  'Ik heb geen contant geld dus contant',
+  'Netherlands',
+  'Velp',
        'Fidget Spinner Gloednieuw!',
        'het past als het goed is gewoon door de brievenbus',
-       '',
+       1,
        'fidgetspinner.jpg'
 );
 
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -489,20 +444,16 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('3',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '12.00',
   '5.00',
   'Kom lekker tot rust in dit badje',
-       'Contant',
-       'Ik heb geen contant geld dus contant',
-       'Netherlands',
-       'Velp',
+  'Contant',
+  'Ik heb geen contant geld dus contant',
+  'Netherlands',
+  'Velp',
        'Bubbelbad voor 6 personen (knusjes)',
        'Wordt geleverd met de vrachtwagen',
        '',
@@ -511,10 +462,6 @@ VALUES('3',
 
 INSERT INTO Voorwerp(
   [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
   [Startprijs],
   [Verkoper],
   [Koper],
@@ -530,66 +477,24 @@ INSERT INTO Voorwerp(
   [VeilingGesloten],
   [VoorwerpCover])
 VALUES('3',
-  '06/20/2017',
-  '23:59:59',
-  '06/27/2017',
-  '15:15:15',
   '100.00',
   'hugoiscool23verkoper',
   'hugoiscool23',
   '12.00',
   '5.00',
   'Its time to ddddd-dddd uel!!!!',
-       'Contant',
-       'Ik heb geen contant geld dus contant',
-       'Netherlands',
-       'Velp',
+  'Contant',
+  'Ik heb geen contant geld dus contant',
+  'Netherlands',
+  'Velp',
        'Legendarische collectie pokemonkaarten',
        'Wordt geleverd met de brievenpost',
        '',
        'pokemonkaarten.jpg'
 );
 
-INSERT INTO Voorwerp(
-  [Looptijd],
-  [LooptijdbeginDag],
-  [LooptijdbeginTijdstip],
-  [LooptijdeindeDag],
-  [LooptijdeindeTijdstip],
-  [Startprijs],
-  [Verkoper],
-  [Koper],
-  [Verzendkosten],
-  [Verkoopprijs],
-  [Beschrijving],
-  [Betalingswijze],
-  [Betalingsinstructie],
-  [Land],
-  [Plaatsnaam],
-  [Titel],
-  [Verzendinstructies],
-  [VeilingGesloten],
-  [VoorwerpCover])
-VALUES('1',
-  '05/20/2017',
-  '14:51:00',
-  '05/21/2017',
-  '14:51:00',
-  '2.00',
-  'hugoiscool23verkoper',
-  'hugoiscool23',
-  '1.95',
-  '4.00',
-  'Voor als oe oewe telefoon te vaak laat kledere',
-       'Paypal',
-       'Doet maar overmaken',
-       'Netherlands',
-       'Den Bosch',
-       'Samsung S7 Edge hoesje',
-       'Via post',
-       '',
-       'hoesje.jpg'
-);
+
+
 
 
 INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdstip],[Voorwerp]) VALUES('Commentaar op het product','11/13/2017','Positief','Koper','00:00:00',1);
@@ -597,7 +502,7 @@ INSERT INTO Feedback([Commentaar],[Dag],[Feedbacksoort],[SoortGebruiker],[Tijdst
 
 
 INSERT INTO Bestand([filenaam],[voorwerp]) VALUES('sdfsdfsdf.png',1);
-SELECT * FROM Bestand
+
 
 --ALTER TABLE id NOCHECK CONSTRAINT FK_idCategorie
 --GO
@@ -4007,7 +3912,7 @@ INSERT Rubriek (Rubrieknummer,Rubrieknaam,Rubriek) VALUES (179197,'Virtueel geld
 --ALTER TABLE id CHECK CONSTRAINT FK_idCategorie
 
 
-INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(1, 28837);
+--INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(1, 28837);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(2, 9355);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(3, 54235);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(4, 28727);
@@ -4015,10 +3920,6 @@ INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(5, 98
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(6, 234);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(7, 26672);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(8, 8673);
-INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(9, 68037);
-
-
-
 
 
 
@@ -4032,10 +3933,11 @@ INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(9, 68
 
 
 
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('7.50','hugoiscool23','2017/03/08','00:00:00',1);
-INSERT INTO Bod([Bodbedrag],[Gebruiker],[BodDag],[BodTijdstip],[Voorwerp]) VALUES('8.00','hugoiscool23','2017/03/08','00:00:00',1);
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[Voorwerp]) VALUES('7.50','hugoiscool23',1);
+INSERT INTO Bod([Bodbedrag],[Gebruiker],[Voorwerp]) VALUES('8.00','hugoiscool23',1);
 
-
+SELECT * FROM Bod
+SELECT * FROM Voorwerp
 /*
 SELECT *
 FROM Bod

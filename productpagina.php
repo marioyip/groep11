@@ -58,20 +58,7 @@ if (isset($_GET['product'])) {
     }
 }
 
-
-//while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//    $veilinggesloten = $row[0];
-//
-//    if ($veilinggesloten == 1) {
-//        $veiling .= "gesloten";
-//    }
-//    if ($veilinggesloten == 0) {
-//        $veiling .= "geopend";
-//    }
-//}
-
 ?>
-
 
 <div class="container">
     <div class="row">
@@ -197,9 +184,22 @@ if (isset($_GET['product'])) {
                 }, 1);
             </script>
             </p>
-            <button class="btn-default btn btn-lg textDarkGray" role="button">Bied nu!</button>
+
             <?php
 
+            //if(isset($_SESSION['username'])){
+            //}?>
+            <form action="bodwordtgeplaatst.php" method="post">
+                <div class="form-group">
+                    <input type="number" name="bod">
+                    <input type="hidden" value="hugoiscool23" name="gebruiker">
+                    <input type="hidden" value="<?php echo $product; ?>" name="productnummer" >
+                    <input type="submit" name="bodgeplaatst" value="plaats bod!">
+                </div>
+            </form>
+
+
+            <?php
             //TODO: SQL statement voor het plaatsen van een bod, nog niet af! date en tijd moeten worden vervangen door de huidige tijd.
 //            $sql = "INSERT INTO Bod (Bodbedrag, Gebruiker, BodDag, BodTijdstip, Voorwerp
 //                    VALUES (" . $bedrag . ", ". $_SESSION['user'] . ", " . $date . ", " . $tijd . ", " . $Voorwerpnummer . ")"
