@@ -54,39 +54,44 @@
       <file leaf-file-name="productpagina.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/productpagina.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="214" column="55" lean-forward="false" selection-start-line="214" selection-start-column="55" selection-end-line="214" selection-end-column="55" />
+            <state relative-caret-position="68">
+              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1495530754467" expanded="true" signature="1250:1315" ph="SELECT * FRO... voorwerp" />
-                <marker date="1495530754467" expanded="true" signature="4436:4524" ph="select TOP 1... Bod" />
-                <marker date="1495530754467" expanded="true" signature="4524:4525" ph="INSERT INTO Voorwerp... " />
-                <marker date="1495530754467" expanded="true" signature="4878:4952" ph="UPDATE Voorw... " />
-                <marker date="1495530754467" expanded="true" signature="5602:5665" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="5778:5813" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="7569:7889" ph="SELECT TOP 1... Bod" />
-                <marker date="1495530754467" expanded="true" signature="10001:10007" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10001:10245" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10009:10138" ph="SELECT g.voo... Voorwerp" />
-                <marker date="1495530754467" expanded="true" signature="10487:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10509:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10553:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10589:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10631:10922" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="10965:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11028:11229" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11095:11202" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11283:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11392:11506" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11615:11677" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11846:12375" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11913:12375" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="11994:12132" ph="SELECT g.voo... Voorwerp" />
-                <marker date="1495530754467" expanded="true" signature="12632:12716" ph="..." />
-                <marker date="1495530754467" expanded="true" signature="12783:12883" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="1295:1360" ph="SELECT * FRO... voorwerp" />
+                <marker date="1495532804600" expanded="true" signature="4481:4569" ph="select TOP 1... Bod" />
+                <marker date="1495532804600" expanded="true" signature="4569:4570" ph="INSERT INTO Voorwerp... " />
+                <marker date="1495532804600" expanded="true" signature="4923:4997" ph="UPDATE Voorw... " />
+                <marker date="1495532804600" expanded="true" signature="5312:5362" ph="SELECT email... Gebruiker" />
+                <marker date="1495532804600" expanded="true" signature="5312:5385" ph="SELECT email... Gebruiker" />
+                <marker date="1495532804600" expanded="true" signature="6079:6148" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="6079:6514" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="6528:6591" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="6704:6739" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="6704:6805" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="8495:8815" ph="SELECT TOP 1... Bod" />
+                <marker date="1495532804600" expanded="true" signature="10927:10933" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="10927:11171" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="10935:11064" ph="SELECT g.voo... Voorwerp" />
+                <marker date="1495532804600" expanded="true" signature="11413:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11435:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11479:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11515:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11557:11848" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11891:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="11954:12155" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12021:12128" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12209:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12318:12432" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12541:12603" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12772:13301" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12839:13301" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="12920:13058" ph="SELECT g.voo... Voorwerp" />
+                <marker date="1495532804600" expanded="true" signature="13558:13642" ph="..." />
+                <marker date="1495532804600" expanded="true" signature="13709:13809" ph="..." />
               </folding>
             </state>
           </provider>
@@ -148,8 +153,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4adc803-2852-42a2-849d-f7e163fb5ca5/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -167,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>p</find>
       <find>pricav</find>
       <find>prica</find>
       <find>pricva</find>
@@ -197,6 +201,7 @@
       <find>voorwerp</find>
       <find>bod</find>
       <find>input</find>
+      <find>head</find>
     </findStrings>
     <replaceStrings>
       <replace>itemBox grow</replace>
@@ -583,14 +588,7 @@
       <workItem from="1494839865764" duration="1582000" />
       <workItem from="1494849547136" duration="3582000" />
       <workItem from="1494921763570" duration="19577000" />
-      <workItem from="1495200286049" duration="32199000" />
-    </task>
-    <task id="LOCAL-00001" summary="Homepage">
-      <created>1493809836346</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1493809836346</updated>
+      <workItem from="1495200286049" duration="33732000" />
     </task>
     <task id="LOCAL-00002" summary="Homepage">
       <created>1493809984411</created>
@@ -928,11 +926,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495528609386</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="php constraints bieden">
+      <created>1495531444071</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1495531444079</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150940000" />
+    <option name="totallyTimeSpent" value="152473000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,7 +959,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39695945" sideWeight="0.4919473" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19256757" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5152027" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25549048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1002,7 +1007,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Footer v2.0" />
     <MESSAGE value="Animaties toegevoegd." />
     <MESSAGE value="header.html aangepast zodat dat lege kut vakje naast de zoekbalk weg is" />
     <MESSAGE value="Footer gefixed zodat die niet raar midden op het scherm zweeft, ook zoekfunctie wat aangepast kwa foutmelding, footer aangepast in css en php" />
@@ -1027,7 +1031,8 @@
     <MESSAGE value="productpagina verder bijgewerkt" />
     <MESSAGE value="winnaar van het bod gemaakt. De layout van de productpagina lichtelijk veranderd" />
     <MESSAGE value="codekwaliteit verbeterd van de productpagina" />
-    <option name="LAST_COMMIT_MESSAGE" value="codekwaliteit verbeterd van de productpagina" />
+    <MESSAGE value="php constraints bieden" />
+    <option name="LAST_COMMIT_MESSAGE" value="php constraints bieden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1294,14 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4adc803-2852-42a2-849d-f7e163fb5ca5/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/iproject CREATE.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -1310,41 +1307,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4adc803-2852-42a2-849d-f7e163fb5ca5/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/productpagina.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="214" column="55" lean-forward="false" selection-start-line="214" selection-start-column="55" selection-end-line="214" selection-end-column="55" />
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1495530754467" expanded="true" signature="1250:1315" ph="SELECT * FRO... voorwerp" />
-            <marker date="1495530754467" expanded="true" signature="4436:4524" ph="select TOP 1... Bod" />
-            <marker date="1495530754467" expanded="true" signature="4524:4525" ph="INSERT INTO Voorwerp... " />
-            <marker date="1495530754467" expanded="true" signature="4878:4952" ph="UPDATE Voorw... " />
-            <marker date="1495530754467" expanded="true" signature="5602:5665" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="5778:5813" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="7569:7889" ph="SELECT TOP 1... Bod" />
-            <marker date="1495530754467" expanded="true" signature="10001:10007" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10001:10245" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10009:10138" ph="SELECT g.voo... Voorwerp" />
-            <marker date="1495530754467" expanded="true" signature="10487:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10509:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10553:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10589:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10631:10922" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="10965:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11028:11229" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11095:11202" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11283:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11392:11506" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11615:11677" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11846:12375" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11913:12375" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="11994:12132" ph="SELECT g.voo... Voorwerp" />
-            <marker date="1495530754467" expanded="true" signature="12632:12716" ph="..." />
-            <marker date="1495530754467" expanded="true" signature="12783:12883" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="1295:1360" ph="SELECT * FRO... voorwerp" />
+            <marker date="1495532804600" expanded="true" signature="4481:4569" ph="select TOP 1... Bod" />
+            <marker date="1495532804600" expanded="true" signature="4569:4570" ph="INSERT INTO Voorwerp... " />
+            <marker date="1495532804600" expanded="true" signature="4923:4997" ph="UPDATE Voorw... " />
+            <marker date="1495532804600" expanded="true" signature="5312:5362" ph="SELECT email... Gebruiker" />
+            <marker date="1495532804600" expanded="true" signature="5312:5385" ph="SELECT email... Gebruiker" />
+            <marker date="1495532804600" expanded="true" signature="6079:6148" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="6079:6514" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="6528:6591" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="6704:6739" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="6704:6805" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="8495:8815" ph="SELECT TOP 1... Bod" />
+            <marker date="1495532804600" expanded="true" signature="10927:10933" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="10927:11171" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="10935:11064" ph="SELECT g.voo... Voorwerp" />
+            <marker date="1495532804600" expanded="true" signature="11413:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11435:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11479:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11515:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11557:11848" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11891:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="11954:12155" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12021:12128" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12209:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12318:12432" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12541:12603" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12772:13301" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12839:13301" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="12920:13058" ph="SELECT g.voo... Voorwerp" />
+            <marker date="1495532804600" expanded="true" signature="13558:13642" ph="..." />
+            <marker date="1495532804600" expanded="true" signature="13709:13809" ph="..." />
           </folding>
         </state>
       </provider>

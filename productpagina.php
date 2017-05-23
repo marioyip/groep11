@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <META HTTP-EQUIV="refresh" CONTENT="15">
     <meta charset="UTF-8">
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -121,8 +122,24 @@ if (isset($_GET['product'])) {
                 $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
+
+                //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
+                //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
+                $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $email = $row[0];
+                }
+                //het schrijven van de email zelf
+                $onderwerp = 'U heeft '.$Titel. ' Gewonnen op EenmaalAndermaal';
+                $bericht = 'Van harte gefeliciteerd met het winnen van '.$Titel.'.\r\n Wij van EenmaalAndermaal hopen dat u van dit product geniet.\r\n(U bent verplicht om te betalen)\r\nEenmaalAndermaal';
+
+                mail($email,$onderwerp,$bericht);
             }
             else{
+
 
             ?>
             <h2>Je kunt dit nu kopen!</h2>
