@@ -17,6 +17,8 @@
 
 <?php
 session_start();
+include ('includes/header.php');
+
 //if (isset($_SESSION['username'])) {
 //    header("Location: index.php");
 //}
@@ -41,6 +43,11 @@ if (isset($_POST['submit'])) {
     $verkoper = $_POST['verkoper'];
     $rekeningnummer = $_POST['rekeningnummer'];
     $rekeninghouder = $_POST['rekeninghouder'];
+    $ingevoerdecode = $_POST['ingevoerdecode'];
+    $emailingevoerd = $_POST['emailingevoerd'];
+    $gemaaktecode = $_POST['gemaaktecode'];
+    $emailbevestigd = $_POST['emailbevestigd'];
+
 
     if (empty($gebruikersnaam)) {
         $foutmelding = 'wel je gebruikeresnaam invullen!';
@@ -108,6 +115,7 @@ if (isset($_POST['submit'])) {
 
         connectToDatabase();
 
+
         $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 
         if ($geentweedehuis == true) {
@@ -126,15 +134,18 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
 
     }
-}
-if ($ingevoerdecode == $gemaaktecode && $emailbevestigd == $emailingevoerd) {
-    $voornaam = $_POST['voornaambevestigd'];
-    $achternaam = $_POST['achternaambevestigd'];
-    $emailingevoerd = $_POST['emailingevoerd'];
-    $emailbevestigd = $_POST['emailbevestigd'];
-    $gemaaktecode = $_POST['gemaaktecode'];
-    $ingevoerdecode = $_POST['ingevoerdecode'];
 
+
+    if ($ingevoerdecode == $gemaaktecode && $emailbevestigd == $emailingevoerd) {
+        $voornaam = $_POST['voornaambevestigd'];
+        $achternaam = $_POST['achternaambevestigd'];
+        $emailingevoerd = $_POST['emailingevoerd'];
+        $emailbevestigd = $_POST['emailbevestigd'];
+        $gemaaktecode = $_POST['gemaaktecode'];
+        $ingevoerdecode = $_POST['ingevoerdecode'];
+    }
+
+}
     ?>
 
     <div class="form-control">
@@ -291,7 +302,7 @@ if ($ingevoerdecode == $gemaaktecode && $emailbevestigd == $emailingevoerd) {
     <script src="js/bootstrap.min.js"></script>
 
     <?php ;
-    }
+    include ('includes/footer.php');
 
 
 ?>
