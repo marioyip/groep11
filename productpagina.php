@@ -13,9 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 </head>
-
 <body>
-
 <?php
 session_start();
 include 'includes/header.php';
@@ -54,16 +52,13 @@ if (isset($_GET['product'])) {
         $VoorwerpCover = $row[19];
     }
 }
-
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-header"><!-- titel -->
-                <?php
-                echo $Titel;
-                ?>
+            <h1 class="page-header">
+                <!-- titel -->
+                <?php echo $Titel; ?>
             </h1>
         </div>
     </div>
@@ -123,8 +118,6 @@ if (isset($_GET['product'])) {
                 if(empty($gebruikerHoogsteBod)){
                     $gebruikerHoogsteBod = NULL;
                 }
-
-
                 $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -179,10 +172,8 @@ if (isset($_GET['product'])) {
                 }, 1);
             </script>
             </p>
-
             <?php
-
-            //if(isset($_SESSION['username'])){
+            if(isset($_SESSION['username'])){
             ?>
             <form action="bodwordtgeplaatst.php" method="post">
                 <div class="form-group">
@@ -194,9 +185,7 @@ if (isset($_GET['product'])) {
                     <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                 </div>
             </form>
-            <?php //}
-            ?>
-
+            <?php } ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -247,23 +236,17 @@ if (isset($_GET['product'])) {
                 <div class="tab-content">
                     <div id="home" class="tab-pane in active">
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
-                            <?php
-                            echo $Beschrijving;
-                            ?>
+                            <?php echo $Beschrijving; ?>
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
                         <h3>Betaling</h3>
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
-                            <?php
-                            echo $Betalingsinstructie;
-                            ?>
+                            <?php echo $Betalingsinstructie; ?>
                         </p>
                         <h3>Levering</h3>
                         <p class="sanchez marginTop20 fontSize20">
-                            <?php
-                            echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten;
-                            ?>
+                            <?php echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten; ?>
                         </p>
                     </div>
                     <div id="menu2" class="tab-pane">
@@ -283,10 +266,8 @@ if (isset($_GET['product'])) {
                             <?php echo $email ?>
                         </p>
                         <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
-                            <?php
-                            echo $Plaatsnaam . ', ';
-                            echo $Land;
-                            } //dit haakje is voor de veiling is gesloten.
+                            <?php echo $Plaatsnaam.' , '.$Land;
+                            } // <-- dit haakje is voor de veiling is gesloten.
                             ?>
                         </p>
                     </div>
