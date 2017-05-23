@@ -53,6 +53,10 @@
     margin-top: 50px;
 }
 
+.marginTop55{
+    margin-top: 55px;
+}
+
 .marginTop60 {
     margin-top: 60px;
 }
@@ -127,6 +131,10 @@
 
 .marginLeft400 {
     margin-left: 400px;
+}
+
+.marginLeft1000{
+    margin-left: 1000px;
 }
 
 /*Padding*/
@@ -470,4 +478,20 @@ noListStyleType li {
 .panelStyle{
     padding: 10px;
 
+}
+
+.btnPlaceOffer{
+    width: 80px;
+    height: 20px;
+}
+
+
+.show-on-hover:hover > ul.dropdown-menu {
+    display: inline-block;
+}
+
+#nav li:hover ul{
+    left:auto;
+    right:0;
+    margin-right:-10px;
 }

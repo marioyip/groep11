@@ -311,7 +311,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 <div class="tab-pane fade " id="item7" role="tabpanel">
                     <a href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
                     <hr>
-                    <button type="button" class="btn btn-warning marginTop20">
+                    <button type="button" class="btn btn-warning  marginTop20">
                         Account verwijderen
                     </button>
                 </div>
