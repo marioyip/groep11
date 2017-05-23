@@ -455,3 +455,19 @@ noListStyleType li {
 {
     background-color: rgba(43,39,43, .6);
 }
+
+.nav-tabs{
+}
+
+.nav-tabs a{
+    color: #88B04B;
+}
+
+.nav-item:hover{
+    color: #88B04B;
+}
+
+.panelStyle{
+    padding: 10px;
+
+}
