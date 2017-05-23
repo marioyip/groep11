@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <META HTTP-EQUIV="refresh" CONTENT="15">
+<!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
     <meta charset="UTF-8">
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
