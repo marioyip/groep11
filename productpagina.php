@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
     <meta charset="UTF-8">
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -13,9 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 </head>
-
 <body>
-
 <?php
 session_start();
 include 'includes/header.php';
@@ -25,9 +24,6 @@ ini_set('display_errors', 1);
 require_once('includes/functies.php');
 
 connectToDatabase();
-
-$veiling = "";
-$veilinggesloten = "";
 
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
@@ -57,16 +53,13 @@ if (isset($_GET['product'])) {
         $VoorwerpCover = $row[19];
     }
 }
-
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-header"><!-- titel -->
-                <?php
-                echo $Titel;
-                ?>
+            <h1 class="page-header">
+                <!-- titel -->
+                <?php echo $Titel; ?>
             </h1>
         </div>
     </div>
@@ -111,42 +104,62 @@ if (isset($_GET['product'])) {
         </div>
     </div>
 
-
     <div class="col-md-6">
         <div class="veilingBox">
-            <h2>De veiling is <?= $veiling ?></h2>
+            <?php
+            if ($VeilingGesloten == 1){
+                echo '<h2>DEZE VEILING IS HELAAS GESLOTEN</h2>';
+                echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
+                $sql = "select TOP 1 Gebruiker from Bod where voorwerp = $Voorwerpnummer Order by bodbedrag DESC ";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $gebruikerHoogsteBod = $row[0];
+                }
+                if(empty($gebruikerHoogsteBod)){
+                    $gebruikerHoogsteBod = NULL;
+
+                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                }
+                else{
+
+                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+
+                    //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
+                    //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
+                    $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $email = $row[0];
+                    }
+                    //het schrijven van de email zelf
+                    $headers =   'MIME-Version: 1.0' . "\r\n";
+                    $headers .=  'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
+                    $headers .=  'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                    $onderwerp = 'U heeft '.$Titel. ' Gewonnen op EenmaalAndermaal' . "\r\n";
+                    $bericht =   'Van harte gefeliciteerd met het winnen van  '.$Titel.'' .  "\r\n";
+                    $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
+                    $bericht .= 'U bent verplicht om te betalen)' .  "\r\n;" .  ' EenmaalAndermaal';
+                    mail($email,$onderwerp,$bericht, $headers);
+                }
+            }
+            else{
+            ?>
+            <h2>Je kunt dit nu kopen!</h2>
             <p><!-- looptijdbegindag -->
-                De veiling is op
                 <?php
-                echo $LooptijdbeginDag;
-                ?>
-                om <!-- LooptijdbeginTijdstip -->
-                <?php
-                echo $LooptijdbeginTijdstip;
-                ?>
-                geopend.
-                De veiling is op
-                <strong><?php
-                    echo $LooptijdeindeDag;
-                    ?></strong>
-                om
-                <strong><?php
-                    echo $LooptijdeindeTijdstip;
-                    ?></strong>
-                gesloten.
-                De looptijd voor de veiling van
-                <?php
-                echo $Titel;
-                ?>
-                is <!-- looptijd -->
-                <?php
-                echo $Looptijd
-                ?>
-                dagen.
+                echo 'De veiling is op <strong>'.$LooptijdbeginDag.'</strong> om <strong>'.$LooptijdbeginTijdstip.'</strong> geopend. <br>';
+                echo 'De veiling is om <strong>'.$LooptijdeindeDag.'</strong> om <strong>'.$LooptijdeindeTijdstip. '</strong> afgelopen. <br>' ;
+                echo 'De looptiijd van de veiling is '.$Looptijd.' dagen. <br>'; ?>
 
             </p>
-            <p>
-                <!-- Display the countdown timer in an element -->
+
+            <!-- Display the countdown timer in an element -->
             <p class="fontSize20">U heeft nog maar</p>
             <p id="demo" class="fontSize20"></p>
 
@@ -184,23 +197,10 @@ if (isset($_GET['product'])) {
                 }, 1);
             </script>
             </p>
-
             <?php
-
-            //if(isset($_SESSION['username'])){
+            if(isset($_SESSION['username'])){
             ?>
-            <form action="bodwordtgeplaatst.php" method="post">
-                <div class="form-group">
-                    <div class="col-xs-5">
-                        <input type="number" name="bod" min="0" max="999999.99" class="form-control" Placeholder="200">
-                    </div>
-                    <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
-                    <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
-                    <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
-                </div>
-            </form>
-            <?php //} ?>
-
+            <?php } // haakje voor de isset (regel 176) ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -215,24 +215,40 @@ if (isset($_GET['product'])) {
                     $Achternaam = $row[2];
                 }
                 if (isset($Bod) && $Bod >= $Startprijs) {
-                    echo 'Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')';
+                    echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
                 } else {
-                    echo 'Startprijs: €' . $Startprijs;
+                    echo '<h3>Startprijs: €' . $Startprijs.'</h3>';
+                    $Bod=$Startprijs;
+                }
+                $minimumBod = $Bod;
+                $voorbeeldbod = $minimumBod*1.5;
+                if($Bod>0.99 && $Bod < 50){
+                    $minimumBod = $Bod + 0.50;
+                }
+                if($Bod>=49.99 && $Bod < 500){
+                    $minimumBod = $Bod + 1.00;
+                }
+                if($Bod>=499.99 && $Bod < 1000){
+                    $minimumBod = $Bod + 5.00;
+                }
+                if($Bod>=999.99 && $Bod < 5000){
+                    $minimumBod = $Bod + 10.00;
+                }
+                if($Bod>5000){
+                    $minimumBod = $Bod + 50.00;
                 }
                 ?>
+                <form action="bodwordtgeplaatst.php" method="post">
+                    <div class="form-group">
+                        <div class="col-xs-5">
+                            <?php echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder='.$voorbeeldbod.'>'; ?>
+                        </div>
+                        <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
+                        <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
+                        <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
+                    </div>
+                </form>
             </h2>
-            <h3>
-                <?php
-                $sql = "SELECT g.voornaam, g.achternaam FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                echo 'Aangeboden door: ';
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0] . ' ';
-                    echo $row[1];
-                }
-                ?>
-            </h3>
         </div>
     </div>
 </div>
@@ -249,23 +265,17 @@ if (isset($_GET['product'])) {
                 <div class="tab-content">
                     <div id="home" class="tab-pane in active">
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
-                            <?php
-                            echo $Beschrijving;
-                            ?>
+                            <?php echo $Beschrijving; ?>
                         </p>
                     </div>
                     <div id="menu1" class="tab-pane">
                         <h3>Betaling</h3>
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
-                            <?php
-                            echo $Betalingsinstructie;
-                            ?>
+                            <?php echo $Betalingsinstructie; ?>
                         </p>
                         <h3>Levering</h3>
                         <p class="sanchez marginTop20 fontSize20">
-                            <?php
-                            echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten;
-                            ?>
+                            <?php echo $Verzendinstructies . '</br>' . 'Eventuele verzendkosten: €' . $Verzendkosten; ?>
                         </p>
                     </div>
                     <div id="menu2" class="tab-pane">
@@ -285,9 +295,8 @@ if (isset($_GET['product'])) {
                             <?php echo $email ?>
                         </p>
                         <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
-                            <?php
-                            echo $Plaatsnaam . ', ';
-                            echo $Land;
+                            <?php echo $Plaatsnaam.' , '.$Land;
+                            } // <-- dit haakje is voor de veiling is gesloten.
                             ?>
                         </p>
                     </div>
@@ -297,9 +306,7 @@ if (isset($_GET['product'])) {
     </div>
 </div>
 </body>
-
 </html>
-
 <?php
 include 'includes/footer.php';
 ?>
