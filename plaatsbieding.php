@@ -14,7 +14,8 @@
 <?php
 
 session_start();
-if(isset($_SESSION['username'])){
+
+//if(isset($_SESSION['username'])){
 
 include 'includes/header.php';
 include 'includes/catbar.php';
@@ -29,7 +30,7 @@ require_once 'includes/functies.php';
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">
-            <form method="post" action="">
+            <form method="post" action="POST">
                 <div class="form-group">
                     <label for="titel_voorwerp">Titel</label>
                     <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast">
@@ -81,8 +82,8 @@ require_once 'includes/functies.php';
 
 <?php
 
-if (isset($_POST['submmit'])) {
-    $verkoper = Dikkie;
+//if (isset($_POST['submmit'])) {
+    $verkoper = anja;
 
     $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
     $stmt = $db->prepare($sql);
@@ -100,6 +101,7 @@ if (isset($_POST['submmit'])) {
     $betalingsinstructie = $_POST['betallingsinstructie'];
     $titel = $_POST['titel'];
     $verzendinstructie = $_POST['verzendinstructie'];
+    $voorwerpCover = addslashes($_FILES['voorwerpCover']);
 
     $sql = "INSERT INTO Voorwerp(
   [Looptijd],
@@ -116,10 +118,10 @@ if (isset($_POST['submmit'])) {
 VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$betalingsinstructie','$land','$plaatsnaam','$titel', '$verzendinstructie','$voorwerpCover')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-}
-}
-else{
-    header('Location: index.php');
-    die();
-}
+//}
+//}
+//else{
+//    header('Location: index.php');
+//    die();
+//}
 ?>
