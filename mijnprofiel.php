@@ -188,8 +188,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $Voorwerpnummer = $row[17];
                         $VeilingGesloten = $row[18];
                         $VoorwerpCover = $row[19];
-                    }
 
+                    }
                     for ($i = 0; $i < count($Titel); $i++) {
                         echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">

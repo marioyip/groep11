@@ -35,27 +35,27 @@ if (isset($_SESSION['username'])) {
     $bericht  =   'Dit is uw bevestigingscode: '.$code.'' .  "\r\n";
     mail($emailadres,$onderwerp,$bericht, $headers);
 
-    echo $code.'<br>';
-    echo $emailadres;
+//    echo $code.'<br>';
+//    echo $emailadres;
 
     ?>
 
 <div class="form-control">
     <form method="POST" action="registratieAfronden.php">
         <div class="form-group">
-            <label for="ingevoerdecode">Je ontvangen code</label>
-            <input id="ingevoerdecode" type="text" name="ingevoerdecode">
+            <label for="ingevoerdecode">Je ontvangen code
+            <input id="ingevoerdecode" type="text" name="ingevoerdecode"></label>
         </div>
         <div class="form-group">
-            <label for emailingevoerd>Emailadres</label>
-            <input id="emailingevoerd" type="text" name="emailingevoerd">
+            <label for=" emailingevoerd">Emailadres
+            <input id="emailingevoerd" type="text" name="emailingevoerd"></label>
         </div>
         <div class="form-group">
             <?php
-            echo '<input type="hidden" value='.$voornaam.' name="voornaambevestigd">';
-            echo '<input type="hidden" value='.$achternaam.' name="achternaambevestigd">';
-            echo '<input type="hidden" value='.$emailadres.' name="emailbevestigd">';
-            echo '<input type="hidden" value='.$code.' name="gemaaktecode">';
+            echo '<input type="" value='.$voornaam.' name="voornaambevestigd">';
+            echo '<input type="" value='.$achternaam.' name="achternaambevestigd">';
+            echo '<input type="" value='.$emailadres.' name="emailbevestigd">';
+            echo '<input type="" value='.$code.' name="gemaaktecode">';
             ?>
         </div>
         <div class="form-group">
