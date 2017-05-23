@@ -175,17 +175,7 @@ if (isset($_GET['product'])) {
             <?php
             if(isset($_SESSION['username'])){
             ?>
-            <form action="bodwordtgeplaatst.php" method="post">
-                <div class="form-group">
-                    <div class="col-xs-5">
-                        <input type="number" name="bod" min="0" max="999999.99" class="form-control" Placeholder="200">
-                    </div>
-                    <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
-                    <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
-                    <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
-                </div>
-            </form>
-            <?php } ?>
+            <?php } // haakje voor de isset (regel 176) ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -198,28 +188,52 @@ if (isset($_GET['product'])) {
                     $Bod = $row[0];
                     $Voornaam = $row[1];
                     $Achternaam = $row[2];
-                }
-                if (isset($Bod) && $Bod >= $Startprijs) {
-                    echo 'Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')';
-                } else {
-                    echo 'Startprijs: €' . $Startprijs;
-                }
-                ?>
+                } ?>
+                <form action="bodwordtgeplaatst.php" method="post">
+                    <div class="form-group">
+                        <div class="col-xs-5">
+                            <?php
+                            $minimumBod = $Bod;
+                            if($Bod>0.99 && $Bod < 50){
+                                $minimumBod = $Bod + 0.50;
+                            }
+                            if($Bod>=49.99 && $Bod < 500){
+                                $minimumBod = $Bod + 1.00;
+                            }
+                            if($Bod>=499.99 && $Bod < 1000){
+                                $minimumBod = $Bod + 5.00;
+                            }
+                            if($Bod>=999.99 && $Bod < 5000){
+                                $minimumBod = $Bod + 10.00;
+                            }
+                            if($Bod>5000){
+                                $minimumBod = $Bod + 50.00;
+                            }
+
+                            echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder="200">'; ?>
+                        </div>
+                        <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
+                        <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
+                        <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
+                    </div>
+                </form>
             </h2>
-            <h3>
-                <?php
-                $sql = "SELECT g.voornaam, g.achternaam FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                echo 'Aangeboden door: ';
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    echo $row[0] . ' ';
-                    echo $row[1];
-                }
+            <?php
+            if (isset($Bod) && $Bod >= $Startprijs) {
+                echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
+            } else {
+                echo '<h3>Startprijs: €' . $Startprijs.'</h3>';
+            }
 
-
-                ?>
-            </h3>
+            $sql = "SELECT g.voornaam, g.achternaam FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            echo '<h3>Aangeboden door: ';
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                echo $row[0] . ' ';
+                echo $row[1].'</h3>';
+            }
+            ?>
         </div>
     </div>
 </div>
