@@ -14,7 +14,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])){
 
 include 'includes/header.php';
 include 'includes/catbar.php';
@@ -63,6 +63,24 @@ require_once 'includes/functies.php';
                         <option>3</option>
                         <option>5</option>
                         <option>7</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rubriek">Rubriek</label>
+                    <select class="form-control" id="rubriek" name="rubriek">
+                        <?php
+                        $sql = "SELECT Rubrieknummer, Rubrieknaam FROM Rubriek WHERE Rubrieknummer NOT IN (SELECT DISTINCT Rubriek FROM Rubriek WHERE Rubriek IS NOT NULL) ORDER BY Rubrieknaam ASC";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)){
+                            $rubrieknummer[] = $row[0];
+                            $rubrieknaam[] = $row[1];
+                        }
+
+                        for ($i = 0; $i < count($rubrieknummer); $i++){
+                            echo '<option value="' . $rubrieknummer . '">' . $rubrieknaam[$i] . '</option>';
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">
@@ -118,8 +136,8 @@ VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$bet
     $stmt->execute();
 }
 }
-else{
-    header('Location: index.php');
-    die();
-}
+//else{
+//    header('Location: index.php');
+//    die();
+//}
 ?>
