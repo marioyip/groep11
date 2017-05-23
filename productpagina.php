@@ -118,29 +118,32 @@ if (isset($_GET['product'])) {
                 }
                 if(empty($gebruikerHoogsteBod)){
                     $gebruikerHoogsteBod = NULL;
+
+                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
                 }
-                $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
+                else{
 
-                //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
-                //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
-                $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
+                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
 
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $email = $row[0];
+                    //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
+                    //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
+                    $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $email = $row[0];
+                    }
+                    //het schrijven van de email zelf
+                    $onderwerp = 'U heeft '.$Titel. ' Gewonnen op EenmaalAndermaal';
+                    $bericht = 'Van harte gefeliciteerd met het winnen van '.$Titel.'.\r\n Wij van EenmaalAndermaal hopen dat u van dit product geniet.\r\n(U bent verplicht om te betalen)\r\nEenmaalAndermaal';
+                    mail($email,$onderwerp,$bericht);
                 }
-                //het schrijven van de email zelf
-                $onderwerp = 'U heeft '.$Titel. ' Gewonnen op EenmaalAndermaal';
-                $bericht = 'Van harte gefeliciteerd met het winnen van '.$Titel.'.\r\n Wij van EenmaalAndermaal hopen dat u van dit product geniet.\r\n(U bent verplicht om te betalen)\r\nEenmaalAndermaal';
-
-                mail($email,$onderwerp,$bericht);
             }
             else{
-
-
             ?>
             <h2>Je kunt dit nu kopen!</h2>
             <p><!-- looptijdbegindag -->
@@ -205,29 +208,35 @@ if (isset($_GET['product'])) {
                     $Bod = $row[0];
                     $Voornaam = $row[1];
                     $Achternaam = $row[2];
-                } ?>
+                }
+                if (isset($Bod) && $Bod >= $Startprijs) {
+                    echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
+                } else {
+                    echo '<h3>Startprijs: €' . $Startprijs.'</h3>';
+                    $Bod=$Startprijs;
+                }
+                $minimumBod = $Bod;
+                $voorbeeldbod = $minimumBod*1.5;
+                if($Bod>0.99 && $Bod < 50){
+                    $minimumBod = $Bod + 0.50;
+                }
+                if($Bod>=49.99 && $Bod < 500){
+                    $minimumBod = $Bod + 1.00;
+                }
+                if($Bod>=499.99 && $Bod < 1000){
+                    $minimumBod = $Bod + 5.00;
+                }
+                if($Bod>=999.99 && $Bod < 5000){
+                    $minimumBod = $Bod + 10.00;
+                }
+                if($Bod>5000){
+                    $minimumBod = $Bod + 50.00;
+                }
+                ?>
                 <form action="bodwordtgeplaatst.php" method="post">
                     <div class="form-group">
                         <div class="col-xs-5">
-                            <?php
-                            $minimumBod = $Bod;
-                            if($Bod>0.99 && $Bod < 50){
-                                $minimumBod = $Bod + 0.50;
-                            }
-                            if($Bod>=49.99 && $Bod < 500){
-                                $minimumBod = $Bod + 1.00;
-                            }
-                            if($Bod>=499.99 && $Bod < 1000){
-                                $minimumBod = $Bod + 5.00;
-                            }
-                            if($Bod>=999.99 && $Bod < 5000){
-                                $minimumBod = $Bod + 10.00;
-                            }
-                            if($Bod>5000){
-                                $minimumBod = $Bod + 50.00;
-                            }
-
-                            echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder="200">'; ?>
+                            <?php echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder='.$voorbeeldbod.'>'; ?>
                         </div>
                         <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
@@ -235,22 +244,6 @@ if (isset($_GET['product'])) {
                     </div>
                 </form>
             </h2>
-            <?php
-            if (isset($Bod) && $Bod >= $Startprijs) {
-                echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
-            } else {
-                echo '<h3>Startprijs: €' . $Startprijs.'</h3>';
-            }
-
-            $sql = "SELECT g.voornaam, g.achternaam FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
-            echo '<h3>Aangeboden door: ';
-            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                echo $row[0] . ' ';
-                echo $row[1].'</h3>';
-            }
-            ?>
         </div>
     </div>
 </div>
