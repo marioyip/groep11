@@ -26,9 +26,6 @@ require_once('includes/functies.php');
 
 connectToDatabase();
 
-$veiling = "";
-$veilinggesloten = "";
-
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
     $sql = "SELECT * FROM voorwerp WHERE voorwerp.voorwerpnummer = '$product'";
@@ -111,42 +108,40 @@ if (isset($_GET['product'])) {
         </div>
     </div>
 
-
     <div class="col-md-6">
         <div class="veilingBox">
-            <h2>De veiling is <?= $veiling ?></h2>
+            <?php
+            if ($VeilingGesloten == 1){
+                echo '<h2>DEZE VEILING IS HELAAS GESLOTEN</h2>';
+                echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
+                $sql = "select TOP 1 Gebruiker from Bod where voorwerp = $Voorwerpnummer Order by bodbedrag DESC ";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $gebruikerHoogsteBod = $row[0];
+                }
+                if(empty($gebruikerHoogsteBod)){
+                    $gebruikerHoogsteBod = NULL;
+                }
+
+
+                $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+            }
+            else{
+
+            ?>
+            <h2>Je kunt dit nu kopen!</h2>
             <p><!-- looptijdbegindag -->
-                De veiling is op
                 <?php
-                echo $LooptijdbeginDag;
-                ?>
-                om <!-- LooptijdbeginTijdstip -->
-                <?php
-                echo $LooptijdbeginTijdstip;
-                ?>
-                geopend.
-                De veiling is op
-                <strong><?php
-                    echo $LooptijdeindeDag;
-                    ?></strong>
-                om
-                <strong><?php
-                    echo $LooptijdeindeTijdstip;
-                    ?></strong>
-                gesloten.
-                De looptijd voor de veiling van
-                <?php
-                echo $Titel;
-                ?>
-                is <!-- looptijd -->
-                <?php
-                echo $Looptijd
-                ?>
-                dagen.
+                echo 'De veiling is op <strong>'.$LooptijdbeginDag.'</strong> om <strong>'.$LooptijdbeginTijdstip.'</strong> geopend. <br>';
+                echo 'De veiling is om <strong>'.$LooptijdeindeDag.'</strong> om <strong>'.$LooptijdeindeTijdstip. '</strong> afgelopen. <br>' ;
+                echo 'De looptiijd van de veiling is '.$Looptijd.' dagen. <br>'; ?>
 
             </p>
-            <p>
-                <!-- Display the countdown timer in an element -->
+
+            <!-- Display the countdown timer in an element -->
             <p class="fontSize20">U heeft nog maar</p>
             <p id="demo" class="fontSize20"></p>
 
@@ -199,7 +194,8 @@ if (isset($_GET['product'])) {
                     <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                 </div>
             </form>
-            <?php //} ?>
+            <?php //}
+            ?>
 
             <h2>
                 <?php
@@ -231,6 +227,8 @@ if (isset($_GET['product'])) {
                     echo $row[0] . ' ';
                     echo $row[1];
                 }
+
+
                 ?>
             </h3>
         </div>
@@ -288,6 +286,7 @@ if (isset($_GET['product'])) {
                             <?php
                             echo $Plaatsnaam . ', ';
                             echo $Land;
+                            } //dit haakje is voor de veiling is gesloten.
                             ?>
                         </p>
                     </div>
@@ -297,9 +296,7 @@ if (isset($_GET['product'])) {
     </div>
 </div>
 </body>
-
 </html>
-
 <?php
 include 'includes/footer.php';
 ?>
