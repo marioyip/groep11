@@ -21,19 +21,20 @@ if (isset($_SESSION['username'])) {
 }
 
 //if(isset($_POST['bevestigmail'])) {
-    $voornaam = $_POST['voornaam'];
-    $achternaam = $_POST['achternaam'];
-    $emailadres = $_POST['emailadres'];
+    $_SESSION['voornaam']= $_POST['voornaam'];
+    $_SESSION['achternaam'] = $_POST['achternaam'];
+    $_SESSION['emailadres'] = $_POST['emailadres'];
 
-    $code = mt_rand();
+    $_SESSION['code'] = mt_rand();
+    echo $_SESSION['code'];
 
     //het schrijven van de email zelf
     $headers =   'MIME-Version: 1.0' . "\r\n";
     $headers .=  'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
     $headers .=  'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
-    $bericht  =   'Dit is uw bevestigingscode: '.$code.'' .  "\r\n";
-    mail($emailadres,$onderwerp,$bericht, $headers);
+    $bericht  =   'Dit is uw bevestigingscode: '.$_SESSION['code'].'' .  "\r\n";
+    mail($_SESSION['emailadres'],$onderwerp,$bericht, $headers);
 
 //    echo $code.'<br>';
 //    echo $emailadres;
@@ -51,15 +52,7 @@ if (isset($_SESSION['username'])) {
             <input id="emailingevoerd" type="text" name="emailingevoerd"></label>
         </div>
         <div class="form-group">
-            <?php
-            echo '<input type="" value='.$voornaam.' name="voornaambevestigd">';
-            echo '<input type="" value='.$achternaam.' name="achternaambevestigd">';
-            echo '<input type="" value='.$emailadres.' name="emailbevestigd">';
-            echo '<input type="" value='.$code.' name="gemaaktecode">';
-            ?>
-        </div>
-        <div class="form-group">
-            <input type="submit" name="codeinvoer" value="bevestig" class="btn-default btn">
+            <input type="submit" name="bevestig" value="bevestig" class="btn-default btn">
         </div>
     </form>
 </div>
