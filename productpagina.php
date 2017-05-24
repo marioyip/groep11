@@ -248,24 +248,30 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                    <?php
-                    $sql = "SELECT * FROM Bod b
-                        INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
-                        INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
-                        WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag ASC";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $Bod = $row[0];
-                        $Voornaam = $row[1];
-                        $Achternaam = $row[2];
-                        $Tijdstip = $row[3];
-                    }
-                        echo '<h3>Vorige Boden: <br>€' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ' ' . $Tijdstip . ')</h3>';
-//                    echo  '<h3>€' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ' ' . $Tijdstip . ')</h3>';
-                    ?>
                 </form>
             </h2>
+            <ul>
+                <?php
+                $sql = "SELECT TOP 5 * FROM Bod b
+                        INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
+                        INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
+                        WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $Bod2[] = $row[0];
+                    $Voornaam2[] = $row[1];
+                    $Achternaam2[] = $row[2];
+                    $Tijdstip2[] = $row[3];
+                }
+
+                for($i = 0; $i < count($Bod2); $i++){
+
+                    echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
+
+                }
+                ?>
+            </ul>
         </div>
     </div>
 </div>
