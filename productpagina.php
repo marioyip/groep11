@@ -106,6 +106,7 @@ if (isset($_GET['product'])) {
 
     <div class="col-md-6">
         <div class="veilingBox">
+
             <?php
             if ($VeilingGesloten == 1){
                 echo '<h2>DEZE VEILING IS HELAAS GESLOTEN</h2>';

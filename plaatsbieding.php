@@ -14,8 +14,7 @@
 <?php
 
 session_start();
-
-//if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])){
 
 include 'includes/header.php';
 include 'includes/catbar.php';
@@ -30,7 +29,7 @@ require_once 'includes/functies.php';
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">
-            <form method="post" action="POST">
+            <form method="post" action="">
                 <div class="form-group">
                     <label for="titel_voorwerp">Titel</label>
                     <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast">
@@ -67,6 +66,24 @@ require_once 'includes/functies.php';
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="rubriek">Rubriek</label>
+                    <select class="form-control" id="rubriek" name="rubriek">
+                        <?php
+                        $sql = "SELECT Rubrieknummer, Rubrieknaam FROM Rubriek WHERE Rubrieknummer NOT IN (SELECT DISTINCT Rubriek FROM Rubriek WHERE Rubriek IS NOT NULL) ORDER BY Rubrieknaam ASC";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)){
+                            $rubrieknummer[] = $row[0];
+                            $rubrieknaam[] = $row[1];
+                        }
+
+                        for ($i = 0; $i < count($rubrieknummer); $i++){
+                            echo '<option value="' . $rubrieknummer . '">' . $rubrieknaam[$i] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label class="btn btn-default btn-file">
                         Foto <input type="file" name="voorwerpCover" hidden>
                     </label>
@@ -82,8 +99,8 @@ require_once 'includes/functies.php';
 
 <?php
 
-//if (isset($_POST['submmit'])) {
-    $verkoper = anja;
+if (isset($_POST['submmit'])) {
+    $verkoper = Dikkie;
 
     $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
     $stmt = $db->prepare($sql);
@@ -101,7 +118,6 @@ require_once 'includes/functies.php';
     $betalingsinstructie = $_POST['betallingsinstructie'];
     $titel = $_POST['titel'];
     $verzendinstructie = $_POST['verzendinstructie'];
-    $voorwerpCover = addslashes($_FILES['voorwerpCover']);
 
     $sql = "INSERT INTO Voorwerp(
   [Looptijd],
@@ -118,8 +134,8 @@ require_once 'includes/functies.php';
 VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$betalingsinstructie','$land','$plaatsnaam','$titel', '$verzendinstructie','$voorwerpCover')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-//}
-//}
+}
+}
 //else{
 //    header('Location: index.php');
 //    die();

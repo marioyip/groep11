@@ -17,43 +17,40 @@
 </head>
 <body>
 <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("May 27, 2017 13:25:00").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-
-        // Get todays date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now an the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24) + hours + 23);
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = days + " Dagen "
-            + minutes + " Minuten en " + seconds + " Seconden om te bieden!";
-
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-    }, 1000);
+    console.log("TEST");
 </script>
-
-
 <?php
 session_start();
 
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
-include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
+include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
+
+function getTijd($tijd, $pos)
+{
+    ?>
+    <script>
+        var countDownDate = new Date("<?php echo $tijd ?>").getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var verschil = countDownDate - now;
+
+            var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((verschil % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((verschil % (1000 * 60)) / 1000);
+
+            if (verschil <= 0) {
+                clearInterval(x);
+                document.getElementById("<?php echo $pos ?>").innerHTML = "Helaas, de veiling is afgelopen!";
+            } else {
+                document.getElementById("<?php echo $pos ?>").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
+            }
+        }, 1);
+    </script>
+    <?php
+}
+
+?>
 
 <main>
     <!-- Full Page Image Background Carousel Header -->
@@ -66,7 +63,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
         </ol>
 
         <?php
-        $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover FROM Voorwerp ORDER BY NEWID()";
+        $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover, LooptijdeindeDag, LooptijdeindeTijdstip FROM Voorwerp ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($carouselRow = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -74,6 +71,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
             $carouselTitel[] = $carouselRow[1];
             $carouselNummer[] = $carouselRow[2];
             $carouselCover[] = $carouselRow[3];
+            $carouselEindDag[] = $carouselRow[4];
+            $carouselEindTijd[] = $carouselRow[5];
         }
         ?>
 
@@ -90,6 +89,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 echo "<div class=\"fill\" style=\"background-image:url('media/" . $carouselCover[$i] . "')\"></div>";
                 echo '<div class="carousel-caption d-none d-md-block"><h3>';
                 echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
+                echo '<div id="pos' . $i . '" class="h2"></div>';
+                getTijd($carouselEindDag[$i] . ' ' . $carouselEindTijd[$i], "pos" . $i);
                 echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
                 echo '</div></div>';
             }
@@ -226,6 +227,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
                 interval: 5000 //changes the speed
             })
         </script>
+
+
 </main>
 <?php include 'includes/footer.php';
 ?>

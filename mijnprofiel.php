@@ -2,181 +2,322 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mijn bied profiel - Eenmaal Andermaal</title>
+    <title>Mijn profiel - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <?php
+session_start();
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
-include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina ?>
+include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
+?>
+
 
 <main>
-    <div class="container">
-        <div class="container-fluid">
-            <div class="page-header" align="center">
-                <h1>Mijn bied profiel</h1>
+    <div class="containerMinHeight">
+        <div class="container">
+            <?php
+
+            connectToDatabase();
+
+            $gebruikersnaam = $_SESSION['username'];
+            $query = "SELECT TOP 1 Gebruikersnaam, Voornaam, Achternaam, GeboorteDag, email,
+                Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2 FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam' ";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+
+
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                $Gebruikersnaam = $row[0];
+                $Voornaam = $row[1];
+                $Achternaam = $row[2];
+                $GeboorteDag = $row[3];
+                $Mailbox = $row[4];
+                $Straatnaam1 = $row[5];
+                $Huisnummer1 = $row[6];
+                $Straatnaam2 = $row[7];
+                $Huisnummer2 = $row[8];
+            }
+
+
+            ?>
+            <div class="container-fluid">
+                <div class="page-header" align="center">
+                    <h1 class="textGreen">Mijn profiel</h1>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-2">
+                    <img width="100px" height="100px" src="media/usericoon.png" alt=""
+                         class="img-circle img-responsive"/>
+                </div>
+                <div class="col-md-2">
+                    <h4>Welkom <?php echo $Voornaam; ?>!</h4>
+                    <p class="glyphicon glyphicon-user"></p> <?php echo $Gebruikersnaam; ?></p>
+                    <p class="glyphicon glyphicon-ice-lolly-tasted"></p> <?php echo $GeboorteDag; ?></p>
+                </div>
+                <div class="col-md-2">
+
+
+                </div>
+                <div class="col-md-2">
+
+                </div>
             </div>
-            <div class="col-md-4">
-                <img src="media/usericoon.png" alt="" class="img-circle img-responsive"/>
-            </div>
-            <div class="col-md-8">
-                <h4>Voornaam Achternaam</h4>
-                <p class="glyphicon glyphicon-user"></p>Gebruikersnaam</p>
-                <p class="glyphicon glyphicon-gift"></p>YYYY-DD-MM</p>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary">
-                        Uitloggen
+        </div>
+        <div class="container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#item1" role="tab">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item2" role="tab">Wachtwoord wijzigen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Lopende veilingen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Gewonnen veilingen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Biedgeschiedenis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item7" role="tab">Uitloggen</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="item1" role="tabpanel">
+                    <div class=" col-md-4">
+                    </div>
+                    <div class="col-md-2 marginTop5">
+
+                        <h5><b>Gebruikersnaam</b></h5>
+                        <h5><b>Naam</b></h5>
+                        <h5><b>Geboortedatum</b></h5>
+                        <h5><b>Primair adres</b></h5>
+                        <h5><b>Secondair adres</b></h5>
+                        <h5><b>Email</b></h5>
+                    </div>
+                    <div class="col-md-2 marginTop5">
+                        <h5>:<?php echo $Gebruikersnaam; ?></h5>
+                        <h5>:<?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
+                        <h5>:<?php echo $GeboorteDag; ?></h5>
+                        <h5>:<?php echo $Straatnaam1 . ' ' . $Huisnummer1; ?></h5>
+                        <h5>:<?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
+                        <h5>:<?php echo $Mailbox ?></h5>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="item2" role="tabpanel">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6 marginTop20">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
+                                </div>
+                                <input class="form-control" type="password" placeholder="Huidig wachtworod">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                                </div>
+                                <input class="form-control" type="password" placeholder="Nieuw wachtwoord">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                                </div>
+                                <input class="form-control" type="password" placeholder="Herhaal nieuw wachtwoord">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default form-control">Opslaan</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade " id="item3" role="tabpanel">
+                    <?php
+                    connectToDatabase();
+                    global $db;
+
+                    $sql = "SELECT * FROM Voorwerp Where VeilingGesloten = 0 AND Koper = '$gebruikersnaam';";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Looptijd = $row[0];
+                        $LooptijdbeginDag = $row[1];
+                        $LooptijdbeginTijdstip = $row[2];
+                        $LooptijdeindeDag = $row[3];
+                        $LooptijdeindeTijdstip = $row[4];
+                        $Startprijs = $row[5];
+                        $Verkoper = $row[6];
+                        $Koper = $row[7];
+                        $Verzendkosten = $row[8];
+                        $Verkoopprijs = $row[9];
+                        $Beschrijving = $row[10];
+                        $Betalingswijze = $row[11];
+                        $Betalingsinstructie = $row[1];
+                        $Land = $row[13];
+                        $Plaatsnaam = $row[14];
+                        $Titel = $row[15];
+                        $Verzendinstructies = $row[16];
+                        $Voorwerpnummer = $row[17];
+                        $VeilingGesloten = $row[18];
+                        $VoorwerpCover = $row[19];
+
+                    }
+                    for ($i = 0; $i < count($Titel); $i++) {
+                        echo '
+                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                            <div class="col-md-3 itemBox roundborder " align="center">
+                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
+                                ' . $Titel . '</a></h4>
+                                <div class="description">
+                                ' . $Beschrijving . '
+                                </div>
+                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                            </div>
+                        </a>
+                    ';
+                    }
+                    ?>
+
+                </div>
+                <div class="tab-pane fade " id="item4" role="tabpanel">
+                    <?php
+                    connectToDatabase();
+                    global $db;
+                    $sql = "SELECT * FROM Bod
+                            LEFT JOIN Voorwerp ON Bod.Gebruiker = Voorwerp.Koper
+                             WHERE Koper = '1' ORDER BY Bodbedrag DESC;";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Looptijd = $row[0];
+                        $LooptijdbeginDag = $row[1];
+                        $LooptijdbeginTijdstip = $row[2];
+                        $LooptijdeindeDag = $row[3];
+                        $LooptijdeindeTijdstip = $row[4];
+                        $Startprijs = $row[5];
+                        $Verkoper = $row[6];
+                        $Koper = $row[7];
+                        $Verzendkosten = $row[8];
+                        $Verkoopprijs = $row[9];
+                        $Beschrijving = $row[10];
+                        $Betalingswijze = $row[11];
+                        $Betalingsinstructie = $row[1];
+                        $Land = $row[13];
+                        $Plaatsnaam = $row[14];
+                        $Titel = $row[15];
+                        $Verzendinstructies = $row[16];
+                        $Voorwerpnummer = $row[17];
+                        $VeilingGesloten = $row[18];
+                        $VoorwerpCover = $row[19];
+                    }
+
+                    for ($i = 0; $i < count($Titel); $i++){
+                        echo '
+                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                            <div class="col-md-3 itemBox roundborder " align="center">
+                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
+                                ' . $Titel . '</a></h4>
+                                <div class="description">
+                                ' . $Beschrijving . '
+                                </div>
+                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                            </div>
+                        </a>
+                    ';
+                    }
+                    ?>
+
+                </div>
+                <div class="tab-pane fade " id="item6" role="tabpanel">
+                    <?php
+                    connectToDatabase();
+                    global $db;
+                    $sql = "SELECT * FROM Bod b
+                            LEFT JOIN Voorwerp v ON b.Gebruiker = v.Koper
+                             WHERE v.Koper = '$gebruikersnaam' ORDER BY v.VeilingGesloten = 1;";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Looptijd = $row[0];
+                        $LooptijdbeginDag = $row[1];
+                        $LooptijdbeginTijdstip = $row[2];
+                        $LooptijdeindeDag = $row[3];
+                        $LooptijdeindeTijdstip = $row[4];
+                        $Startprijs = $row[5];
+                        $Verkoper = $row[6];
+                        $Koper = $row[7];
+                        $Verzendkosten = $row[8];
+                        $Verkoopprijs = $row[9];
+                        $Beschrijving = $row[10];
+                        $Betalingswijze = $row[11];
+                        $Betalingsinstructie = $row[1];
+                        $Land = $row[13];
+                        $Plaatsnaam = $row[14];
+                        $Titel = $row[15];
+                        $Verzendinstructies = $row[16];
+                        $Voorwerpnummer = $row[17];
+                        $VeilingGesloten = $row[18];
+                        $VoorwerpCover = $row[19];
+                    }
+
+                    for ($i = 0; $i < count($Titel); $i++) {
+                        echo '
+                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                            <div class="col-md-3 itemBox roundborder " align="center">
+                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
+                                ' . $Titel . '</a></h4>
+                                <div class="description">
+                                ' . $Beschrijving . '
+                                </div>
+                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                            </div>
+                        </a>
+                    ';
+                    }
+                    ?>
+                </div>
+
+                <div class="tab-pane fade " id="item7" role="tabpanel">
+                    <a href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
+                    <hr>
+                    <button type="button" class="btn btn-warning  marginTop20">
+                        Account verwijderen
                     </button>
-
                 </div>
             </div>
-        </div>
-        <!-- Menu -->
-        <div class="resultPanel col-md-2 fixed">
-            <h3 class="textDarkGray">Mijn profiel</h3>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item">Account</li>
-                <li class="list-group-item">Help</li>
-            </ul>
-            <h3 class="textDarkGray">Mijn veilingen</h3>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item">Biedingen</li>
-                <li class="list-group-item">Veilingen</li>
-            </ul>
-            <h3 class="textDarkGray">Mijn biedingen</h3>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item">Biedingen</li>
-                <li class="list-group-item">Gewonnen</li>
-            </ul>
-        </div>
-        <div class="col-md-2 container-fluid fixed">
-        </div>
-        <!-- Main Content -->
-        <div class="col-md-10 container-fluid fixed">
-            <h1> Account </h1>
-            <!--Account-->
-            <h2>Gegevens</h2>
-            <p>Naam: <?php echo $Voornaam . ' ' . $Achternaam; ?></p>
-            <p>Gebruikersnaam: <?php echo $Voornaam . ' ' . $Achternaam; ?></p>
-            <p>Geboortedatum: <?php echo $GeboorteDag; ?></p>
-            <p>Adres: <?php echo $Sraatnaam1 . ' ' . $Huisnummer1 ?></p>
-            <p>Adres: <?php echo $Sraatnaam2 . ' ' . $Huisnummer2 ?></p>
-            <p>Postcode: <?php echo $GeboorteDag; ?></p>
-            <p>Email: <?php echo $Email ?></p>
-            <hr> <!--Help-->
-            <div class="col-md-10 container-fluid fixed">
-            <div class="col-md-10">
-                <h1> Help </h1>
-                <h2>Wachtwoord wijzigen</h2>
-
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                        <input class="form-control" type="password" placeholder="Current Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></div>
-                        <input class="form-control" type="password" placeholder="New Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></div>
-                        <input class="form-control" type="password" placeholder="Repeat New Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-default form-control">Submit</button>
-                </div>
-
-                <hr>
-            </div>
-            <div class="col-md-10">
-                <h1>Veilingen</h1>
-                <h2>Mijn actieve veilingen</h2>
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
-                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
-                            ' . $Titel2[$i] . '</a></h4>
-                    <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                    </div>
-                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
-                       role="button">Bieden</a>
-                </div>
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
-                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
-                            ' . $Titel2[$i] . '</a></h4>
-                    <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                    </div>
-                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
-                       role="button">Bieden</a>
-                </div>
-                <hr>
-            </div>
-            <div class="col-md-10">
-                <h2>Mijn gesloten veilingen</h2>
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
-                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
-                            ' . $Titel2[$i] . '</a></h4>
-                    <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                    </div>
-                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
-                       role="button">Bieden</a>
-                </div>
-                <hr>
-            </div>
-
-            <div class="col-md-10">
-                <h1>Biedingen</h1>
-                <h2>Mijn actieve biedingen</h2>
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
-                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
-                            ' . $Titel2[$i] . '</a></h4>
-                    <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                    </div>
-                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
-                       role="button">Bieden</a>
-                </div>
-                <hr>
-            </div>
-
-            <div class="col-md-10">
-                <h2>Mijn gesloten biedingen</h2>
-                <div class="col-md-3 itemBox roundborder " align="center">
-                    <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
-                    <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
-                            ' . $Titel2[$i] . '</a></h4>
-                    <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                    </div>
-                    <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete"
-                       role="button">Bieden</a>
-                </div>
-                <hr>
-            </div>
-
-        </div>
         </div>
     </div>
-
 </main>
 <?php include 'includes/footer.php';
 ?>
