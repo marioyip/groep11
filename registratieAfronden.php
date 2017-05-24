@@ -105,8 +105,6 @@ if (isset($_POST['submit'])) {
 
     if ($foutmelding == '') {
 
-        echo 'geen foutmelding';
-
         ini_set('display_errors', 'On');
 
         require_once('includes/functies.php');
@@ -139,12 +137,13 @@ if (isset($_POST['submit'])) {
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
+        die();
+        header("Location: inloggen.php");
     }
 }
 
 
 if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
-    echo 'code enzo klopt';
     ?>
 
     <div class="form-control">
@@ -301,6 +300,9 @@ if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] 
     <script src="js/bootstrap.min.js"></script>
 
     <?php
+}
+else{
+    header("Location: registreren.php");
 }
 
 
