@@ -21,15 +21,28 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             echo
             '
             <div id="navbar">
-                <ul class="nav ">
-                    <li>
-                        <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                             href="mijnprofiel.php">Mijn profiel</a>
+               <ul class="nav ">
+                    <li>                    
+                        <a href="plaatsveiling.php" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete" aria-hidden="true">
+                            Nieuwe veiling
+                        </a>                        
                     </li>
                     <li>
-                        <a class="navbar-right textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                             href="uitloggen.php">Uitloggen</a>
-                    </li>
+                        <a href="#" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete dropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> ';
+            echo $_SESSION['username'];
+            echo '   <span class="glyphicon glyphicon-menu-down"></span>
+                        </a>				
+                     <ul class="dropdown-menu nav" role="menu">
+                         <li><a href="mijnprofiel.php#item1">Account</a></li>
+                         <li><a href="mijnprofiel.php#item2">Wachtwoord wijzigen</a></li>
+                         <li><a href="uitloggen.php">Uitloggen</a></li>
+                     </ul>          
+                    </li>                    
+                    <li>
+                        <a class="navbar-right textWhite marginTop5 marginRight10 fontSize16 crete dropdown-toggle" data-toggle="dropdown" aria-hidden="true"
+                         href="">
+                        </a>
+                    </li>  
                 </ul>
             </div>
             ';
@@ -39,13 +52,9 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             <div id="navbar">
                 <ul class="nav ">
                     <li>
-                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                             href="inloggen.php">Inloggen</a>
+                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
+                             href="inloggen.php"></a>
                     </li>                
-                    <li>
-                        <a class="navbar-right glyphicon glyphicon-pencil textWhite marginTop5 fontSize16 crete" aria-hidden="true"
-                           href="registreren.php">Registreren</a>
-                    </li>
                 </ul>
             </div>
             ';
