@@ -17,12 +17,18 @@
 
 <?php
 session_start();
-include ('includes/header.php');
+include('includes/header.php');
 
-//if (isset($_SESSION['username'])) {
-//    header("Location: index.php");
-//}
-//
+
+if(isset($_POST['ingevoerdecode'])){
+    $_SESSION['ingevoerdecode'] = $_POST['ingevoerdecode'];
+    $_SESSION['email']= $_POST['emailingevoerd'];
+}
+else{
+    $email=$_SESSION['email'];
+    $ingevoerdecode = $_SESSION['ingevoerdecode'];
+}
+
 if (isset($_POST['submit'])) {
 //alle benodigde informatie om te kunnen registreren
     $geentweedehuis = false;
@@ -43,10 +49,8 @@ if (isset($_POST['submit'])) {
     $verkoper = $_POST['verkoper'];
     $rekeningnummer = $_POST['rekeningnummer'];
     $rekeninghouder = $_POST['rekeninghouder'];
-    $ingevoerdecode = $_POST['ingevoerdecode'];
-    $emailingevoerd = $_POST['emailingevoerd'];
-    $gemaaktecode = $_POST['gemaaktecode'];
-    $emailbevestigd = $_POST['emailbevestigd'];
+    $voornaam = $_SESSION['voornaam'];
+    $achternaam = $_SESSION['achternaam'];
 
 
     if (empty($gebruikersnaam)) {
@@ -115,38 +119,31 @@ if (isset($_POST['submit'])) {
 
         connectToDatabase();
 
-
         $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
+
 
         if ($geentweedehuis == true) {
             $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst,
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
-        VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$emailbevestigd', '$gebruikersnaam',
+        VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '$verkoper')";
         } else {
             $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
                 GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
-        VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$emailbevestigd', '$gebruikersnaam',
+        VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
             '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '$verkoper')";
         }
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
 
+        die();
+        header("Location: inloggen.php");
     }
-
-
-    if ($ingevoerdecode == $gemaaktecode && $emailbevestigd == $emailingevoerd) {
-        $voornaam = $_POST['voornaambevestigd'];
-        $achternaam = $_POST['achternaambevestigd'];
-        $emailingevoerd = $_POST['emailingevoerd'];
-        $emailbevestigd = $_POST['emailbevestigd'];
-        $gemaaktecode = $_POST['gemaaktecode'];
-        $ingevoerdecode = $_POST['ingevoerdecode'];
-    }
-
 }
 
+
+if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
     ?>
 
     <div class="form-control">
@@ -168,12 +165,6 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
             <div class="form-group">
-                <?php
-                echo '<input type="Hidden" value='.$voornaam.' name="voornaambevestigd">';
-                echo '<input type="Hidden" value='.$achternaam.' name="achternaambevestigd">';
-                echo '<input type="Hidden" value='.$emailbevestigd.' name="emailbevestigd">';
-                echo '<input type="Hidden" value='.$code.' name="gemaaktecode">';
-                ?>
                 <label class="control-label col-sm-2" for="pwd"> Herhaal wachtwoord:</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control marginTop20  " name="wachtwoord2" id="pwd"
@@ -187,18 +178,18 @@ if (isset($_POST['submit'])) {
                            placeholder="YYYY-MM-DD">
                 </div>
             </div>
-<!--            <div class="form-group">-->
-<!--                <div class="col-sm-2">-->
-                    <label class="control-label col-sm-2" for="pwd"> Beveiligingsvraag:
-                        <select name="vraag" class="  ">
-                            <option value="1"> Wat is mijn favoriete huisdier ?</option>
-                            <option value="2"> Wat is mijn geboorteplaats ?</option>
-                            <option value="3"> Wie is mijn jeugdvriend ?</option>
-                            <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
-                        </select>
-                    </label>
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <div class="col-sm-2">-->
+            <label class="control-label col-sm-2" for="pwd"> Beveiligingsvraag:
+                <select name="vraag" class="  ">
+                    <option value="1"> Wat is mijn favoriete huisdier ?</option>
+                    <option value="2"> Wat is mijn geboorteplaats ?</option>
+                    <option value="3"> Wie is mijn jeugdvriend ?</option>
+                    <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
+                </select>
+            </label>
+            <!--                </div>-->
+            <!--            </div>-->
             <div class="form-group">
                 <label class="control-label col-sm-2 " for="pwd"> Antwoord:</label>
                 <div class="col-sm-10">
@@ -308,8 +299,14 @@ if (isset($_POST['submit'])) {
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <?php ;
-    include ('includes/footer.php');
+    <?php
+}
+else{
+    header("Location: registreren.php");
+}
+
+
+include('includes/footer.php');
 
 
 ?>
