@@ -34,6 +34,7 @@ function getTijd($tijd, $pos)
             var now = new Date().getTime();
             var verschil = countDownDate - now;
 
+
             var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
             var hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((verschil % (1000 * 60 * 60)) / (1000 * 60));
@@ -156,6 +157,7 @@ function getTijd($tijd, $pos)
                         <div class="description">
                         ' . $Beschrijving[$i] . '
                         </div>
+                        
                         <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                     </div>
                 </a>
