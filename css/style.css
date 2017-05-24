@@ -53,10 +53,6 @@
     margin-top: 50px;
 }
 
-.marginTop55{
-    margin-top: 55px;
-}
-
 .marginTop60 {
     margin-top: 60px;
 }
@@ -133,8 +129,8 @@
     margin-left: 400px;
 }
 
-.marginLeft1000{
-    margin-left: 1000px;
+.marginleft600 {
+    margin-left: 515px;
 }
 
 /*Padding*/
@@ -413,7 +409,7 @@ ol {
     min-height: 1200px;
 }
 
-noListStyleType li {
+.noListStyleType li {
     list-style-type: none;
 }
 
@@ -464,6 +460,8 @@ noListStyleType li {
     background-color: rgba(43,39,43, .6);
 }
 
+
+
 .nav-tabs{
 }
 
@@ -478,20 +476,4 @@ noListStyleType li {
 .panelStyle{
     padding: 10px;
 
-}
-
-.btnPlaceOffer{
-    width: 80px;
-    height: 20px;
-}
-
-
-.show-on-hover:hover > ul.dropdown-menu {
-    display: inline-block;
-}
-
-#nav li:hover ul{
-    left:auto;
-    right:0;
-    margin-right:-10px;
 }
