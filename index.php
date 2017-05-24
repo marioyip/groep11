@@ -29,10 +29,10 @@ function getTijd($tijd, $pos)
 {
     ?>
     <script>
-        var countDownDate = new Date("<?php echo $tijd ?>").getTime();
+        var countDownDate<?php echo $pos ?> = new Date("<?php echo $tijd ?>").getTime();
         var x = setInterval(function () {
             var now = new Date().getTime();
-            var verschil = countDownDate - now;
+            var verschil = countDownDate<?php echo $pos ?> - now;
 
 
             var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
@@ -90,8 +90,8 @@ function getTijd($tijd, $pos)
                 echo "<div class=\"fill\" style=\"background-image:url('media/" . $carouselCover[$i] . "')\"></div>";
                 echo '<div class="carousel-caption d-none d-md-block"><h3>';
                 echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
-                echo '<div id="pos' . $i . '" class="h2"></div>';
-                getTijd($carouselEindDag[$i] . ' ' . $carouselEindTijd[$i], "pos" . $i);
+                echo '<div id="carousel' . $i . '" class="h2"></div>';
+                getTijd($carouselEindDag[$i] . ' ' . $carouselEindTijd[$i], "carousel" . $i);
                 echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
                 echo '</div></div>';
             }
@@ -112,13 +112,13 @@ function getTijd($tijd, $pos)
     </div>
     <div class="container marginTop20">
         <div class="col-md-12 " align="center">
-            <h1 class="textDarkGray">Schone artikeltjes</h1>
+            <h1 class="textDarkGray">Bijna afgelopen!</h1>
         </div>
     </div>
     <div class="container">
         <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
-        $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY NEWID()";
+        $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY LooptijdeindeDag ASC, LooptijdeindeTijdstip ASC";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -157,7 +157,9 @@ function getTijd($tijd, $pos)
                         <div class="description">
                         ' . $Beschrijving[$i] . '
                         </div>
-                        
+                        <div id="boven' . $i . '" class="description"></div>';
+                        getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
+                        echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                     </div>
                 </a>
@@ -213,6 +215,9 @@ function getTijd($tijd, $pos)
                         <div class="description">
                         ' . $Beschrijving2[$i] . '
                         </div>
+                        <div id="onder' . $i . '" class="description"></div>';
+                        getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
+                        echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                     </div>
                 </a>

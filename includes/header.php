@@ -32,7 +32,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             echo $_SESSION['username'];
             echo '   <span class="glyphicon glyphicon-menu-down"></span>
                         </a>				
-                     <ul class="dropdown-menu nav" role="menu">
+                     <ul class="dropdown-menu dropdown-menu-right nav marginTop50 marginright100" role="menu">
                          <li><a href="mijnprofiel.php#item1">Account</a></li>
                          <li><a href="mijnprofiel.php#item2">Wachtwoord wijzigen</a></li>
                          <li><a href="uitloggen.php">Uitloggen</a></li>
