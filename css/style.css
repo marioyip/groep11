@@ -449,6 +449,11 @@ ol {
 .btn-default {
     box-shadow: none;
 }
+.btn-ibis{
+    background-color: #F45520;
+    color: #EDF1FE;
+    border-radius:0;
+}
 
 .imgStyle {
     width: 100%;
