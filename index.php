@@ -92,7 +92,7 @@ function getTijd($tijd, $pos)
                 echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
                 echo '<div id="carousel' . $i . '" class="h2"></div>';
                 getTijd($carouselEindDag[$i] . ' ' . $carouselEindTijd[$i], "carousel" . $i);
-                echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-default crete" role = "button">Bieden</a>';
+                echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-danger crete" role = "button">Bieden</a>';
                 echo '</div></div>';
             }
             ?>
@@ -160,7 +160,7 @@ function getTijd($tijd, $pos)
                         <div id="boven' . $i . '" class="description"></div>';
                         getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
                         echo '
-                        <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
+                        <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-danger crete" role="button">Bieden</a>
                     </div>
                 </a>
             ';
@@ -218,7 +218,7 @@ function getTijd($tijd, $pos)
                         <div id="onder' . $i . '" class="description"></div>';
                         getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
                         echo '
-                        <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
+                        <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-danger crete" role="button">Bieden</a>
                     </div>
                 </a>
             ';
