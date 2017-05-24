@@ -146,6 +146,7 @@ if (isset($_POST['submit'])) {
     }
 
 }
+
     ?>
 
     <div class="form-control">
@@ -167,6 +168,12 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
             <div class="form-group">
+                <?php
+                echo '<input type="Hidden" value='.$voornaam.' name="voornaambevestigd">';
+                echo '<input type="Hidden" value='.$achternaam.' name="achternaambevestigd">';
+                echo '<input type="Hidden" value='.$emailbevestigd.' name="emailbevestigd">';
+                echo '<input type="Hidden" value='.$code.' name="gemaaktecode">';
+                ?>
                 <label class="control-label col-sm-2" for="pwd"> Herhaal wachtwoord:</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control marginTop20  " name="wachtwoord2" id="pwd"
