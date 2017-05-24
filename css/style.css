@@ -50,7 +50,7 @@
 }
 
 .marginTop50 {
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
 .marginTop60 {
@@ -107,6 +107,10 @@
 
 .marginLeft10 {
     margin-left: 10px;
+}
+
+.marginright100 {
+    margin-right: 105px;
 }
 
 .marginLeft20 {
@@ -425,7 +429,6 @@ ol {
 }
 
 .itemBox {
-    height: 420px;
     width: 265px;
     text-align: center;
     border-color: #e3e3e3;
