@@ -112,7 +112,7 @@ function getTijd($tijd, $pos)
     </div>
     <div class="container marginTop20">
         <div class="col-md-12 " align="center">
-            <h1 class="textDarkGray">Schone artikeltjes</h1>
+            <h1 class="textDarkGray">Bijna afgelopen!</h1>
         </div>
     </div>
     <div class="container">
