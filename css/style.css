@@ -50,7 +50,7 @@
 }
 
 .marginTop50 {
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
 .marginTop60 {
@@ -107,6 +107,10 @@
 
 .marginLeft10 {
     margin-left: 10px;
+}
+
+.marginright100 {
+    margin-right: 105px;
 }
 
 .marginLeft20 {
