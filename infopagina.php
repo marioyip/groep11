@@ -97,7 +97,7 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                 <div class="col-md-8 text-left marginTop30">
                     <!--geordende lijst met informatie over het bieden-->
                     <h2> Bieden</h2>
-                    <h3>Hoe biedt ik op een advertentie?</h3>
+                    <h3>Hoe bied ik op een advertentie?</h3>
                     <h4>
                         <ol>
                             <li>Log in op EenmaalAndermaal.</li>

@@ -23,7 +23,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             <div id="navbar">
                <ul class="nav ">
                     <li>                    
-                        <a href="plaatsbieding.php" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete" aria-hidden="true">
+                        <a href="plaatsveiling.php" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete" aria-hidden="true">
                             Nieuwe veiling
                         </a>                        
                     </li>

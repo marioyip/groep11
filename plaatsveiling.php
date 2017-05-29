@@ -55,35 +55,22 @@ require_once 'includes/functies.php';
                 <div class="form-group">
                     <label for="betalingsinstructie_voorwerp">Betalingsinstructie</label>
                     <textarea class="form-control" id="betalingsinstructie_voorwerp" name="betalingsinstructie" rows="2"
+                              placeholder="Het liefst contant"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="betalingsinstructie_voorwerp">Verzendinstructie</label>
+                    <textarea class="form-control" id="verzendinstructie_voorwerp" name="verzendinstructie" rows="2"
                               placeholder="Kom naar mijn adres"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="looptijd-voorwerp">Looptijd</label>
                     <select class="form-control" id="looptijd-voorwerp" name="looptijd">
-                        <option>3</option>
-                        <option>5</option>
-                        <option>7</option>
+                        <option value="3">3 dagen</option>
+                        <option value="5">5 dagen</option>
+                        <option value="7">7 dagen</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="rubriek">Rubriek</label>
-                    <select class="form-control" id="rubriek" name="rubriek">
-                        <?php
-                        $sql = "SELECT Rubrieknummer, Rubrieknaam FROM Rubriek WHERE Rubrieknummer NOT IN (SELECT DISTINCT Rubriek FROM Rubriek WHERE Rubriek IS NOT NULL) ORDER BY Rubrieknaam ASC";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)){
-                            $rubrieknummer[] = $row[0];
-                            $rubrieknaam[] = $row[1];
-                        }
-
-                        for ($i = 0; $i < count($rubrieknummer); $i++){
-                            echo '<option value="' . $rubrieknummer . '">' . $rubrieknaam[$i] . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group">
+                        <div class="form-group">
                     <label class="btn btn-default btn-file">
                         Foto <input type="file" name="voorwerpCover" hidden>
                     </label>
@@ -100,7 +87,7 @@ require_once 'includes/functies.php';
 <?php
 
 if (isset($_POST['submmit'])) {
-    $verkoper = Dikkie;
+    $verkoper = $_SESSION['username'];
 
     $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
     $stmt = $db->prepare($sql);
@@ -111,13 +98,14 @@ if (isset($_POST['submmit'])) {
         $plaatsnaam = $row[1];
     }
 
-    $looptijd = $_POST['looptijd'];
-    $startprijs = $_POST['startprijs'];
+    $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
+    $startprijs = $_POST['startprijs'];
     $betalingswijze = $_POST['betalingswijze'];
     $betalingsinstructie = $_POST['betallingsinstructie'];
-    $titel = $_POST['titel'];
     $verzendinstructie = $_POST['verzendinstructie'];
+    $looptijd = $_POST['looptijd'];
+    $rubriek = $_POST['rubriek'];
 
     $sql = "INSERT INTO Voorwerp(
   [Looptijd],
