@@ -22,9 +22,10 @@ include 'includes/catbar.php'; ?><!-- Geeft de categorieën bar mee-->
     <div class="container marginTop20">
         <div>
             <div class="page-header">
-                <h1>Contact</h1>
+                <h1 class="textGreen text-center">Contact</h1>
+
             </div>
-            <h2>Lucht je hart</h2>
+            <h3 class="textDarkGray">Neem contact met ons op</h3>
         </div>
         <div>
             <br>
@@ -49,7 +50,7 @@ include 'includes/catbar.php'; ?><!-- Geeft de categorieën bar mee-->
             </div>
         </div>
         <hr>
-        <h2>Locatie</h2>
+        <h3 class="textDarkGray">Locatie</h3>
         <div class="row">
             <div class="col-md-6">
                 <p>
@@ -62,7 +63,7 @@ include 'includes/catbar.php'; ?><!-- Geeft de categorieën bar mee-->
                 <!--laat een kaart zien van google maps met de locatie van ons bedrijf (Ruitenberglaan 26)-->
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.0254106741404!2d5.94810026525595!3d51.98819048325708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a46f929cd183%3A0xcdf70958de3cc196!2sFaculteit+Techniek+HAN+University!5e0!3m2!1sen!2snl!4v1493913562058"
-                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>

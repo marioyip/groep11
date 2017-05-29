@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Plaats Bieding - Eenmaal Andermaal</title>
+    <title>Plaats Veiling - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -25,7 +25,7 @@ require_once 'includes/functies.php';
 <body>
 <div class="container marginTop20">
     <div class="col-md-12" align="center">
-        <h1>Plaats hier je bieding:</h1>
+        <h1>Plaats hier je veiling:</h1>
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">
@@ -45,6 +45,11 @@ require_once 'includes/functies.php';
                            placeholder="5">
                 </div>
                 <div class="form-group">
+                    <label for="verkoopprijs    -voorwerp">Maximumprijs (optioneel)</label>
+                    <input type="number" class="form-control" id="verkoopprijs-voorwerp" name="verkoopprijs" min="0"
+                           placeholder="50">
+                </div>
+                <div class="form-group">
                     <label for="betalingswijze_voorwerp">Betalingswijze</label>
                     <select class="form-control" id="betalingswijze_voorwerp" name="betalingswijze">
                         <option>Paypal</option>
@@ -55,32 +60,19 @@ require_once 'includes/functies.php';
                 <div class="form-group">
                     <label for="betalingsinstructie_voorwerp">Betalingsinstructie</label>
                     <textarea class="form-control" id="betalingsinstructie_voorwerp" name="betalingsinstructie" rows="2"
+                              placeholder="Het liefst contant"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="betalingsinstructie_voorwerp">Verzendinstructie</label>
+                    <textarea class="form-control" id="verzendinstructie_voorwerp" name="verzendinstructie" rows="2"
                               placeholder="Kom naar mijn adres"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="looptijd-voorwerp">Looptijd</label>
                     <select class="form-control" id="looptijd-voorwerp" name="looptijd">
-                        <option>3</option>
-                        <option>5</option>
-                        <option>7</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="rubriek">Rubriek</label>
-                    <select class="form-control" id="rubriek" name="rubriek">
-                        <?php
-                        $sql = "SELECT Rubrieknummer, Rubrieknaam FROM Rubriek WHERE Rubrieknummer NOT IN (SELECT DISTINCT Rubriek FROM Rubriek WHERE Rubriek IS NOT NULL) ORDER BY Rubrieknaam ASC";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)){
-                            $rubrieknummer[] = $row[0];
-                            $rubrieknaam[] = $row[1];
-                        }
-
-                        for ($i = 0; $i < count($rubrieknummer); $i++){
-                            echo '<option value="' . $rubrieknummer . '">' . $rubrieknaam[$i] . '</option>';
-                        }
-                        ?>
+                        <option value="3">3 dagen</option>
+                        <option value="5">5 dagen</option>
+                        <option value="7">7 dagen</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -99,39 +91,31 @@ require_once 'includes/functies.php';
 
 <?php
 
-if (isset($_POST['submmit'])) {
-    $verkoper = Dikkie;
+if (isset($_POST['submit'])) {
+    $verkoper = $_SESSION['username'];
 
-    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
+    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = '$verkoper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $land = $row[0];
         $plaatsnaam = $row[1];
     }
 
-    $looptijd = $_POST['looptijd'];
-    $startprijs = $_POST['startprijs'];
-    $beschrijving = $_POST['beschrijving'];
-    $betalingswijze = $_POST['betalingswijze'];
-    $betalingsinstructie = $_POST['betallingsinstructie'];
     $titel = $_POST['titel'];
+    $beschrijving = $_POST['beschrijving'];
+    if(isset($_POST['startprijs'])){
+        $startprijs = $_POST['startprijs'];
+    } else{
+        $startprijs = 0;
+    }
+    $betalingswijze = $_POST['betalingswijze'];
+    $betalingsinstructie = $_POST['betalingsinstructie'];
     $verzendinstructie = $_POST['verzendinstructie'];
-
-    $sql = "INSERT INTO Voorwerp(
-  [Looptijd],
-  [Startprijs],
-  [Verkoper],
-  [Beschrijving],
-  [Betalingswijze],
-  [Betalingsinstructie],
-  [Land],
-  [Plaatsnaam],
-  [Titel],
-  [Verzendinstructies],
-  [VoorwerpCover])
-VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$betalingsinstructie','$land','$plaatsnaam','$titel', '$verzendinstructie','$voorwerpCover')";
+    $looptijd = $_POST['looptijd'];
+    $verkoopprijs = $_POST['verkoopprijs'];
+    $sql = "INSERT INTO Voorwerp([Looptijd], [Startprijs], [Verkoper], [Beschrijving], [Betalingswijze], [Betalingsinstructie], [Land], [Plaatsnaam], [Titel], [Verzendinstructies], [VoorwerpCover], [Verkoopprijs], [VeilingGesloten])
+            VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 }

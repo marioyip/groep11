@@ -27,7 +27,7 @@
                             <a class="textWhite sanchez" href="../infopagina.php">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="../media/Algemene_voorwaarden.pdf">Voorwaarden</a>
+                            <a class="textWhite sanchez" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
                             <a class="textWhite sanchez" href="./privacyverklaring.php">Privacy</a>

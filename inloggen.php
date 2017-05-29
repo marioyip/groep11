@@ -25,7 +25,8 @@ connectToDatabase();
 
     <div class="container marginTop20 marginBottom40">
         <div class="col-md-12" align="center">
-            <h1>Log in op jouw profiel</h1>
+            <h1 class="textGreen">Log in op jouw profiel</h1>
+            <hr>
         </div>
 
         <div class="col-md-12 marginTop20" align="center">
@@ -37,20 +38,6 @@ connectToDatabase();
                     if (isset($_POST['submit'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
                         $pwd = $_POST["pwd"];
-                        //
-                        //
-                        //                        $gebruiker = getUser($gebruikersnaam);
-                        //
-                        //                        if ($gebruiker["Wachtwoord"] == $wachtwoord) {
-                        //                            session_start();
-                        //                            $_SESSION['gebruiker'] = $gebruikersnaam;
-                        //                            header("Location: index.php"); /* Redirect browser */
-                        //                            exit();
-                        //                            echo '<p class = "success">Welkom ' . $gebruiker . '!</p>';
-                        //                        } else {
-                        //                            echo '<p class = "error" >Kan gebruikersnaam of wachtwoord niet vinden.</p>';
-                        //                        }
-
                         $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
                         $stmt = $db->prepare($sql); //Statement object aanmaken
                         $stmt->execute();
@@ -87,6 +74,8 @@ connectToDatabase();
                             <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen">
                         </div>
                     </div>
+
+                    <a href="accountreset.php">wachtwoord vergeten?</a>
                 </form>
             </div>
 
