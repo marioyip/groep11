@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
 
     //het schrijven van de email zelf
     $headers =   'MIME-Version: 1.0' . "\r\n";
-    $headers .=  'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
+    $headers .=  'From: EenmaalAndermaal Veiling <donotreply@eenmaalandermaal.nl>' . "\r\n";
     $headers .=  'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
     $bericht  =   'Dit is uw bevestigingscode: '.$_SESSION['code'].'' .  "\r\n";
@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) {
 <div class="form-control">
     <form method="POST" action="registratieAfronden.php">
         <div class="form-group">
-            <label for="ingevoerdecode">Je ontvangen code
+            <label for="ingevoerdecode">Je ontvangen code:
             <input id="ingevoerdecode" type="text" name="ingevoerdecode"></label>
         </div>
         <div class="form-group">
