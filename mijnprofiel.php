@@ -101,7 +101,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 <div class="tab-pane active" id="item1" role="tabpanel">
                     <div class=" col-md-4">
                     </div>
-                    <div class="col-md-2 marginTop5">
+                    <div class="col-md-2 marginTop5 text-right">
 
                         <h5><b>Gebruikersnaam</b></h5>
                         <h5><b>Naam</b></h5>
@@ -111,14 +111,14 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5><b>Email</b></h5>
                     </div>
                     <div class="col-md-2 marginTop5">
-                        <h5>:<?php echo $Gebruikersnaam; ?></h5>
-                        <h5>:<?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
-                        <h5>:<?php echo $GeboorteDag; ?></h5>
-                        <h5>:<?php echo $Straatnaam1 . ' ' . $Huisnummer1; ?></h5>
-                        <h5>:<?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
-                        <h5>:<?php echo $Mailbox ?></h5>
+                        <h5>-  <?php echo $Gebruikersnaam; ?></h5>
+                        <h5>-  <?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
+                        <h5>-  <?php echo $GeboorteDag; ?></h5>
+                        <h5>-  <?php echo $Straatnaam1 . ' ' . $Huisnummer1; ?></h5>
+                        <h5>-  <?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
+                        <h5>-  <?php echo $Mailbox ?></h5>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 marginTop5">
 
                     </div>
                 </div>
@@ -190,8 +190,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $VoorwerpCover = $row[19];
 
                     }
-                    for ($i = 0; $i < count($Titel); $i++) {
-                        echo '
+                    if ($Titel = 0) {
+                        for ($i = 0; $i < count($Titel); $i++) {
+                            echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
                                 <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
@@ -204,6 +205,12 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             </div>
                         </a>
                     ';
+                        }
+                    }
+                    else{
+                        echo '
+                        <div class="col-md-12 marginTop5"><p>U heeft momenteel nog geen lopende veilingen.</p></div>
+                        ';
                     }
                     ?>
 
@@ -239,9 +246,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $VeilingGesloten = $row[18];
                         $VoorwerpCover = $row[19];
                     }
-
-                    for ($i = 0; $i < count($Titel); $i++){
-                        echo '
+                    if ($Titel = 0) {
+                        for ($i = 0; $i < count($Titel); $i++) {
+                            echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
                                 <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
@@ -254,6 +261,12 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             </div>
                         </a>
                     ';
+                        }
+                    }
+                    else{
+                        echo '
+                        <div class="col-md-12 marginTop5"><p>U heeft nog nergens op geboden.</p></div>
+                        ';
                     }
                     ?>
 
@@ -290,8 +303,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $VoorwerpCover = $row[19];
                     }
 
-                    for ($i = 0; $i < count($Titel); $i++) {
-                        echo '
+                    if ($Titel = 0) {
+                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
+                            echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
                                 <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
@@ -304,16 +318,18 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             </div>
                         </a>
                     ';
+                        }
+                    }
+                    else{
+                        echo '
+                        <div class="col-md-12 marginTop5"><p>U heeft nog niks geveild.</p></div>
+                    ';
                     }
                     ?>
                 </div>
 
-                <div class="tab-pane fade " id="item7" role="tabpanel">
+                <div class="tab-pane fade marginTop5 " id="item7" role="tabpanel">
                     <a href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
-                    <hr>
-                    <button type="button" class="btn btn-warning  marginTop20">
-                        Account verwijderen
-                    </button>
                 </div>
             </div>
         </div>
