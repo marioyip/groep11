@@ -16,7 +16,6 @@
 session_start();
 
 include 'includes/header.php';
-include 'includes/catbar.php';
 require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
