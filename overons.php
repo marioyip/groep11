@@ -26,64 +26,88 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 
     <div class="containerMain">
         <div class="container marginTop20">
-            <div class="col-md-12 " align="center">
-                <h1 class="textDarkGray">Over ons</h1>
+            <div class="col-md-12">
+                <h1 class="textGreen text-center">Over ons</h1>
+                <hr>
             </div>
         </div>
-        <div class="col-md-12" align="center">
-            <div class="container marginTop10">
-                <div class="col-md-6 marginTop20 text-left">
-                    <!--paragraaf over waar de website voor staat-->
-                    <h3 class="">Wie zijn wij?</h3>
-                    <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
-                        Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
-                        datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
-                        heeft geen geheimen
-                        voor ons.
-                        Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
-                        voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
-                </div>
-                <div class="col-md-6 marginTop20">
-                    <img class="imgStyle" src="media/ons-team.jpg" alt="project-team">
-                    <!--afbeelding van een projectteam-->
-                </div>
-            </div>
-            <div class="container marginTop10">
-                <div class="col-md-6 marginTop20">
-                    <img class="imgStyle" src="media/ons.jpg" alt="oude man"> <!--afbeelding van een projectteam-->
-                </div>
-                <div class="col-md-6 marginTop20 text-left">
-                    <!--paragraaf over waar de website voor staat-->
-                    <h3 class="">Wat doen wij?</h3>
-                    <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
-                        Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
-                        datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
-                        heeft geen geheimen
-                        voor ons.
-                        Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
-                        voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
-                </div>
+        <div class="container">
+            <div class="col-md-12 marginBottom70">
+                <div class="container marginTop10">
+                    <h3 class="text-center">Wie zijn wij?</h3>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-5 marginTop20 text-left">
+                        <!--paragraaf over waar de website voor staat-->
 
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                            Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
+                            datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
+                            heeft geen geheimen
+                            voor ons.
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
+                    </div>
+                    <div class="col-md-5 marginTop20">
+                        <img class="imgStyle" src="media/ons-team.jpg" alt="project-team">
+                        <!--afbeelding van een projectteam-->
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+                <div class="container marginTop10">
+                    <h3 class="text-center">Wat doen wij?</h3>
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-5 marginTop20">
+                        <img class="imgStyle" src="media/ons.jpg" alt="oude man"> <!--afbeelding van een projectteam-->
+                    </div>
+                    <div class="col-md-5 marginTop20 text-left">
+                        <!--paragraaf over waar de website voor staat-->
+
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                            Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
+                            datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
+                            heeft geen geheimen
+                            voor ons.
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
+                    </div>
+                    <div class="col-md-1">
+
+                    </div>
+                </div>
+                <div class="container marginTop10">
+                    <h3 class="text-center">Hoe doen wij dat?</h3>
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-5 marginTop20 text-left">
+                        <!--paragraaf waarin de aanpak van het bedrijf wordt beschreven-->
+
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                            Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
+                            datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
+                            heeft
+                            geen geheimen voor ons.
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            voor u
+                            klaar om uw volgende stap op internet tot een succes te maken.</p>
+                    </div>
+
+                    <div class="col-md-5 marginTop20">
+                        <img class="imgStyle" src="media/webdev.jpg"
+                             alt="een plaatje waar de creativiteit van de website doorschemerd">
+                    </div>
+                    <div class="col-md-1">
+
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="container marginTop10">
-            <div class="col-md-6 marginTop20 text-left">
-                <!--paragraaf waarin de aanpak van het bedrijf wordt beschreven-->
-                <h3 class="">Hoe doen wij dat?</h3>
-                <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
-                    Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
-                    datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden heeft
-                    geen geheimen voor ons.
-                    Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij voor u
-                    klaar om uw volgende stap op internet tot een succes te maken.</p>
-            </div>
 
-            <div class="col-md-6 marginTop20">
-                <img class="imgStyle" src="media/webdev.jpg"
-                     alt="een plaatje waar de creativiteit van de website doorschemerd">
-            </div>
-
-        </div>
     </div>
 
 </body>

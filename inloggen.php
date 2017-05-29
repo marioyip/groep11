@@ -16,6 +16,7 @@
 session_start();
 
 include 'includes/header.php';
+include 'includes/catbar.php';
 require_once('includes/functies.php');
 
 ini_set('display_errors', 'On');
@@ -25,7 +26,8 @@ connectToDatabase();
 
     <div class="container marginTop20 marginBottom40">
         <div class="col-md-12" align="center">
-            <h1>Log in op jouw profiel</h1>
+            <h1 class="textGreen">Log in op jouw profiel</h1>
+            <hr>
         </div>
 
         <div class="col-md-12 marginTop20" align="center">

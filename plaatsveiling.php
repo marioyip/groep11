@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Plaats Bieding - Eenmaal Andermaal</title>
+    <title>Plaats Veiling - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -25,7 +25,7 @@ require_once 'includes/functies.php';
 <body>
 <div class="container marginTop20">
     <div class="col-md-12" align="center">
-        <h1>Plaats hier je bieding:</h1>
+        <h1>Plaats hier je veiling:</h1>
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">
@@ -43,6 +43,11 @@ require_once 'includes/functies.php';
                     <label for="startprijs-voorwerp">Startprijs (optioneel)</label>
                     <input type="number" class="form-control" id="startprijs-voorwerp" name="startprijs" min="0"
                            placeholder="5">
+                </div>
+                <div class="form-group">
+                    <label for="verkoopprijs    -voorwerp">Maximumprijs (optioneel)</label>
+                    <input type="number" class="form-control" id="verkoopprijs-voorwerp" name="verkoopprijs" min="0"
+                           placeholder="50">
                 </div>
                 <div class="form-group">
                     <label for="betalingswijze_voorwerp">Betalingswijze</label>
@@ -70,7 +75,7 @@ require_once 'includes/functies.php';
                         <option value="7">7 dagen</option>
                     </select>
                 </div>
-                        <div class="form-group">
+                <div class="form-group">
                     <label class="btn btn-default btn-file">
                         Foto <input type="file" name="voorwerpCover" hidden>
                     </label>
@@ -86,13 +91,12 @@ require_once 'includes/functies.php';
 
 <?php
 
-if (isset($_POST['submmit'])) {
+if (isset($_POST['submit'])) {
     $verkoper = $_SESSION['username'];
 
-    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
+    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = '$verkoper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $land = $row[0];
         $plaatsnaam = $row[1];
@@ -100,26 +104,18 @@ if (isset($_POST['submmit'])) {
 
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
-    $startprijs = $_POST['startprijs'];
+    if(isset($_POST['startprijs'])){
+        $startprijs = $_POST['startprijs'];
+    } else{
+        $startprijs = 0;
+    }
     $betalingswijze = $_POST['betalingswijze'];
-    $betalingsinstructie = $_POST['betallingsinstructie'];
+    $betalingsinstructie = $_POST['betalingsinstructie'];
     $verzendinstructie = $_POST['verzendinstructie'];
     $looptijd = $_POST['looptijd'];
-    $rubriek = $_POST['rubriek'];
-
-    $sql = "INSERT INTO Voorwerp(
-  [Looptijd],
-  [Startprijs],
-  [Verkoper],
-  [Beschrijving],
-  [Betalingswijze],
-  [Betalingsinstructie],
-  [Land],
-  [Plaatsnaam],
-  [Titel],
-  [Verzendinstructies],
-  [VoorwerpCover])
-VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$betalingsinstructie','$land','$plaatsnaam','$titel', '$verzendinstructie','$voorwerpCover')";
+    $verkoopprijs = $_POST['verkoopprijs'];
+    $sql = "INSERT INTO Voorwerp([Looptijd], [Startprijs], [Verkoper], [Beschrijving], [Betalingswijze], [Betalingsinstructie], [Land], [Plaatsnaam], [Titel], [Verzendinstructies], [VoorwerpCover], [Verkoopprijs], [VeilingGesloten])
+            VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 }
