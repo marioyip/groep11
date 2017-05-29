@@ -37,20 +37,6 @@ connectToDatabase();
                     if (isset($_POST['submit'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
                         $pwd = $_POST["pwd"];
-                        //
-                        //
-                        //                        $gebruiker = getUser($gebruikersnaam);
-                        //
-                        //                        if ($gebruiker["Wachtwoord"] == $wachtwoord) {
-                        //                            session_start();
-                        //                            $_SESSION['gebruiker'] = $gebruikersnaam;
-                        //                            header("Location: index.php"); /* Redirect browser */
-                        //                            exit();
-                        //                            echo '<p class = "success">Welkom ' . $gebruiker . '!</p>';
-                        //                        } else {
-                        //                            echo '<p class = "error" >Kan gebruikersnaam of wachtwoord niet vinden.</p>';
-                        //                        }
-
                         $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
                         $stmt = $db->prepare($sql); //Statement object aanmaken
                         $stmt->execute();
@@ -87,6 +73,8 @@ connectToDatabase();
                             <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen">
                         </div>
                     </div>
+
+                    <a href="accountreset.php">wachtwoord vergeten?</a>
                 </form>
             </div>
 
