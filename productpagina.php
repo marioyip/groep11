@@ -253,6 +253,7 @@ if (isset($_GET['product'])) {
                     </div>
                 </form><?php } ?>
             </h2>
+            <div class="scrollbar">
             <ul>
                 <?php
                 $sql = "SELECT TOP 5 * FROM Bod b
@@ -275,6 +276,7 @@ if (isset($_GET['product'])) {
                 }
                 ?>
             </ul>
+            </div>
         </div>
     </div>
 </div>
