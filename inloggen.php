@@ -64,7 +64,6 @@ connectToDatabase();
                                 header("Location: index.php");
                             } else {
                                 echo 'Het gebruikersnaam of wachtwoord klopt niet.';
-                                printf(mysqli_connect_error());
                             }
 
                         }

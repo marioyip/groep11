@@ -383,6 +383,7 @@ footer {
 
 }
 
+
 li, ol, h4, select {
     font-family: 'Sanchez', 'sans-serif';
 }
@@ -404,6 +405,12 @@ ol {
     list-style-type: lower-roman;
 }
 
+.container{
+    min-height: 300px;
+}
+.controlBox{
+    background-color: white;
+}
 .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -449,10 +456,16 @@ ol {
 .btn-default {
     box-shadow: none;
 }
+.btn-ibis{
+    background-color: #F45520;
+    color: #EDF1FE;
+    border-radius:0;
+}
 
 .imgStyle {
     width: 100%;
-    height: 60%;
+    height: 200px;
+    min-height: 230px;
 }
 .imagesize{
     width: 600px;
