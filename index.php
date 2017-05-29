@@ -87,9 +87,9 @@ function getTijd($tijd, $pos)
                 } else {
                     echo '<div class="item">';
                 }
-                echo "<div class=\"fill\" style=\"background-image:url('media/" . $carouselCover[$i] . "')\"></div>";
+                echo "<div class=\"fill\" style=\"background-image:url($carouselCover[$i])\"></div>";
                 echo '<div class="carousel-caption d-none d-md-block"><h3>';
-                echo $carouselTitel[$i] . '</h3><p>' . $carouselBeschrijving[$i] . '</p>';
+                echo $carouselTitel[$i];
                 echo '<div id="carousel' . $i . '" class="h2"></div>';
                 getTijd($carouselEindDag[$i] . ' ' . $carouselEindTijd[$i], "carousel" . $i);
                 echo '<a href = "productpagina.php?product=' . $carouselNummer[$i] . '" class="btn btn-danger crete" role = "button">Bieden</a>';
@@ -151,12 +151,9 @@ function getTijd($tijd, $pos)
                 echo '
                 <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                     <div class="col-md-3 itemBox roundborder " align="center">
-                        <img class="imgStyle roundborder" src="media/' . $VoorwerpCover[$i] . '"/>
+                        <img class="imgStyle roundborder" src="'. $carouselCover[$i]. '"/>
                         <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                         ' . $Titel[$i] . '</a></h4>
-                        <div class="description">
-                        ' . $Beschrijving[$i] . '
-                        </div>
                         <div id="boven' . $i . '" class="description"></div>';
                         getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
                         echo '
@@ -209,12 +206,9 @@ function getTijd($tijd, $pos)
                 echo '
                 <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
                     <div class="col-md-3 itemBox roundborder " align="center">
-                        <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                        <img class="imgStyle roundborder" src="'. $VoorwerpCover2[$i]. '"/>
                         <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
                         ' . $Titel2[$i] . '</a></h4>
-                        <div class="description">
-                        ' . $Beschrijving2[$i] . '
-                        </div>
                         <div id="onder' . $i . '" class="description"></div>';
                         getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
                         echo '
