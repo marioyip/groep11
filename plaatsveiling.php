@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Plaats Bieding - Eenmaal Andermaal</title>
+    <title>Plaats veiling - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -12,12 +12,12 @@
 </head>
 
 <?php
-
+ob_start( );
 session_start();
 if (isset($_SESSION['username'])){
 
 include 'includes/header.php';
-include 'includes/catbar.php';
+//include 'includes/catbar.php';
 require_once 'includes/functies.php';
 
 ?>
@@ -32,12 +32,12 @@ require_once 'includes/functies.php';
             <form method="post" action="">
                 <div class="form-group">
                     <label for="titel_voorwerp">Titel</label>
-                    <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast">
+                    <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast" required>
                 </div>
                 <div class="form-group">
                     <label for="beschrijving_voorwerp">Beschrijving</label>
                     <textarea class="form-control" id="beschrijving_voorwerp" name="beschrijving" rows="2"
-                              placeholder="Mooie kast" maxlength="500"></textarea>
+                              placeholder="Mooie kast" maxlength="500" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="startprijs-voorwerp">Startprijs (optioneel)</label>
@@ -45,13 +45,13 @@ require_once 'includes/functies.php';
                            placeholder="5">
                 </div>
                 <div class="form-group">
-                    <label for="verkoopprijs    -voorwerp">Maximumprijs (optioneel)</label>
+                    <label for="verkoopprijs    -voorwerp">Maximumprijs</label>
                     <input type="number" class="form-control" id="verkoopprijs-voorwerp" name="verkoopprijs" min="0"
-                           placeholder="50">
+                           placeholder="50" required>
                 </div>
                 <div class="form-group">
                     <label for="betalingswijze_voorwerp">Betalingswijze</label>
-                    <select class="form-control" id="betalingswijze_voorwerp" name="betalingswijze">
+                    <select class="form-control" id="betalingswijze_voorwerp" name="betalingswijze" required>
                         <option>Paypal</option>
                         <option>Bank/Giro</option>
                         <option>Contant</option>
@@ -60,16 +60,16 @@ require_once 'includes/functies.php';
                 <div class="form-group">
                     <label for="betalingsinstructie_voorwerp">Betalingsinstructie</label>
                     <textarea class="form-control" id="betalingsinstructie_voorwerp" name="betalingsinstructie" rows="2"
-                              placeholder="Het liefst contant"></textarea>
+                              placeholder="Het liefst contant" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="betalingsinstructie_voorwerp">Verzendinstructie</label>
                     <textarea class="form-control" id="verzendinstructie_voorwerp" name="verzendinstructie" rows="2"
-                              placeholder="Kom naar mijn adres"></textarea>
+                              placeholder="Kom naar mijn adres" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="looptijd-voorwerp">Looptijd</label>
-                    <select class="form-control" id="looptijd-voorwerp" name="looptijd">
+                    <select class="form-control" id="looptijd-voorwerp" name="looptijd" required>
                         <option value="3">3 dagen</option>
                         <option value="5">5 dagen</option>
                         <option value="7">7 dagen</option>
@@ -92,6 +92,7 @@ require_once 'includes/functies.php';
 <?php
 
 if (isset($_POST['submit'])) {
+
     $verkoper = $_SESSION['username'];
 
     $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = '$verkoper'";
@@ -118,10 +119,22 @@ if (isset($_POST['submit'])) {
             VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
+
+    $sql = "SELECT TOP 1 Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while($row = $stmt->fetch(PDO::FETCH_NUM)){
+        $id[] = $row[0];
+    }
+    echo $id[0];
+    $_SESSION['voorwerpnummer'] = $id[0];
+    ob_end_clean( );
+    header('Location: veilinginrubriek.php');
 }
 }
 //else{
 //    header('Location: index.php');
 //    die();
 //}
+ob_end_flush( );
 ?>
