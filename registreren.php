@@ -28,7 +28,8 @@ include 'includes/catbar.php';
 <main>
     <div class="container marginTop20">
         <div class="col-md-12" align="center">
-            <h1>Maak jouw account aan!</h1>
+            <h1 class="textGreen">Maak jouw account aan!</h1>
+            <hr>
         </div>
         <div class="col-md-12 marginTop20" align="center">
             <div class="col-md-9 marginTop20 text-left">

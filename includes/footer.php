@@ -27,7 +27,7 @@
                             <a class="textWhite sanchez" href="../groep11/infopagina.php">Help &amp; info</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="../media/Algemene_voorwaarden.pdf">Voorwaarden</a>
+                            <a class="textWhite sanchez" href="media/Algemene_voorwaarden.pdf">Voorwaarden</a>
                         </li>
                         <li>
                             <a class="textWhite sanchez" href="../groep11/privacyverklaring.php">Privacy</a>

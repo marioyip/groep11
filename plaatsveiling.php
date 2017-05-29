@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Plaats Bieding - Eenmaal Andermaal</title>
+    <title>Plaats Veiling - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -25,7 +25,7 @@ require_once 'includes/functies.php';
 <body>
 <div class="container marginTop20">
     <div class="col-md-12" align="center">
-        <h1>Plaats hier je bieding:</h1>
+        <h1>Plaats hier je veiling:</h1>
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">
