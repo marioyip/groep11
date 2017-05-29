@@ -135,6 +135,6 @@ if (isset($_POST['submit'])) {
 //else{
 //    header('Location: index.php');
 //    die();
-//}
+//} xd
 ob_end_flush( );
 ?>
