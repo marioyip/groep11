@@ -238,6 +238,9 @@ if (isset($_GET['product'])) {
                 if($Bod>5000){
                     $minimumBod = $Bod + 50.00;
                 }
+
+                //als er niet is ingelogd dan kan de gebruiker ook niet bieden
+                if(isset($_SESSION['username'])){
                 ?>
                 <form action="bodwordtgeplaatst.php" method="post">
                     <div class="form-group">
@@ -248,7 +251,7 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                </form>
+                </form><?php } ?>
             </h2>
             <div class="scrollbar">
             <ul>
