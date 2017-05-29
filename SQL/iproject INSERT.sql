@@ -3920,6 +3920,8 @@ INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(5, 98
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(6, 234);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(7, 26672);
 INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(8, 8673);
+INSERT INTO VoorwerpInRubriek([Voorwerp], [RubriekOpLaagsteNiveau]) VALUES(18, 9861);
+
 
 
 

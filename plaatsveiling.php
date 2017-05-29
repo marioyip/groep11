@@ -25,7 +25,7 @@ require_once 'includes/functies.php';
 <body>
 <div class="container marginTop20">
     <div class="col-md-12" align="center">
-        <h1>Plaats hier je bieding:</h1>
+        <h1>Plaats hier je veiling:</h1>
     </div>
     <div class="row">
         <div class="col-md-12 offset-md-6 marginTop20">

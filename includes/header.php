@@ -52,9 +52,20 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             <div id="navbar">
                 <ul class="nav ">
                     <li>
-                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
+                       <a class="navbar-right glyphicon glyphicon-phone-alt textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
+                             href="contact.php"></a>
+                    </li>
+                     <li>
+                     <a class="navbar-right glyphicon glyphicon-pencil textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
+                             href="registreren.php"></a>
+                    </li>  
+                     <li>
+                    <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
                              href="inloggen.php"></a>
-                    </li>                
+                    </li> 
+                    
+                    
+                    
                 </ul>
             </div>
             ';
