@@ -64,7 +64,7 @@ function getTijd($tijd, $pos)
         </ol>
 
         <?php
-        $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover, LooptijdeindeDag, LooptijdeindeTijdstip FROM Voorwerp ORDER BY NEWID()";
+        $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover, LooptijdeindeDag, LooptijdeindeTijdstip FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($carouselRow = $stmt->fetch(PDO::FETCH_NUM)) {
