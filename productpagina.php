@@ -80,19 +80,19 @@ if (isset($_GET['product'])) {
             <div class="carousel-inner ">
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
