@@ -4,7 +4,7 @@
         <div class="container-fluid brilliantWhite">
             <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray"
                   href="./rubrieken2.php">
-                      Rubrieken</a>
+                Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">
                     <form method="GET" action="zoekfunctie.php">
@@ -14,7 +14,7 @@
                             </li>
                             <li>
                                 <select class="form-control" name="rubriek">
-<!--                                        Selecteert alle hoofdrubrieken, dus rubrieken waar rubriek gelijk is aan -1-->
+                                    <!--                                        Selecteert alle hoofdrubrieken, dus rubrieken waar rubriek gelijk is aan -1-->
                                     <?php
                                     $sql = "SELECT Rubrieknaam, Rubrieknummer FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam"; //SQL query om het uit de database te lezen
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -28,17 +28,17 @@
                                         echo '<option value="' . $nummers[$i] . '"> ' . $namen[$i] . ' </option)>';
                                     }
                                     ?>
-</select>
-</li>
-<li>
-    <button class="btn btn-default" type="submit">
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-</li>
-</ul>
-</form>
-</div>
-</div>
-</div>
-</nav>
+                                </select>
+                            </li>
+                            <li>
+                                <button class="btn btn-default" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
 </div>
