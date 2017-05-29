@@ -111,12 +111,12 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5><b>Email</b></h5>
                     </div>
                     <div class="col-md-2 marginTop5">
-                        <h5>-  <?php echo $Gebruikersnaam; ?></h5>
-                        <h5>-  <?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
-                        <h5>-  <?php echo $GeboorteDag; ?></h5>
-                        <h5>-  <?php echo $Straatnaam1 . ' ' . $Huisnummer1; ?></h5>
-                        <h5>-  <?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
-                        <h5>-  <?php echo $Mailbox ?></h5>
+                        <h5>- <?php echo $Gebruikersnaam; ?></h5>
+                        <h5>- <?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
+                        <h5>- <?php echo $GeboorteDag; ?></h5>
+                        <h5>- <?php echo $Straatnaam1 . ' ' . $Huisnummer1; ?></h5>
+                        <h5>- <?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
+                        <h5>- <?php echo $Mailbox ?></h5>
                     </div>
                     <div class="col-md-4 marginTop5">
 
@@ -127,31 +127,77 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 
                     </div>
                     <div class="col-md-6 marginTop20">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
+                                    </div>
+                                    <input class="form-control" type="password" placeholder="Huidig wachtwoord"
+                                           name="huidigWachtwoord">
                                 </div>
-                                <input class="form-control" type="password" placeholder="Huidig wachtworod">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                                    </div>
+                                    <input class="form-control" type="password" placeholder="Nieuw wachtwoord"
+                                           name="nieuwWachtwoord1">
                                 </div>
-                                <input class="form-control" type="password" placeholder="Nieuw wachtwoord">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span>
+                                    </div>
+                                    <input class="form-control" type="password" placeholder="Herhaal nieuw wachtwoord"
+                                           name="nieuwWachtwoord2">
                                 </div>
-                                <input class="form-control" type="password" placeholder="Herhaal nieuw wachtwoord">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-default form-control">Opslaan</button>
-                        </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default form-control" value="Opslaan">
+                            </div>
+                        </form>
                     </div>
+
+                    <?php
+
+                    if (isset($_POST['huidigWachtwoord']) && isset($_POST['nieuwWachtwoord1']) && isset($_POST['nieuwWachtwoord2']) && $_POST['huidigWachtwoord'] != '') {
+                        $huidigWachtwoord = $_POST['huidigWachtwoord'];
+                        $nieuwWachtwoord1 = $_POST['nieuwWachtwoord1'];
+                        $nieuwWachtwoord2 = $_POST['nieuwWachtwoord2'];
+
+
+                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$Gebruikersnaam'"; //De query maken
+                        $stmt = $db->prepare($sql); //Statement object aanmaken
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            $controleWachtwoord = $row[0];
+
+                            if ($nieuwWachtwoord1 != $nieuwWachtwoord2 || password_verify($huidigWachtwoord, $controleWachtwoord) == 0) {
+                                header("Location: mijnprofiel.php#item2");
+                            } else {
+                                if (strlen($nieuwWachtwoord1) < 6
+                                    || strpbrk($nieuwWachtwoord1, '1234567890') == FALSE
+                                    || strpbrk($nieuwWachtwoord1, 'abcdefghijklmnopqrstuvwxyz') == FALSE
+                                    || strpbrk($nieuwWachtwoord1, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE
+                                ) {
+                                    echo('weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?');
+                                } else {
+                                    $hashedWachtwoord = password_hash($nieuwWachtwoord1, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
+
+                                    $sql = "UPDATE Gebruiker SET Wachtwoord = '$hashedWachtwoord' WHERE Gebruikersnaam = '$Gebruikersnaam'"; //De query maken
+                                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                                    $stmt->execute();
+                                }
+                            }
+
+
+                        }
+
+
+                    }
+
+                    ?>
+
 
                     <div class="col-md-3">
 
@@ -206,8 +252,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         </a>
                     ';
                         }
-                    }
-                    else{
+                    } else {
                         echo '
                         <div class="col-md-12 marginTop5"><p>U heeft momenteel nog geen lopende veilingen.</p></div>
                         ';
@@ -262,8 +307,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         </a>
                     ';
                         }
-                    }
-                    else{
+                    } else {
                         echo '
                         <div class="col-md-12 marginTop5"><p>U heeft nog nergens op geboden.</p></div>
                         ';
@@ -319,8 +363,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         </a>
                     ';
                         }
-                    }
-                    else{
+                    } else {
                         echo '
                         <div class="col-md-12 marginTop5"><p>U heeft nog niks geveild.</p></div>
                     ';
