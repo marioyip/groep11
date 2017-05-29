@@ -35,7 +35,6 @@ include 'includes/catbar.php';
                 <form class="form-horizontal" method="post" action="registercontrol.php">
                     <div class="form-group">
                         <h3>Accountgegevens</h3>
-
                         <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="voornaam" id="email"
@@ -53,7 +52,7 @@ include 'includes/catbar.php';
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
-                            <input type="email"  class="form-control marginLeft200" name="email" id="email"
+                            <input type="email" class="form-control marginLeft200" name="emailadres" id="email"
                                    placeholder="k.vandalen@email.com">
                         </div>
                     </div>
