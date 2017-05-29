@@ -45,6 +45,11 @@ require_once 'includes/functies.php';
                            placeholder="5">
                 </div>
                 <div class="form-group">
+                    <label for="verkoopprijs    -voorwerp">Maximumprijs (optioneel)</label>
+                    <input type="number" class="form-control" id="verkoopprijs-voorwerp" name="verkoopprijs" min="0"
+                           placeholder="50">
+                </div>
+                <div class="form-group">
                     <label for="betalingswijze_voorwerp">Betalingswijze</label>
                     <select class="form-control" id="betalingswijze_voorwerp" name="betalingswijze">
                         <option>Paypal</option>
@@ -70,7 +75,7 @@ require_once 'includes/functies.php';
                         <option value="7">7 dagen</option>
                     </select>
                 </div>
-                        <div class="form-group">
+                <div class="form-group">
                     <label class="btn btn-default btn-file">
                         Foto <input type="file" name="voorwerpCover" hidden>
                     </label>
@@ -86,13 +91,12 @@ require_once 'includes/functies.php';
 
 <?php
 
-if (isset($_POST['submmit'])) {
+if (isset($_POST['submit'])) {
     $verkoper = $_SESSION['username'];
 
-    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = $verkoper";
+    $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = '$verkoper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $land = $row[0];
         $plaatsnaam = $row[1];
@@ -100,26 +104,18 @@ if (isset($_POST['submmit'])) {
 
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
-    $startprijs = $_POST['startprijs'];
+    if(isset($_POST['startprijs'])){
+        $startprijs = $_POST['startprijs'];
+    } else{
+        $startprijs = 0;
+    }
     $betalingswijze = $_POST['betalingswijze'];
-    $betalingsinstructie = $_POST['betallingsinstructie'];
+    $betalingsinstructie = $_POST['betalingsinstructie'];
     $verzendinstructie = $_POST['verzendinstructie'];
     $looptijd = $_POST['looptijd'];
-    $rubriek = $_POST['rubriek'];
-
-    $sql = "INSERT INTO Voorwerp(
-  [Looptijd],
-  [Startprijs],
-  [Verkoper],
-  [Beschrijving],
-  [Betalingswijze],
-  [Betalingsinstructie],
-  [Land],
-  [Plaatsnaam],
-  [Titel],
-  [Verzendinstructies],
-  [VoorwerpCover])
-VALUES($looptijd,$startprijs,'$verkoper','$beschrijving','$betalingswijze','$betalingsinstructie','$land','$plaatsnaam','$titel', '$verzendinstructie','$voorwerpCover')";
+    $verkoopprijs = $_POST['verkoopprijs'];
+    $sql = "INSERT INTO Voorwerp([Looptijd], [Startprijs], [Verkoper], [Beschrijving], [Betalingswijze], [Betalingsinstructie], [Land], [Plaatsnaam], [Titel], [Verzendinstructies], [VoorwerpCover], [Verkoopprijs], [VeilingGesloten])
+            VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 }
