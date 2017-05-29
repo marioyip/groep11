@@ -44,21 +44,22 @@ mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
 ?>
 <div class="container marginTop20">
     <div class="col-md-12" align="center">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 controlBox marginTop30">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 controlBox container-fluid marginTop30">
             <h2>Verificatiecode invoeren</h2>
             <hr>
-            <div class="form-control">
+            <p> U heeft een registratiecode naar uw emailadres gestuurd gekregen, hiermee kan u uw account verifiëren.</p>
+            <div class="">
                 <form method="POST" action="registratieAfronden.php">
                     <div class="form-group ">
                         <label for="ingevoerdecode">Uw ontvangen code:
-                            <input id="ingevoerdecode" type="text" name="ingevoerdecode"></label>
+                            <input id="ingevoerdecode" class="form-control" type="text" name="ingevoerdecode"></label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for=" emailingevoerd">Uw emailadres:
-                            <input id="emailingevoerd" type="text" name="emailingevoerd"></label>
+                            <input id="emailingevoerd" class="form-control" type="text" name="emailingevoerd"></label>
                     </div><div class="beschrijving"></div>
-                    <div class="form-group marginTop50">
+                    <div class="form-group marginTop20">
                         <input type="submit" name="bevestig" value="bevestig" class="btn-default btn">
                     </div>
                 </form>
