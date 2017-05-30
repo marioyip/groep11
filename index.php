@@ -226,6 +226,12 @@ function getTijd($tijd, $pos)
             ?>
         </div>
 
+        <div class="container marginTop60" align="center">
+            <div class="col-md-12">
+                <a href="resultatenpagina.php?rubriek=-1" class="btn btn-ibis crete" role="button">Bekijk alle rubrieken</a>
+            </div>
+        </div>
+
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>

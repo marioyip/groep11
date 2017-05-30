@@ -109,8 +109,10 @@ if (isset($_GET['product'])) {
 
             <?php
             if ($VeilingGesloten == 1){
-                echo '<h2>DEZE VEILING IS HELAAS GESLOTEN</h2>';
+
+                echo '<h2>Deze veiling is gesloten</h2>';
                 echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
+                echo '<a href="registreren.php">Klik hier om te registreren.</a>';
                 $sql = "select TOP 1 Gebruiker from Bod where voorwerp = $Voorwerpnummer Order by bodbedrag DESC ";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -251,7 +253,11 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                    </form><?php } ?>
+                    </form><?php }
+                else{
+                    echo 'U bent nog niet ingelogd. ';
+                    echo '<a href="registeren.php">Registreer nu!</a>';
+                }?>
             </h2>
             <div class="scrollbar">
                 <ul>
