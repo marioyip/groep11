@@ -41,6 +41,15 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                     <li class="list-group-item"><a href="x">Gebruikers</a></li>
             </div>
             <div class="col-md-10 container-fluid fixed">
+                <div class="col-md-3"></div>
+                <div class="input-group col-md-6" >
+                    <input type="text" class="form-control input-lg" placeholder="Zoeken" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-ibisrnd btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -65,14 +74,15 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                         <td>Adres</td>
                         <td>Postcode</td>
                         <td><label><input type="checkbox" value=""></label></td>
-                        <td>                        <button type="submit" class="btn btn-primary">
+                        <td>                        <button type="submit" class="btn btn-ibisrnd">
                                 <i class="glyphicon glyphicon-wrench"></i>
                             </button></td>
                     </tr>
 
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-lg" align="center">Uitvoeren</button>
+                <div class="col-md-5"></div>
+                <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
             </div>
             <div class="col-md-12 " align="center">
                 <h1 class="textGreen">Veilingen</h1>
@@ -104,7 +114,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                         <td>Rubriek</td>
                         <td>Veilinggesloten</td>
                         <td><label><input type="checkbox" value=""></label></td>
-                        <td>                        <button type="submit" class="btn btn-primary">
+                        <td>                        <button type="submit" class="btn btn-ibisrnd">
                                 <i class="glyphicon glyphicon-wrench"></i>
                             </button></td>
                     </tr>
@@ -112,7 +122,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
 
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-lg" align="center">Uitvoeren</button>
+                <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
             </div>
 
         </div>
