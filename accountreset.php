@@ -22,19 +22,27 @@ include 'includes/catbar.php';
 if (empty($_POST['gebruikersnaam'])){
 
     ?>
+    <div class="container marginTop20 ">
+        <div class="col-md-12" align="center">
+            <div class="col-md-3"></div>
 
-    <div class="col-md-8">
-        <h2>Wachtwoord vergeten?</h2>
-        <p>Kan gebeuren, geeft niks.</p>
-        <p>Wij sturen een code naar jou toe via de email, dat vul je in en klaar is kees.</p>
-        <div class="form-group col-md-6">
-            <form action="" method="post">
-                <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
-                <input class="form-control" type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="Hans123">
-                <input type="submit" class="btn-default btn" value="verstuur">
-            </form>
+            <div class="col-md-6 controlBox container-fluid text-center marginTop30">
+
+                <h2>Wachtwoord vergeten?</h2>
+                <hr>
+                <p>Kan gebeuren, geeft niks.</p>
+                <p>Wij sturen een code naar jou toe via de email, dat vul je in en klaar is kees.</p>
+                <div class="form-group col-md-12 textCenter">
+                    <form action="" method="post">
+                        <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
+                        <input class="form-control" type="text" id="gebruikersnaam" name="gebruikersnaam"
+                               placeholder="Hans123">
+                        <input type="submit" class="btn-default btn" value="verstuur" align="center">
+                    </form>
+                </div>
+
+            </div>
         </div>
-
     </div>
 
     <?php
@@ -52,22 +60,25 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 }
 //  2. wat was je vraag en welk antwoord had je?
 ?>
-
-<div class="form-group col-md-6">
-    <form action="" method="post">
-        <label class="control-label col-sm-3" for="vraag">Vraag</label>
-        <select name="vraag" class="form-control">
-            <option value="1"> Wat is mijn favoriete huisdier ?</option>
-            <option value="2"> Wat is mijn geboorteplaats ?</option>
-            <option value="3"> Wie is mijn jeugdvriend ?</option>
-            <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
-        </select>
-        <label class="control-label col-sm-3" for="antwoord">Antwoord</label>
-        <input type="text" class="form-control" name="antwoord" id="antwoord">
-        <input type="submit" class="btn-default btn" value="verstuur">
-    </form>
+<div class="container marginTop20 ">
+    <div class="col-md-3"></div>
+    <div class="form-group controlBox col-md-6 text-center marginTop30">
+        <h2>Beveiligingsvraag</h2>
+        <hr>
+        <form action="" method="post">
+            <label class="control-label col-sm-3 marginTop20" for="vraag">Vraag</label>
+            <select name="vraag" class="form-control ">
+                <option value="1"> Wat is mijn favoriete huisdier ?</option>
+                <option value="2"> Wat is mijn geboorteplaats ?</option>
+                <option value="3"> Wie is mijn jeugdvriend ?</option>
+                <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
+            </select>
+            <label class="control-label col-sm-3 marginTop20" for="antwoord">Antwoord</label>
+            <input type="text" class="form-control " name="antwoord" id="antwoord">
+            <input type="submit" class="btn-default btn marginTop20" value="verstuur">
+        </form>
+    </div>
 </div>
-
 <?php
 //  2.1 de gekozen vraag en antwoord declareren
 if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag']) && !empty($_POST['antwoord'])) {
@@ -115,6 +126,7 @@ if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag'
     }
 }
 }
-include 'includes/footer.php';
+
 }
+include 'includes/footer.php';
 ?>

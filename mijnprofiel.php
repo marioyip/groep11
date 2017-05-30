@@ -16,6 +16,9 @@
 
 <?php
 session_start();
+if(empty($_SESSION['username'])){
+    header("Location: index.php");
+}
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
 include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 ?>
@@ -25,16 +28,13 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
     <div class="containerMinHeight">
         <div class="container">
             <?php
-
+            //  het ophalen van de informatie voor op het tabblad "Account"
             connectToDatabase();
-
             $gebruikersnaam = $_SESSION['username'];
             $query = "SELECT TOP 1 Gebruikersnaam, Voornaam, Achternaam, GeboorteDag, email,
                 Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2 FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam' ";
             $stmt = $db->prepare($query);
             $stmt->execute();
-
-
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                 $Gebruikersnaam = $row[0];
                 $Voornaam = $row[1];
@@ -46,9 +46,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 $Straatnaam2 = $row[7];
                 $Huisnummer2 = $row[8];
             }
-
-
             ?>
+            <!--    Het maken van de algemene inhoud" -->
             <div class="container-fluid">
                 <div class="page-header" align="center">
                     <h1 class="textGreen">Mijn profiel</h1>
@@ -56,7 +55,6 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-2">
-
                 </div>
                 <div class="col-md-2">
                     <img width="100px" height="100px" src="media/usericoon.png" alt=""
@@ -67,15 +65,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <p class="glyphicon glyphicon-user"></p> <?php echo $Gebruikersnaam; ?></p>
                     <p class="glyphicon glyphicon-ice-lolly-tasted"></p> <?php echo $GeboorteDag; ?></p>
                 </div>
-                <div class="col-md-2">
-
-
-                </div>
-                <div class="col-md-2">
-
-                </div>
             </div>
         </div>
+        <!--    het maken van de tabbladen zelf -->
         <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -88,15 +80,16 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Lopende veilingen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Gewonnen veilingen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Biedgeschiedenis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Biedgeschiedenis</a>
+                    <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Gewonnen veilingen</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#item7" role="tab">Uitloggen</a>
                 </li>
             </ul>
+            <!-- Het maken van de inhoud van "account"-->
             <div class="tab-content">
                 <div class="tab-pane active" id="item1" role="tabpanel">
                     <div class=" col-md-4">
@@ -110,7 +103,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5><b>Secondair adres</b></h5>
                         <h5><b>Email</b></h5>
                     </div>
-                    <div class="col-md-2 marginTop5">
+                    <div class="col-md-3 marginTop5">
                         <h5>- <?php echo $Gebruikersnaam; ?></h5>
                         <h5>- <?php echo $Voornaam . ' ' . $Achternaam; ?></h5>
                         <h5>- <?php echo $GeboorteDag; ?></h5>
@@ -118,14 +111,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5>- <?php echo $Straatnaam2 . ' ' . $Huisnummer2 ?></h5>
                         <h5>- <?php echo $Mailbox ?></h5>
                     </div>
-                    <div class="col-md-4 marginTop5">
-
-                    </div>
                 </div>
+                <!-- Wachtwoord wijzigen -->
                 <div class="tab-pane fade " id="item2" role="tabpanel">
-                    <div class="col-md-3">
-
-                    </div>
                     <div class="col-md-6 marginTop20">
                         <form action="" method="post">
                             <div class="form-group">
@@ -159,7 +147,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     </div>
 
                     <?php
-
+                    //PHP gedoe van het wachtwoord wijzigen
                     if (isset($_POST['huidigWachtwoord']) && isset($_POST['nieuwWachtwoord1']) && isset($_POST['nieuwWachtwoord2']) && $_POST['huidigWachtwoord'] != '') {
                         $huidigWachtwoord = $_POST['huidigWachtwoord'];
                         $nieuwWachtwoord1 = $_POST['nieuwWachtwoord1'];
@@ -189,28 +177,14 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                     $stmt->execute();
                                 }
                             }
-
-
                         }
-
-
                     }
-
                     ?>
-
-
-                    <div class="col-md-3">
-
-                    </div>
-
-
                 </div>
+                <!-- Lopende veilingen -->
                 <div class="tab-pane fade " id="item3" role="tabpanel">
                     <?php
-                    connectToDatabase();
-                    global $db;
-
-                    $sql = "SELECT * FROM Voorwerp Where VeilingGesloten = 0 AND Koper = '$gebruikersnaam';";
+                    $sql = "SELECT * FROM Voorwerp Where VeilingGesloten = 0 AND Verkoper = '$gebruikersnaam';";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -236,7 +210,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $VoorwerpCover = $row[19];
 
                     }
-                    if ($Titel = 0) {
+                    if (!empty($Titel)) {
                         for ($i = 0; $i < count($Titel); $i++) {
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">
@@ -258,51 +232,34 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         ';
                     }
                     ?>
-
                 </div>
+                <!-- Biedgeschiedenis -->
                 <div class="tab-pane fade " id="item4" role="tabpanel">
                     <?php
-                    connectToDatabase();
-                    global $db;
-                    $sql = "SELECT * FROM Bod
-                            LEFT JOIN Voorwerp ON Bod.Gebruiker = Voorwerp.Koper
-                             WHERE Koper = '1' ORDER BY Bodbedrag DESC;";
+                    //de voorwerpen selecteren waarop is geboden
+                    $sql = "SELECT DISTINCT (Voorwerpnummer),VoorwerpCover,Titel,Beschrijving FROM Bod
+                            JOIN Voorwerp ON Bod.Voorwerp = Voorwerp.Voorwerpnummer
+                            WHERE Bod.Gebruiker = '$gebruikersnaam';";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $Looptijd = $row[0];
-                        $LooptijdbeginDag = $row[1];
-                        $LooptijdbeginTijdstip = $row[2];
-                        $LooptijdeindeDag = $row[3];
-                        $LooptijdeindeTijdstip = $row[4];
-                        $Startprijs = $row[5];
-                        $Verkoper = $row[6];
-                        $Koper = $row[7];
-                        $Verzendkosten = $row[8];
-                        $Verkoopprijs = $row[9];
-                        $Beschrijving = $row[10];
-                        $Betalingswijze = $row[11];
-                        $Betalingsinstructie = $row[1];
-                        $Land = $row[13];
-                        $Plaatsnaam = $row[14];
-                        $Titel = $row[15];
-                        $Verzendinstructies = $row[16];
-                        $Voorwerpnummer = $row[17];
-                        $VeilingGesloten = $row[18];
-                        $VoorwerpCover = $row[19];
+                        $Voorwerpnummer1[] = $row[0];
+                        $VoorwerpCover1[] = $row[1];
+                        $Titel1[] = $row[2];
+                        $Beschrijving1[] = $row[3];
                     }
-                    if ($Titel = 0) {
-                        for ($i = 0; $i < count($Titel); $i++) {
+                    if (!empty($Titel)) {
+                        for ($i = 0; $i < count($Titel1); $i++) {
                             echo '
-                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                        <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
-                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
-                                ' . $Titel . '</a></h4>
+                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover1[$i] . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
+                                ' . $Titel1[$i] . '</a></h4>
                                 <div class="description">
-                                ' . $Beschrijving . '
+                                ' . $Beschrijving1[$i] . '
                                 </div>
-                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                                <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
                         </a>
                     ';
@@ -313,52 +270,31 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         ';
                     }
                     ?>
-
                 </div>
+                <!-- Gewonnen Veilingen-->
                 <div class="tab-pane fade " id="item6" role="tabpanel">
                     <?php
-                    connectToDatabase();
-                    global $db;
-                    $sql = "SELECT * FROM Bod b
-                            LEFT JOIN Voorwerp v ON b.Gebruiker = v.Koper
-                             WHERE v.Koper = '$gebruikersnaam' ORDER BY v.VeilingGesloten = 1;";
+                    $sql = "SELECT DISTINCT (Voorwerpnummer),VoorwerpCover,Titel,Beschrijving FROM Voorwerp WHERE Koper= '$gebruikersnaam'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $Looptijd = $row[0];
-                        $LooptijdbeginDag = $row[1];
-                        $LooptijdbeginTijdstip = $row[2];
-                        $LooptijdeindeDag = $row[3];
-                        $LooptijdeindeTijdstip = $row[4];
-                        $Startprijs = $row[5];
-                        $Verkoper = $row[6];
-                        $Koper = $row[7];
-                        $Verzendkosten = $row[8];
-                        $Verkoopprijs = $row[9];
-                        $Beschrijving = $row[10];
-                        $Betalingswijze = $row[11];
-                        $Betalingsinstructie = $row[1];
-                        $Land = $row[13];
-                        $Plaatsnaam = $row[14];
-                        $Titel = $row[15];
-                        $Verzendinstructies = $row[16];
-                        $Voorwerpnummer = $row[17];
-                        $VeilingGesloten = $row[18];
-                        $VoorwerpCover = $row[19];
+                        $Voorwerpnummer1[] = $row[0];
+                        $VoorwerpCover1[] = $row[1];
+                        $Titel1[] = $row[2];
+                        $Beschrijving1[] = $row[3];
                     }
-
-                    if ($Titel = 0) {
-                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
+                    if (!empty($Titel1[0])) {
+                        for ($i = 0; $i < count($Titel1); $i++) {
                             echo '
-                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                        <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
-                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
-                                ' . $Titel . '</a></h4>
+                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover1[$i] . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
+                                ' . $Titel1[$i] . '</a></h4>
                                 <div class="description">
-                                ' . $Beschrijving . '
+                                ' . $Beschrijving1[$i] . '
                                 </div>
-                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                                <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
                         </a>
                     ';
