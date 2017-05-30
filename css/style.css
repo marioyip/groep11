@@ -456,6 +456,16 @@ ol {
     margin: 10px;
 }
 
+.itemBoxResults {
+    width: 265px;
+    height: 300px;
+    text-align: center;
+    border-color: #e3e3e3;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px;
+}
+
 .itemBoxTitleHeight {
     height: 50px;
 
