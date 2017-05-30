@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
+    <!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
     <meta charset="UTF-8">
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -80,19 +80,19 @@ if (isset($_GET['product'])) {
             <div class="carousel-inner ">
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
+                    <div class="fill" style="background-image:url('media/<?php
                     echo $VoorwerpCover;
                     ?>');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
+                    <div class="fill" style="background-image:url('media/<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
+                    <div class="fill" style="background-image:url('media/<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
@@ -109,22 +109,23 @@ if (isset($_GET['product'])) {
 
             <?php
             if ($VeilingGesloten == 1){
-                echo '<h2>DEZE VEILING IS HELAAS GESLOTEN</h2>';
+
+                echo '<h2>Deze veiling is gesloten</h2>';
                 echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
+                echo '<a href="registreren.php">Klik hier om te registreren.</a>';
                 $sql = "select TOP 1 Gebruiker from Bod where voorwerp = $Voorwerpnummer Order by bodbedrag DESC ";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                     $gebruikerHoogsteBod = $row[0];
                 }
-                if(empty($gebruikerHoogsteBod)){
+                if (empty($gebruikerHoogsteBod)) {
                     $gebruikerHoogsteBod = NULL;
 
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                }
-                else{
+                } else {
 
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
@@ -139,14 +140,14 @@ if (isset($_GET['product'])) {
                         $email = $row[0];
                     }
                     //het schrijven van de email zelf
-                    $headers =   'MIME-Version: 1.0' . "\r\n";
-                    $headers .=  'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
-                    $headers .=  'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                    $onderwerp = 'U heeft '.$Titel. ' Gewonnen op EenmaalAndermaal' . "\r\n";
-                    $bericht =   'Van harte gefeliciteerd met het winnen van  '.$Titel.'' .  "\r\n";
+                    $headers = 'MIME-Version: 1.0' . "\r\n";
+                    $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                    $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
+                    $bericht = 'Van harte gefeliciteerd met het winnen van  ' . $Titel . '' . "\r\n";
                     $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
-                    $bericht .= 'U bent verplicht om te betalen)' .  "\r\n;" .  ' EenmaalAndermaal';
-                    mail($email,$onderwerp,$bericht, $headers);
+                    $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+                    mail($email, $onderwerp, $bericht, $headers);
                 }
             }
             else{
@@ -154,9 +155,9 @@ if (isset($_GET['product'])) {
             <h2>Je kunt dit nu kopen!</h2>
             <p><!-- looptijdbegindag -->
                 <?php
-                echo 'De veiling is op <strong>'.$LooptijdbeginDag.'</strong> om <strong>'.$LooptijdbeginTijdstip.'</strong> geopend. <br>';
-                echo 'De veiling is om <strong>'.$LooptijdeindeDag.'</strong> om <strong>'.$LooptijdeindeTijdstip. '</strong> afgelopen. <br>' ;
-                echo 'De looptiijd van de veiling is '.$Looptijd.' dagen. <br>'; ?>
+                echo 'De veiling is op <strong>' . $LooptijdbeginDag . '</strong> om <strong>' . $LooptijdbeginTijdstip . '</strong> geopend. <br>';
+                echo 'De veiling is om <strong>' . $LooptijdeindeDag . '</strong> om <strong>' . $LooptijdeindeTijdstip . '</strong> afgelopen. <br>';
+                echo 'De looptiijd van de veiling is ' . $Looptijd . ' dagen. <br>'; ?>
 
             </p>
 
@@ -199,9 +200,10 @@ if (isset($_GET['product'])) {
             </script>
             </p>
             <?php
-            if(isset($_SESSION['username'])){
+            if (isset($_SESSION['username'])) {
+                ?>
+            <?php } // haakje voor de isset (regel 176)
             ?>
-            <?php } // haakje voor de isset (regel 176) ?>
             <h2>
                 <?php
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
@@ -218,64 +220,67 @@ if (isset($_GET['product'])) {
                 if (isset($Bod) && $Bod >= $Startprijs) {
                     echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
                 } else {
-                    echo '<h3>Startprijs: €' . $Startprijs.'</h3>';
-                    $Bod=$Startprijs;
+                    echo '<h3>Startprijs: €' . $Startprijs . '</h3>';
+                    $Bod = $Startprijs;
                 }
                 $minimumBod = $Bod;
-                $voorbeeldbod = $minimumBod*1.5;
-                if($Bod>0.99 && $Bod < 50){
+                $voorbeeldbod = $minimumBod * 1.5;
+                if ($Bod > 0.99 && $Bod < 50) {
                     $minimumBod = $Bod + 0.50;
                 }
-                if($Bod>=49.99 && $Bod < 500){
+                if ($Bod >= 49.99 && $Bod < 500) {
                     $minimumBod = $Bod + 1.00;
                 }
-                if($Bod>=499.99 && $Bod < 1000){
+                if ($Bod >= 499.99 && $Bod < 1000) {
                     $minimumBod = $Bod + 5.00;
                 }
-                if($Bod>=999.99 && $Bod < 5000){
+                if ($Bod >= 999.99 && $Bod < 5000) {
                     $minimumBod = $Bod + 10.00;
                 }
-                if($Bod>5000){
+                if ($Bod > 5000) {
                     $minimumBod = $Bod + 50.00;
                 }
 
                 //als er niet is ingelogd dan kan de gebruiker ook niet bieden
-                if(isset($_SESSION['username'])){
-                ?>
-                <form action="bodwordtgeplaatst.php" method="post">
+                if (isset($_SESSION['username'])) {
+                    ?>
+                    <form action="bodwordtgeplaatst.php" method="post">
                     <div class="form-group">
                         <div class="col-xs-5">
-                            <?php echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder='.$voorbeeldbod.'>'; ?>
+                            <?php echo '<input type="number" step=0.01 name="bod" min=' . $minimumBod . ' max="999999.99" class="form-control" Placeholder=' . $voorbeeldbod . '>'; ?>
                         </div>
                         <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                </form><?php } ?>
+                    </form><?php }
+                else{
+                    echo 'U bent nog niet ingelogd. ';
+                    echo '<a href="registeren.php">Registreer nu!</a>';
+                }?>
             </h2>
             <div class="scrollbar">
-            <ul>
-                <?php
-                $sql = "SELECT TOP 5 * FROM Bod b
+                <ul>
+                    <?php
+                    $sql = "SELECT TOP 5 * FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
                         WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $Bod2[] = $row[0];
-                    $Voornaam2[] = $row[1];
-                    $Achternaam2[] = $row[2];
-                    $Tijdstip2[] = $row[3];
-                }
-
-                for($i = 0; $i < count($Bod2); $i++){
-
-                    echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
-
-                }
-                ?>
-            </ul>
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Bod2[] = $row[0];
+                        $Voornaam2[] = $row[1];
+                        $Achternaam2[] = $row[2];
+                        $Tijdstip2[] = $row[3];
+                    }
+                    if (!empty($Bod2)) {
+                        for ($i = 0; $i < count($Bod2); $i++) {
+                            echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
+                        }
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
     </div>
@@ -323,7 +328,7 @@ if (isset($_GET['product'])) {
                             <?php echo $email ?>
                         </p>
                         <p class="sanchez marginTop20 fontSize20">Plaats: <!-- plaatsnaam en land -->
-                            <?php echo $Plaatsnaam.' , '.$Land;
+                            <?php echo $Plaatsnaam . ' , ' . $Land;
                             } // <-- dit haakje is voor de veiling is gesloten.
                             ?>
                         </p>
@@ -338,5 +343,3 @@ if (isset($_GET['product'])) {
 <?php
 include 'includes/footer.php';
 ?>
-
-

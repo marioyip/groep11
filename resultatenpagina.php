@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Over ons - Eenmaal Andermaal</title>
+    <title>Rubrieken - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--bootstrap css-->
@@ -157,9 +157,9 @@ if ($titel == 'Root') {
             }
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
-                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $covers[$i] . '">';
+                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="' . $covers[$i] . '">';
                     echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $titels[$i] . '</a></h4>';
-                    echo '<div class="description">' . $beschrijvingen[$i] . '</div>';
+                    echo '<div class="description"></div>';
                     echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                     echo '</div>';
                 }
