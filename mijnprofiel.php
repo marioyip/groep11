@@ -218,11 +218,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover . '"/>
+                                <img class="imgStyle roundborder" src="' . $VoorwerpCover . '"/>
                                 <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
                                 ' . $Titel . '</a></h4>
                                 <div class="description">
-                                ' . $Beschrijving . '
                                 </div>
                                 <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
@@ -256,11 +255,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover1[$i] . '"/>
+                                <img class="imgStyle roundborder" src="' . $VoorwerpCover1[$i] . '"/>
                                 <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                                 ' . $Titel1[$i] . '</a></h4>
                                 <div class="description">
-                                ' . $Beschrijving1[$i] . '
                                 </div>
                                 <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
@@ -292,11 +290,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="media/' . $VoorwerpCover2[$i] . '"/>
+                                <img class="imgStyle roundborder" src="' . $VoorwerpCover2[$i] . '"/>
                                 <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '">
                                 ' . $Titel2[$i] . '</a></h4>
                                 <div class="description">
-                                ' . $Beschrijving2[$i] . '
                                 </div>
                             </div>
                         </a>
