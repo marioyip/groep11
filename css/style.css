@@ -24,7 +24,14 @@
 
 }
 
+.adminHeaderLink a:hover{
+    text-underline: none;
+}
+
 /*Margin*/
+.marginTop0{
+    margin-top: 0px;
+}
 .marginTop20 {
     margin-top: 20px;
 }
