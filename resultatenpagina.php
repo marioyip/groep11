@@ -127,25 +127,7 @@ if ($titel == 'Root') {
                     )
                     SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving, v.Startprijs FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
                     WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs)";
-            //            switch ($sortType) {
-            //                case $NAAM:
-            //                    $sql .= "ORDER BY v.Titel ASC";
-            //                    break;
-            //                case $PRIJS_ASC:
-            //                    $sql .= "ORDER BY v.Startprijs ASC";
-            //                    break;
-            //                case $PRIJS_DESC:
-            //                    $sql .= "ORDER BY v.Startprijs DESC";
-            //                    break;
-            //                case $AFLOOPTIJD_ASC:
-            //                    $sql .= "ORDER BY v.LooptijdeindeDag ASC";
-            //                    break;
-            //                case $AFLOOPTIJD_DESC:
-            //                    $sql .= "ORDER BY v.Startprijs DESC";
-            //                    break;
-            //                default:
-            //                    break;
-            //            }
+
             $stmt = $db->prepare($sql);
             $stmt->execute();
             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -157,10 +139,12 @@ if ($titel == 'Root') {
             }
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
-                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="' . $covers[$i] . '">';
+                    echo '<div class="col-md-3 itemBoxResults roundborder " align="center">';
+                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">';
+                    echo "<img class=\"imgStyle roundborder\" src=\"media/" . $covers[$i] . "\"/></a>";
                     echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $titels[$i] . '</a></h4>';
                     echo '<div class="description"></div>';
-                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
+//                    echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                     echo '</div>';
                 }
             } else {
@@ -171,5 +155,6 @@ if ($titel == 'Root') {
 </main>
 </body>
 </html>
-<?php include 'includes/footer.php'; //geeft de footer mee aan deze pagina
+<?php
+include 'includes/footer.php'; //geeft de footer mee aan deze pagina
 ?>

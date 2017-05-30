@@ -24,7 +24,8 @@ if (in_array($fileExt, $allowedExt)) {
     if ($fileError == 0) {
         if ($fileSize < 5000000) {
             $fileNameNew = $_SESSION['voorwerpnummer'] . '.' . $fileExt;
-            $fileDest = 'media/uploads/' . $fileNameNew;
+            $deMedia = 'uploads/';
+            $fileDest = 'media/' . $deMedia . $fileNameNew;
             echo $fileTemp . ' ' . $fileDest;
             move_uploaded_file($fileTemp, $fileDest);
             echo 'Done niggah';
@@ -38,8 +39,8 @@ if (in_array($fileExt, $allowedExt)) {
     echo 'Wrong type!';
 }
 $voorwerp = $_SESSION['voorwerpnummer'];
-$sql = "INSERT INTO Bestand VALUES ('$fileDest', $voorwerp);
-        UPDATE Voorwerp SET VoorwerpCover = '$fileDest' WHERE Voorwerpnummer = '$voorwerp';";
+$sql = "INSERT INTO Bestand VALUES ('" . $deMedia . $fileNameNew . "', $voorwerp);
+        UPDATE Voorwerp SET VoorwerpCover = '" . $deMedia . $fileNameNew . "' WHERE Voorwerpnummer = '$voorwerp';";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
