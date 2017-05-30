@@ -62,20 +62,14 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                         <th>Achternaam</th>
                         <th>Geboortedatum</th>
                         <th>Email</th>
-                        <th>Straatnaam1</th>
-                        <th>Huisnummer1</th>
-                        <th>Postcode</th>
-                        <th>Straatnaam2</th>
-                        <th>Huisnummer2</th>
-                        <th>Wijzigen</th>
-                        <th>Verwijderen</th>
+
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     for ($i = 0; $i < 10; $i++) {
                         echo '
-                            <tr>
+                            <tr class="backgroundLightGrey">
                             <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
                                 <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
                             </td></a>             
@@ -90,24 +84,6 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             </td> 
                             <td>
                                 <p class="textDarkGray">' . $email[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Straatnaam1[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Huisnummer1[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Postcode[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Straatnaam2[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Huisnummer2[$i] . '</p>
-                            </td> 
-                            <td>
-                                
                             </td> 
                             </tr>
                         ';
@@ -126,43 +102,25 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
         <div class="container marginTop20">
             <div class="">
                 <?php
-                $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
+                $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $Achternaam[] = $row[0];
-                    $Straatnaam1[] = $row[1];
-                    $Huisnummer1[] = $row[2];
-                    $Straatnaam2[] = $row[3];
-                    $Huisnummer2[] = $row[4];
-                    $Antwoordtekst[] = $row[5];
-                    $GeboorteDag[] = $row[6];
-                    $email[] = $row[7];
-                    $Gebruikersnaam[] = $row[8];
-                    $Land[] = $row[9];
-                    $Plaatsnaam[] = $row[10];
-                    $Postcode[] = $row[11];
-                    $Voornaam[] = $row[12];
-                    $Vraag[] = $row[13];
-                    $Wachtwoord[] = $row[14];
-                    $Verkoper[] = $row[15];
+                    $Titel[] = $row[0];
+                    $Verzendkosten[] = $row[1];
+                    $Verkoopprijs[] = $row[2];
+                    $Verkoper[] = $row[3];
+                    $Koper[] = $row[4];
                 }
                 ?>
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Gebruikersnaam</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Geboortedatum</th>
-                        <th>Email</th>
-                        <th>Straatnaam1</th>
-                        <th>Huisnummer1</th>
-                        <th>Postcode</th>
-                        <th>Straatnaam2</th>
-                        <th>Huisnummer2</th>
-                        <th>Wijzigen</th>
-                        <th>Verwijderen</th>
+                        <th>Titel</th>
+                        <th>Verzendkosten</th>
+                        <th>Verkoopprijs</th>
+                        <th>Verkoper</th>
+                        <th>Gewonnen door</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -171,37 +129,19 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                         echo '
                             <tr>
                             <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
-                                <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
+                                <p class="textDarkGray">' . $Titel[$i] . '</p>
                             </td></a>             
                             <td>
-                                <p class="textDarkGray">' . $Voornaam[$i] . '</p>
+                                <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
                             </td> 
                             <td>
-                                <p class="textDarkGray">' . $Achternaam[$i] . '</p>
+                                <p class="textDarkGray">€' . $Verkoopprijs[$i] . '</p>
                             </td> 
                             <td>
-                                <p class="textDarkGray">' . $GeboorteDag[$i] . '</p>
+                                <p class="textDarkGray">' . $Verkoper[$i] . '</p>
                             </td> 
                             <td>
-                                <p class="textDarkGray">' . $email[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Straatnaam1[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Huisnummer1[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Postcode[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Straatnaam2[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Huisnummer2[$i] . '</p>
-                            </td> 
-                            <td>
-                                
+                                <p class="textDarkGray">' . $Koper[$i] . '</p>
                             </td> 
                             </tr>
                         ';
