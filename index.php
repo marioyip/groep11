@@ -52,7 +52,6 @@ function getTijd($tijd, $pos)
 }
 
 ?>
-
 <main>
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
@@ -105,14 +104,24 @@ function getTijd($tijd, $pos)
             <span class="icon-next"></span>
         </a>
     </div>
-
+    <div class="container marginTop40">
+        <div class="container">
+            <div class="col-md-4">
+                <p class="okDescription textDarkGray text-center"><span class="glyphicon glyphicon-ok textGreen"></span> Al meer dan 10.000 veilingen per dag</p>
+            </div>
+            <div class="col-md-4">
+                <p class="okDescription textDarkGray text-center"><span class="glyphicon glyphicon-ok textGreen"></span> Keuze uit meer dan 100 categorieën</p>
+            </div>
+            <div class="col-md-4">
+                <p class="okDescription textDarkGray text-center"><span class="glyphicon glyphicon-ok textGreen"></span> Onze klantenservice staat 24/7 voor je klaar</p>
+            </div>
+        </div>
+        <hr>
     </div>
 
-
-    </div>
     <div class="container marginTop20">
         <div class="col-md-12 " align="center">
-            <h1 class="textDarkGray">Bijna afgelopen!</h1>
+            <h1 class="textDarkGray">Bijna afgelopen</h1>
         </div>
     </div>
     <div class="container">
@@ -152,14 +161,16 @@ function getTijd($tijd, $pos)
                 <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                     <div class="col-md-3 itemBox roundborder " align="center">
                         <img class="imgStyle roundborder" src="media/' . $VoorwerpCover[$i] . '"/>
-                        <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
-                        ' . $Titel[$i] . '</a></h4>
-                        <div class="description">
+                        <div class="itemBoxTitleHeight"><h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
+                        ' . $Titel[$i] . '</a></h4></div><hr>
+                        
+                        <div class="itemBoxDescriptionA">
                         ' . $Beschrijving[$i] . '
                         </div>
-                        <div id="boven' . $i . '" class="description"></div>';
-                        getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
-                        echo '
+                        
+                        <div id="boven' . $i . '" class="itemBoxDescriptionB"></div>';
+                getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
+                echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-ibis crete" role="button">Bieden</a>
                     </div>
                 </a>
@@ -216,14 +227,21 @@ function getTijd($tijd, $pos)
                         ' . $Beschrijving2[$i] . '
                         </div>
                         <div id="onder' . $i . '" class="description"></div>';
-                        getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
-                        echo '
+                getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
+                echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-ibis crete" role="button">Bieden</a>
                     </div>
                 </a>
             ';
             }
             ?>
+        </div>
+
+        <div class="container marginTop60">
+            <div class="col-md-12" align="center">
+                <a href="resultatenpagina.php?rubriek=-1" class="btn btn-ibis crete" role="button">Bekijk alle rubrieken</a>
+            </div>
+
         </div>
 
 
@@ -237,8 +255,8 @@ function getTijd($tijd, $pos)
 
 
 </main>
-<?php include 'includes/footer.php';
+<?php
+include 'includes/footer.php';
 ?>
-
 </body>
 </html>
