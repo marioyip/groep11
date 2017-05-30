@@ -16,6 +16,9 @@
 
 <?php
 session_start();
+if(empty($_SESSION['username'])){
+    header("Location: index.php");
+}
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
 include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 ?>
