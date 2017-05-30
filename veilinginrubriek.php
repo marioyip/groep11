@@ -57,12 +57,11 @@ if(isset($rubrieknummer) && count($rubrieknummer) > 0) {
 } else {
     $rubriek = $_POST['rubriek'];
     $voorwerp = $_SESSION['voorwerpnummer'];
-    echo $rubriek . ' ' . $voorwerp;
     $sql = "INSERT INTO VoorwerpInRubriek VALUES('$rubriek', '$voorwerp')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     ob_end_clean( );
-    header('Location: index.php');
+    header('Location: uploadfoto.php');
 }
 ?>
 </body>

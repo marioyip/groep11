@@ -12,12 +12,12 @@
 </head>
 
 <?php
-ob_start( );
+ob_start();
 session_start();
 if (isset($_SESSION['username'])){
 
 include 'includes/header.php';
-//include 'includes/catbar.php';
+include 'includes/catbar.php';
 require_once 'includes/functies.php';
 
 ?>
@@ -32,7 +32,8 @@ require_once 'includes/functies.php';
             <form method="post" action="">
                 <div class="form-group">
                     <label for="titel_voorwerp">Titel</label>
-                    <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast" required>
+                    <input type="text" class="form-control" id="titel_voorwerp" name="titel" placeholder="Kast"
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="beschrijving_voorwerp">Beschrijving</label>
@@ -76,11 +77,6 @@ require_once 'includes/functies.php';
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="btn btn-default btn-file">
-                        Foto <input type="file" name="voorwerpCover" hidden>
-                    </label>
-                </div>
-                <div class="form-group">
                     <input type="submit" value="plaats bieding" name="submit">
                 </div>
             </form>
@@ -105,9 +101,9 @@ if (isset($_POST['submit'])) {
 
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
-    if(isset($_POST['startprijs'])){
+    if (isset($_POST['startprijs'])) {
         $startprijs = $_POST['startprijs'];
-    } else{
+    } else {
         $startprijs = 0;
     }
     $betalingswijze = $_POST['betalingswijze'];
@@ -116,19 +112,19 @@ if (isset($_POST['submit'])) {
     $looptijd = $_POST['looptijd'];
     $verkoopprijs = $_POST['verkoopprijs'];
     $sql = "INSERT INTO Voorwerp([Looptijd], [Startprijs], [Verkoper], [Beschrijving], [Betalingswijze], [Betalingsinstructie], [Land], [Plaatsnaam], [Titel], [Verzendinstructies], [VoorwerpCover], [Verkoopprijs], [VeilingGesloten])
-            VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
+                VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
     $sql = "SELECT TOP 1 Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    while($row = $stmt->fetch(PDO::FETCH_NUM)){
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $id[] = $row[0];
     }
     echo $id[0];
     $_SESSION['voorwerpnummer'] = $id[0];
-    ob_end_clean( );
+    ob_end_clean();
     header('Location: veilinginrubriek.php');
 }
 }
@@ -136,5 +132,5 @@ if (isset($_POST['submit'])) {
 //    header('Location: index.php');
 //    die();
 //} xd
-ob_end_flush( );
+ob_end_flush();
 ?>
