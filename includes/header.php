@@ -34,7 +34,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
                         </a>				
                      <ul class="dropdown-menu dropdown-menu-right nav marginTop50 marginright100" role="menu">
                          <li><a href="mijnprofiel.php">Account</a></li>
-                         <li><a href="mijnprofiel.php#item2">Wachtwoord wijzigen</a></li>
+                         <li><a href="mijnprofiel.php#item2">Mijn profiel</a></li>
                          <li><a href="uitloggen.php">Uitloggen</a></li>
                      </ul>          
                     </li>                    
