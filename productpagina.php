@@ -78,21 +78,21 @@ if (isset($_GET['product'])) {
             </ol>
             <!-- Wrapper for Slides -->
             <div class="carousel-inner ">
-                <div class="item active">
+                <div class="item active carousel-caption">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/<?php
+                    <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
                     ?>');');"></div>
                 </div>
