@@ -20,50 +20,6 @@
 session_start();
 include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
 
-if (isset($_GET['rubriek'])) {
-    $gekozenRubriek = $_GET['rubriek'];
-}
-
-//$sortType = 0;
-//$NAAM = 1;
-//$PRIJS_ASC = 2;
-//$PRIJS_DESC = 3;
-//$AFLOOPTIJD_ASC = 4;
-//$AFLOOPTIJD_DESC = 5;
-//echo $_REQUEST['sorttype'];
-//
-//if (isset($_REQUEST['sorttype'])) {
-//    echo $_REQUEST['sorttype'];
-//    switch ($_REQUEST['sorttype']) {
-//        case 'Naam':
-//            $sortType = $NAAM;
-//            break;
-//        case 'Prijs oplopend':
-//            $sortType = $PRIJS_ASC;
-//            break;
-//        case 'Prijs aflopend':
-//            $sortType = $PRIJS_DESC;
-//            break;
-//        case 'Aflooptijd oplopend':
-//            $sortType = $AFLOOPTIJD_ASC;
-//            break;
-//        case 'Aflooptijd aflopend':
-//            $sortType = $AFLOOPTIJD_DESC;
-//            break;
-//        default :
-//            $sortType = 0;
-//            break;
-//    }
-//}
-$sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
-$stmt = $db->prepare($sql);
-$stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-    $titel = $row[0];
-}
-if ($titel == 'Root') {
-    $titel = 'Rubrieken';
-}
 ?>
 <main>
 
@@ -82,6 +38,7 @@ if ($titel == 'Root') {
                 <ul class="list-group">
                     <li class="list-group-item"><a href="x">Veilingen</a></li>
                     <li class="list-group-item"><a href="x">Biedingen</a></li>
+                    <li class="list-group-item"><a href="x">Gebruikers</a></li>
             </div>
             <div class="col-md-10 container-fluid fixed">
                 <table class="table table-striped">
@@ -108,33 +65,56 @@ if ($titel == 'Root') {
                         <td>Adres</td>
                         <td>Postcode</td>
                         <td><label><input type="checkbox" value=""></label></td>
-                        <td><label><input type="checkbox" value=""></label></td>
+                        <td>                        <button type="submit" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-wrench"></i>
+                            </button></td>
                     </tr>
-                    <tr>
-                        <td>Gebruikersnaam</td>
-                        <td>Voornaam</td>
-                        <td>Achternaam</td>
-                        <td>Geboortedatum</td>
-                        <td>Email</td>
-                        <td>Adres</td>
-                        <td>Postcode</td>
-                        <td><label><input type="checkbox" value=""></label></td>
-                        <td><label><input type="checkbox" value=""></label></td>
-                    </tr>
-                    <tr>
-                        <td>Gebruikersnaam</td>
-                        <td>Voornaam</td>
-                        <td>Achternaam</td>
-                        <td>Geboortedatum</td>
-                        <td>Email</td>
-                        <td>Adres</td>
-                        <td>Postcode</td>
-                        <td><label><input type="checkbox" value=""></label></td>
-                        <td><label><input type="checkbox" value=""></label></td>
-                    </tr>
+
                     </tbody>
                 </table>
+                <button type="button" class="btn btn-primary btn-lg" align="center">Uitvoeren</button>
             </div>
+            <div class="col-md-12 " align="center">
+                <h1 class="textGreen">Veilingen</h1>
+            </div>
+            <div class="col-md-10 container-fluid fixed">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Voorwerpnummer</th>
+                        <th>Titel</th>
+                        <th>Beschrijving</th>
+                        <th>Verkoper</th>
+                        <th>Koper</th>
+                        <th>Hoogstebod</th>
+                        <th>Rubriek</th>
+                        <th>Veilinggesloten</th>
+                        <th>Verwijderen</th>
+                        <th>Aanpassen</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Voorwerpnummer</td>
+                        <td>Titel</td>
+                        <td>Beschrijving</td>
+                        <td>Verkoper</td>
+                        <td>Koper</td>
+                        <td>Hoogstebod</td>
+                        <td>Rubriek</td>
+                        <td>Veilinggesloten</td>
+                        <td><label><input type="checkbox" value=""></label></td>
+                        <td>                        <button type="submit" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-wrench"></i>
+                            </button></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-lg" align="center">Uitvoeren</button>
+            </div>
+
         </div>
     </div>
 </main>
