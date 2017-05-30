@@ -4,9 +4,9 @@
 
 <footer>
     <div class="footer backgroundLightGrey sanchez marginTop100" id="footer">
-        <div class="container"> <!--div container die om de gehele footer zit-->
+        <div class="container marginBottom30"> <!--div container die om de gehele footer zit-->
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                     <h3>Mijn profiel</h3>
                     <ul> <!--ongeordende lijst van links die behoren bij de categorie "mijn profiel"-->
                         <li>
@@ -20,7 +20,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                     <h3>Info</h3>
                     <ul> <!--ongeordende lijst van links die behoren bij de categorie "info"-->
                         <li>
@@ -34,7 +34,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                     <h3>Contact</h3>
                     <ul> <!-- ongeordende lijst van links die behoren bij de categorie "contact"-->
                         <li>
@@ -48,28 +48,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
-                </div>
-                <div class="col-lg-3">
-                    <form action="" method="post">
-                        <!--form om in te kunnen schrijven voor de nieuwsbrief, met als method post zodat de ingevulde informatie niet zichtbaar wordt in de url-->
-                        <h3>Nieuwsbrief</h3> <!--nieuwsbrief met invul velden: naam en email-->
-                        <ul>
-                            <li>
-                                <div class="input-append newsletter-box text-center">
-                                    <input class="full text-center textDarkGray form-control fontSize16 sanchez"
-                                           type="text" name="name" id="user_name" placeholder="Naam"/>
-                                    <input class="full text-center textDarkGray form-control fontSize16 sanchez"
-                                           type="email" name="email" id="email" placeholder="E-mail"/>
 
-                                    <input class="textDarkGray newsButtonGray bg-gray btn btn-default sanchez"
-                                           type="submit" value="Inschrijven" name="submit_form"/>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </form>
-                </div>
             </div>
             <!--/.row-->
         </div>
