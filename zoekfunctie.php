@@ -60,9 +60,9 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
                 if (isset($voorwerpnummers) && isset($voorwerptitels)) {
 
                     for ($i = 0; $i < count($voorwerpnummers); $i++) {
-                        echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $voorwerpcovers[$i] . '">';
+                        echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="' . $voorwerpcovers[$i] . '">';
                         echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a></h4>';
-                        echo '<div class="description">' . $voorwerpbeschrijvingen[$i] . '</div>';
+                        echo '<div class="description"></div>';
                         echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                         echo '</div>';
 
