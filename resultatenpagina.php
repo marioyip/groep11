@@ -157,9 +157,9 @@ if ($titel == 'Root') {
             }
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
-                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="media/' . $covers[$i] . '">';
+                    echo '<div class="col-md-3 itemBox roundborder " align="center"><img class="imgStyle roundborder" src="' . $covers[$i] . '">';
                     echo '<h4><a class="textDarkGray" href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $titels[$i] . '</a></h4>';
-                    echo '<div class="description">' . $beschrijvingen[$i] . '</div>';
+                    echo '<div class="description"></div>';
                     echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                     echo '</div>';
                 }

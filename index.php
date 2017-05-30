@@ -151,7 +151,7 @@ function getTijd($tijd, $pos)
                 echo '
                 <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                     <div class="col-md-3 itemBox roundborder " align="center">
-                        <img class="imgStyle roundborder" src="'. $carouselCover[$i]. '"/>
+                        <img class="imgStyle roundborder" src="'. $VoorwerpCover[$i]. '"/>
                         <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                         ' . $Titel[$i] . '</a></h4>
                         <div id="boven' . $i . '" class="description"></div>';
