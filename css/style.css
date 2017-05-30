@@ -24,7 +24,14 @@
 
 }
 
+.adminHeaderLink a:hover{
+    text-underline: none;
+}
+
 /*Margin*/
+.marginTop0{
+    margin-top: 0px;
+}
 .marginTop20 {
     margin-top: 20px;
 }
@@ -520,6 +527,12 @@ ol {
     color: #EDF1FE;
     margin-bottom: 5px;
     border-radius: 0;
+}
+.btn-ibisrnd {
+    background-color: #F45520;
+    color: #EDF1FE;
+    margin-bottom: 5px;
+    border-radius: 3px;
 }
 
 .btn-ibis:hover {

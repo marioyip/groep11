@@ -86,7 +86,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Gewonnen veilingen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item7" role="tab">Uitloggen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item7" role="tab">Telefoonnummer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item8" role="tab">Uitloggen</a>
                 </li>
             </ul>
             <!-- Het maken van de inhoud van "account"-->
@@ -295,7 +298,6 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                 <div class="description">
                                 ' . $Beschrijving2[$i] . '
                                 </div>
-                                <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
                         </a>
                     ';
@@ -307,8 +309,56 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     }
                     ?>
                 </div>
+                <!-- Telfoonnummers toevoegen -->
 
                 <div class="tab-pane fade marginTop5 " id="item7" role="tabpanel">
+                    <?php
+                    $sql = "SELECT Telefoon FROM Gebruikerstelefoon WHERE Gebruiker = '$SessioncookieUsername'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $eerdergeplaatstenummers[] = $row[0];
+                    }
+                    if (!empty($eerdergeplaatstenummers[0])) {
+                        echo '<h2>Je huidige telefoonnummers:</h2>';
+                        echo '<table>';
+                        for ($i = 0; $i < count($eerdergeplaatstenummers); $i++) {
+                            echo '<tr><td>' . $eerdergeplaatstenummers[$i] . '</td></tr>';
+                        }
+                        echo '</table>';
+                    }
+                    ?>
+                    <div>
+                        <form method="post" action="">
+                            <?php
+                            echo '<h2>Voeg een telefoonnummer toe:</h2>';
+                            echo '
+                            <div class="form-group">
+                                <input type="tel" name="telefoonnummer" class="form-control" placeholder="0261234567" > 
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn-default btn" value="voeg toe" role="button" name="submitTel"> 
+                            </div>
+                            ';
+                            ?>
+                        </form>
+                    </div>
+                    <?php
+                    if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] != '') {
+                        $telefoonnummer = $_POST['telefoonnummer'];
+                        $sql = "INSERT INTO Gebruikerstelefoon VALUES ('$SessioncookieUsername','$telefoonnummer')";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                    }
+                    if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] == '') {
+                        echo "<p>wel een telefoonnummer toevoegen</p>";
+                    }
+
+
+                    ?>
+                </div>
+                <!-- Uitloggen -->
+                <div class="tab-pane fade marginTop5 " id="item8" role="tabpanel">
                     <a href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
                 </div>
             </div>
