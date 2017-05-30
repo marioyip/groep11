@@ -8,12 +8,12 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 <body>
 <header>
-    <div class="container-fluid backgroundGreen crete">
+    <div class="container-fluid backgroundDarkGrey crete">
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
                 <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header " href="index.php">
-                <img class="logoTekst" src="media/EenmaalAndermaalCreteRound.PNG" alt="tekstlogo"/>
+            <a class="navbar-header textWhite marginLeft10 marginTop0 adminHeaderLink" href="beheersomgeving.php">
+                <h1>EenmaalAndermaal Admin</h1>
             </a>
         </div>
         <?php
@@ -22,19 +22,12 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             '
             <div id="navbar">
                <ul class="nav ">
-                    <li>                    
-                        <a href="plaatsveiling.php" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete" aria-hidden="true">
-                            Nieuwe veiling
-                        </a>                        
-                    </li>
                     <li>
                         <a href="#" class="navbar-right backgroundWhite textGreen marginTop5 marginRight10 fontSize16 crete dropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> ';
             echo $_SESSION['username'];
             echo '   <span class="glyphicon glyphicon-menu-down"></span>
                         </a>				
                      <ul class="dropdown-menu dropdown-menu-right nav marginTop50 marginright100" role="menu">
-                         <li><a href="mijnprofiel.php">Account</a></li>
-                         <li><a href="mijnprofiel.php#item2">Mijn profiel</a></li>
                          <li><a href="uitloggen.php">Uitloggen</a></li>
                      </ul>          
                     </li>                    
@@ -51,17 +44,9 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
             '
             <div id="navbar">
                 <ul class="nav ">
-                    <li>
-                       <a class="navbar-right glyphicon glyphicon-phone-alt textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
-                             href="contact.php"></a>
-                    </li>
-                     <li>
-                     <a class="navbar-right glyphicon glyphicon-pencil textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
-                             href="registreren.php"></a>
-                    </li>  
                      <li>
                     <a class="navbar-right glyphicon glyphicon-user textWhite marginTop5 marginRight10 fontSize16 crete" aria-hidden="true"
-                             href="inloggen.php"></a>
+                             href="admininloggen.php"></a>
                     </li> 
                     
                     
