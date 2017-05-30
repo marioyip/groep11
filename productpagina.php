@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
+    <!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
     <meta charset="UTF-8">
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -200,7 +200,7 @@ if (isset($_GET['product'])) {
             </p>
             <?php
             if(isset($_SESSION['username'])){
-            ?>
+                ?>
             <?php } // haakje voor de isset (regel 176) ?>
             <h2>
                 <?php
@@ -241,8 +241,8 @@ if (isset($_GET['product'])) {
 
                 //als er niet is ingelogd dan kan de gebruiker ook niet bieden
                 if(isset($_SESSION['username'])){
-                ?>
-                <form action="bodwordtgeplaatst.php" method="post">
+                    ?>
+                    <form action="bodwordtgeplaatst.php" method="post">
                     <div class="form-group">
                         <div class="col-xs-5">
                             <?php echo '<input type="number" step=0.01 name="bod" min='.$minimumBod.' max="999999.99" class="form-control" Placeholder='.$voorbeeldbod.'>'; ?>
@@ -251,31 +251,31 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                </form><?php } ?>
+                    </form><?php } ?>
             </h2>
             <div class="scrollbar">
-            <ul>
-                <?php
-                $sql = "SELECT TOP 5 * FROM Bod b
+                <ul>
+                    <?php
+                    $sql = "SELECT TOP 5 * FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
                         WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $Bod2[] = $row[0];
-                    $Voornaam2[] = $row[1];
-                    $Achternaam2[] = $row[2];
-                    $Tijdstip2[] = $row[3];
-                }
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Bod2[] = $row[0];
+                        $Voornaam2[] = $row[1];
+                        $Achternaam2[] = $row[2];
+                        $Tijdstip2[] = $row[3];
+                    }
 
-                for($i = 0; $i < count($Bod2); $i++){
+                    for($i = 0; $i < count($Bod2); $i++){
 
-                    echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
+                        echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
 
-                }
-                ?>
-            </ul>
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
     </div>
@@ -338,5 +338,3 @@ if (isset($_GET['product'])) {
 <?php
 include 'includes/footer.php';
 ?>
-
-
