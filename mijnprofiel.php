@@ -318,11 +318,18 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     }
                     if (!empty($eerdergeplaatstenummers[0])) {
                         echo '<h2>Je huidige telefoonnummers:</h2>';
-                        echo '<table>';
+                        echo '<table class="table table-hover">';
                         for ($i = 0; $i < count($eerdergeplaatstenummers); $i++) {
-                            echo '<tr><td>' . $eerdergeplaatstenummers[$i] . '</td></tr>';
+                            echo '<tr>
+                                    <td>' . $eerdergeplaatstenummers[$i] . '</td>
+                                    <td><form method="post" action=""><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form></td></tr>';
                         }
                         echo '</table>';
+                        if(isset($_POST['telefoonverwijder'])){
+                            $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$eerdergeplaatstenummers[$i]'";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                        }
                     }
                     ?>
                     <div>
@@ -346,6 +353,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $sql = "INSERT INTO Gebruikerstelefoon VALUES ('$SessioncookieUsername','$telefoonnummer')";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
+                        header("Location: mijnprofiel.php");
                     }
                     if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] == '') {
                         echo "<p>wel een telefoonnummer toevoegen</p>";
