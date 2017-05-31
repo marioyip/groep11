@@ -250,7 +250,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $Titel1[] = $row[2];
                         $Beschrijving1[] = $row[3];
                     }
-                    if (!empty($Titel)) {
+                    if (!empty($Titel1)) {
                         for ($i = 0; $i < count($Titel1); $i++) {
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
@@ -307,7 +307,6 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     ?>
                 </div>
                 <!-- Telfoonnummers toevoegen -->
-
                 <div class="tab-pane fade marginTop5 " id="item7" role="tabpanel">
                     <?php
                     $sql = "SELECT Telefoon FROM Gebruikerstelefoon WHERE Gebruiker = '$SessioncookieUsername'";
@@ -321,14 +320,19 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         echo '<table class="table table-hover">';
                         for ($i = 0; $i < count($eerdergeplaatstenummers); $i++) {
                             echo '<tr>
-                                    <td>' . $eerdergeplaatstenummers[$i] . '</td>
-                                    <td><form method="post" action=""><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form></td></tr>';
+                                    <td>' . $eerdergeplaatstenummers[$i] . '</td><td>';
+                            if(count($eerdergeplaatstenummers)>1){
+                                    echo'<form method="post" action=""><input type="hidden" name="teVerwijderenNummer" value='.$eerdergeplaatstenummers[$i].'><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form>';
+                            }
+                                    echo'</td></tr>';
                         }
                         echo '</table>';
                         if(isset($_POST['telefoonverwijder'])){
-                            $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$eerdergeplaatstenummers[$i]'";
+                            $teVerwijderenNummer = $_POST['teVerwijderenNummer'];
+                            $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$teVerwijderenNummer'";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
+                            echo '<meta http-equiv="refresh" content="0">';
                         }
                     }
                     ?>
