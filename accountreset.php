@@ -67,7 +67,7 @@ if (empty($_POST['gebruikersnaam'])){
         $nummers[] = $row[1];
     }
     for ($i = 0; $i < count($vragen); $i++) {
-        echo '<option value="' . $vragen[$i] . '"> ' . $vragen[$i] . ' </option)>';
+        echo '<option value="' . $nummers[$i] . '"> ' . $vragen[$i] . ' </option)>';
     }
     echo '</select>';
     echo '</div>';
@@ -103,17 +103,13 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $onderwerp = 'Nieuw Wachtwoord EenmaalAndermaal' . "\r\n";
-        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code . '' . "\r\n";
-        $bericht = 'Het is verstandig om het wachtwoord te veranderen, dit kan bij "Mijn Profiel" ' . "\r\n";
+        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code . ', Dit kunt u veranderen bij "Mijn profiel".' . "\r\n";
         mail($email, $onderwerp, $bericht, $headers);
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
         header("Location: inloggen.php");
-    } else {
-        echo $_POST['vraag'];
-        echo $_POST['antwoord'];
-        echo $DBvraag;
-        echo $DBantwoord;
+    }else{
+        echo 'De vraag en/of het antwoord is niet juist';
     }
 }
 
