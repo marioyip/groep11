@@ -59,15 +59,15 @@
       <file leaf-file-name="accountreset.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accountreset.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            <state relative-caret-position="464">
+              <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding>
                 <element signature="e#2854#3020#0#PHP" expanded="false" />
                 <element signature="e#3025#3156#0#PHP" expanded="false" />
-                <marker date="1496231033653" expanded="true" signature="2095:2168" ph="SELECT Wacht... Gebruiker" />
-                <marker date="1496231033653" expanded="true" signature="2692:2733" ph="SELECT Tekst... Vraag" />
-                <marker date="1496231033653" expanded="true" signature="3697:3848" ph="SELECT Vraag... Gebruiker" />
-                <marker date="1496231033653" expanded="true" signature="4253:4336" ph="UPDATE Gebru... " />
+                <marker date="1496231665872" expanded="true" signature="2095:2168" ph="SELECT Wacht... Gebruiker" />
+                <marker date="1496231665872" expanded="true" signature="2692:2733" ph="SELECT Tekst... Vraag" />
+                <marker date="1496231665872" expanded="true" signature="3697:3848" ph="SELECT Vraag... Gebruiker" />
+                <marker date="1496231665872" expanded="true" signature="4261:4344" ph="UPDATE Gebru... " />
               </folding>
             </state>
           </provider>
@@ -277,11 +277,11 @@
       <find>lopende veiling</find>
       <find>vraag</find>
       <find>regis</find>
-      <find>mail</find>
       <find>de vraag</find>
       <find>form&gt;</find>
       <find>form</find>
       <find>&lt;for</find>
+      <find>mail</find>
     </findStrings>
     <replaceStrings>
       <replace>itemBox grow</replace>
@@ -482,9 +482,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/css/style.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/registratieAfronden.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/upload.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resultatenpagina.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -703,13 +701,6 @@
       <workItem from="1494921763570" duration="19577000" />
       <workItem from="1495200286049" duration="53687000" />
       <workItem from="1496041299843" duration="16867000" />
-    </task>
-    <task id="LOCAL-00020" summary="Registratiepagina veranderd">
-      <created>1494314137079</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1494314137079</updated>
     </task>
     <task id="LOCAL-00021" summary="Registratiepagina veranderd">
       <created>1494317737933</created>
@@ -1047,11 +1038,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496225152397</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="accountreset af">
+      <created>1496231122890</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1496231122890</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221517000" />
+    <option name="totallyTimeSpent" value="222181000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1155,7 +1153,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="inloggen" />
     <MESSAGE value="begin bieding" />
     <MESSAGE value="plaatsbieding is nu deels af, werkt nog niet ivm ontbrekende functionaliteiten in de database" />
     <MESSAGE value="bieding ophogen is nu mogelijk - er wordt nu wel alleen geboden met hugo23" />
@@ -1180,7 +1177,8 @@
     <MESSAGE value="Bodbedrag zit nu bij de biedgeschiedenis" />
     <MESSAGE value="accountreset" />
     <MESSAGE value="accountreset nog beter" />
-    <option name="LAST_COMMIT_MESSAGE" value="accountreset nog beter" />
+    <MESSAGE value="accountreset af" />
+    <option name="LAST_COMMIT_MESSAGE" value="accountreset af" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1457,10 +1455,10 @@
         <state relative-caret-position="-167">
           <caret line="136" column="44" lean-forward="false" selection-start-line="136" selection-start-column="44" selection-end-line="136" selection-end-column="44" />
           <folding>
-            <marker date="1496152513138" expanded="true" signature="1871:1942" ph="SELECT Rubri... Rubriek" />
-            <marker date="1496152513138" expanded="true" signature="2618:2685" ph="SELECT Rubri... Rubriek" />
-            <marker date="1496152513138" expanded="true" signature="2991:3092" ph="SELECT Rubri... rubriek" />
-            <marker date="1496152513138" expanded="true" signature="6484:6553" ph="..." />
+            <marker date="1496231352868" expanded="true" signature="1871:1942" ph="SELECT Rubri... Rubriek" />
+            <marker date="1496231352868" expanded="true" signature="2618:2685" ph="SELECT Rubri... Rubriek" />
+            <marker date="1496231352868" expanded="true" signature="2991:3092" ph="SELECT Rubri... rubriek" />
+            <marker date="1496231352868" expanded="true" signature="6520:6589" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1659,15 +1657,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accountreset.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="464">
+          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding>
             <element signature="e#2854#3020#0#PHP" expanded="false" />
             <element signature="e#3025#3156#0#PHP" expanded="false" />
-            <marker date="1496231033653" expanded="true" signature="2095:2168" ph="SELECT Wacht... Gebruiker" />
-            <marker date="1496231033653" expanded="true" signature="2692:2733" ph="SELECT Tekst... Vraag" />
-            <marker date="1496231033653" expanded="true" signature="3697:3848" ph="SELECT Vraag... Gebruiker" />
-            <marker date="1496231033653" expanded="true" signature="4253:4336" ph="UPDATE Gebru... " />
+            <marker date="1496231665872" expanded="true" signature="2095:2168" ph="SELECT Wacht... Gebruiker" />
+            <marker date="1496231665872" expanded="true" signature="2692:2733" ph="SELECT Tekst... Vraag" />
+            <marker date="1496231665872" expanded="true" signature="3697:3848" ph="SELECT Vraag... Gebruiker" />
+            <marker date="1496231665872" expanded="true" signature="4261:4344" ph="UPDATE Gebru... " />
           </folding>
         </state>
       </provider>

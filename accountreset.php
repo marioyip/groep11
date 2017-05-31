@@ -102,7 +102,7 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $email = $row[2];
     }
     if ($_POST['vraag'] == $DBvraag && $_POST['antwoord'] == $DBantwoord) {
-        $code = mt_rand();
+        $code = 'Aa!' . mt_rand();
         $codePwd = password_hash($code, PASSWORD_DEFAULT);
 
         $sql = "UPDATE Gebruiker SET Wachtwoord = $codePwd WHERE Gebruikersnaam = '$gebruikersnaam'";
@@ -118,7 +118,8 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         mail($email, $onderwerp, $bericht, $headers);
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
-        header("Location: inloggen.php");
+        //header("Location: inloggen.php");
+        echo $code;
     } else {
         echo 'De vraag en/of het antwoord is niet juist';
     }
