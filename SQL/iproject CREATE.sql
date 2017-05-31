@@ -322,7 +322,7 @@ AS
                     ROLLBACK
                   END
               END
-          END
+          ENDe
         ELSE
           BEGIN
             RAISERROR ('Bod is kleiner dan of gelijk aan huidige hoogste bod',16,1);

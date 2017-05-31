@@ -22,13 +22,13 @@ require_once 'includes/functies.php';
 <body>
 <form action="upload.php" method="POST" enctype="multipart/form-data">
     Foto 1 (verplicht):
-    <input type="file" name="fileToUpload1" id="fileToUpload1" required>
+    <input type="file" name="fileToUpload[]" id="fileToUpload[]" required>
     Foto 2:
-    <input type="file" name="fileToUpload2" id="fileToUpload2">
+    <input type="file" name="fileToUpload[]" id="fileToUpload[]">
     Foto 3:
-    <input type="file" name="fileToUpload3" id="fileToUpload3">
+    <input type="file" name="fileToUpload[]" id="fileToUpload[]">
     Foto 4:
-    <input type="file" name="fileToUpload4" id="fileToUpload4">
+    <input type="file" name="fileToUpload[]" id="fileToUpload[]">
     <input type="submit" value="Upload foto('s)" name="submit">
 </form>
 </body>

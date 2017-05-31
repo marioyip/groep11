@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
-    $sql = "SELECT TOP 1 Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer DESC";
+    $sql = "SELECT TOP 1 Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$verkoper' AND Betalingsinstructie = '$betalingsinstructie' AND Titel = '$titel' AND Beschrijving = '$beschrijving' AND Looptijd = '$looptijd' ORDER BY Voorwerpnummer DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {

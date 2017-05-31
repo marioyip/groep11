@@ -52,6 +52,15 @@ if (isset($_GET['product'])) {
         $VeilingGesloten = $row[18];
         $VoorwerpCover = $row[19];
     }
+    $sql = "SELECT filenaam FROM Bestand WHERE voorwerp = '$product'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $fotos[] = $row[0];
+    }
+    if(!isset($fotos) || $fotos[0] == ''){
+        $fotos[0] = $VoorwerpCover;
+    }
 }
 ?>
 <div class="container">
@@ -71,39 +80,32 @@ if (isset($_GET['product'])) {
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <?php
+                for ($i = 1; $i < count($fotos); $i++) {
+                    echo '<li data-target="#myCarousel" data-slide-to="' . $i . '"></li>';
+                }
+                ?>
             </ol>
             <!-- Wrapper for Slides -->
-            <div class="carousel-inner "><div class="">
-                    <div class="item active">
-
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url('<?php
-                        echo $VoorwerpCover;
-                        ?>');"><div class="carousel-caption d-none d-md-block"></div></div>
-                    </div>
-                    <div class="item">
-                        <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url('<?php
-                        echo $VoorwerpCover;
-                        ?>');');"></div>
-                    </div>
-                    <div class="item">
-                        <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url('<?php
-                        echo $VoorwerpCover;
-                        ?>');');"></div>
-                    </div>
-                    <div class="item">
-
-                        <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url('media/default.png');"></div>
-                    </div>
-
-                </div>
+            <div class="carousel-inner ">
+                    <?php
+                    for ($i = 0; $i < count($fotos); $i++) {
+                        if ($i == 0) {
+                            echo '<div class="item active">';
+                        } else {
+                            echo '<div class="item">';
+                        }
+                        echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
+                    }
+                    echo 'done vullen';
+                    ?>
             </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
         </div>
     </div>
 
@@ -256,11 +258,10 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                    </form><?php }
-                else{
+                    </form><?php } else {
                     echo 'U bent nog niet ingelogd. ';
                     echo '<a href="registeren.php">Registreer nu!</a>';
-                }?>
+                } ?>
             </h2>
             <div class="scrollbar">
                 <ul>
