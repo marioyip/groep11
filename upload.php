@@ -8,43 +8,25 @@
 session_start();
 require_once 'includes/functies.php';
 connectToDatabase();
-$noOfFiles = 1;
-if (isset($_SESSION['fileToUpload2'])) {
-    $noOfFiles++;
-}
-if (isset($_SESSION['fileToUpload3'])) {
-    $noOfFiles++;
-}
-if (isset($_SESSION['fileToUpload4'])) {
-    $noOfFiles++;
+$noOfFiles = 0;
+for ($i = 0; $i < 4; $i++){
+    if(isset($_FILES['fileToUpload']['name'][$i])){
+        $noOfFiles++;
+    }
 }
 
+//echo $noOfFiles;
 
 for($i = 0; $i < $noOfFiles; $i++){
-    switch ($i){
-        case 0:
-            $file = $_FILES['fileToUpload1'];
-            break;
-        case 1:
-            $file = $_FILES['fileToUpload2'];
-            break;
-        case 2:
-            $file = $_FILES['fileToUpload3'];
-            break;
-        case 3:
-            $file = $_FILES['fileToUpload4'];
-            break;
-        default:
-            header('Location: index.php');
-            break;
-    }
+    $file = $_FILES['fileToUpload'];
 
-    $fileName = $file['name'];
-    $fileTemp = $file['tmp_name'];
-    $fileSize = $file['size'];
-    $fileError = $file['error'];
-    $fileType = $file['type'];
+    $fileName = $file['name'][$i];
+    $fileTemp = $file['tmp_name'][$i];
+    $fileSize = $file['size'][$i];
+    $fileError = $file['error'][$i];
+    $fileType = $file['type'][$i];
 
+    echo $i . ' ' . $fileName;
     $a = explode('.', $fileName);
     $fileExt = strtolower(end($a));
     $allowedExt = array('jpg', 'jpeg', 'png');
@@ -65,6 +47,7 @@ for($i = 0; $i < $noOfFiles; $i++){
     } else {
         echo 'Wrong type!';
     }
+    echo $fileDest;
     $voorwerp = $_SESSION['voorwerpnummer'];
     $sql = "INSERT INTO Bestand VALUES ('" . $fileDest . "', $voorwerp);
         UPDATE Voorwerp SET VoorwerpCover = '" . $fileDest . "' WHERE Voorwerpnummer = '$voorwerp';";
@@ -72,4 +55,4 @@ for($i = 0; $i < $noOfFiles; $i++){
     $stmt->execute();
 }
 
-header('Location:index.php');
+//header('Location:index.php');
