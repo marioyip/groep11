@@ -250,7 +250,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $Titel1[] = $row[2];
                         $Beschrijving1[] = $row[3];
                     }
-                    if (!empty($Titel)) {
+                    if (!empty($Titel1)) {
                         for ($i = 0; $i < count($Titel1); $i++) {
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
