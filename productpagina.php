@@ -77,12 +77,13 @@ if (isset($_GET['product'])) {
                 <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
             <!-- Wrapper for Slides -->
-            <div class="carousel-inner ">
-                <div class="item active carousel-caption">
+            <div class="carousel-inner "><div class="">
+                <div class="item active">
+
                     <!-- Set the first background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('<?php
                     echo $VoorwerpCover;
-                    ?>');"></div>
+                    ?>');"><div class="carousel-caption d-none d-md-block"></div></div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
@@ -97,9 +98,11 @@ if (isset($_GET['product'])) {
                     ?>');');"></div>
                 </div>
                 <div class="item">
+
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('media/default.png');"></div>
                 </div>
+
             </div>
         </div>
     </div>
