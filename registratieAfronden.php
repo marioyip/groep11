@@ -252,7 +252,7 @@ if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] 
         <div class="form-group">
             <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="rekeningnummer" name="rekeningnummer" placeholder="1234AB">
+                <input type="text" class="form-control" id="rekeningnummer" name="rekeningnummer" placeholder="NLABNA0123456789">
             </div>
         </div>
         <div class="form-group">
