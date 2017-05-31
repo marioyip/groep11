@@ -2,7 +2,7 @@
 <div class="catBar">
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
         <div class="container-fluid brilliantWhite">
-            <a <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray"
+            <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray category"
                   href="./rubrieken2.php">
                 Rubrieken</a>
             <div class="navbar-right marginRight10 ">

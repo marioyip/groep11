@@ -104,13 +104,27 @@ function getTijd($tijd, $pos)
         </a>
     </div>
 
-    </div>
-
-
+    <div class="container marginTop40" align="center">
+        <div class="col-md-4">
+            <p class="textDarkGray bold "><span class="glyphicon glyphicon-ok textGreen "></span>
+                10.000 veilingen per dag
+            </p>
+        </div>
+        <div class="col-md-4" >
+            <p class="textDarkGray bold "><span class="glyphicon glyphicon-ok textGreen"></span>
+                Al 5.000
+                gewonnen veilingen
+            </p>
+        </div>
+        <div class="col-md-4" id="wrapper">
+            <p class="textDarkGray bold "><span class="glyphicon glyphicon-ok textGreen"></span>
+                Onze klantenservice staat voor je klaar</p>
+        </div>
     </div>
     <div class="container marginTop20">
+        <hr>
         <div class="col-md-12 " align="center">
-            <h1 class="textDarkGray">Bijna afgelopen!</h1>
+            <h2 class="textDarkGray">Bijna afgelopen</h2>
         </div>
     </div>
     <div class="container">
@@ -155,8 +169,8 @@ function getTijd($tijd, $pos)
                         <div class="description">  
                         </div>
                         <div id="boven' . $i . '" class="description"></div>';
-                        getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
-                        echo '
+                getTijd($LooptijdeindeDag[$i] . ' ' . $LooptijdeindeTijdstip[$i], "boven" . $i);
+                echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '" class="btn btn-ibis crete" role="button">Bieden</a>
                     </div>
                 </a>
@@ -165,9 +179,36 @@ function getTijd($tijd, $pos)
 
             ?>
         </div>
-        <div class="container marginTop60">
+        <div class="container marginTop40">
+            <div class="col-md-4 categoryBox" id="wrapper">
+                <div class="categoryBox">
+                    <a href="../groep11/resultatenpagina.php?rubriek=9801">
+                        <img class=" imgStyle" src="media/rubriektelefoon.jpg">
+                    </a>
+                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Telefoons</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4 categoryBox" id="wrapper">
+                <div class="categoryBox">
+                    <a href="../groep11/resultatenpagina.php?rubriek=14616">
+                        <img class=" imgStyle" src="media/rubriekauto.jpeg">
+                    </a>
+                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Auto's</h2>
+                </div>
+            </div>
+            <div class="col-md-4 categoryBox" id="wrapper">
+                <div class="categoryBox">
+                    <a href="../groep11/resultatenpagina.php?rubriek=14675">
+                        <img class=" imgStyle" src="media/rubriekgames.jpg">
+                    </a>
+                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Gaming</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container marginTop20">
             <div class="col-md-12 " align="center">
-                <h1 class="textDarkGray">Nieuwe veilingen</h1>
+                <h2 class="textDarkGray">Nieuwe veilingen</h2>
             </div>
         </div>
 
@@ -212,8 +253,8 @@ function getTijd($tijd, $pos)
                         <div class="description">
                         </div>
                         <div id="onder' . $i . '" class="description"></div>';
-                        getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
-                        echo '
+                getTijd($LooptijdeindeDag2[$i] . ' ' . $LooptijdeindeTijdstip2[$i], "onder" . $i);
+                echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer2[$i] . '" class="btn btn-ibis crete" role="button">Bieden</a>
                     </div>
                 </a>
@@ -224,7 +265,8 @@ function getTijd($tijd, $pos)
 
         <div class="container marginTop60" align="center">
             <div class="col-md-12">
-                <a href="resultatenpagina.php?rubriek=-1" class="btn btn-ibis crete" role="button">Bekijk alle rubrieken</a>
+                <a href="resultatenpagina.php?rubriek=-1" class="btn btn-ibis crete" role="button">Bekijk alle
+                    rubrieken</a>
             </div>
         </div>
 

@@ -24,8 +24,6 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
 <main>
 
     <div class="containerMinHeight">
-        <!--    <div class="containerMain">-->
-        <!--        <div class="container marginTop20">-->
         <div class="col-md-12 " align="center">
             <h1 class="textGreen">Gebruikers</h1>
         </div>
