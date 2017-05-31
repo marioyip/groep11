@@ -136,9 +136,10 @@ if (isset($_POST['submit'])) {
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
+        header("Location: inloggen.php");
 
         die();
-        header("Location: inloggen.php");
+
     }
 }
 
