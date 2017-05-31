@@ -20,74 +20,68 @@ include 'includes/header.php';
 include 'includes/catbar.php';
 
 if (empty($_POST['gebruikersnaam'])){
+//als er geen gebruikersnaam is ingevuld dan komt het invoerveldje waar de gebruiker de gebruikersnaam moet invullen
+?>
+<div class="container marginTop20 ">
+    <div class="col-md-12" align="center">
+        <div class="col-md-3"></div>
 
-    ?>
-    <div class="container marginTop20 ">
-        <div class="col-md-12" align="center">
-            <div class="col-md-3"></div>
+        <div class="col-md-6 controlBox container-fluid text-center marginTop30">
 
-            <div class="col-md-6 controlBox container-fluid text-center marginTop30">
-
-                <h2>Wachtwoord vergeten?</h2>
-                <hr>
-                <p>Kan gebeuren, geeft niks.</p>
-                <div class="form-group col-md-12 textCenter">
-                    <form action="" method="post">
-                        <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
-                        <input class="form-control" type="text" id="gebruikersnaam" name="gebruikersnaam"
-                               placeholder="Hans123">
-                        <input type="submit" class="btn-default btn" value="verstuur" align="center">
-                    </form>
-                </div>
-
+            <h2>Wachtwoord vergeten?</h2>
+            <hr>
+            <p>Kan gebeuren, geeft niks.</p>
+            <div class="form-group col-md-12 textCenter">
+                <form action="" method="post">
+                    <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
+                    <input class="form-control" type="text" id="gebruikersnaam" name="gebruikersnaam"
+                           placeholder="Hans123">
+                    <input type="submit" class="btn-default btn" value="verstuur" align="center">
+                </form>
             </div>
         </div>
     </div>
-
-    <?php
-} else {
-
-if (isset($_POST['gebruikersnaam'])) {
-//  1. is de gebruikersnaam in de database?
-$gebruikersnaam = $_POST['gebruikersnaam'];
-
-$sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
-$stmt = $db->prepare($sql); //Statement object aanmaken
-$stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-    $huidigWachtwoord = $row[0];
-}
-//  2. wat was je vraag en welk antwoord had je?
-?>
-<div class="container marginTop20 ">
-    <div class="col-md-3"></div>
-    <div class="form-group controlBox col-md-6 text-center marginTop30">
-        <h2>Beveiligingsvraag</h2>
-        <hr>
-        <form action="" method="post">
-            <label class="control-label col-sm-3 marginTop20" for="vraag">Vraag</label>
-            <select name="vraag" class="form-control ">
-                <option value="1"> Wat is mijn favoriete huisdier ?</option>
-                <option value="2"> Wat is mijn geboorteplaats ?</option>
-                <option value="3"> Wie is mijn jeugdvriend ?</option>
-                <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
-            </select>
-            <label class="control-label col-sm-3 marginTop20" for="antwoord">Antwoord</label>
-            <input type="text" class="form-control " name="antwoord" id="antwoord">
-            <input type="submit" class="btn-default btn marginTop20" value="verstuur">
-        </form>
-    </div>
 </div>
+
 <?php
-//  2.1 de gekozen vraag en antwoord declareren
-if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag']) && !empty($_POST['antwoord'])) {
+//als de gebruikersnaam is gezet dan wordt er de vraag gecontroleerd
+} else {
+    $gebruikersnaam = $_POST['gebruikersnaam'];
 
-    $vraag = $_POST['vraag'];
-    $antwoord = $_POST['antwoord'];
+    $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+    $stmt = $db->prepare($sql); //Statement object aanmaken
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $huidigWachtwoord = $row[0];
+    }
 
-//  2.2 kijken of vraag en antwoord de database matchen
+    echo '<form action="" method="post">';
+    echo '<div class="form-group">';
+    echo '<select name="vraag">';
+    $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
+    $stmt = $db->prepare($sql); //Statement object aanmaken
+    $stmt->execute();           //Statement uitvoeren
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+    {
+        $vragen[] = $row[0];
+        $nummers[] = $row[1];
+    }
+    for ($i = 0; $i < count($vragen); $i++) {
+        echo '<option value="' . $vragen[$i] . '"> ' . $vragen[$i] . ' </option)>';
+    }
+    echo '</select>';
+    echo '</div>';
+    echo '<div class="form-group">';
+    echo '<label for="antwoord" >Antwoord:</label>';
+    echo '<input id="antwoord" name="antwoord" placeholder="antwoord" type="text" class="form-control">';
+    echo '<input type="hidden" value=' . $gebruikersnaam . ' name="gebruikersnaam">';
+    echo '</div>';
+    echo '<input type="submit" value="submit" class="btn-ibis btn">';
+    echo '</form>';
+}
 
-    $sql = "SELECT Vraag, Antwoordtekst, email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
+    $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -96,10 +90,7 @@ if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag'
         $email = $row[2];
     }
 
-    if ($vraag == $DBvraag && $antwoord == $DBantwoord) {
-        //  3 Nu blijkt dat de vraag en het antwoord kloppen, wordt er een mail verstuurd naar de gebruiker met zijn nieuwe wachtwoord.
-
-        //  3.1 Hiervoor wordt een willekeurige code gemaakt die ook wordt gehashed en in de db wordt gezet.
+    if ($_POST['vraag'] == $DBvraag && $_POST['antwoord'] == $DBantwoord) {
         $code = mt_rand();
         $codePwd = password_hash($code, PASSWORD_DEFAULT);
 
@@ -107,25 +98,24 @@ if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag'
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();
 
-        //  3.2 Nu wordt er een mail verstuurd met de code erin
+// 3.2 Nu wordt er een mail verstuurd met de code erin
         $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'From: EenmaalAndermaal Veiling <donotreply@eenmaalandermaal.nl>' . "\r\n";
+        $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $onderwerp = 'Nieuw Wachtwoord EenmaalAndermaal' . "\r\n";
         $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code . '' . "\r\n";
         $bericht = 'Het is verstandig om het wachtwoord te veranderen, dit kan bij "Mijn Profiel" ' . "\r\n";
         mail($email, $onderwerp, $bericht, $headers);
 
-        //  4. De gebruiker wordt naar het inlogscherm gestuurd
+// 4. De gebruiker wordt naar het inlogscherm gestuurd
         header("Location: inloggen.php");
-
     } else {
-        echo 'foutmelding, vraag is niet hetzelfde als het antwoord';
-        //foutmelding dat het antwoord op de vraag niet hetzelfde is
+        echo $_POST['vraag'];
+        echo $_POST['antwoord'];
+        echo $DBvraag;
+        echo $DBantwoord;
     }
 }
-}
 
-}
 include 'includes/footer.php';
 ?>
