@@ -125,8 +125,8 @@ if ($titel == 'Root') {
                         UNION ALL
                         SELECT r.* FROM Rubriek r INNER JOIN childs c ON r.Rubriek = c.Rubrieknummer
                     )
-                    SELECT v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving, v.Startprijs FROM Voorwerp v INNER JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
-                    WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs)";
+                    SELECT DISTINCT TOP 50 v.Titel, v.Voorwerpnummer, v.VoorwerpCover, v.Beschrijving, v.Startprijs FROM Voorwerp v LEFT JOIN VoorwerpInRubriek vr ON v.Voorwerpnummer = vr.Voorwerp 
+                    WHERE vr.RubriekOpLaagsteNiveau IN (SELECT Rubrieknummer FROM childs) ORDER BY v.Titel ASC";
 
             $stmt = $db->prepare($sql);
             $stmt->execute();
