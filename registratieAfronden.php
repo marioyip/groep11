@@ -212,19 +212,19 @@ if (isset($_POST['submit'])) {
         <div class="form-group">
             <label class="control-label col-sm-2" for="straat2">*Tweede Straatnaam:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="straat2" placeholder="Dorpsstraat">
+                <input type="text" class="form-control" id="straat2" placeholder="Dorpsstraat">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="huisnr2">*Tweede Huisnummer:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="huisnr2" placeholder="56">
+                <input type="number" class="form-control" id="huisnr2" placeholder="56">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="postcode">Postcode:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="postcode" placeholder="1234AB">
+                <input type="text" class="form-control" id="postcode" placeholder="1234AB">
             </div>
         </div>
         <div class="form-group">
@@ -246,13 +246,13 @@ if (isset($_POST['submit'])) {
         <div class="form-group">
             <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer(IBAN):</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="rekeningnummer" placeholder="NL 53 BANK 1234567890">
+                <input type="text" class="form-control" id="rekeningnummer" placeholder="NL 53 BANK 1234567890">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="rekeninghouder">Rekeninghouder:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="rekeninghouder" placeholder="Jan Steen">
+                <input type="text" class="form-control" id="rekeninghouder" placeholder="Jan Steen">
             </div>
         </div>
         <div class="form-group">
