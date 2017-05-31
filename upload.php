@@ -49,10 +49,15 @@ for($i = 0; $i < $noOfFiles; $i++){
     }
     echo $fileDest;
     $voorwerp = $_SESSION['voorwerpnummer'];
-    $sql = "INSERT INTO Bestand VALUES ('" . $fileDest . "', $voorwerp);
-        UPDATE Voorwerp SET VoorwerpCover = '" . $fileDest . "' WHERE Voorwerpnummer = '$voorwerp';";
+    $sql = "INSERT INTO Bestand VALUES ('" . $fileDest . "', $voorwerp)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
+
+    if($i == 0){
+    $sql = "UPDATE Voorwerp SET VoorwerpCover = '" . $fileDest . "' WHERE Voorwerpnummer = '$voorwerp'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    }
 }
 
 //header('Location:index.php');
