@@ -25,50 +25,61 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
     <div class="containerMinHeight">
 
         <div class="container marginTop20 ">
-            <div class="col-md-12">
-                <h1 class="textGreen" align="center">Adminpanel - Gebruikers</h1>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#item1" role="tab">Gebruikers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item2" role="tab">Veilingen</a>
+                </li>
+            </ul>
+            <div class="tab-pane active" id="item1" role="tabpanel">
+                <div class="col-md-12">
+                    <h1 class="textGreen" align="center">Adminpanel - Gebruikers</h1>
+                </div>
             </div>
-        </div>
-        <div class="container marginTop20">
-            <div class="">
-                <?php
-                $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $Achternaam[] = $row[0];
-                    $Straatnaam1[] = $row[1];
-                    $Huisnummer1[] = $row[2];
-                    $Straatnaam2[] = $row[3];
-                    $Huisnummer2[] = $row[4];
-                    $Antwoordtekst[] = $row[5];
-                    $GeboorteDag[] = $row[6];
-                    $email[] = $row[7];
-                    $Gebruikersnaam[] = $row[8];
-                    $Land[] = $row[9];
-                    $Plaatsnaam[] = $row[10];
-                    $Postcode[] = $row[11];
-                    $Voornaam[] = $row[12];
-                    $Vraag[] = $row[13];
-                    $Wachtwoord[] = $row[14];
-                    $Verkoper[] = $row[15];
-                }
-                ?>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Gebruikersnaam</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Geboortedatum</th>
-                        <th>Email</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
+            <div class="container marginTop20">
+                <div class="">
                     <?php
-                    for ($i = 0; $i < 10; $i++) {
-                        echo '
+                    $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Achternaam[] = $row[0];
+                        $Straatnaam1[] = $row[1];
+                        $Huisnummer1[] = $row[2];
+                        $Straatnaam2[] = $row[3];
+                        $Huisnummer2[] = $row[4];
+                        $Antwoordtekst[] = $row[5];
+                        $GeboorteDag[] = $row[6];
+                        $email[] = $row[7];
+                        $Gebruikersnaam[] = $row[8];
+                        $Land[] = $row[9];
+                        $Plaatsnaam[] = $row[10];
+                        $Postcode[] = $row[11];
+                        $Voornaam[] = $row[12];
+                        $Vraag[] = $row[13];
+                        $Wachtwoord[] = $row[14];
+                        $Verkoper[] = $row[15];
+                    }
+                    ?>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Gebruikersnaam</th>
+                            <th>Voornaam</th>
+                            <th>Achternaam</th>
+                            <th>Geboortedatum</th>
+                            <th>Email</th>
+                            <th>Verwijderen</th>
+                            <th>Aanpassen</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        for ($i = 0; $i < count($Gebruikersnaam); $i++) {
+                            echo '
                             <tr class="backgroundLightGrey">
                             <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
                                 <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
@@ -85,52 +96,67 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <td>
                                 <p class="textDarkGray">' . $email[$i] . '</p>
                             </td> 
+                            <td><label><input type="checkbox" value=""></label></td>
+                            <td>                        <button type="submit" class="btn btn-ibisrnd">
+                                <i class="glyphicon glyphicon-wrench"></i>
+                            </button>
+                            </td>
                             </tr>
                         ';
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
+                </div>
+            </div>
+        </div>
+        <!--        Veilingen-->
+        <div class="tab-pane fade " id="item2" role="tabpanel">
+            <div class="container marginTop20 ">
+                <div class="col-md-12">
+                    <h1 class="textGreen" align="center">Adminpanel - Veilingen</h1>
+                </div>
+            </div>
+            <div class="container marginTop20">
+                <div class="">
+                    <?php
+                    $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $Titel[] = $row[0];
+                        $Verzendkosten[] = $row[1];
+                        $Verkoopprijs[] = $row[2];
+                        $Verkoper[] = $row[3];
+                        $Koper[] = $row[4];
+                        $Voorwerpnummer[] = $row[5];
                     }
                     ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-<!--        Veilingen-->
-        <div class="container marginTop20 ">
-            <div class="col-md-12">
-                <h1 class="textGreen" align="center">Adminpanel - Veilingen</h1>
-            </div>
-        </div>
-        <div class="container marginTop20">
-            <div class="">
-                <?php
-                $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
-                $stmt = $db->prepare($sql);
-                $stmt->execute();
-                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    $Titel[] = $row[0];
-                    $Verzendkosten[] = $row[1];
-                    $Verkoopprijs[] = $row[2];
-                    $Verkoper[] = $row[3];
-                    $Koper[] = $row[4];
-                }
-                ?>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Titel</th>
-                        <th>Verzendkosten</th>
-                        <th>Verkoopprijs</th>
-                        <th>Verkoper</th>
-                        <th>Gewonnen door</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    for ($i = 0; $i < 10; $i++) {
-                        echo '
-                            <tr>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+
+                            <th>Titel</th>
+                            <th>Verzendkosten</th>
+                            <th>Verkoopprijs</th>
+                            <th>Verkoper</th>
+                            <th>Gewonnen door</th>
+                            <th>Voorwerpnummer</th>
+                            <th>Verwijderen</th>
+                            <th>Aanpassen</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
+                            echo '
+                            <tr class="backgroundLightGrey">
+                            
                             <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
                                 <p class="textDarkGray">' . $Titel[$i] . '</p>
-                            </td></a>             
+                            </td></a>
+                                         
                             <td>
                                 <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
                             </td> 
@@ -143,12 +169,22 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <td>
                                 <p class="textDarkGray">' . $Koper[$i] . '</p>
                             </td> 
-                            </tr>
+                                                            <td><p class="textDarkGray">' . $Voorwerpnummer[$i] . '</p></td>
+
+                                                        <td><label><input type="checkbox" value=""></label></td>
+                            <td>                        <button type="submit" class="btn btn-ibisrnd">
+                                <i class="glyphicon glyphicon-wrench"></i>
+                            </button>
+                            </td>
+                            </tr>                         
+
                         ';
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
+                </div>
             </div>
         </div>
     </div>
