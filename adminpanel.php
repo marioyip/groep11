@@ -39,9 +39,9 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                 </div>
             </div>
             <div class="container marginTop20">
-            <div class="col-md-3"></div>
-                <div class="input-group col-md-6" >
-                    <input type="text" class="form-control input-lg" placeholder="Zoeken" />
+                <div class="col-md-3"></div>
+                <div class="input-group col-md-6">
+                    <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
                     <span class="input-group-btn">
                         <button class="btn btn-ibisrnd btn-lg" type="button">
                             <i class="glyphicon glyphicon-search"></i>
@@ -105,8 +105,9 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <td>
                                 <p class="textDarkGray">' . $email[$i] . '</p>
                             </td> 
-                            <td><label><input type="checkbox" value=""></label></td>
-                            <td>                        <button type="submit" class="btn btn-ibisrnd">
+                            <td><label><input type="checkbox" value="" name="delete" id="delete"></label></td>
+                            <td>                        
+                            <button type="submit" class="btn btn-ibisrnd">
                                 <i class="glyphicon glyphicon-wrench"></i>
                             </button>
                             </td>
@@ -116,86 +117,86 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                         ?>
                         </tbody>
                     </table>
-                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
+                    <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
                 </div>
             </div>
         </div>
         <!--        Veilingen-->
-<!--        <div class="tab-pane fade " id="item2" role="tabpanel">-->
-<!--            <div class="container marginTop20 ">-->
-<!--                <div class="col-md-12">-->
-<!--                    <h1 class="textGreen" align="center">Adminpanel - Veilingen</h1>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="container marginTop20">-->
-<!--                <div class="">-->
-<!--                    --><?php
-//                    $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
-//                    $stmt = $db->prepare($sql);
-//                    $stmt->execute();
-//                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-//                        $Titel[] = $row[0];
-//                        $Verzendkosten[] = $row[1];
-//                        $Verkoopprijs[] = $row[2];
-//                        $Verkoper[] = $row[3];
-//                        $Koper[] = $row[4];
-//                        $Voorwerpnummer[] = $row[5];
-//                    }
-//                    ?>
-<!--                    <table class="table table-striped">-->
-<!--                        <thead>-->
-<!--                        <tr>-->
-<!---->
-<!--                            <th>Titel</th>-->
-<!--                            <th>Verzendkosten</th>-->
-<!--                            <th>Verkoopprijs</th>-->
-<!--                            <th>Verkoper</th>-->
-<!--                            <th>Gewonnen door</th>-->
-<!--                            <th>Voorwerpnummer</th>-->
-<!--                            <th>Verwijderen</th>-->
-<!--                            <th>Aanpassen</th>-->
-<!--                        </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody>-->
-<!--                        --><?php
-//                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
-//                            echo '
-//                            <tr class="backgroundLightGrey">
-//
-//                            <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
-//                                <p class="textDarkGray">' . $Titel[$i] . '</p>
-//                            </td></a>
-//
-//                            <td>
-//                                <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
-//                            </td>
-//                            <td>
-//                                <p class="textDarkGray">€' . $Verkoopprijs[$i] . '</p>
-//                            </td>
-//                            <td>
-//                                <p class="textDarkGray">' . $Verkoper[$i] . '</p>
-//                            </td>
-//                            <td>
-//                                <p class="textDarkGray">' . $Koper[$i] . '</p>
-//                            </td>
-//                                                            <td><p class="textDarkGray">' . $Voorwerpnummer[$i] . '</p></td>
-//
-//                                                        <td><label><input type="checkbox" value=""></label></td>
-//                            <td>                        <button type="submit" class="btn btn-ibisrnd">
-//                                <i class="glyphicon glyphicon-wrench"></i>
-//                            </button>
-//                            </td>
-//                            </tr>
-//
-//                        ';
-//                        }
-//                        ?>
-<!--                        </tbody>-->
-<!--                    </table>-->
-<!--                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="tab-pane fade " id="item2" role="tabpanel">-->
+        <!--            <div class="container marginTop20 ">-->
+        <!--                <div class="col-md-12">-->
+        <!--                    <h1 class="textGreen" align="center">Adminpanel - Veilingen</h1>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="container marginTop20">-->
+        <!--                <div class="">-->
+        <!--                    --><?php
+        //                    $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
+        //                    $stmt = $db->prepare($sql);
+        //                    $stmt->execute();
+        //                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        //                        $Titel[] = $row[0];
+        //                        $Verzendkosten[] = $row[1];
+        //                        $Verkoopprijs[] = $row[2];
+        //                        $Verkoper[] = $row[3];
+        //                        $Koper[] = $row[4];
+        //                        $Voorwerpnummer[] = $row[5];
+        //                    }
+        //                    ?>
+        <!--                    <table class="table table-striped">-->
+        <!--                        <thead>-->
+        <!--                        <tr>-->
+        <!---->
+        <!--                            <th>Titel</th>-->
+        <!--                            <th>Verzendkosten</th>-->
+        <!--                            <th>Verkoopprijs</th>-->
+        <!--                            <th>Verkoper</th>-->
+        <!--                            <th>Gewonnen door</th>-->
+        <!--                            <th>Voorwerpnummer</th>-->
+        <!--                            <th>Verwijderen</th>-->
+        <!--                            <th>Aanpassen</th>-->
+        <!--                        </tr>-->
+        <!--                        </thead>-->
+        <!--                        <tbody>-->
+        <!--                        --><?php
+        //                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
+        //                            echo '
+        //                            <tr class="backgroundLightGrey">
+        //
+        //                            <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
+        //                                <p class="textDarkGray">' . $Titel[$i] . '</p>
+        //                            </td></a>
+        //
+        //                            <td>
+        //                                <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
+        //                            </td>
+        //                            <td>
+        //                                <p class="textDarkGray">€' . $Verkoopprijs[$i] . '</p>
+        //                            </td>
+        //                            <td>
+        //                                <p class="textDarkGray">' . $Verkoper[$i] . '</p>
+        //                            </td>
+        //                            <td>
+        //                                <p class="textDarkGray">' . $Koper[$i] . '</p>
+        //                            </td>
+        //                                                            <td><p class="textDarkGray">' . $Voorwerpnummer[$i] . '</p></td>
+        //
+        //                                                        <td><label><input type="checkbox" value=""></label></td>
+        //                            <td>                        <button type="submit" class="btn btn-ibisrnd">
+        //                                <i class="glyphicon glyphicon-wrench"></i>
+        //                            </button>
+        //                            </td>
+        //                            </tr>
+        //
+        //                        ';
+        //                        }
+        //                        ?>
+        <!--                        </tbody>-->
+        <!--                    </table>-->
+        <!--                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 </main>
 </body>
