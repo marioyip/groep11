@@ -182,10 +182,17 @@ if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] 
             <!--                <div class="col-sm-2">-->
             <label class="control-label col-sm-2" for="pwd"> Beveiligingsvraag:
                 <select name="vraag" class="  ">
-                    <option value="1"> Wat is mijn favoriete huisdier ?</option>
-                    <option value="2"> Wat is mijn geboorteplaats ?</option>
-                    <option value="3"> Wie is mijn jeugdvriend ?</option>
-                    <option value="4"> Wat is de meisjesnaam van mijn moeder ?</option>
+                    <?php
+                    $sql = "SELECT TekstVraag FROM Vraag";
+                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                    $stmt->execute();           //Statement uitvoeren
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                    {
+                        for ($i = 0; $i < count($row); $i++) {
+                            echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+                        }
+                    }
+                    ?>
                 </select>
             </label>
             <!--                </div>-->
