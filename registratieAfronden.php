@@ -143,45 +143,38 @@ if (isset($_POST['submit'])) {
 }
 
 
-if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
-    ?>
+//if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
+ ?>
 
-    <div class="form-control">
-        <!-- action moet op deze pagina zijn -->
-        <form action="" method="POST">
-            <div class="form-group ">
-                <label class="control-label col-sm-2" for="pwd"> Gebruikersnaam:</label>
-                <div class="col-sm-10 ">
-                    <input type="text" class="form-control marginTop20  " name="gebruikersnaam"
-                           id="gebruikersnaam"
-                           placeholder="keesvdalen">
-                </div>
+<div class="marginTop50" >
+    <form class="form-horizontal" action="" method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="gebruikersnaam" placeholder="HarryKetsers">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email"> Wachtwoord:</label>
-                <div class="col-sm-10 ">
-                    <input type="password" class="form-control marginTop20 " name="wachtwoord" id="wachtwoord"
-                           placeholder="Voer een wachtwoord in">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="wachtwoord">Wachtwoord:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Herhaal wachtwoord:</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control marginTop20  " name="wachtwoord2" id="pwd"
-                           placeholder="Herhaal uw het wachtwoord">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="wachtwoord2">Herhaal wachtwoord:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="wachtwoord2" placeholder="Herhaal wachtwoord">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email"> Geboortedatum:</label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control marginTop20 " name="geboortedatum" id="email"
-                           placeholder="YYYY-MM-DD">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="geboortdedatum">Geboortedatum:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="geboortdedatum" placeholder="JJJJ-MM-DD">
             </div>
-            <!--            <div class="form-group">-->
-            <!--                <div class="col-sm-2">-->
-            <label class="control-label col-sm-2" for="pwd"> Beveiligingsvraag:
-                <select name="vraag" class="  ">
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2 marginright25" for="vraag"> Beveiligingsvraag:</label>
+                <select name="vraag" id="vraag" class=" form-control1">
                     <?php
                     $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
                     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -197,123 +190,88 @@ if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] 
                     }
                     ?>
                 </select>
-            </label>
-            <!--                </div>-->
-            <!--            </div>-->
-            <div class="form-group">
-                <label class="control-label col-sm-2 " for="pwd"> Antwoord:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control  marginTop20" name="antwoord" id="pwd"
-                           placeholder="Je antwoord">
-                </div>
             </div>
-
-            <h3> Adresgegevens</h3>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Straat:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control marginTop20 " name="straat" id="pwd"
-                           placeholder="Janstraat">
-                </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="antwoord">Antwoord:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="antwoord" placeholder="Jou Antwoord">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Huisnummer:</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control marginTop20 " name="huisnr" id="pwd"
-                           placeholder="4">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="straat">Straatnaam:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="straat" placeholder="Herengracht">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Tweede straat(optioneel):</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control marginTop20 " name="straat2" id="pwd"
-                           placeholder="Janstraat">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="huisnr">Huisnummer:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="huisnr" placeholder="33">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Tweede huisnummer(optioneel):</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control marginTop20 " name="huisnr2" id="pwd"
-                           placeholder="5">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="straat2">*Tweede Straatnaam:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="straat2" placeholder="Dorpsstraat">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Postcode:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control marginTop20 " name="postcode" id="pwd"
-                           placeholder="1234 AB">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="huisnr2">*Tweede Huisnummer:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="huisnr2" placeholder="56">
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd"> Plaatsnaam:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control Margintop20 " name="plaats" id="pwd"
-                           placeholder="Ede">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="postcode">Postcode:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="postcode" placeholder="1234AB">
             </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email"> Land:</label>
-                <div class="col-sm-10">
-                    <select name="land" class=" ">
-                        <?php
-                        $sql = "SELECT Landnaam FROM Landen";
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
-                        $stmt->execute();           //Statement uitvoeren
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                        {
-                            for ($i = 0; $i < count($row); $i++) {
-                                echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
-                            }
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2 marginright25" for="land">Land:</label>
+                <select name="land" id="land" class=" form-control1">
+                    <?php
+                    $sql = "SELECT Landnaam FROM Landen";
+                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                    $stmt->execute();           //Statement uitvoeren
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                    {
+                        for ($i = 0; $i < count($row); $i++) {
+                            echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
                         }
-                        ?>
-                    </select>
-                </div>
+                    }
+                    ?>
+                </select>
             </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer(IBAN):</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="rekeningnummer" placeholder="NL 53 BANK 1234567890">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="rekeninghouder">Rekeninghouder:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="rekeninghouder" placeholder="Jan Steen">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+                <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
+            </div>
+        </div>
+    </form>
+</div>
 
-            <h3>Betalingsgegevens</h3>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Rekeningnummer(IBAN):</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control  " name="rekeningnummer" id="pwd"
-                           placeholder="NL 53 BANK 1234567890">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Rekeninghouder:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control  " name="rekeninghouder" id="email"
-                           placeholder="Anja Houtwipper">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Bent u een verkoper?</label>
-                <div class="col-sm-10">
-                    <select name="verkoper" class=" ">
-                        <option value="wel">Ja</option>
-                        <option value="niet">Nee</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
-                </div>
-            </div>
-        </form>
-    </div>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <?php
-}
-else{
-    header("Location: registreren.php");
-}
+<!--    --><?php
+//}
+//else{
+//    header("Location: registreren.php");
+//}
 
 
 include('includes/footer.php');
