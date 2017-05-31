@@ -16,12 +16,17 @@
 <body>
 
 <?php
-include 'includes/header.php';
-include 'includes/catbar.php';
+session_start();
+if (isset($_SESSION['username'])){
+    header("Location: index.php");
+}
+else{
 
+include 'includes/header.php';
 if (empty($_POST['gebruikersnaam'])){
 //als er geen gebruikersnaam is ingevuld dan komt het invoerveldje waar de gebruiker de gebruikersnaam moet invullen
 ?>
+
 <div class="container marginTop20 ">
     <div class="col-md-12" align="center">
         <div class="col-md-3"></div>
@@ -54,10 +59,15 @@ if (empty($_POST['gebruikersnaam'])){
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $huidigWachtwoord = $row[0];
     }
+    if(empty($huidigWachtwoord)){
+        header("Location: accountreset.php");
+    }else{
 
+    echo '<div class="marginTop50 col-md-12">';
     echo '<form action="" method="post">';
     echo '<div class="form-group">';
-    echo '<select name="vraag">';
+    echo '<label for="vragen">Vraag:</label>';
+    echo '<select name="vraag" class="form-control" id="vragen">';
     $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();           //Statement uitvoeren
@@ -67,7 +77,7 @@ if (empty($_POST['gebruikersnaam'])){
         $nummers[] = $row[1];
     }
     for ($i = 0; $i < count($vragen); $i++) {
-        echo '<option value="' . $nummers[$i] . '"> ' . $vragen[$i] . ' </option)>';
+        echo '<option value="' . $vragen[$i] . '"> ' . $vragen[$i] . ' </option)>';
     }
     echo '</select>';
     echo '</div>';
@@ -78,6 +88,8 @@ if (empty($_POST['gebruikersnaam'])){
     echo '</div>';
     echo '<input type="submit" value="submit" class="btn-ibis btn">';
     echo '</form>';
+    echo '</div>';
+    }
 }
 
 if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
@@ -89,7 +101,6 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $DBantwoord = $row[1];
         $email = $row[2];
     }
-
     if ($_POST['vraag'] == $DBvraag && $_POST['antwoord'] == $DBantwoord) {
         $code = mt_rand();
         $codePwd = password_hash($code, PASSWORD_DEFAULT);
@@ -108,10 +119,10 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
         header("Location: inloggen.php");
-    }else{
+    } else {
         echo 'De vraag en/of het antwoord is niet juist';
     }
 }
-
+}
 include 'includes/footer.php';
 ?>

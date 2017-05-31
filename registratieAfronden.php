@@ -136,40 +136,41 @@ if (isset($_POST['submit'])) {
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
+        header("Location: inloggen.php");
 
         die();
-        header("Location: inloggen.php");
+
     }
 }
 
 
-//if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
+if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
  ?>
 
-<div class="marginTop50" >
+<div class="marginTop50">
     <form class="form-horizontal" action="" method="POST">
         <div class="form-group">
             <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="gebruikersnaam" placeholder="HarryKetsers">
+                <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam" placeholder="HarryKetsers">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="wachtwoord">Wachtwoord:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord">
+                <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="wachtwoord2">Herhaal wachtwoord:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="wachtwoord2" placeholder="Herhaal wachtwoord">
+                <input type="password" class="form-control" id="wachtwoord2" name="wachtwoord2" placeholder="Herhaal wachtwoord">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="geboortdedatum">Geboortedatum:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="geboortdedatum" placeholder="JJJJ-MM-DD">
+                <input type="text" class="form-control" id="geboortdedatum" name="geboortedatum" placeholder="JJJJ-MM-DD">
             </div>
         </div>
         <div class="form-group">
@@ -194,37 +195,43 @@ if (isset($_POST['submit'])) {
         <div class="form-group">
             <label class="control-label col-sm-2" for="antwoord">Antwoord:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="antwoord" placeholder="Jou Antwoord">
+                <input type="text" class="form-control" id="antwoord" name="antwoord" placeholder="Je antwoord">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="straat">Straatnaam:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="straat" placeholder="Herengracht">
+                <input type="text" class="form-control" id="straat" name="straat" placeholder="Herengracht">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="huisnr">Huisnummer:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="huisnr" placeholder="33">
+                <input type="number" class="form-control" id="huisnr" name="huisnr" placeholder="33">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="straat2">*Tweede Straatnaam:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="straat2" placeholder="Dorpsstraat">
+                <input type="text" class="form-control" id="straat2" name="straat2" placeholder="Dorpsstraat">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="huisnr2">*Tweede Huisnummer:</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="huisnr2" placeholder="56">
+                <input type="number" class="form-control" id="huisnr2" name="huisnr2" placeholder="56">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="postcode">Postcode:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="postcode" placeholder="1234AB">
+                <input type="text" class="form-control" id="postcode" name="postcode" placeholder="1234AB">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="plaats">Plaats:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="plaats" name="plaats" placeholder="Rotterdam">
             </div>
         </div>
         <div class="form-group">
@@ -244,15 +251,24 @@ if (isset($_POST['submit'])) {
                 </select>
             </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer(IBAN):</label>
+            <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="rekeningnummer" placeholder="NL 53 BANK 1234567890">
+                <input type="text" class="form-control" id="rekeningnummer" name="rekeningnummer" placeholder="NLABNA0123456789">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="rekeninghouder">Rekeninghouder:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="rekeninghouder" placeholder="Jan Steen">
+                <input type="text" class="form-control" id="rekeninghouder" name="rekeninghouder" placeholder="Harry Ketsers">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="verkoper">Bent u een verkoper?</label>
+            <div class="col-sm-10">
+                <select name="verkoper" id="verkoper"  class="form-control ">
+                    <option value="wel">Ja</option>
+                    <option value="niet">Nee</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -267,11 +283,11 @@ if (isset($_POST['submit'])) {
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-<!--    --><?php
-//}
-//else{
-//    header("Location: registreren.php");
-//}
+<?php
+}
+else{
+    header("Location: registreren.php");
+}
 
 
 include('includes/footer.php');
