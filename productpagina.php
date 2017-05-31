@@ -67,7 +67,7 @@ if (isset($_GET['product'])) {
 </div>
 <div class="container marginTop20">
     <div class="col-md-6">
-        <div id="myCarousel" class="carousel slide ">
+        <div id="myCarousel" class="carousel slide">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
