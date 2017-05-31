@@ -68,7 +68,7 @@ if (empty($_POST['gebruikersnaam'])){
     echo '<div class="form-group">';
     echo '<label for="vragen">Vraag:</label>';
     echo '<select name="vraag" class="form-control" id="vragen">';
-    $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
+    $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();           //Statement uitvoeren
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
@@ -105,7 +105,7 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $code = 'Aa!' . mt_rand();
         $codePwd = password_hash($code, PASSWORD_DEFAULT);
 
-        $sql = "UPDATE Gebruiker SET Wachtwoord = $codePwd WHERE Gebruikersnaam = '$gebruikersnaam'";
+        $sql = "UPDATE Gebruiker SET Wachtwoord = '$codePwd' WHERE Gebruikersnaam = '$gebruikersnaam'";
         $stmt = $db->prepare($sql); //Statement object aanmaken
         $stmt->execute();
 
@@ -118,8 +118,8 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         mail($email, $onderwerp, $bericht, $headers);
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
-        //header("Location: inloggen.php");
-        echo $code;
+        header("Location: inloggen.php");
+        //echo $code;
     } else {
         echo 'De vraag en/of het antwoord is niet juist';
     }
