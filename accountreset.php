@@ -31,7 +31,6 @@ if (empty($_POST['gebruikersnaam'])){
                 <h2>Wachtwoord vergeten?</h2>
                 <hr>
                 <p>Kan gebeuren, geeft niks.</p>
-                <p>Wij sturen een code naar jou toe via de email, dat vul je in en klaar is kees.</p>
                 <div class="form-group col-md-12 textCenter">
                     <form action="" method="post">
                         <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
@@ -118,7 +117,7 @@ if (isset($_POST['vraag']) && isset($_POST['antwoord']) && !empty($_POST['vraag'
         mail($email, $onderwerp, $bericht, $headers);
 
         //  4. De gebruiker wordt naar het inlogscherm gestuurd
-
+        header("Location: inloggen.php");
 
     } else {
         echo 'foutmelding, vraag is niet hetzelfde als het antwoord';
