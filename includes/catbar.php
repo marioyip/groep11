@@ -10,10 +10,10 @@
                     <form method="GET" action="zoekfunctie.php">
                         <ul class="nav navbar-nav">
                             <li>
-                                <input type="text" class="form-control" name="zoeken" placeholder="Zoeken...">
+                                <input type="text" class="form-control2" name="zoeken" placeholder="Zoeken...">
                             </li>
                             <li>
-                                <select class="form-control" name="rubriek">
+                                <select class="form-control2" name="rubriek">
                                     <!--                                        Selecteert alle hoofdrubrieken, dus rubrieken waar rubriek gelijk is aan -1-->
                                     <?php
                                     $sql = "SELECT Rubrieknaam, Rubrieknummer FROM Rubriek WHERE Rubriek = -1 ORDER BY Rubrieknaam"; //SQL query om het uit de database te lezen

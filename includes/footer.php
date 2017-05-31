@@ -57,9 +57,9 @@
                         <ul>
                             <li>
                                 <div class="input-append newsletter-box text-center">
-                                    <input class="full text-center textDarkGray form-control fontSize16 sanchez"
+                                    <input class="full text-center textDarkGray form-control2 fontSize16 sanchez"
                                            type="text" name="name" id="user_name" placeholder="Naam"/>
-                                    <input class="full text-center textDarkGray form-control fontSize16 sanchez"
+                                    <input class="full text-center textDarkGray form-control2 fontSize16 sanchez"
                                            type="email" name="email" id="email" placeholder="E-mail"/>
 
                                     <input class="textDarkGray newsButtonGray bg-gray btn btn-default sanchez"
