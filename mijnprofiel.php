@@ -239,7 +239,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 <div class="tab-pane fade " id="item4" role="tabpanel">
                     <?php
                     //de voorwerpen selecteren waarop is geboden
-                    $sql = "SELECT DISTINCT (Voorwerpnummer),VoorwerpCover,Titel,Beschrijving FROM Bod
+                    $sql = "SELECT DISTINCT (Voorwerpnummer),VoorwerpCover,Titel,Beschrijving,Bodbedrag FROM Bod
                             JOIN Voorwerp ON Bod.Voorwerp = Voorwerp.Voorwerpnummer
                             WHERE Bod.Gebruiker = '$gebruikersnaam';";
                     $stmt = $db->prepare($sql);
@@ -249,8 +249,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $VoorwerpCover1[] = $row[1];
                         $Titel1[] = $row[2];
                         $Beschrijving1[] = $row[3];
+                        $Bodbedrag[] = $row[4];
                     }
-                    if (!empty($Titel)) {
+                    if (!empty($Titel1)) {
                         for ($i = 0; $i < count($Titel1); $i++) {
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
@@ -259,6 +260,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                 <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                                 ' . $Titel1[$i] . '</a></h4>
                                 <div class="description">
+                                 &#8364;'. $Bodbedrag[$i] .'
                                 </div>
                                 <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
@@ -307,7 +309,6 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     ?>
                 </div>
                 <!-- Telfoonnummers toevoegen -->
-
                 <div class="tab-pane fade marginTop5 " id="item7" role="tabpanel">
                     <?php
                     $sql = "SELECT Telefoon FROM Gebruikerstelefoon WHERE Gebruiker = '$SessioncookieUsername'";
@@ -321,14 +322,19 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         echo '<table class="table table-hover">';
                         for ($i = 0; $i < count($eerdergeplaatstenummers); $i++) {
                             echo '<tr>
-                                    <td>' . $eerdergeplaatstenummers[$i] . '</td>
-                                    <td><form method="post" action=""><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form></td></tr>';
+                                    <td>' . $eerdergeplaatstenummers[$i] . '</td><td>';
+                            if(count($eerdergeplaatstenummers)>1){
+                                    echo'<form method="post" action=""><input type="hidden" name="teVerwijderenNummer" value='.$eerdergeplaatstenummers[$i].'><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form>';
+                            }
+                                    echo'</td></tr>';
                         }
                         echo '</table>';
                         if(isset($_POST['telefoonverwijder'])){
-                            $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$eerdergeplaatstenummers[$i]'";
+                            $teVerwijderenNummer = $_POST['teVerwijderenNummer'];
+                            $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$teVerwijderenNummer'";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
+                            echo '<meta http-equiv="refresh" content="0">';
                         }
                     }
                     ?>
