@@ -31,7 +31,7 @@ if (empty($_POST['gebruikersnaam'])){
     <div class="col-md-12" align="center">
         <div class="col-md-3"></div>
 
-        <div class="col-md-6 controlBox container-fluid text-center marginTop30">
+        <div class=" padding10 col-md-6 controlBox container-fluid text-center marginTop30">
 
             <h2>Wachtwoord vergeten?</h2>
             <hr>
@@ -39,7 +39,7 @@ if (empty($_POST['gebruikersnaam'])){
             <div class="form-group col-md-12 textCenter">
                 <form action="" method="post">
                     <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
-                    <input class="form-control" type="text" id="gebruikersnaam" name="gebruikersnaam"
+                    <input class="form-control2" type="text" id="gebruikersnaam" name="gebruikersnaam"
                            placeholder="Hans123">
                     <input type="submit" class="btn-default btn" value="verstuur" align="center">
                 </form>
@@ -67,7 +67,7 @@ if (empty($_POST['gebruikersnaam'])){
     echo '<form action="" method="post">';
     echo '<div class="form-group">';
     echo '<label for="vragen">Vraag:</label>';
-    echo '<select name="vraag" class="form-control" id="vragen">';
+    echo '<select name="vraag" class="form-control2" id="vragen">';
     $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();           //Statement uitvoeren
