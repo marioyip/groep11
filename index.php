@@ -179,33 +179,7 @@ function getTijd($tijd, $pos)
 
             ?>
         </div>
-        <div class="container marginTop40">
-            <div class="col-md-4 categoryBox" id="wrapper">
-                <div class="categoryBox">
-                    <a href="../groep11/resultatenpagina.php?rubriek=9801">
-                        <img class=" imgStyle" src="media/rubriektelefoon.jpg">
-                    </a>
-                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Telefoons</h2>
-                </div>
-            </div>
 
-            <div class="col-md-4 categoryBox" id="wrapper">
-                <div class="categoryBox">
-                    <a href="../groep11/resultatenpagina.php?rubriek=14616">
-                        <img class=" imgStyle" src="media/rubriekauto.jpeg">
-                    </a>
-                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Auto's</h2>
-                </div>
-            </div>
-            <div class="col-md-4 categoryBox" id="wrapper">
-                <div class="categoryBox">
-                    <a href="../groep11/resultatenpagina.php?rubriek=14675">
-                        <img class=" imgStyle" src="media/rubriekgames.jpg">
-                    </a>
-                    <h2 class="textDarkGray bold text textWhite paddingBottom30" align="center">Gaming</h2>
-                </div>
-            </div>
-        </div>
         <div class="container marginTop20">
             <div class="col-md-12 " align="center">
                 <h2 class="textDarkGray">Nieuwe veilingen</h2>
