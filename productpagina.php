@@ -65,7 +65,6 @@ if (isset($_GET['product'])) {
     </div>
 
 </div>
-
 <div class="container marginTop20">
     <div class="col-md-6">
         <div id="myCarousel" class="carousel slide">
@@ -78,31 +77,32 @@ if (isset($_GET['product'])) {
             </ol>
             <!-- Wrapper for Slides -->
             <div class="carousel-inner "><div class="">
-                <div class="item active">
+                    <div class="item active">
 
-                    <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
-                    echo $VoorwerpCover;
-                    ?>');"><div class="carousel-caption d-none d-md-block"></div></div>
-                </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
-                    echo $VoorwerpCover;
-                    ?>');');"></div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('<?php
-                    echo $VoorwerpCover;
-                    ?>');');"></div>
-                </div>
-                <div class="item">
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('<?php
+                        echo $VoorwerpCover;
+                        ?>');"><div class="carousel-caption d-none d-md-block"></div></div>
+                    </div>
+                    <div class="item">
+                        <!-- Set the second background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('<?php
+                        echo $VoorwerpCover;
+                        ?>');');"></div>
+                    </div>
+                    <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('<?php
+                        echo $VoorwerpCover;
+                        ?>');');"></div>
+                    </div>
+                    <div class="item">
 
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('media/default.png');"></div>
-                </div>
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('media/default.png');"></div>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>
