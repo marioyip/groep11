@@ -18,7 +18,6 @@ session_start();
 include 'includes/header.php';
 require_once('includes/functies.php');
 
-//ini_set('display_errors', 'On');
 connectToDatabase();
 ?>
 <main>
@@ -60,6 +59,9 @@ connectToDatabase();
                         if (empty($gebruikersnaam)) {
                             $error = 'U heeft uw gebruikersnaam niet ingevuld!';
                         }
+                        if (empty($pwd)) {
+                            $error = 'U heeft uw wachtwoord niet ingevuld!';
+                        }
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                             $controleWachtwoord = $row[0];
                             if (!empty($gebruikersnaam) && !empty($pwd)) {
@@ -67,15 +69,15 @@ connectToDatabase();
                                     $_SESSION['username'] = $gebruikersnaam;
                                     $error = 'Welkom ' . $_SESSION['username'];
                                     header("Location: index.php");
-                                } else if (!password_verify($pwd, $controleWachtwoord) && !empty($pwd)) {
-                                    $error = 'Het gebruikersnaam of wachtwoord klopt niet.';
+                                } else if (!password_verify($pwd, $controleWachtwoord)) {
+                                    $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
                                 }
-                            } else if (empty($pwd)) {
-                                $error = 'U heeft uw wachtwoord niet ingevuld!';
                             }
                         }
+                        if ($error != "") {
+                            echo isset($_POST['submit']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
+                        }
                     }
-                    echo isset($_POST['submit'])? "<div class='alert alert-danger'> <p>" .$error . "</p></div>":"";
                     ?>
                     <div class="form-group marginTop35">
                         <div class="col-sm-12">
