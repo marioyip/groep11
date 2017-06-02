@@ -88,6 +88,15 @@ require_once 'includes/functies.php';
 <?php
 
 if (isset($_POST['submit'])) {
+    $_POST['verkoper'] = strip_tags($_POST['verkoper']);
+    $_POST['titel'] = strip_tags($_POST['titel']);
+    $_POST['beschrijving'] = strip_tags($_POST['beschrijving']);
+    $_POST['betalingswijze'] = strip_tags($_POST['betalingswijze']);
+    $_POST['betalingsinstructie'] = strip_tags($_POST['betalingsinstructie']);
+    $_POST['verzendinstructie'] = strip_tags($_POST['verzendinstructie']);
+    $_POST['looptijd'] = strip_tags($_POST['looptijd']);
+    $_POST['verkoopprijs'] = strip_tags($_POST['verkoopprijs']);
+
 
     $verkoper = $_SESSION['username'];
 
