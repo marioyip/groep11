@@ -15,6 +15,7 @@
 <body>
 
 <?php
+ob_start();
 session_start();
 if (empty($_SESSION['username'])) {
     header("Location: index.php");
@@ -74,13 +75,16 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <a class="nav-link active" data-toggle="tab" href="#item1" role="tab">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item2" role="tab">Wachtwoord wijzigen</a>
+                    <a class="nav-link active" data-toggle="tab" href="#item2" role="tab">Verkopen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Lopende veilingen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Wachtwoord wijzigen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Biedgeschiedenis</a>
+                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Lopende veilingen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item5" role="tab">Biedgeschiedenis</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Gewonnen veilingen</a>
@@ -115,8 +119,94 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5>- <?php echo $Mailbox ?></h5>
                     </div>
                 </div>
-                <!-- Wachtwoord wijzigen -->
+                <!-- Verkoper worden -->
                 <div class="tab-pane fade " id="item2" role="tabpanel">
+                    <div class="col-md-8 marginTop20">
+                        <?php
+                        //eerst wordt er gekeken of iemand al een verkoper is
+                        $query = "SELECT Verkoper FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+                        $stmt = $db->prepare($query);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            $verkoper = $row[0];
+                        }
+                        if ($verkoper == 0) {
+                            ?>
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="banknamen">De naam van je bank</label>
+                                    <input type="text" name="Bank" id="banknamen" class="form-control" required
+                                           placeholder="ING">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rekeningnummer">Je rekeningnummer</label>
+                                    <input type="text" name="Rekeningnummer" id="rekeningnummer" class="form-control"
+                                           placeholder="NL00BANK0123456789"
+                                           required>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="Post" value="Post"
+                                               disabled>
+                                        Post
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="Creditcard"
+                                               value="Creditcard"
+                                               checked>
+                                        Creditcard
+                                    </label>
+                                </div>
+                                <hr>
+                                <h4>Het creditcardnummer is alleen van belang als er de optie Creditcard is gekozen</h4>
+                                <div class="form-group">
+                                    <label for="creditcardnummer">Creditcardnummer</label>
+                                    <input type="text" class="form-control" id="creditcardnummer"
+                                           name="creditcardnummer" placeholder="123456789">
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <input type="submit" class="btn-ibis btn" name="verkoperWorden"
+                                           value="Ik wil verkoper worden">
+                                    <br>
+                                    <p class="text-muted">en besef me dat er kosten in rekening worden gebracht bij het
+                                        verkopen van spullen</p>
+                                </div>
+                            </form>
+                            <?php
+                            if (isset($_POST['verkoperWorden'])) {
+                                $bank = $_POST['Bank'];
+                                $rekeningnummer = $_POST['Rekeningnummer'];
+                                //het inserten van de informatie tabel verkoper en de tabel voorwerp
+                                if (!empty($_POST['Post'])) {
+                                    $optie = $_POST['Post'];
+                                    $sql = "UPDATE Gebruiker SET Verkoper = 1 WHERE Gebruikersnaam = '$gebruikersnaam';
+                                            INSERT INTO Verkoper (Bank, ControleOptie, Gebruiker, Bankrekening) VALUES('$bank','$optie','$gebruikersnaam','$rekeningnummer');"; //De query maken
+                                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                                    $stmt->execute();
+                                } else {
+                                    $optie = $_POST['Creditcard'];
+                                    $creditcardnummer = $_POST['creditcardnummer'];
+                                    $sql = "UPDATE Gebruiker SET Verkoper = 1 WHERE Gebruikersnaam = '$gebruikersnaam';
+                                            INSERT INTO Verkoper (Bank, ControleOptie, Gebruiker, Bankrekening, Creditcard) VALUES('$bank', '$optie', '$gebruikersnaam', '$rekeningnummer', '$creditcardnummer');"; //De query maken
+                                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                                    $stmt->execute();
+                                }
+
+                                ob_end_clean();
+                                header("Location: mijnprofiel.php");
+                            }
+                        } else {
+                            echo 'U bent al een verkoper';
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <!-- Wachtwoord wijzigen -->
+                <div class="tab-pane fade " id="item3" role="tabpanel">
                     <div class="col-md-6 marginTop20">
                         <form action="" method="post">
                             <div class="form-group">
@@ -164,7 +254,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             $controleWachtwoord = $row[0];
 
                             if ($nieuwWachtwoord1 != $nieuwWachtwoord2 || password_verify($huidigWachtwoord, $controleWachtwoord) == 0) {
-                                header("Location: mijnprofiel.php#item2");
+                                header("Location: mijnprofiel.php");
                             } else {
                                 if (strlen($nieuwWachtwoord1) < 6
                                     || strpbrk($nieuwWachtwoord1, '1234567890') == FALSE
@@ -185,7 +275,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     ?>
                 </div>
                 <!-- Lopende veilingen -->
-                <div class="tab-pane fade " id="item3" role="tabpanel">
+                <div class="tab-pane fade " id="item4" role="tabpanel">
                     <?php
                     $sql = "SELECT * FROM Voorwerp Where VeilingGesloten = 0 AND Verkoper = '$gebruikersnaam';";
                     $stmt = $db->prepare($sql);
@@ -236,7 +326,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     ?>
                 </div>
                 <!-- Biedgeschiedenis -->
-                <div class="tab-pane fade " id="item4" role="tabpanel">
+                <div class="tab-pane fade " id="item5" role="tabpanel">
                     <?php
                     //de voorwerpen selecteren waarop is geboden
                     $sql = "SELECT DISTINCT (Voorwerpnummer),VoorwerpCover,Titel,Beschrijving,Bodbedrag FROM Bod
@@ -260,7 +350,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                 <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '">
                                 ' . $Titel1[$i] . '</a></h4>
                                 <div class="description">
-                                 &#8364;'. $Bodbedrag[$i] .'
+                                 &#8364;' . $Bodbedrag[$i] . '
                                 </div>
                                 <a href="productpagina.php?product=' . $Voorwerpnummer1[$i] . '" class="btn btn-default crete" role="button">Bieden</a>
                             </div>
@@ -323,18 +413,19 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         for ($i = 0; $i < count($eerdergeplaatstenummers); $i++) {
                             echo '<tr>
                                     <td>' . $eerdergeplaatstenummers[$i] . '</td><td>';
-                            if(count($eerdergeplaatstenummers)>1){
-                                    echo'<form method="post" action=""><input type="hidden" name="teVerwijderenNummer" value='.$eerdergeplaatstenummers[$i].'><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form>';
+                            if (count($eerdergeplaatstenummers) > 1) {
+                                echo '<form method="post" action=""><input type="hidden" name="teVerwijderenNummer" value=' . $eerdergeplaatstenummers[$i] . '><input name="telefoonverwijder" type="submit" value="verwijder" class="btn-ibis btn-ibisrnd btn"></form>';
                             }
-                                    echo'</td></tr>';
+                            echo '</td></tr>';
                         }
                         echo '</table>';
-                        if(isset($_POST['telefoonverwijder'])){
+                        if (isset($_POST['telefoonverwijder'])) {
                             $teVerwijderenNummer = $_POST['teVerwijderenNummer'];
                             $sql = "DELETE FROM Gebruikerstelefoon WHERE Telefoon = '$teVerwijderenNummer'";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
-                            echo '<meta http-equiv="refresh" content="0">';
+                            ob_end_clean();
+                            header("Location: mijnprofiel.php");
                         }
                     }
                     ?>
@@ -344,10 +435,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             echo '<h2>Voeg een telefoonnummer toe:</h2>';
                             echo '
                             <div class="form-group">
-                                <input type="tel" name="telefoonnummer" class="form-control" placeholder="0261234567" > 
+                                <input type="tel" name="telefoonnummer" class="form-control" placeholder="0261234567" >
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn-default btn" value="voeg toe" role="button" name="submitTel"> 
+                                <input type="submit" class="btn-default btn" value="voeg toe" role="button" name="submitTel">
                             </div>
                             ';
                             ?>
@@ -359,6 +450,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         $sql = "INSERT INTO Gebruikerstelefoon VALUES ('$SessioncookieUsername','$telefoonnummer')";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
+                        ob_end_clean();
                         header("Location: mijnprofiel.php");
                     }
                     if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] == '') {
@@ -377,5 +469,5 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
     </div>
 </main>
 <?php include 'includes/footer.php';
+ob_end_flush();
 ?>
-
