@@ -1,3 +1,6 @@
+<?php
+include 'includes/footer.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +27,7 @@ if (isset($_SESSION['username'])) {
 include 'includes/header.php';
 include 'includes/catbar.php';
 
+echo isset($_SESSION['errors'])?"<p class='errors'>".$_SESSION["errors"]."</p>":"";
 ?>
 <main>
     <div class="container marginTop20">
@@ -39,14 +43,14 @@ include 'includes/catbar.php';
                         <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="voornaam" id="email"
-                                   placeholder="Kees">
+                                   placeholder="Kees" value="<?=isset($postdata['Voornaam'])?$postdata['Voornaam']:""?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Achternaam:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="achternaam" id="pwd"
-                                   placeholder="van Dalen">
+                                   placeholder="van Dalen" value="<?=isset($postdata['Achternaam'])?$postdata['Achternaam']:""?>">
                         </div>
                     </div>
 
@@ -54,16 +58,47 @@ include 'includes/catbar.php';
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres" id="email"
-                                   placeholder="k.vandalen@email.com">
+                                   placeholder="k.vandalen@email.com" value="<?=isset($postdata['email'])?$postdata['email']:""?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Herhaal E-mailadres:</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres2" id="email"
-                                   placeholder="k.vandalen@email.com">
+                                   placeholder="k.vandalen@email.com" value="<?=isset($postdata['email'])?$postdata['email']:""?>">
                         </div>
                     </div>
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        $voornaam = $_POST["voornaam"];
+                        $pwd = $_POST["pwd"];
+                        $error = "";
+                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
+                        $stmt = $db->prepare($sql); //Statement object aanmaken
+                        $stmt->execute();
+                        if (empty($gebruikersnaam)) {
+                            $error = 'U heeft uw gebruikersnaam niet ingevuld!';
+                        }
+                        if (empty($pwd)) {
+                            $error = 'U heeft uw wachtwoord niet ingevuld!';
+                        }
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            $controleWachtwoord = $row[0];
+                            if (!empty($gebruikersnaam) && !empty($pwd)) {
+                                if (password_verify($pwd, $controleWachtwoord)) {
+                                    $_SESSION['username'] = $gebruikersnaam;
+                                    $error = 'Welkom ' . $_SESSION['username'];
+                                    header("Location: index.php");
+                                } else if (!password_verify($pwd, $controleWachtwoord)) {
+                                    $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
+                                }
+                            }
+                        }
+                        if ($error != "") {
+                            echo isset($_POST['submit']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
+                        }
+                    }
+                    ?>
                     <div class="form-group">
                         <input type="submit" value="bevestig" name="bevestigmail" class="btn-default btn">
                     </div>
