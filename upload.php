@@ -60,4 +60,4 @@ for($i = 0; $i < $noOfFiles; $i++){
     }
 }
 
-//header('Location:index.php');
+header('Location:index.php');
