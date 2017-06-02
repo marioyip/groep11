@@ -12,7 +12,7 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
         <div class="navbar-header">
             <a class="navbar-header" href="index.php">
                 <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header textWhite marginLeft10 marginTop0 adminHeaderLink" href="beheersomgeving.php">
+            <a class="navbar-header textWhite marginLeft10 marginTop0 adminHeaderLink" href="adminpanel.php">
                 <h1>EenmaalAndermaal Admin</h1>
             </a>
         </div>

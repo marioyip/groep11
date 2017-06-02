@@ -114,7 +114,8 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $onderwerp = 'Nieuw Wachtwoord EenmaalAndermaal' . "\r\n";
-        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code . ', Dit kunt u veranderen bij "Mijn profiel".' . "\r\n";
+        $href = '<a href="http://iproject11.icasites.nl/dickiedick/inloggen.php">';
+        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code .  "<br><br>" . 'U kunt dit wachtwoord wijzigen in'  . " $href" .  'Mijn Profiel' . "</a><br><br>" . 'Met vriendelijke groeten,' . "<br><br>" . 'Hugo Kosterman' . "<br><br>" . 'Eigenaar EenmaalAndermaal';
         mail($email, $onderwerp, $bericht, $headers);
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
