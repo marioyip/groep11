@@ -22,4 +22,12 @@ if (isset($_POST['gebruiker'])) {
     $stmt->execute();
 }
 
+
+
 header('Location: adminpanel.php');
+
+?>
+
+<div class="alert alert-success">
+    <strong>Geselecteerde gebruiker is verwijderd.</strong>
+</div>
