@@ -90,7 +90,7 @@ IF NOT exists(SELECT *
     CONSTRAINT pk_naam PRIMARY KEY (landnaam),
   )
 
-
+SELECT * FROM iproject11.dbo.VoorwerpInRubriek WHERE voorwerp = '208'
 IF NOT exists(SELECT *
               FROM sysobjects
               WHERE name = 'Gebruiker')
