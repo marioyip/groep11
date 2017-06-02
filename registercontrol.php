@@ -23,6 +23,9 @@ if (isset($_SESSION['username'])) {
 }
 
 //if(isset($_POST['bevestigmail'])) {
+$_POST['voornaam'] = strip_tags($_POST['voornaam']);
+$_POST['achternaam'] = strip_tags($_POST['achternaam']);
+$_POST['emailadres'] = strip_tags($_POST['emailadres']);
 $_SESSION['voornaam'] = $_POST['voornaam'];
 $_SESSION['achternaam'] = $_POST['achternaam'];
 $_SESSION['emailadres'] = $_POST['emailadres'];
