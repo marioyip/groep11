@@ -35,6 +35,7 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
             connectToDatabase(); //Verbind met de database (tabblad functies.php)
             //Zoekfunctie voor de database
             if (isset($_GET["zoeken"]) && $_GET["zoeken"] != '') {
+                $_GET["zoeken"] = strip_tags($_GET["zoeken"]);
                 $searchResult = $_GET["zoeken"];
                 $gekozenRubriek = $_GET["rubriek"];
                 $sql = ";WITH childs AS (
