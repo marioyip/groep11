@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="css/style.css"> <!--EenmaalAndermaal css-->
     <link rel="stylesheet" href="css/admin.css"> <!--Admin css-->
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!--tabblad icoontje-->
-
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        })</script>
 </head>
 <body>
 
@@ -91,53 +94,97 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <tbody>
                             <?php
                             if (!empty($Gebruikersnaam)) {
-                                for ($i = 0; $i < 20; $i++) {
+
+//                                Pagination
+                                $sql = mssql_query('SELECT * FROM Gebruiker ORDER BY id OFFSET 10 ROWS 
+FETCH NEXT 10 ROWS ONLY;');
+                                $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+
+                                for ($i = 0; $i < 5; $i++) {
                                     echo '
                             
-                            <tr class="clickable-row">
-                            <a href="mijnprofiel.php">
-                            <td class="username">
-                                <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
-                            </td>           
-                            <td class="firstname">
-                                <p class="textDarkGray">' . $Voornaam[$i] . '</p>
-                            </td> 
-                            <td class="surname">
-                                <p class="textDarkGray">' . $Achternaam[$i] . '</p>
-                            </td> 
-                            <td class="dateofbirth">
-                                <p class="textDarkGray">' . $GeboorteDag[$i] . '</p>
-                            </td> 
-                            <td class="email">
-                                <p class="textDarkGray">' . $email[$i] . '</p>
-                            </td> 
-                            <td class="delete"><label><input type="checkbox" value="" name="delete" id="delete"></label></td>
-                            <td>                        
-                            <button type="submit" class="btn btn-ibisrnd">
-                                <i class="glyphicon glyphicon-wrench"></i>
-                            </button>
-                            </td>
-                            </a>
-                            </tr>
+                        <div class="clickable=row">        
+                            <tr>                            
+                                <td class="username">
+                                    <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
+                                </td>           
+                                <td class="firstname">
+                                    <p class="textDarkGray">' . $Voornaam[$i] . '</p>
+                                </td> 
+                                <td class="surname">
+                                    <p class="textDarkGray">' . $Achternaam[$i] . '</p>
+                                </td> 
+                                <td class="dateofbirth">
+                                    <p class="textDarkGray">' . $GeboorteDag[$i] . '</p>
+                                </td> 
+                                <td class="email">
+                                    <p class="textDarkGray">' . $email[$i] . '</p>
+                                </td> 
+                                <td class="delete"><label><input type="checkbox" value="" name="checkbox[]" id="delete"></label></td>
+                                <td>
+                                <a href="adminprofiel.php">            
+                                    <button type="submit" class="btn btn-ibisrnd">
+                                        <i class="glyphicon glyphicon-wrench"></i>
+                                    </button>
+                                </a>
+                                <!-- Button trigger modal -->   
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                  Launch demo modal
+                                </button>
+                                </td>                            
+                            </tr>                                                 
+                        </div>
+                            
                         ';
                                 }
+                            } else {
+                                echo 'Kan gebruiker niet ophalen.';
+
                             }
-
-                                else{
-                                        echo 'Kan gebruiker niet ophalen.';
-
-                                }
 
                             ?>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
+                        <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Verwijder geselecteerde
+                            gebruikers
+                        </button>
+                        <nav aria-label="Page navigation example" align="center">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container marginTop20">
-            <div class="tab-pane active" id="item2" role="tabpanel">
+            <div class="tab-pane" id="item2" role="tabpanel">
                 <div class="container marginTop20">
                     <div class="col-md-12 username">
                         <?php
@@ -170,7 +217,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <tbody>
                             <?php
                             if (!empty($email)) {
-                                for ($i = 0; $i < 20; $i++) {
+                                for ($i = 0; $i < 5; $i++) {
                                     echo '
                                         <tr class="backgroundLightGrey">
             
