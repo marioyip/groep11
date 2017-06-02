@@ -31,6 +31,23 @@ else{
 
 if (isset($_POST['submit'])) {
 //alle benodigde informatie om te kunnen registreren
+    $_POST['gebruikersnaam'] = strip_tags($_POST['gebruikersnaam']);
+    $_POST['wachtwoord'] = strip_tags($_POST['wachtwoord']);
+    $_POST['wachtwoord2'] = strip_tags($_POST['wachtwoord2']);
+    $_POST['geboortedatum'] = strip_tags($_POST['geboortedatum']);
+    $_POST['vraag'] = strip_tags($_POST['vraag']);
+    $_POST['antwoord'] = strip_tags($_POST['antwoord']);
+    $_POST['straat'] = strip_tags($_POST['straat']);
+    $_POST['huisnr'] = strip_tags($_POST['huisnr']);
+    $_POST['straat2'] = strip_tags($_POST['straat2']);
+    $_POST['huisnr2'] = strip_tags($_POST['huisnr2']);
+    $_POST['postcode'] = strip_tags($_POST['postcode']);
+    $_POST['plaats'] = strip_tags($_POST['plaats']);
+    $_POST['land'] = strip_tags($_POST['land']);
+    $_POST['verkoper'] = strip_tags($_POST['verkoper']);
+    $_POST['rekeningnummer'] = strip_tags($_POST['rekeningnummer']);
+    $_POST['rekeninghouder'] = strip_tags($_POST['rekeninghouder']);
+
     $geentweedehuis = false;
     $foutmelding = '';
     $gebruikersnaam = $_POST['gebruikersnaam'];
