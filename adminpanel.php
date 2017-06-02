@@ -76,7 +76,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             $Verkoper[] = $row[15];
                         }
                         ?>
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>Gebruikersnaam</th>
@@ -86,14 +86,16 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                 <th>Email</th>
                                 <th>Verwijderen</th>
                                 <th>Aanpassen</th>
-
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            for ($i = 0; $i < 20; $i++) {
-                                echo '
-                            <tr class="backgroundLightGrey">
+                            if (!empty($Gebruikersnaam)) {
+                                for ($i = 0; $i < 20; $i++) {
+                                    echo '
+                            
+                            <tr class="clickable-row">
+                            <a href="mijnprofiel.php">
                             <td class="username">
                                 <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
                             </td>           
@@ -115,9 +117,17 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                 <i class="glyphicon glyphicon-wrench"></i>
                             </button>
                             </td>
+                            </a>
                             </tr>
                         ';
+                                }
                             }
+
+                                else{
+                                        echo 'Kan gebruiker niet ophalen.';
+
+                                }
+
                             ?>
                             </tbody>
                         </table>
@@ -159,8 +169,9 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             </thead>
                             <tbody>
                             <?php
-                            for ($i = 0; $i < 20; $i++) {
-                                echo '
+                            if (!empty($email)) {
+                                for ($i = 0; $i < 20; $i++) {
+                                    echo '
                                         <tr class="backgroundLightGrey">
             
                                         <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
@@ -189,7 +200,11 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                         </tr>
             
                                     ';
+                                }
+                            } else {
+                                echo 'Er zijn geen biedingen gedaan.';
                             }
+
                             ?>
                             </tbody>
                         </table>
