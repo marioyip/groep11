@@ -258,9 +258,10 @@ if (isset($_GET['product'])) {
                         <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
                         <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                     </div>
-                    </form><?php } else {
-                    echo 'U bent nog niet ingelogd. ';
-                    echo '<a href="registeren.php">Registreer nu!</a>';
+                    </form>
+                <?php } else {
+                    echo '<h3>U bent nog niet ingelogd.</h3> ';
+                    echo '<a href="inloggen.php" type="button" role="button" class="btn btn-ibis crete"  >Log in of maak een account!</a>';
                 } ?>
             </h2>
             <div class="scrollbar">
