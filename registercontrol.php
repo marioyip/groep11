@@ -41,6 +41,7 @@ $onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
 $bericht = 'Dit is uw bevestigingscode: ' . $_SESSION['code'] . '' . "\r\n";
 mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
 
+
 //    echo $code.'<br>';
 //    echo $emailadres;
 
@@ -51,17 +52,18 @@ mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
         <div class="col-md-6 controlBox container-fluid marginTop30">
             <h2>Verificatiecode invoeren</h2>
             <hr>
-            <p> U heeft een registratiecode naar uw emailadres gestuurd gekregen, hiermee kan u uw account verifiëren.</p>
+            <p> Er is een email gestuurd naar het volgende mail adres: <?php echo $_SESSION['emailadres'] ?><br> Met de
+                code in de mail kunt u verder met de registratie. </p>
             <div class="">
                 <form method="POST" action="registratieAfronden.php">
                     <div class="form-group ">
                         <label for="ingevoerdecode">Uw ontvangen code:
                             <input id="ingevoerdecode" class="form-control" type="text" name="ingevoerdecode"></label>
                     </div>
-                    <div class="form-group ">
-                        <label for=" emailingevoerd">Uw emailadres:
-                            <input id="emailingevoerd" class="form-control" type="text" name="emailingevoerd"></label>
-                    </div><div class="beschrijving"></div>
+                                        <div class="form-group ">
+                                            <label for=" emailingevoerd">Uw emailadres:
+                                                <input id="emailingevoerd" class="form-control" type="text" name="emailingevoerd"></label>
+                                        </div><div class="beschrijving"></div>
                     <div class="form-group marginTop20">
                         <input type="submit" name="bevestig" value="bevestig" class="btn-default btn">
                     </div>
@@ -73,5 +75,7 @@ mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
 </body>
 </html>
 <?php
-include 'includes/footer.php'
+
+include 'includes/footer.php';
+
 ?>

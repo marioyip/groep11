@@ -22,7 +22,7 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
 
 
 <main>
-
+    <?php$_GET["zoeken"] = strip_tags($_GET["zoeken"]); ?>
     <div class="containerMinHeight">
         <div class="container ">
             <div class="col-md-12 " align="center">

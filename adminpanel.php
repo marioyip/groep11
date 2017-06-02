@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!--bootstrap css-->
-    <link rel="stylesheet" href="css/style.css"> <!--eigen css-->
+    <link rel="stylesheet" href="css/style.css"> <!--EenmaalAndermaal css-->
+    <link rel="stylesheet" href="css/admin.css"> <!--Admin css-->
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!--tabblad icoontje-->
-
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        })</script>
 </head>
 <body>
 
@@ -33,170 +37,228 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                     <a class="nav-link" data-toggle="tab" href="#item2" role="tab">Veilingen</a>
                 </li>
             </ul>
+        </div>
+        <div class="container marginTop20">
             <div class="tab-pane active" id="item1" role="tabpanel">
-                <div class="col-md-12">
-                    <h1 class="textGreen" align="center">Adminpanel - Gebruikers</h1>
-                </div>
-            </div>
-            <div class="container marginTop20">
-                <div class="col-md-3"></div>
-                <div class="input-group col-md-6">
-                    <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-ibisrnd btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-                <div class="">
-                    <?php
-                    $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $Achternaam[] = $row[0];
-                        $Straatnaam1[] = $row[1];
-                        $Huisnummer1[] = $row[2];
-                        $Straatnaam2[] = $row[3];
-                        $Huisnummer2[] = $row[4];
-                        $Antwoordtekst[] = $row[5];
-                        $GeboorteDag[] = $row[6];
-                        $email[] = $row[7];
-                        $Gebruikersnaam[] = $row[8];
-                        $Land[] = $row[9];
-                        $Plaatsnaam[] = $row[10];
-                        $Postcode[] = $row[11];
-                        $Voornaam[] = $row[12];
-                        $Vraag[] = $row[13];
-                        $Wachtwoord[] = $row[14];
-                        $Verkoper[] = $row[15];
-                    }
-                    ?>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Gebruikersnaam</th>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>Geboortedatum</th>
-                            <th>Email</th>
-                            <th>Verwijderen</th>
-                            <th>Aanpassen</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        for ($i = 0; $i < count($Gebruikersnaam); $i++) {
-                            echo '
-                            <tr class="backgroundLightGrey">
-                            <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
-                                <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
-                            </td></a>             
-                            <td>
-                                <p class="textDarkGray">' . $Voornaam[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $Achternaam[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $GeboorteDag[$i] . '</p>
-                            </td> 
-                            <td>
-                                <p class="textDarkGray">' . $email[$i] . '</p>
-                            </td> 
-                            <td><label><input type="checkbox" value="" name="delete" id="delete"></label></td>
-                            <td>                        
-                            <button type="submit" class="btn btn-ibisrnd">
-                                <i class="glyphicon glyphicon-wrench"></i>
+                <div class="container marginTop20">
+                    <div class="col-md-3"></div>
+                    <div class="input-group col-md-6">
+                        <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-ibisrnd btn-lg" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
                             </button>
-                            </td>
-                            </tr>
-                        ';
+                        </span>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="container marginTop20">
+                    <div class="col-md-12">
+
+                        <?php
+                        $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            $Achternaam[] = $row[0];
+                            $Straatnaam1[] = $row[1];
+                            $Huisnummer1[] = $row[2];
+                            $Straatnaam2[] = $row[3];
+                            $Huisnummer2[] = $row[4];
+                            $Antwoordtekst[] = $row[5];
+                            $GeboorteDag[] = $row[6];
+                            $email[] = $row[7];
+                            $Gebruikersnaam[] = $row[8];
+                            $Land[] = $row[9];
+                            $Plaatsnaam[] = $row[10];
+                            $Postcode[] = $row[11];
+                            $Voornaam[] = $row[12];
+                            $Vraag[] = $row[13];
+                            $Wachtwoord[] = $row[14];
+                            $Verkoper[] = $row[15];
                         }
                         ?>
-                        </tbody>
-                    </table>
-                    <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Gebruikersnaam</th>
+                                <th>Voornaam</th>
+                                <th>Achternaam</th>
+                                <th>Geboortedatum</th>
+                                <th>Email</th>
+                                <th>Verwijderen</th>
+                                <th>Aanpassen</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            if (!empty($Gebruikersnaam)) {
+
+//                                Pagination
+                                $sql = mssql_query('SELECT * FROM Gebruiker ORDER BY id OFFSET 10 ROWS 
+FETCH NEXT 10 ROWS ONLY;');
+                                $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+
+                                for ($i = 0; $i < 5; $i++) {
+                                    echo '
+                            
+                        <div class="clickable=row">        
+                            <tr>                            
+                                <td class="username">
+                                    <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
+                                </td>           
+                                <td class="firstname">
+                                    <p class="textDarkGray">' . $Voornaam[$i] . '</p>
+                                </td> 
+                                <td class="surname">
+                                    <p class="textDarkGray">' . $Achternaam[$i] . '</p>
+                                </td> 
+                                <td class="dateofbirth">
+                                    <p class="textDarkGray">' . $GeboorteDag[$i] . '</p>
+                                </td> 
+                                <td class="email">
+                                    <p class="textDarkGray">' . $email[$i] . '</p>
+                                </td> 
+                                <td class="delete"><label><input type="checkbox" value="" name="checkbox[]" id="delete"></label></td>
+                                <td>
+                                <a href="adminprofiel.php">            
+                                    <button type="submit" class="btn btn-ibisrnd">
+                                        <i class="glyphicon glyphicon-wrench"></i>
+                                    </button>
+                                </a>
+                                <!-- Button trigger modal -->   
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                  Launch demo modal
+                                </button>
+                                </td>                            
+                            </tr>                                                 
+                        </div>
+                            
+                        ';
+                                }
+                            } else {
+                                echo 'Kan gebruiker niet ophalen.';
+
+                            }
+
+                            ?>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Verwijder geselecteerde
+                            gebruikers
+                        </button>
+                        <nav aria-label="Page navigation example" align="center">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--        Veilingen-->
-        <!--        <div class="tab-pane fade " id="item2" role="tabpanel">-->
-        <!--            <div class="container marginTop20 ">-->
-        <!--                <div class="col-md-12">-->
-        <!--                    <h1 class="textGreen" align="center">Adminpanel - Veilingen</h1>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="container marginTop20">-->
-        <!--                <div class="">-->
-        <!--                    --><?php
-        //                    $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
-        //                    $stmt = $db->prepare($sql);
-        //                    $stmt->execute();
-        //                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-        //                        $Titel[] = $row[0];
-        //                        $Verzendkosten[] = $row[1];
-        //                        $Verkoopprijs[] = $row[2];
-        //                        $Verkoper[] = $row[3];
-        //                        $Koper[] = $row[4];
-        //                        $Voorwerpnummer[] = $row[5];
-        //                    }
-        //                    ?>
-        <!--                    <table class="table table-striped">-->
-        <!--                        <thead>-->
-        <!--                        <tr>-->
-        <!---->
-        <!--                            <th>Titel</th>-->
-        <!--                            <th>Verzendkosten</th>-->
-        <!--                            <th>Verkoopprijs</th>-->
-        <!--                            <th>Verkoper</th>-->
-        <!--                            <th>Gewonnen door</th>-->
-        <!--                            <th>Voorwerpnummer</th>-->
-        <!--                            <th>Verwijderen</th>-->
-        <!--                            <th>Aanpassen</th>-->
-        <!--                        </tr>-->
-        <!--                        </thead>-->
-        <!--                        <tbody>-->
-        <!--                        --><?php
-        //                        for ($i = 0; $i < count($Voorwerpnummer); $i++) {
-        //                            echo '
-        //                            <tr class="backgroundLightGrey">
-        //
-        //                            <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
-        //                                <p class="textDarkGray">' . $Titel[$i] . '</p>
-        //                            </td></a>
-        //
-        //                            <td>
-        //                                <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
-        //                            </td>
-        //                            <td>
-        //                                <p class="textDarkGray">€' . $Verkoopprijs[$i] . '</p>
-        //                            </td>
-        //                            <td>
-        //                                <p class="textDarkGray">' . $Verkoper[$i] . '</p>
-        //                            </td>
-        //                            <td>
-        //                                <p class="textDarkGray">' . $Koper[$i] . '</p>
-        //                            </td>
-        //                                                            <td><p class="textDarkGray">' . $Voorwerpnummer[$i] . '</p></td>
-        //
-        //                                                        <td><label><input type="checkbox" value=""></label></td>
-        //                            <td>                        <button type="submit" class="btn btn-ibisrnd">
-        //                                <i class="glyphicon glyphicon-wrench"></i>
-        //                            </button>
-        //                            </td>
-        //                            </tr>
-        //
-        //                        ';
-        //                        }
-        //                        ?>
-        <!--                        </tbody>-->
-        <!--                    </table>-->
-        <!--                    <button type="button" class="btn btn-ibisrnd btn-lg" align="center">Uitvoeren</button>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container marginTop20">
+            <div class="tab-pane" id="item2" role="tabpanel">
+                <div class="container marginTop20">
+                    <div class="col-md-12 username">
+                        <?php
+                        $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                            $Titel[] = $row[0];
+                            $Verzendkosten[] = $row[1];
+                            $Verkoopprijs[] = $row[2];
+                            $Verkoper[] = $row[3];
+                            $Koper[] = $row[4];
+                            $Voorwerpnummer[] = $row[5];
+                        }
+                        ?>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+
+                                <th>Titel</th>
+                                <th>Verzendkosten</th>
+                                <th>Verkoopprijs</th>
+                                <th>Verkoper</th>
+                                <th>Gewonnen door</th>
+                                <th>Voorwerpnummer</th>
+                                <th>Verwijderen</th>
+                                <th>Aanpassen</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            if (!empty($email)) {
+                                for ($i = 0; $i < 5; $i++) {
+                                    echo '
+                                        <tr class="backgroundLightGrey">
+            
+                                        <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
+                                            <p class="textDarkGray">' . $Titel[$i] . '</p>
+                                        </td></a>
+            
+                                        <td>
+                                            <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
+                                        </td>
+                                        <td>
+                                            <p class="textDarkGray">€' . $Verkoopprijs[$i] . '</p>
+                                        </td>
+                                        <td>
+                                            <p class="textDarkGray">' . $Verkoper[$i] . '</p>
+                                        </td>
+                                        <td>
+                                            <p class="textDarkGray">' . $Koper[$i] . '</p>
+                                        </td>
+                                                                        <td><p class="textDarkGray">' . $Voorwerpnummer[$i] . '</p></td>
+            
+                                                                    <td><label><input type="checkbox" value=""></label></td>
+                                        <td>                        <button type="submit" class="btn btn-ibisrnd">
+                                            <i class="glyphicon glyphicon-wrench"></i>
+                                        </button>
+                                        </td>
+                                        </tr>
+            
+                                    ';
+                                }
+                            } else {
+                                echo 'Er zijn geen biedingen gedaan.';
+                            }
+
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 </body>
