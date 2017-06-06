@@ -3,7 +3,6 @@ session_start();
 include 'includes/header.php';
 include 'includes/catbar.php';
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,15 +18,14 @@ include 'includes/catbar.php';
 </head>
 <body>
 <div class="col-md-12">
-    <h2>Lees feedback:</h2>
-    <p>
-        <?php
-            echo '<a href="leesFeedback.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lees Feedback</a>';
-        ?>
-    </p>
+    <?php
+    $sql = "SELECT Gebruikersnaam FROM Gebruiker INNER JOIN Voorwerp ON Gebruikersnaam = Koper INNER JOIN Feedback ON Voorwerpnummer = Feedback.Voorwerp WHERE soortGebruiker = 'Koper';";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $result = $row[0];
+    }
+    echo $result;
+    ?>
 </div>
 </body>
-
-
-
-

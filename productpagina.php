@@ -58,7 +58,7 @@ if (isset($_GET['product'])) {
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $fotos[] = $row[0];
     }
-    if(!isset($fotos) || $fotos[0] == ''){
+    if (!isset($fotos) || $fotos[0] == '') {
         $fotos[0] = $VoorwerpCover;
     }
 }
@@ -88,17 +88,17 @@ if (isset($_GET['product'])) {
             </ol>
             <!-- Wrapper for Slides -->
             <div class="carousel-inner ">
-                    <?php
-                    for ($i = 0; $i < count($fotos); $i++) {
-                        if ($i == 0) {
-                            echo '<div class="item active">';
-                        } else {
-                            echo '<div class="item">';
-                        }
-                        echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
+                <?php
+                for ($i = 0; $i < count($fotos); $i++) {
+                    if ($i == 0) {
+                        echo '<div class="item active">';
+                    } else {
+                        echo '<div class="item">';
                     }
-                    echo 'done vullen';
-                    ?>
+                    echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
+                }
+                echo 'done vullen';
+                ?>
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="icon-prev"></span>
@@ -114,7 +114,111 @@ if (isset($_GET['product'])) {
 
             <?php
             if ($VeilingGesloten == 1){
+                if ($Verkoper == $_SESSION['username']) {
+                    $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Koper'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $resultaat = $row[0];
+                    }
+                    if (empty($resultaat)) {
+                        $gebruikersnaam = $_SESSION['username'];
+                        if (empty($_POST['submitFeedbackOpKoper'])) {
+                            $sql = "SELECT Koper FROM Voorwerp Where VeilingGesloten = 1 AND Voorwerpnummer = $Voorwerpnummer";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                $koper = $row[0];
+                            }
 
+                            echo '
+                        <form action="" method="post">
+                        <div class="form-group">
+                        <h2>Geef feedback op de koper</h2>
+                        <label for="Feedbacksoort">Feedbacksoort</label>
+                        <select class="form-control" id="Feedbacksoort" name="Feedbacksoort">
+                        <option>Positief</option>
+                        <option>Negatief</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                        <label for="Commentaar">Commentaar</label>
+                        <textarea class="form-control" id="Commentaar" name="commentaar" rows="3" required></textarea>
+                        </div>
+                        <input type="hidden" value=' . $koper . ' name="koper">
+                        <input type="hidden" value="test" name="geefFeedbackOpKoper">
+                        <div class="form-group">
+                        <input type="submit" value="Geef feedback op deze koper" class="btn-ibis btn marginTop20" name="submitFeedbackOpKoper">
+                        </div>
+                        </form>
+                        ';
+                        }
+                        if (isset($_POST['submitFeedbackOpKoper'])) {
+                            $commentaar = $_POST['commentaar'];
+                            $feedbacksoort = $_POST['Feedbacksoort'];
+                            $soortGebruiker = 'Koper';
+                            $sql = "INSERT INTO feedback (Commentaar, Feedbacksoort, SoortGebruiker, Voorwerp) VALUES ('$commentaar', '$feedbacksoort', '$soortGebruiker', $Voorwerpnummer)";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            echo '<p>Bedankt voor het geven van feedback</p>';
+                        }
+                    } else {
+                        echo '<p>U heeft al feedback gegeven</p>';
+                    }
+                }
+                if ($Koper == $_SESSION['username']) {
+                    $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Verkoper'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute();
+                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                        $resultaat = $row[0];
+                    }
+                    if (empty($resultaat)) {
+                        $gebruikersnaam = $_SESSION['username'];
+                        if (empty($_POST['submitFeedbackOpVerkoper'])) {
+                            $sql = "SELECT Verkoper FROM Voorwerp Where VeilingGesloten = 1 AND Voorwerpnummer = $Voorwerpnummer";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                $verkoper = $row[0];
+                            }
+
+                            echo '
+                        <form action="" method="post">
+                        <div class="form-group">
+                        <h2>Geef feedback op de koper</h2>
+                        <label for="Feedbacksoort">Feedbacksoort</label>
+                        <select class="form-control" id="Feedbacksoort" name="Feedbacksoort">
+                        <option>Positief</option>
+                        <option>Negatief</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                        <label for="Commentaar">Commentaar</label>
+                        <textarea class="form-control" id="Commentaar" name="commentaar" rows="3" required></textarea>
+                        </div>
+                        <input type="hidden" value=' . $verkoper . ' name="koper">
+                        <input type="hidden" value="test" name="geefFeedbackOpKoper">
+                        <div class="form-group">
+                        <input type="submit" value="Geef feedback op deze verkoper" class="btn-ibis btn marginTop20" name="submitFeedbackOpVerkoper">
+                        </div>
+                        </form>
+                        ';
+                        }
+                        if (isset($_POST['submitFeedbackOpVerkoper'])) {
+                            $commentaar = $_POST['commentaar'];
+                            $feedbacksoort = $_POST['Feedbacksoort'];
+                            $soortGebruiker = 'Verkoper';
+                            $sql = "INSERT INTO feedback (Commentaar, Feedbacksoort, SoortGebruiker, Voorwerp) VALUES ('$commentaar', '$feedbacksoort', '$soortGebruiker', $Voorwerpnummer)";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            echo '<p>Bedankt voor het geven van feedback</p>';
+                        }
+                    }
+                    else{
+                        echo '<p>U heeft al feedback gegeven</p>';
+                    }
+                }
                 echo '<h2>Deze veiling is gesloten</h2>';
                 echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
                 echo '<a href="registreren.php">Klik hier om te registreren.</a>';
@@ -146,10 +250,12 @@ if (isset($_GET['product'])) {
                     }
                     //het schrijven van de email zelf
                     $headers = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
+                    $headers .= 'From: EenmaalAndermaal Veiling
+            <EenmaalAndermaal
+            @iConcepts.nl>' . "\r\n";
                     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
                     $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
-                    $bericht = 'Van harte gefeliciteerd met het winnen van  ' . $Titel . '' . "\r\n";
+                    $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel . '' . "\r\n";
                     $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
                     $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
                     mail($email, $onderwerp, $bericht, $headers);
@@ -250,14 +356,14 @@ if (isset($_GET['product'])) {
                 if (isset($_SESSION['username'])) {
                     ?>
                     <form action="bodwordtgeplaatst.php" method="post">
-                    <div class="form-group">
-                        <div class="col-xs-5">
-                            <?php echo '<input type="number" step=0.01 name="bod" min=' . $minimumBod . ' max="999999.99" class="form-control" Placeholder=' . $voorbeeldbod . '>'; ?>
+                        <div class="form-group">
+                            <div class="col-xs-5">
+                                <?php echo '<input type="number" step=0.01 name="bod" min=' . $minimumBod . ' max="999999.99" class="form-control" Placeholder=' . $voorbeeldbod . '>'; ?>
+                            </div>
+                            <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
+                            <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
+                            <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
                         </div>
-                        <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
-                        <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
-                        <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
-                    </div>
                     </form>
                 <?php } else {
                     echo '<h3>U bent nog niet ingelogd.</h3> ';
