@@ -281,39 +281,42 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $Looptijd = $row[0];
-                        $LooptijdbeginDag = $row[1];
-                        $LooptijdbeginTijdstip = $row[2];
-                        $LooptijdeindeDag = $row[3];
-                        $LooptijdeindeTijdstip = $row[4];
-                        $Startprijs = $row[5];
-                        $Verkoper = $row[6];
-                        $Koper = $row[7];
-                        $Verzendkosten = $row[8];
-                        $Verkoopprijs = $row[9];
-                        $Beschrijving = $row[10];
-                        $Betalingswijze = $row[11];
-                        $Betalingsinstructie = $row[1];
-                        $Land = $row[13];
-                        $Plaatsnaam = $row[14];
-                        $Titel = $row[15];
-                        $Verzendinstructies = $row[16];
-                        $Voorwerpnummer = $row[17];
-                        $VeilingGesloten = $row[18];
-                        $VoorwerpCover = $row[19];
+                        $Looptijd[] = $row[0];
+                        $LooptijdbeginDag[] = $row[1];
+                        $LooptijdbeginTijdstip[] = $row[2];
+                        $LooptijdeindeDag[] = $row[3];
+                        $LooptijdeindeTijdstip[] = $row[4];
+                        $Startprijs[] = $row[5];
+                        $Verkoper[] = $row[6];
+                        $Koper[] = $row[7];
+                        $Verzendkosten[] = $row[8];
+                        $Verkoopprijs[] = $row[9];
+                        $Beschrijving[] = $row[10];
+                        $Betalingswijze[] = $row[11];
+                        $Betalingsinstructie[] = $row[1];
+                        $Land[] = $row[13];
+                        $Plaatsnaam[] = $row[14];
+                        $Titel[] = $row[15];
+                        $Verzendinstructies[] = $row[16];
+                        $Voorwerpnummer[] = $row[17];
+                        $VeilingGesloten[] = $row[18];
+                        $VoorwerpCover[] = $row[19];
 
                     }
                     if (!empty($Titel)) {
+                        echo'<p>Let op: veilingen zijn alleen bij te werken als er nog geen bod op is.</p>';
                         for ($i = 0; $i < count($Titel); $i++) {
                             echo '
-                        <a href="productpagina.php?product=' . $Voorwerpnummer . '">
+                        <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
                             <div class="col-md-3 itemBox roundborder " align="center">
-                                <img class="imgStyle roundborder" src="' . $VoorwerpCover . '"/>
-                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer . '">
-                                ' . $Titel . '</a></h4>
+                                <img class="imgStyle roundborder" src="' . $VoorwerpCover[$i] . '"/>
+                                <h4><a class="textDarkGray" href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
+                                ' . $Titel[$i] . '</a></h4>
                                 <div class="description">
                                 </div>
-                                <a href="productpagina.php?product=' . $Voorwerpnummer . '" class="btn btn-default crete" role="button">Bieden</a>
+                                <form action="wijzigveiling.php" method="POST"> 
+                                    <button class="btn btn-ibis crete" type="submit" id="voorwerp" value="' . $Voorwerpnummer[$i] . '" name="voorwerp">Wijzig veiling</button>
+                                </form>
                             </div>
                         </a>
                     ';

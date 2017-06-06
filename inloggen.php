@@ -67,7 +67,7 @@ connectToDatabase();
                             if (!empty($gebruikersnaam) && !empty($pwd)) {
                                 if (password_verify($pwd, $controleWachtwoord)) {
                                     $_SESSION['username'] = $gebruikersnaam;
-                                    $error = 'Welkom ' . $_SESSION['username'];
+                                    $error = 'U bent al ingelogd! ';
                                     header("Location: index.php");
                                 } else if (!password_verify($pwd, $controleWachtwoord)) {
                                     $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
