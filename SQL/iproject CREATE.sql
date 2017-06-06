@@ -375,7 +375,7 @@ AS
         ROLLBACK
       END
   END
-
+SELECT G.Gebruikersnaam, V.Gebruiker FROM iproject11.dbo.Gebruiker G INNER JOIN iproject11.dbo.Verkoper V ON G.Gebruikersnaam = V.Gebruiker
 
 
 /* DIT IS VOOR DROPPEN VAN DE DATABASE

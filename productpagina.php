@@ -17,6 +17,7 @@
 <body>
 <?php
 session_start();
+
 include 'includes/header.php';
 include 'includes/catbar.php';
 
@@ -24,6 +25,7 @@ ini_set('display_errors', 1);
 require_once('includes/functies.php');
 
 connectToDatabase();
+emailCheck();
 
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
@@ -88,17 +90,17 @@ if (isset($_GET['product'])) {
             </ol>
             <!-- Wrapper for Slides -->
             <div class="carousel-inner ">
-                <?php
-                for ($i = 0; $i < count($fotos); $i++) {
-                    if ($i == 0) {
-                        echo '<div class="item active">';
-                    } else {
-                        echo '<div class="item">';
+                    <?php
+                    for ($i = 0; $i < count($fotos); $i++) {
+                        if ($i == 0) {
+                            echo '<div class="item active">';
+                        } else {
+                            echo '<div class="item">';
+                        }
+                        echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
                     }
-                    echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
-                }
-                echo 'done vullen';
-                ?>
+
+                    ?>
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="icon-prev"></span>
@@ -234,21 +236,21 @@ if (isset($_GET['product'])) {
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                } else {
+                } else if(isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
 
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
                     //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
-                    //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
+                    //eerst wat informatie uit de query halen van diegene die het bod heeft gewonnen
                     $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         $email = $row[0];
                     }
-                    //het schrijven van de email zelf
+                    //het schrijven van de email
                     $headers = 'MIME-Version: 1.0' . "\r\n";
                     $headers .= 'From: EenmaalAndermaal Veiling
             <EenmaalAndermaal
@@ -259,6 +261,8 @@ if (isset($_GET['product'])) {
                     $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
                     $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
                     mail($email, $onderwerp, $bericht, $headers);
+
+                    $emailVerzonden[$product] = 1;
                 }
             }
             else{
@@ -303,10 +307,10 @@ if (isset($_GET['product'])) {
                         +minutes + " minuten en " + seconds + " seconden om te bieden!";
 
                     // If the count down is finished, write some text
-                    if (verschil < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
-                    }
+//                    if (verschil < 0) {
+//                        clearInterval(x);
+//                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
+//                    }
                 }, 1);
             </script>
             </p>
