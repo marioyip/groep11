@@ -17,6 +17,7 @@
 <body>
 <?php
 session_start();
+
 include 'includes/header.php';
 include 'includes/catbar.php';
 
@@ -97,7 +98,6 @@ if (isset($_GET['product'])) {
                         }
                         echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
                     }
-                    echo 'done vullen';
                     ?>
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -197,10 +197,10 @@ if (isset($_GET['product'])) {
                         +minutes + " minuten en " + seconds + " seconden om te bieden!";
 
                     // If the count down is finished, write some text
-                    if (verschil < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
-                    }
+//                    if (verschil < 0) {
+//                        clearInterval(x);
+//                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
+//                    }
                 }, 1);
             </script>
             </p>
