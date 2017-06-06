@@ -118,7 +118,6 @@ if (isset($_GET['product'])) {
 
                 echo '<h2>Deze veiling is gesloten</h2>';
                 echo '<p>Kijk rond op de website en vindt de veiling die bij <b>JOU </b>past!</p>';
-                echo '<a href="registreren.php">Klik hier om te registreren.</a>';
                 $sql = "select TOP 1 Gebruiker from Bod where voorwerp = $Voorwerpnummer Order by bodbedrag DESC ";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -200,10 +199,13 @@ if (isset($_GET['product'])) {
                         +minutes + " minuten en " + seconds + " seconden om te bieden!";
 
                     // If the count down is finished, write some text
-//                    if (verschil < 0) {
-//                        clearInterval(x);
-//                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
-//                    }
+                  if (verschil <= 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
+                    }
+                  else {
+                      document.getElementById("demo").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
+                  }
                 }, 1);
             </script>
             </p>

@@ -82,9 +82,11 @@ if (isset($_SESSION['username'])) {
                 <div class="form-group">
                     <label for="looptijd-voorwerp">Looptijd</label>
                     <select class="form-control" id="looptijd-voorwerp" name="looptijd" required>
+                        <option value="1">1 dag</option>
                         <option value="3">3 dagen</option>
                         <option value="5">5 dagen</option>
                         <option value="7">7 dagen</option>
+                        <option value="10">10 dagen</option>
                     </select>
                 </div>
                 <div class="form-group">

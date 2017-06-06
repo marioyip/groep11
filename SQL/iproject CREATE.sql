@@ -58,7 +58,7 @@ AS
   END
 GO
 
--- SELECT * FROM Nieuwsbrief
+
 
 IF NOT exists(SELECT *
               FROM sysobjects
@@ -323,7 +323,7 @@ AS
                     ROLLBACK
                   END
               END
-          ENDe
+          END
         ELSE
           BEGIN
             RAISERROR ('Bod is kleiner dan of gelijk aan huidige hoogste bod',16,1);
@@ -375,7 +375,7 @@ AS
         ROLLBACK
       END
   END
-SELECT G.Gebruikersnaam, V.Gebruiker FROM iproject11.dbo.Gebruiker G INNER JOIN iproject11.dbo.Verkoper V ON G.Gebruikersnaam = V.Gebruiker
+
 
 
 /* DIT IS VOOR DROPPEN VAN DE DATABASE
