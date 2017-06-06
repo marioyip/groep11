@@ -77,7 +77,7 @@ require_once 'includes/functies.php';
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="plaats bieding" name="submit">
+                    <input type="submit" value="Plaats veiling" name="submit">
                 </div>
             </form>
         </div>
