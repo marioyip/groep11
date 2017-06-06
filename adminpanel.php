@@ -96,10 +96,10 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             if (!empty($Gebruikersnaam)) {
 
 //                                Pagination
-                                $sql = mssql_query('SELECT * FROM Gebruiker ORDER BY id OFFSET 10 ROWS 
+                                $sql = (' SELECT * FROM Gebruiker ORDER BY Gebruikersnaam OFFSET 10 ROWS
 FETCH NEXT 10 ROWS ONLY;');
                                 $stmt = $db->prepare($sql);
-                                        $stmt->execute();
+                                $stmt->execute();
 
                                 for ($i = 0; $i < 5; $i++) {
                                     echo '
@@ -132,6 +132,27 @@ FETCH NEXT 10 ROWS ONLY;');
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                   Launch demo modal
                                 </button>
+                                        <!-- Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </td>                            
                             </tr>                                                 
                         </div>
@@ -150,11 +171,40 @@ FETCH NEXT 10 ROWS ONLY;');
                             gebruikers
                         </button>
                         <nav aria-label="Page navigation example" align="center">
+                            <?php
+                            //Userinput
+                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                            $perpage = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5;
+                            $pages = ceil($page / $perpage);
+
+                            // Positioning
+                            $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
+
+
+                            //Query
+                            $sql = (' SELECT * FROM Gebruiker OFFSET 10 ROWS;');
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            //var_dump($stmt);
+
+                            //Pages
+                            //$total = $db ->query("SELECT FOUND_ROWS() as total") ->fetch()['total'];
+                            //var_dump($total -fetch());
+                            ?>
+                            <?php foreach ($stmt as $stmt): ?>
+                                <div class="backgroundLightGrey container">
+                                    <p><?php echo $stmt['Voornaam'];  ?></p>
+                                    <p><?php echo $stmt['Achternaam'];  ?></p>
+                                </div>
+                            <?php endforeach; ?>
+
                             <ul class="pagination">
                                 <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <?php for ($x = 1; $x <= $pages; $x++): ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $x;?>&per-page=<?php echo $perpage;?>"><?php echo $x;?></a></li>
+                                <?php endfor; ?>
                                 <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
                             </ul>
                         </nav>
@@ -162,27 +212,7 @@ FETCH NEXT 10 ROWS ONLY;');
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="container marginTop20">
             <div class="tab-pane" id="item2" role="tabpanel">
                 <div class="container marginTop20">
@@ -200,7 +230,7 @@ FETCH NEXT 10 ROWS ONLY;');
                             $Voorwerpnummer[] = $row[5];
                         }
                         ?>
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                             <tr>
 
