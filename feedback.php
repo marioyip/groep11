@@ -18,90 +18,42 @@ include 'includes/catbar.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="marginTop20 col-md-8">
-    <h1>Feedback geven:</h1>
-    <?php
-    $gebruikersnaam = $_SESSION['username'];
-
-    //het feedback geven op de koper
-    $sql = "SELECT Koper, Titel FROM Voorwerp Where VeilingGesloten = 1 AND Verkoper = '$gebruikersnaam';";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-        $Koper[] = $row[0];
-        $Titel[] = $row[1];
-    }
-    if (!empty($Koper) && empty($_POST['geefFeedbackOpKoper'])) {
-        echo '<h2>Geef feedback op de koper van jouw succesvolle bieding:</h2>';
-        for ($i = 0; $i < count($Koper); $i++) {
-            echo '
-            
-            <form action="" method="post">
-            <div class="form-group">
-            <label for="kopers">Kopers</label>
-            <select class="form-control" id="kopers" name="koper">
-            <option>' . $Koper[$i] . '</option>
-            </select>
-            <label for="voorwerptitel">Voorwerp:</label>
-            <select class="form-control" id="voorwerptitel" name="voorwerptitel">
-            <option>' . $Titel[$i] . '</option>
-            </select>
-            <input type="submit" value="Geef feedback op deze gebruiker" class="btn-ibis btn marginTop20" name="geefFeedbackOpKoper">
-            </div>
-            </form>
-            
-            ';
-        }
-    }
-    if (isset($_POST['geefFeedbackOpKoper']) && empty($_POST['submit'])) {
-        $koper = $_POST['koper'];
-        $voorwerptitel = $_POST['voorwerptitel'];
-        echo '
-            <form action="" method="post">
-            <div class="form-group">
-            <label for="Feedbacksoort">Feedbacksoort</label>
-            <select class="form-control" id="Feedbacksoort" name="Feedbacksoort">
-            <option>Positief</option>
-            <option>Negatief</option>
-            </select>
-            </div>
-            <div class="form-group">
-            <label for="Commentaar">Commentaar</label>
-            <textarea class="form-control" id="Commentaar" name="commentaar" rows="3" required></textarea>
-            </div>
-            <input type="hidden" value=' . $koper . ' name="koper">
-            <input type="hidden" value="test" name="geefFeedbackOpKoper">
-            <input type="hidden" value=' . $voorwerptitel . ' name="voorwerptitel">
-            <div class="form-group">
-            <input type="submit" value="Geef feedback op deze gebruiker" class="btn-ibis btn marginTop20" name="submit">
-            </div>
-            </form>
-            ';
-    }
-    if (isset($_POST['submit'])) {
-        $voorwerptitel = $_POST['voorwerptitel'];
-        echo $voorwerptitel;
-        $koper = $_POST['koper'];
-        $commentaar = $_POST['commentaar'];
-        $feedbacksoort = $_POST['Feedbacksoort'];
-        $soortGebruiker = 'Koper';
-
-        $sql = "SELECT Voorwerpnummer FROM Voorwerp Where VeilingGesloten = 1 AND Verkoper = '$gebruikersnaam' AND Titel LIKE '$voorwerptitel%';";
+<div class="col-md-12">
+    <h2>Geef feedback:</h2>
+    <p>
+        <?php
+        $gebruikersnaam = $_SESSION['username'];
+        $sql = "SELECT Koper FROM Voorwerp Where VeilingGesloten = 1 AND Verkoper = '$gebruikersnaam';";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-            $voorwerpnummer = $row[0];
+            $Koper[] = $row[0];
         }
+        if (!empty($Koper)) {
+            echo '<a href="feedbackKoper.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Geef feedback op koper</a>';
+        } else {
+            echo '<a href="feedbackKoper.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Geef feedback op koper</a>';
+        }
+        echo '</p><p>';
 
-        $sql = "INSERT INTO feedback (Commentaar, Feedbacksoort, SoortGebruiker, Voorwerp) VALUES ('$commentaar', '$feedbacksoort', '$soortGebruiker', $voorwerpnummer)";
+        //verkoper
+        $gebruikersnaam = $_SESSION['username'];
+        $sql = "SELECT Verkoper FROM Voorwerp Where VeilingGesloten = 1 AND Koper = '$gebruikersnaam';";
         $stmt = $db->prepare($sql);
         $stmt->execute();
-
-    }
-    ?>
-
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+            $Verkoper[] = $row[0];
+        }
+        if (!empty($Verkoper)) {
+            echo '<a href="feedbackVerkoper.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Geef feedback op verkoper</a>';
+        } else {
+            echo '<a href="feedbackVerkoper.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Geef feedback op verkoper</a>';
+        }
+        ?>
+    </p>
 </div>
 </body>
-<?php
-include 'includes/footer.php';
-?>
+
+
+
+
