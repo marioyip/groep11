@@ -16,7 +16,10 @@
                             <a class="textWhite sanchez" href="./registreren.php">Registreren</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="./inloggen.php">Mijn biedprofiel</a>
+                            <a class="textWhite sanchez" href="./mijnprofiel.php">Mijn biedprofiel</a>
+                        </li>
+                        <li>
+                            <a class="textWhite sanchez" href="./feedback.php">Feedback</a>
                         </li>
                     </ul>
                 </div>

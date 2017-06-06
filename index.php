@@ -132,7 +132,7 @@ function getTijd($tijd, $pos)
     <div class="container">
         <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
-        $sql = "SELECT TOP 4 * FROM Voorwerp ORDER BY LooptijdeindeDag ASC, LooptijdeindeTijdstip ASC";
+        $sql = "SELECT TOP 4 * FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY LooptijdeindeDag ASC, LooptijdeindeTijdstip ASC";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
