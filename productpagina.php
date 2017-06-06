@@ -24,6 +24,7 @@ ini_set('display_errors', 1);
 require_once('includes/functies.php');
 
 connectToDatabase();
+emailCheck();
 
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
@@ -130,21 +131,21 @@ if (isset($_GET['product'])) {
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                } else {
+                } else if(isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
 
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
 
                     //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
-                    //eerst wat informatie uit de queire halen van diegene die het bod heeft gewonnen
+                    //eerst wat informatie uit de query halen van diegene die het bod heeft gewonnen
                     $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
                     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                         $email = $row[0];
                     }
-                    //het schrijven van de email zelf
+                    //het schrijven van de email
                     $headers = 'MIME-Version: 1.0' . "\r\n";
                     $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
                     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -153,6 +154,8 @@ if (isset($_GET['product'])) {
                     $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
                     $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
                     mail($email, $onderwerp, $bericht, $headers);
+
+                    $emailVerzonden[$product] = 1;
                 }
             }
             else{

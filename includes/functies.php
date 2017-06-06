@@ -26,6 +26,12 @@ function connectToDatabatch() //functie om aan de database te kunnen verbinden
     $local = new PDO ("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", "$username", "$pw");//verbinding maken met de database
 }
 
+function emailCheck()
+{
+    global $emailVerzonden;
+    $emailVerzonden = array();
+}
+
 function getUser($gebruikersnaam)
 {
     try {
