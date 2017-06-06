@@ -156,8 +156,8 @@ if (isset($_GET['product'])) {
                         ';
                         }
                         if (isset($_POST['submitFeedbackOpKoper'])) {
-                            $commentaar = $_POST['commentaar'];
-                            $feedbacksoort = $_POST['Feedbacksoort'];
+                            $commentaar = strip_tags($_POST['commentaar']);
+                            $feedbacksoort = strip_tags($_POST['Feedbacksoort']);
                             $soortGebruiker = 'Koper';
                             $sql = "INSERT INTO feedback (Commentaar, Feedbacksoort, SoortGebruiker, Voorwerp) VALUES ('$commentaar', '$feedbacksoort', '$soortGebruiker', $Voorwerpnummer)";
                             $stmt = $db->prepare($sql);
@@ -208,8 +208,8 @@ if (isset($_GET['product'])) {
                         ';
                         }
                         if (isset($_POST['submitFeedbackOpVerkoper'])) {
-                            $commentaar = $_POST['commentaar'];
-                            $feedbacksoort = $_POST['Feedbacksoort'];
+                            $commentaar = strip_tags($_POST['commentaar']);
+                            $feedbacksoort = strip_tags($_POST['Feedbacksoort']);
                             $soortGebruiker = 'Verkoper';
                             $sql = "INSERT INTO feedback (Commentaar, Feedbacksoort, SoortGebruiker, Voorwerp) VALUES ('$commentaar', '$feedbacksoort', '$soortGebruiker', $Voorwerpnummer)";
                             $stmt = $db->prepare($sql);
