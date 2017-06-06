@@ -16,7 +16,10 @@
                             <a class="textWhite sanchez" href="./registreren.php">Registreren</a>
                         </li>
                         <li>
-                            <a class="textWhite sanchez" href="./inloggen.php">Mijn biedprofiel</a>
+                            <a class="textWhite sanchez" href="./mijnprofiel.php">Mijn biedprofiel</a>
+                        </li>
+                        <li>
+                            <a class="textWhite sanchez" href="./feedback.php">Feedback</a>
                         </li>
                     </ul>
                 </div>
@@ -96,6 +99,8 @@
     ini_set('display_errors', 1);
 
     if (isset($_POST['submit_form']) && $_POST['submit_form'] != '') { //requirements om in te kunnen schrijven
+        $_POST['name'] = strip_tags($_POST['name']);
+        $_POST['email'] = strip_tags($_POST['email']);
         $name = $_POST['name'];
         $email = $_POST['email'];
 

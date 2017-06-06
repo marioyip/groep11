@@ -177,8 +177,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             </form>
                             <?php
                             if (isset($_POST['verkoperWorden'])) {
-                                $bank = $_POST['Bank'];
-                                $rekeningnummer = $_POST['Rekeningnummer'];
+                                $bank = strip_tags($_POST['Bank']);
+                                $rekeningnummer = strip_tags($_POST['Rekeningnummer']);
                                 //het inserten van de informatie tabel verkoper en de tabel voorwerp
                                 if (!empty($_POST['Post'])) {
                                     $optie = $_POST['Post'];
@@ -188,7 +188,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                     $stmt->execute();
                                 } else {
                                     $optie = $_POST['Creditcard'];
-                                    $creditcardnummer = $_POST['creditcardnummer'];
+                                    $creditcardnummer = strip_tags($_POST['creditcardnummer']);
                                     $sql = "UPDATE Gebruiker SET Verkoper = 1 WHERE Gebruikersnaam = '$gebruikersnaam';
                                             INSERT INTO Verkoper (Bank, ControleOptie, Gebruiker, Bankrekening, Creditcard) VALUES('$bank', '$optie', '$gebruikersnaam', '$rekeningnummer', '$creditcardnummer');"; //De query maken
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -199,7 +199,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                 header("Location: mijnprofiel.php");
                             }
                         } else {
-                            echo 'U bent al een verkoper';
+                            echo '<p>U bent al een verkoper!</p>';
                         }
                         ?>
                     </div>
@@ -242,9 +242,9 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <?php
                     //PHP gedoe van het wachtwoord wijzigen
                     if (isset($_POST['huidigWachtwoord']) && isset($_POST['nieuwWachtwoord1']) && isset($_POST['nieuwWachtwoord2']) && $_POST['huidigWachtwoord'] != '') {
-                        $huidigWachtwoord = $_POST['huidigWachtwoord'];
-                        $nieuwWachtwoord1 = $_POST['nieuwWachtwoord1'];
-                        $nieuwWachtwoord2 = $_POST['nieuwWachtwoord2'];
+                        $huidigWachtwoord = strip_tags($_POST['huidigWachtwoord']);
+                        $nieuwWachtwoord1 = strip_tags($_POST['nieuwWachtwoord1']);
+                        $nieuwWachtwoord2 = strip_tags($_POST['nieuwWachtwoord2']);
 
 
                         $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$Gebruikersnaam'"; //De query maken
@@ -449,7 +449,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     </div>
                     <?php
                     if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] != '') {
-                        $telefoonnummer = $_POST['telefoonnummer'];
+                        $telefoonnummer = strip_tags($_POST['telefoonnummer']);
                         $sql = "INSERT INTO Gebruikerstelefoon VALUES ('$SessioncookieUsername','$telefoonnummer')";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();

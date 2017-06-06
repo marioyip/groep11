@@ -2,7 +2,7 @@
 
 require_once('includes/functies.php'); //functies.php wordt gebruikt om aan de database te kunnen verbinden
 connectToDatabase(); //deze functie verbindt de webpagina aan de database
-ini_set('display_errors',0);
+ini_set('display_errors',1);
 error_reporting(E_ALL|E_STRICT);
 ?>
 <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">

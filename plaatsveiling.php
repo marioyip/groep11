@@ -14,11 +14,22 @@
 <?php
 ob_start();
 session_start();
-if (isset($_SESSION['username'])){
-
 include 'includes/header.php';
 include 'includes/catbar.php';
 require_once 'includes/functies.php';
+connectToDatabase();
+$gebruikersnaam = $_SESSION['username'];
+//eerst wordt er gekeken of iemand al een verkoper is
+$query = "SELECT Verkoper FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+$stmt = $db->prepare($query);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+    $verkoper = $row[0];
+}
+if ($verkoper == 1) {
+
+if (isset($_SESSION['username'])) {
+
 
 ?>
 
@@ -135,11 +146,15 @@ if (isset($_POST['submit'])) {
     $_SESSION['voorwerpnummer'] = $id[0];
     ob_end_clean();
     header('Location: veilinginrubriek.php');
+
 }
 }
-//else{
-//    header('Location: index.php');
-//    die();
-//} xd
+else {
+    header('Location: index.php');
+}
+} else {
+    echo '<div class="col-md-12" align="center"><h1 class="">Je bent nog geen verkoper!</h1>';
+    echo '<br><p>Je kunt een verkoper worden door te gaan naar <a href=./mijnprofiel.php>Mijn Profiel</a></p></div>';
+}
 ob_end_flush();
 ?>

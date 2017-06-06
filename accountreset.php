@@ -51,7 +51,9 @@ if (empty($_POST['gebruikersnaam'])){
 <?php
 //als de gebruikersnaam is gezet dan wordt er de vraag gecontroleerd
 } else {
+    $_POST['gebruikersnaam'] = strip_tags($_POST['gebruikersnaam']);
     $gebruikersnaam = $_POST['gebruikersnaam'];
+
 
     $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -67,6 +69,7 @@ if (empty($_POST['gebruikersnaam'])){
     echo '<form action="" method="post">';
     echo '<div class="form-group">';
     echo '<label for="vragen">Vraag:</label>';
+    echo '<p>Na het correct beantwoorden van de beveiligingsvraag wordt er een mail verstuurd naar het e-mailadres dat is verbonden aan jouw profiel. </p>';
     echo '<select name="vraag" class="form-control2" id="vragen">';
     $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -93,6 +96,7 @@ if (empty($_POST['gebruikersnaam'])){
 }
 
 if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
+    $_POST['antwoord'] = strip_tags($_POST['antwoord']);
     $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();
@@ -120,7 +124,6 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd
         header("Location: inloggen.php");
-        //echo $code;
     } else {
         echo 'De vraag en/of het antwoord is niet juist';
     }
