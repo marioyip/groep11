@@ -18,6 +18,7 @@ include 'includes/header.php';
 include 'includes/catbar.php';
 require_once 'includes/functies.php';
 connectToDatabase();
+if (isset($_SESSION['username'])) {
 $gebruikersnaam = $_SESSION['username'];
 //eerst wordt er gekeken of iemand al een verkoper is
 $query = "SELECT Verkoper FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
@@ -27,9 +28,6 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
     $verkoper = $row[0];
 }
 if ($verkoper == 1) {
-
-if (isset($_SESSION['username'])) {
-
 
 ?>
 
@@ -82,9 +80,11 @@ if (isset($_SESSION['username'])) {
                 <div class="form-group">
                     <label for="looptijd-voorwerp">Looptijd</label>
                     <select class="form-control" id="looptijd-voorwerp" name="looptijd" required>
+                        <option value="1">1 dag</option>
                         <option value="3">3 dagen</option>
                         <option value="5">5 dagen</option>
                         <option value="7">7 dagen</option>
+                        <option value="10">10 dagen</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -150,11 +150,14 @@ if (isset($_POST['submit'])) {
 }
 }
 else {
-    header('Location: index.php');
+    echo '<div class="col-md-12" align="center"><h1 class="">Je bent nog geen verkoper of hebt nog geen account!</h1>';
+    echo '<br><p>Je kunt een verkoper worden door te gaan naar <a href=./mijnprofiel.php>Mijn Profiel</a></p>';
+    echo '<br><p>Je kunt een account aanmaken door te gaan naar <a href=./registreren.php>Registreren</a></p></div>';
 }
-} else {
-    echo '<div class="col-md-12" align="center"><h1 class="">Je bent nog geen verkoper!</h1>';
-    echo '<br><p>Je kunt een verkoper worden door te gaan naar <a href=./mijnprofiel.php>Mijn Profiel</a></p></div>';
+}
+else {
+    header('Location: index.php');
+
 }
 ob_end_flush();
 ?>
