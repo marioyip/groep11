@@ -18,13 +18,84 @@ include 'includes/catbar.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="col-md-12">
-    <h2>Lees feedback:</h2>
-    <p>
-        <?php
-            echo '<a href="leesFeedback.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lees Feedback</a>';
-        ?>
-    </p>
+<div class="container">
+    <?php
+
+    $sql = "SELECT Commentaar, Dag, Feedbacksoort, Tijdstip, Gebruiker.Gebruikersnaam FROM Feedback INNER JOIN Voorwerp ON Voorwerp = Voorwerpnummer LEFT OUTER JOIN Gebruiker ON Voorwerp.Verkoper = Gebruikersnaam WHERE SoortGebruiker = 'verkoper'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $Commentaar[] = $row[0];
+        $Dag[] = $row[1];
+        $Feedbacksoort[] = $row[2];
+        $Tijdstip[] = $row[3];
+        $Gebruikersnaam[] = $row[4];
+    }
+
+    echo '<h2>Lees wat mensen vinden van de verkopers</h2>';
+    echo '<table class="table">';
+    echo '<tr>';
+    echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
+    echo '</tr>';
+    for($i=0;$i< count($Commentaar); $i++){
+
+        if($Feedbacksoort[$i] =='Positief'){
+            $kleurtje = 'Success';
+        }
+        else{
+            $kleurtje = 'Danger';
+        }
+        echo '
+            <tr class='.$kleurtje.'>
+            <td>'.$Dag[$i].'</td>
+            <td>'.$Tijdstip[$i].'</td>
+            <td>'.$Feedbacksoort[$i].'</td>
+            <td>'.$Gebruikersnaam[$i].'</td>
+            <td>'.$Commentaar[$i].'</td>
+            </tr>
+            ';
+    }
+    echo '</table>';
+
+    $sql = "SELECT Commentaar, Dag, Feedbacksoort, Tijdstip, Gebruiker.Gebruikersnaam FROM Feedback INNER JOIN Voorwerp ON Voorwerp = Voorwerpnummer LEFT OUTER JOIN Gebruiker ON Voorwerp.Koper = Gebruikersnaam WHERE SoortGebruiker = 'Koper'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $Commentaar1[] = $row[0];
+        $Dag1[] = $row[1];
+        $Feedbacksoort1[] = $row[2];
+        $Tijdstip1[] = $row[3];
+        $Gebruikersnaam1[] = $row[4];
+    }
+
+    echo '<hr>';
+
+    echo '<h2>Kopers</h2>';
+    echo '<table class="table">';
+    echo '<tr>';
+    echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
+    echo '</tr>';
+    for($i=0;$i< count($Commentaar1); $i++){
+
+        if($Feedbacksoort1[$i] =='Positief'){
+            $kleurtje1 = 'Success';
+        }
+        else{
+            $kleurtje1 = 'Danger';
+        }
+        echo '
+            <tr class='.$kleurtje1.'>
+            <td>'.$Dag1[$i].'</td>
+            <td>'.$Tijdstip1[$i].'</td>
+            <td>'.$Feedbacksoort1[$i].'</td>
+            <td>'.$Gebruikersnaam1[$i].'</td>
+            <td>'.$Commentaar1[$i].'</td>
+            </tr>
+            ';
+    }
+    echo '</table>';
+
+    ?>
 </div>
 </body>
 

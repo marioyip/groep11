@@ -90,17 +90,17 @@ if (isset($_GET['product'])) {
             </ol>
             <!-- Wrapper for Slides -->
             <div class="carousel-inner ">
-                    <?php
-                    for ($i = 0; $i < count($fotos); $i++) {
-                        if ($i == 0) {
-                            echo '<div class="item active">';
-                        } else {
-                            echo '<div class="item">';
-                        }
-                        echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
+                <?php
+                for ($i = 0; $i < count($fotos); $i++) {
+                    if ($i == 0) {
+                        echo '<div class="item active">';
+                    } else {
+                        echo '<div class="item">';
                     }
+                    echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
+                }
 
-                    ?>
+                ?>
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="icon-prev"></span>
@@ -216,8 +216,7 @@ if (isset($_GET['product'])) {
                             $stmt->execute();
                             echo '<p>Bedankt voor het geven van feedback</p>';
                         }
-                    }
-                    else{
+                    } else {
                         echo '<p>U heeft al feedback gegeven</p>';
                     }
                 }
@@ -236,7 +235,7 @@ if (isset($_GET['product'])) {
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                } else if(isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
+                } else if (isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
 
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
