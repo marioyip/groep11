@@ -276,7 +276,7 @@ if (isset($_GET['product'])) {
 
             </p>
 
-            <!-- Display the countdown timer in an element -->
+            <!-- Display the countdown timer in an element  -->
             <p class="fontSize20">U heeft nog maar</p>
             <p id="demo" class="fontSize20"></p>
 
