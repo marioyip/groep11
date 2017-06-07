@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registreren - Eenmaal Andermaal</title>
+    <title>Registratie afronden - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -14,19 +14,19 @@
     <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 </head>
 <body>
+<main>
+    <?php
 
-<?php
+    session_start();
+    include('includes/header.php');
 
-session_start();
-include('includes/header.php');
-
-if (isset($_POST['ingevoerdecode'])) {
-    $_SESSION['ingevoerdecode'] = $_POST['ingevoerdecode'];
-    $_SESSION['email'] = $_POST['emailingevoerd'];
-} else {
-    $email = $_SESSION['email'];
-    $ingevoerdecode = $_SESSION['ingevoerdecode'];
-}
+    if (isset($_POST['ingevoerdecode'])) {
+        $_SESSION['ingevoerdecode'] = $_POST['ingevoerdecode'];
+        $_SESSION['email'] = $_POST['emailingevoerd'];
+    } else {
+        $email = $_SESSION['email'];
+        $ingevoerdecode = $_SESSION['ingevoerdecode'];
+    }
 
     if (isset($_POST['submit'])) {
 //alle benodigde informatie om te kunnen registreren
@@ -160,143 +160,167 @@ if (isset($_POST['ingevoerdecode'])) {
     }
 
 
-    if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email'] ) {
+    if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
         ?>
+        <div class="containerMinHeight">
+            <div class="container">
+                <div class="col-md-12">
+                    <h1 align="center" class="textGreen">Registratie afronden</h1>
+                    <hr>
+                </div>
+                <div class="col-md-12">
 
-        <div class="marginTop50">
-            <form class="form-horizontal" action="" method="POST">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam"
-                               placeholder="HarryKetsers">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="wachtwoord">Wachtwoord:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="wachtwoord" name="wachtwoord"
-                               placeholder="Wachtwoord">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="wachtwoord2">Herhaal wachtwoord:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="wachtwoord2" name="wachtwoord2"
-                               placeholder="Herhaal wachtwoord">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="geboortdedatum">Geboortedatum:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="geboortdedatum" name="geboortedatum"
-                               placeholder="JJJJ-MM-DD">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2 marginright25" for="vraag"> Beveiligingsvraag:</label>
-                    <select name="vraag" id="vraag" class=" form-control1">
-                        <?php
-                        $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
-                        $stmt->execute();           //Statement uitvoeren
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                        {
-                            $vragen[] = $row[0];
-                            $nummers[] = $row[1];
-                        }
 
-                        for ($i = 0; $i < count($vragen); $i++) {
-                            echo '<option value="' . $nummers[$i] . '"> ' . $vragen[$i] . ' </option)>';
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="antwoord">Antwoord:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="antwoord" name="antwoord" placeholder="Je antwoord">
+                    <div class="marginTop50">
+                        <form class="form-horizontal" action="" method="POST">
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+
+                                <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam"
+                                           placeholder="JohnDoe">
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="wachtwoord">Wachtwoord:</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" id="wachtwoord" name="wachtwoord"
+                                           placeholder="Wachtwoord">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="wachtwoord2">Herhaal wachtwoord:</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" id="wachtwoord2" name="wachtwoord2"
+                                           placeholder="Herhaal wachtwoord">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="geboortdedatum">Geboortedatum:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="geboortdedatum" name="geboortedatum"
+                                           placeholder="JJJJ-MM-DD">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2 marginright25" for="vraag">
+                                    Beveiligingsvraag:</label>
+                                <select name="vraag" id="vraag" class=" col-sm-6 form-control1">
+                                    <?php
+                                    $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
+                                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                                    $stmt->execute();           //Statement uitvoeren
+                                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                                    {
+                                        $vragen[] = $row[0];
+                                        $nummers[] = $row[1];
+                                    }
+
+                                    for ($i = 0; $i < count($vragen); $i++) {
+                                        echo '<option value="' . $nummers[$i] . '"> ' . $vragen[$i] . ' </option)>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="antwoord">Antwoord:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="antwoord" name="antwoord"
+                                           placeholder="Je antwoord">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="straat">Straatnaam:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="straat" name="straat"
+                                           placeholder="Herengracht">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="huisnr">Huisnummer:</label>
+                                <div class="col-sm-6">
+                                    <input type="number" class="form-control" id="huisnr" name="huisnr"
+                                           placeholder="33">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="straat2">*Tweede Straatnaam:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="straat2" name="straat2"
+                                           placeholder="Dorpsstraat">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="huisnr2">*Tweede Huisnummer:</label>
+                                <div class="col-sm-6">
+                                    <input type="number" class="form-control" id="huisnr2" name="huisnr2"
+                                           placeholder="56">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="postcode">Postcode:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="postcode" name="postcode"
+                                           placeholder="1234AB">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="plaats">Plaats:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="plaats" name="plaats"
+                                           placeholder="Rotterdam">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2 marginright25" for="land">Land:</label>
+                                <select name="land" id="land" class=" col-sm-6 form-control1">
+                                    <?php
+                                    $sql = "SELECT Landnaam FROM Landen";
+                                    $stmt = $db->prepare($sql); //Statement object aanmaken
+                                    $stmt->execute();           //Statement uitvoeren
+                                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+                                    {
+                                        for ($i = 0; $i < count($row); $i++) {
+                                            echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-offset-2 col-sm-2">
+                                    <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
+                                </div>
+                            </div>
                     </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="straat">Straatnaam:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="straat" name="straat" placeholder="Herengracht">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="huisnr">Huisnummer:</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="huisnr" name="huisnr" placeholder="33">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="straat2">*Tweede Straatnaam:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="straat2" name="straat2" placeholder="Dorpsstraat">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="huisnr2">*Tweede Huisnummer:</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="huisnr2" name="huisnr2" placeholder="56">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="postcode">Postcode:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="postcode" name="postcode" placeholder="1234AB">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="plaats">Plaats:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="plaats" name="plaats" placeholder="Rotterdam">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2 marginright25" for="land">Land:</label>
-                    <select name="land" id="land" class=" form-control1">
-                        <?php
-                        $sql = "SELECT Landnaam FROM Landen";
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
-                        $stmt->execute();           //Statement uitvoeren
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-                        {
-                            for ($i = 0; $i < count($row); $i++) {
-                                echo '<option value="' . $row[$i] . '"> ' . $row[$i] . ' </option)>';
-                            }
-                        }
-                        ?>
-                    </select>
-                </div>
-                <!--        <div class="form-group">-->
-                <!--            <label class="control-label col-sm-2" for="rekeningnummer">Rekeningnummer:</label>-->
-                <!--            <div class="col-sm-10">-->
-                <!--                <input type="text" class="form-control" id="rekeningnummer" name="rekeningnummer" placeholder="NLABNA0123456789">-->
-                <!--            </div>-->
-                <!--        </div>-->
-                <!--        <div class="form-group">-->
-                <!--            <label class="control-label col-sm-2" for="rekeninghouder">Rekeninghouder:</label>-->
-                <!--            <div class="col-sm-10">-->
-                <!--                <input type="text" class="form-control" id="rekeninghouder" name="rekeninghouder" placeholder="Harry Ketsers">-->
-                <!--            </div>-->
-                <!--        </div>-->
-                <!--        <div class="form-group">-->
-                <!--            <label class="control-label col-sm-2" for="verkoper">Bent u een verkoper?</label>-->
-                <!--            <div class="col-sm-10">-->
-                <!--                <select name="verkoper" id="verkoper"  class="form-control ">-->
-                <!--                    <option value="wel">Ja</option>-->
-                <!--                    <option value="niet">Nee</option>-->
-                <!--                </select>-->
-                <!--            </div>-->
-                <!--        </div>-->
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
 
 
@@ -308,9 +332,11 @@ if (isset($_POST['ingevoerdecode'])) {
         header("Location: registreren.php");
     }
 
-include('includes/footer.php');
+    include('includes/footer.php');
 
-?>
+    ?>
+</main>
+
 
 </body>
 </html>

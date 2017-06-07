@@ -70,7 +70,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
         </div>
         <!--    het maken van de tabbladen zelf -->
         <div class="container">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#item1" role="tab">Account</a>
                 </li>
@@ -78,16 +78,16 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <a class="nav-link active" data-toggle="tab" href="#item2" role="tab">Verkopen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Wachtwoord wijzigen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item3" role="tab">Wachtwoord</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Lopende veilingen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item4" role="tab">Lopend</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#item5" role="tab">Biedgeschiedenis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Gewonnen veilingen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item6" role="tab">Gewonnen</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#item7" role="tab">Telefoonnummer</a>
@@ -121,7 +121,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 </div>
                 <!-- Verkoper worden -->
                 <div class="tab-pane fade " id="item2" role="tabpanel">
-                    <div class="col-md-8 marginTop20">
+                    <div class="col-md-12 marginTop20">
                         <?php
                         //eerst wordt er gekeken of iemand al een verkoper is
                         $query = "SELECT Verkoper FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
@@ -199,7 +199,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                 header("Location: mijnprofiel.php");
                             }
                         } else {
-                            echo '<p>U bent al een verkoper!</p>';
+                            echo '
+                            <div class="col-md-12">                            
+                                <p align="center"">U bent al een verkoper!</p>
+                            </div>';
                         }
                         ?>
                     </div>
@@ -207,7 +210,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 
                 <!-- Wachtwoord wijzigen -->
                 <div class="tab-pane fade " id="item3" role="tabpanel">
-                    <div class="col-md-6 marginTop20">
+                    <div class="col-md-12 marginTop20">
                         <form action="" method="post">
                             <div class="form-group">
                                 <div class="input-group">
@@ -304,7 +307,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 
                     }
                     if (!empty($Titel)) {
-                        echo'<p>Let op: veilingen zijn alleen bij te werken als er nog geen bod op is.</p>';
+                        echo '<p>Let op: veilingen zijn alleen bij te werken als er nog geen bod op is.</p>';
                         for ($i = 0; $i < count($Titel); $i++) {
                             echo '
                         <a href="productpagina.php?product=' . $Voorwerpnummer[$i] . '">
@@ -323,7 +326,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         }
                     } else {
                         echo '
-                        <div class="col-md-12 marginTop5"><p>U heeft momenteel nog geen lopende veilingen.</p></div>
+                        <div class="col-md-12 marginTop5"><p align="center">U heeft momenteel nog geen lopende veilingen.</p></div>
                         ';
                     }
                     ?>
@@ -362,7 +365,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         }
                     } else {
                         echo '
-                        <div class="col-md-12 marginTop5"><p>U heeft nog nergens op geboden.</p></div>
+                        <div class="col-md-12 marginTop5"><p align="center">U heeft nog nergens op geboden.</p></div>
                         ';
                     }
                     ?>
@@ -396,7 +399,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         }
                     } else {
                         echo '
-                        <div class="col-md-12 marginTop5"><p>U heeft nog niks gewonnen.</p></div>
+                        <div class="col-md-12 marginTop5"><p align="center">U heeft nog niks gewonnen.</p></div>
                     ';
                     }
                     ?>
@@ -435,7 +438,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                     <div>
                         <form method="post" action="">
                             <?php
-                            echo '<h2>Voeg een telefoonnummer toe:</h2>';
+                            echo '<h4 class="textDarkGray">Voeg een telefoonnummer toe:</h4>';
                             echo '
                             <div class="form-group">
                                 <input type="tel" name="telefoonnummer" class="form-control" placeholder="0261234567" >
@@ -465,7 +468,10 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                 </div>
                 <!-- Uitloggen -->
                 <div class="tab-pane fade marginTop5 " id="item8" role="tabpanel">
-                    <a href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
+                    <div class="col-md-12" align="center">
+                        <a align="center" href="uitloggen.php" class="btn btn-primary" role="button">Uitloggen</a>
+                    </div>
+
                 </div>
             </div>
         </div>
