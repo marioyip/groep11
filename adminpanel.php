@@ -23,6 +23,7 @@
 <?php
 session_start();
 include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
+if(isset($_SESSION['username']) && $_SESSION['username'] === 'ADMIN') {
 ?>
 <main>
 
@@ -206,4 +207,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
 </body>
 </html>
 <?php include 'includes/adminfooter.php'; //geeft de footer mee aan deze pagina
+} else {
+    header('Location: index.php');
+}
 ?>
