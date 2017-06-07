@@ -23,15 +23,18 @@ if (isset($_POST['gebruiker'])) {
     $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $onderwerp = 'Verwijdering account EenmaalAndermaal' . "\r\n";
-    $bericht = 'Uw account van EenmaalAndermaal is per direct opgezegd. Denkt u dat is een fout is, neem dan contact op via onze contact pagina.';
+    $bericht = 'Uw account van EenmaalAndermaal is per direct opgezegd. Denkt u dat dit een fout is, neem dan contact op via onze contact pagina.';
     mail($email, $onderwerp, $bericht, $headers);
 
-    $sql = "DELETE FROM VoorwerpInRubriek WHERE Voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
+    $sql = "DELETE FROM Feedback WHERE Voorwerp IN(SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
+            DELETE FROM VoorwerpInRubriek WHERE Voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
             DELETE FROM Bestand WHERE voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
             DELETE FROM Bod WHERE Voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
             DELETE FROM Voorwerp WHERE Verkoper = '$gebruiker';
+            UPDATE Voorwerp SET Koper = NULL WHERE Koper = '$gebruiker';
             DELETE FROM Verkoper WHERE Gebruiker = '$gebruiker';
             DELETE FROM Bod WHERE Gebruiker = '$gebruiker';
+            DELETE FROM Gebruikerstelefoon WHERE Gebruiker = '$gebruiker';
             DELETE FROM Gebruiker WHERE Gebruikersnaam = '$gebruiker';";
     $stmt = $db->prepare($sql);
     $stmt->execute();

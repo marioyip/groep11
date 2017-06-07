@@ -57,25 +57,15 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                     <div class="col-md-12">
 
                         <?php
-                        $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
+                        $sql = "SELECT Gebruikersnaam, Voornaam, Achternaam, GeboorteDag, email FROM Gebruiker ORDER BY Voornaam ASC;";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            $Achternaam[] = $row[0];
-                            $Straatnaam1[] = $row[1];
-                            $Huisnummer1[] = $row[2];
-                            $Straatnaam2[] = $row[3];
-                            $Huisnummer2[] = $row[4];
-                            $Antwoordtekst[] = $row[5];
-                            $GeboorteDag[] = $row[6];
-                            $email[] = $row[7];
-                            $Gebruikersnaam[] = $row[8];
-                            $Land[] = $row[9];
-                            $Plaatsnaam[] = $row[10];
-                            $Postcode[] = $row[11];
-                            $Voornaam[] = $row[12];
-                            $Vraag[] = $row[13];
-                            $Wachtwoord[] = $row[14];
+                            $Gebruikersnaam[] = $row[0];
+                            $Voornaam[] = $row[1];
+                            $Achternaam[] = $row[2];
+                            $GeboorteDag[] = $row[3];
+                            $email[] = $row[4];
                         }
                         ?>
                         <table class="table">
@@ -92,15 +82,8 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             <tbody>
                             <?php
                             if (!empty($Gebruikersnaam)) {
-
-                                //                                Pagination
-                                //                                $sql = ("SELECT * FROM Gebruiker ORDER BY Gebruikersnaam OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY");
-                                //                                $stmt = $db->prepare($sql);
-                                //                                $stmt->execute();
-
                                 for ($i = 0; $i < count($Gebruikersnaam); $i++) {
                                     ?>
-
                                     <div class="clickable=row">
                                         <tr>
                                             <td class="username">
@@ -127,58 +110,14 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                             </form>
                                         </tr>
                                     </div>
-
                                     <?php
                                 }
                             } else {
                                 echo 'Kan gebruiker niet ophalen.';
-
                             }
-
                             ?>
                             </tbody>
                         </table>
-
-                        <nav aria-label="Page navigation example" align="center">
-                            <?php
-                            //Userinput
-                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-                            $perpage = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5;
-                            $pages = ceil($page / $perpage);
-
-                            // Positioning
-                            $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
-
-
-                            //Query
-//                            $sql = (' SELECT * FROM Gebruiker OFFSET 10 ROWS;');
-//                            $stmt = $db->prepare($sql);
-//                            $stmt->execute();
-//                            $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                            //var_dump($stmt);
-
-                            //Pages
-                            //$total = $db ->query("SELECT FOUND_ROWS() as total") ->fetch()['total'];
-                            //var_dump($total -fetch());
-                            ?>
-                            <?php foreach ($stmt as $stmt): ?>
-                                <div class="backgroundLightGrey container">
-                                    <p><?php echo $stmt['Voornaam']; ?></p>
-                                    <p><?php echo $stmt['Achternaam']; ?></p>
-                                </div>
-                            <?php endforeach; ?>
-
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                <?php for ($x = 1; $x <= $pages; $x++): ?>
-                                    <li class="page-item"><a class="page-link"
-                                                             href="?page=<?php echo $x; ?>&per-page=<?php echo $perpage; ?>"><?php echo $x; ?></a>
-                                    </li>
-                                <?php endfor; ?>
-                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -219,7 +158,7 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                             if (!empty($email)) {
                                 for ($i = 0; $i < count($Voorwerpnummer); $i++) {
                                     ?>
-                                        <tr class="backgroundLightGrey">
+                                        <tr>
             
                                         <td>
                                             <p class="textDarkGray"><?php echo $Voorwerpnummer[$i]; ?></p>
