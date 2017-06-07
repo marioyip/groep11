@@ -50,7 +50,7 @@ if ($verkoper == 1) {
                               placeholder="Mooie kast" maxlength="500" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="startprijs-voorwerp">Startprijs (optioneel)</label>
+                    <label for="startprijs-voorwerp">Startprijs</label>
                     <input type="number" class="form-control" id="startprijs-voorwerp" name="startprijs" min="0"
                            placeholder="5">
                 </div>
@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['startprijs'])) {
         $startprijs = $_POST['startprijs'];
     } else {
-        $startprijs = 0;
+        $startprijs = 1;
     }
     $betalingswijze = $_POST['betalingswijze'];
     $betalingsinstructie = $_POST['betalingsinstructie'];
