@@ -566,10 +566,10 @@ ol {
 
 .itemBox {
     height: 550px;
+    width: 265px;
     border-color: #e3e3e3;
     border-width: 1px;
     border-style: solid;
-    width: auto;
 }
 
 .itemTitleBox{
