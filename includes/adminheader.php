@@ -10,11 +10,13 @@ connectToDatabase(); //deze functie verbindt de webpagina aan de database
 <header>
     <div class="container-fluid backgroundDarkGrey crete">
         <div class="navbar-header">
-            <a class="navbar-header" href="index.php">
-                <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
-            <a class="navbar-header textWhite marginLeft10 marginTop0 adminHeaderLink" href="adminpanel.php">
-                <h1>EenmaalAndermaal Admin</h1>
-            </a>
+            <div class="navbar-header">
+                <a class="navbar-header" href="adminpanel.php">
+                    <img class="logo" src="media/eenmaalandermaallogo.png" alt="logo"/></a>
+                <a class="navbar-header " href="adminpanel.php">
+                    <img class="logoTekst" src="media/Eenmaalandermaaladmin.PNG" alt="tekstlogo"/>
+                </a>
+            </div>
         </div>
         <?php
         if (isset($_SESSION['username'])) {
