@@ -12,7 +12,7 @@ connectToDatabase();
 if (isset($_POST['voorwerp'])) {
     $voorwerp = $_POST['voorwerp'];
     $sql = "DELETE FROM VoorwerpInRubriek WHERE Voorwerp = '$voorwerp';
-            DELETE FROM Voorwerp WHERE Voorwerp = '$voorwerp'";
+            DELETE FROM Voorwerp WHERE Voorwerpnummer = '$voorwerp'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 }
