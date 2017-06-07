@@ -435,7 +435,8 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         }
                     }
                     ?>
-                    <div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
                         <form method="post" action="">
                             <?php
                             echo '<h4 class="textDarkGray">Voeg een telefoonnummer toe:</h4>';
@@ -450,6 +451,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                             ?>
                         </form>
                     </div>
+                    <div class="col-md-2"></div>
                     <?php
                     if (isset($_POST['submitTel']) && $_POST['telefoonnummer'] != '') {
                         $telefoonnummer = strip_tags($_POST['telefoonnummer']);
