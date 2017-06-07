@@ -565,11 +565,16 @@ ol {
 }
 
 .itemBox {
-    height: 550px;
+    height: 420px;
     width: 265px;
     border-color: #e3e3e3;
     border-width: 1px;
     border-style: solid;
+    margin: 10px;
+}
+
+.titleOverflow{
+    overflow: hidden;
 }
 
 .itemTitleBox{
