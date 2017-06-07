@@ -27,85 +27,85 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
 <main>
 
     <div class="containerMinHeight">
-
-        <div class="container marginTop20 ">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#item1" role="tab">Gebruikers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item2" role="tab">Veilingen</a>
-                </li>
-            </ul>
-        </div>
-        <div class="container marginTop20">
-            <div class="tab-pane active" id="item1" role="tabpanel">
-                <div class="container marginTop20">
-                    <div class="col-md-3"></div>
-                    <div class="input-group col-md-6">
-                        <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
-                        <span class="input-group-btn">
+        <div class="tabpanel">
+            <div class="container marginTop20 ">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li role="presentation" class="active">
+                        <a data-toggle="tab" href="#item1">Gebruikers</a>
+                    </li>
+                    <li role="presentation">
+                        <a data-toggle="tab" href="#item2">Veilingen</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container marginTop20">
+                <div class="tab-pane active" id="item1" role="tabpanel">
+                    <div class="container marginTop20">
+                        <div class="col-md-3"></div>
+                        <div class="input-group col-md-6">
+                            <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
+                            <span class="input-group-btn">
                             <button class="btn btn-ibisrnd btn-lg" type="button">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                    </div>
-                </div>
-                <div class="container marginTop20">
-                    <div class="col-md-12">
+                    <div class="container marginTop20">
+                        <div class="col-md-12">
 
-                        <?php
-                        $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            $Achternaam[] = $row[0];
-                            $Straatnaam1[] = $row[1];
-                            $Huisnummer1[] = $row[2];
-                            $Straatnaam2[] = $row[3];
-                            $Huisnummer2[] = $row[4];
-                            $Antwoordtekst[] = $row[5];
-                            $GeboorteDag[] = $row[6];
-                            $email[] = $row[7];
-                            $Gebruikersnaam[] = $row[8];
-                            $Land[] = $row[9];
-                            $Plaatsnaam[] = $row[10];
-                            $Postcode[] = $row[11];
-                            $Voornaam[] = $row[12];
-                            $Vraag[] = $row[13];
-                            $Wachtwoord[] = $row[14];
-                            $Verkoper[] = $row[15];
-                        }
-                        ?>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Gebruikersnaam</th>
-                                <th>Voornaam</th>
-                                <th>Achternaam</th>
-                                <th>Geboortedatum</th>
-                                <th>Email</th>
-                                <th>Verwijderen</th>
-                                <th>Aanpassen</th>
-                            </tr>
-                            </thead>
-                            <tbody>
                             <?php
-                            if (!empty($Gebruikersnaam)) {
+                            $sql = "SELECT * FROM Gebruiker ORDER BY Voornaam ASC;";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                $Achternaam[] = $row[0];
+                                $Straatnaam1[] = $row[1];
+                                $Huisnummer1[] = $row[2];
+                                $Straatnaam2[] = $row[3];
+                                $Huisnummer2[] = $row[4];
+                                $Antwoordtekst[] = $row[5];
+                                $GeboorteDag[] = $row[6];
+                                $email[] = $row[7];
+                                $Gebruikersnaam[] = $row[8];
+                                $Land[] = $row[9];
+                                $Plaatsnaam[] = $row[10];
+                                $Postcode[] = $row[11];
+                                $Voornaam[] = $row[12];
+                                $Vraag[] = $row[13];
+                                $Wachtwoord[] = $row[14];
+                                $Verkoper[] = $row[15];
+                            }
+                            ?>
+                            <table class="table">
+                                <thead>
+                                <tr id="noHoverColor">
+                                    <th>Gebruikersnaam</th>
+                                    <th>Voornaam</th>
+                                    <th>Achternaam</th>
+                                    <th>Geboortedatum</th>
+                                    <th>Email</th>
+                                    <th>Verwijderen</th>
+                                    <th>Aanpassen</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                if (!empty($Gebruikersnaam)) {
 
 //                                Pagination
-                                $sql = (' SELECT * FROM Gebruiker ORDER BY Gebruikersnaam OFFSET 10 ROWS
+                                    $sql = (' SELECT * FROM Gebruiker ORDER BY Gebruikersnaam OFFSET 10 ROWS
 FETCH NEXT 10 ROWS ONLY;');
-                                $stmt = $db->prepare($sql);
-                                $stmt->execute();
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->execute();
 
-                                for ($i = 0; $i < 5; $i++) {
-                                    echo '
+                                    for ($i = 0; $i < 5; $i++) {
+                                        echo '
                             
-                        <div class="clickable=row">        
-                            <tr>                            
+   
+                            <tr class="fingerIconChange" onclick="window.location.assign(\'adminprofiel.php\');">
                                 <td class="username">
                                     <p class="textDarkGray">' . $Gebruikersnaam[$i] . '</p>
                                 </td>           
@@ -127,133 +127,106 @@ FETCH NEXT 10 ROWS ONLY;');
                                     <button type="submit" class="btn btn-ibisrnd">
                                         <i class="glyphicon glyphicon-wrench"></i>
                                     </button>
-                                </a>
-                                <!-- Button trigger modal -->   
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                  Launch demo modal
-                                </button>
-                                        <!-- Modal -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </td>                            
+                                </a>                                
+                                </td>     
                             </tr>                                                 
-                        </div>
+
                             
                         ';
+                                    }
+                                } else {
+                                    echo 'Kan gebruiker niet ophalen.';
+
                                 }
-                            } else {
-                                echo 'Kan gebruiker niet ophalen.';
 
-                            }
+                                ?>
+                                </tbody>
+                            </table>
+                            <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Verwijder geselecteerde
+                                gebruikers
+                            </button>
+                            <nav aria-label="Page navigation example" align="center">
+                                <?php
+                                //Userinput
+                                $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                                $perpage = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5;
+                                $pages = ceil($page / $perpage);
 
-                            ?>
-                            </tbody>
-                        </table>
-                        <button type="submit" class="btn btn-ibisrnd btn-lg" align="center">Verwijder geselecteerde
-                            gebruikers
-                        </button>
-                        <nav aria-label="Page navigation example" align="center">
-                            <?php
-                            //Userinput
-                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-                            $perpage = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5;
-                            $pages = ceil($page / $perpage);
-
-                            // Positioning
-                            $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
+                                // Positioning
+                                $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
 
 
-                            //Query
-                            $sql = (' SELECT * FROM Gebruiker OFFSET 10 ROWS;');
-                            $stmt = $db->prepare($sql);
-                            $stmt->execute();
-                            $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                //Query
+                                $sql = (' SELECT * FROM Gebruiker OFFSET 10 ROWS;');
+                                $stmt = $db->prepare($sql);
+                                $stmt->execute();
+                                $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                            //var_dump($stmt);
+                                //var_dump($stmt);
 
-                            //Pages
-                            //$total = $db ->query("SELECT FOUND_ROWS() as total") ->fetch()['total'];
-                            //var_dump($total -fetch());
-                            ?>
-                            <?php foreach ($stmt as $stmt): ?>
-                                <div class="backgroundLightGrey container">
-                                    <p><?php echo $stmt['Voornaam'];  ?></p>
-                                    <p><?php echo $stmt['Achternaam'];  ?></p>
-                                </div>
-                            <?php endforeach; ?>
+                                //Pages
+                                //$total = $db ->query("SELECT FOUND_ROWS() as total") ->fetch()['total'];
+                                //var_dump($total -fetch());
+                                ?>
+                                <?php foreach ($stmt as $stmt): ?>
+                                    <div class="backgroundLightGrey container">
+                                        <p><?php echo $stmt['Voornaam']; ?></p>
+                                        <p><?php echo $stmt['Achternaam']; ?></p>
+                                    </div>
+                                <?php endforeach; ?>
 
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                <?php for ($x = 1; $x <= $pages; $x++): ?>
-                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $x;?>&per-page=<?php echo $perpage;?>"><?php echo $x;?></a></li>
-                                <?php endfor; ?>
-                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                            </ul>
-                        </nav>
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                    <?php for ($x = 1; $x <= $pages; $x++): ?>
+                                        <li class="page-item"><a class="page-link"
+                                                                 href="?page=<?php echo $x; ?>&per-page=<?php echo $perpage; ?>"><?php echo $x; ?></a>
+                                        </li>
+                                    <?php endfor; ?>
+                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="container marginTop20">
-            <div class="tab-pane" id="item2" role="tabpanel">
-                <div class="container marginTop20">
-                    <div class="col-md-12 username">
-                        <?php
-                        $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                            $Titel[] = $row[0];
-                            $Verzendkosten[] = $row[1];
-                            $Verkoopprijs[] = $row[2];
-                            $Verkoper[] = $row[3];
-                            $Koper[] = $row[4];
-                            $Voorwerpnummer[] = $row[5];
-                        }
-                        ?>
-                        <table class="table">
-                            <thead>
-                            <tr>
-
-                                <th>Titel</th>
-                                <th>Verzendkosten</th>
-                                <th>Verkoopprijs</th>
-                                <th>Verkoper</th>
-                                <th>Gewonnen door</th>
-                                <th>Voorwerpnummer</th>
-                                <th>Verwijderen</th>
-                                <th>Aanpassen</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                <div class="tab-pane" id="item2" role="tabpanel">
+                    <div class="container marginTop20">
+                        <div class="col-md-12 username">
                             <?php
-                            if (!empty($email)) {
-                                for ($i = 0; $i < 5; $i++) {
-                                    echo '
-                                        <tr class="backgroundLightGrey">
-            
-                                        <a href="mijnprofiel.php?=' . $email[$i] . '"><td>
+                            $sql = "SELECT Titel, Verzendkosten, Verkoopprijs, Verkoper, Koper,Voorwerpnummer FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
+                            $stmt = $db->prepare($sql);
+                            $stmt->execute();
+                            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                                $Titel[] = $row[0];
+                                $Verzendkosten[] = $row[1];
+                                $Verkoopprijs[] = $row[2];
+                                $Verkoper[] = $row[3];
+                                $Koper[] = $row[4];
+                                $Voorwerpnummer[] = $row[5];
+                            }
+                            ?>
+                            <table class="table">
+                                <thead>
+                                <tr id="noHoverColor">
+
+                                    <th>Titel</th>
+                                    <th>Verzendkosten</th>
+                                    <th>Verkoopprijs</th>
+                                    <th>Verkoper</th>
+                                    <th>Winnaar</th>
+                                    <th>Voorwerpnummer</th>
+                                    <th>Verwijderen</th>
+                                    <th>Aanpassen</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                if (!empty($email)) {
+                                    for ($i = 0; $i < 5; $i++) {
+                                        echo '
+                                        <tr class="fingerIconChange" onclick="window.location.assign(\'adminveiling.php\');">
+                                        <td>
                                             <p class="textDarkGray">' . $Titel[$i] . '</p>
-                                        </td></a>
+                                        </td>
             
                                         <td>
                                             <p class="textDarkGray">€' . $Verzendkosten[$i] . '</p>
@@ -277,20 +250,24 @@ FETCH NEXT 10 ROWS ONLY;');
                                         </tr>
             
                                     ';
+                                    }
+                                } else {
+                                    echo 'Er zijn geen biedingen gedaan.';
                                 }
-                            } else {
-                                echo 'Er zijn geen biedingen gedaan.';
-                            }
 
-                            ?>
-                            </tbody>
-                        </table>
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </main>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 <?php include 'includes/adminfooter.php'; //geeft de footer mee aan deze pagina
