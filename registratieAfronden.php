@@ -294,6 +294,7 @@ if (isset($_POST['ingevoerdecode'])) {
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
                         <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
+                        <p>Door op de knop Verzenden te drukken gaat u akkord met de <a href="/media/Algemene_voorwaarden.pdf">voorwaarden</a></p>
                     </div>
                 </div>
             </form>

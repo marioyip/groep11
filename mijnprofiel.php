@@ -107,7 +107,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                         <h5><b>Naam</b></h5>
                         <h5><b>Geboortedatum</b></h5>
                         <h5><b>Primair adres</b></h5>
-                        <h5><b>Secondair adres</b></h5>
+                        <h5><b>Secundair adres</b></h5>
                         <h5><b>Email</b></h5>
                     </div>
                     <div class="col-md-3 marginTop5">

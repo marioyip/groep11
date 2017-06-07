@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Home - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -16,9 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet"><!-- Sanchez Font van Google Fonts -->
 </head>
 <body>
-<script>
-    console.log("TEST");
-</script>
 <?php
 
 
@@ -42,7 +40,7 @@ function getTijd($tijd, $pos)
 
             if (verschil <= 0) {
                 clearInterval(x);
-                document.getElementById("<?php echo $pos ?>").innerHTML = "Helaas, de veiling is afgelopen!";
+                document.getElementById("<?php echo $pos ?>").innerHTML =   "Helaas, de veiling is afgelopen!   ";
             } else {
                 document.getElementById("<?php echo $pos ?>").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
             }
@@ -190,7 +188,7 @@ function getTijd($tijd, $pos)
 
         <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
-        $sql2 = "SELECT TOP 4 * FROM Voorwerp ORDER BY LooptijdbeginDag DESC, LooptijdbeginTijdstip DESC";
+        $sql2 = "SELECT TOP 4 * FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY LooptijdbeginDag DESC, LooptijdbeginTijdstip DESC";
         $stmt2 = $db->prepare($sql2);
         $stmt2->execute();
         while ($row2 = $stmt2->fetch(PDO::FETCH_NUM)) {

@@ -430,13 +430,13 @@ if (isset($_GET['product'])) {
                     <div id="menu2" class="tab-pane">
                         <p class="sanchez marginTop20 fontSize20">Verkoper:
                             <?php
-                            $sql = "SELECT g.voornaam, g.achternaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
+                            $sql = "SELECT g.voornaam, g.email FROM Voorwerp v INNER JOIN Gebruiker g ON v.verkoper = g.Gebruikersnaam WHERE v.Voorwerpnummer = " . $Voorwerpnummer;
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
                             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 echo $row[0] . ' ';
-                                echo $row[1];
-                                $email = $row[2];
+//                                echo $row[1];
+                                $email = $row[1];//2
                             }
                             ?>
                         </p>

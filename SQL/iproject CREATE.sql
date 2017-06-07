@@ -376,6 +376,34 @@ AS
       END
   END
 
+CREATE TRIGGER Trigger_IsVeilingGesloten ON dbo.Voorwerp /* AF3 */
+AFTER UPDATE
+AS
+  BEGIN
+    DECLARE @Veilinggesloten bit
+    DECLARE @Voorwerpnummer bigint
+    DECLARE @LooptijdeindeDag date
+    DECLARE @LooptijdeindeTijdstip time
+    DECLARE @Looptijd tinyint
+    DECLARE @datediff int
+    DECLARE @timediff int
+
+    SELECT @datediff = DATEDIFF(DD,GETDATE(),@LooptijdeindeDag) From inserted
+    SELECT @timediff = DATEDIFF(ss,GETDATE(),@LooptijdeindeTijdstip) From inserted
+    SELECT @Veilinggesloten = VeilingGesloten FROM inserted
+    SELECT @Voorwerpnummer = Voorwerpnummer FROM inserted
+    SELECT @LooptijdeindeDag = LooptijdeindeDag FROM inserted
+    SELECT @Looptijd = Looptijd FROM inserted
+    SELECT @LooptijdeindeTijdstip = LooptijdeindeTijdstip FROM inserted
+                                                               S
+    BEGIN
+      IF(@Veilinggesloten = 0 AND @datediff<=0 AND @timediff<=0)
+        BEGIN
+          UPDATE Voorwerp SET VeilingGesloten = 1 WHERE Voorwerpnummer = @Voorwerpnummer
+        END;
+    END;
+  END;
+GO
 
 
 /* DIT IS VOOR DROPPEN VAN DE DATABASE
