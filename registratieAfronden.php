@@ -155,6 +155,7 @@
                     <div class="marginTop50">
                         <form class="form-horizontal" action="" method="POST">
                             <div class="form-group">
+                                <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam"
@@ -162,6 +163,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2" for="telefoonnummer">Telefoonnummer:</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="telefoonnummer" name="telefoonnummer"
