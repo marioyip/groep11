@@ -116,6 +116,9 @@ if (isset($_GET['product'])) {
         <div class="veilingBox">
 
             <?php
+            $Bod = "";
+            $verkoopprijs = "";
+            $voorwerpnummer = "";
             $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
@@ -136,10 +139,6 @@ if (isset($_GET['product'])) {
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 ob_end_flush();
-                if ($stmt == true) {
-                    header('Location: productpagina.php');
-
-                }
 
             }
             if ($VeilingGesloten == 1){
