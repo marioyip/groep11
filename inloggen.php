@@ -13,11 +13,15 @@
 <body>
 
 <?php
+ob_start();
 session_start();
+
 if (isset($_SESSION['username'])) {
+    ob_end_clean();
     header("Location: index.php");
 }
-include 'includes/header.php';
+include('includes/header.php');
+include('includes/catbar.php');
 require_once('includes/functies.php');
 
 connectToDatabase();
@@ -26,6 +30,10 @@ connectToDatabase();
 
     <div class="container marginTop20 marginBottom40">
         <div class="col-md-12" align="center">
+            <?php if (isset($_SESSION['nieuweGebruiker'])) {
+                echo "<div class='alert alert-success'><p>Beste " .$_SESSION['nieuweGebruiker']. " uw registratie is gelukt!U kunt nu inloggen!</p></div>";
+            }
+            ?>
             <h1 class="textGreen">Log in op jouw profiel</h1>
             <hr>
         </div>
@@ -62,17 +70,23 @@ connectToDatabase();
                         if (empty($pwd)) {
                             $error = 'U heeft uw wachtwoord niet ingevuld!';
                         }
+
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                             $controleWachtwoord = $row[0];
+
                             if (!empty($gebruikersnaam) && !empty($pwd)) {
                                 if (password_verify($pwd, $controleWachtwoord)) {
                                     $_SESSION['username'] = $gebruikersnaam;
                                     $error = 'U bent al ingelogd! ';
+                                    ob_end_clean();
                                     header("Location: index.php");
                                 } else if (!password_verify($pwd, $controleWachtwoord)) {
                                     $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
                                 }
                             }
+                        }
+                        if (empty($controleWachtwoord)) {
+                            $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
                         }
                         if ($error != "") {
                             echo isset($_POST['submit']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
@@ -122,5 +136,5 @@ connectToDatabase();
 
 
 <?php
-include 'includes/footer.php';
-
+include('includes/footer.php');
+ob_end_flush();

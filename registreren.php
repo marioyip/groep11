@@ -24,8 +24,8 @@ if (isset($_SESSION['username'])) {
     header("Location: index.php");
 }
 
-include 'includes/header.php';
-include 'includes/catbar.php';
+include ('includes/header.php');
+include ('includes/catbar.php');
 ?>
 <main>
     <div class="container marginTop20">
@@ -46,7 +46,7 @@ include 'includes/catbar.php';
                     </div>
                     <?php
                     if (isset($_POST['bevestigmail'])) {
-                        $voornaam = $_POST['voornaam'];
+                        $voornaam = strip_tags($_POST['voornaam']);
                         $errorVoornaam = "";
                         if (empty($voornaam)) {
                             $errorVoornaam = 'U heeft uw voornaam niet ingevuld!';
@@ -65,7 +65,7 @@ include 'includes/catbar.php';
                     </div>
                     <?php
                     if (isset($_POST['bevestigmail'])) {
-                        $achternaam = $_POST['achternaam'];
+                        $achternaam = strip_tags($_POST['achternaam']);
                         $errorAchternaam = "";
                         if (empty($achternaam)) {
                             $errorAchternaam = 'U heeft uw achternaam niet ingevuld!';
@@ -85,7 +85,7 @@ include 'includes/catbar.php';
                     <?php
                     if (isset($_POST['bevestigmail'])) {
                         $errorEmail = "";
-                        $email = $_POST['emailadres'];
+                        $email = strip_tags($_POST['emailadres']);
                         if (empty($email)) {
                             $errorEmail = 'U heeft uw e-mailadres niet ingevuld!';
                         }
@@ -104,8 +104,8 @@ include 'includes/catbar.php';
                     <?php
                     if (isset($_POST['bevestigmail'])) {
                         $errorControle = "";
-                        $email = $_POST['emailadres'];
-                        $email2 = $_POST['emailadres2'];
+                        $email = strip_tags($_POST['emailadres']);
+                        $email2 = strip_tags($_POST['emailadres2']);
                         if (empty($email2)) {
                             $errorControle = 'U heeft uw e-mailadres niet bevestigd!';
                         }

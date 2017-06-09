@@ -17,8 +17,8 @@
 <?php
 ob_start();
 session_start();
-include 'includes/header.php';
-include 'includes/catbar.php';
+include ('includes/header.php');
+include ('includes/catbar.php');
 
 $error = "";
 $persoonlijkeCode = $_SESSION['code'];
@@ -61,6 +61,7 @@ mail($_SESSION['email'], $onderwerp, $bericht, $headers);
                             $error = 'De ingevoerde code is onjuist';
                         } else if ($persoonlijkeCode == $ingevoerdeCode) {
                             ob_end_clean();
+                            $_SESSION['persoonlijkeCode'] = $ingevoerdeCode;
                             header("Location: registratieAfronden.php");
                         }
                         if ($error != "") {
@@ -80,7 +81,7 @@ mail($_SESSION['email'], $onderwerp, $bericht, $headers);
 </html>
 <?php
 
-include 'includes/footer.php';
+include ('includes/footer.php');
 ob_end_flush();
 
 ?>
