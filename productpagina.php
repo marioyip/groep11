@@ -65,6 +65,8 @@ if (isset($_GET['product'])) {
         $fotos[0] = $VoorwerpCover;
     }
 }
+
+
 ?>
 <div class="container">
     <div class="row">
@@ -116,6 +118,8 @@ if (isset($_GET['product'])) {
         <div class="veilingBox">
 
             <?php
+
+
            // echo date('Y-m-d') ."\n";
 
             $Bod = "";
@@ -138,23 +142,53 @@ if (isset($_GET['product'])) {
             }
 
             if ($Bod >= $verkoopprijs) {
-                $sql = "UPDATE Voorwerp SET VeilingGesloten = '1'
+                $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
                     WHERE Voorwerpnummer = '$voorwerpnummer'";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 ob_end_flush();
 
             }
+            $ch = curl_init("http://iproject11.icasites.nl/productpagina.php?product=$voorwerpnummer");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $text = curl_exec($ch);
+            $test = strpos($text, "Helaas, de veiling is afgelopen!");
+            if ($test==false)
+            {
+                echo "no";
+            }
+            else
+            {
+                $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer, v.LooptijdeindeDag FROM Bod b
+                        INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
+                        INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
+                        WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                    $Bod = $row[0];
+                    $Voornaam = $row[1];
+                    $Achternaam = $row[2];
+                    $verkoopprijs = $row[3];
+                    $VeilingGesloten1 = $row[4];
+                    $voorwerpnummer = $row[5];
+                    //  $tijd = $row[6];
+                }
+                $_SESSION['voorwerpnummer'] = $Voorwerpnummer;
+                echo $_SESSION['voorwerpnummer'];
+                $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
+                    WHERE Voorwerpnummer = $Voorwerpnummer";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                echo 'done';
+                echo $Voorwerpnummer;
+            }
             date_default_timezone_set('Europe/Amsterdam');
             $date = date('d/m/Y h:i:s', time());
             echo $date;
-//            if ($date < $tijd) {
-//                $sql = "UPDATE Voorwerp SET VeilingGesloten = '1'
-//                    WHERE Voorwerpnummer = '$voorwerpnummer'";
-//                $stmt = $db->prepare($sql);
-//                $stmt->execute();
+
 //            }
-            if ($VeilingGesloten == 1){
+            if ($VeilingGesloten == 1 && !empty($_SESSION['username'])){
                 if ($Verkoper == $_SESSION['username']) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Koper'";
                     $stmt = $db->prepare($sql);
@@ -173,8 +207,8 @@ if (isset($_GET['product'])) {
                             }
 
                             echo '
-                        <form action="" method="post">
-                        <div class="form-group">
+                        <form action="" method="post"> 
+                       <div class="form-group">
                         <h2>Geef feedback op de koper</h2>
                         <label for="Feedbacksoort">Feedbacksoort</label>
                         <select class="form-control" id="Feedbacksoort" name="Feedbacksoort">
@@ -207,7 +241,7 @@ if (isset($_GET['product'])) {
                         echo '<p>U heeft al feedback gegeven</p>';
                     }
                 }
-                if ($Koper == $_SESSION['username']) {
+                if ($Koper == $_SESSION['username'] && !empty($_SESSION['username'])) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Verkoper'";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -437,6 +471,7 @@ if (isset($_GET['product'])) {
                             echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
                         }
                     }
+
                     ?>
                 </ul>
             </div>
@@ -500,5 +535,6 @@ if (isset($_GET['product'])) {
 </html>
 <?php
 include 'includes/footer.php';
+
 ob_clean();
 ?>
