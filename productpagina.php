@@ -155,7 +155,7 @@ if (isset($_GET['product'])) {
             $ch = curl_init("http://iproject11.icasites.nl/productpagina.php?product=$voorwerpnummer");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $text = curl_exec($ch);
-            $test = strpos($text, "Helaas, de veiling is afgelopen!");
+            $test = strpos($text, "0 Dagen 0 uur 0 minuten 0 seconden");
             if ($test==false)
             {
                 echo "";
