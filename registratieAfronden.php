@@ -25,7 +25,6 @@
 <body>
 <main>
     <?php
-
     session_start();
     include('includes/header.php');
 
@@ -132,13 +131,13 @@
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
         VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0');INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
-                VALUES ('$gebruikersnaam', '$telefoon', '$volgnr')";
+                VALUES ('$gebruikersnaam', '$telefoonnummer', '$volgnr')";
             } else {
                 $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
                 GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
         VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
             '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0');INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
-                VALUES ('$gebruikersnaam', '$telefoon', '$volgnr')";
+                VALUES ('$gebruikersnaam', '$telefoonnummer', '$volgnr')";
             }
             header("Location: inloggen.php");
             die();
@@ -156,22 +155,18 @@
                     <div class="marginTop50">
                         <form class="form-horizontal" action="" method="POST">
                             <div class="form-group">
-                                <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam"
                                            placeholder="JohnDoe">
                                 </div>
-                                <div class="col-md-2"></div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2"></div>
-                                <label class="control-label col-sm-2" for="plaats">Telefoonnummer:</label>
+                                <label class="control-label col-sm-2" for="telefoonnummer">Telefoonnummer:</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="plaats" name="telefoon"
-                                           placeholder="12-34567890">
+                                    <input type="text" class="form-control" id="telefoonnummer" name="telefoonnummer"
+                                           placeholder="1234567890">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -180,7 +175,6 @@
                                     <input type="password" class="form-control" id="wachtwoord" name="wachtwoord"
                                            placeholder="Wachtwoord">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -189,7 +183,6 @@
                                     <input type="password" class="form-control" id="wachtwoord2" name="wachtwoord2"
                                            placeholder="Herhaal wachtwoord">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -198,7 +191,6 @@
                                     <input type="text" class="form-control" id="geboortdedatum" name="geboortedatum"
                                            placeholder="JJJJ-MM-DD">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -214,7 +206,6 @@
                                         $vragen[] = $row[0];
                                         $nummers[] = $row[1];
                                     }
-
                                     for ($i = 0; $i < count($vragen); $i++) {
                                         echo '<option value="' . $nummers[$i] . '"> ' . $vragen[$i] . ' </option)>';
                                     }
@@ -228,7 +219,6 @@
                                     <input type="text" class="form-control" id="antwoord" name="antwoord"
                                            placeholder="Je antwoord">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -237,7 +227,6 @@
                                     <input type="text" class="form-control" id="straat" name="straat"
                                            placeholder="Herengracht">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -246,7 +235,6 @@
                                     <input type="number" class="form-control" id="huisnr" name="huisnr"
                                            placeholder="33">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -255,7 +243,6 @@
                                     <input type="text" class="form-control" id="straat2" name="straat2"
                                            placeholder="Dorpsstraat">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -264,7 +251,6 @@
                                     <input type="number" class="form-control" id="huisnr2" name="huisnr2"
                                            placeholder="56">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -273,7 +259,6 @@
                                     <input type="text" class="form-control" id="postcode" name="postcode"
                                            placeholder="1234AB">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -282,7 +267,6 @@
                                     <input type="text" class="form-control" id="plaats" name="plaats"
                                            placeholder="Rotterdam">
                                 </div>
-                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
@@ -307,8 +291,8 @@
                                     <button type="submit" class="btn btn-default" name="submit">Verzenden</button>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
