@@ -12,6 +12,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript">
+        <!--
+
+        function addHyphen() {
+            var t = document.forms['the_form'].elements['the_text'];
+            if (t.value.length > 0) {
+                t.value = t.value.substring(0,4) + "-" + t.value.substring(4, t.value.length);
+            }
+        }
+
+        -->
+    </script>
+
 </head>
 <body>
 <main>
@@ -34,6 +48,7 @@
         $_POST['wachtwoord'] = strip_tags($_POST['wachtwoord']);
         $_POST['wachtwoord2'] = strip_tags($_POST['wachtwoord2']);
         $_POST['geboortedatum'] = strip_tags($_POST['geboortedatum']);
+        $_POST['telefoonnummer'] = strip_tags($_POST['telefoonnummer']);
         $_POST['vraag'] = strip_tags($_POST['vraag']);
         $_POST['antwoord'] = strip_tags($_POST['antwoord']);
         $_POST['straat'] = strip_tags($_POST['straat']);
@@ -53,6 +68,7 @@
         $wachtwoord = $_POST['wachtwoord'];
         $wachtwoord2 = $_POST['wachtwoord2'];
         $geboortedatum = $_POST['geboortedatum'];
+        $telefoonnummer = $_POST['telefoonnummer'];
         $vraag = $_POST['vraag'];
         $antwoord = $_POST['antwoord'];
         $straat = $_POST['straat'];
@@ -83,6 +99,9 @@
         }
         if (empty($geboortedatum)) {
             $foutmelding = 'wel je geboortedatum invullen!';
+        }
+        if (empty($telefoonnummer)) {
+            $foutmelding = 'wel je telefoonnummer invullen!';
         }
         if (empty($antwoord)) {
             $foutmelding = 'wel je supergeheime antwoord invullen invullen!';
@@ -143,6 +162,9 @@
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
         VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
                 '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0')";
+
+                $sql2 = "INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
+                VALUES ('$gebruikersnaam', '$telefoon', '$volgnr')";
             } else {
                 $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
                 GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
@@ -185,6 +207,15 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
+                                <label class="control-label col-sm-2" for="plaats">Telefoonnummer:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="plaats" name="telefoon"
+                                           placeholder="12-34567890">
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2" for="wachtwoord">Wachtwoord:</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" id="wachtwoord" name="wachtwoord"
@@ -214,7 +245,7 @@
                                 <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2 marginright25" for="vraag">
                                     Beveiligingsvraag:</label>
-                                <select name="vraag" id="vraag" class=" col-sm-6 form-control1">
+                                <select name="vraag" id="vraag" class=" col-md-6 form-control1 width320">
                                     <?php
                                     $sql = "SELECT TekstVraag, Vraagnummer FROM Vraag";
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
@@ -297,7 +328,7 @@
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
                                 <label class="control-label col-sm-2 marginright25" for="land">Land:</label>
-                                <select name="land" id="land" class=" col-sm-6 form-control1">
+                                <select name="land" id="land" class=" col-sm-6 form-control1 width320">
                                     <?php
                                     $sql = "SELECT Landnaam FROM Landen";
                                     $stmt = $db->prepare($sql); //Statement object aanmaken
