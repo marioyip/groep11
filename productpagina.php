@@ -155,7 +155,7 @@ if (isset($_GET['product'])) {
             $test = strpos($text, "Helaas, de veiling is afgelopen!");
             if ($test==false)
             {
-                echo "no";
+                echo "";
             }
             else
             {
@@ -175,17 +175,15 @@ if (isset($_GET['product'])) {
                     //  $tijd = $row[6];
                 }
                 $_SESSION['voorwerpnummer'] = $Voorwerpnummer;
-                echo $_SESSION['voorwerpnummer'];
+           //     echo $_SESSION['voorwerpnummer'];
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
                     WHERE Voorwerpnummer = $Voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
-                echo 'done';
-                echo $Voorwerpnummer;
+
             }
             date_default_timezone_set('Europe/Amsterdam');
             $date = date('d/m/Y h:i:s', time());
-            echo $date;
 
 //            }
             if ($VeilingGesloten == 1 && !empty($_SESSION['username'])){
