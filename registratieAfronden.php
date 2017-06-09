@@ -14,18 +14,13 @@
     <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 
     <script language="javascript" type="text/javascript">
-        <!--
-
         function addHyphen() {
             var t = document.forms['the_form'].elements['the_text'];
             if (t.value.length > 0) {
-                t.value = t.value.substring(0,4) + "-" + t.value.substring(4, t.value.length);
+                t.value = t.value.substring(0, 4) + "-" + t.value.substring(4, t.value.length);
             }
         }
-
-        -->
     </script>
-
 </head>
 <body>
 <main>
@@ -43,7 +38,6 @@
     }
 
     if (isset($_POST['submit'])) {
-//alle benodigde informatie om te kunnen registreren
         $_POST['gebruikersnaam'] = strip_tags($_POST['gebruikersnaam']);
         $_POST['wachtwoord'] = strip_tags($_POST['wachtwoord']);
         $_POST['wachtwoord2'] = strip_tags($_POST['wachtwoord2']);
@@ -58,9 +52,6 @@
         $_POST['postcode'] = strip_tags($_POST['postcode']);
         $_POST['plaats'] = strip_tags($_POST['plaats']);
         $_POST['land'] = strip_tags($_POST['land']);
-//    $_POST['verkoper'] = strip_tags($_POST['verkoper']);
-//    $_POST['rekeningnummer'] = strip_tags($_POST['rekeningnummer']);
-//    $_POST['rekeninghouder'] = strip_tags($_POST['rekeninghouder']);
 
         $geentweedehuis = false;
         $foutmelding = '';
@@ -78,9 +69,6 @@
         $postcode = $_POST['postcode'];
         $plaats = $_POST['plaats'];
         $land = $_POST['land'];
-//    $verkoper = $_POST['verkoper'];
-//    $rekeningnummer = $_POST['rekeningnummer'];
-//    $rekeninghouder = $_POST['rekeninghouder'];
         $voornaam = $_SESSION['voornaam'];
         $achternaam = $_SESSION['achternaam'];
 
@@ -94,7 +82,6 @@
             || strpbrk($wachtwoord, 'abcdefghijklmnopqrstuvwxyz') == FALSE
             || strpbrk($wachtwoord, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE
         ) {
-
             $foutmelding = 'weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?';
         }
         if (empty($geboortedatum)) {
@@ -124,12 +111,6 @@
         if ($wachtwoord != $wachtwoord2) {
             $foutmelding = 'de wachtwoorden zijn niet hetzelfde';
         }
-//    if (empty($rekeningnummer)) {
-//        $foutmelding = 'Je hebt geen rekeningnummer ingevuld!';
-//    }
-//    if (empty($rekeninghouder)) {
-//        $foutmelding = 'Op welke naam staat uw rekening?';
-//    }
         if (empty($huisnr2) && empty($straat2)) {
             $geentweedehuis = true;
         }
@@ -139,49 +120,30 @@
         }
 
         if ($foutmelding == '') {
-
             ini_set('display_errors', 'On');
-
             require_once('includes/functies.php');
 
-//        if ($verkoper == 'wel') {
-//            $verkoper = 1;
-//        } else {
-//            $verkoper = 0;
-//        }
-
             $geboortedatum = date("Y-m-d", strtotime($geboortedatum));
-
-            connectToDatabase();
-
             $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
-
-
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
             if ($geentweedehuis == true) {
                 $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst,
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
         VALUES ('$achternaam', '$straat', '$huisnr', '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
-                '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0')";
-
-                $sql2 = "INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
+                '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0');INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
                 VALUES ('$gebruikersnaam', '$telefoon', '$volgnr')";
             } else {
                 $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Straatnaam2, Huisnummer2, Antwoordtekst,
                 GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
         VALUES ('$achternaam', '$straat', '$huisnr', '$straat2', '$huisnr2' , '$antwoord', '$geboortedatum', '$email', '$gebruikersnaam',
-            '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0')";
+            '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0');INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
+                VALUES ('$gebruikersnaam', '$telefoon', '$volgnr')";
             }
-
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
             header("Location: inloggen.php");
-
             die();
-
         }
     }
-
-
     if ($_SESSION['ingevoerdecode'] == $_SESSION['code'] && $_SESSION['emailadres'] == $_SESSION['email']) {
         ?>
         <div class="containerMinHeight">
@@ -191,13 +153,10 @@
                     <hr>
                 </div>
                 <div class="col-md-12">
-
-
                     <div class="marginTop50">
                         <form class="form-horizontal" action="" method="POST">
                             <div class="form-group">
                                 <div class="col-sm-2"></div>
-
                                 <label class="control-label col-sm-2" for="gebruikersnaam">Gebruikersnaam:</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="gebruikersnaam" id="gebruikersnaam"
@@ -353,21 +312,14 @@
                 </div>
             </div>
         </div>
-
-
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
         <?php
     } else {
         header("Location: registreren.php");
     }
-
     include('includes/footer.php');
-
     ?>
 </main>
-
-
 </body>
 </html>
