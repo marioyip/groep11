@@ -15,23 +15,13 @@
 <body>
 
 <?php
-
+ob_start();
 session_start();
 include 'includes/header.php';
 include 'includes/catbar.php';
-if (isset($_SESSION['username'])) {
-    header("Location: index.php");
-}
 
-//if(isset($_POST['bevestigmail'])) {
-$_POST['voornaam'] = strip_tags($_POST['voornaam']);
-$_POST['achternaam'] = strip_tags($_POST['achternaam']);
-$_POST['emailadres'] = strip_tags($_POST['emailadres']);
-$_SESSION['voornaam'] = $_POST['voornaam'];
-$_SESSION['achternaam'] = $_POST['achternaam'];
-$_SESSION['emailadres'] = $_POST['emailadres'];
-
-$_SESSION['code'] = mt_rand();
+$error = "";
+$persoonlijkeCode = $_SESSION['code'];
 echo $_SESSION['code'];
 
 //het schrijven van de email zelf
@@ -40,7 +30,7 @@ $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
 $bericht = 'Dit is uw bevestigingscode: ' . $_SESSION['code'] . '' . "\r\n";
-mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
+mail($_SESSION['email'], $onderwerp, $bericht, $headers);
 
 
 //    echo $code.'<br>';
@@ -53,20 +43,33 @@ mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
         <div class="col-md-6 controlBox container-fluid marginTop30">
             <h2>Verificatiecode invoeren</h2>
             <hr>
-            <p> Er is een email gestuurd naar het volgende mail adres: <?php echo $_SESSION['emailadres'] ?><br> Met de
+            <p> Er is een email gestuurd naar het volgende mail adres: <?php echo $_SESSION['email'] ?><br> Met de
                 code in de mail kunt u verder met de registratie. </p>
             <div class="">
-                <form method="POST" action="registratieAfronden.php">
+                <form method="POST">
                     <div class="form-group ">
                         <label for="ingevoerdecode">Uw ontvangen code:
                             <input id="ingevoerdecode" class="form-control" type="text" name="ingevoerdecode"></label>
                     </div>
-                                        <div class="form-group ">
-                                            <label for=" emailingevoerd">Uw emailadres:
-                                                <input id="emailingevoerd" class="form-control" type="text" name="emailingevoerd"></label>
-                                        </div><div class="beschrijving"></div>
+                    <?php
+                    if (isset($_POST['bevestigcode'])) {
+                        $ingevoerdeCode = $_POST['ingevoerdecode'];
+                        if (empty($ingevoerdeCode)) {
+                            $error = 'U heeft de code niet ingevoerd!';
+                        }
+                        if (!empty($persoonlijkeCode) && $persoonlijkeCode != $ingevoerdeCode) {
+                            $error = 'De ingevoerde code is onjuist';
+                        } else if ($persoonlijkeCode == $ingevoerdeCode) {
+                            ob_end_clean();
+                            header("Location: registratieAfronden.php");
+                        }
+                        if ($error != "") {
+                            echo isset($_POST['bevestigcode']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
+                        }
+                    }
+                    ?>
                     <div class="form-group marginTop20">
-                        <input type="submit" name="bevestig" value="bevestig" class="btn-default btn">
+                        <input type="submit" name="bevestigcode" value="bevestigcode" class="btn-default btn">
                     </div>
                 </form>
             </div>
@@ -78,5 +81,6 @@ mail($_SESSION['emailadres'], $onderwerp, $bericht, $headers);
 <?php
 
 include 'includes/footer.php';
+ob_end_flush();
 
 ?>

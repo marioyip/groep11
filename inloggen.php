@@ -39,15 +39,13 @@ connectToDatabase();
                     <div class="form-group marginBottom20">
                         <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam"
-                                   value="<?= isset($postdata['Gebruikersnaam']) ? $postdata['Gebruikersnaam'] : "" ?>">
+                            <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="pwd">Wachtwoord</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="pwd" name="pwd"
-                                   value="<?= isset($postdata['Wachtwoord']) ? $postdata['Wachtwoord'] : "" ?>">
+                            <input type="password" class="form-control" id="pwd" name="pwd">
                         </div>
                     </div>
                     <?php
