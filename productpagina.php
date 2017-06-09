@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-8" http-equiv="Refresh" content=30;>
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,6 +16,9 @@
 </head>
 <body>
 <?php
+
+
+
 session_start();
 ob_start();
 
@@ -175,11 +178,12 @@ if (isset($_GET['product'])) {
                     //  $tijd = $row[6];
                 }
                 $_SESSION['voorwerpnummer'] = $Voorwerpnummer;
-           //     echo $_SESSION['voorwerpnummer'];
+              //  echo $_SESSION['voorwerpnummer'];
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
                     WHERE Voorwerpnummer = $Voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
+               // '<script> window.location.reload()</script> ';
 
             }
             date_default_timezone_set('Europe/Amsterdam');
