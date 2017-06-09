@@ -116,10 +116,12 @@ if (isset($_GET['product'])) {
         <div class="veilingBox">
 
             <?php
+           // echo date('Y-m-d') ."\n";
+
             $Bod = "";
             $verkoopprijs = "";
             $voorwerpnummer = "";
-            $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer FROM Bod b
+            $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer, v.LooptijdeindeDag FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
                         WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
@@ -132,7 +134,9 @@ if (isset($_GET['product'])) {
                 $verkoopprijs = $row[3];
                 $VeilingGesloten1 = $row[4];
                 $voorwerpnummer = $row[5];
+              //  $tijd = $row[6];
             }
+
             if ($Bod >= $verkoopprijs) {
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = '1'
                     WHERE Voorwerpnummer = '$voorwerpnummer'";
@@ -141,6 +145,15 @@ if (isset($_GET['product'])) {
                 ob_end_flush();
 
             }
+            date_default_timezone_set('Europe/Amsterdam');
+            $date = date('d/m/Y h:i:s', time());
+            echo $date;
+//            if ($date < $tijd) {
+//                $sql = "UPDATE Voorwerp SET VeilingGesloten = '1'
+//                    WHERE Voorwerpnummer = '$voorwerpnummer'";
+//                $stmt = $db->prepare($sql);
+//                $stmt->execute();
+//            }
             if ($VeilingGesloten == 1){
                 if ($Verkoper == $_SESSION['username']) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Koper'";
