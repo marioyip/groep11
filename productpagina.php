@@ -17,6 +17,7 @@
 <body>
 <?php
 session_start();
+ob_start();
 
 include 'includes/header.php';
 include 'includes/catbar.php';
@@ -115,6 +116,32 @@ if (isset($_GET['product'])) {
         <div class="veilingBox">
 
             <?php
+            $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer FROM Bod b
+                        INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
+                        INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
+                        WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+                $Bod = $row[0];
+                $Voornaam = $row[1];
+                $Achternaam = $row[2];
+                $verkoopprijs = $row[3];
+                $VeilingGesloten1 = $row[4];
+                $voorwerpnummer = $row[5];
+            }
+            if ($Bod >= $verkoopprijs) {
+                $sql = "UPDATE Voorwerp SET VeilingGesloten = '1'
+                    WHERE Voorwerpnummer = '$voorwerpnummer'";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                ob_end_flush();
+                if ($stmt == true) {
+                    header('Location: productpagina.php');
+
+                }
+
+            }
             if ($VeilingGesloten == 1){
                 if ($Verkoper == $_SESSION['username']) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Koper'";
@@ -322,7 +349,7 @@ if (isset($_GET['product'])) {
             ?>
             <h2>
                 <?php
-                $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam FROM Bod b
+                $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
                         WHERE v.Voorwerpnummer = " . $Voorwerpnummer . " ORDER BY b.Bodbedrag DESC";
@@ -332,6 +359,9 @@ if (isset($_GET['product'])) {
                     $Bod = $row[0];
                     $Voornaam = $row[1];
                     $Achternaam = $row[2];
+                    $verkoopprijs = $row[3];
+                    $VeilingGesloten1 = $row[4];
+                    $voorwerpnummer = $row[5];
                 }
                 if (isset($Bod) && $Bod >= $Startprijs) {
                     echo '<h3>Huidige bod: €' . $Bod . ' (' . $Voornaam . ' ' . $Achternaam . ')</h3>';
@@ -367,7 +397,7 @@ if (isset($_GET['product'])) {
                             </div>
                             <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
                             <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
-                            <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn">
+                            <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn" onClick="window.location.reload();">
                         </div>
                     </form>
                 <?php } else {
@@ -458,4 +488,5 @@ if (isset($_GET['product'])) {
 </html>
 <?php
 include 'includes/footer.php';
+ob_clean();
 ?>
