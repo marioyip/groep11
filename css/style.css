@@ -24,14 +24,15 @@
 
 }
 
-.adminHeaderLink a:hover{
+.adminHeaderLink a:hover {
     text-underline: none;
 }
 
 /*Margin*/
-.marginTop0{
+.marginTop0 {
     margin-top: 0px;
 }
+
 .marginTop20 {
     margin-top: 20px;
 }
@@ -176,7 +177,6 @@
 .padding10 {
     padding: 10px;
 }
-
 
 .borderThinDarkGray {
     border-width: thin;
@@ -458,13 +458,16 @@ ol {
 .containerMinHeight {
     min-height: 1200px;
 }
-.fingerIconChange{
+
+.fingerIconChange {
     cursor: pointer;
 }
-#noHoverColor:hover{
-    background-color:#FAFAFA ;
+
+#noHoverColor:hover {
+    background-color: #FAFAFA;
 }
-.grow{
+
+.grow {
     position: relative;
 
     border: 1px solid #333;
@@ -473,19 +476,18 @@ ol {
     width: 540px;
 }
 
-.grow img{
+.grow img {
     max-width: 100%;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.5s;
 }
 
-.grow:hover img{
+.grow:hover img {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-
 
 .form-control {
     display: block;
@@ -522,6 +524,7 @@ ol {
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     font-family: 'Sanchez', sans-serif;
+    width: 47.3%;
 }
 
 .form-control2 {
@@ -543,7 +546,7 @@ ol {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-.editPanel{
+.editPanel {
     background-color: #9d9d9d;
     height: 600px;
 }
@@ -573,45 +576,44 @@ ol {
     margin: 10px;
 }
 
-.titleOverflow{
+.titleOverflow {
     overflow: hidden;
 }
 
-.itemTitleBox{
+.itemTitleBox {
     text-align: center;
     height: 30px;
     overflow: hidden
 }
 
-
-.category:hover{
+.category:hover {
     color: #F45520;
     text-decoration: none;
 }
 
-.categoryBox{
+.categoryBox {
     height: 300px;
     padding: 10px;
-    opacity:0.9;
+    opacity: 0.9;
 }
 
 #wrapper .text {
-    position:relative;
-    bottom:150px;
-    left:0px;
-    visibility:hidden;
+    position: relative;
+    bottom: 150px;
+    left: 0px;
+    visibility: hidden;
 }
 
 #wrapper:hover .text {
-    visibility:visible;
+    visibility: visible;
 }
 
-.categoryBox:hover{
+.categoryBox:hover {
 
-    opacity:1;
+    opacity: 1;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
@@ -644,7 +646,7 @@ ol {
     font-style: italic;
 }
 
-.itemBoxDescriptionA a{
+.itemBoxDescriptionA a {
     font-style: italic;
 }
 
@@ -669,7 +671,6 @@ ol {
     border-radius: 10px;
 }
 
-
 .btn-default {
     box-shadow: none;
 }
@@ -680,6 +681,7 @@ ol {
     margin-bottom: 5px;
     border-radius: 0;
 }
+
 .btn-ibisrnd {
     background-color: #F45520;
     color: #EDF1FE;
@@ -694,7 +696,7 @@ ol {
     border-radius: 0;
 }
 
-.okDescription{
+.okDescription {
     font-weight: bold;
 }
 
@@ -730,6 +732,10 @@ ol {
     border-top-width: medium;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: #88B04B;
+}
+
 .rowBid {
     margin-left: -15px;
 }
@@ -750,6 +756,11 @@ ol {
 
 }
 
+.pagination > li > a, .pagination > li > span {
+    border-radius: 50% !important;
+    margin: 0 5px;
+}
+
 /*!
  * bootstrap-vertical-tabs - v1.1.0
  * https://dbtek.github.io/bootstrap-vertical-tabs
@@ -761,81 +772,97 @@ ol {
     border-bottom: none;
     padding-top: 2px;
 }
+
 .tabs-left {
     border-right: 1px solid #ddd;
 }
+
 .tabs-right {
     border-left: 1px solid #ddd;
 }
-.tabs-left>li, .tabs-right>li {
+
+.tabs-left > li, .tabs-right > li {
     float: none;
     margin-bottom: 2px;
 }
-.tabs-left>li {
+
+.tabs-left > li {
     margin-right: -1px;
 }
-.tabs-right>li {
+
+.tabs-right > li {
     margin-left: -1px;
 }
-.tabs-left>li.active>a,
-.tabs-left>li.active>a:hover,
-.tabs-left>li.active>a:focus {
+
+.tabs-left > li.active > a,
+.tabs-left > li.active > a:hover,
+.tabs-left > li.active > a:focus {
     border-bottom-color: #ddd;
     border-right-color: transparent;
 }
 
-.tabs-right>li.active>a,
-.tabs-right>li.active>a:hover,
-.tabs-right>li.active>a:focus {
+.tabs-right > li.active > a,
+.tabs-right > li.active > a:hover,
+.tabs-right > li.active > a:focus {
     border-bottom: 1px solid #ddd;
     border-left-color: transparent;
 }
-.tabs-left>li>a {
+
+.tabs-left > li > a {
     border-radius: 4px 0 0 4px;
     margin-right: 0;
-    display:block;
+    display: block;
 }
-.tabs-right>li>a {
+
+.tabs-right > li > a {
     border-radius: 0 4px 4px 0;
     margin-right: 0;
 }
+
 .vertical-text {
-    margin-top:50px;
+    margin-top: 50px;
     border: none;
     position: relative;
 }
-.vertical-text>li {
+
+.vertical-text > li {
     height: 20px;
     width: 120px;
     margin-bottom: 100px;
 }
-.vertical-text>li>a {
+
+.vertical-text > li > a {
     border-bottom: 1px solid #ddd;
     border-right-color: transparent;
     text-align: center;
     border-radius: 4px 4px 0px 0px;
 }
-.vertical-text>li.active>a,
-.vertical-text>li.active>a:hover,
-.vertical-text>li.active>a:focus {
+
+.vertical-text > li.active > a,
+.vertical-text > li.active > a:hover,
+.vertical-text > li.active > a:focus {
     border-bottom-color: transparent;
     border-right-color: #ddd;
     border-left-color: #ddd;
 }
+
 .vertical-text.tabs-left {
     left: -50px;
 }
+
 .vertical-text.tabs-right {
     right: -50px;
 }
-.vertical-text.tabs-right>li {
+
+.vertical-text.tabs-right > li {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-.vertical-text.tabs-left>li {
+
+.vertical-text.tabs-left > li {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);

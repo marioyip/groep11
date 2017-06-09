@@ -5,20 +5,13 @@
     <title>Admin - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!--bootstrap css-->
     <link rel="stylesheet" href="css/style.css"> <!--EenmaalAndermaal css-->
     <link rel="stylesheet" href="css/admin.css"> <!--Admin css-->
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!--tabblad icoontje-->
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').focus()
-        })</script>
 </head>
 <body>
-
 
 <?php
 session_start();
@@ -30,12 +23,12 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
     <div class="containerMinHeight">
 
         <div class="container marginTop20 ">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#item1">Gebruikers</a>
+                    <a class="nav-link active" data-toggle="tab" href="#item1"><h3>Gebruikers</h3></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#item2">Veilingen</a>
+                    <a class="nav-link" data-toggle="tab" href="#item2"><h3>Veilingen</h3></a>
                 </li>
             </ul>
         </div>
@@ -44,7 +37,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
             <div class="input-group col-md-6">
                 <input type="text" class="form-control input-lg" placeholder="Zoeken"/>
                 <span class="input-group-btn">
-                            <button class="btn btn-ibisrnd btn-lg" type="button">
+                            <button class="btn btn-ibisrnd btn-md" type="button">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
@@ -70,10 +63,12 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
                                 $GeboorteDag[] = $row[3];
                                 $email[] = $row[4];
                             }
+
+
                             ?>
-                            <table class="table">
+                            <table id="tableGebruikers" class="table">
                                 <thead>
-                                <tr>
+                                <tr id="noHoverColor">
                                     <th>Gebruikersnaam</th>
                                     <th>Voornaam</th>
                                     <th>Achternaam</th>
@@ -113,6 +108,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
                                                 </form>
                                             </tr>
                                         </div>
+
                                         <?php
                                     }
                                 } else {
@@ -140,9 +136,9 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
                                 $Koper[] = $row[5];
                             }
                             ?>
-                            <table class="table">
+                            <table id="tableGebruikers" class="table">
                                 <thead>
-                                <tr>
+                                <tr id="noHoverColor">
 
                                     <th>Voorwerpnummer</th>
                                     <th>Titel</th>
@@ -158,7 +154,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
                                 if (!empty($email)) {
                                     for ($i = 0; $i < count($Voorwerpnummer); $i++) {
                                         ?>
-                                        <tr>
+                                        <tr class="fingerIconChange">
 
                                             <td>
                                                 <p class="textDarkGray"><?php echo $Voorwerpnummer[$i]; ?></p>
@@ -207,7 +203,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
+<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
 <?php include 'includes/adminfooter.php'; //geeft de footer mee aan deze pagina
