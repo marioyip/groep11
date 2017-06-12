@@ -20,7 +20,7 @@ error_reporting(E_ALL | E_STRICT);
         <?php
 
         if (isset($_SESSION['username'])) {
-            if ($_SESSION['username'] == 'admin') {
+            if ($_SESSION['username'] == 'ADMIN') {
                 echo
                 '
             <div id="navbar">
