@@ -309,34 +309,35 @@ if (isset($_GET['product'])) {
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                } else if (isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
-
-                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
+                }
+// else if (isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
+//
+//                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
+//                    $stmt = $db->prepare($sql);
+//                    $stmt->execute();
 
                     //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
                     //eerst wat informatie uit de query halen van diegene die het bod heeft gewonnen
-                    $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $email = $row[0];
-                    }
-                    //het schrijven van de email
-                    $headers = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'From: EenmaalAndermaal Veiling
-            <EenmaalAndermaal
-            @iConcepts.nl>' . "\r\n";
-                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                    $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
-                    $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel . '' . "\r\n";
-                    $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
-                    $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
-                    mail($email, $onderwerp, $bericht, $headers);
-
-                    $emailVerzonden[$product] = 1;
-                }
+//                    $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
+//                    $stmt = $db->prepare($sql);
+//                    $stmt->execute();
+//                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+//                        $email = $row[0];
+//                    }
+//                    //het schrijven van de email
+//                    $headers = 'MIME-Version: 1.0' . "\r\n";
+//                    $headers .= 'From: EenmaalAndermaal Veiling
+//            <EenmaalAndermaal
+//            @iConcepts.nl>' . "\r\n";
+//                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//                    $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
+//                    $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel . '' . "\r\n";
+//                    $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
+//                    $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+//                    mail($email, $onderwerp, $bericht, $headers);
+//
+//                    $emailVerzonden[$product] = 1;
+//                }
             }
             else{
             ?>

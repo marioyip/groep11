@@ -23,6 +23,35 @@
 session_start();
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
 include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
+
+//voor de email naar de koper
+$sql = "SELECT email, koper FROM gebruiker innner JOIN voorwerp ON Gebruikersnaam = Koper WHERE EmailVerzonden != 1";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+    $email[] = $row[0];
+    $koper[] = $row[1];
+}
+
+//het schrijven van de email
+for ($i = 0; $i < $email; $i++) {
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'From: EenmaalAndermaal Veiling
+            <EenmaalAndermaal
+            @iConcepts.nl>' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
+    $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel . '' . "\r\n";
+    $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
+    $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+    mail($email[$i], $onderwerp, $bericht, $headers);
+}
+for ($j = 0; $j < $koper; $j++) {
+    $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]'";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+}
+
 function getTijd($tijd, $pos)
 {
     ?>
@@ -40,7 +69,7 @@ function getTijd($tijd, $pos)
 
             if (verschil <= 0) {
                 clearInterval(x);
-                document.getElementById("<?php echo $pos ?>").innerHTML =   "Helaas, de veiling is afgelopen!   ";
+                document.getElementById("<?php echo $pos ?>").innerHTML = "Helaas, de veiling is afgelopen!   ";
             } else {
                 document.getElementById("<?php echo $pos ?>").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
             }
@@ -110,7 +139,7 @@ function getTijd($tijd, $pos)
                 10.000 veilingen per dag
             </p>
         </div>
-        <div class="col-md-4" >
+        <div class="col-md-4">
             <p class="textDarkGray bold "><span class="glyphicon glyphicon-ok textGreen"></span>
                 Al 5.000
                 gewonnen veilingen

@@ -1,10 +1,10 @@
 <?php
 function connectToDatabase() //functie om aan de database te kunnen verbinden
 {
-    $pw = "rPgxSAaf";
-    $username = "iproject11";
-    $hostname = "mssql.iproject.icasites.nl";
-    $dbname = "iproject11";
+$pw = "rPgxSAaf";
+$username = "iproject11";
+$hostname = "mssql.iproject.icasites.nl";
+$dbname = "iproject11";
 
 //$pw = "dbrules";
 //$username = "sa";
