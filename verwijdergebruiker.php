@@ -16,7 +16,7 @@ if (isset($_POST['gebruiker'])) {
     $sql = "SELECT TOP 1 email FROM Gebruiker WHERE Gebruikersnaam = '$gebruiker'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    while($row = $stmt->fetch(PDO::FETCH_NUM)){
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $email = $row[0];
     }
     $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -25,7 +25,7 @@ if (isset($_POST['gebruiker'])) {
     $onderwerp = 'Verwijdering account EenmaalAndermaal' . "\r\n";
     $bericht = 'Uw account van EenmaalAndermaal is per direct opgezegd. Denkt u dat dit een fout is, neem dan contact op via onze contact pagina.';
     mail($email, $onderwerp, $bericht, $headers);
-
+    //Delete uit alle tabellen waar gebruiker vookomt
     $sql = "DELETE FROM Feedback WHERE Voorwerp IN(SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
             DELETE FROM VoorwerpInRubriek WHERE Voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');
             DELETE FROM Bestand WHERE voorwerp IN (SELECT Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$gebruiker');

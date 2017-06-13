@@ -48,7 +48,8 @@ include 'includes/catbar.php';
 
                         <h3 class="textGreen marginTop50">De verantwoordelijkheden zijn onder andere:</h3>
                         <li>
-                            Je ontwerpt, implementeert, evalueert en optimaliseert trainingen en trainingspakketten voor collega's op specifieke afdelingen.
+                            Je ontwerpt, implementeert, evalueert en optimaliseert trainingen en trainingspakketten voor
+                            collega's op specifieke afdelingen.
                         </li>
                         <li>
                             Je adviseert op afdelingsniveau bij specifieke leer- en ontwikkelvraagstukken.
@@ -62,7 +63,8 @@ include 'includes/catbar.php';
                             Je bent flexibel en je kan je goed aanpassen aan veranderingen.
                         </li>
                         <li>
-                            Je bent bekend met verschillende werkvormen, leerstijlen en past deze kennis praktisch toe in het ontwerpproces en alle gesprekken.
+                            Je bent bekend met verschillende werkvormen, leerstijlen en past deze kennis praktisch toe
+                            in het ontwerpproces en alle gesprekken.
                         </li>
                         <li>
                             Je hebt minimaal vijf jaar ervaring als PHP Developer.
@@ -78,10 +80,12 @@ include 'includes/catbar.php';
                             Ontwikkelingsmogelijkheden binnen een groeiende start-up.
                         </li>
                         <li>
-                            Ongekend goede werksfeer. Met versbereide happen, maandelijkse borrels, legendarische feesten, de leukste teamactiviteiten en een informele, speelse afdeling.
+                            Ongekend goede werksfeer. Met versbereide happen, maandelijkse borrels, legendarische
+                            feesten, de leukste teamactiviteiten en een informele, speelse afdeling.
                         </li>
                         <li>
-                            Als je een idee hebt, staan we daar altijd voor open. Of je nu een week, een maand of een jaar bij ons werkt.
+                            Als je een idee hebt, staan we daar altijd voor open. Of je nu een week, een maand of een
+                            jaar bij ons werkt.
                         </li>
                         </ul>
                         </p>

@@ -24,38 +24,6 @@ include 'includes/catbar.php'; //geeft de categorieën balk mee aan deze pagina
 if (isset($_GET['rubriek'])) {
     $gekozenRubriek = $_GET['rubriek'];
 }
-
-//$sortType = 0;
-//$NAAM = 1;
-//$PRIJS_ASC = 2;
-//$PRIJS_DESC = 3;
-//$AFLOOPTIJD_ASC = 4;
-//$AFLOOPTIJD_DESC = 5;
-//echo $_REQUEST['sorttype'];
-//
-//if (isset($_REQUEST['sorttype'])) {
-//    echo $_REQUEST['sorttype'];
-//    switch ($_REQUEST['sorttype']) {
-//        case 'Naam':
-//            $sortType = $NAAM;
-//            break;
-//        case 'Prijs oplopend':
-//            $sortType = $PRIJS_ASC;
-//            break;
-//        case 'Prijs aflopend':
-//            $sortType = $PRIJS_DESC;
-//            break;
-//        case 'Aflooptijd oplopend':
-//            $sortType = $AFLOOPTIJD_ASC;
-//            break;
-//        case 'Aflooptijd aflopend':
-//            $sortType = $AFLOOPTIJD_DESC;
-//            break;
-//        default :
-//            $sortType = 0;
-//            break;
-//    }
-//}
 $sql = "SELECT Rubrieknaam FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -67,10 +35,6 @@ if ($titel == 'Root') {
 }
 ?>
 <main>
-
-
-    <!--    <div class="containerMain">-->
-    <!--        <div class="container marginTop20">-->
     <div class="col-md-12 " align="center">
         <h1 class="textGreen"><?php echo $titel; ?></h1>
     </div>
@@ -81,6 +45,7 @@ if ($titel == 'Root') {
             <hr>
             <?php
             echo '<ul class="list-group">';
+            //Als er bovenliggende categorieën zijn wordt er een 'vorige' knop toegevoegd
             if ($gekozenRubriek > -1) {
                 $sql = "SELECT Rubriek FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'";
                 $stmt = $db->prepare($sql);
@@ -89,7 +54,7 @@ if ($titel == 'Root') {
                     echo '<li class="list-group-item"><a href="?rubriek=' . $row[0] . '">...Vorige</a></li>';
                 }
             }
-
+            //De categorieën worden geladen
             $sql = "SELECT Rubrieknaam, Rubrieknummer FROM rubriek WHERE rubriek = '$gekozenRubriek' ORDER BY rubrieknaam";
             $stmt = $db->prepare($sql);
             $stmt->execute();
@@ -104,22 +69,10 @@ if ($titel == 'Root') {
             }
             ?>
             </ul>
-            <!--            <div class="form-group">-->
-            <!--                <form method="POST" >-->
-            <!--                    <label for="Order by">Sorteren</label>-->
-            <!--                    <select class="form-control" id="sorttype">-->
-            <!--                        <option>Naam</option>-->
-            <!--                        <option>Prijs oplopend</option>-->
-            <!--                        <option>Prijs aflopend</option>-->
-            <!--                        <option>Aflooptijd oplopend</option>-->
-            <!--                        <option>Aflooptijd aflopend</option>-->
-            <!--                    </select>-->
-            <!--                    <button type="submit" class="btn btn-default">Sorteer</button>-->
-            <!--                </form>-->
-            <!--            </div>-->
         </div>
         <div class="col-md-10 container-fluid fixed">
             <?php
+            //Recursieve methode die zolang er onderliggende categorieën ('childs') zijn ook die meeneemt bij het selecteren van voorwerpen
             $sql = ";WITH childs AS (
                         SELECT * FROM Rubriek WHERE Rubrieknummer = '$gekozenRubriek'
                         UNION ALL
@@ -137,6 +90,7 @@ if ($titel == 'Root') {
                 $beschrijvingen[] = $row[3];
                 $prijzen[] = $row[4];
             }
+            //De alfabetisch eerste 50 (om de performance te verbeteren) voorwerpen in of onder de geselecteerde categorieën worden getoond
             if (isset($titels) && count($titels) > 0) {
                 for ($i = 0; $i < count($titels); $i++) {
                     echo '<div class="col-md-3 itemBoxResults roundborder " align="center">';

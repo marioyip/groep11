@@ -264,7 +264,7 @@ include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
                                     || strpbrk($nieuwWachtwoord1, 'abcdefghijklmnopqrstuvwxyz') == FALSE
                                     || strpbrk($nieuwWachtwoord1, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') == FALSE
                                 ) {
-                                    echo('weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?');
+                                    echo('Weet je zeker dat je wachtwoord langer is dan 6 karakters, een cijfer, een hoofdletter en teminste één kleine letter bevat?');
                                 } else {
                                     $hashedWachtwoord = password_hash($nieuwWachtwoord1, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
 

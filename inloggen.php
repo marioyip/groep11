@@ -20,7 +20,7 @@ include('includes/catbar.php');
 require_once('includes/functies.php');
 
 if (isset($_SESSION['username'])) {
-    if($_SESSION['ingelogd'] == true) {
+    if ($_SESSION['ingelogd'] == true) {
         echo "<div class='alert alert-info' align='center'><p>U bent al ingelogd!</p></div>";
     }
 } else {
@@ -69,13 +69,15 @@ connectToDatabase();
                         </div>
                     </div>
                     <?php
+                    //Inloggen
                     if (isset($_POST['login'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
                         $pwd = $_POST["pwd"];
                         $error = "";
-                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
+                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+                        $stmt = $db->prepare($sql);
                         $stmt->execute();
+                        //Wachtwoord controleren
                         if (empty($gebruikersnaam)) {
                             $error = 'U heeft uw gebruikersnaam niet ingevuld!';
                         }
@@ -152,7 +154,6 @@ connectToDatabase();
 
 
 <?php
+include 'includes/footer.php';
 }
-include('includes/footer.php');
-ob_end_flush();
 

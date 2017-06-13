@@ -12,12 +12,12 @@
 </head>
 
 <?php
-ob_start( );
+ob_start();
 session_start();
 if (isset($_SESSION['username'])){
 
 include 'includes/header.php';
-//include 'includes/catbar.php';
+include 'includes/catbar.php';
 require_once 'includes/functies.php';
 
 ?>
@@ -29,43 +29,46 @@ if (isset($_POST['rubriek'])) {
 } else {
     $parent = -1;
 }
+//Selecteert alle rubriekem die onder de parent vallen
 $sql = "SELECT Rubrieknummer, Rubrieknaam FROM Rubriek WHERE Rubriek = '$parent' ORDER BY Rubrieknaam ASC";
 $stmt = $db->prepare($sql);
 $stmt->execute();
-while($row = $stmt->fetch(PDO::FETCH_NUM)){
+while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
     $rubrieknummer[] = $row[0];
     $rubrieknaam[] = $row[1];
 }
-if(isset($rubrieknummer) && count($rubrieknummer) > 0) {
-?>
-<form method="POST" action="">
-    <div class="form-group">
-        <label for="rubriek_voorwerp">Rubriek</label>
-        <select class="form-control" id="rubriek_voorwerp" name="rubriek" required>
-            <?php
-            for($i = 0; $i < count($rubrieknummer); $i++){
-                echo '<option value=" ' . $rubrieknummer[$i] . ' ">' . $rubrieknaam[$i] . '</option>';
-            }
-            ?>
-        </select>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Selecteer" name="submit">
-    </div>
-</form>
-<?php
+if (isset($rubrieknummer) && count($rubrieknummer) > 0) {
+
+    ?>
+    <form method="POST" action="">
+        <div class="form-group">
+            <label for="rubriek_voorwerp">Rubriek</label>
+            <select class="form-control" id="rubriek_voorwerp" name="rubriek" required>
+                <?php
+                for ($i = 0; $i < count($rubrieknummer); $i++) {
+                    echo '<option value=" ' . $rubrieknummer[$i] . ' ">' . $rubrieknaam[$i] . '</option>';
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Selecteer" name="submit">
+        </div>
+    </form>
+    <?php
 } else {
+    //Insert het voorwerp in de rubriek
     $rubriek = $_POST['rubriek'];
     $voorwerp = $_SESSION['voorwerpnummer'];
     $sql = "INSERT INTO VoorwerpInRubriek VALUES('$rubriek', '$voorwerp')";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    ob_end_clean( );
+    ob_end_clean();
     header('Location: uploadfoto.php');
 }
 ?>
 </body>
 <?php
 }
-ob_end_flush( );
+ob_end_flush();
 ?>
