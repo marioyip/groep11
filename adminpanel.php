@@ -16,7 +16,7 @@
 <?php
 session_start();
 include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
-if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
+if (isset($_SESSION['username']) && $_SESSION['username'] == 'ADMIN') {
 ?>
 <main>
 
