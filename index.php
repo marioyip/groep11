@@ -42,14 +42,14 @@ if ($timeTeller % 5 == 0) {
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $email[] = $row[0];
-        $koper[] = $row[1];
+        $kopert[] = $row[1];
         $nrVerkocht[] = $row[2];
         $Titel[] = $row[3];
     }
 
     if (!empty($email)) {
-        for ($j = 0; $j < count($koper); $j++) {
-            $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
+        for ($j = 0; $j < count($kopert); $j++) {
+            $sql = "update voorwerp set emailverzonden = 1 where koper ='$kopert[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
             $stmt = $db->prepare($sql);
             $stmt->execute();
         }
