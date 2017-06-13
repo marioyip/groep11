@@ -79,7 +79,7 @@
                             if (empty($ww)) {
                                 $errorWw = 'U heeft uw wachtwoord niet ingevuld!';
                             }
-                            if (!preg_match("/^[a-zA-Z0-9!?]*$/", $ww) && strlen($ww) > 6) {
+                            if (!preg_match("/^[a-zA-Z0-9!]{7,}$/", $ww)) {
                                 $errorWw = "Uw wachtwoord moet minstens 6 karakters lang zijn, een hoofdletter, een kleine letter en een getal bevatten!";
                             }
                             $error .= $errorWw;
@@ -356,6 +356,22 @@
             $vraag = strip_tags($_POST['vraag']);
             $huisnr2 = strip_tags($_POST['huisnr2']);
             $straat2 = strip_tags($_POST['straat2']);
+
+//        echo "voornaam :" .$voornaam. "<br>";
+//        echo "achternaam :" .$achternaam. "<br>";
+//        echo "email :" .$email. "<br>";
+//        echo "land :" .$land. "<br>";
+//        echo "vraag :" .$vraag. "<br>";
+//        echo "gebruikersnaam :" .$gebruikersnaam. "<br>";
+//        echo "ww :" .$ww. "<br>";
+//        echo "ww2 :" .$ww2. "<br>";
+//        echo "tel :" .$tel. "<br>";
+//        echo "aw :" .$aw. "<br>";
+//        echo "straat :" .$straat. "<br>";
+//        echo "huisnr :" .$huisnr. "<br>";
+//        echo "postcode :" .$postcode. "<br>";
+//        echo "plaats :" .$plaats. "<br>";
+//        echo "gd :" .$gd. "<br>";
 
             if (!empty($_POST['huisnr2']) && !empty($_POST['straat2'])) {
                 $tweedeAdres = true;
