@@ -16,15 +16,22 @@
 <body>
 
 <?php
+ob_start();
 session_start();
+include('includes/header.php');
+include('includes/catbar.php');
+
 if (isset($_SESSION['username'])) {
-    header("Location: index.php");
+    echo "<div class='alert alert-info' align='center'><p>U bent al geregistreerd voor Eenmaal Andermaal!</p></div>";
+} else {
+
+$_SESSION['ingelogd'] = false;
+
+if (isset($_SESSION['nieuweGebruiker'])) {
+    ob_end_clean();
+    header("Location: foutmeldingen.php");
 }
 
-include 'includes/header.php';
-include 'includes/catbar.php';
-
-echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "</p>" : "";
 ?>
 <main>
     <div class="container marginTop20">
@@ -34,62 +41,106 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
         </div>
         <div class="col-md-12 marginTop20" align="center">
             <div class="col-md-9 marginTop20 text-left">
-                <form class="form-horizontal" method="post" action="registercontrol.php">
-                    <div class="form-group" align="right">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-4">
-                            <label class="control-label text-right" for="email">Voornaam:</label>
-                        </div>
-                        <div class="col-sm-4">
+                <form class="form-horizontal" method="post" action="#">
+                    <div class="form-group">
+                        <h3>Accountgegevens</h3>
+                        <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="voornaam" id="email"
                                    placeholder="Kees"
-                                   value="<?= isset($postdata['Voornaam']) ? $postdata['Voornaam'] : "" ?>">
+                                   value="<?php echo isset($_POST['voornaam']) ? $_POST['voornaam'] : '' ?>">
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
-                    <div class="form-group" align="right">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-4">
-                            <label class="control-label" for="pwd">Achternaam:</label>
-                        </div>
-                        <div class="col-sm-4">
+                    <?php
+                    if (isset($_POST['bevestigmail'])) {
+                        $voornaam = strip_tags($_POST['voornaam']);
+                        $errorVoornaam = "";
+                        if (empty($voornaam)) {
+                            $errorVoornaam = 'U heeft uw voornaam niet ingevuld!';
+                        }
+                        if ($errorVoornaam != "") {
+                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'> <p>" . $errorVoornaam . "</p></div>" : "";
+                        }
+                    }
+                    ?>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Achternaam:</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="achternaam" id="pwd"
                                    placeholder="van Dalen"
-                                   value="<?= isset($postdata['Achternaam']) ? $postdata['Achternaam'] : "" ?>">
+                                   value="<?php echo isset($_POST['achternaam']) ? $_POST['achternaam'] : '' ?>">
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
-                    <div class="form-group" align="right">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-4">
-                            <label class="control-label" for="email">E-mailadres:</label>
-                        </div>
-                        <div class="col-sm-4">
+                    <?php
+                    if (isset($_POST['bevestigmail'])) {
+                        $achternaam = strip_tags($_POST['achternaam']);
+                        $errorAchternaam = "";
+                        if (empty($achternaam)) {
+                            $errorAchternaam = 'U heeft uw achternaam niet ingevuld!';
+                        }
+                        if ($errorAchternaam != "") {
+                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'> <p>" . $errorAchternaam . "</p></div>" : "";
+                        }
+                    }
+                    ?>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">E-mailadres:</label>
+                        <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres" id="email"
                                    placeholder="k.vandalen@email.com"
-                                   value="<?= isset($postdata['email']) ? $postdata['email'] : "" ?>">
+                                   value="<?php echo isset($_POST['emailadres']) ? $_POST['emailadres'] : '' ?>">
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
-                    <div class="form-group" align="right">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-4">
-                            <label class="control-label" for="email">Herhaal E-mailadres:</label>
-                        </div>
-                        <div class="col-sm-4">
+                    <?php
+                    if (isset($_POST['bevestigmail'])) {
+                        $errorEmail = "";
+                        $email = strip_tags($_POST['emailadres']);
+                        if (empty($email)) {
+                            $errorEmail = 'U heeft uw e-mailadres niet ingevuld!';
+                        }
+                        if ($errorEmail != "") {
+                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'> <p>" . $errorEmail . "</p></div>" : "";
+                        }
+                    }
+                    ?>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Herhaal E-mailadres:</label>
+                        <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres2" id="email"
                                    placeholder="k.vandalen@email.com"
-                                   value="<?= isset($postdata['email']) ? $postdata['email'] : "" ?>">
+                                   value="<?php echo isset($_POST['emailadres2']) ? $_POST['emailadres2'] : '' ?>">
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
+                    <?php
+                    if (isset($_POST['bevestigmail'])) {
+                        $errorControle = "";
+                        $email = strip_tags($_POST['emailadres']);
+                        $email2 = strip_tags($_POST['emailadres2']);
+                        if (empty($email2)) {
+                            $errorControle = 'U heeft uw e-mailadres niet bevestigd!';
+                        }
+                        if (!empty($voornaam) && !empty($achternaam) && !empty($email)) {
+                            if ($email == $email2) {
+                                $_SESSION['email'] = strip_tags($email);
+                                $voornaam = strip_tags($_POST['voornaam']);
+                                $achternaam = strip_tags($_POST['achternaam']);
+                                $_SESSION['voornaam'] = $voornaam;
+                                $_SESSION['achternaam'] = $achternaam;
+                                $_SESSION['code'] = mt_rand();
+//                                $gelukt = 'De bevestigingscode om een account aan te kunnen maken wordt verstuurd naar uw e-mailadres';
+                                ob_end_clean();
+                                header("Location: registercontrol.php");
+                            } else if ($email != $email2) {
+                                $errorControle = 'Uw email-adres komt niet overeen met het bevestigende e-mailadres';
+                            }
+                        }
+                        if ($errorControle != "") {
+                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'><p>" . $errorControle . "</p></div>" : "";
+                        }
+                    }
+                    ?>
                     <div class="form-group">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-7"></div>
-                        <div class="col-sm-2">
-                            <input type="submit" value="bevestig" name="bevestigmail" class="btn-default btn">
-                        </div>
-                        <div class="col-sm-1"></div>
+                        <input type="submit" value="bevestig" name="bevestigmail" class="btn-default btn">
                     </div>
                 </form>
             </div>
@@ -100,5 +151,7 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
 </html>
 
 <?php
-include 'includes/footer.php'
-?>
+}
+include('includes/footer.php');
+ob_end_flush();
+

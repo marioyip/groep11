@@ -47,11 +47,12 @@ if ($timeTeller % 5 == 0) {
         $Titel[] = $row[3];
     }
 
-    for ($j = 0; $j < count($koper); $j++) {
-        $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-    }
+    if (!empty($Koper)) {
+        for ($j = 0; $j < count($koper); $j++) {
+            $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+        }
 
     for ($i = 0; $i < count($email); $i++) {
         $headers = 'MIME-Version: 1.0' . "\r\n";
