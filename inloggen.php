@@ -154,6 +154,7 @@ connectToDatabase();
 
 
 <?php
-include 'includes/footer.php';
 }
+include 'includes/footer.php';
+ob_end_flush();
 
