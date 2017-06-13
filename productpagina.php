@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-8" http-equiv="Refresh" content=30;>
     <title>Productpagina - Eenmaal Andermaal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,6 +16,7 @@
 </head>
 <body>
 <?php
+
 session_start();
 ob_start();
 
@@ -26,7 +27,6 @@ ini_set('display_errors', 1);
 require_once('includes/functies.php');
 
 connectToDatabase();
-emailCheck();
 
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
@@ -116,12 +116,7 @@ if (isset($_GET['product'])) {
 
     <div class="col-md-6">
         <div class="veilingBox">
-
             <?php
-
-
-           // echo date('Y-m-d') ."\n";
-
             $Bod = "";
             $verkoopprijs = "";
             $voorwerpnummer = "";
@@ -138,27 +133,21 @@ if (isset($_GET['product'])) {
                 $verkoopprijs = $row[3];
                 $VeilingGesloten1 = $row[4];
                 $voorwerpnummer = $row[5];
-              //  $tijd = $row[6];
             }
-
             if ($Bod >= $verkoopprijs) {
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
                     WHERE Voorwerpnummer = '$voorwerpnummer'";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 ob_end_flush();
-
             }
             $ch = curl_init("http://iproject11.icasites.nl/productpagina.php?product=$voorwerpnummer");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $text = curl_exec($ch);
-            $test = strpos($text, "Helaas, de veiling is afgelopen!");
-            if ($test==false)
-            {
+            $test = strpos($text, "0 Dagen 0 uur 0 minuten 0 seconden");
+            if ($test == false) {
                 echo "";
-            }
-            else
-            {
+            } else {
                 $sql = "SELECT TOP 1 b.Bodbedrag, g.voornaam, g.achternaam, v.Verkoopprijs, v.VeilingGesloten, v.Voorwerpnummer, v.LooptijdeindeDag FROM Bod b
                         INNER JOIN Voorwerp v ON b.Voorwerp = v.Voorwerpnummer
                         INNER JOIN Gebruiker g ON b.Gebruiker = g.Gebruikersnaam
@@ -172,20 +161,16 @@ if (isset($_GET['product'])) {
                     $verkoopprijs = $row[3];
                     $VeilingGesloten1 = $row[4];
                     $voorwerpnummer = $row[5];
-                    //  $tijd = $row[6];
                 }
                 $_SESSION['voorwerpnummer'] = $Voorwerpnummer;
-           //     echo $_SESSION['voorwerpnummer'];
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = 1
                     WHERE Voorwerpnummer = $Voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
-
             }
             date_default_timezone_set('Europe/Amsterdam');
             $date = date('d/m/Y h:i:s', time());
 
-//            }
             if ($VeilingGesloten == 1 && !empty($_SESSION['username'])){
                 if ($Verkoper == $_SESSION['username']) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Koper'";
@@ -305,33 +290,6 @@ if (isset($_GET['product'])) {
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
-                } else if (isset($emailVerzonden[$product]) && $emailVerzonden[$product] != 1) {
-
-                    $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-
-                    //het maken van de mail die de bevestiging stuurt dat iemand iets heeft gekocht
-                    //eerst wat informatie uit de query halen van diegene die het bod heeft gewonnen
-                    $sql = "SELECT email FROM Gebruiker WHERE Gebruikersnaam = '$gebruikerHoogsteBod'";
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute();
-                    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                        $email = $row[0];
-                    }
-                    //het schrijven van de email
-                    $headers = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'From: EenmaalAndermaal Veiling
-            <EenmaalAndermaal
-            @iConcepts.nl>' . "\r\n";
-                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                    $onderwerp = 'U heeft ' . $Titel . ' Gewonnen op EenmaalAndermaal' . "\r\n";
-                    $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel . '' . "\r\n";
-                    $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
-                    $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
-                    mail($email, $onderwerp, $bericht, $headers);
-
-                    $emailVerzonden[$product] = 1;
                 }
             }
             else{
@@ -376,13 +334,13 @@ if (isset($_GET['product'])) {
                         +minutes + " minuten en " + seconds + " seconden om te bieden!";
 
                     // If the count down is finished, write some text
-                  if (verschil <= 0) {
+                    if (verschil <= 0) {
                         clearInterval(x);
                         document.getElementById("demo").innerHTML = "Helaas, de veiling is afgelopen!";
                     }
-                  else {
-                      document.getElementById("demo").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
-                  }
+                    else {
+                        document.getElementById("demo").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
+                    }
                 }, 1);
             </script>
             </p>
@@ -441,7 +399,8 @@ if (isset($_GET['product'])) {
                             </div>
                             <input type="hidden" value="<?php echo $_SESSION['username']; ?>" name="gebruiker">
                             <input type="hidden" value="<?php echo $product; ?>" name="productnummer">
-                            <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn" onClick="window.location.reload();">
+                            <input type="submit" name="bodgeplaatst" value="Plaats bod!" class="btn-default btn"
+                                   onClick="window.location.reload();">
                         </div>
                     </form>
                 <?php } else {
@@ -469,7 +428,6 @@ if (isset($_GET['product'])) {
                             echo '<li>€' . $Bod2[$i] . ' (' . $Voornaam2[$i] . ' ' . $Achternaam2[$i] . ' ' . $Tijdstip2[$i] . ')</li>';
                         }
                     }
-
                     ?>
                 </ul>
             </div>
@@ -485,7 +443,6 @@ if (isset($_GET['product'])) {
                     <li><a data-toggle="tab" href="#menu1">Instructies</a></li>
                     <li><a data-toggle="tab" href="#menu2">Contact informatie</a></li>
                 </ul>
-
                 <div class="tab-content">
                     <div id="home" class="tab-pane in active">
                         <p class="sanchez marginTop20 fontSize20"><!-- beschrijving -->
@@ -533,6 +490,5 @@ if (isset($_GET['product'])) {
 </html>
 <?php
 include 'includes/footer.php';
-
 ob_clean();
 ?>

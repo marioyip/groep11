@@ -18,11 +18,58 @@
 </head>
 <body>
 <?php
-
-
 session_start();
+
 include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
 include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
+
+$sql = "UPDATE Voorwerp SET TimeTeller = Timeteller+1 WHERE EmailVerzonden != 1";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+
+
+$sql = "SELECT TOP 1 TimeTeller FROM Voorwerp WHERE EmailVerzonden != 1";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+    $timeTeller = $row[0];
+}
+if ($timeTeller % 5 == 0) {
+
+//voor de email naar de koper
+    $sql = "SELECT email, koper, Voorwerpnummer, Titel FROM gebruiker innner JOIN voorwerp ON Gebruikersnaam = Koper WHERE VeilingGesloten = 1";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+        $email[] = $row[0];
+        $koper[] = $row[1];
+        $nrVerkocht[] = $row[2];
+        $Titel[] = $row[3];
+    }
+
+    if (!empty($Koper)) {
+        for ($j = 0; $j < count($koper); $j++) {
+            $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+        }
+
+        for ($i = 0; $i < count($email); $i++) {
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'From: EenmaalAndermaal Veiling
+            <EenmaalAndermaal
+            @iConcepts.nl>' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $onderwerp = 'U heeft ' . $Titel[$i] . ' Gewonnen op EenmaalAndermaal' . "\r\n";
+            $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel[$i] . '' . "\r\n";
+            $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
+            $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+            mail($email[$i], $onderwerp, $bericht, $headers);
+        }
+    }
+}
+
+
 function getTijd($tijd, $pos)
 {
     ?>
@@ -40,7 +87,7 @@ function getTijd($tijd, $pos)
 
             if (verschil <= 0) {
                 clearInterval(x);
-                document.getElementById("<?php echo $pos ?>").innerHTML =   "Helaas, de veiling is afgelopen!   ";
+                document.getElementById("<?php echo $pos ?>").innerHTML = "Helaas, de veiling is afgelopen!   ";
             } else {
                 document.getElementById("<?php echo $pos ?>").innerHTML = days + " dagen " + hours + " uur " + minutes + " minuten en " + seconds + " seconden";
             }
@@ -110,7 +157,7 @@ function getTijd($tijd, $pos)
                 10.000 veilingen per dag
             </p>
         </div>
-        <div class="col-md-4" >
+        <div class="col-md-4">
             <p class="textDarkGray bold "><span class="glyphicon glyphicon-ok textGreen"></span>
                 Al 5.000
                 gewonnen veilingen
