@@ -66,7 +66,7 @@ if ($timeTeller % 5 == 0) {
             mail($email[$i], $onderwerp, $bericht, $headers);
         }
     }
-
+}
     /**
      * Berekent de tijd tot een veiling is afgelopen
      *
@@ -306,7 +306,6 @@ function getTijd($tijd, $pos)
 
     </main>
     <?php include 'includes/footer.php';
-}
 ?>
 
 </body>
