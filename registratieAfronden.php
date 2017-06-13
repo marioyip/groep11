@@ -79,7 +79,7 @@
                             if (empty($ww)) {
                                 $errorWw = 'U heeft uw wachtwoord niet ingevuld!';
                             }
-                            if (!preg_match("/^[a-zA-Z0-9!?]*$/", $ww) && strlen($ww) > 6) {
+                            if (!preg_match("/^[a-zA-Z0-9!]{7,}$/", $ww)) {
                                 $errorWw = "Uw wachtwoord moet minstens 6 karakters lang zijn, een hoofdletter, een kleine letter en een getal bevatten!";
                             }
                             $error .= $errorWw;
