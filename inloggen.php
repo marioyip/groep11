@@ -20,7 +20,7 @@ include('includes/catbar.php');
 require_once('includes/functies.php');
 
 if (isset($_SESSION['username'])) {
-    if($_SESSION['ingelogd'] == true) {
+    if ($_SESSION['ingelogd'] == true) {
         echo "<div class='alert alert-info' align='center'><p>U bent al ingelogd!</p></div>";
     }
 } else {
@@ -155,4 +155,5 @@ connectToDatabase();
 
 <?php
 include 'includes/footer.php';
+}
 
