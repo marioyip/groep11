@@ -59,7 +59,7 @@ connectToDatabase();
                     ?>
 
                     <div class="form-group marginBottom20 text-center" align="center">
-                        <label class="control-label col-sm-3" for="gebruikersnaam"align="center">Gebruikersnaam</label>
+                        <label class="control-label col-sm-3" for="gebruikersnaam" align="center">Gebruikersnaam</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam">
                         </div>
@@ -72,7 +72,8 @@ connectToDatabase();
                     </div>
                     <div class="form-group marginTop35">
                         <div class="col-sm-12">
-                            <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen"align="center">
+                            <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen"
+                                   align="center">
                         </div>
                     </div>
                 </form>

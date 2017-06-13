@@ -66,10 +66,7 @@
     <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
-
-    require_once('includes/functies.php'); //functies.php wordt gebruikt om aan de database te kunnen verbinden
-
-    connectToDatabase(); //deze functie verbindt de webpagina aan de database
+    connectToDatabase();
 
     //inschrijven voor de nieuwsbrief
     ini_set('display_errors', 1);
@@ -79,9 +76,7 @@
         $email = $_POST['email'];
 
         insertUserInDatabase("$name", "$email"); //indien wordt voldaan aan de requirements wordt de gebruiker via de functie "insertUserInDatabase" in de database gezet
-
     }
-
     ?>
 </footer>
 

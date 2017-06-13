@@ -99,6 +99,8 @@ if ($verkoper == 1) {
 <?php
 
 if (isset($_POST['submit'])) {
+
+    //Stript de HTML tags uit de strings
     $_POST['verkoper'] = strip_tags($_POST['verkoper']);
     $_POST['titel'] = strip_tags($_POST['titel']);
     $_POST['beschrijving'] = strip_tags($_POST['beschrijving']);
@@ -108,9 +110,7 @@ if (isset($_POST['submit'])) {
     $_POST['looptijd'] = strip_tags($_POST['looptijd']);
     $_POST['verkoopprijs'] = strip_tags($_POST['verkoopprijs']);
 
-
     $verkoper = $_SESSION['username'];
-
     $sql = "SELECT Land, Plaatsnaam FROM Gebruiker WHERE Gebruikersnaam = '$verkoper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -118,7 +118,7 @@ if (isset($_POST['submit'])) {
         $land = $row[0];
         $plaatsnaam = $row[1];
     }
-
+    //Duwt een 1 in de startprijs als die niet is meegegeven
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
     if (isset($_POST['startprijs'])) {
@@ -131,11 +131,12 @@ if (isset($_POST['submit'])) {
     $verzendinstructie = $_POST['verzendinstructie'];
     $looptijd = $_POST['looptijd'];
     $verkoopprijs = $_POST['verkoopprijs'];
+    //Insert het voorwerp in de database
     $sql = "INSERT INTO Voorwerp([Looptijd], [Startprijs], [Verkoper], [Beschrijving], [Betalingswijze], [Betalingsinstructie], [Land], [Plaatsnaam], [Titel], [Verzendinstructies], [VoorwerpCover], [Verkoopprijs], [VeilingGesloten])
                 VALUES('$looptijd', '$startprijs', '$verkoper', '$beschrijving', '$betalingswijze', '$betalingsinstructie', '$land', '$plaatsnaam', '$titel', '$verzendinstructie', 'default.png', '$verkoopprijs', 0)";
     $stmt = $db->prepare($sql);
     $stmt->execute();
-
+    //Haalt het ID op van het vers geïnserte voorwerp
     $sql = "SELECT TOP 1 Voorwerpnummer FROM Voorwerp WHERE Verkoper = '$verkoper' AND Betalingsinstructie = '$betalingsinstructie' AND Titel = '$titel' AND Beschrijving = '$beschrijving' AND Looptijd = '$looptijd' ORDER BY Voorwerpnummer DESC";
     $stmt = $db->prepare($sql);
     $stmt->execute();

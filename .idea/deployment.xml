@@ -5,7 +5,7 @@
       <paths name="groep11">
         <serverdata>
           <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="\" local="C:/xampp1/htdocs/groep11" web="/" />
           </mappings>
         </serverdata>
       </paths>

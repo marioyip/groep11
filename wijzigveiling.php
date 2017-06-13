@@ -24,7 +24,7 @@ connectToDatabase();
 if (isset($_POST['voorwerp'])){
 
 $voorwerp = $_POST['voorwerp'];
-
+//Haalt alle huidige gegevens op
 $sql = "SELECT Titel, Beschrijving, Startprijs, Verkoopprijs, Betalingswijze, Betalingsinstructie, Verzendinstructies FROM Voorwerp WHERE Voorwerpnummer = '$voorwerp'";
 $stmt = $db->prepare($sql);
 $stmt->execute();

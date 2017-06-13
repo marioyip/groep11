@@ -3,7 +3,7 @@
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
         <div class="container-fluid brilliantWhite">
             <a class=" container-fluid nav navbar-left navbar-nav fontSize16 crete textDarkGray category"
-                  href="./rubrieken2.php">
+               href="./rubrieken.php">
                 Rubrieken</a>
             <div class="navbar-right marginRight10 ">
                 <div class="form-group">

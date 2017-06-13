@@ -22,7 +22,7 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
 
 
 <main>
-    <?php$_GET["zoeken"] = strip_tags($_GET["zoeken"]); ?>
+    <?php $_GET["zoeken"] = strip_tags($_GET["zoeken"]); ?>
     <div class="containerMinHeight">
         <div class="container ">
             <div class="col-md-12 " align="center">
@@ -66,14 +66,6 @@ include('includes/catbar.php'); //Geef de categorieën bar mee
                         echo '<div class="description"></div>';
                         echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '" class="btn btn-default crete" role="button">Bieden</a>';
                         echo '</div>';
-
-
-
-
-//
-//                        echo '<td>';
-//                        echo '<a href="productpagina.php?product=' . $voorwerpnummers[$i] . '">' . $voorwerptitels[$i] . '</a>';
-//                        echo '</td>'; //Loop de rij af
                     }
                 } else {
                     echo 'Geen resultaten gevonden.';

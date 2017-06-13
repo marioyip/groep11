@@ -83,22 +83,22 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <h4>Hoe verwijder ik een advertentie?</h4>
                     <p>
                         <!--geordende lijst met informatie over het inloggen-->
-                        <ol>
-                            <li>Log in op EenmaalAndermaal.</li>
-                            <li>Ga via Mijn profiel naar je advertenties.</li>
-                            <li> Gebruik je de app, open dan de betreffende advertentie en klik op Verwijder
-                                advertentie.
-                            </li>
-                            <li>Wil je via de website je advertentie verwijderen, dan selecteer je de advertentie(s) die
-                                je
-                                wilt verwijderen. Klik het vierkantje aan dat voor de foto staat en klik daarna op
-                                Verwijder.
-                            </li>
-                            <li>Voordat we de advertentie verwijderen, vragen we je om aan te geven of je het product
-                                via
-                                Marktplaats hebt verkocht.
-                            </li>
-                        </ol>
+                    <ol>
+                        <li>Log in op EenmaalAndermaal.</li>
+                        <li>Ga via Mijn profiel naar je advertenties.</li>
+                        <li> Gebruik je de app, open dan de betreffende advertentie en klik op Verwijder
+                            advertentie.
+                        </li>
+                        <li>Wil je via de website je advertentie verwijderen, dan selecteer je de advertentie(s) die
+                            je
+                            wilt verwijderen. Klik het vierkantje aan dat voor de foto staat en klik daarna op
+                            Verwijder.
+                        </li>
+                        <li>Voordat we de advertentie verwijderen, vragen we je om aan te geven of je het product
+                            via
+                            Marktplaats hebt verkocht.
+                        </li>
+                    </ol>
                     </p>
                 </div>
                 <div class="col-md-2">
@@ -115,16 +115,16 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
 
                     <h4>Hoe bied ik op een advertentie?</h4>
                     <p>
-                        <ol>
-                            <li>Log in op EenmaalAndermaal.</li>
-                            <li>Klik op een veiling</li>
-                            <li>Biedt op een product.
-                            </li>
-                            <li>Wacht tot de veilingtijd is verlopen.
-                            </li>
-                            <li>Als je de veiling gewonnen hebt, betaal je het bedrag.
-                            </li>
-                        </ol>
+                    <ol>
+                        <li>Log in op EenmaalAndermaal.</li>
+                        <li>Klik op een veiling</li>
+                        <li>Biedt op een product.
+                        </li>
+                        <li>Wacht tot de veilingtijd is verlopen.
+                        </li>
+                        <li>Als je de veiling gewonnen hebt, betaal je het bedrag.
+                        </li>
+                    </ol>
                     </p>
                 </div>
                 <div class="col-md-2">

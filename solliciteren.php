@@ -84,9 +84,9 @@ include 'includes/catbar.php';
                                 Hierin ga je waardevolle audiences om deze te ontsluiten naar de merken van de
                                 Persgroep. Je zult in staat worden gesteld om samen met het team de data te kunnen
                                 verzilveren.
-                            <h5 ><a class="textLightGreen" href="vacaturedeveloper.php">Lees meer hierover</a></h5>
+                            <h5><a class="textLightGreen" href="vacaturedeveloper.php">Lees meer hierover</a></h5>
                             </p>
-                            <hr />
+                            <hr/>
                             <h4>
                                 <li class="textGreen"><a href="vacatureccagent.php">Customer Care Agent (m/v)</a></li>
                             </h4>
@@ -99,7 +99,7 @@ include 'includes/catbar.php';
                                 Als medewerker van ons klantenservice team kan jij het verschil..
                             <h5><a class="textLightGreen" href="vacatureccagent.php">Lees meer hierover</a></h5>
                             </p>
-                            <hr />
+                            <hr/>
                             <h4>
                                 <li class="textGreen"><a href="vacatureprojectleider.php">Junior Facilitair
                                         Projectleider (m/v)</a></li>
@@ -109,8 +109,9 @@ include 'includes/catbar.php';
                                 rechtstreeks van de bedrijfsleiding ontvangen worden. Voor wat betreft opleidingsplan,
                                 loopbaanontwikkeling en functioneringstoetsingen zal er een directe lijn zijn naar de
                                 bedrijfsleider van de organisatie.
-                            <h5><a class="textLightGreen" href="vacatureprojectleider.php">Lees meer hierover</a></h5></p>
-                            <hr />
+                            <h5><a class="textLightGreen" href="vacatureprojectleider.php">Lees meer hierover</a>
+                            </h5></p>
+                            <hr/>
 
                         </ul>
                         <p>Heb jij interesse bij ons te werken? Stuur een mail met je volledige voor- en achternaam,

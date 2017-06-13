@@ -357,22 +357,6 @@
             $huisnr2 = strip_tags($_POST['huisnr2']);
             $straat2 = strip_tags($_POST['straat2']);
 
-//        echo "voornaam :" .$voornaam. "<br>";
-//        echo "achternaam :" .$achternaam. "<br>";
-//        echo "email :" .$email. "<br>";
-//        echo "land :" .$land. "<br>";
-//        echo "vraag :" .$vraag. "<br>";
-//        echo "gebruikersnaam :" .$gebruikersnaam. "<br>";
-//        echo "ww :" .$ww. "<br>";
-//        echo "ww2 :" .$ww2. "<br>";
-//        echo "tel :" .$tel. "<br>";
-//        echo "aw :" .$aw. "<br>";
-//        echo "straat :" .$straat. "<br>";
-//        echo "huisnr :" .$huisnr. "<br>";
-//        echo "postcode :" .$postcode. "<br>";
-//        echo "plaats :" .$plaats. "<br>";
-//        echo "gd :" .$gd. "<br>";
-
             if (!empty($_POST['huisnr2']) && !empty($_POST['straat2'])) {
                 $tweedeAdres = true;
             } else {
