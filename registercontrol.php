@@ -22,7 +22,7 @@ include ('includes/catbar.php');
 
 $error = "";
 $persoonlijkeCode = $_SESSION['code'];
-echo $_SESSION['code'];
+//echo $_SESSION['code'];
 
 //het schrijven van de email zelf
 $headers = 'MIME-Version: 1.0' . "\r\n";
