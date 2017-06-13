@@ -54,44 +54,43 @@ if (empty($_POST['gebruikersnaam'])){
     $_POST['gebruikersnaam'] = strip_tags($_POST['gebruikersnaam']);
     $gebruikersnaam = $_POST['gebruikersnaam'];
 
-
     $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
     $stmt = $db->prepare($sql); //Statement object aanmaken
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
         $huidigWachtwoord = $row[0];
     }
-    if(empty($huidigWachtwoord)){
+    if (empty($huidigWachtwoord)) {
         header("Location: accountreset.php");
-    }else{
+    } else {
 
-    echo '<div class="marginTop50 col-md-12">';
-    echo '<form action="" method="post">';
-    echo '<div class="form-group">';
-    echo '<label for="vragen">Vraag:</label>';
-    echo '<p>Na het correct beantwoorden van de beveiligingsvraag wordt er een mail verstuurd naar het e-mailadres dat is verbonden aan jouw profiel. </p>';
-    echo '<select name="vraag" class="form-control2" id="vragen">';
-    $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
-    $stmt = $db->prepare($sql); //Statement object aanmaken
-    $stmt->execute();           //Statement uitvoeren
-    while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
-    {
-        $vragen[] = $row[0];
-        $nummers[] = $row[1];
-    }
-    for ($i = 0; $i < count($vragen); $i++) {
-        echo '<option value="' . $vragen[$i] . '"> ' . $vragen[$i] . ' </option)>';
-    }
-    echo '</select>';
-    echo '</div>';
-    echo '<div class="form-group">';
-    echo '<label for="antwoord" >Antwoord:</label>';
-    echo '<input id="antwoord" name="antwoord" placeholder="antwoord" type="text" class="form-control">';
-    echo '<input type="hidden" value=' . $gebruikersnaam . ' name="gebruikersnaam">';
-    echo '</div>';
-    echo '<input type="submit" value="submit" class="btn-ibis btn">';
-    echo '</form>';
-    echo '</div>';
+        echo '<div class="marginTop50 col-md-12">';
+        echo '<form action="" method="post">';
+        echo '<div class="form-group">';
+        echo '<label for="vragen">Vraag:</label>';
+        echo '<p>Na het correct beantwoorden van de beveiligingsvraag wordt er een mail verstuurd naar het e-mailadres dat is verbonden aan jouw profiel. </p>';
+        echo '<select name="vraag" class="form-control2" id="vragen">';
+        $sql = "SELECT Vraag.TekstVraag, Antwoordtekst, email FROM Gebruiker JOIN Vraag ON Gebruiker.Vraag = Vraag.Vraagnummer WHERE Gebruikersnaam = '$gebruikersnaam'";
+        $stmt = $db->prepare($sql); //Statement object aanmaken
+        $stmt->execute();           //Statement uitvoeren
+        while ($row = $stmt->fetch(PDO::FETCH_NUM)) //Bij iedere  loop wordt er een tabelrij uitgelezen
+        {
+            $vragen[] = $row[0];
+            $nummers[] = $row[1];
+        }
+        for ($i = 0; $i < count($vragen); $i++) {
+            echo '<option value="' . $vragen[$i] . '"> ' . $vragen[$i] . ' </option)>';
+        }
+        echo '</select>';
+        echo '</div>';
+        echo '<div class="form-group">';
+        echo '<label for="antwoord" >Antwoord:</label>';
+        echo '<input id="antwoord" name="antwoord" placeholder="antwoord" type="text" class="form-control">';
+        echo '<input type="hidden" value=' . $gebruikersnaam . ' name="gebruikersnaam">';
+        echo '</div>';
+        echo '<input type="submit" value="submit" class="btn-ibis btn">';
+        echo '</form>';
+        echo '</div>';
     }
 }
 
@@ -119,7 +118,7 @@ if (isset($_POST['gebruikersnaam']) && isset($_POST['antwoord'])) {
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $onderwerp = 'Nieuw Wachtwoord EenmaalAndermaal' . "\r\n";
         $href = '<a href="http://iproject11.icasites.nl/dickiedick/inloggen.php">';
-        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code .  "<br><br>" . 'U kunt dit wachtwoord wijzigen in'  . " $href" .  'Mijn Profiel' . "</a><br><br>" . 'Met vriendelijke groeten,' . "<br><br>" . 'Hugo Kosterman' . "<br><br>" . 'Eigenaar EenmaalAndermaal';
+        $bericht = 'Dit is uw nieuwe wachtwoord: ' . $code . "<br><br>" . 'U kunt dit wachtwoord wijzigen in' . " $href" . 'Mijn Profiel' . "</a><br><br>" . 'Met vriendelijke groeten,' . "<br><br>" . 'Hugo Kosterman' . "<br><br>" . 'Eigenaar EenmaalAndermaal';
         mail($email, $onderwerp, $bericht, $headers);
 
 // 4. De gebruiker wordt naar het inlogscherm gestuurd

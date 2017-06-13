@@ -53,6 +53,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'ADMIN') {
                         <div class="col-md-12">
 
                             <?php
+                            //Selecteert info van de gebruikers
                             $sql = "SELECT Gebruikersnaam, Voornaam, Achternaam, GeboorteDag, email FROM Gebruiker ORDER BY Voornaam ASC;";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();
@@ -124,6 +125,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == 'ADMIN') {
                     <div class="container marginTop20">
                         <div class="col-md-12 username">
                             <?php
+                            //Selecteert info van de voorwerpen
                             $sql = "SELECT  Voorwerpnummer, Titel, Startprijs, Verkoopprijs, Verkoper, Koper FROM Voorwerp ORDER BY Voorwerpnummer ASC;";
                             $stmt = $db->prepare($sql);
                             $stmt->execute();

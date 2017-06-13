@@ -40,12 +40,14 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <div class="col-md-5 marginTop20 text-left">
                         <!--paragraaf over waar de website voor staat-->
 
-                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen
+                            doen.
                             Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
                             datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
                             heeft geen geheimen
                             voor ons.
-                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan
+                            wij
                             voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
                     </div>
                     <div class="col-md-5 marginTop20">
@@ -66,12 +68,14 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <div class="col-md-5 marginTop20 text-left">
                         <!--paragraaf over waar de website voor staat-->
 
-                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen
+                            doen.
                             Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
                             datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
                             heeft geen geheimen
                             voor ons.
-                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan
+                            wij
                             voor u klaar om uw volgende stap op internet tot een succes te maken.</p>
                     </div>
                     <div class="col-md-1">
@@ -86,12 +90,14 @@ include 'includes/catbar.php'; //geeft de cattegorieën balk mee aan deze pagina
                     <div class="col-md-5 marginTop20 text-left">
                         <!--paragraaf waarin de aanpak van het bedrijf wordt beschreven-->
 
-                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen doen.
+                        <p>Eenmaal Andermaal is opgericht in 2017, door een groep developers die het “anders” willen
+                            doen.
                             Veel ervaring is opgedaan bij toonaangevende bedrijven op het gebied van webdevelopment,
                             datamanagement en analyse. Daarnaast heeft het ontwikkelen van alles het internet te bieden
                             heeft
                             geen geheimen voor ons.
-                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan wij
+                            Aangevuld met expertise op het gebied van “cutting edge” marketing en communicatie, staan
+                            wij
                             voor u
                             klaar om uw volgende stap op internet tot een succes te maken.</p>
                     </div>

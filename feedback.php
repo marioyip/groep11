@@ -20,7 +20,7 @@ include 'includes/catbar.php';
 <body>
 <div class="container">
     <?php
-
+    //Haalt de gegeven feedback op van de verkoper
     $sql = "SELECT Commentaar, Dag, Feedbacksoort, Tijdstip, Gebruiker.Gebruikersnaam FROM Feedback INNER JOIN Voorwerp ON Voorwerp = Voorwerpnummer LEFT OUTER JOIN Gebruiker ON Voorwerp.Verkoper = Gebruikersnaam WHERE SoortGebruiker = 'verkoper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -37,26 +37,25 @@ include 'includes/catbar.php';
     echo '<tr>';
     echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
     echo '</tr>';
-    for($i=0;$i< count($Commentaar); $i++){
+    for ($i = 0; $i < count($Commentaar); $i++) {
 
-        if($Feedbacksoort[$i] =='Positief'){
+        if ($Feedbacksoort[$i] == 'Positief') {
             $kleurtje = 'Success';
-        }
-        else{
+        } else {
             $kleurtje = 'Danger';
         }
         echo '
-            <tr class='.$kleurtje.'>
-            <td>'.$Dag[$i].'</td>
-            <td>'.$Tijdstip[$i].'</td>
-            <td>'.$Feedbacksoort[$i].'</td>
-            <td>'.$Gebruikersnaam[$i].'</td>
-            <td>'.$Commentaar[$i].'</td>
+            <tr class=' . $kleurtje . '>
+            <td>' . $Dag[$i] . '</td>
+            <td>' . $Tijdstip[$i] . '</td>
+            <td>' . $Feedbacksoort[$i] . '</td>
+            <td>' . $Gebruikersnaam[$i] . '</td>
+            <td>' . $Commentaar[$i] . '</td>
             </tr>
             ';
     }
     echo '</table>';
-
+    //Haalt de gegeven feedback op van de koper
     $sql = "SELECT Commentaar, Dag, Feedbacksoort, Tijdstip, Gebruiker.Gebruikersnaam FROM Feedback INNER JOIN Voorwerp ON Voorwerp = Voorwerpnummer LEFT OUTER JOIN Gebruiker ON Voorwerp.Koper = Gebruikersnaam WHERE SoortGebruiker = 'Koper'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -75,26 +74,23 @@ include 'includes/catbar.php';
     echo '<tr>';
     echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
     echo '</tr>';
-    for($i=0;$i< count($Commentaar1); $i++){
-
-        if($Feedbacksoort1[$i] =='Positief'){
+    for ($i = 0; $i < count($Commentaar1); $i++) {
+        if ($Feedbacksoort1[$i] == 'Positief') {
             $kleurtje1 = 'Success';
-        }
-        else{
+        } else {
             $kleurtje1 = 'Danger';
         }
         echo '
-            <tr class='.$kleurtje1.'>
-            <td>'.$Dag1[$i].'</td>
-            <td>'.$Tijdstip1[$i].'</td>
-            <td>'.$Feedbacksoort1[$i].'</td>
-            <td>'.$Gebruikersnaam1[$i].'</td>
-            <td>'.$Commentaar1[$i].'</td>
+            <tr class=' . $kleurtje1 . '>
+            <td>' . $Dag1[$i] . '</td>
+            <td>' . $Tijdstip1[$i] . '</td>
+            <td>' . $Feedbacksoort1[$i] . '</td>
+            <td>' . $Gebruikersnaam1[$i] . '</td>
+            <td>' . $Commentaar1[$i] . '</td>
             </tr>
             ';
     }
     echo '</table>';
-
     ?>
 </div>
 </body>

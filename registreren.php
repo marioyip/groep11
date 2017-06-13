@@ -83,37 +83,6 @@ echo isset($_SESSION['errors']) ? "<p class='errors'>" . $_SESSION["errors"] . "
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
-                    <!--                    --><?php
-                    //                    if (isset($_POST['submit'])) {
-                    //                        $voornaam = $_POST["voornaam"];
-                    //                        $pwd = $_POST["pwd"];
-                    //                        $error = "";
-                    //                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
-                    //                        $stmt = $db->prepare($sql); //Statement object aanmaken
-                    //                        $stmt->execute();
-                    //                        if (empty($gebruikersnaam)) {
-                    //                            $error = 'U heeft uw gebruikersnaam niet ingevuld!';
-                    //                        }
-                    //                        if (empty($pwd)) {
-                    //                            $error = 'U heeft uw wachtwoord niet ingevuld!';
-                    //                        }
-                    //                        while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-                    //                            $controleWachtwoord = $row[0];
-                    //                            if (!empty($gebruikersnaam) && !empty($pwd)) {
-                    //                                if (password_verify($pwd, $controleWachtwoord)) {
-                    //                                    $_SESSION['username'] = $gebruikersnaam;
-                    //                                    $error = 'Welkom ' . $_SESSION['username'];
-                    //                                    header("Location: index.php");
-                    //                                } else if (!password_verify($pwd, $controleWachtwoord)) {
-                    //                                    $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
-                    //                                }
-                    //                            }
-                    //                        }
-                    //                        if ($error != "") {
-                    //                            echo isset($_POST['submit']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
-                    //                        }
-                    //                    }
-                    //                    ?>
                     <div class="form-group">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-7"></div>

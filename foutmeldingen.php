@@ -16,10 +16,10 @@ $rekeningnummer = isset($_POST['rekeningnummer']) ? $_POST['rekeningnummer'] : "
 $creditcard = isset($_POST['creditcard']) ? $_POST['creditcard'] : "";
 $veilinggesloten = isset($_GET['"Veilinggesloten?"']) ? $_GET['"Veilinggesloten?"'] : "";
 
-if($veilinggesloten == 1) {
+if ($veilinggesloten == 1) {
     $errors .= "gesloten";
 }
-if($veilinggesloten == 0) {
+if ($veilinggesloten == 0) {
     $errors .= "geopend";
 }
 
@@ -74,6 +74,3 @@ if ($errors) {
     header("location: index.php");
 }
 include('footer.php');
-
-//<label for="username">Gebruikersnaam</label><input type="text" name="username" id="username"
-//                                                           placeholder="Username" value="<?=isset($postdata['username'])?$postdata['username']:""?>"/>

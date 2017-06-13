@@ -124,8 +124,6 @@
 
             $geboortedatum = date("Y-m-d", strtotime($geboortedatum));
             $hashedWachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT); //het meegegeven wachtwoord wordt gehashed
-            $stmt = $db->prepare($sql);
-            $stmt->execute();
             if ($geentweedehuis == true) {
                 $sql = "INSERT INTO Gebruiker (Achternaam, Straatnaam1, Huisnummer1, Antwoordtekst,
         GeboorteDag, email, Gebruikersnaam, Land, Plaatsnaam, Postcode, Voornaam, Vraag, Wachtwoord, Verkoper)
@@ -139,6 +137,8 @@
             '$land', '$plaats', '$postcode', '$voornaam', '$vraag', '$hashedWachtwoord', '0');INSERT INTO Gebruikerstelefoon (Gebruiker, Telefoon, Volgnummer)
                 VALUES ('$gebruikersnaam', '$telefoonnummer', '$volgnr')";
             }
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
             header("Location: inloggen.php");
             die();
         }

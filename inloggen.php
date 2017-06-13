@@ -51,13 +51,15 @@ connectToDatabase();
                         </div>
                     </div>
                     <?php
+                    //Inloggen
                     if (isset($_POST['submit'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
                         $pwd = $_POST["pwd"];
                         $error = "";
-                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'"; //De query maken
-                        $stmt = $db->prepare($sql); //Statement object aanmaken
+                        $sql = "SELECT Wachtwoord FROM Gebruiker WHERE Gebruikersnaam = '$gebruikersnaam'";
+                        $stmt = $db->prepare($sql);
                         $stmt->execute();
+                        //Wachtwoord controleren
                         if (empty($gebruikersnaam)) {
                             $error = 'U heeft uw gebruikersnaam niet ingevuld!';
                         }

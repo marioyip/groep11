@@ -36,7 +36,7 @@ while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
 }
 if ($timeTeller % 5 == 0) {
 
-//voor de email naar de koper
+    //voor de email naar de koper
     $sql = "SELECT email, koper, Voorwerpnummer, Titel FROM gebruiker innner JOIN voorwerp ON Gebruikersnaam = Koper WHERE VeilingGesloten = 1";
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -56,8 +56,7 @@ if ($timeTeller % 5 == 0) {
     for ($i = 0; $i < count($email); $i++) {
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'From: EenmaalAndermaal Veiling
-            <EenmaalAndermaal
-            @iConcepts.nl>' . "\r\n";
+            <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $onderwerp = 'U heeft ' . $Titel[$i] . ' Gewonnen op EenmaalAndermaal' . "\r\n";
         $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel[$i] . '' . "\r\n";
@@ -67,7 +66,12 @@ if ($timeTeller % 5 == 0) {
     }
 }
 
-
+/**
+ * Berekent de tijd tot een veiling is afgelopen
+ *
+ * @param $tijd : De aflooptijd van een product
+ * @param $pos : De positie (div) op de pagina waar de tijd moet worden geplaatst
+ */
 function getTijd($tijd, $pos)
 {
     ?>
@@ -107,6 +111,7 @@ function getTijd($tijd, $pos)
         </ol>
 
         <?php
+        //Selecteert 3 willekeurige producten voor in de carousel
         $sql = "SELECT TOP 3 Beschrijving, Titel, Voorwerpnummer, VoorwerpCover, LooptijdeindeDag, LooptijdeindeTijdstip FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY NEWID()";
         $stmt = $db->prepare($sql);
         $stmt->execute();
@@ -173,8 +178,8 @@ function getTijd($tijd, $pos)
         </div>
     </div>
     <div class="container">
-        <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
+        //Selecteert de 4 snelst aflopende veilingen
         $sql = "SELECT TOP 4 * FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY LooptijdeindeDag ASC, LooptijdeindeTijdstip ASC";
         $stmt = $db->prepare($sql);
         $stmt->execute();
@@ -230,9 +235,8 @@ function getTijd($tijd, $pos)
                 <h2 class="textDarkGray">Nieuwe veilingen</h2>
             </div>
         </div>
-
-        <!-- PHP voor laatste veilingen heeuj feessie veel plezier met lezen -->
         <?php
+        //Selecteert de 4 nieuwste veilingen
         $sql2 = "SELECT TOP 4 * FROM Voorwerp WHERE VeilingGesloten = 0 ORDER BY LooptijdbeginDag DESC, LooptijdbeginTijdstip DESC";
         $stmt2 = $db->prepare($sql2);
         $stmt2->execute();

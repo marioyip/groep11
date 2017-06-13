@@ -10,7 +10,7 @@ require_once 'includes/functies.php';
 connectToDatabase();
 
 if (isset($_POST['submit'])) {
-    $Gebruikersnaam= $_POST['voorwerp'];
+    $Gebruikersnaam = $_POST['voorwerp'];
     $Voornaam = strip_tags($_POST['titel']);
     $Achternaam = strip_tags($_POST['beschrijving']);
     $GeboorteDag = strip_tags($_POST['startprijs']);

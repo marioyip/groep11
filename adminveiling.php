@@ -51,14 +51,16 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
             }
             ?>
             <div class="col-sm-12">
-                <h4 align="center"><?php echo $Voornaam; ?> <?php echo $Achternaam; ?></h4>
+                <h4 align="center"><?php echo $Voornaam; ?><?php echo $Achternaam; ?></h4>
                 <hr/>
                 <div class="tabpanel">
                     <div class="col-md-2">
                         <ul class="nav nav-pills nav-stacked tabs-left" role="tablist">
-                            <li role="presentation" class="brand-nav "><a href="#account" data-toggle="tab">Account</a></li>
+                            <li role="presentation" class="brand-nav "><a href="#account" data-toggle="tab">Account</a>
+                            </li>
                             <li role="presentation" class="brand-nav "><a href="#adres" data-toggle="tab">Adres</a></li>
-                            <li role="presentation" class="brand-nav "><a href="#beveiliging" data-toggle="tab">Beveiliging</a></li>
+                            <li role="presentation" class="brand-nav "><a href="#beveiliging" data-toggle="tab">Beveiliging</a>
+                            </li>
 
                         </ul>
                     </div>
@@ -71,7 +73,8 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                         <div class="form-group ">
                                             <label class="control-label col-sm-3 text-left textDarkGray" for="email">Gebruikersnaam</label>
                                             <div class="col-sm-9">
-                                                <input type="text" placeholder="<?php echo $Gebruikersnaam;?>" class="form-control textDarkGray" name="voornaam"
+                                                <input type="text" placeholder="<?php echo $Gebruikersnaam; ?>"
+                                                       class="form-control textDarkGray" name="voornaam"
                                                        id="email">
                                             </div>
                                         </div>
@@ -79,28 +82,35 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                             <label class="control-label col-sm-3 textDarkGray"
                                                    for="pwd">Voornaam:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control "placeholder="<?php echo $Voornaam;?>" name="achternaam" id="pwd">
+                                                <input type="text" class="form-control "
+                                                       placeholder="<?php echo $Voornaam; ?>" name="achternaam"
+                                                       id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray"
                                                    for="pwd">Achternaam:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control "placeholder="<?php echo $Achternaam;?>" name="achternaam" id="pwd">
+                                                <input type="text" class="form-control "
+                                                       placeholder="<?php echo $Achternaam; ?>" name="achternaam"
+                                                       id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray"
                                                    for="pwd">Geboortedatum:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control "placeholder="<?php echo $GeboorteDag;?>" name="achternaam" id="pwd">
+                                                <input type="text" class="form-control "
+                                                       placeholder="<?php echo $GeboorteDag; ?>" name="achternaam"
+                                                       id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray"
                                                    for="email">E-mailadres:</label>
                                             <div class="col-sm-9">
-                                                <input type="email" class="form-control "placeholder="<?php echo $email;?>" name="emailadres" id="email">
+                                                <input type="email" class="form-control "
+                                                       placeholder="<?php echo $email; ?>" name="emailadres" id="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -121,35 +131,40 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                             <label class="control-label col-sm-3 textDarkGray" for="email">Straatnaam
                                                 1</label>
                                             <div class="col-sm-9">
-                                                <input type="email" class="form-control " name="emailadres2" placeholder="<?php echo $Straatnaam1;?>" id="email">
+                                                <input type="email" class="form-control " name="emailadres2"
+                                                       placeholder="<?php echo $Straatnaam1; ?>" id="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray" for="pwd">Huisnummer
                                                 1:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="<?php echo $Huisnummer1;?>" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="<?php echo $Huisnummer1; ?>" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray"
                                                    for="pwd">Postcode:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="<?php echo $Straatnaam2;?>" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="<?php echo $Straatnaam2; ?>" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray" for="pwd">Straatnaam
                                                 2:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="<?php echo $Straatnaam2;?>" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="<?php echo $Straatnaam2; ?>" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-3 textDarkGray" for="pwd">Huisnummer
                                                 2:</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="<?php echo $Huisnummer2;?>" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="<?php echo $Huisnummer2; ?>" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -168,19 +183,24 @@ include 'includes/adminheader.php'; //geeft de adminheader mee aan deze pagina
                                     <form class="form-horizontal borderThinWhite padding10 roundborder" method="post"
                                           action="registercontrol.php">
                                         <div class="form-group">
-                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Oude wachtwoord</label>
+                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Oude
+                                                wachtwoord</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Nieuw wachtwoord</label>
+                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Nieuw
+                                                wachtwoord</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control " name="achternaam" placeholder="" id="pwd">
+                                                <input type="text" class="form-control " name="achternaam"
+                                                       placeholder="" id="pwd">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Wachtwoord herhalen:</label>
+                                            <label class="control-label col-sm-3 textDarkGray" for="pwd">Wachtwoord
+                                                herhalen:</label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control " name="achternaam" id="pwd">
                                             </div>
