@@ -18,14 +18,20 @@
 <?php
 ob_start();
 session_start();
+include('includes/header.php');
+include('includes/catbar.php');
 
 if (isset($_SESSION['username'])) {
+    echo "<div class='alert alert-info' align='center'><p>U bent al geregistreerd voor Eenmaal Andermaal!</p></div>";
+} else {
+
+$_SESSION['ingelogd'] = false;
+
+if (isset($_SESSION['nieuweGebruiker'])) {
     ob_end_clean();
-    header("Location: index.php");
+    header("Location: foutmeldingen.php");
 }
 
-include ('includes/header.php');
-include ('includes/catbar.php');
 ?>
 <main>
     <div class="container marginTop20">
@@ -41,7 +47,8 @@ include ('includes/catbar.php');
                         <label class="control-label col-sm-2 text-left" for="email">Voornaam</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="voornaam" id="email"
-                                   placeholder="Kees">
+                                   placeholder="Kees"
+                                   value="<?php echo isset($_POST['voornaam']) ? $_POST['voornaam'] : '' ?>">
                         </div>
                     </div>
                     <?php
@@ -60,7 +67,8 @@ include ('includes/catbar.php');
                         <label class="control-label col-sm-2" for="pwd">Achternaam:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control marginLeft200" name="achternaam" id="pwd"
-                                   placeholder="van Dalen">
+                                   placeholder="van Dalen"
+                                   value="<?php echo isset($_POST['achternaam']) ? $_POST['achternaam'] : '' ?>">
                         </div>
                     </div>
                     <?php
@@ -79,7 +87,8 @@ include ('includes/catbar.php');
                         <label class="control-label col-sm-2" for="email">E-mailadres:</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres" id="email"
-                                   placeholder="k.vandalen@email.com">
+                                   placeholder="k.vandalen@email.com"
+                                   value="<?php echo isset($_POST['emailadres']) ? $_POST['emailadres'] : '' ?>">
                         </div>
                     </div>
                     <?php
@@ -98,7 +107,8 @@ include ('includes/catbar.php');
                         <label class="control-label col-sm-2" for="email">Herhaal E-mailadres:</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control marginLeft200" name="emailadres2" id="email"
-                                   placeholder="k.vandalen@email.com">
+                                   placeholder="k.vandalen@email.com"
+                                   value="<?php echo isset($_POST['emailadres2']) ? $_POST['emailadres2'] : '' ?>">
                         </div>
                     </div>
                     <?php
@@ -112,10 +122,10 @@ include ('includes/catbar.php');
                         if (!empty($voornaam) && !empty($achternaam) && !empty($email)) {
                             if ($email == $email2) {
                                 $_SESSION['email'] = strip_tags($email);
-                                $_POST['voornaam'] = strip_tags($_POST['voornaam']);
-                                $_POST['achternaam'] = strip_tags($_POST['achternaam']);
-                                $_SESSION['voornaam'] = $_POST['voornaam'];
-                                $_SESSION['achternaam'] = $_POST['achternaam'];
+                                $voornaam = strip_tags($_POST['voornaam']);
+                                $achternaam = strip_tags($_POST['achternaam']);
+                                $_SESSION['voornaam'] = $voornaam;
+                                $_SESSION['achternaam'] = $achternaam;
                                 $_SESSION['code'] = mt_rand();
 //                                $gelukt = 'De bevestigingscode om een account aan te kunnen maken wordt verstuurd naar uw e-mailadres';
                                 ob_end_clean();
@@ -125,7 +135,7 @@ include ('includes/catbar.php');
                             }
                         }
                         if ($errorControle != "") {
-                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'> <p>" . $errorControle . "</p></div>" : "";
+                            echo isset($_POST['bevestigmail']) ? "<div class='alert alert-danger'><p>" . $errorControle . "</p></div>" : "";
                         }
                     }
                     ?>
@@ -141,6 +151,7 @@ include ('includes/catbar.php');
 </html>
 
 <?php
+}
 include('includes/footer.php');
 ob_end_flush();
 

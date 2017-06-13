@@ -15,14 +15,25 @@
 <?php
 ob_start();
 session_start();
-
-if (isset($_SESSION['username'])) {
-    ob_end_clean();
-    header("Location: index.php");
-}
 include('includes/header.php');
 include('includes/catbar.php');
 require_once('includes/functies.php');
+
+if (isset($_SESSION['username'])) {
+    if($_SESSION['ingelogd'] == true) {
+        echo "<div class='alert alert-info' align='center'><p>U bent al ingelogd!</p></div>";
+    }
+} else {
+
+if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['nieuweGebruiker'])) {
+        ob_end_clean();
+        header('Location: foutmeldingen.php');
+    } else {
+        ob_end_clean();
+        header("Location: index.php");
+    }
+}
 
 connectToDatabase();
 ?>
@@ -30,8 +41,8 @@ connectToDatabase();
 
     <div class="container marginTop20 marginBottom40">
         <div class="col-md-12" align="center">
-            <?php if (isset($_SESSION['nieuweGebruiker'])) {
-                echo "<div class='alert alert-success'><p>Beste " .$_SESSION['nieuweGebruiker']. " uw registratie is gelukt!U kunt nu inloggen!</p></div>";
+            <?php if (!empty($_SESSION['nieuweGebruiker'])) {
+                echo "<div class='alert alert-success'><p>Beste " . $_SESSION['nieuweGebruiker'] . " uw registratie is gelukt! U kunt nu inloggen!</p></div>";
             }
             ?>
             <h1 class="textGreen">Log in op jouw profiel</h1>
@@ -42,12 +53,13 @@ connectToDatabase();
             <div class="col-md-2 marginTop20 text-left">
             </div>
             <div class="col-md-4 marginTop20 text-left loginBox">
-                <form class="form-horizontal" method="post" action="#">
+                <form class="form-horizontal" method="post">
                     <h3 class="">Inloggen</h3>
                     <div class="form-group marginBottom20">
                         <label class="control-label col-sm-3" for="gebruikersnaam">Gebruikersnaam</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam">
+                            <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam"
+                                   value="<?php echo isset($_POST['gebruikersnaam']) ? $_POST['gebruikersnaam'] : '' ?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,7 +69,7 @@ connectToDatabase();
                         </div>
                     </div>
                     <?php
-                    if (isset($_POST['submit'])) {
+                    if (isset($_POST['login'])) {
                         $gebruikersnaam = $_POST["gebruikersnaam"];
                         $pwd = $_POST["pwd"];
                         $error = "";
@@ -70,6 +82,9 @@ connectToDatabase();
                         if (empty($pwd)) {
                             $error = 'U heeft uw wachtwoord niet ingevuld!';
                         }
+                        if (empty($pwd) && empty($gebruikersnaam)) {
+                            $error = 'U heeft uw wachtwoord en uw gebruikersnaam niet ingevuld!';
+                        }
 
                         while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                             $controleWachtwoord = $row[0];
@@ -77,7 +92,8 @@ connectToDatabase();
                             if (!empty($gebruikersnaam) && !empty($pwd)) {
                                 if (password_verify($pwd, $controleWachtwoord)) {
                                     $_SESSION['username'] = $gebruikersnaam;
-                                    $error = 'U bent al ingelogd! ';
+                                    unset($_SESSION['nieuweGebruiker']);
+                                    $_SESSION['ingelogd'] = true;
                                     ob_end_clean();
                                     header("Location: index.php");
                                 } else if (!password_verify($pwd, $controleWachtwoord)) {
@@ -85,17 +101,17 @@ connectToDatabase();
                                 }
                             }
                         }
-                        if (empty($controleWachtwoord)) {
+                        if (!empty($gebruikersnaam) && !empty($pwd) && empty($controleWachtwoord)) {
                             $error = 'Uw gebruikersnaam of wachtwoord klopt niet!';
                         }
                         if ($error != "") {
-                            echo isset($_POST['submit']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
+                            echo isset($_POST['login']) ? "<div class='alert alert-danger'> <p>" . $error . "</p></div>" : "";
                         }
                     }
                     ?>
                     <div class="form-group marginTop35">
                         <div class="col-sm-12">
-                            <input type="submit" name="submit" class="btn btn-default col-sm-4" value="Inloggen">
+                            <input type="submit" name="login" class="btn btn-default col-sm-4" value="Inloggen">
                         </div>
                     </div>
 
@@ -136,5 +152,7 @@ connectToDatabase();
 
 
 <?php
+}
 include('includes/footer.php');
 ob_end_flush();
+
