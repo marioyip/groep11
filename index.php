@@ -47,23 +47,25 @@ if ($timeTeller % 5 == 0) {
         $Titel[] = $row[3];
     }
 
-    for ($j = 0; $j < count($koper); $j++) {
-        $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-    }
+    if (!empty($Koper)) {
+        for ($j = 0; $j < count($koper); $j++) {
+            $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+        }
 
-    for ($i = 0; $i < count($email); $i++) {
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'From: EenmaalAndermaal Veiling
+        for ($i = 0; $i < count($email); $i++) {
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'From: EenmaalAndermaal Veiling
             <EenmaalAndermaal
             @iConcepts.nl>' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $onderwerp = 'U heeft ' . $Titel[$i] . ' Gewonnen op EenmaalAndermaal' . "\r\n";
-        $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel[$i] . '' . "\r\n";
-        $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
-        $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
-        mail($email[$i], $onderwerp, $bericht, $headers);
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $onderwerp = 'U heeft ' . $Titel[$i] . ' Gewonnen op EenmaalAndermaal' . "\r\n";
+            $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel[$i] . '' . "\r\n";
+            $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
+            $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+            mail($email[$i], $onderwerp, $bericht, $headers);
+        }
     }
 }
 
