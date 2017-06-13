@@ -28,17 +28,16 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 
 
-$sql = "SELECT TimeTeller FROM Voorwerp WHERE EmailVerzonden != 1";
+$sql = "SELECT TOP 1 TimeTeller FROM Voorwerp WHERE EmailVerzonden != 1";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
     $timeTeller = $row[0];
 }
-
 if ($timeTeller % 5 == 0) {
 
 //voor de email naar de koper
-    $sql = "SELECT email, koper, Voorwerpnummer, Titel FROM gebruiker innner JOIN voorwerp ON Gebruikersnaam = Koper WHERE EmailVerzonden != 1";
+    $sql = "SELECT email, koper, Voorwerpnummer, Titel FROM gebruiker innner JOIN voorwerp ON Gebruikersnaam = Koper WHERE VeilingGesloten = 1";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -48,10 +47,13 @@ if ($timeTeller % 5 == 0) {
         $Titel[] = $row[3];
     }
 
-//het schrijven van de email
-    for ($i = 0; $i < $nrVerkocht; $i++) {
-//        echo 'email<br>';
-//        echo $nrVerkocht;
+    for ($j = 0; $j < count($koper); $j++) {
+        $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+    }
+
+    for ($i = 0; $i < count($email); $i++) {
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'From: EenmaalAndermaal Veiling
             <EenmaalAndermaal
@@ -62,11 +64,6 @@ if ($timeTeller % 5 == 0) {
         $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
         $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
         mail($email[$i], $onderwerp, $bericht, $headers);
-    }
-    for ($j = 0; $j < $koper; $j++) {
-        $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j]";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
     }
 }
 
