@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="74d66508-e01c-44f7-9c53-2f1336a52ea0" name="groep11" url="http://localhost:80/groep11">
-        <fileTransfer port="0" mountedRoot="C:\xampp\htdocs\groep11" accessType="MOUNT" />
+        <fileTransfer port="0" mountedRoot="C:\xampp1\htdocs\groep11" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

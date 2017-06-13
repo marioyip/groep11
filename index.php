@@ -47,7 +47,7 @@ if ($timeTeller % 5 == 0) {
         $Titel[] = $row[3];
     }
 
-    if (!empty($Koper)) {
+    if (!empty($email)) {
         for ($j = 0; $j < count($koper); $j++) {
             $sql = "update voorwerp set emailverzonden = 1 where koper ='$koper[$j]' AND Voorwerpnummer = $nrVerkocht[$j] AND VeilingGesloten = 1";
             $stmt = $db->prepare($sql);
