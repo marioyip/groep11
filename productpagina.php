@@ -16,13 +16,10 @@
 </head>
 <body>
 <?php
-
 session_start();
 ob_start();
-
 include 'includes/header.php';
 include 'includes/catbar.php';
-
 ini_set('display_errors', 1);
 require_once 'includes/functies.php';
 connectToDatabase();
@@ -64,8 +61,6 @@ if (isset($_GET['product'])) {
         $fotos[0] = $VoorwerpCover;
     }
 }
-
-
 ?>
 <div class="container">
     <div class="row">
@@ -101,7 +96,6 @@ if (isset($_GET['product'])) {
                     }
                     echo '<div class="fill" style="background-image:url(' . $fotos[$i] . ')"></div></div>';
                 }
-
                 ?>
             </div>
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -186,7 +180,6 @@ if (isset($_GET['product'])) {
                             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 $koper = $row[0];
                             }
-
                             echo '
                         <form action="" method="post"> 
                         <div class="form-group">
@@ -223,7 +216,6 @@ if (isset($_GET['product'])) {
                         echo '<p>U heeft al feedback gegeven</p>';
                     }
                 }
-
                 if ($Koper == $_SESSION['username'] && !empty($_SESSION['username'])) {
                     $sql = "SELECT Voorwerp FROM Feedback Where Voorwerp = $Voorwerpnummer AND SoortGebruiker = 'Verkoper'";
                     $stmt = $db->prepare($sql);
@@ -240,11 +232,10 @@ if (isset($_GET['product'])) {
                             while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
                                 $verkoper = $row[0];
                             }
-
                             echo '
                         <form action="" method="post">
                         <div class="form-group">
-                        <h2>Geef feedback op de koper</h2>
+                        <h2>Geef feedback op de verkoper</h2>
                         <label for="Feedbacksoort">Feedbacksoort</label>
                         <select class="form-control" id="Feedbacksoort" name="Feedbacksoort">
                         <option>Positief</option>
@@ -287,7 +278,6 @@ if (isset($_GET['product'])) {
                 }
                 if (empty($gebruikerHoogsteBod)) {
                     $gebruikerHoogsteBod = NULL;
-
                     $sql = "UPDATE Voorwerp SET Koper = '$gebruikerHoogsteBod' WHERE Voorwerpnummer = $Voorwerpnummer";
                     $stmt = $db->prepare($sql);
                     $stmt->execute();
@@ -313,27 +303,20 @@ if (isset($_GET['product'])) {
                 var countDownDate = new Date("<?php
                     echo $LooptijdeindeDag . ' ' . $LooptijdeindeTijdstip
                     ?>").getTime();
-
                 // Update the count down every 1 second
                 var x = setInterval(function () {
-
                     // Get todays date and time
                     var now = new Date().getTime();
-
                     // Find the distance between now an the count down date
                     var verschil = countDownDate - now;
-
                     // Time calculations for days, hours, minutes and seconds
-
                     var days = Math.floor(verschil / (1000 * 60 * 60 * 24));
                     var hours = Math.floor((verschil % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     var minutes = Math.floor((verschil % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((verschil % (1000 * 60)) / 1000);
-
                     // Display the result in the element with id="demo"
                     document.getElementById("demo").innerHTML = days + " dagen " + hours + " uur " +
                         +minutes + " minuten en " + seconds + " seconden om te bieden!";
-
                     // If the count down is finished, write some text
                     if (verschil <= 0) {
                         clearInterval(x);
@@ -391,7 +374,6 @@ if (isset($_GET['product'])) {
                 if ($Bod > 5000) {
                     $minimumBod = $Bod + 50.00;
                 }
-
                 //als er niet is ingelogd dan kan de gebruiker ook niet bieden
                 if (isset($_SESSION['username'])) {
                     ?>
