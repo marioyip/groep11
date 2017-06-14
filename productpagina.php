@@ -23,7 +23,10 @@ include 'includes/catbar.php';
 ini_set('display_errors', 1);
 require_once 'includes/functies.php';
 connectToDatabase();
-$gebruikersnaam = $_SESSION['username'];
+if(!empty($_SESSION['username'])){
+    $gebruikersnaam = $_SESSION['username'];
+}
+
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
     $sql = "SELECT * FROM voorwerp WHERE voorwerp.voorwerpnummer = '$product'";
