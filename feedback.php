@@ -31,20 +31,19 @@ include 'includes/catbar.php';
         $Tijdstip[] = $row[3];
         $Gebruikersnaam[] = $row[4];
     }
-
-    echo '<h2>Lees wat mensen vinden van de verkopers</h2>';
-    echo '<table class="table">';
-    echo '<tr>';
-    echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
-    echo '</tr>';
-    for ($i = 0; $i < count($Commentaar); $i++) {
-
-        if ($Feedbacksoort[$i] == 'Positief') {
-            $kleurtje = 'Success';
-        } else {
-            $kleurtje = 'Danger';
-        }
-        echo '
+    if (count($Commentaar) > 0) {
+        echo '<h2>Lees wat mensen vinden van de verkopers</h2>';
+        echo '<table class="table">';
+        echo '<tr>';
+        echo '<th>Dag</th><th>Tijdstip</th><th>Beoordeling</th><th>Gebruikersnaam</th><th>Commentaar</th>';
+        echo '</tr>';
+        for ($i = 0; $i < count($Commentaar); $i++) {
+            if ($Feedbacksoort[$i] == 'Positief') {
+                $kleurtje = 'Success';
+            } else {
+                $kleurtje = 'Danger';
+            }
+            echo '
             <tr class=' . $kleurtje . '>
             <td>' . $Dag[$i] . '</td>
             <td>' . $Tijdstip[$i] . '</td>
@@ -53,8 +52,13 @@ include 'includes/catbar.php';
             <td>' . $Commentaar[$i] . '</td>
             </tr>
             ';
+        }
+        echo '</table>';
     }
-    echo '</table>';
+    else{
+        echo '<h2>Er is nog geen commentaar gegeven</h2>';
+    }
+
     //Haalt de gegeven feedback op van de koper
     $sql = "SELECT Commentaar, Dag, Feedbacksoort, Tijdstip, Gebruiker.Gebruikersnaam FROM Feedback INNER JOIN Voorwerp ON Voorwerp = Voorwerpnummer LEFT OUTER JOIN Gebruiker ON Voorwerp.Koper = Gebruikersnaam WHERE SoortGebruiker = 'Koper'";
     $stmt = $db->prepare($sql);
@@ -66,9 +70,8 @@ include 'includes/catbar.php';
         $Tijdstip1[] = $row[3];
         $Gebruikersnaam1[] = $row[4];
     }
-
+    if(count($Commentaar1)>0){
     echo '<hr>';
-
     echo '<h2>Kopers</h2>';
     echo '<table class="table">';
     echo '<tr>';
@@ -91,10 +94,10 @@ include 'includes/catbar.php';
             ';
     }
     echo '</table>';
+    }
+    else{
+        echo '<h2>Er is nog geen feedback gegeven</h2>';
+    }
     ?>
 </div>
 </body>
-
-
-
-
