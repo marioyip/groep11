@@ -26,7 +26,7 @@ include 'includes/catbar.php';
 ini_set('display_errors', 1);
 require_once 'includes/functies.php';
 connectToDatabase();
-
+$gebruikersnaam = $_SESSION['username'];
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
     $sql = "SELECT * FROM voorwerp WHERE voorwerp.voorwerpnummer = '$product'";
@@ -179,7 +179,6 @@ if (isset($_GET['product'])) {
                         $resultaat = $row[0];
                     }
                     if (empty($resultaat)) {
-                        $gebruikersnaam = $_SESSION['username'];
                         if (empty($_POST['submitFeedbackOpKoper'])) {
                             $sql = "SELECT Koper FROM Voorwerp Where VeilingGesloten = 1 AND Voorwerpnummer = $Voorwerpnummer";
                             $stmt = $db->prepare($sql);
