@@ -134,8 +134,8 @@ if (isset($_GET['product'])) {
                 $voorwerpnummer = $row[5];
             }
             if ($Bod >= $verkoopprijs) {
-                $sql = "UPDATE Voorwerp SET VeilingGesloten = 1 AND Koper = '$gebruikersnaam'
-                    WHERE Voorwerpnummer = '$voorwerpnummer'";
+                $sql = "UPDATE Voorwerp SET VeilingGesloten = 1 
+                    WHERE Voorwerpnummer = '$voorwerpnummer'; UPDATE Voorwerp SET Koper = '$gebruikersnaam' WHERE Voorwerpnummer = $voorwerpnummer";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 ob_end_flush();
