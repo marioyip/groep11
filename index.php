@@ -62,7 +62,7 @@ if ($timeTeller % 5 == 0) {
             $onderwerp = 'U heeft ' . $Titel[$i] . ' Gewonnen op EenmaalAndermaal' . "\r\n";
             $bericht = 'Van harte gefeliciteerd met het winnen van ' . $Titel[$i] . '' . "\r\n";
             $bericht .= 'Wij van EenmaalAndermaal hopen dat u van dit product geniet' . "\r\n";
-            $bericht .= 'U bent verplicht om te betalen)' . "\r\n;" . ' EenmaalAndermaal';
+            $bericht .= 'U bent verplicht om te betalen' . "\r\n;" . ' EenmaalAndermaal';
             mail($email[$i], $onderwerp, $bericht, $headers);
         }
     }
