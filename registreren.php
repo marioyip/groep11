@@ -155,3 +155,4 @@ if (isset($_SESSION['nieuweGebruiker'])) {
 include('includes/footer.php');
 ob_end_flush();
 
+
