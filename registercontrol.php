@@ -17,21 +17,22 @@
 <?php
 ob_start();
 session_start();
-include ('includes/header.php');
-include ('includes/catbar.php');
+include('includes/header.php');
+include('includes/catbar.php');
 
 $error = "";
 $persoonlijkeCode = $_SESSION['code'];
 //echo $_SESSION['code'];
 
+if (isset($_POST['bevestigcode']) && empty($error)) {
 //het schrijven van de email zelf
-$headers = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
-$bericht = 'Dit is uw bevestigingscode: ' . $_SESSION['code'] . '' . "\r\n";
-mail($_SESSION['email'], $onderwerp, $bericht, $headers);
-
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'From: EenmaalAndermaal Veiling <EenmaalAndermaal@iConcepts.nl>' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $onderwerp = 'Bevestigingsmail EenmaalAndermaal' . "\r\n";
+    $bericht = 'Dit is uw bevestigingscode: ' . $_SESSION['code'] . '' . "\r\n";
+    mail($_SESSION['email'], $onderwerp, $bericht, $headers);
+}
 
 //    echo $code.'<br>';
 //    echo $emailadres;
@@ -60,8 +61,8 @@ mail($_SESSION['email'], $onderwerp, $bericht, $headers);
                         if (!empty($persoonlijkeCode) && $persoonlijkeCode != $ingevoerdeCode) {
                             $error = 'De ingevoerde code is onjuist';
                         } else if ($persoonlijkeCode == $ingevoerdeCode) {
-                            ob_end_clean();
                             $_SESSION['persoonlijkeCode'] = $ingevoerdeCode;
+                            ob_end_clean();
                             header("Location: registratieAfronden.php");
                         }
                         if ($error != "") {
@@ -81,7 +82,7 @@ mail($_SESSION['email'], $onderwerp, $bericht, $headers);
 </html>
 <?php
 
-include ('includes/footer.php');
+include('includes/footer.php');
 ob_end_flush();
 
 ?>
