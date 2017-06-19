@@ -130,7 +130,7 @@ if (isset($_GET['product'])) {
                 $VeilingGesloten1 = $row[4];
                 $voorwerpnummer = $row[5];
             }
-            if ($Bod >= $verkoopprijs) {
+            if ($Bod >= $verkoopprijs && !empty($gebruikersnaam)) {
                 $sql = "UPDATE Voorwerp SET VeilingGesloten = 1 
                     WHERE Voorwerpnummer = '$voorwerpnummer'; UPDATE Voorwerp SET Koper = '$gebruikersnaam' WHERE Voorwerpnummer = $voorwerpnummer";
                 $stmt = $db->prepare($sql);
