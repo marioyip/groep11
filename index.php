@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96x96.png"> <!-- Tabblad icoontje -->
     <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-    <!-- Crete Round Font van Google Fonts -->
+    <!-- Crete Round Font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet"><!-- Sanchez Font van Google Fonts -->
 </head>
 <body>
 <?php
 session_start();
 
-include 'includes/header.php'; // Geeft de header mee aan de index.php pagina
+include 'includes/header.php'; // Geeft de header mee aan de index.php pagina 
 include 'includes/catbar.php'; // Geeft de catbar.php mee aan de index pagina
 
 $sql = "UPDATE Voorwerp SET TimeTeller = Timeteller+1 WHERE EmailVerzonden != 1";
